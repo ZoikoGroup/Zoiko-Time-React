@@ -39,7 +39,7 @@ export default function Principles() {
                     <span className="inline-block text-xs font-bold tracking-[1.30px] text-[#009D8C] mb-3">
                         Governance Principles
                     </span>
-                    <h2 className="text-4xl font-semibold text-[#0D1526] mb-5">
+                    <h2 className="text-4xl md:text-[30px] font-semibold text-[#0D1526] mb-4">
                         Governance Is the Operating Principle
                     </h2>
                     <p className="text-[#5A6E87] max-w-240 mx-auto">

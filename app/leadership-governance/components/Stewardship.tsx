@@ -1,6 +1,6 @@
 const cards = [
     {
-        src: "/leadership-governance/clock.png",
+        src: "/leadership-governance/time.png",
         title: "Time and Activity Records",
         desc: "Time entries, activity signals, idle patterns, app usage, URL usage, and screenshots where enabled should be governed with clear purposes, access controls, retention rules, and worker transparency.",
     },

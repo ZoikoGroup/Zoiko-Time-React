@@ -29,7 +29,7 @@ export default function EnterpriseTrust() {
                     <span className="inline-block text-xs font-bold tracking-[1.30px] text-[#009D8C] mb-3">
                         Enterprise Trust
                     </span>
-                    <h2 className="text-4xl font-semibold text-[#0D1526] mb-10">
+                    <h2 className="text-4xl md:text-[30px] font-semibold text-[#0D1526] mb-6">
                         Governance That Supports Enterprise Confidence
                     </h2>
                     <p className="text-[#5A6E87] max-w-245 mx-auto mb-20">

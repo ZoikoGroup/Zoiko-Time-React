@@ -32,11 +32,11 @@ export default function Operational() {
                 <span className="inline-block text-xs font-bold tracking-[1.30px] text-[#009D8C] mb-3">
                     Operational Governance
                 </span>
-                <h2 className="text-4xl md:text-[30px] font-semibold text-[#0D1526] mb-3">
+                <h2 className="text-4xl md:text-[29px] font-semibold text-[#0D1526] mb-3">
                     From Governance Principles to Operating Controls
                 </h2>
                 <p className="text-[#5A6E87] max-w-210 mx-auto">
-                    ZoiroTime&apos;s governance model connects people, policies, permissions, evidence,
+                    ZoikoTime&apos;s governance model connects people, policies, permissions, evidence,
                     AI-assisted insights, retention controls, and review workflows into a practical
                     operating framework for workforce intelligence.
                 </p>
@@ -45,7 +45,7 @@ export default function Operational() {
             <div className="mx-auto mt-10 max-w-4xl divide-y divide-slate-100 rounded-xl bg-white shadow-sm">
                 {CONTROLS.map((item, i) => (
                     <div key={item.title} className="flex gap-4 px-8 py-6">
-                        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#009D8C40] bg-[#EAF9F6] text-xs font-semibold text-teal-700">
+                        <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#009D8C40] bg-[#EAF9F6] text-xs font-semibold text-[#009D8C]">
                             {i + 1}
                         </div>
                         <div>

@@ -34,14 +34,14 @@ export default function ResponsibleAI() {
     return (
         <section className="bg-[#0B1220] px-6 py-12 md:px-54">
             <div className="mx-auto max-w-6xl text-center">
-                <span className="inline-block text-xs font-bold tracking-[1.30px] text-[#00C6A9] mb-3">
+                <span className="inline-block text-xs font-bold tracking-[1.30px] text-[#00C6A9] mb-4">
                     Responsible AI
                 </span>
-                <h2 className="text-4xl md:text-[34px] font-semibold text-white mb-5">
+                <h2 className="text-4xl md:text-[32px] font-semibold text-white mb-5">
                     AI-Assisted Intelligence. Human-Governed Outcomes.
                 </h2>
-                <p className="text-[#FFFFFF99] max-w-225 mx-auto">
-                    ZoiroTime&apos;s AI-assisted capabilities are designed to help authorized users
+                <p className="text-[#FFFFFF99] max-w-245 mx-auto">
+                    ZoikoTime&apos;s AI-assisted capabilities are designed to help authorized users
                     understand patterns, detect anomalies, summarize workforce data, prioritize review,
                     and improve operational clarity. They should not replace accountable human judgment
                     in sensitive workforce decisions.
@@ -49,7 +49,7 @@ export default function ResponsibleAI() {
             </div>
 
             <div className="mx-auto mt-8 max-w-5xl rounded-xl border border-[#00C6A933] bg-[#00C6A914] p-8 text-center text-sm font-semibold leading-relaxed text-[#00C6A9E5]">
-                ZoiroTime should not be positioned as automatically making final employment,
+                ZoikoTime should not be positioned as automatically making final employment,
                 disciplinary, payroll, legal, or worker-impacting decisions. Critical decisions should
                 remain subject to appropriate human review, organizational policy, and applicable law.
             </div>
