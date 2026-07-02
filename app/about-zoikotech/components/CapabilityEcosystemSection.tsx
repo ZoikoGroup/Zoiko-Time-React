@@ -33,8 +33,8 @@ const cards = [
 
 export default function CapabilityEcosystemSection() {
   return (
-    <section className="bg-slate-50">
-      <div className="mx-auto max-w-7xl px-6 py-20">
+    <section className="bg-slate-50 px-6 py-12 md:px-54">
+      <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <span className="inline-block text-xs font-bold tracking-[1.30px] text-[#009D8C] mb-3">
             ZOIKO TECH CAPABILITY AREAS
