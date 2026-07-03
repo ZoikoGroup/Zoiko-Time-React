@@ -42,7 +42,7 @@ export default function Operational() {
                 </p>
             </div>
 
-            <div className="mx-auto mt-10 max-w-4xl divide-y divide-slate-100 rounded-xl bg-white shadow-sm">
+            <div className="mx-auto mt-10 max-w-5xl divide-y divide-slate-100 rounded-xl bg-white shadow-sm">
                 {CONTROLS.map((item, i) => (
                     <div key={item.title} className="flex gap-4 px-8 py-6">
                         <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#009D8C40] bg-[#EAF9F6] text-xs font-semibold text-[#009D8C]">

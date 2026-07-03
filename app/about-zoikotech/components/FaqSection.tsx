@@ -34,7 +34,7 @@ export default function FaqSection() {
 
   return (
     <section className="bg-[#F4F7FA] px-6 py-12 md:px-54">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-3xl">
         <div className="text-center mb-10">
           <span className="inline-block text-xs font-bold tracking-[1.32px] text-[#009D8C] mb-3">
             COMMON QUESTIONS

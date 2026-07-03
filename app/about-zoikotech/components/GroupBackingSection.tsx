@@ -27,13 +27,13 @@ export default function GroupBackingSection() {
           <h2 className="text-3xl font-bold text-slate-900 mb-5">
             Long-Term Commitment Through Zoiko Group Inc.
           </h2>
-          <p className="text-[#5A6E87] max-w-126 mx-auto">
+          <p className="text-[#5A6E87]  mx-auto">
             Zoiko Tech Inc. operates as part of Zoiko Group Inc., a diversified organization developing businesses across technology,
             communications, healthcare, financial services, foods, media, travel, logistics, and real estate.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
           {cards.map(({ src, title, desc }) => (
             <div
               key={title}

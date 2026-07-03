@@ -48,7 +48,7 @@ export default function Governance() {
                         review records, approve exceptions, export reports, and manage sensitive workflows.
                     </p>
                 </div>
-                <div className="grid lg:grid-cols-3 gap-5">
+                <div className="grid lg:grid-cols-3 gap-4">
                     {cards.map(({ src, title, desc }) => (
                         <div
                             key={title}

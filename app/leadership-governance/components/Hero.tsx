@@ -3,7 +3,7 @@ const data = ["Leadership accountability", "Human-centered oversight", "Responsi
 export default function Hero() {
     return (
         <section className="bg-[#DFF8F3] px-6 py-24 md:px-54">
-            <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-12 md:gap-32 items-center">
+            <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-12 md:gap-28 items-center">
                 <div>
                     <span className="inline-block text-xs font-semibold border border-[#00C6A933] tracking-wide text-[#00C6A9] bg-[#00C6A91A] rounded-full px-3 py-1 mb-4">
                         Leadership & Governance
@@ -13,7 +13,7 @@ export default function Hero() {
                         Intelligence Starts With
                         Accountability
                     </h1>
-                    <p className="text-[#0F0F0FA6] text-[17px] mb-4 max-w-120">
+                    <p className="text-[#0F0F0FA6] text-[17px] mb-4 max-w-180">
                         ZoikoTime is designed with leadership accountability,
                         responsible AI principles, role-based controls, audit-ready
                         records, and human-centered oversight for organizations that
@@ -43,9 +43,9 @@ export default function Hero() {
             </div>
             <div className="bg-[#0F0F0F0A] mt-12 md:min-w-5xl mx-auto flex flex-col md:flex-row gap-2 md:gap -0 justify-between py-5 px-10 border border-[#0F0F0F12]">
                 {data.map((item, index) => (
-                    <div key={index} className="flex gap-2 items-center">
+                    <div key={index} className="flex gap-2 px-5 border-r border-[#0F0F0F14] items-center">
                         <div className="bg-[#00C6A9] h-2 w-2 rounded-[3px]"></div>
-                        <h1>{item}</h1>
+                        <h1 className="text-[13px]">{item}</h1>
                     </div>
                 ))
                 }

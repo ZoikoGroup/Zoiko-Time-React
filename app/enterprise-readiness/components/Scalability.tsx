@@ -48,11 +48,11 @@ export default function Scalability() {
                         units, and operational use cases.
                     </p>
                 </div>
-                <div className="grid lg:grid-cols-2 gap-6">
+                <div className="grid lg:grid-cols-2 gap-4">
                     {cards.map(({ src, title, desc }) => (
                         <div
                             key={title}
-                            className="bg-white rounded-lg shadow-sm p-6"
+                            className="bg-white rounded-lg border border-[#E4EBF4] p-6"
                         >
                             <img src={src} alt="image" className="mb-4" />
                             <h3 className="font-semibold text-[#0D1526] text-[15px] max-w-70 mb-2">{title}</h3>

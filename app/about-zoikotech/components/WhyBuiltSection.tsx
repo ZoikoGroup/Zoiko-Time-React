@@ -47,7 +47,7 @@ export default function WhyBuiltSection() {
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-xl border border-slate-200">
+        <div className="hidden md:block overflow-hidden rounded-xl border border-slate-200">
           <div className="grid grid-cols-[32%_68%]">
             <div className="bg-[#E4EBF4] border-2 border-[#E4EBF4] px-6 py-3 text-xs font-bold tracking-wide text-[#8A9BBB]">
               WORKFORCE CHALLENGE
@@ -66,6 +66,41 @@ export default function WhyBuiltSection() {
               </div>
               <div className="px-6 py-4 bg-white text-slate-500 flex gap-1 items-start">
                 <Check size={16} className="text-teal-600 shrink-0 mt-0.5" />
+                <span>{row.response}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* Mobile */}
+        <div className="block md:hidden space-y-4">
+          {rows.map((row) => (
+            <div
+              key={row.challenge}
+              className="overflow-hidden rounded-xl border border-[#E4EBF4] bg-white"
+            >
+              {/* Challenge */}
+              <div className="bg-[#E4EBF4] px-4 py-2">
+                <p className="text-[11px] font-bold tracking-wide text-[#8A9BBB] uppercase">
+                  Workforce Challenge
+                </p>
+              </div>
+
+              <div className="px-4 py-3 text-sm font-medium text-slate-800">
+                {row.challenge}
+              </div>
+
+              {/* Response */}
+              <div className="border-t border-[#E4EBF4] bg-[#0D1526] px-4 py-2">
+                <p className="text-[11px] font-bold tracking-wide text-[#00C6A9] uppercase">
+                  ZoikoTime Response
+                </p>
+              </div>
+
+              <div className="flex items-start gap-2 px-4 py-3 text-sm text-slate-500">
+                <Check
+                  size={16}
+                  className="mt-0.5 shrink-0 text-teal-600"
+                />
                 <span>{row.response}</span>
               </div>
             </div>
