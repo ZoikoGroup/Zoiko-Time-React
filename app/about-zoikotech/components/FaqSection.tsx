@@ -57,9 +57,9 @@ export default function FaqSection() {
                     {faq.q}
                   </span>
                   {isOpen ? (
-                    <Minus size={16} className="text-teal-600 shrink-0" />
+                    <Minus size={16} className="cursor-pointer text-slate-400 shrink-0" />
                   ) : (
-                    <Plus size={16} className="text-slate-400 shrink-0" />
+                    <Plus size={16} className="cursor-pointer text-[#009F8B] shrink-0" />
                   )}
                 </button>
                 {isOpen && (
