@@ -44,8 +44,8 @@ export default function Footer() {
       title: 'Solutions',
       links: [
         { label: 'Distributed Workforces', href: '/distributed-workforces' },
-        { label: 'Client-Billable Teams', href: '/client-billable-teams' },
-        { label: 'Contractor & Gig Teams', href: '/contractor-and-gig-teams' },
+        { label: 'Client-Billable Teams', href: '/client-billable' },
+        { label: 'Contractor & Gig Teams', href: '/contractor' },
         { label: 'Regulated Industries', href: '/regulated-industries' },
         { label: 'Professional Services Firms', href: '/professional-services-firms' },
         { label: 'Finance & Compliance Teams', href: '/finance-and-compliance-teams' },
