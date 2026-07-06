@@ -33,13 +33,13 @@ const cards = [
 
 export default function CapabilityEcosystemSection() {
   return (
-    <section className="bg-slate-50 px-6 py-12 md:px-54">
+    <section className="bg-[#F4F7FA] px-6 py-12 md:px-54">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <span className="inline-block text-xs font-bold tracking-[1.30px] text-[#009D8C] mb-3">
             ZOIKO TECH CAPABILITY AREAS
           </span>
-          <h2 className="text-4xl font-semibold text-[#0D1526] mb-5">
+          <h2 className="text-4xl md:text-[30px] font-semibold text-[#0D1526] mb-5">
             Platform Ecosystem That Strengthens ZoikoTime
           </h2>
           <p className="text-[#5A6E87] max-w-220 mx-auto">

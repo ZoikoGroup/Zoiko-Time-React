@@ -1,6 +1,6 @@
 export default function CtaSection() {
   return (
-    <section className="bg-gradient-to-r from-[#F0FDFB] to-[#EAF9F6] px-6 py-12 md:px-54">
+    <section className="bg-gradient-to-r from-[#F0FDFB] to-[#EAF9F6] px-6 py-12 md:px-54 border-t-4 border-[#00C6A9]">
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div>
           <h2 className="text-2xl md:text-[34px] max-w-175 font-semibold text-slate-900 mb-3">

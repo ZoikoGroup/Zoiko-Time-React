@@ -82,7 +82,7 @@ export default function Commitment() {
                         ))}
                     </div>
                 </div>
-                <div className="grid sm:grid-cols-2 mt-15 lg:grid-cols-3 gap-6">
+                <div className="grid sm:grid-cols-2 mt-15 lg:grid-cols-3 gap-5">
                     {cards.map(({ src, title, desc }) => (
                         <div
                             key={title}

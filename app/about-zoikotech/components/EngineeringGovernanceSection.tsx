@@ -12,7 +12,7 @@ const cards = [
   {
     src: "/about-zoikotech/ai.png",
     title: "Responsible AI",
-    desc: "AI tools should assist users, summarize patterns, surface risk, and improve workflows while keeping sensitive decisions subject to appropriate human review and oversight.",
+    desc: "AI should assist users, summarize patterns, surface risk, and improve workflows while keeping sensitive decisions subject to appropriate human review and oversight.",
   },
   {
     src: "/about-zoikotech/scale.png",
@@ -33,13 +33,13 @@ const cards = [
 
 export default function EngineeringGovernanceSection() {
   return (
-    <section className="bg-slate-900 px-6 py-12 md:px-54">
+    <section className="bg-[#0D1526] px-6 py-12 md:px-54">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <span className="inline-block text-xs font-semibold tracking-[1.3px] text-[#00C6A9] mb-3">
             ENGINEERING AND GOVERNANCE
           </span>
-          <h2 className="text-3xl font-bold text-white mb-5">
+          <h2 className="text-3xl md:text-[28px] font-bold text-white mb-5">
             Built With Engineering Discipline, Governance, and Responsible AI
           </h2>
           <p className="text-[#FFFFFF8C] max-w-126 mx-auto">
@@ -57,7 +57,7 @@ export default function EngineeringGovernanceSection() {
             >
               <img src={src} alt="image" className="mb-3" />
               <h3 className="font-semibold text-[15px] text-white mb-2">{title}</h3>
-              <p className="text-sm text-[#FFFFFF8C] max-w-72">{desc}</p>
+              <p className="text-[13px] text-[#FFFFFF8C] max-w-72">{desc}</p>
             </div>
           ))}
         </div>
