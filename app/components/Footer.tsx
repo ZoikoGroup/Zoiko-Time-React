@@ -88,7 +88,7 @@ export default function Footer() {
     {
       title: 'Company',
       links: [
-        { label: 'About ZoikoTime', href: '/about' },
+        { label: 'About ZoikoTime', href: '/about-us' },
         { label: 'About Zoiko Tech Inc.', href: '/about-zoikotech' },
         { label: 'Leadership & Governance', href: '/leadership-governance' },
         { label: 'Enterprise Readiness', href: '/enterprise-readiness' },
