@@ -21,7 +21,7 @@ export default function Hero() {
                             governed, and understood across modern organisations.
                         </p>
 
-                        <div className="flex gap-4 mt-10 justify-center">
+                        <div className="flex gap-4 mt-10 flex-wrap justify-center">
                             <button className="bg-[#009D8C] shadow-[0_4px_20px_0_rgba(0,157,140,0.4)] hover:bg-teal-600 cursor-pointer text-white font-medium px-10 py-3 rounded-[8px] transition-colors border border-[#C8D6E8]">
                                 Request a ZoikoTime Demo
                             </button>
@@ -40,7 +40,7 @@ export default function Hero() {
                         </span>
                         <h2 className="text-4xl text-center md:text-[36px] max-w-190 font-semibold text-[#0D1526] mb-5">
                             Defining a New Standard for {" "}
-                            <span className="text-[#00C6A9]">
+                            <span className="text-[#00C6A9] text-3xl md:text-[36px]">
                                 WorkforceGovernance
                             </span>
                         </h2>
