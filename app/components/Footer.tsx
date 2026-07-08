@@ -52,7 +52,7 @@ export default function Footer() {
         { label: 'HR, Legal & Operations Teams', href: '/hr-legal-operations' },
         { label: 'Payroll & Timesheet Integrity', href: '/payroll-and-timesheet-integrity' },
         { label: 'Enterprise Workforce Governance', href: '/enterprise-workforce-governance' },
-        { label: 'Workforce Assurance Programs', href: '/workforce-assurance-programs' },
+        { label: 'Workforce Assurance Programs', href: '/workforce-assurance' },
       ],
     },
     {
