@@ -1,4 +1,133 @@
 "use client";
+import { AlertTriangle } from "lucide-react";
+const payrollFaqs = [
+  "Does ZoikoTime process payroll?",
+  "How does this reduce billing leakage?",
+  "Can approved records flow into our payroll or billing systems?",
+  "What happens to records during a dispute?",
+];
+
+  const operatingModelCards = [
+  {
+    label: "Payroll",
+    title: "Payroll team",
+    description:
+      "Receive complete, approved, explainable records before processing.",
+  },
+  {
+    label: "Finance",
+    title: "Finance team",
+    description:
+      "Improve billing support, recovery, and cost reporting accuracy.",
+  },
+  {
+    label: "HR",
+    title: "HR team",
+    description:
+      "Resolve attendance and correction matters with governed records.",
+  },
+  {
+    label: "Operations",
+    title: "Operations team",
+    description:
+      "Drive approval discipline and exception resolution before deadlines.",
+  },
+  {
+    label: "Legal",
+    title: "Legal & compliance",
+    description:
+      "Preserve defensible records, retention, and legal hold.",
+  },
+  {
+    label: "IT",
+    title: "IT & security",
+    description:
+      "Manage access, integrations, and export controls.",
+  },
+];
+
+const evidenceItems = [
+  {
+    title: "Approval history",
+    description: "Preserve who approved what, and when.",
+  },
+  {
+    title: "Correction history",
+    description: "Track every correction request and its outcome.",
+  },
+  {
+    title: "Export history",
+    description: "Record what was exported, by whom, and when.",
+  },
+  {
+    title: "Evidence packages",
+    description:
+      "Compile structured records for review, audits, or disputes.",
+  },
+  {
+    title: "Retention controls",
+    description:
+      "Apply retention by plan, configuration, and obligation.",
+  },
+  {
+    title: "Legal hold support",
+    description:
+      "Preserve records when disputes or investigations require it.",
+  },
+  {
+    title: "Access logs",
+    description:
+      "Track access to sensitive records where supported.",
+  },
+  {
+    title: "Chain-of-custody support",
+    description:
+      "Support traceability for records used in sensitive matters.",
+  },
+];
+const revenueCards = [
+  {
+    title: "Billable time visibility",
+    description:
+      "See billable vs non-billable time clearly across teams and projects.",
+  },
+  {
+    title: "Approval before billing",
+    description:
+      "Ensure records are approved before they reach billing.",
+  },
+  {
+    title: "Evidence-supported billing",
+    description:
+      "Back billed time with defensible, reviewable records.",
+  },
+  {
+    title: "Write-off risk indicators",
+    description:
+      "Surface time at risk of write-off before it's lost.",
+  },
+  {
+    title: "Project-level reporting",
+    description:
+      "Review time and recovery by project, client, or matter.",
+  },
+  {
+    title: "Contractor billing review",
+    description:
+      "Validate contractor time before billing and payment.",
+  },
+  {
+    title: "Finance & operations alignment",
+    description:
+      "Keep finance and operations working from the same records.",
+  },
+  {
+    title: "Client trust support",
+    description:
+      "Strengthen client confidence with explainable billing evidence.",
+  },
+];
+
 const problems = [
   {
     title: "Missing or Incomplete Entries",
@@ -324,7 +453,236 @@ export default function Payroll() {
         </div>
       </div>
     </section>
+ <section className="bg-white py-16 lg:py-12 dark:bg-gray-950">
+      <div className="mx-auto max-w-7xl px-6">
+        {/* Heading */}
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal-600">
+            Corrections
+          </p>
 
+          <h2 className="mt-5 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
+            Resolve corrections before they become
+            <br className="hidden md:block" />
+            payroll problems
+          </h2>
+
+          <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
+            ZoikoTime gives organizations a structured way to manage
+            corrections, review gaps, exceptions, and disputes before they
+            create downstream issues.
+          </p>
+        </div>
+
+        {/* Warning Card */}
+        <div className="mx-auto mt-14 max-w-4xl rounded-xl border border-orange-200 bg-yellow-50 p-6 dark:border-yellow-800 dark:bg-yellow-900/20">
+          <div className="flex items-start gap-4">
+            <AlertTriangle
+              size={20}
+              className="mt-0.5 shrink-0 text-yellow-800 dark:text-yellow-400"
+            />
+
+            <p className="text-sm leading-6 text-yellow-800 dark:text-yellow-200">
+              ZoikoTime helps organize workforce records, evidence, and review
+              workflows. It does{" "}
+              <span className="font-bold text-yellow-900 dark:text-yellow-100">
+                not
+              </span>{" "}
+              automatically determine wages owed, legal liability, tax
+              treatment, or disciplinary outcomes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="bg-gray-50 py-16 lg:py-12 dark:bg-gray-900">
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Heading */}
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
+            Revenue Assurance
+          </p>
+
+          <h2 className="mt-6 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
+            Protect revenue with better time and billing
+            <br className="hidden md:block" />
+            support
+          </h2>
+
+          <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
+            For professional services, agencies, consulting, and project-based
+            organizations, timesheet integrity directly affects revenue.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {revenueCards.map((card, index) => (
+            <div
+              key={index}
+              className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_6px_18px_rgba(14,31,61,0.05),0_1px_3px_rgba(14,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800"
+            >
+              <h3 className="text-lg font-semibold leading-7 text-slate-800 dark:text-white">
+                {card.title}
+              </h3>
+
+              <p className="mt-5 text-sm leading-7 text-gray-500 dark:text-gray-300">
+                {card.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+     <section className="bg-white py-16 lg:py-24 dark:bg-gray-950">
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Heading */}
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
+            Evidence
+          </p>
+
+          <h2 className="mt-6 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
+            Keep payroll and timesheet records
+            <br className="hidden md:block" />
+            reviewable
+          </h2>
+
+          <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
+            When records affect pay, billing, audits, or disputes,
+            organizations need more than summary totals.
+          </p>
+        </div>
+
+        {/* Evidence List */}
+        <div className="mx-auto mt-16 max-w-5xl">
+          <div className="space-y-3">
+            {evidenceItems.map((item, index) => (
+              <div
+                key={index}
+                className=" pb-3"
+              >
+                <h3 className="text-sm font-bold text-slate-700 dark:text-white">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-300">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+
+    <section className="bg-gray-50 py-16 lg:py-24 dark:bg-gray-900">
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Heading */}
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
+            Operating Model
+          </p>
+
+          <h2 className="mt-6 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
+            Designed to support the systems you already
+            <br className="hidden md:block" />
+            use
+          </h2>
+
+          <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
+            ZoikoTime fits into your existing payroll, finance, HR, operations,
+            legal, and IT workflows without replacing the systems you already
+            rely on.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="mt-16 grid gap-8 md:grid-cols-3 xl:grid-cols-3">
+          {operatingModelCards.map((card, index) => (
+            <div
+              key={index}
+              className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_6px_18px_rgba(14,31,61,0.05),0_1px_3px_rgba(14,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-teal-600">
+                {card.label}
+              </p>
+
+              <h3 className="mt-4 text-xl font-semibold text-slate-800 dark:text-white">
+                {card.title}
+              </h3>
+
+              <p className="mt-6 text-sm leading-7 text-gray-500 dark:text-gray-300">
+                {card.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+<section className="bg-white py-16 lg:py-24 dark:bg-gray-950">
+  <div className="mx-auto max-w-6xl px-6">
+    {/* Heading */}
+    <div className="text-center">
+      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
+        Questions
+      </p>
+
+      <h2 className="mt-6 text-3xl font-bold text-slate-800 dark:text-white lg:text-4xl">
+        Payroll & Timesheet Integrity FAQs
+      </h2>
+    </div>
+
+    {/* FAQ */}
+    <div className="mt-14 rounded-2xl ">
+      {payrollFaqs.map((faq, index) => (
+        <button
+          key={index}
+          className="flex w-full items-center justify-between  px-6 py-2 text-left "
+        >
+          <span className="text-base text-slate-700 dark:text-gray-200">
+            . {faq}
+          </span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+<section className="bg-gradient-to-r from-slate-800 to-blue-950 py-20 dark:from-slate-900 dark:to-slate-950">
+  <div className="mx-auto max-w-5xl px-6 text-center">
+    {/* Label */}
+    <p className="text-base font-semibold uppercase tracking-[0.16em] text-teal-500">
+      Strengthen Payroll Inputs
+    </p>
+
+    {/* Heading */}
+    <h2 className="mt-8 text-4xl font-bold leading-tight text-white lg:text-5xl">
+      Strengthen the workforce records behind
+      <br className="hidden md:block" />
+      payroll and billing
+    </h2>
+
+    {/* Description */}
+    <p className="mx-auto mt-8 max-w-2xl text-base leading-7 text-white/80">
+      Talk with the ZoikoTime team about timesheet completeness,
+      approval control, corrections, billing support, and
+      audit-ready evidence.
+    </p>
+
+    {/* Buttons */}
+    <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
+      <button className="rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700">
+        Get a Demo
+      </button>
+
+      <button className="rounded-[10px] border border-white/30 bg-white/10 px-8 py-3 text-base font-semibold text-white transition hover:bg-white/20">
+        Contact Sales
+      </button>
+    </div>
+  </div>
+</section>
     </>
   );
 }
