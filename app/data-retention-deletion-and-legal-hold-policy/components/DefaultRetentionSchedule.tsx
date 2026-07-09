@@ -42,8 +42,9 @@ export default function DefaultRetentionSchedule() {
   return (
     <section className="py-8">
       <div className="mx-auto max-w-[696px] px-4 sm:px-6 lg:px-0">
+
         {/* Heading */}
-        <h2 className="font-['Plus_Jakarta_Sans'] text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
+        <h2 className="text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
           5. Default Retention Schedule
         </h2>
 
@@ -51,7 +52,7 @@ export default function DefaultRetentionSchedule() {
         <div className="mt-3 h-[3px] w-12 rounded-full bg-teal-600 dark:bg-teal-500" />
 
         {/* Intro */}
-        <p className="mt-7 font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+        <p className="mt-7 text-base leading-7 text-slate-700 dark:text-slate-300">
           Unless an Order Form, Customer configuration, enterprise agreement,
           legal hold, regulatory rule, or applicable law requires otherwise,
           ZoikoTime applies the following baseline retention standards:
@@ -65,7 +66,7 @@ export default function DefaultRetentionSchedule() {
                 ›
               </span>
 
-              <p className="font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+              <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
                 <span className="font-bold text-slate-900 dark:text-white">
                   {item.title}
                 </span>{" "}
@@ -74,6 +75,7 @@ export default function DefaultRetentionSchedule() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

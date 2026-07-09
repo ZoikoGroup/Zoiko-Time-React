@@ -13,15 +13,12 @@ export default function PersonalInformationCollected() {
 
   return (
     <section className="w-full px-4 sm:px-6 lg:px-0 py-6 bg-white dark:bg-slate-950">
-
       <div className="w-full max-w-[696px] mx-auto">
-
         {/* Heading */}
         <h2
           className="
             text-2xl
             font-extrabold
-            font-['Plus_Jakarta_Sans']
             leading-8
             text-slate-900
             dark:text-white
@@ -29,7 +26,6 @@ export default function PersonalInformationCollected() {
         >
           4. Personal Information We Collect
         </h2>
-
 
         {/* Teal Line */}
         <div
@@ -43,13 +39,11 @@ export default function PersonalInformationCollected() {
           "
         />
 
-
         {/* Description */}
         <p
           className="
             text-base
             font-normal
-            font-['Plus_Jakarta_Sans']
             leading-7
             text-slate-700
             dark:text-slate-300
@@ -61,10 +55,8 @@ export default function PersonalInformationCollected() {
           Categories include:
         </p>
 
-
         {/* Bullet List */}
         <ul className="space-y-3 mb-6">
-
           {information.map((item, index) => (
             <li
               key={index}
@@ -74,13 +66,11 @@ export default function PersonalInformationCollected() {
                 gap-3
                 text-base
                 font-normal
-                font-['Plus_Jakarta_Sans']
                 leading-7
                 text-slate-700
                 dark:text-slate-300
               "
             >
-
               <span
                 className="
                   text-teal-600
@@ -92,22 +82,16 @@ export default function PersonalInformationCollected() {
                 ›
               </span>
 
-              <span>
-                {item}
-              </span>
-
+              <span>{item}</span>
             </li>
           ))}
-
         </ul>
-
 
         {/* Closing Paragraph */}
         <p
           className="
             text-base
             font-normal
-            font-['Plus_Jakarta_Sans']
             leading-7
             text-slate-700
             dark:text-slate-300
@@ -116,10 +100,7 @@ export default function PersonalInformationCollected() {
           We do not intentionally collect more personal information than is
           reasonably necessary for the purposes described in this Notice.
         </p>
-
-
       </div>
-
     </section>
   );
 }

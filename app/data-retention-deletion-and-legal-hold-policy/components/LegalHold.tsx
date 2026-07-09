@@ -12,8 +12,9 @@ export default function LegalHold() {
   return (
     <section className="py-8">
       <div className="mx-auto max-w-[696px] px-4 sm:px-6 lg:px-0">
+
         {/* Heading */}
-        <h2 className="font-['Plus_Jakarta_Sans'] text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
+        <h2 className="text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
           11. Legal Hold
         </h2>
 
@@ -21,7 +22,7 @@ export default function LegalHold() {
         <div className="mt-3 h-[3px] w-12 rounded-full bg-teal-600 dark:bg-teal-500" />
 
         {/* Paragraph 1 */}
-        <p className="mt-7 font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+        <p className="mt-7 text-base leading-7 text-slate-700 dark:text-slate-300">
           ZoikoTime may suspend ordinary deletion, modification or destruction
           of records when Zoiko Tech Inc., Zoiko Group Inc., a Customer, a
           regulator, a court, law enforcement authority, auditor, insurer,
@@ -32,7 +33,7 @@ export default function LegalHold() {
         </p>
 
         {/* Paragraph 2 */}
-        <p className="mt-6 font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+        <p className="mt-6 text-base leading-7 text-slate-700 dark:text-slate-300">
           A legal hold may apply to a Customer workspace, specific worker
           records, time periods, evidence types, audit logs, AI insight records,
           support tickets, billing records, security logs, exports, backups or
@@ -43,16 +44,19 @@ export default function LegalHold() {
         <div className="mt-8 space-y-5">
           {legalHoldPoints.map((item, index) => (
             <div key={index} className="flex items-start gap-3">
+
               <span className="mt-1 text-lg font-bold text-teal-600 dark:text-teal-400">
                 ›
               </span>
 
-              <p className="font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+              <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
                 {item}
               </p>
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -11,7 +11,6 @@ export default function PurposeAndScope() {
           text-2xl
           sm:text-2xl
           font-extrabold
-          font-['Plus_Jakarta_Sans']
           leading-8
           text-slate-900
           dark:text-white
@@ -24,13 +23,11 @@ export default function PurposeAndScope() {
         {/* Green line */}
         <div className="w-12 h-[3px] bg-teal-600 rounded-full mb-6"></div>
 
-
         {/* Paragraph 1 */}
         <p
           className="
           text-base
           font-normal
-          font-['Plus_Jakarta_Sans']
           leading-7
           text-slate-700
           dark:text-slate-300
@@ -44,13 +41,11 @@ export default function PurposeAndScope() {
           activities, and related services.
         </p>
 
-
         {/* Paragraph 2 */}
         <p
           className="
           text-base
           font-normal
-          font-['Plus_Jakarta_Sans']
           leading-7
           text-slate-700
           dark:text-slate-300
@@ -64,13 +59,11 @@ export default function PurposeAndScope() {
           explain ZoikoTime privacy practices at a platform and website level.
         </p>
 
-
         {/* Paragraph 3 */}
         <p
           className="
           text-base
           font-normal
-          font-['Plus_Jakarta_Sans']
           leading-7
           text-slate-700
           dark:text-slate-300

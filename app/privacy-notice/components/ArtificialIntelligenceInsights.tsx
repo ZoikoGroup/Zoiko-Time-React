@@ -3,15 +3,12 @@ import React from "react";
 export default function ArtificialIntelligenceInsights() {
   return (
     <section className="w-full px-4 sm:px-6 lg:px-0 py-6 bg-white dark:bg-slate-950">
-
       <div className="w-full max-w-[696px] mx-auto">
-
         {/* Heading */}
         <h2
           className="
             text-2xl
             font-extrabold
-            font-['Plus_Jakarta_Sans']
             leading-8
             text-slate-900
             dark:text-white
@@ -39,7 +36,6 @@ export default function ArtificialIntelligenceInsights() {
           className="
             text-base
             font-normal
-            font-['Plus_Jakarta_Sans']
             leading-7
             text-slate-700
             dark:text-slate-300
@@ -59,7 +55,6 @@ export default function ArtificialIntelligenceInsights() {
           className="
             text-base
             font-normal
-            font-['Plus_Jakarta_Sans']
             leading-7
             text-slate-700
             dark:text-slate-300
@@ -72,9 +67,7 @@ export default function ArtificialIntelligenceInsights() {
           ZoikoTime does not use identifiable Customer Data to train general AI
           models for other customers.
         </p>
-
       </div>
-
     </section>
   );
 }

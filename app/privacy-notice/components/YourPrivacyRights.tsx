@@ -20,7 +20,6 @@ export default function YourPrivacyRights() {
           className="
             text-2xl
             font-extrabold
-            font-['Plus_Jakarta_Sans']
             leading-8
             text-slate-900
             dark:text-white
@@ -37,7 +36,6 @@ export default function YourPrivacyRights() {
           className="
             text-base
             font-normal
-            font-['Plus_Jakarta_Sans']
             leading-7
             text-slate-700
             dark:text-slate-300
@@ -73,7 +71,6 @@ export default function YourPrivacyRights() {
                 className="
                   text-base
                   font-normal
-                  font-['Plus_Jakarta_Sans']
                   leading-7
                   text-slate-700
                   dark:text-slate-300
@@ -90,7 +87,6 @@ export default function YourPrivacyRights() {
           className="
             text-base
             font-normal
-            font-['Plus_Jakarta_Sans']
             leading-7
             text-slate-700
             dark:text-slate-300

@@ -32,15 +32,15 @@ export default function DataProtection() {
 
         {/* Header */}
         <div className="text-center">
-          <div className="text-teal-600 text-xs font-semibold font-['Poppins'] uppercase leading-5 tracking-widest">
+          <div className="text-teal-600 text-xs font-semibold uppercase leading-5 tracking-widest">
             Data Protection
           </div>
 
-          <h2 className="mt-2 text-3xl md:text-4xl font-bold font-['Poppins'] leading-10 text-slate-800 dark:text-white">
+          <h2 className="mt-2 text-3xl md:text-4xl font-bold leading-10 text-slate-800 dark:text-white">
             Encryption and data protection
           </h2>
 
-          <p className="mt-4 max-w-[679px] mx-auto text-gray-500 dark:text-gray-400 text-sm md:text-base font-['Poppins'] leading-7">
+          <p className="mt-4 max-w-[679px] mx-auto text-gray-500 dark:text-gray-400 text-sm md:text-base leading-7">
             Controls may vary by plan, deployment model, product feature,
             integration, and customer agreement.
           </p>
@@ -48,64 +48,70 @@ export default function DataProtection() {
 
 
         {/* Cards */}
-        <div className="
-          mt-12
-          grid
-          grid-cols-1
-          lg:grid-cols-2
-          gap-x-[18px]
-          gap-y-5
-          px-0
-          lg:px-[100px]
-        ">
+        <div
+          className="
+            mt-12
+            grid
+            grid-cols-1
+            lg:grid-cols-2
+            gap-x-[18px]
+            gap-y-5
+            px-0
+            lg:px-[100px]
+          "
+        >
 
-          {cards.map((card,index)=>(
+          {cards.map((card, index) => (
             <div
               key={index}
               className="
-              min-h-[128px]
-              lg:min-h-[144px]
-              bg-white
-              dark:bg-slate-900
-              rounded-xl
-              border
-              border-slate-200
-              dark:border-slate-700
-              shadow-[0px_6px_18px_0px_rgba(14,31,61,0.05)]
-              dark:shadow-none
-              p-6
+                min-h-[128px]
+                lg:min-h-[144px]
+                bg-white
+                dark:bg-slate-900
+                rounded-xl
+                border
+                border-slate-200
+                dark:border-slate-700
+                shadow-[0px_6px_18px_0px_rgba(14,31,61,0.05)]
+                dark:shadow-none
+                p-6
               "
             >
 
               <div className="flex items-center gap-3">
-                <span className="
-                w-1.5
-                h-1.5
-                bg-teal-600
-                rounded-sm
-                "></span>
+                <span
+                  className="
+                    w-1.5
+                    h-1.5
+                    bg-teal-600
+                    rounded-sm
+                  "
+                ></span>
 
-                <h3 className="
-                text-base
-                font-semibold
-                font-['Poppins']
-                text-slate-800
-                dark:text-white
-                ">
+                <h3
+                  className="
+                    text-base
+                    font-semibold
+                    text-slate-800
+                    dark:text-white
+                  "
+                >
                   {card.title}
                 </h3>
               </div>
 
 
-              <p className="
-              mt-5
-              text-sm
-              font-normal
-              font-['Poppins']
-              leading-6
-              text-gray-500
-              dark:text-gray-400
-              ">
+              <p
+                className="
+                  mt-5
+                  text-sm
+                  font-normal
+                  leading-6
+                  text-gray-500
+                  dark:text-gray-400
+                "
+              >
                 {card.text}
               </p>
 

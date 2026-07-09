@@ -30,17 +30,8 @@ export default function SecurityReviewProcurement() {
   ];
 
   return (
-    <section
-      className="
-        w-full
-        px-5
-        py-16
-        bg-white
-        dark:bg-slate-950
-      "
-    >
+    <section className="w-full px-5 py-16 bg-white dark:bg-slate-950">
       <div className="max-w-[1180px] mx-auto">
-
 
         {/* Header */}
         <div className="text-center">
@@ -50,7 +41,6 @@ export default function SecurityReviewProcurement() {
               text-teal-600
               text-xs
               font-semibold
-              font-['Poppins']
               uppercase
               leading-5
               tracking-widest
@@ -58,7 +48,6 @@ export default function SecurityReviewProcurement() {
           >
             Enterprise Review
           </div>
-
 
           <h2
             className="
@@ -68,13 +57,11 @@ export default function SecurityReviewProcurement() {
               text-slate-800
               dark:text-white
               font-bold
-              font-['Poppins']
               leading-10
             "
           >
             Security review for procurement
           </h2>
-
 
           <p
             className="
@@ -86,7 +73,6 @@ export default function SecurityReviewProcurement() {
               text-sm
               md:text-base
               font-normal
-              font-['Poppins']
               leading-7
             "
           >
@@ -96,7 +82,6 @@ export default function SecurityReviewProcurement() {
           </p>
 
         </div>
-
 
 
         {/* Cards */}
@@ -146,7 +131,6 @@ export default function SecurityReviewProcurement() {
                     dark:text-white
                     text-base
                     font-semibold
-                    font-['Poppins']
                     leading-6
                   "
                 >
@@ -154,7 +138,6 @@ export default function SecurityReviewProcurement() {
                 </h3>
 
               </div>
-
 
 
               {/* Description */}
@@ -165,19 +148,16 @@ export default function SecurityReviewProcurement() {
                   dark:text-gray-400
                   text-sm
                   font-normal
-                  font-['Poppins']
                   leading-6
                 "
               >
                 {card.description}
               </p>
 
-
             </div>
           ))}
 
         </div>
-
 
       </div>
     </section>

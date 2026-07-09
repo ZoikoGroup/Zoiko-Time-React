@@ -22,7 +22,6 @@ export default function PurposesForProcessing() {
           className="
             text-2xl
             font-extrabold
-            font-['Plus_Jakarta_Sans']
             leading-8
             text-slate-900
             dark:text-white
@@ -30,7 +29,6 @@ export default function PurposesForProcessing() {
         >
           7. Purposes for Processing
         </h2>
-
 
         {/* Teal Line */}
         <div
@@ -44,13 +42,11 @@ export default function PurposesForProcessing() {
           "
         />
 
-
         {/* Description */}
         <p
           className="
             text-base
             font-normal
-            font-['Plus_Jakarta_Sans']
             leading-7
             text-slate-700
             dark:text-slate-300
@@ -60,7 +56,6 @@ export default function PurposesForProcessing() {
           Zoiko Tech Inc. processes personal information for the following
           purposes, subject to applicable lawful basis:
         </p>
-
 
         {/* Bullet List */}
         <ul className="space-y-3">
@@ -74,7 +69,6 @@ export default function PurposesForProcessing() {
                 gap-3
                 text-base
                 font-normal
-                font-['Plus_Jakarta_Sans']
                 leading-7
                 text-slate-700
                 dark:text-slate-300

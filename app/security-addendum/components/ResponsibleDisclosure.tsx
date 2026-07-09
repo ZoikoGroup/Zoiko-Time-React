@@ -66,13 +66,11 @@ export default function ResponsibleDisclosure() {
         </div>
 
 
-
         {/* Content */}
         <p
           className="
             text-sm
             font-normal
-            font-['Poppins']
             leading-5
             text-yellow-800
             dark:text-yellow-300

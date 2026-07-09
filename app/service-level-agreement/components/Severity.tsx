@@ -4,7 +4,7 @@ export default function Severity() {
   return (
     <section className="mx-auto mt-16 max-w-[696px] px-4 sm:px-6 lg:px-0">
       {/* Section Title */}
-      <h2 className="font-['Plus_Jakarta_Sans'] text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
+      <h2 className="text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
         9. Incident Severity Levels
       </h2>
 
@@ -12,7 +12,7 @@ export default function Severity() {
       <div className="mt-3 h-[3px] w-12 rounded-full bg-teal-600" />
 
       {/* Description */}
-      <p className="mt-8 font-['Plus_Jakarta_Sans'] text-base font-normal leading-7 text-slate-700 dark:text-slate-300">
+      <p className="mt-8 text-base font-normal leading-7 text-slate-700 dark:text-slate-300">
         ZoikoTime classifies incidents by severity based on objective impact,
         scope, regulatory sensitivity, data integrity risk, security
         implications, availability impact, and Customer&apos;s purchased
@@ -25,7 +25,7 @@ export default function Severity() {
           <span className="mt-0.5 text-lg font-bold leading-7 text-teal-600">
             ›
           </span>
-          <p className="font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+          <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
             <span className="font-bold">
               Severity 1 — Critical:
             </span>{" "}
@@ -39,7 +39,7 @@ export default function Severity() {
           <span className="mt-0.5 text-lg font-bold leading-7 text-teal-600">
             ›
           </span>
-          <p className="font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+          <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
             <span className="font-bold">
               Severity 2 — High:
             </span>{" "}
@@ -53,7 +53,7 @@ export default function Severity() {
           <span className="mt-0.5 text-lg font-bold leading-7 text-teal-600">
             ›
           </span>
-          <p className="font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+          <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
             <span className="font-bold">
               Severity 3 — Medium:
             </span>{" "}
@@ -66,7 +66,7 @@ export default function Severity() {
           <span className="mt-0.5 text-lg font-bold leading-7 text-teal-600">
             ›
           </span>
-          <p className="font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+          <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
             <span className="font-bold">
               Severity 4 — Low:
             </span>{" "}

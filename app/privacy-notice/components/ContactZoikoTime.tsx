@@ -24,7 +24,6 @@ export default function ContactZoikoTime() {
             text-center
             text-lg
             font-bold
-            font-['Plus_Jakarta_Sans']
             leading-8
             text-slate-900
             dark:text-white
@@ -40,7 +39,6 @@ export default function ContactZoikoTime() {
             text-center
             text-sm
             font-normal
-            font-['Plus_Jakarta_Sans']
             leading-6
             text-slate-500
             dark:text-slate-400
@@ -56,7 +54,6 @@ export default function ContactZoikoTime() {
             text-center
             text-sm
             leading-6
-            font-['Plus_Jakarta_Sans']
             text-slate-500
             dark:text-slate-400
             break-words

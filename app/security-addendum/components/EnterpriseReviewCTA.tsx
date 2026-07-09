@@ -15,14 +15,12 @@ export default function EnterpriseReviewCTA() {
 
       <div className="max-w-[1440px] mx-auto text-center">
 
-
         {/* Label */}
         <div
           className="
             text-teal-600
             text-base
             font-semibold
-            font-['Poppins']
             uppercase
             leading-6
             tracking-[2.56px]
@@ -32,7 +30,6 @@ export default function EnterpriseReviewCTA() {
         </div>
 
 
-
         {/* Heading */}
         <h2
           className="
@@ -40,7 +37,6 @@ export default function EnterpriseReviewCTA() {
             text-3xl
             md:text-4xl
             font-bold
-            font-['Poppins']
             leading-[56px]
             text-white
           "
@@ -51,7 +47,6 @@ export default function EnterpriseReviewCTA() {
         </h2>
 
 
-
         {/* Description */}
         <p
           className="
@@ -60,7 +55,6 @@ export default function EnterpriseReviewCTA() {
             mx-auto
             text-base
             font-normal
-            font-['Poppins']
             leading-6
             text-white/80
           "
@@ -68,7 +62,6 @@ export default function EnterpriseReviewCTA() {
           ZoikoTime can support qualified security, procurement, legal, privacy,
           and implementation reviews through the enterprise sales process.
         </p>
-
 
 
         {/* Buttons */}
@@ -93,13 +86,11 @@ export default function EnterpriseReviewCTA() {
               text-white
               text-base
               font-semibold
-              font-['Poppins']
               leading-4
             "
           >
             Contact Sales
           </button>
-
 
 
           <button
@@ -113,16 +104,13 @@ export default function EnterpriseReviewCTA() {
               text-white
               text-base
               font-semibold
-              font-['Poppins']
               leading-4
             "
           >
             View Enterprise Readiness
           </button>
 
-
         </div>
-
 
       </div>
 

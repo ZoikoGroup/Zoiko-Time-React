@@ -27,62 +27,63 @@ export default function OperationsSecurity() {
   ];
 
   return (
-    <section className="
-      w-full
-      px-5
-      py-16
-      bg-white
-      dark:bg-slate-950
-    ">
+    <section
+      className="
+        w-full
+        px-5
+        py-16
+        bg-white
+        dark:bg-slate-950
+      "
+    >
 
-      <div className="
-        max-w-[1180px]
-        mx-auto
-      ">
-
+      <div className="max-w-[1180px] mx-auto">
 
         {/* Header */}
         <div className="text-center">
 
-          <div className="
-            text-teal-600
-            text-xs
-            font-semibold
-            font-['Poppins']
-            uppercase
-            leading-5
-            tracking-widest
-          ">
+          <div
+            className="
+              text-teal-600
+              text-xs
+              font-semibold
+              uppercase
+              leading-5
+              tracking-widest
+            "
+          >
             Operations
           </div>
 
 
-          <h2 className="
-            mt-[10px]
-            text-3xl
-            md:text-4xl
-            font-bold
-            font-['Poppins']
-            leading-10
-            text-slate-800
-            dark:text-white
-          ">
+          <h2
+            className="
+              mt-[10px]
+              text-3xl
+              md:text-4xl
+              font-bold
+              leading-10
+              text-slate-800
+              dark:text-white
+            "
+          >
             Platform security and monitoring
           </h2>
 
 
-          <p className="
-            mt-4
-            max-w-[652px]
-            mx-auto
-            text-sm
-            md:text-base
-            font-normal
-            font-['Poppins']
-            leading-7
-            text-gray-500
-            dark:text-gray-400
-          ">
+          <p
+            className="
+              mt-4
+              max-w-[652px]
+              mx-auto
+              text-sm
+              md:text-base
+              font-normal
+              leading-7
+              text-gray-500
+              dark:text-gray-400
+            "
+          >
             Secure product development, controlled operations, monitoring,
             vulnerability management, and incident response appropriate for an
             enterprise SaaS platform.
@@ -91,20 +92,20 @@ export default function OperationsSecurity() {
         </div>
 
 
-
         {/* Cards */}
-        <div className="
-          mt-12
-          grid
-          grid-cols-1
-          lg:grid-cols-2
-          gap-x-[18px]
-          gap-y-5
-          lg:px-[100px]
-        ">
+        <div
+          className="
+            mt-12
+            grid
+            grid-cols-1
+            lg:grid-cols-2
+            gap-x-[18px]
+            gap-y-5
+            lg:px-[100px]
+          "
+        >
 
-
-          {cards.map((card,index)=>(
+          {cards.map((card, index) => (
 
             <div
               key={index}
@@ -122,43 +123,45 @@ export default function OperationsSecurity() {
               "
             >
 
-
               {/* Title */}
               <div className="flex items-center gap-3">
 
-                <span className="
-                  w-1.5
-                  h-1.5
-                  bg-teal-600
-                  rounded-sm
-                "/>
+                <span
+                  className="
+                    w-1.5
+                    h-1.5
+                    bg-teal-600
+                    rounded-sm
+                  "
+                />
 
 
-                <h3 className="
-                  text-slate-800
-                  dark:text-white
-                  text-base
-                  font-semibold
-                  font-['Poppins']
-                  leading-6
-                ">
+                <h3
+                  className="
+                    text-slate-800
+                    dark:text-white
+                    text-base
+                    font-semibold
+                    leading-6
+                  "
+                >
                   {card.title}
                 </h3>
 
               </div>
 
 
-
               {/* Description */}
-              <p className="
-                mt-5
-                text-gray-500
-                dark:text-gray-400
-                text-sm
-                font-normal
-                font-['Poppins']
-                leading-6
-              ">
+              <p
+                className="
+                  mt-5
+                  text-gray-500
+                  dark:text-gray-400
+                  text-sm
+                  font-normal
+                  leading-6
+                "
+              >
                 {card.text}
               </p>
 
@@ -167,9 +170,7 @@ export default function OperationsSecurity() {
 
           ))}
 
-
         </div>
-
 
       </div>
 

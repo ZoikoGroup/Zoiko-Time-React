@@ -49,7 +49,7 @@ export default function ProhibitedUses() {
     <section className="py-12 sm:py-14">
       <div className="mx-auto max-w-[696px] px-4 sm:px-0">
         {/* Heading */}
-        <h2 className="font-['Plus_Jakarta_Sans'] text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
+        <h2 className="text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
           7. Prohibited Uses
         </h2>
 
@@ -57,7 +57,7 @@ export default function ProhibitedUses() {
         <div className="mt-3 mb-8 h-[3px] w-12 rounded-full bg-teal-600"></div>
 
         {/* Intro */}
-        <p className="font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+        <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
           Customers and Authorized Users must not use, attempt to use, permit,
           encourage, or assist any person to use the Service for any prohibited
           purpose.
@@ -65,7 +65,7 @@ export default function ProhibitedUses() {
 
         {sections.map((section) => (
           <div key={section.title} className="mt-10">
-            <h3 className="font-['Plus_Jakarta_Sans'] text-lg font-bold leading-8 text-slate-900 dark:text-white">
+            <h3 className="text-lg font-bold leading-8 text-slate-900 dark:text-white">
               {section.title}
             </h3>
 
@@ -75,7 +75,7 @@ export default function ProhibitedUses() {
                   <span className="mt-0.5 text-base font-bold leading-7 text-teal-600">
                     ›
                   </span>
-                  <p className="font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+                  <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
                     {item}
                   </p>
                 </li>

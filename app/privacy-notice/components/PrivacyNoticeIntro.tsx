@@ -28,7 +28,6 @@ export default function PrivacyNoticeIntro() {
             dark:text-teal-400
             text-sm
             font-semibold
-            font-['Plus_Jakarta_Sans']
             leading-6
           "
         >

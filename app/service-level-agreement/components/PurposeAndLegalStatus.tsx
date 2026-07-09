@@ -5,7 +5,7 @@ export default function PurposeAndLegalStatus() {
     <section className="mt-16">
       <div className="mx-auto max-w-[696px] px-4 sm:px-6 lg:px-0">
         {/* Heading */}
-        <h2 className="font-['Plus_Jakarta_Sans'] text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
+        <h2 className="text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
           1. Purpose and Legal Status
         </h2>
 
@@ -14,7 +14,7 @@ export default function PurposeAndLegalStatus() {
 
         {/* Paragraphs */}
         <div className="mt-8 space-y-6">
-          <p className="font-['Plus_Jakarta_Sans'] text-base font-normal leading-7 text-slate-700 dark:text-slate-300">
+          <p className="text-base font-normal leading-7 text-slate-700 dark:text-slate-300">
             This Service Level Agreement (&quot;SLA&quot;) forms part of the
             agreement between Zoiko Tech Inc. (&quot;ZoikoTime,&quot;
             &quot;Provider,&quot; &quot;we,&quot; &quot;us,&quot; or
@@ -23,7 +23,7 @@ export default function PurposeAndLegalStatus() {
             ordering document (&quot;Customer&quot;).
           </p>
 
-          <p className="font-['Plus_Jakarta_Sans'] text-base font-normal leading-7 text-slate-700 dark:text-slate-300">
+          <p className="text-base font-normal leading-7 text-slate-700 dark:text-slate-300">
             This SLA applies to paid production subscriptions to the generally
             available ZoikoTime platform unless an Order Form expressly states
             otherwise. It defines the service availability commitments,
@@ -33,7 +33,7 @@ export default function PurposeAndLegalStatus() {
             to the Core Platform.
           </p>
 
-          <p className="font-['Plus_Jakarta_Sans'] text-base font-normal leading-7 text-slate-700 dark:text-slate-300">
+          <p className="text-base font-normal leading-7 text-slate-700 dark:text-slate-300">
             This SLA is not a standalone agreement. It must be read together
             with the ZoikoTime Terms of Service, the applicable Order Form
             and Subscription Agreement, the Data Processing Addendum, the

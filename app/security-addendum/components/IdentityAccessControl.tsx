@@ -70,15 +70,15 @@ export default function IdentityAccessControl() {
       {/* Heading */}
       <div className="max-w-[700px] mx-auto text-center px-5">
 
-        <div className="text-teal-600 text-xs font-semibold font-['Poppins'] uppercase leading-5 tracking-widest">
+        <div className="text-teal-600 text-xs font-semibold uppercase leading-5 tracking-widest">
           Identity
         </div>
 
-        <h2 className="mt-2 text-3xl md:text-4xl font-bold font-['Poppins'] text-slate-800 dark:text-white leading-10">
+        <h2 className="mt-2 text-3xl md:text-4xl font-bold text-slate-800 dark:text-white leading-10">
           Access control and identity
         </h2>
 
-        <p className="mt-5 text-gray-500 dark:text-gray-400 text-sm md:text-base font-normal font-['Poppins'] leading-7">
+        <p className="mt-5 text-gray-500 dark:text-gray-400 text-sm md:text-base font-normal leading-7">
           ZoikoTime supports role-based access, administrative controls, and account
           <br className="hidden md:block" />
           safeguards to help customers manage who can view, configure, export, or act
@@ -90,16 +90,18 @@ export default function IdentityAccessControl() {
 
 
       {/* Cards */}
-      <div className="
-        max-w-[980px]
-        mx-auto
-        mt-16
-        px-5
-        grid
-        grid-cols-1
-        md:grid-cols-2
-        gap-6
-      ">
+      <div
+        className="
+          max-w-[980px]
+          mx-auto
+          mt-16
+          px-5
+          grid
+          grid-cols-1
+          md:grid-cols-2
+          gap-6
+        "
+      >
 
         {cards.map((card, index) => (
           <div
@@ -125,29 +127,31 @@ export default function IdentityAccessControl() {
 
               <div className="w-1.5 h-1.5 bg-teal-600 rounded-sm" />
 
-              <h3 className="
-                text-slate-800
-                dark:text-white
-                text-base
-                font-semibold
-                font-['Poppins']
-                leading-6
-              ">
+              <h3
+                className="
+                  text-slate-800
+                  dark:text-white
+                  text-base
+                  font-semibold
+                  leading-6
+                "
+              >
                 {card.title}
               </h3>
 
             </div>
 
 
-            <p className="
-              mt-4
-              text-gray-500
-              dark:text-gray-400
-              text-sm
-              font-normal
-              font-['Poppins']
-              leading-6
-            ">
+            <p
+              className="
+                mt-4
+                text-gray-500
+                dark:text-gray-400
+                text-sm
+                font-normal
+                leading-6
+              "
+            >
               {card.desc}
             </p>
 

@@ -5,7 +5,7 @@ export default function GeneralStandardAcceptableUse() {
     <section className="py-12 sm:py-14">
       <div className="mx-auto max-w-[696px] px-4 sm:px-0">
         {/* Section Title */}
-        <h2 className="font-['Plus_Jakarta_Sans'] text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
+        <h2 className="text-2xl font-extrabold leading-8 text-slate-900 dark:text-white">
           5. General Standard of Acceptable Use
         </h2>
 
@@ -14,7 +14,7 @@ export default function GeneralStandardAcceptableUse() {
 
         {/* Content */}
         <div className="space-y-8">
-          <p className="font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+          <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
             Customers and Authorized Users may use the Service only for lawful,
             authorized, transparent, proportionate, security-conscious, and
             contractually permitted business purposes. Use of the Service must
@@ -24,7 +24,7 @@ export default function GeneralStandardAcceptableUse() {
             affected individuals.
           </p>
 
-          <p className="font-['Plus_Jakarta_Sans'] text-base leading-7 text-slate-700 dark:text-slate-300">
+          <p className="text-base leading-7 text-slate-700 dark:text-slate-300">
             The Service must not be used in a manner that is deceptive,
             discriminatory, abusive, exploitative, harassing, unsafe, unlawful,
             invasive, or inconsistent with the legitimate business purpose for

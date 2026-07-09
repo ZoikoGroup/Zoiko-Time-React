@@ -4,13 +4,11 @@ export default function InternationalTransfers() {
   return (
     <section className="w-full px-4 sm:px-6 lg:px-0 py-10 bg-white dark:bg-slate-950">
       <div className="w-full max-w-[696px] mx-auto">
-
         {/* Heading */}
         <h2
           className="
             text-2xl
             font-extrabold
-            font-['Plus_Jakarta_Sans']
             leading-8
             text-slate-900
             dark:text-white
@@ -27,7 +25,6 @@ export default function InternationalTransfers() {
           className="
             text-base
             font-normal
-            font-['Plus_Jakarta_Sans']
             leading-7
             text-slate-700
             dark:text-slate-300
@@ -46,7 +43,6 @@ export default function InternationalTransfers() {
           className="
             text-base
             font-normal
-            font-['Plus_Jakarta_Sans']
             leading-7
             text-slate-700
             dark:text-slate-300
@@ -59,7 +55,6 @@ export default function InternationalTransfers() {
           Customers should review the Data Processing Addendum for transfer
           mechanisms applicable to Customer Data.
         </p>
-
       </div>
     </section>
   );

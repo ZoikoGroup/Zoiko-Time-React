@@ -5,7 +5,6 @@ interface FAQItem {
 }
 
 export default function SecurityAddendumFAQs() {
-
   const faqs: FAQItem[] = [
     {
       question: "What is the ZoikoTime Security Addendum?",
@@ -30,7 +29,6 @@ export default function SecurityAddendumFAQs() {
     },
   ];
 
-
   return (
     <section
       className="
@@ -41,9 +39,7 @@ export default function SecurityAddendumFAQs() {
         py-[74px]
       "
     >
-
       <div className="max-w-[820px] mx-auto">
-
 
         {/* Header */}
         <div className="text-center mb-10">
@@ -53,7 +49,6 @@ export default function SecurityAddendumFAQs() {
               text-teal-600
               text-xs
               font-semibold
-              font-['Poppins']
               uppercase
               leading-5
               tracking-widest
@@ -71,7 +66,6 @@ export default function SecurityAddendumFAQs() {
               text-slate-800
               dark:text-white
               font-bold
-              font-['Poppins']
               leading-10
             "
           >
@@ -79,7 +73,6 @@ export default function SecurityAddendumFAQs() {
           </h2>
 
         </div>
-
 
 
         {/* FAQ Cards */}
@@ -110,8 +103,7 @@ export default function SecurityAddendumFAQs() {
                   text-slate-800
                   dark:text-white
                   text-base
-                  font-semibold
-                  font-['Poppins']
+                  font-normal
                   leading-6
                 "
               >
@@ -124,7 +116,6 @@ export default function SecurityAddendumFAQs() {
                   text-teal-600
                   text-xl
                   font-normal
-                  font-['Poppins']
                   leading-9
                 "
               >
@@ -140,7 +131,6 @@ export default function SecurityAddendumFAQs() {
 
 
       </div>
-
 
     </section>
   );
