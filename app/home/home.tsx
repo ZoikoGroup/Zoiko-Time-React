@@ -967,7 +967,7 @@ const visibleCards = [
       </section>
 
       {/* --------------------------- Feature split 2 --------------------------- */}
-      <section className="w-full bg-white dark:bg-gray-900 py-16 md:py-24 px-4 sm:px-6 lg:px-20 overflow-hidden transition-colors duration-300 font-['Manrope']">
+      <section className="w-full bg-white dark:bg-gray-900 py-16 md:py-24 px-4 sm:px-6 lg:px-20 overflow-hidden transition-colors duration-300 ">
       <div className="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
         {/* ==========================================
@@ -983,7 +983,7 @@ const visibleCards = [
             
             {/* Control Bar 1: Active Active Tracking State (Angled Overlay) */}
             <div className="w-full max-w-[519px] h-16 relative -rotate-2  bg-white dark:bg-gray-900 rounded-full shadow-[-19px_40px_79px_0px_rgba(148,148,148,0.12)] dark:shadow-[-19px_40px_79px_0px_rgba(0,0,0,0.4)] border border-neutral-400/20 dark:border-gray-700 flex items-center justify-between px-6 z-10">
-              <span className="text-neutral-800 dark:text-white text-base sm:text-xl font-medium">Project X</span>
+              <span className="text-neutral-800 dark:text-white text-base sm:text-xl font-medium font-['Manrope']">Project X</span>
               <div className="flex items-center gap-4 sm:gap-5">
                 <div className="flex items-center gap-3 sm:gap-4">
                   <img className="size-6  rounded-sm" src="/home/Tag.png" />
@@ -1003,7 +1003,7 @@ const visibleCards = [
 
             {/* Control Bar 2: Dormant State (Aligned Base Layer) */}
             <div className="w-full max-w-[519px] h-16 ml-0 lg:ml-6 bg-white dark:bg-gray-900 rounded-full shadow-[-19px_40px_79px_0px_rgba(148,148,148,0.12)] dark:shadow-[-19px_40px_79px_0px_rgba(0,0,0,0.4)] border border-neutral-400/20 dark:border-gray-700 flex items-center justify-between px-2 z-10">
-              <span className="text-neutral-400 dark:text-neutral-500 text-base sm:text-xl font-normal">Project X</span>
+              <span className="text-neutral-400 dark:text-neutral-500 text-base sm:text-xl font-normal font-['Manrope']">Project X</span>
               <div className="flex items-center gap-4 sm:gap-5">
                 <div className="flex items-center gap-3 sm:gap-4">
                   <img className="size-6  rounded-sm" src="/home/Tag.png" />
