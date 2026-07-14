@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 export default function Header() {
   const navLinks = [
-    'Product',
-    'Use Cases',
-    'Trust & Governance',
-    'Enterprise',
-    'Pricing',
-    'Resources',
+    { label: 'Product', href: '/product' },
+    { label: 'Use Cases', href: '/use-cases' },
+    { label: 'Trust & Governance', href: '/trust-governance' },
+    { label: 'Enterprise', href: '/enterprise' },
+    { label: 'Pricings', href: 'pricing' },
+    { label: 'Resources', href: 'resources' },
   ];
 
   return (
@@ -32,11 +32,11 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
-              key={link}
-              href={`/${link.toLowerCase().replace(/ & /g, '-').replace(/\s+/g, '-')}`}
+              key={link.label}
+              href={ link.href}
               className="text-neutral-800 text-base font-medium  leading-6 tracking-tight hover:text-sky-900 transition-colors"
             >
-              {link}
+              {link.label}
             </Link>
           ))}
         </nav>
