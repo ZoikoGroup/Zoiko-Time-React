@@ -18,36 +18,56 @@ const cards = [
 
 export default function GroupBackingSection() {
   return (
-    <section className="bg-white px-6 py-12 md:px-54">
-      <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <span className="inline-block text-xs font-semibold tracking-[1.32px] text-[#009D8C] mb-3">
+    <section className="bg-white dark:bg-gray-900 px-6 py-12 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
+      <div className="mx-auto max-w-7xl">
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <span className="mb-3 inline-block text-xs font-semibold tracking-[1.32px] text-[#009D8C] dark:text-teal-400">
             ZOIKO GROUP BACKING
           </span>
-          <h2 className="text-3xl font-bold text-slate-900 mb-5">
+
+          <h2 className="mb-5 text-3xl font-bold text-slate-900 dark:text-white md:text-[36px]">
             Long-Term Commitment Through Zoiko Group Inc.
           </h2>
-          <p className="text-[#5A6E87]  mx-auto">
-            Zoiko Tech Inc. operates as part of Zoiko Group Inc., a diversified organization developing businesses across technology,
-            communications, healthcare, financial services, foods, media, travel, logistics, and real estate.
+
+          <p className="mx-auto max-w-4xl text-[#5A6E87] dark:text-gray-300 leading-7">
+            Zoiko Tech Inc. operates as part of Zoiko Group Inc., a diversified
+            organization developing businesses across technology,
+            communications, healthcare, financial services, foods, media,
+            travel, logistics, and real estate.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+        {/* Cards */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
           {cards.map(({ src, title, desc }) => (
             <div
               key={title}
-              className="border border-[#E4EBF4] rounded-[16px] p-6"
+              className="rounded-2xl border border-[#E4EBF4] bg-white dark:bg-gray-800 dark:border-gray-700 p-6 transition-colors duration-300"
             >
-              <img src={src} alt="image" className=" mb-3" />
-              <h3 className="font-semibold text-slate-900 mb-2">{title}</h3>
-              <p className="text-sm text-[#5A6E87] max-w-72">{desc}</p>
+              <img
+                src={src}
+                alt={title}
+                className="mb-5 h-14 w-14 object-contain"
+              />
+
+              <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">
+                {title}
+              </h3>
+
+              <p className="text-sm leading-6 text-[#5A6E87] dark:text-gray-300">
+                {desc}
+              </p>
             </div>
           ))}
         </div>
 
+        {/* Footer Link */}
         <div className="text-center">
-          <a href="#" className="text-[#009D8C] font-medium hover:underline">
+          <a
+            href="#"
+            className="font-medium text-[#009D8C] transition hover:underline dark:text-teal-400"
+          >
             Explore ZoikoTime Enterprise Readiness →
           </a>
         </div>

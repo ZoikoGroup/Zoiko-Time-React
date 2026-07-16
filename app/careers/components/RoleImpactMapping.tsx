@@ -57,78 +57,87 @@ const ROLES = [
 
 export default function RoleImpactMapping() {
   return (
-    <section className="bg-slate-50 px-6 py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl text-center bg-[#F6F6F6] rounded-[19px] p-4 md:p-15">
-        <span className="inline-block text-xs uppercase font-bold tracking-[1.30px] text-[#009D8C] mb-5">
+    <section className="bg-slate-50 dark:bg-slate-950 px-6 py-16 sm:py-20 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
+      <div className="mx-auto max-w-6xl rounded-2xl bg-[#F6F6F6] dark:bg-slate-900 p-6 md:p-10 lg:p-14 text-center">
+        <span className="inline-block text-xs font-bold uppercase tracking-[1.3px] text-[#009D8C] mb-5">
           ROLE IMPACT MAPPING
         </span>
-        <h2 className="text-4xl md:text-[34px]  font-semibold text-[#0D1526] mb-5">
+
+        <h2 className="text-3xl sm:text-4xl md:text-[34px] font-semibold text-[#0D1526] dark:text-white mb-5">
           Every Role Has a Measurable Impact
         </h2>
-        <p className="text-[#5A6E87] max-w-220 mx-auto">
-          At ZoikoTime, every team member connects directly to the system
-          that protects billions in payroll, ensures compliance, and defends
-          organisations in audit not as a compliance function, but a core
+
+        <p className="mx-auto max-w-4xl text-base sm:text-lg leading-8 text-[#5A6E87] dark:text-slate-300">
+          At ZoikoTime, every team member connects directly to the system that
+          protects billions in payroll, ensures compliance, and defends
+          organisations in audit—not as a compliance function, but as a core
           operating layer.
         </p>
 
-        <div className="mt-10 grid gap-6 text-left sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3 text-left">
           {ROLES.map((role) => (
             <div
               key={role.title}
-              className="flex flex-col overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-100"
+              className="flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 transition-colors"
             >
-              <div className="bg-teal-600 px-5 py-4">
-                <p className="text-[11px] font-medium uppercase tracking-widest text-[#FFFFFFBD]">
+              {/* Header */}
+              <div className="bg-[#009D8C] px-5 py-5">
+                <p className="text-[11px] font-semibold uppercase tracking-[2px] text-white/70">
                   {role.eyebrow}
                 </p>
-                <h3 className="mt-1 text-sm font-bold leading-snug max-w-55 text-white">
+
+                <h3 className="mt-2 text-lg font-semibold leading-7 text-white">
                   {role.title}
                 </h3>
               </div>
 
-              <div className="flex flex-1 flex-col gap-4 px-5 py-5">
+              {/* Content */}
+              <div className="flex flex-1 flex-col gap-6 px-5 py-6">
                 <div>
-                  <p className="text-[15px] font-semibold tracking-wide text-[#646464]">
-                    PROBLEM YOU SOLVE
+                  <p className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
+                    Problem You Solve
                   </p>
-                  <p className="mt-1 text-sm leading-relaxed text-[#919191]">
+
+                  <p className="mt-2 text-sm leading-7 text-slate-500 dark:text-slate-400">
                     {role.problem}
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-[15px] font-semibold tracking-wide text-[#646464]">
-                    SYSTEMS YOU INFLUENCE
+                  <p className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
+                    Systems You Influence
                   </p>
-                  <p className="mt-1 text-sm leading-relaxed text-[#919191]">
+
+                  <p className="mt-2 text-sm leading-7 text-slate-500 dark:text-slate-400">
                     {role.systems}
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-[15px] font-semibold tracking-wide text-[#646464]">
-                    STAKEHOLDERS YOU IMPACT
+                  <p className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
+                    Stakeholders You Impact
                   </p>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {role.stakeholders.map((s) => (
+
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {role.stakeholders.map((stakeholder) => (
                       <span
-                        key={s}
-                        className="rounded-full border border-teal-200 bg-teal-50 px-3 py-1 text-[11px] font-medium text-teal-700"
+                        key={stakeholder}
+                        className="rounded-full border border-teal-200 dark:border-teal-700 bg-teal-50 dark:bg-teal-900/30 px-3 py-1 text-xs font-medium text-teal-700 dark:text-teal-300"
                       >
-                        {s}
+                        {stakeholder}
                       </span>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <div className="border-t flex justify-center border-slate-100 px-5 py-3">
+              {/* Footer */}
+              <div className="border-t border-slate-100 dark:border-slate-700 px-5 py-4 text-center">
                 <a
                   href="#"
-                  className="text-xs text-center font-semibold text-teal-600 hover:text-teal-700"
+                  className="text-sm font-semibold text-[#009D8C] hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
                 >
-                  View Role Detail &rarr;
+                  View Role Detail →
                 </a>
               </div>
             </div>

@@ -4,6 +4,7 @@ import CtaSection from "./components/CtaSection";
 import Ecosystem from "./components/Ecosystem";
 import Governance from "./components/Governance";
 import Hero from "./components/Hero";
+import NewStandard from "./components/NewStandard";
 import Objective from "./components/Objective";
 import Philosophy from "./components/Philosophy";
 import Purpose from "./components/Purpose";
@@ -14,6 +15,7 @@ export default function page() {
     return (
         <main>
             <Hero />
+            <NewStandard />
             <Purpose />
             <WhyZoikoTime />
             <Capabilities />

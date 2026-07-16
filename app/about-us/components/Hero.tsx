@@ -1,61 +1,54 @@
+import React from "react";
+import { FileText } from "lucide-react";
 
 export default function Hero() {
-    return (
-        <>
-            <section className="bg-gradient-to-b from-[#F0FDFB] to-white px-6 pt-12 md:px-54">
-                <div className="mx-auto max-w-6xl">
-                    <div className="text-center mb-12">
-                        <span className="inline-block text-xs font-bold tracking-[1.30px] text-[#009D8C] mb-10">
-                            About ZoikoTime
-                        </span>
-                        <h2 className="text-4xl md:text-[48px] font-semibold text-[#0D1526] mb-5">
-                            Workforce Assurance for {" "}
-                            <span className="text-[#009D8C]">
-                                Modern Enterprises
-                            </span>
-                        </h2>
-                        <p className="text-[#5A6E87] max-w-225 mx-auto">
-                            ZoikoTime is an enterprise-grade workforce assurance and
-                            performance intelligence system — built to serve as the
-                            system of record for how work is verified,
-                            governed, and understood across modern organisations.
-                        </p>
+  return (
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-teal-50 via-white to-white px-5 py-20 transition-colors duration-300 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 sm:px-8 lg:px-12">
+      {/* Decorative radial glow */}
+      <div className="pointer-events-none absolute -right-40 -top-64 h-[520px] w-[520px] rounded-full bg-[radial-gradient(circle,rgba(20,184,166,0.05)_0%,rgba(20,184,166,0)_70%)] dark:bg-[radial-gradient(circle,rgba(20,184,166,0.12)_0%,rgba(20,184,166,0)_70%)]" />
 
-                        <div className="flex gap-4 mt-10 flex-wrap justify-center">
-                            <button className="bg-[#009D8C] shadow-[0_4px_20px_0_rgba(0,157,140,0.4)] hover:bg-teal-600 cursor-pointer text-white font-medium px-10 py-3 rounded-[8px] transition-colors border border-[#C8D6E8]">
-                                Request a ZoikoTime Demo
-                            </button>
-                            <button className="border border-[#C8D6E8] cursor-pointer hover:bg-slate-100 text-slate-800 font-medium px-15 py-3 rounded-md transition-colors">
-                                Start Free Trial
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className="bg-white px-6 pb-12 md:px-54">
-                <div className="mx-auto max-w-6xl bg-[#F4F7FA] rounded-[16px] p-10">
-                    <div className="mb-12 flex flex-col items-center text-center">
-                        <span className="inline-block text-xs font-bold tracking-[1.30px] text-[#00C6A9] mb-8">
-                            A New Standard
-                        </span>
-                        <h2 className="text-4xl text-center md:text-[36px] max-w-190 font-semibold text-[#0D1526] mb-5">
-                            Defining a New Standard for {" "}
-                            <span className="text-[#00C6A9] text-3xl md:text-[36px]">
-                                WorkforceGovernance
-                            </span>
-                        </h2>
-                        <p className="text-[#5A6E87] max-w-140 mx-auto">
-                            As work has become global, distributed, and increasingly complex, enterprises
-                            have gained flexibility — but lost consistency, control, and defensibility.
-                            Traditional time-tracking tools were not designed for this reality. ZoikoTime
-                        </p>
-                        <p className="text-[#5A6E87] mt-2 max-w-145 mx-auto">
-                            establishes a new category: {" "} <span className="text-[#00C6A9]">Workforce Assurance Infrastructure</span> — where every
-                            unit of work is measurable, explainable, and defensible.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </>
-    )
+      <div className="relative mx-auto flex min-h-[395px] w-full max-w-[1180px] flex-col items-center text-center">
+        {/* Label */}
+        <p className="text-xs font-bold uppercase leading-5 tracking-wider text-teal-600 dark:text-teal-400">
+          About ZoikoTime
+        </p>
+
+        {/* Heading */}
+        <h1 className="mt-12 text-3xl font-extrabold leading-tight text-slate-900 dark:text-white sm:text-4xl lg:text-5xl lg:leading-[57.2px]">
+          Workforce Assurance for{" "}
+          <span className="text-teal-600 dark:text-teal-400">
+            Modern Enterprises
+          </span>
+        </h1>
+
+        {/* Description */}
+        <p className="mt-6 max-w-[945px] text-base font-normal leading-7 text-slate-500 dark:text-slate-400 sm:text-lg">
+          ZoikoTime is an enterprise-grade workforce assurance and performance
+          intelligence system — built to serve as the system of record for how
+          work is verified, governed, and understood across modern
+          organisations.
+        </p>
+
+        {/* Buttons */}
+        <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
+          {/* Primary Button */}
+          <button
+            type="button"
+            className="flex h-12 w-full items-center justify-center gap-3 rounded-lg bg-teal-600 px-6 text-base font-semibold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)] transition hover:bg-teal-500 sm:w-72"
+          >
+            <FileText size={16} strokeWidth={1.67} />
+            <span>Request Executive Briefing</span>
+          </button>
+
+          {/* Secondary Button */}
+          <button
+            type="button"
+            className="h-12 w-full rounded-lg border border-slate-300 px-6 text-base font-medium text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800 sm:w-56"
+          >
+            Explore the Platform
+          </button>
+        </div>
+      </div>
+    </section>
+  );
 }

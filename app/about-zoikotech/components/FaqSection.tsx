@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
@@ -33,37 +34,53 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#F4F7FA] px-6 py-12 md:px-54">
+    <section className="bg-[#F4F7FA] dark:bg-gray-900 px-6 py-12 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
       <div className="mx-auto max-w-3xl">
-        <div className="text-center mb-10">
-          <span className="inline-block text-xs font-bold tracking-[1.32px] text-[#009D8C] mb-3">
+        {/* Heading */}
+        <div className="mb-10 text-center">
+          <span className="mb-3 inline-block text-xs font-bold tracking-[1.32px] text-[#009D8C] dark:text-teal-400">
             COMMON QUESTIONS
           </span>
-          <h2 className="text-3xl font-semibold text-slate-900">
+
+          <h2 className="text-3xl font-semibold text-slate-900 dark:text-white">
             About Zoiko Tech Inc.
           </h2>
         </div>
 
-        <div className="rounded-[14px] border border-[#E4EBF4] divide-y divide-[#E4EBF4]">
+        {/* FAQ Container */}
+        <div className="overflow-hidden rounded-[14px] border border-[#E4EBF4] bg-white dark:bg-gray-800 dark:border-gray-700 divide-y divide-[#E4EBF4] dark:divide-gray-700 transition-colors duration-300">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
+
             return (
               <div key={faq.q}>
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-4 text-left"
+                  className="flex w-full items-center justify-between px-6 py-5 text-left"
                 >
-                  <span className="text-sm font-semibold text-slate-800">
+                  <span className="pr-4 text-sm font-semibold text-slate-800 dark:text-white">
                     {faq.q}
                   </span>
+
                   {isOpen ? (
-                    <Minus size={16} className="cursor-pointer text-slate-400 shrink-0" />
+                    <Minus
+                      size={18}
+                      className="shrink-0 text-gray-400 dark:text-gray-300"
+                    />
                   ) : (
-                    <Plus size={16} className="cursor-pointer text-[#009F8B] shrink-0" />
+                    <Plus
+                      size={18}
+                      className="shrink-0 text-[#009F8B] dark:text-teal-400"
+                    />
                   )}
                 </button>
+
                 {isOpen && (
-                  <p className="px-6 pb-4 text-sm text-slate-500">{faq.a}</p>
+                  <div className="px-6 pb-5">
+                    <p className="text-sm leading-7 text-slate-600 dark:text-gray-300">
+                      {faq.a}
+                    </p>
+                  </div>
                 )}
               </div>
             );
