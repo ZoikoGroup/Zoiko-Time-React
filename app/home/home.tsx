@@ -603,9 +603,11 @@ const visibleCards = [
             improve productivity without compromising trust.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a href="/request-a-demo">
             <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-cyan-900 shadow-lg transition hover:bg-sky-50 sm:px-8 sm:py-3.5 sm:text-base">
               Request a Demo
             </button>
+            </a>
             <button
               onClick={() => setShowDownload(true)}
               className="rounded-full border border-white px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10 sm:px-8 sm:py-3.5 sm:text-base"
@@ -793,12 +795,14 @@ const visibleCards = [
           </ul>
 
           {/* Styled Primary Call To Action Trigger Button */}
+          <a href="/workforce">
           <button
             type="button"
             className="mt-4 px-8 py-3 bg-sky-950 hover:bg-sky-900 dark:bg-sky-900 dark:hover:bg-sky-850 text-white text-base font-semibold rounded-full shadow-[0px_0px_0px_1px_rgba(129,213,251,1.00),_inset_0px_0.5px_0.5px_0px_rgba(69,144,178,0.25),_inset_0px_-6px_12px_0px_rgba(255,255,255,0.10)] transition-all duration-200 active:scale-95"
           >
             Read More
           </button>
+          </a>
         </div>
 
         {/* ==========================================
@@ -910,9 +914,11 @@ const visibleCards = [
           </div>
 
           <div className="mt-14 flex justify-center">
+            <a href="/product">
             <button className="rounded-full bg-sky-900 dark:bg-sky-700 px-8 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-sky-800 dark:hover:bg-sky-600">
               View Assurance Architecture
             </button>
+            </a>
           </div>
         </div>
       </section>
@@ -1038,12 +1044,14 @@ const visibleCards = [
           </div>
 
           {/* Styled Primary CTA Read More Trigger */}
+          <a href="/enterprise">
           <button
             type="button"
             className="px-8 py-3 bg-sky-950 hover:bg-sky-900 dark:bg-sky-900 dark:hover:bg-sky-850 text-white text-base font-semibold rounded-full shadow-[0px_0px_0px_1px_rgba(129,213,251,1.00),_inset_0px_0.5px_0.5px_0px_rgba(69,144,178,0.25),_inset_0px_-6px_12px_0px_rgba(255,255,255,0.10)] transition-all duration-200 active:scale-95"
           >
             Read More
           </button>
+          </a>
         </div>
 
       </div>
@@ -1308,13 +1316,14 @@ const visibleCards = [
           <p className="text-sky-50 text-base md:text-lg font-normal max-w-md leading-relaxed opacity-90">
             Track every minute and boost your productivity effortlessly.
           </p>
-
+          <a href="/contact">
           <button 
             type="button"
             className="mt-4 bg-white hover:bg-neutral-50 dark:bg-white dark:hover:bg-neutral-100 text-neutral-800 font-semibold px-8 py-3.5 rounded-full text-base transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
           >
             Contact Us
           </button>
+          </a>
         </div>
 
       </div>

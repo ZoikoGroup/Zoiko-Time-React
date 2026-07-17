@@ -66,10 +66,12 @@ export default function Product() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 w-full sm:w-auto">
+            <a href="/request-enterprise-demo">
             <button className="w-full sm:w-72 h-12 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg shadow-[0px_4px_18px_0px_rgba(0,157,140,0.32)] transition-colors flex items-center justify-center gap-2">
               <Play className="w-3 h-3 fill-current" />
               Request Enterprise Demo
             </button>
+            </a>
             
             <button className="w-full sm:w-80 h-12 bg-white hover:bg-slate-50 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 dark:border-slate-700 font-semibold rounded-lg border border-slate-300 shadow-sm transition-colors">
               See How It Works in 90 Seconds
