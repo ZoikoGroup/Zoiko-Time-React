@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function PolicyLocationHero() {
   return (
@@ -57,13 +58,19 @@ export default function PolicyLocationHero() {
 
         {/* CTA Buttons */}
         <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="rounded-lg bg-teal-500 px-8 py-3 text-base font-semibold text-white transition hover:bg-teal-600">
-            Request Demo →
-          </button>
+          <Link
+  href="/request-a-demo"
+  className="inline-flex items-center justify-center rounded-lg bg-teal-500 px-8 py-3 text-base font-semibold text-white transition hover:bg-teal-600"
+>
+  Request Demo →
+</Link>
 
-          <button className="rounded-lg border border-teal-500 px-8 py-3 text-base font-semibold text-teal-600 transition hover:bg-teal-50 dark:text-teal-400 dark:hover:bg-slate-900">
-            Run Policy Scenario
-          </button>
+          <Link
+  href="/policy-and-location-context#policyIntelligenceEngine"
+  className="inline-flex items-center justify-center rounded-lg border border-teal-500 px-8 py-3 text-base font-semibold text-teal-600 transition hover:bg-teal-50 dark:text-teal-400 dark:hover:bg-slate-900"
+>
+  Run Policy Scenario
+</Link>
         </div>
 
         {/* Live Dashboard */}

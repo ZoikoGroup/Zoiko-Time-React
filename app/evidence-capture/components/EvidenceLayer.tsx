@@ -88,7 +88,10 @@ const layers = [
 
 export default function EvidenceLayer() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-teal-50 via-white to-white py-20 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <section
+  id="evidence-layer"
+  className="relative overflow-hidden bg-gradient-to-b from-teal-50 via-white to-white py-20 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
+>
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-teal-600 via-teal-500 to-teal-600" />
 
       <div className="mx-auto max-w-7xl px-6">

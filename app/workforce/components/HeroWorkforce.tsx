@@ -1,3 +1,4 @@
+  import Link from "next/link";
   import React from "react";const HeroWorkforce = () => {
   const features = [
     "Verified workforce records",
@@ -133,47 +134,52 @@
 
 
         {/* Buttons */}
-        <div
-          className="
-          flex
-          flex-wrap
-          gap-5
-          mt-8
-          "
-        >
+        <div className="mt-8 flex flex-wrap gap-5">
+  {/* Request a Demo */}
+  <Link
+    href="/request-a-demo"
+    className="
+      flex
+      h-12
+      w-44
+      items-center
+      justify-center
+      rounded-lg
+      bg-teal-600
+      font-semibold
+      text-white
+      shadow-[0px_4px_20px_0px_rgba(0,157,140,0.40)]
+      transition
+      hover:bg-teal-700
+    "
+  >
+    Request a Demo
+  </Link>
 
-          <button
-            className="
-            w-44
-            h-12
-            rounded-lg
-            bg-teal-600
-            text-white
-            font-semibold
-            shadow-[0px_4px_20px_0px_rgba(0,157,140,0.40)]
-            "
-          >
-            Request a Demo
-          </button>
-
-
-          <button
-            className="
-            w-36
-            h-12
-            rounded-lg
-            border
-            border-slate-300
-            dark:border-white/20
-            text-slate-700
-            dark:text-white/80
-            font-medium
-            "
-          >
-            Start Free Trial
-          </button>
-
-        </div>
+  {/* Start Free Trial */}
+<Link
+  href="/request-a-demo"
+  className="
+    flex
+    h-12
+    w-36
+    items-center
+    justify-center
+    rounded-lg
+    border
+    border-slate-300
+    font-medium
+    text-slate-700
+    transition
+    hover:bg-slate-100
+    dark:border-white/20
+    dark:text-white/80
+    dark:hover:bg-white/10
+  "
+>
+  Start Free Trial
+</Link>
+</div>
 
 
 

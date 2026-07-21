@@ -1,6 +1,7 @@
 // components/ScreenshotHero.tsx
 
 import React from "react";
+import Link from "next/link";
 
 export default function ScreenshotHero() {
   return (
@@ -9,6 +10,7 @@ export default function ScreenshotHero() {
       <div className="absolute left-1/2 top-[-180px] h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-teal-500/10 blur-3xl dark:bg-teal-400/10" />
 
       <div className="relative mx-auto flex max-w-7xl flex-col items-center px-6 py-16 text-center md:px-8 lg:px-10 lg:py-20">
+
         {/* Label */}
         <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-teal-600 dark:text-teal-400">
           Screenshots &amp; Redaction Controls
@@ -33,13 +35,23 @@ export default function ScreenshotHero() {
 
         {/* Buttons */}
         <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row">
-          <button className="w-full rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/20 transition hover:bg-teal-700 sm:w-auto">
-            Get a Demo
-          </button>
 
-          <button className="w-full rounded-lg border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-slate-800 transition hover:bg-gray-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800 sm:w-auto">
+          {/* Get a Demo */}
+          <Link
+            href="/request-a-demo"
+            className="w-full rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/20 transition hover:bg-teal-700 sm:w-auto inline-flex items-center justify-center"
+          >
+            Get a Demo
+          </Link>
+
+          {/* View Time & Activity Verification */}
+          <Link
+            href="/time-and-activity-verification"
+            className="w-full rounded-lg border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-slate-800 transition hover:bg-gray-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800 sm:w-auto inline-flex items-center justify-center"
+          >
             View Time &amp; Activity Verification
-          </button>
+          </Link>
+
         </div>
 
         {/* Footer Note */}
@@ -47,6 +59,7 @@ export default function ScreenshotHero() {
           Screenshots should support review—not covert monitoring or automatic
           judgment.
         </p>
+
       </div>
     </section>
   );

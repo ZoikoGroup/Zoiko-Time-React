@@ -62,6 +62,7 @@ export default function DetectionFlow() {
 
   return (
     <section
+    id="detection-flow"
       className="
         w-full
         bg-slate-100

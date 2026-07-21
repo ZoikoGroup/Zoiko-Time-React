@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function GetStarted() {
   return (
@@ -26,14 +27,20 @@ export default function GetStarted() {
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-          <button className="rounded-lg bg-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-teal-600/25 hover:bg-teal-700 transition">
-            Request Demo
-          </button>
+  <Link
+    href="/request-a-demo"
+    className="rounded-lg bg-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-teal-600/25 hover:bg-teal-700 transition inline-flex items-center justify-center"
+  >
+    Request Demo
+  </Link>
 
-          <button className="rounded-lg border border-teal-600 px-6 py-2.5 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-slate-800 transition">
-            View Architecture
-          </button>
-        </div>
+  <Link
+    href="/security-overview#architecture-table"
+    className="rounded-lg border border-teal-600 px-6 py-2.5 text-sm font-semibold text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-slate-800 transition inline-flex items-center justify-center"
+  >
+    View Architecture
+  </Link>
+</div>
       </div>
     </section>
   );

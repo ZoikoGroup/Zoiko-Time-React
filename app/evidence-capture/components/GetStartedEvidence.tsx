@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function GetStartedEvidence() {
   return (
@@ -87,50 +88,51 @@ export default function GetStartedEvidence() {
 
 
           {/* Primary Button */}
-          <button
-            className="
-              h-12
-              px-8
-              rounded-lg
-              bg-teal-600
-              text-white
-              text-base
-              font-semibold
-              shadow-[0px_4px_14px_rgba(0,157,140,0.28)]
-              hover:bg-teal-700
-              transition
-              flex items-center justify-center gap-3
-            "
-          >
+<Link
+  href="/request-a-demo"
+  className="
+    h-12
+    px-8
+    rounded-lg
+    bg-teal-600
+    text-white
+    text-base
+    font-semibold
+    shadow-[0px_4px_14px_rgba(0,157,140,0.28)]
+    hover:bg-teal-700
+    transition
+    inline-flex
+    items-center
+    justify-center
+    gap-3
+  "
+>
+  <span className="text-lg">◉</span>
+  Request Audit Demo
+</Link>
 
-            <span className="text-lg">
-              ◉
-            </span>
-
-            Request Audit Demo
-
-          </button>
-
-
-
-          {/* Secondary Button */}
-          <button
-            className="
-              h-12
-              px-8
-              rounded-lg
-              border
-              border-teal-600
-              text-teal-600
-              text-base
-              font-semibold
-              hover:bg-teal-50
-              dark:hover:bg-teal-900/20
-              transition
-            "
-          >
-            View Evidence Model
-          </button>
+{/* Secondary Button */}
+<Link
+  href="/evidence-capture#evidence-layer"
+  className="
+    h-12
+    px-8
+    rounded-lg
+    border
+    border-teal-600
+    text-teal-600
+    text-base
+    font-semibold
+    hover:bg-teal-50
+    dark:hover:bg-teal-900/20
+    transition
+    inline-flex
+    items-center
+    justify-center
+  "
+>
+  View Evidence Model
+</Link>
 
 
 
@@ -139,28 +141,30 @@ export default function GetStartedEvidence() {
 
 
         {/* Third Button */}
-        <div className="mt-4">
-
-          <button
-            className="
-              h-12
-              px-8
-              rounded-lg
-              border
-              border-slate-300
-              dark:border-slate-700
-              text-slate-700
-              dark:text-slate-300
-              text-base
-              font-medium
-              hover:bg-white/50
-              dark:hover:bg-slate-800
-              transition
-            "
-          >
-            Speak to Compliance Expert
-          </button>
-
+<div className="mt-4">
+  <Link
+    href="/contact-sales"
+    className="
+      inline-flex
+      h-12
+      px-8
+      rounded-lg
+      border
+      border-slate-300
+      dark:border-slate-700
+      text-slate-700
+      dark:text-slate-300
+      text-base
+      font-medium
+      hover:bg-white/50
+      dark:hover:bg-slate-800
+      transition
+      items-center
+      justify-center
+    "
+  >
+    Speak to Compliance Expert
+  </Link>
         </div>
 
 

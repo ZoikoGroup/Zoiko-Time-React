@@ -50,7 +50,9 @@ const layers = [
 
 export default function PolicyIntelligenceEngine() {
   return (
-    <section className="bg-slate-100 py-16 dark:bg-slate-950">
+    <section 
+    id="policyIntelligenceEngine"
+    className="bg-slate-100 py-16 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">

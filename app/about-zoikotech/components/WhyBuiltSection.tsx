@@ -11,95 +11,79 @@ const rows = [
   },
   {
     challenge: "Timesheets affect payroll and billing",
-    response: "Payroll and timesheet integrity workflows with exception handling",
+    response:
+      "Payroll and timesheet integrity workflows with exception handling",
   },
   {
     challenge: "Managers need better review tools",
-    response: "Structured approvals, escalation, and exception workflows",
+    response:
+      "Structured approvals, escalation, and exception workflows",
   },
   {
     challenge: "Enterprises need defensible records",
-    response: "Audit-grade evidence, retention controls, and legal hold support",
+    response:
+      "Audit-grade evidence, retention controls, and legal hold support",
   },
   {
     challenge: "Workers need transparency",
-    response: "Worker access, guides, and responsible oversight principles",
+    response:
+      "Worker access, guides, and responsible oversight principles",
   },
   {
     challenge: "Customers need governance",
-    response: "Role-based controls, security, implementation support, and policy alignment",
+    response:
+      "Role-based controls, security, implementation support, and policy alignment",
   },
 ];
 
 export default function WhyBuiltSection() {
   return (
-    <section className="bg-white px-6 py-12 md:px-54">
+    <section className="bg-white dark:bg-gray-900 px-6 py-12 md:px-20 lg:px-32 xl:px-54 transition-colors duration-300">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-15">
-          <span className="inline-block text-xs font-semibold tracking-[1.32px] text-[#009D8C] mb-2">
+        {/* Heading */}
+        <div className="mb-12 text-center">
+          <span className="mb-2 inline-block text-xs font-semibold tracking-[1.32px] text-[#009D8C] dark:text-teal-400">
             WHY ZOIKOTIME WAS BUILT
           </span>
-          <h2 className="text-[34px] font-bold text-[#0D1526] mb-3">
+
+          <h2 className="mb-4 text-3xl font-bold text-[#0D1526] dark:text-white md:text-[34px]">
             Why Zoiko Tech Built ZoikoTime
           </h2>
-          <p className="text-[#5A6E87] max-w-230 mx-auto">
-            ZoikoTime was created because modern workforce management has outgrown basic time tracking. Distributed work, contractor-heavy operations, professional services delivery, payroll risk, client billing pressure, compliance expectations, and hybrid teams require stronger workforce records.
+
+          <p className="mx-auto max-w-4xl text-[#5A6E87] dark:text-gray-300">
+            ZoikoTime was created because modern workforce management has
+            outgrown basic time tracking. Distributed work, contractor-heavy
+            operations, professional services delivery, payroll risk, client
+            billing pressure, compliance expectations, and hybrid teams require
+            stronger workforce records.
           </p>
         </div>
 
-        <div className="hidden md:block overflow-hidden rounded-xl border border-slate-200">
+        {/* Desktop Table */}
+        <div className="hidden overflow-hidden rounded-xl border border-[#E4EBF4] dark:border-gray-700 md:block">
           <div className="grid grid-cols-[32%_68%]">
-            <div className="bg-[#E4EBF4] border-2 border-[#E4EBF4] px-6 py-3 text-xs font-bold tracking-wide text-[#8A9BBB]">
+            <div className="border border-[#E4EBF4] bg-[#E4EBF4] px-6 py-3 text-xs font-bold tracking-wide text-[#8A9BBB] dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
               WORKFORCE CHALLENGE
             </div>
-            <div className="bg-[#0D1526] border-2 border-[#E4EBF4] px-6 py-3 text-xs font-bold tracking-wide text-[#00C6A9]">
+
+            <div className="border border-[#E4EBF4] bg-[#0D1526] px-6 py-3 text-xs font-bold tracking-wide text-[#00C6A9] dark:border-gray-700 dark:bg-gray-950 dark:text-teal-400">
               ZOIKOTIME RESPONSE
             </div>
           </div>
-          {rows.map((row, i) => (
-            <div
-              key={row.challenge}
-              className={`grid grid-cols-[32%_68%] text-sm border border-[#E4EBF4]`}
-            >
-              <div className="px-6 py-4 font-medium bg-[#FAFBFC] text-slate-800">
-                {row.challenge}
-              </div>
-              <div className="px-6 py-4 bg-white text-slate-500 flex gap-1 items-start">
-                <Check size={16} className="text-teal-600 shrink-0 mt-0.5" />
-                <span>{row.response}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-        {/* Mobile */}
-        <div className="block md:hidden space-y-4">
+
           {rows.map((row) => (
             <div
               key={row.challenge}
-              className="overflow-hidden rounded-xl border border-[#E4EBF4] bg-white"
+              className="grid grid-cols-[32%_68%] border border-[#E4EBF4] dark:border-gray-700"
             >
-              {/* Challenge */}
-              <div className="bg-[#E4EBF4] px-4 py-2">
-                <p className="text-[11px] font-bold tracking-wide text-[#8A9BBB] uppercase">
-                  Workforce Challenge
-                </p>
-              </div>
-
-              <div className="px-4 py-3 text-sm font-medium text-slate-800">
+              <div className="bg-[#FAFBFC] px-6 py-4 font-medium text-slate-800 dark:bg-gray-800 dark:text-white">
                 {row.challenge}
               </div>
 
-              {/* Response */}
-              <div className="border-t border-[#E4EBF4] bg-[#0D1526] px-4 py-2">
-                <p className="text-[11px] font-bold tracking-wide text-[#00C6A9] uppercase">
-                  ZoikoTime Response
-                </p>
-              </div>
-
-              <div className="flex items-start gap-2 px-4 py-3 text-sm text-slate-500">
+              <div className="flex items-start gap-2 bg-white px-6 py-4 text-slate-600 dark:bg-gray-900 dark:text-gray-300">
                 <Check
                   size={16}
-                  className="mt-0.5 shrink-0 text-teal-600"
+                  className="mt-0.5 shrink-0 text-teal-600 dark:text-teal-400"
                 />
                 <span>{row.response}</span>
               </div>
@@ -107,8 +91,44 @@ export default function WhyBuiltSection() {
           ))}
         </div>
 
-        <p className="text-center text-sm text-[#5A6E87] font-semibold mt-8">
-          ZoikoTime exists because workforce data must be trusted before it can support payroll, billing, productivity, and operational decisions.
+        {/* Mobile Cards */}
+        <div className="space-y-4 md:hidden">
+          {rows.map((row) => (
+            <div
+              key={row.challenge}
+              className="overflow-hidden rounded-xl border border-[#E4EBF4] bg-white dark:border-gray-700 dark:bg-gray-800"
+            >
+              <div className="bg-[#E4EBF4] px-4 py-2 dark:bg-gray-700">
+                <p className="text-[11px] font-bold uppercase tracking-wide text-[#8A9BBB] dark:text-gray-300">
+                  Workforce Challenge
+                </p>
+              </div>
+
+              <div className="px-4 py-3 text-sm font-medium text-slate-800 dark:text-white">
+                {row.challenge}
+              </div>
+
+              <div className="border-t border-[#E4EBF4] bg-[#0D1526] px-4 py-2 dark:border-gray-700 dark:bg-gray-950">
+                <p className="text-[11px] font-bold uppercase tracking-wide text-[#00C6A9] dark:text-teal-400">
+                  ZoikoTime Response
+                </p>
+              </div>
+
+              <div className="flex items-start gap-2 px-4 py-3 text-sm text-slate-600 dark:text-gray-300">
+                <Check
+                  size={16}
+                  className="mt-0.5 shrink-0 text-teal-600 dark:text-teal-400"
+                />
+                <span>{row.response}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Footer */}
+        <p className="mt-8 text-center text-sm font-semibold text-[#5A6E87] dark:text-gray-400">
+          ZoikoTime exists because workforce data must be trusted before it can
+          support payroll, billing, productivity, and operational decisions.
         </p>
       </div>
     </section>

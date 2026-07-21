@@ -1,3 +1,5 @@
+import { Link } from "lucide-react";
+
 const features = [
   "Encryption at Rest & in Transit",
   "Audit Logging & Evidence Trails",
@@ -46,7 +48,8 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <button className="rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0_4px_14px_rgba(0,157,140,0.40)] transition hover:bg-teal-700">
+          <button
+           className="rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0_4px_14px_rgba(0,157,140,0.40)] transition hover:bg-teal-700">
             ↓ Download Security Overview
           </button>
 

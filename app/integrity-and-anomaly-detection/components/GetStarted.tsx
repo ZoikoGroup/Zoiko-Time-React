@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function GetStarted() {
   return (
@@ -115,55 +116,77 @@ export default function GetStarted() {
         >
 
           {/* Request Demo */}
-          <button
-            className="
-              w-full
-              sm:w-52
-              h-12
-              flex
-              items-center
-              justify-center
-              gap-3
-              rounded-lg
-              bg-teal-600
-              text-white
-              text-base
-              font-semibold
-              shadow-[0_4px_14px_rgba(0,157,140,0.28)]
-              hover:bg-teal-700
-              transition
-            "
-          >
+<Link
+  href="/request-a-demo"
+  className="
+    w-full
+    sm:w-52
+    h-12
+    flex
+    items-center
+    justify-center
+    gap-3
+    rounded-lg
+    bg-teal-600
+    text-white
+    text-base
+    font-semibold
+    shadow-[0_4px_14px_rgba(0,157,140,0.28)]
+    hover:bg-teal-700
+    transition
+  "
+>
+  <span className="flex items-center justify-center">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    className="text-white"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="10"
+      stroke="currentColor"
+      strokeWidth="2"
+    />
+    <path
+      d="M10 8.8L15.5 12L10 15.2V8.8Z"
+      fill="currentColor"
+    />
+  </svg>
+</span>
 
-            <span className="text-lg">
-              ◉
-            </span>
-
-            Request Demo
-
-          </button>
+  Request Demo
+</Link>
 
 
 
-          {/* Run Fraud Scenario */}
-          <button
-            className="
-              w-full
-              sm:w-52
-              h-12
-              rounded-lg
-              border
-              border-teal-600
-              text-teal-600
-              text-base
-              font-semibold
-              hover:bg-teal-50
-              dark:hover:bg-teal-950
-              transition
-            "
-          >
-            Run Fraud Scenario
-          </button>
+{/* Run Fraud Scenario */}
+<Link
+  href="/integrity-and-anomaly-detection#detection-flow"
+  className="
+    w-full
+    sm:w-52
+    h-12
+    rounded-lg
+    border
+    border-teal-600
+    text-teal-600
+    text-base
+    font-semibold
+    hover:bg-teal-50
+    dark:hover:bg-teal-950
+    transition
+    flex
+    items-center
+    justify-center
+  "
+>
+  Run Fraud Scenario
+</Link>
 
 
         </div>

@@ -62,7 +62,10 @@ const architecture = [
 
 export default function SecurityArchitecture() {
   return (
-    <section className="bg-white py-20 dark:bg-slate-950">
+    <section
+  id="architecture-table"
+  className="bg-white py-20 dark:bg-slate-950"
+>
       <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
 
         {/* Section Header */}

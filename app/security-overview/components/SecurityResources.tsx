@@ -81,7 +81,9 @@ export default function SecurityResources() {
   ];
 
   return (
-    <section className="w-full bg-slate-100 dark:bg-slate-950 py-20 px-5 transition-colors">
+    <section
+    
+     className="w-full bg-slate-100 dark:bg-slate-950 py-20 px-5 transition-colors">
       <div className="max-w-[1100px] mx-auto text-center">
 
         {/* Label */}

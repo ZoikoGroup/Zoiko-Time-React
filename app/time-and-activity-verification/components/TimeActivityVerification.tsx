@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const timeline = [
   {
@@ -150,52 +151,57 @@ export default function TimeActivityVerification() {
 
 
 
-          {/* Buttons */}
-          <div
-            className="
-            mt-8
-            flex
-            flex-wrap
-            gap-4
-            "
-          >
+         
+  {/* Buttons */}
+<div className="mt-8 flex flex-col sm:flex-row gap-4">
+  {/* Get a Demo */}
+  <Link
+    href="/request-a-demo"
+    className="
+      px-7
+      py-3
+      rounded-xl
+      bg-teal-600
+      hover:bg-teal-700
+      text-white
+      font-semibold
+      shadow-lg
+      shadow-teal-600/30
+      inline-flex
+      items-center
+      justify-center
+      transition
+    "
+  >
+    Get a Demo
+  </Link>
 
-            <button
-              className="
-              px-7
-              py-3
-              rounded-xl
-              bg-teal-600
-              text-white
-              font-semibold
-              shadow-lg
-              shadow-teal-600/30
-              "
-            >
-              Get a Demo
-            </button>
-
-
-            <button
-              className="
-              px-7
-              py-3
-              rounded-xl
-              bg-white
-              dark:bg-slate-900
-              border
-              border-gray-300
-              dark:border-slate-700
-              text-slate-800
-              dark:text-white
-              font-semibold
-              "
-            >
-              Start Free Trial
-            </button>
-
-          </div>
-
+  {/* Start Free Trial */}
+  <Link
+    href="/start-free"
+    className="
+      px-7
+      py-3
+      rounded-xl
+      bg-white
+      dark:bg-slate-900
+      border
+      border-gray-300
+      dark:border-slate-700
+      text-slate-800
+      dark:text-white
+      font-semibold
+      hover:bg-gray-50
+      dark:hover:bg-slate-800
+      inline-flex
+      items-center
+      justify-center
+      transition
+    "
+  >
+    Start Free Trial
+  </Link>
+</div>
 
           <p
             className="

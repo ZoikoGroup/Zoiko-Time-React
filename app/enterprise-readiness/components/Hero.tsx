@@ -1,56 +1,82 @@
-const data = ["Governance controls", "Security review support", "Role-based access", "Implementation planning", "Audit-ready reporting"]
+const data = [
+  "Governance controls",
+  "Security review support",
+  "Role-based access",
+  "Implementation planning",
+  "Audit-ready reporting",
+];
 
 export default function Hero() {
-    return (
-        <section className="bg-[#DFF8F3] px-6 py-24 md:px-54">
-            <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-12 md:gap-32 items-center">
-                <div className="md:min-w-125">
-                    <span className="inline-block text-xs font-semibold border border-[#00C6A933] tracking-wide text-[#00C6A9] bg-[#00C6A91A] rounded-full px-3 py-1 mb-4">
-                        Enterprise Readiness
-                    </span>
-                    <h1 className="text-3xl md:text-[46px] md:min-w-125 font-bold text-[#0F0F0F] leading-tight mb-5">
-                        Workforce Intelligence
-                        Built for Enterprise
-                        Deployment
-                    </h1>
-                    <p className="text-[#0F0F0FA6] text-[17px] mb-4 md:min-w-120">
-                        ZoikoTime is designed to support enterprise teams with
-                        governance controls, security review support, role-based
-                        access, implementation planning, reporting, and audit-ready
-                        workforce intelligence.
-                    </p>
-                    <p className="text-[#0F0F0F73] text-[15px] mb-8 md:min-w-112">
-                        From workforce records and time verification to payroll confidence,
-                        client billing, audit-ready evidence, and AI-assisted insights —
-                        ZoikoTime is designed to support serious organizational
-                        deployment, not just individual sign-up.
-                    </p>
-                    <div className="flex flex-wrap gap-4 mb-3 md:min-w-125">
-                        <button className="bg-[#009D8C] shadow-[0_4px_20px_0_rgba(0,157,140,0.4)] hover:bg-teal-700 cursor-pointer text-white font-medium px-6 py-3 rounded-[8px] transition-colors">
-                            Request an Enterprise Demo
-                        </button>
-                        <button className="border border-[#009D8C] cursor-pointer hover:bg-teal-100 text-slate-800 font-medium px-6 py-3 rounded-md transition-colors">
-                            Start Free Trial
-                        </button>
-                    </div>
-                </div>
-                <div className="md:min-h-135 md:min-w-140">
-                    <img
-                        src="/enterprise-readiness/hero.png"
-                        alt="ZoikoTime platform"
-                        className="md:mt-10"
-                    />
-                </div>
+  return (
+    <section className="bg-[#DFF8F3] dark:bg-gray-900 px-6 py-20 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
+      <div className="mx-auto max-w-7xl grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        {/* Left Content */}
+        <div>
+          <span className="inline-block rounded-full border border-[#00C6A933] bg-[#00C6A91A] px-3 py-1 text-xs font-semibold tracking-wide text-[#00C6A9] dark:border-teal-500/30 dark:bg-teal-500/10 dark:text-teal-400">
+            Enterprise Readiness
+          </span>
+
+          <h1 className="mt-4 text-4xl font-bold leading-tight text-[#0F0F0F] dark:text-white md:text-[46px]">
+            Workforce Intelligence
+            <br />
+            Built for Enterprise
+            <br />
+            Deployment
+          </h1>
+
+          <p className="mt-5 max-w-xl text-[17px] leading-7 text-[#0F0F0FA6] dark:text-gray-300">
+            ZoikoTime is designed to support enterprise teams with governance
+            controls, security review support, role-based access,
+            implementation planning, reporting, and audit-ready workforce
+            intelligence.
+          </p>
+
+          <p className="mt-4 max-w-xl text-[15px] leading-7 text-[#0F0F0F73] dark:text-gray-400">
+            From workforce records and time verification to payroll confidence,
+            client billing, audit-ready evidence, and AI-assisted insights —
+            ZoikoTime is designed to support serious organizational deployment,
+            not just individual sign-up.
+          </p>
+
+          {/* Buttons */}
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <button className="rounded-lg bg-[#009D8C] px-6 py-3 font-medium text-white shadow-[0_4px_20px_rgba(0,157,140,0.35)] transition hover:bg-teal-700">
+              Request an Enterprise Demo
+            </button>
+
+            <button className="rounded-lg border border-[#009D8C] px-6 py-3 font-medium text-slate-800 transition hover:bg-teal-100 dark:border-teal-400 dark:text-white dark:hover:bg-teal-500/10">
+              Start Free Trial
+            </button>
+          </div>
+        </div>
+
+        {/* Right Image */}
+        <div className="flex justify-center lg:justify-end">
+          <img
+            src="/enterprise-readiness/hero.png"
+            alt="ZoikoTime platform"
+            className="w-full max-w-lg object-contain"
+          />
+        </div>
+      </div>
+
+      {/* Bottom Features */}
+      <div className="mx-auto mt-12 max-w-7xl rounded-xl border border-[#0F0F0F12] bg-[#0F0F0F0A] dark:border-gray-700 dark:bg-gray-800 transition-colors duration-300">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
+          {data.map((item, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-3 border-b border-[#0F0F0F12] px-6 py-5 last:border-b-0 sm:border-r sm:last:border-r-0 sm:border-b-0 dark:border-gray-700"
+            >
+              <div className="h-2 w-2 rounded-full bg-[#00C6A9]" />
+
+              <span className="text-sm font-medium text-[#0F0F0F] dark:text-gray-200">
+                {item}
+              </span>
             </div>
-            <div className="bg-[#0F0F0F0A] mt-8 md:min-w-5xl mx-auto flex flex-col md:flex-row gap-2 md:gap -0 justify-between py-5 px-10 border border-[#0F0F0F12]">
-                {data.map((item, index) => (
-                    <div key={index} className="flex gap-2 px-5 border-r border-[#0F0F0F14] items-center">
-                        <div className="bg-[#00C6A9] h-2 w-2 rounded-[3px]"></div>
-                        <h1 className="text-[13px]">{item}</h1>
-                    </div>
-                ))
-                }
-            </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

@@ -1,6 +1,7 @@
 // components/Redaction.tsx
 
 import React from "react";
+import Link from "next/link";
 
 const redactionItems = [
   {
@@ -85,14 +86,14 @@ export default function Redaction() {
 
         {/* Related Link */}
         <div className="mt-12 text-center">
-          <p className="text-base text-gray-500 dark:text-gray-400">
-            Related:{" "}
-            <a
-              href="#"
-              className="font-semibold text-teal-700 transition hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
-            >
-              View Security Addendum →
-            </a>
+  <p className="text-base text-gray-500 dark:text-gray-400">
+    Related:{" "}
+    <Link
+      href="/security-addendum"
+      className="font-semibold text-teal-700 transition hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
+    >
+      View Security Addendum →
+    </Link>
           </p>
         </div>
       </div>

@@ -1,23 +1,28 @@
 export default function CtaSection() {
   return (
-    <section className="bg-gradient-to-r from-[#F0FDFB] to-[#EAF9F6] px-6 py-12 md:px-54  border-t-4 border-[#009D8C]">
-      <div className="mx-auto max-w-6xl flex flex-col gap-8">
-        <div className="flex flex-col items-center">
-          <h2 className="text-2xl md:text-[34px] font-semibold text-slate-900 mb-3">
+    <section className="border-t-4 border-[#009D8C] bg-gradient-to-r from-[#F0FDFB] to-[#EAF9F6] dark:from-gray-900 dark:to-gray-800 px-6 py-12 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
+      <div className="mx-auto max-w-7xl flex flex-col items-center gap-8 text-center">
+        {/* Heading */}
+        <div className="max-w-4xl">
+          <h2 className="mb-4 text-3xl font-semibold text-slate-900 dark:text-white md:text-[34px]">
             See Workforce Intelligence Built With Governance at the Core
           </h2>
-          <p className="text-[#5A6E87] text-center">
-            ZoikoTime helps organizations verify time,
-            understand activity, support payroll and billing confidence,
-            govern workforce records, and use AI-assisted insights responsibly
-            — with human oversight at every critical decision point.
+
+          <p className="leading-7 text-[#5A6E87] dark:text-gray-300">
+            ZoikoTime helps organizations verify time, understand activity,
+            support payroll and billing confidence, govern workforce records,
+            and use AI-assisted insights responsibly — with human oversight at
+            every critical decision point.
           </p>
         </div>
-        <div className="flex flex-col md:flex-row gap-4 md:gap-8 justify-center shrink-0 w-full">
-          <button className="bg-[#009D8C] hover:bg-teal-700 shadow-[0_4px_12px_0_#009D8C4D] text-[15px] text-white font-medium py-3 px-10 cursor-pointer rounded-[8px] transition-colors shadow-sm">
+
+        {/* Buttons */}
+        <div className="flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row sm:gap-6">
+          <button className="rounded-lg bg-[#009D8C] px-8 py-3 text-[15px] font-medium text-white shadow-[0_4px_12px_rgba(0,157,140,0.3)] transition hover:bg-teal-700">
             Request a ZoikoTime Demo
           </button>
-          <button className="bg-white border border-slate-200 hover:bg-slate-100 cursor-pointer text-slate-800 font-medium px-15 py-3 rounded-md transition-colors">
+
+          <button className="rounded-lg border border-slate-300 bg-white px-8 py-3 font-medium text-slate-800 transition hover:bg-slate-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
             Start Free Trial
           </button>
         </div>

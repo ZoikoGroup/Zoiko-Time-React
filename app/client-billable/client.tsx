@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import React, { useState } from 'react';
 import { Menu, X, ArrowUpRight, ShieldAlert, Sparkles, TrendingUp, CheckCircle, Database, Layers, ArrowRight } from 'lucide-react';
@@ -89,13 +90,60 @@ export default function ClientBillableFullPage() {
           </p>
           
           <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4 px-4">
-            <button className="w-full sm:w-auto bg-[#007D6F] hover:bg-[#006358] text-white font-bold px-8 py-3.5 rounded-md shadow-[0px_4px_14px_0px_rgba(0,157,140,0.35)] transition-all flex items-center justify-center gap-2 group">
-              Request Revenue Demo
-              <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </button>
-            <button className="w-full sm:w-auto border border-[#007D6F] text-[#007D6F] dark:text-[#009D8C] dark:border-[#009D8C] hover:bg-[#007D6F]/5 font-medium px-8 py-3.5 rounded-md transition-all">
-              Speak to an Expert
-            </button>
+
+            <div className="flex flex-col gap-4 sm:flex-row">
+  <Link
+    href="/request-a-demo"
+    className="
+      w-full
+      sm:w-auto
+      bg-[#007D6F]
+      hover:bg-[#006358]
+      text-white
+      font-bold
+      px-8
+      py-3.5
+      rounded-md
+      shadow-[0px_4px_14px_0px_rgba(0,157,140,0.35)]
+      transition-all
+      flex
+      items-center
+      justify-center
+      gap-2
+      group
+    "
+  >
+    Request Revenue Demo
+
+    <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+  </Link>
+
+
+  <Link
+    href="/contact-sales"
+    className="
+      w-full
+      sm:w-auto
+      border
+      border-[#007D6F]
+      text-[#007D6F]
+      dark:text-[#009D8C]
+      dark:border-[#009D8C]
+      hover:bg-[#007D6F]/5
+      font-medium
+      px-8
+      py-3.5
+      rounded-md
+      transition-all
+      flex
+      items-center
+      justify-center
+    "
+  >
+    Speak to an Expert
+  </Link>
+</div>
+
           </div>
         </div>
         <div className="absolute top-[-60px] right-0 lg:right-[100px] size-[480px] bg-radial from-[#009D8C]/10 to-transparent blur-2xl pointer-events-none" />
@@ -476,12 +524,54 @@ export default function ClientBillableFullPage() {
             ZoikoTime turns every billable session into verified, evidence-backed, recognised revenue — protected from disputes, aligned with recognition standards, and visible to the finance team in real time.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
-            <button className="w-full sm:w-auto bg-[#007D6F] hover:bg-[#006358] text-white font-semibold px-6 py-3 rounded-md shadow-lg transition-all">
-              Request Revenue Demo
-            </button>
-            <button className="w-full sm:w-auto border border-white text-white hover:bg-white/10 font-medium px-6 py-3 rounded-md transition-all">
-              Speak to an Expert
-            </button>
+
+            <div className="flex flex-col gap-4 sm:flex-row">
+  <Link
+    href="/request-a-demo"
+    className="
+      w-full
+      sm:w-auto
+      bg-[#007D6F]
+      hover:bg-[#006358]
+      text-white
+      font-semibold
+      px-6
+      py-3
+      rounded-md
+      shadow-lg
+      transition-all
+      flex
+      items-center
+      justify-center
+    "
+  >
+    Request Revenue Demo
+  </Link>
+
+
+  <Link
+    href="/contact-sales"
+    className="
+      w-full
+      sm:w-auto
+      border
+      border-white
+      text-white
+      hover:bg-white/10
+      font-medium
+      px-6
+      py-3
+      rounded-md
+      transition-all
+      flex
+      items-center
+      justify-center
+    "
+  >
+    Speak to an Expert
+  </Link>
+</div>
+
           </div>
         </div>
       </section>

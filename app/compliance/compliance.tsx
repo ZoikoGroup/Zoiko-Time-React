@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 const complianceTags = [
   "SOC 2 Type II–Aligned Controls",
@@ -290,16 +291,32 @@ export default function Compliance() {
           </p>
         </div>
 
-        {/* CTA Buttons */}
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="rounded-md bg-teal-600 px-8 py-3 text-sm font-bold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
-            Request Compliance Briefing
-          </button>
+        {/* CTA Button */}
+<div className="mt-12 flex items-center justify-center">
 
-          <button className="rounded-md border-2 border-teal-600 px-8 py-3 text-sm font-medium text-teal-600 transition hover:bg-teal-600 hover:text-white dark:text-teal-400 dark:border-teal-400">
-            Download Audit Pack
-          </button>
-        </div>
+  <Link
+    href="/request-a-demo"
+    className="
+      rounded-md
+      bg-teal-600
+      px-8
+      py-3
+      text-sm
+      font-bold
+      text-white
+      shadow-lg
+      shadow-teal-600/30
+      transition
+      hover:bg-teal-700
+      inline-flex
+      items-center
+      justify-center
+    "
+  >
+    Request Compliance Briefing
+  </Link>
+
+</div>
 
         {/* Compliance Tags */}
         <div className="mx-auto mt-14 flex max-w-5xl flex-wrap justify-center gap-4">
@@ -1011,13 +1028,57 @@ export default function Compliance() {
 
         {/* Buttons */}
         <div className="mt-12 flex flex-col items-center justify-center gap-5 sm:flex-row">
-          <button className="rounded-md bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0px_4px_14px_rgba(0,157,140,0.28)] transition-all duration-300 hover:bg-teal-700 hover:shadow-lg">
-            Request Compliance Briefing
-          </button>
+          <Link
+    href="/request-a-demo"
+    className="
+      rounded-md
+      bg-teal-600
+      px-8
+      py-3
+      text-base
+      font-semibold
+      text-white
+      shadow-[0px_4px_14px_rgba(0,157,140,0.28)]
+      transition-all
+      duration-300
+      hover:bg-teal-700
+      hover:shadow-lg
+      inline-flex
+      items-center
+      justify-center
+    "
+  >
+    Request Compliance Briefing
+  </Link>
 
-          <button className="rounded-md border border-slate-300 bg-white px-8 py-3 text-base font-medium text-slate-700 transition-all duration-300 hover:bg-slate-50 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
-            Talk to Compliance Team
-          </button>
+
+  <Link
+    href="/contact-sales"
+    className="
+      rounded-md
+      border
+      border-slate-300
+      bg-white
+      px-8
+      py-3
+      text-base
+      font-medium
+      text-slate-700
+      transition-all
+      duration-300
+      hover:bg-slate-50
+      dark:border-gray-700
+      dark:bg-gray-800
+      dark:text-white
+      dark:hover:bg-gray-700
+      inline-flex
+      items-center
+      justify-center
+    "
+  >
+    Talk to Compliance Team
+  </Link>
+
         </div>
       </div>
     </section>

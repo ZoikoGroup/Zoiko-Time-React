@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const evidenceItems = [
   {
@@ -63,18 +64,18 @@ export default function EvidenceSupport() {
         </div>
 
         {/* Related Link */}
-        <div className="mt-12 text-center">
-          <span className="text-gray-500 dark:text-gray-400">
-            Related:{" "}
-          </span>
+<div className="mt-12 text-center">
+  <span className="text-gray-500 dark:text-gray-400">
+    Related:{" "}
+  </span>
 
-          <button
-            type="button"
-            className="font-semibold text-teal-700 dark:text-teal-400 hover:underline transition-colors"
-          >
-            View Audit-Grade Evidence →
-          </button>
-        </div>
+  <Link
+    href="/audit-grade-evidence"
+    className="font-semibold text-teal-700 dark:text-teal-400 hover:underline transition-colors"
+  >
+    View Audit-Grade Evidence →
+  </Link>
+</div>
 
       </div>
     </section>

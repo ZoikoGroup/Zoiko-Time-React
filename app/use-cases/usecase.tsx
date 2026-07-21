@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Link from "next/link";
 import { Play } from 'lucide-react';
 type UseCaseKey = 'remote' | 'contractors' | 'regulated' | 'billable';
 type IndustryKey = 'healthcare' | 'finance' | 'telecom' | 'logistics';
@@ -822,15 +823,37 @@ const layers = [
 
           <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 pt-4 max-w-2xl mx-auto">
             
-            <button className="w-full sm:w-auto px-6 h-12 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-semibold text-base rounded-lg shadow-[0px_4px_14px_0px_rgba(0,157,140,0.25)] flex items-center justify-center gap-2.5 transition-all">
-              <Play className='w-4 h-4' ></Play>
-              <span>Request Tailored Demo</span>
-            </button>
+             <Link
+    href="/request-tailored-demo"
+    className="w-full sm:w-auto px-6 h-12 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-semibold text-base rounded-lg shadow-[0px_4px_14px_0px_rgba(0,157,140,0.25)] flex items-center justify-center gap-2.5 transition-all"
+  >
+    <Play className="w-4 h-4" />
+    <span>Request Tailored Demo</span>
+  </Link>
 
             {/* Action 2: Secondary Calculate Outlines */}
-            <button className="w-full sm:w-auto px-8 h-12 border border-teal-600 dark:border-teal-500 text-teal-600 dark:text-teal-400 hover:bg-teal-600/5 font-semibold text-base rounded-lg transition-colors">
-              Calculate Your ROI
-            </button>
+            <Link
+  href="/calculate-your-roi"
+  className="
+    flex
+    h-12
+    w-52
+    items-center
+    justify-center
+    rounded-lg
+    border
+    border-teal-600
+    text-center
+    text-base
+    font-semibold
+    text-teal-600
+    transition
+    hover:bg-teal-600
+    hover:text-white
+  "
+>
+  Calculate Your ROI
+</Link>
 
             {/* Action 3: Expert Consultation Access Anchor */}
             <button className="w-full sm:w-auto sm:col-span-2 px-8 h-12 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 font-medium text-base rounded-lg transition-colors">

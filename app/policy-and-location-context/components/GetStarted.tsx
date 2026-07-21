@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function GetStarted() {
   return (
@@ -106,43 +107,48 @@ export default function GetStarted() {
         >
 
           {/* Primary Button */}
+<Link
+  href="/request-a-demo"
+  className="
+    w-52
+    h-12
+    rounded-lg
+    bg-teal-500
+    text-emerald-50
+    text-base
+    font-bold
+    hover:bg-teal-600
+    transition
+    inline-flex
+    items-center
+    justify-center
+  "
+>
+  Request Demo →
+</Link>
 
-          <button
-            className="
-            w-52
-            h-12
-            rounded-lg
-            bg-teal-500
-            text-emerald-50
-            text-base
-            font-bold
-            hover:bg-teal-600
-            transition
-            "
-          >
-            Request Demo →
-          </button>
 
-
-
-          {/* Secondary Button */}
-
-          <button
-            className="
-            w-56
-            h-12
-            rounded-lg
-            border
-            border-teal-500
-            text-teal-500
-            text-base
-            font-semibold
-            hover:bg-teal-500/10
-            transition
-            "
-          >
-            Run Policy Scenario
-          </button>
+{/* Secondary Button */}
+<Link
+  href="/policy-and-location-context#policyIntelligenceEngine"
+  className="
+    w-56
+    h-12
+    rounded-lg
+    border
+    border-teal-500
+    text-teal-500
+    text-base
+    font-semibold
+    hover:bg-teal-500/10
+    transition
+    inline-flex
+    items-center
+    justify-center
+  "
+>
+  Run Policy Scenario
+</Link>
 
 
         </div>

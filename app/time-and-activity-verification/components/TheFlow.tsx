@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const flowSteps = [
   {
@@ -200,38 +201,35 @@ export default function TheFlow() {
 
 
         {/* Link */}
+<div
+  className="
+    mt-10
+    text-center
+    text-base
+  "
+>
+  <span
+    className="
+      text-gray-500
+      dark:text-gray-400
+    "
+  >
+    Related:{" "}
+  </span>
 
-        <div
-          className="
-          mt-10
-          text-center
-          text-base
-          "
-        >
-
-          <span
-            className="
-            text-gray-500
-            dark:text-gray-400
-            "
-          >
-            Related:{" "}
-          </span>
-
-
-          <span
-            className="
-            text-teal-700
-            dark:text-teal-400
-            font-semibold
-            cursor-pointer
-            "
-          >
-            View Reporting & Workforce Analytics →
-          </span>
-
-        </div>
-
+  <Link
+    href="/workforce-assurance"
+    className="
+      text-teal-700
+      dark:text-teal-400
+      font-semibold
+      hover:underline
+      transition
+    "
+  >
+    View Reporting & Workforce Analytics →
+  </Link>
+</div>
 
       </div>
 

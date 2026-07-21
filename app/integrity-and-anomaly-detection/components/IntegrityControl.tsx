@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function IntegrityControl() {
 
@@ -311,83 +312,72 @@ export default function IntegrityControl() {
         >
 
           {/* Request Demo */}
-          <button
-            className="
-              h-12
+<Link
+  href="/request-a-demo"
+  className="
+    h-12
+    px-8
+    rounded-lg
+    bg-teal-600
+    text-white
+    font-semibold
+    shadow-lg
+    shadow-teal-600/30
+    hover:bg-teal-700
+    transition
+    inline-flex
+    items-center
+    justify-center
+  "
+>
+  <span className="flex items-center gap-2.5">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      className="w-5 h-5 flex-shrink-0"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M10 8.8L15.5 12L10 15.2V8.8Z"
+        fill="currentColor"
+      />
+    </svg>
 
-              px-8
-
-              rounded-lg
-
-              bg-teal-600
-
-              text-white
-
-              font-semibold
-
-              shadow-lg
-
-              shadow-teal-600/30
-
-              hover:bg-teal-700
-
-              transition
-            "
-          >
-
-            <span
-              className="
-                flex
-                items-center
-                justify-center
-                gap-3
-              "
-            >
-
-              <span>
-                ◉
-              </span>
-
-              Request Demo
-
-            </span>
-
-          </button>
-
+    <span>Request Demo</span>
+  </span>
+</Link>
 
 
 
-          {/* Run Scenario */}
-          <button
-            className="
-              h-12
-
-              px-8
-
-              rounded-lg
-
-              border
-
-              border-teal-600
-
-              text-teal-600
-
-              dark:text-teal-400
-
-              dark:border-teal-400
-
-              font-semibold
-
-              hover:bg-teal-50
-
-              dark:hover:bg-slate-800
-
-              transition
-            "
-          >
-            Run Fraud Scenario
-          </button>
-
+         <Link
+  href="/integrity-and-anomaly-detection#detection-flow"
+  className="
+    h-12
+    px-8
+    rounded-lg
+    border
+    border-teal-600
+    text-teal-600
+    dark:text-teal-400
+    dark:border-teal-400
+    font-semibold
+    hover:bg-teal-50
+    dark:hover:bg-slate-800
+    transition
+    inline-flex
+    items-center
+    justify-center
+  "
+>
+  Run Fraud Scenario
+</Link>
 
         </div>
 

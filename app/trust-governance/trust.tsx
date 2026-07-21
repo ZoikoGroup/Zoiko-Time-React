@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import React, { useState } from 'react';
 
 // Define structures for our frameworks and compliance records
@@ -277,12 +278,24 @@ export default function TrustGovernance() {
 
           {/* Action CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 px-4 sm:px-0">
-            <button className="w-full sm:w-auto px-6 h-12 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-semibold text-base rounded-lg shadow-md transition-colors flex items-center justify-center">
-              ↓ Download Regulator Brief
-            </button>
-            <button className="w-full sm:w-auto px-6 h-12 border border-teal-600 text-teal-600 dark:text-teal-400 hover:bg-teal-600/5 font-medium text-base rounded-lg transition-colors bg-white dark:bg-slate-900 sm:bg-transparent">
-              Explore Compliance Matrix
-            </button>
+
+            <Link
+  href="/regulator-brief"
+  className="w-full sm:w-auto px-6 h-12 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-semibold text-base rounded-lg shadow-md transition-colors flex items-center justify-center"
+>
+  ↓ Download Regulator Brief
+</Link>
+
+
+
+           <a
+  href="#compliance-matrix"
+  className="w-full sm:w-auto px-6 h-12 border border-teal-600 text-teal-600 dark:text-teal-400 hover:bg-teal-600/5 font-medium text-base rounded-lg transition-colors bg-white dark:bg-slate-900 sm:bg-transparent flex items-center justify-center"
+>
+  Explore Compliance Matrix
+</a>
+
+
           </div>
 
           {/* Compliant Standard Meta Badges */}
@@ -307,7 +320,10 @@ export default function TrustGovernance() {
       {/* =========================================================
           SECTION 2: COMPLIANCE MAPPING MATRIX (TABLE VIEW)
           ========================================================= */}
-      <section className="max-w-6xl mx-auto py-16 px-4 space-y-8">
+      <section 
+  id="compliance-matrix"
+  className="max-w-6xl mx-auto py-16 px-4 space-y-8"
+>
         
         {/* Section Heading Context */}
         <div className="text-center space-y-2">
@@ -436,7 +452,10 @@ export default function TrustGovernance() {
       {/* =========================================================
           SECTION 3: AUDIT WORKFLOW SIMULATIONS
           ========================================================= */}
-      <section className="w-full bg-white dark:bg-slate-900 py-16 text-slate-950 dark:text-white antialiased">
+      <section
+  id="audit-simulation"
+  className="w-full bg-white dark:bg-slate-900 py-16 text-slate-950 dark:text-white antialiased"
+>
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           
           {/* --- HEADER --- */}
@@ -905,12 +924,18 @@ export default function TrustGovernance() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4 sm:px-0">
-            <button className="w-full sm:w-auto px-8 h-12 bg-teal-600 hover:bg-teal-700 text-white font-semibold font-sans rounded-lg shadow-md text-center transition-all duration-200 cursor-pointer">
-              ↓ Download Regulator Brief
-            </button>
-            <button className="w-full sm:w-auto px-8 h-12 border border-teal-600 text-teal-600 dark:text-teal-400 hover:bg-teal-600/5 bg-white dark:bg-slate-900 sm:bg-transparent font-medium font-sans rounded-lg text-center transition-all duration-200 cursor-pointer">
-              Run Audit Simulation
-            </button>
+
+<Link
+  href="/regulator-brief"
+  className="w-full sm:w-auto px-6 h-12 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-semibold text-base rounded-lg shadow-md transition-colors flex items-center justify-center"
+>
+  ↓ Download Regulator Brief
+</Link>
+
+
+            <a href="#audit-simulation">
+  Run Audit Simulation
+</a>
           </div>
         </div>
       </section>
