@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function CoreIntelligenceCapabilities() {
@@ -199,30 +200,28 @@ export default function CoreIntelligenceCapabilities() {
 
 
         {/* Button */}
-        <div
-          className="
-          flex
-          justify-center
-          mt-16
-          "
-        >
-
-          <button
-            className="
-            w-80
-            h-12
-            rounded-lg
-            bg-teal-600
-            text-white
-            text-base
-            font-semibold
-            shadow-[0px_4px_20px_0px_rgba(0,157,140,0.40)]
-            "
-          >
-            Request a Demo
-          </button>
-
-        </div>
+<div className="mt-16 flex justify-center">
+  <Link
+    href="/request-a-demo"
+    className="
+      flex
+      h-12
+      w-80
+      items-center
+      justify-center
+      rounded-lg
+      bg-teal-600
+      text-base
+      font-semibold
+      text-white
+      shadow-[0px_4px_20px_0px_rgba(0,157,140,0.40)]
+      transition
+      hover:bg-teal-700
+    "
+  >
+    Request a Demo
+  </Link>
+</div>
 
 
       </div>

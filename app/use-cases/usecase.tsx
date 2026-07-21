@@ -832,12 +832,28 @@ const layers = [
   </Link>
 
             {/* Action 2: Secondary Calculate Outlines */}
-             <Link
-            href="/calculate-your-roi"
-            className="rounded-[10px] border border-white/30 bg-white/10 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/20 sm:text-base"
-          >
-            Calculate Your ROI
-          </Link>
+            <Link
+  href="/calculate-your-roi"
+  className="
+    flex
+    h-12
+    w-52
+    items-center
+    justify-center
+    rounded-lg
+    border
+    border-teal-600
+    text-center
+    text-base
+    font-semibold
+    text-teal-600
+    transition
+    hover:bg-teal-600
+    hover:text-white
+  "
+>
+  Calculate Your ROI
+</Link>
 
             {/* Action 3: Expert Consultation Access Anchor */}
             <button className="w-full sm:w-auto sm:col-span-2 px-8 h-12 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 font-medium text-base rounded-lg transition-colors">

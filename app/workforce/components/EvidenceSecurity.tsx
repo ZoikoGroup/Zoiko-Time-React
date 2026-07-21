@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function EvidenceSecurity() {
@@ -200,58 +201,66 @@ leading-5
 
 
 {/* Buttons */}
-
 <div
-className="
-mt-16
-flex
-flex-col
-sm:flex-row
-justify-center
-gap-6
-"
+  className="
+    mt-16
+    flex
+    flex-col
+    justify-center
+    gap-6
+    sm:flex-row
+  "
 >
+  {/* Request a Demo */}
+  <Link
+    href="/request-a-demo"
+    className="
+      flex
+      h-12
+      w-full
+      items-center
+      justify-center
+      rounded-lg
+      bg-teal-600
+      text-base
+      font-semibold
+      text-white
+      shadow-lg
+      transition
+      hover:bg-teal-700
+      sm:w-64
+    "
+  >
+    Request a Demo
+  </Link>
 
-
-<button
-className="
-w-full
-sm:w-64
-h-12
-bg-teal-600
-rounded-lg
-text-white
-text-base
-font-semibold
-shadow-lg
-"
->
-Request a Demo
-</button>
-
-
-
-<button
-className="
-w-full
-sm:w-64
-h-12
-bg-white
-dark:bg-slate-900
-border
-border-slate-200
-dark:border-slate-700
-rounded-lg
-text-slate-700
-dark:text-white
-text-sm
-font-medium
-"
->
-Explore Enterprise Readiness
-</button>
-
-
+  {/* Explore Enterprise Readiness */}
+  <Link
+    href="/enterprise-readiness"
+    className="
+      flex
+      h-12
+      w-full
+      items-center
+      justify-center
+      rounded-lg
+      border
+      border-slate-200
+      bg-white
+      text-sm
+      font-medium
+      text-slate-700
+      transition
+      hover:bg-slate-100
+      dark:border-slate-700
+      dark:bg-slate-900
+      dark:text-white
+      dark:hover:bg-slate-800
+      sm:w-64
+    "
+  >
+    Explore Enterprise Readiness
+  </Link>
 </div>
 
 

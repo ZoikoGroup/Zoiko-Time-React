@@ -1,7 +1,8 @@
 "use client"
 import { useState } from 'react';
 import React from 'react';
-import { Play } from 'lucide-react';
+import Link from "next/link";
+import { Play } from "lucide-react";
 export default function Enterprise() {
     const [workforceSize, setWorkforceSize] = useState<number>(2000);
   const [hourlyCost, setHourlyCost] = useState<number>(45);
@@ -41,15 +42,22 @@ export default function Enterprise() {
         {/* Action Controls */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
           {/* Primary Call to Action */}
-          <button className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 bg-teal-600 text-white font-semibold rounded-lg shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)] hover:bg-teal-700 dark:hover:bg-teal-500 active:scale-[0.98] transition-all duration-200 text-base">
-            <Play></Play>
-           Request Enterprise Demo
-          </button>
+
+          <Link
+  href="/request-enterprise-demo"
+  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 bg-teal-600 text-white font-semibold rounded-lg shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)] hover:bg-teal-700 dark:hover:bg-teal-500 active:scale-[0.98] transition-all duration-200 text-base"
+>
+  <Play className="h-5 w-5" />
+  Request Enterprise Demo
+</Link>
           
           {/* Secondary Call to Action */}
-          <button className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 border border-teal-600 text-teal-600 dark:text-teal-400 dark:border-teal-400 font-semibold rounded-lg hover:bg-teal-50/50 dark:hover:bg-teal-950/30 active:scale-[0.98] transition-all duration-200 text-base">
-            Calculate ROI
-          </button>
+          <Link
+  href="/calculate-your-roi"
+  className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 border border-teal-600 text-teal-600 dark:text-teal-400 dark:border-teal-400 font-semibold rounded-lg hover:bg-teal-50/50 dark:hover:bg-teal-950/30 active:scale-[0.98] transition-all duration-200 text-base"
+>
+  Calculate ROI
+</Link>
         </div>
 
         {/* Dynamic Trust Badges / Framework Elements */}
@@ -789,9 +797,15 @@ export default function Enterprise() {
           <p className="text-sm text-slate-500 dark:text-slate-400 max-w-xl mx-auto mb-6 leading-relaxed">
             All procurement documentation in a single structured bundle — ready for distribution to your legal, security, finance, and technical review teams.
           </p>
-          <button className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded-lg text-sm shadow-md hover:shadow-lg transition-all">
-            ↓ Download Enterprise Approval Pack
-          </button>
+
+          <Link
+  href="/enterprise-approval-pack"
+  className="inline-flex items-center rounded-lg bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-teal-700 hover:shadow-lg"
+>
+  ↓ Download Enterprise Approval Pack
+</Link>
+
+
         </div>
       </section>
 
@@ -1009,13 +1023,19 @@ export default function Enterprise() {
 
           {/* Action Trigger Row */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <button className="w-full sm:w-auto bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3.5 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all text-sm flex items-center justify-center gap-2">
-              <Play></Play>
-              Request Enterprise Demo
-            </button>
+
+            <Link
+  href="/request-enterprise-demo"
+  className="flex w-full items-center justify-center gap-2 rounded-lg bg-teal-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-teal-700 hover:shadow-xl sm:w-auto"
+>
+  <Play />
+  Request Enterprise Demo
+</Link>
+
             <button className="w-full sm:w-auto border border-teal-600 hover:bg-teal-600/10 text-teal-600 dark:text-teal-400 font-medium py-3.5 px-8 rounded-lg transition-all text-sm">
               Speak to Enterprise Architect
             </button>
+
           </div>
         </div>
       </section>

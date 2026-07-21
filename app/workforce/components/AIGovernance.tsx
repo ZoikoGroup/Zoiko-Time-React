@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function AIGovernance() {
@@ -318,25 +319,27 @@ No automated adverse decisions.
 
 
 
-<button
-className="
-block
-mx-auto
-mt-16
-px-10
-py-3
-rounded-lg
-border
-border-white/20
-text-white/80
-text-sm
-font-semibold
-hover:bg-white/10
-transition
-"
+<Link
+  href="/enterprise-readiness"
+  className="
+    block
+    mx-auto
+    mt-16
+    w-fit
+    px-10
+    py-3
+    rounded-lg
+    border
+    border-white/20
+    text-white/80
+    text-sm
+    font-semibold
+    transition
+    hover:bg-white/10
+  "
 >
-Explore Enterprise Readiness →
-</button>
+  Explore Enterprise Readiness →
+</Link>
 
 
 

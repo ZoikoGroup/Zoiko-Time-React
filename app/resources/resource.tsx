@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import React from 'react';
 import { useState } from 'react';
 interface StageCard {
@@ -196,9 +197,12 @@ export default function Resource() {
               placeholder="What are you trying to achieve?" 
               className="w-full bg-transparent px-4 py-2 text-slate-800 dark:text-slate-100 placeholder-neutral-400 dark:placeholder-slate-500 text-base font-normal    focus:outline-none"
             />
-            <button className="bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 text-white text-xs font-bold    px-6 h-full rounded-xl flex items-center justify-center shrink-0 transition-colors duration-150">
-              Find Resources →
-            </button>
+            <a
+  href="#resource-library"
+  className="bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 text-white text-xs font-bold px-6 h-full rounded-xl flex items-center justify-center shrink-0 transition-colors duration-150"
+>
+  Find Resources →
+</a>
           </div>
 
           {/* Context Quick-Filter Suggestion Tags */}
@@ -350,6 +354,15 @@ export default function Resource() {
     <section className="w-full bg-slate-100 dark:bg-slate-950/20 py-14 font-sans antialiased text-slate-900 dark:text-white transition-colors duration-300">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-[120px]">
         
+
+
+
+<section
+  id="resource-library"
+  className="relative w-full bg-slate-50 dark:bg-slate-950/40 py-20"
+></section>
+
+
         {/* Section Header */}
         <div className="flex flex-col items-center text-center space-y-4 mb-16">
           <span className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 block  ">
@@ -1676,13 +1689,19 @@ export default function Resource() {
 
       <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
 
-                <button className="w-full sm:w-auto rounded-md bg-teal-600 px-8 py-3 text-sm font-bold text-white shadow-[0px_4px_14px_rgba(0,157,140,0.28)] transition-colors hover:bg-teal-700">
-          Request Demo
-        </button>
+                <Link
+  href="/request-a-demo"
+  className="inline-flex w-full items-center justify-center rounded-md bg-teal-600 px-8 py-3 text-sm font-bold text-white shadow-[0px_4px_14px_rgba(0,157,140,0.28)] transition-colors hover:bg-teal-700 sm:w-auto"
+>
+  Request Demo
+</Link>
 
-        <button className="w-full sm:w-auto rounded-md border border-teal-600 bg-transparent px-8 py-3 text-sm font-medium text-teal-600 transition-colors hover:bg-teal-600 hover:text-white dark:border-teal-400 dark:text-teal-400 dark:hover:bg-teal-500 dark:hover:text-white">
-          Talk to Sales
-        </button>
+        <Link
+  href="/contact-sales"
+  className="inline-flex w-full items-center justify-center rounded-md border border-teal-600 bg-transparent px-8 py-3 text-sm font-medium text-teal-600 transition-colors hover:bg-teal-600 hover:text-white dark:border-teal-400 dark:text-teal-400 dark:hover:bg-teal-500 dark:hover:text-white sm:w-auto"
+>
+  Talk to Sales
+</Link>
 
       </div>
     </div>
