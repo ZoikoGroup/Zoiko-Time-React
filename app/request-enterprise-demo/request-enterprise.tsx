@@ -40,7 +40,7 @@ interface SectionHeadingProps {
 }
 
 interface SessionTopic {
-  icon: React.ReactNode;
+  icon: string;
   title: string;
   body: string;
 }
@@ -191,22 +191,22 @@ const TRUST_BADGES: TrustBadge[] = [
 
 const SESSION_TOPICS: SessionTopic[] = [
   {
-    icon: <Clock className="h-5 w-5 text-teal-600 dark:text-teal-400" />,
+    icon: "/request-enterprise-demo/SVG.png",
     title: "Workforce Activity & Time Evidence",
     body: "See how activity, time, and approvals become a governed, verifiable record of what actually happened.",
   },
   {
-    icon: <FileCheck2 className="h-5 w-5 text-teal-600 dark:text-teal-400" />,
+    icon: "/request-enterprise-demo/SVG 1.png",
     title: "Compliance & Audit Readiness",
     body: "Explore audit-ready trails, retention controls, and evidence designed to withstand scrutiny.",
   },
   {
-    icon: <Globe2 className="h-5 w-5 text-teal-600 dark:text-teal-400" />,
+    icon: "/request-enterprise-demo/SVG 3.png",
     title: "Multi-Jurisdiction Operations",
     body: "Understand how cross-border policy, data residency, and local rules are governed from one platform.",
   },
   {
-    icon: <BrainCircuit className="h-5 w-5 text-teal-600 dark:text-teal-400" />,
+    icon: "/request-enterprise-demo/SVG 4.png",
     title: "AI-Assisted Workforce Intelligence",
     body: "See human-in-command AI that explains decisions, flags exceptions, and keeps people accountable.",
   },
@@ -410,7 +410,7 @@ export default function RequestEnterpriseDemoPage() {
             {SESSION_TOPICS.map((topic) => (
               <div key={topic.title} className={`${cardBase} p-7`}>
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 dark:bg-teal-500/10">
-                  {topic.icon}
+                 <img className="h-5 w-5" src={topic.icon} />
                 </div>
                 <h3 className="mt-6 text-base font-semibold leading-7 text-slate-800 dark:text-white">
                   {topic.title}

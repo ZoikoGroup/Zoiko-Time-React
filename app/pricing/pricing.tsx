@@ -1,924 +1,722 @@
-"use client"
-import { useState } from 'react';
-import React from 'react';
-import PricingTiers from './pricingplans';
-type FeatureRowProps = {
-  label: string;
-  sublabel?: string;
-  essential: React.ReactNode;
-  professional: React.ReactNode;
-  enterprise: React.ReactNode;
-  sovereign: React.ReactNode;
-  isDarkBg?: boolean;
-};
+"use client";
 
-interface FAQItem {
-  id: number;
+import React, { useMemo, useState } from "react";
+import { Check, Minus, Plus, ChevronDown } from "lucide-react";
+import PricingPlans from "./pricingplans";
+
+/**
+ * Pricing page
+ * - Next.js (app router) — app/pricing/pricing.tsx
+ * - Tailwind CSS with dark mode (`dark:` variants), fully responsive
+ * - Imports the pricing cards section from ./pricingplans
+ */
+
+const eyebrow =
+  "text-xs font-semibold uppercase tracking-widest text-teal-600 dark:text-teal-400";
+
+const cardBase =
+  "rounded-2xl border border-slate-200 bg-white shadow-[0px_6px_18px_0px_rgba(14,31,61,0.05)] dark:border-gray-700 dark:bg-gray-800";
+
+/* ------------------------------------------------------------------ */
+/* Types                                                                */
+/* ------------------------------------------------------------------ */
+
+type CellValue = true | false | string;
+
+interface MatrixRow {
+  label: string;
+  values: [CellValue, CellValue, CellValue, CellValue]; // Verified, Governed, Sovereign, Enterprise
+}
+
+interface MatrixGroup {
+  title: string;
+  rows: MatrixRow[];
+}
+
+interface CompetitorRow {
+  label: string;
+  values: [CellValue, CellValue, CellValue, CellValue]; // ZoikoTime, Time Doctor, Hubstaff, ActivTrak
+}
+
+interface FaqItem {
   question: string;
   answer: string;
 }
-// Component for rendering rows cleanly with uniform structural grid widths
-const FeatureRow = ({ label, sublabel, essential, professional, enterprise, sovereign, isDarkBg }: FeatureRowProps) => (
-  <div className={`grid grid-cols-12 items-stretch border-b border-slate-200 dark:border-slate-800 ${isDarkBg ? 'bg-slate-50 dark:bg-slate-900/40' : 'bg-white dark:bg-slate-900'}`}>
-    <div className="col-span-5 px-6 py-3.5 flex flex-col justify-center min-h-[48px]">
-      <span className="text-slate-900 dark:text-white text-sm font-semibold ">{label}</span>
-      {sublabel && <span className="text-teal-600 dark:text-teal-400 text-xs font-semibold  mt-0.5">{sublabel}</span>}
-    </div>
-    <div className="col-span-2 px-4 flex items-center justify-center text-center text-sm font-semibold ">{essential}</div>
-    <div className="col-span-2 px-4 flex items-center justify-center text-center text-sm font-semibold  bg-teal-600/[0.03] dark:bg-teal-500/[0.02] border-x border-slate-200/60 dark:border-slate-800/60">{professional}</div>
-    <div className="col-span-1.5 col-start-10 px-4 flex items-center justify-center text-center text-sm font-semibold ">{enterprise}</div>
-    <div className="col-span-1.5 col-start-11.5 px-4 flex items-center justify-center text-center text-sm font-semibold ">{sovereign}</div>
-  </div>
-);
-interface UseCaseProfile {
-  id: string;
-  tabLabel: string;
+
+/* ------------------------------------------------------------------ */
+/* Small components                                                     */
+/* ------------------------------------------------------------------ */
+
+function SectionHeading({
+  eyebrowText,
+  title,
+  subtitle,
+}: {
+  eyebrowText: string;
   title: string;
-  description: string;
-  priceRange: string;
-  recommendedPlan: string;
-  roiTitle: string;
-  metrics: {
-    label: string;
-    value: string;
-  }[];
-}
-export default function Pricing() {
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const faqItems: FAQItem[] = [
-    {
-      id: 1,
-      question: 'How does pricing scale with workforce size?',
-      answer: 'ZoikoTime scales using built-in tiered volume efficiency. As your active workforce count passes predefined organizational thresholds, your per-user cost decreases automatically without requiring complex contract amendments.'
-    },
-    {
-      id: 2,
-      question: 'Can we customise features for our organisation?',
-      answer: 'Yes. While standard functionality serves broad deployment requirements on Essential and Pro plans, Enterprise and Sovereign tiers offer fully tailored custom features, targeted workflow configurations, and modular API structures.'
-    },
-    {
-      id: 3,
-      question: 'What is included in Enterprise pricing?',
-      answer: 'Enterprise pricing unlocks all advanced analytics tools, automated compliance auditing layers, platform integrations, standard onboarding, and dedicated account support teams with custom enterprise-grade SLAs.'
-    },
-    {
-      id: 4,
-      question: 'How fast is onboarding and initial deployment?',
-      answer: 'Standard setups go live in days using our guided documentation. Enterprise configurations requiring deep third-party payroll tool or core system custom infrastructure mappings typically deploy within 2 to 4 weeks.'
-    },
-    {
-      id: 5,
-      question: 'Is there a minimum commitment period?',
-      answer: 'Standard tiers offer flexible month-to-month arrangements or annual commits with deeper cost reductions. Enterprise and Sovereign commitments are customized to your organization’s multi-year procurement requirements.'
-    },
-    {
-      id: 6,
-      question: 'Why is Enterprise pricing custom rather than listed?',
-      answer: 'Enterprise integrations feature varying architectures, unique compliance burdens, single-tenant hosting prerequisites, or personalized SLA commitments that must be modeled on an individual organizational basis.'
-    }
-  ];
-
-  const toggleFaq = (id: number) => {
-    setOpenFaq(openFaq === id ? null : id);
-  };
-    const useCases: UseCaseProfile[] = [
-    {
-      id: 'distributed',
-      tabLabel: 'Distributed Teams',
-      title: 'Distributed & Remote Teams',
-      description: 'Verified session tracking, location validation, and centralised workforce command visibility — providing the assurance infrastructure that distributed operations lack without ZoikoTime.',
-      priceRange: '$8–£18 / user / month',
-      recommendedPlan: 'Recommended: Professional Plan',
-      roiTitle: '💰 Typical ROI Profile — 500 Distributed Workers',
-      metrics: [
-        { label: 'Monthly leakage identified', value: '$56K' },
-        { label: 'Annual recoverable value', value: '$672K' },
-        { label: 'ZoikoTime annual cost (Pro)', value: '~$108K' },
-        { label: 'First-year net return', value: '~$564K' },
-        { label: 'Payback period', value: '< 8 weeks' }
-      ]
-    },
-    {
-      id: 'contractors',
-      tabLabel: 'Contractors',
-      title: 'Contractor Verification & Auditing',
-      description: 'Ensure delivery proof, manage statement-of-work compliance, and safeguard against dual-employment leakage across specialized technical vendor cohorts.',
-      priceRange: 'Custom / Tier-based',
-      recommendedPlan: 'Recommended: Enterprise Plan',
-      roiTitle: '💰 Typical ROI Profile — 150 Contractors',
-      metrics: [
-        { label: 'Monthly leakage identified', value: '$32K' },
-        { label: 'Annual recoverable value', value: '$384K' },
-        { label: 'ZoikoTime annual cost', value: 'Custom' },
-        { label: 'First-year net return', value: '~$310K' },
-        { label: 'Payback period', value: '< 6 weeks' }
-      ]
-    },
-    {
-      id: 'regulated',
-      tabLabel: 'Regulated Industries',
-      title: 'Strict Jurisdiction Compliance',
-      description: 'Advanced data sovereignty matching local financial regulations, audit-ready data tracking layers, and tamper-resistant chain of custody systems.',
-      priceRange: 'Custom Sovereign Rates',
-      recommendedPlan: 'Recommended: Sovereign Plan',
-      roiTitle: '💰 Typical ROI Profile — Regulated Enterprise',
-      metrics: [
-        { label: 'Compliance penalties avoided', value: '$1.2M' },
-        { label: 'Annual recoverable value', value: '$890K' },
-        { label: 'ZoikoTime annual cost', value: 'Custom' },
-        { label: 'First-year net return', value: 'High Impact' },
-        { label: 'Payback period', value: 'Immediate' }
-      ]
-    },
-    {
-      id: 'client-billing',
-      tabLabel: 'Client Billing',
-      title: 'Precision Agency Cost-Recovery',
-      description: 'Export verifiable evidence metrics to validate billable resource hours directly to your end clients, strengthening retainers and trust parameters.',
-      priceRange: '$8–$18 / user / month',
-      recommendedPlan: 'Recommended: Professional Plan',
-      roiTitle: '💰 Typical ROI Profile — Active Agencies',
-      metrics: [
-        { label: 'Leakage recovery margin', value: '+14%' },
-        { label: 'Annual recoverable value', value: '$240K' },
-        { label: 'ZoikoTime annual cost', value: '~$48K' },
-        { label: 'First-year net return', value: '~$192K' },
-        { label: 'Payback period', value: '< 4 weeks' }
-      ]
-    }
-  ];
-
-  const [activeTab, setActiveTab] = useState<string>('distributed');
-  const activeData = useCases.find((uc) => uc.id === activeTab) || useCases[0];
-    const check = <span className="text-teal-600 dark:text-teal-400 font-bold text-base">✓</span>;
-  const checkFull = <span className="text-teal-600 dark:text-teal-400 font-bold text-sm">✓ Full</span>;
-  const cross = <span className="text-slate-300 dark:text-slate-700 font-normal text-sm">✗</span>;
-  const basic = <span className="text-amber-600 dark:text-amber-500 font-semibold text-sm">Basic</span>;
-  const standard = <span className="text-amber-600 dark:text-amber-500 font-semibold text-sm">Standard</span>;
-
-     const [employees, setEmployees] = useState<number>(500);
-      const [hourlyCost, setHourlyCost] = useState<number>(20);
-      const [leakageRate, setLeakageRate] = useState<number>(8);
-    
-      // Financial formulas tracking custom configurations
-      const averageHoursPerMonth = 160; 
-      const totalMonthlyPayroll = employees * hourlyCost * averageHoursPerMonth;
-      const monthlyLeakage = Math.round(totalMonthlyPayroll * (leakageRate / 100));
-      const annualRecoverable = Math.round(monthlyLeakage * 12);
-      
-      // Custom baseline parameters scaling alongside pricing units
-      const estimatedAnnualCost = employees * 18 * 12; 
-      const estimatedFirstYearRoi = estimatedAnnualCost > 0 
-        ? Math.round((annualRecoverable / estimatedAnnualCost) * 100) 
-        : 0;
-      
-      const estimatedPaybackWeeks = estimatedAnnualCost > 0 && monthlyLeakage > 0
-        ? ((estimatedAnnualCost / monthlyLeakage) * 4.33).toFixed(1)
-        : "0.0";
-    
-      // Formatter for values scaling efficiently up to millions
-      const formatCurrency = (val: number) => {
-        if (val >= 1000000) return `$${(val / 1000000).toFixed(1)}M`;
-        if (val >= 1000) return `$${Math.round(val / 1000)}K`;
-        return `$${val}`;
-      };
+  subtitle?: string;
+}) {
   return (
-    <div className="w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white font-sans antialiased selection:bg-teal-500 selection:text-white transition-colors duration-300">
-      
-      
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden bg-gradient-to-br from-emerald-50/60 via-slate-50 via-40% to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 rounded-3xl my-6 border border-slate-200/50 dark:border-slate-800/50">
-        <div className="text-center max-w-4xl mx-auto space-y-6 relative z-10">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-            The Cost of Workforce Uncertainty Is{' '}
-            <span className="text-teal-600 dark:text-teal-400 block sm:inline">
-              Higher Than You Think
-            </span>
+    <div className="mx-auto max-w-2xl text-center">
+      <p className={eyebrow}>{eyebrowText}</p>
+      <h2 className="mt-3 text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl">
+        {title}
+      </h2>
+      {subtitle && (
+        <p className="mt-4 text-base leading-7 text-gray-500 dark:text-gray-400">{subtitle}</p>
+      )}
+    </div>
+  );
+}
+
+function Cell({ value }: { value: CellValue }) {
+  if (value === true) {
+    return <Check className="mx-auto h-3.5 w-3.5 text-teal-600 dark:text-teal-400" />;
+  }
+  if (value === false) {
+    return <Minus className="mx-auto h-3 w-3 text-slate-300 dark:text-gray-600" />;
+  }
+  return (
+    <span className="text-xs font-bold text-slate-500 dark:text-gray-400">{value}</span>
+  );
+}
+
+function Slider({
+  label,
+  value,
+  display,
+  min,
+  max,
+  step,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  display: string;
+  min: number;
+  max: number;
+  step: number;
+  onChange: (v: number) => void;
+}) {
+  return (
+    <div>
+      <p className="mb-3 text-xs font-bold text-slate-900 dark:text-gray-200">
+        {label}: <span className="font-extrabold text-teal-600 dark:text-teal-400">{display}</span>
+      </p>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-teal-600 dark:bg-gray-600"
+      />
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Data                                                                 */
+/* ------------------------------------------------------------------ */
+
+const STATS: { value: string; label: string }[] = [
+  { value: "99.97%", label: "Platform uptime" },
+  { value: "SOC 2", label: "Type II certified" },
+  { value: "-15%", label: "Avg payroll leakage reduction" },
+  { value: "4 wk", label: "Typical payback period" },
+  { value: "ISO 27001", label: "Certified" },
+];
+
+const TRIAL_BADGES: string[] = [
+  "No credit card required",
+  "Full feature access",
+  "Cancel anytime",
+  "Privacy-first by design",
+];
+
+const MATRIX_GROUPS: MatrixGroup[] = [
+  {
+    title: "Workforce Intelligence",
+    rows: [
+      { label: "Automated time tracking", values: [true, true, true, true] },
+      { label: "AI confidence scoring", values: [true, true, true, true] },
+      { label: "Idle detection", values: [true, true, true, true] },
+      { label: "Anomaly detection", values: [false, true, true, true] },
+      { label: "Focus vs fragmentation analysis", values: [false, true, true, true] },
+      { label: "Shift integrity validation", values: [false, false, true, true] },
+    ],
+  },
+  {
+    title: "Evidence & Audit",
+    rows: [
+      { label: "Cryptographic audit trail", values: [true, true, true, true] },
+      { label: "Tamper-evident session records", values: [true, true, true, true] },
+      { label: "Audit-ready export bundles", values: [false, true, true, true] },
+      { label: "Chain-of-custody logging", values: [false, false, true, true] },
+      { label: "Legal hold and preservation", values: [false, false, true, true] },
+      { label: "Data retention", values: ["1 year", "3 years", "Unlimited", "Custom"] },
+    ],
+  },
+  {
+    title: "Governance & Compliance",
+    rows: [
+      { label: "Policy enforcement engine", values: [false, true, true, true] },
+      { label: "Custom policy builder", values: [false, false, true, true] },
+      { label: "Jurisdiction-aware compliance engine", values: [false, false, true, true] },
+      { label: "Compliance dashboard", values: [false, false, true, true] },
+      { label: "SSO / SAML", values: [false, false, true, true] },
+      { label: "Contractor classification controls", values: [false, false, true, true] },
+    ],
+  },
+  {
+    title: "Integrations & API",
+    rows: [
+      { label: "API access", values: ["Read only", "Read / Write", true, "✓ Full"] },
+      { label: "Payroll integrations (ADP etc.)", values: [false, true, true, true] },
+      { label: "HRIS integration (Workday, SAP)", values: [false, false, false, "✓ Custom"] },
+      { label: "Slack / Jira / Project tools", values: [false, true, true, true] },
+      { label: "ZoikoSuite integration", values: [false, true, true, true] },
+    ],
+  },
+  {
+    title: "Support & Services",
+    rows: [
+      {
+        label: "Support channel",
+        values: ["Email", "Email + Chat", "Dedicated CSM", "24/7 Priority"],
+      },
+      { label: "Dedicated success manager", values: [false, false, true, true] },
+      { label: "Compliance advisory", values: [false, false, false, true] },
+      { label: "Private cloud / on-premise", values: [false, false, false, true] },
+    ],
+  },
+];
+
+const MATRIX_PLANS = [
+  { label: "Verified", price: "$8/user", highlight: false },
+  { label: "Governed", price: "$15/user", highlight: true },
+  { label: "Sovereign", price: "$24/user", highlight: false },
+  { label: "Enterprise", price: "Custom", highlight: false },
+];
+
+const COMPETITOR_ROWS: CompetitorRow[] = [
+  {
+    label: "AI confidence scoring for session legitimacy",
+    values: [true, false, false, false],
+  },
+  {
+    label: "Cryptographic audit trail / tamper-evident records",
+    values: [true, false, false, false],
+  },
+  {
+    label: "Policy enforcement engine with compliance mapping",
+    values: [true, false, "Basic", false],
+  },
+  {
+    label: "Jurisdiction-aware compliance (GDPR, FLSA, WTD)",
+    values: [true, false, false, false],
+  },
+  {
+    label: "Anomaly detection for ghost work and automation fraud",
+    values: [true, false, false, "Partial"],
+  },
+  {
+    label: "Chain-of-custody evidence for legal proceedings",
+    values: [true, false, false, false],
+  },
+  {
+    label: "Legal hold and audit preservation controls",
+    values: [true, false, false, false],
+  },
+  { label: "Human-in-Command governance model", values: [true, false, false, false] },
+  {
+    label: "90-day free trial — no credit card",
+    values: [true, "14 days", "14 days", "14 days"],
+  },
+];
+
+const FAQ_ITEMS: FaqItem[] = [
+  {
+    question: "Do I need a credit card to start the trial?",
+    answer:
+      "No. The 90-day trial gives you full feature access with no credit card required and no obligation to upgrade at the end.",
+  },
+  {
+    question: "What happens when the trial ends?",
+    answer:
+      "You'll be prompted to choose a plan that fits your team. If you don't upgrade, your account moves to a limited read-only state — your data isn't deleted.",
+  },
+  {
+    question: "How does ZoikoTime compare with Time Doctor or Hubstaff?",
+    answer:
+      "ZoikoTime focuses on verified evidence and governance — cryptographic audit trails, policy enforcement, and jurisdiction-aware compliance — rather than just activity percentages and screenshots.",
+  },
+  {
+    question: "Can ZoikoTime be used for contractor management?",
+    answer:
+      "Yes. Contractor oversight, classification controls, and client-billable evidence are core use cases across the Governed and Sovereign tiers.",
+  },
+  {
+    question: "Is there a minimum commitment or contract length?",
+    answer:
+      "Monthly plans have no minimum term. Annual plans are billed yearly at a 20% discount. Enterprise agreements are negotiated based on scope.",
+  },
+  {
+    question: "How is data handled and secured?",
+    answer:
+      "ZoikoTime is SOC 2 Type II certified and ISO 27001 certified, with encryption in transit and at rest, and configurable data residency on Sovereign and Enterprise plans.",
+  },
+  {
+    question: "What is the switching cost from another platform?",
+    answer:
+      "Most teams migrate within a single sprint. Our onboarding team provides guided data import and parallel-run support during transition.",
+  },
+];
+
+const NAV_LINKS: string[] = [
+  "Product",
+  "Use Cases",
+  "Trust & Governance",
+  "Enterprise",
+  "Pricing",
+  "Resources",
+];
+
+/* ------------------------------------------------------------------ */
+/* Page                                                                 */
+/* ------------------------------------------------------------------ */
+
+export default function PricingPage() {
+  const [navOpen, setNavOpen] = useState<boolean>(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  // ROI calculator state
+  const [employees, setEmployees] = useState<number>(100);
+  const [hourlyRate, setHourlyRate] = useState<number>(35);
+  const [weeklyHours, setWeeklyHours] = useState<number>(40);
+  const [leakageRate, setLeakageRate] = useState<number>(8);
+
+  const roi = useMemo(() => {
+    const annualPayroll = employees * hourlyRate * weeklyHours * 52;
+    const annualLeakage = annualPayroll * (leakageRate / 100);
+    const estimatedRecovery = annualLeakage * 0.15;
+    const zoikoAnnualCost = employees * 17 * 12; // Governed tier
+    const roiPercent =
+      zoikoAnnualCost > 0 ? ((estimatedRecovery - zoikoAnnualCost) / zoikoAnnualCost) * 100 : 0;
+    const paybackMonths =
+      estimatedRecovery > 0 ? zoikoAnnualCost / (estimatedRecovery / 12) : 0;
+
+    const fmt = (n: number) =>
+      n >= 1000
+        ? `$${(n / 1000).toFixed(n >= 100000 ? 0 : 1)}K`
+        : `$${Math.round(n)}`;
+
+    return {
+      annualLeakage: fmt(annualLeakage),
+      estimatedRecovery: fmt(estimatedRecovery),
+      zoikoAnnualCost: fmt(zoikoAnnualCost),
+      roiPercent: `${Math.max(0, Math.round(roiPercent))}%`,
+      paybackMonths: `${Math.max(0.1, paybackMonths).toFixed(1)} mo`,
+    };
+  }, [employees, hourlyRate, weeklyHours, leakageRate]);
+
+  return (
+    <div className="min-h-screen bg-white text-slate-900 dark:bg-gray-900 dark:text-white">
+    
+
+      {/* HERO */}
+      <section className="relative overflow-hidden border-b border-teal-600/20 px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <div className="pointer-events-none absolute right-[-100px] top-[-80px] h-[500px] w-[500px] rounded-full bg-teal-500/5 blur-3xl" />
+        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-teal-600 via-teal-500 to-teal-600" />
+
+        <div className="relative mx-auto max-w-4xl text-center">
+          <h1 className="text-4xl font-extrabold leading-tight text-slate-900 dark:text-white sm:text-6xl">
+            Workforce Truth <span className="text-teal-500 dark:text-teal-400">Infrastructure</span>
           </h1>
-          
-          <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-normal">
-            ZoikoTime pricing is designed to scale with your organisation — while delivering measurable financial, operational, and compliance impact from week one.
+          <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-slate-500 dark:text-gray-400">
+            Cryptographically verified work records. Policy-governed accountability.
+            Audit-defensible evidence — for teams that cannot afford uncertainty.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <button className="w-full sm:w-auto bg-teal-600 hover:bg-teal-700 text-white font-bold py-3.5 px-8 rounded-md shadow-[0px_4px_18px_0px_rgba(0,157,140,0.30)] transition-all text-base">
-              Calculate Your ROI
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <button className="w-full rounded-md bg-teal-600 px-8 py-3 text-base font-bold text-white shadow-[0px_4px_18px_0px_rgba(0,157,140,0.40)] hover:bg-teal-700 sm:w-auto">
+              Start 90 Day Trial — Free
             </button>
-            <button className="w-full sm:w-auto bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold py-3.5 px-8 rounded-md border border-slate-300 dark:border-slate-700 shadow-sm transition-all text-base">
-              View Pricing Plans
+            <button className="w-full rounded-md border border-teal-600 px-8 py-3 text-base font-medium text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-500/10 sm:w-auto">
+              Watch 2 Minute Demo
             </button>
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            {TRIAL_BADGES.map((badge) => (
+              <span
+                key={badge}
+                className="inline-flex items-center gap-1.5 rounded-full border border-teal-600 bg-white/5 px-4 py-1.5 text-xs font-semibold text-neutral-700 dark:text-gray-300"
+              >
+                <span className="text-teal-500 dark:text-teal-400">✓</span>
+                {badge}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-14 flex flex-wrap items-start justify-center gap-x-8 gap-y-6 sm:gap-x-12">
+            {STATS.map((stat, i) => (
+              <React.Fragment key={stat.label}>
+                <div className="text-center">
+                  <p className="text-xl font-extrabold text-teal-500 dark:text-teal-400">
+                    {stat.value}
+                  </p>
+                  <p className="mt-2 max-w-[9rem] text-xs font-semibold text-neutral-500/60 dark:text-gray-500">
+                    {stat.label}
+                  </p>
+                </div>
+                {i < STATS.length - 1 && (
+                  <div className="hidden h-9 w-px self-center bg-teal-600 sm:block" />
+                )}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* PRICING PLANS (imported) */}
+      <PricingPlans />
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center mb-12 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 block">
-            Personalised Pricing
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
-            See Pricing Based on Your Organisation
-          </h2>
-          <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">
-            Select your team size, workforce type, and industry — the recommended plan and ROI estimate update instantly.
-          </p>
-        </div>
+      {/* ROI CALCULATOR */}
+      <section className="bg-slate-100 px-4 py-16 dark:bg-gray-800/60 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <SectionHeading
+            eyebrowText=""
+            title="Quantify Your Payroll Leakage Exposure"
+            subtitle="Input your workforce parameters to see the measurable financial case for ZoikoTime — based on verified client outcome data."
+          />
 
-        {/* Interactive Profile Card */}
-        <div className="max-w-5xl mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
-          
-          {/* Header */}
-          <div className="bg-slate-50 dark:bg-slate-950 p-6 border-b border-slate-200 dark:border-slate-800 text-center">
-            <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1">
-              Organisation Profile
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              Your selections dynamically update the recommended tier and estimated ROI below.
-            </p>
-          </div>
-
-          {/* Matrix Selectors */}
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200 dark:divide-slate-800 p-6 gap-y-6 md:gap-y-0">
-            
-            {/* Column 1: Team Size */}
-            <div className="space-y-4 md:pr-4">
-              <span className="text-xs font-bold uppercase tracking-wide text-slate-400 block">
-                Team Size
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {['1–50', '50–500', '500–5,000', '5,000+'].map((size) => {
-                  const isActive = size === '50–500';
-                  return (
-                    <button
-                      key={size}
-                      className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all border ${
-                        isActive
-                          ? 'bg-emerald-50 text-teal-700 border-teal-600 dark:bg-teal-950/40 dark:text-teal-400 dark:border-teal-400'
-                          : 'bg-white text-slate-500 border-slate-200 hover:border-slate-300 dark:bg-slate-900 dark:text-slate-400 dark:border-slate-700 dark:hover:border-slate-600'
-                      }`}
-                    >
-                      {size}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Column 2: Workforce Type */}
-            <div className="space-y-4 md:px-6 pt-6 md:pt-0">
-              <span className="text-xs font-bold uppercase tracking-wide text-slate-400 block">
-                Workforce Type
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {['Employees', 'Contractors', 'Mixed'].map((type) => {
-                  const isActive = type === 'Employees';
-                  return (
-                    <button
-                      key={type}
-                      className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all border ${
-                        isActive
-                          ? 'bg-emerald-50 text-teal-700 border-teal-600 dark:bg-teal-950/40 dark:text-teal-400 dark:border-teal-400'
-                          : 'bg-white text-slate-500 border-slate-200 hover:border-slate-300 dark:bg-slate-900 dark:text-slate-400 dark:border-slate-700 dark:hover:border-slate-600'
-                      }`}
-                    >
-                      {type}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Column 3: Industry */}
-            <div className="space-y-4 md:pl-6 pt-6 md:pt-0">
-              <span className="text-xs font-bold uppercase tracking-wide text-slate-400 block">
-                Industry
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {['General', 'Regulated', 'Client-Billable'].map((industry) => {
-                  const isActive = industry === 'General';
-                  return (
-                    <button
-                      key={industry}
-                      className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all border ${
-                        isActive
-                          ? 'bg-emerald-50 text-teal-700 border-teal-600 dark:bg-teal-950/40 dark:text-teal-400 dark:border-teal-400'
-                          : 'bg-white text-slate-500 border-slate-200 hover:border-slate-300 dark:bg-slate-900 dark:text-slate-400 dark:border-slate-700 dark:hover:border-slate-600'
-                      }`}
-                    >
-                      {industry}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-          </div>
-
-          {/* Dynamic Logic Readout Footer */}
-          <div className="border-t border-slate-200 dark:border-slate-800 p-8 bg-slate-50/50 dark:bg-slate-950/30 flex flex-col items-center text-center space-y-4">
-            <p className="text-slate-900 dark:text-slate-200 text-sm sm:text-base font-semibold max-w-3xl leading-relaxed">
-              You are likely to benefit most from the{' '}
-              <span className="text-teal-600 dark:text-teal-400 font-bold underline decoration-2 decoration-teal-600/30">
-                Professional Plan
-              </span>{' '}
-              — ideal for mid-size employee workforces needing performance intelligence and anomaly detection.
-            </p>
-            
-            <div className="inline-block bg-emerald-50 dark:bg-teal-950/40 border border-teal-600/20 px-5 py-2 rounded-full shadow-sm">
-              <span className="font-mono text-xs font-bold text-teal-700 dark:text-teal-400 tracking-wide uppercase">
-                Est. ROI: $42K/month at 500 workers
-              </span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-<PricingTiers/>
-   <section className="w-full bg-slate-100 dark:bg-slate-950 py-24 text-slate-900 dark:text-white  antialiased selection:bg-teal-500 selection:text-white transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 lg:px-[100px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
-        
-        {/* Left Column: Descriptive Headers & Info Card */}
-        <div className="lg:col-span-6 space-y-9 pt-2">
-          <div className="space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 block ">
-              Live ROI Engine
-            </span>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white leading-[44px] ">
-              Turn Workforce Data Into<br />Financial Impact
-            </h2>
-            <p className="text-base text-slate-500 dark:text-slate-400 leading-7 max-w-[472px] ">
-              Every organisation has a different payroll structure and leakage profile. Model your specific financial opportunity — and see exactly why ZoikoTime pays for itself within weeks, not months.
-            </p>
-          </div>
-          
-          <div className="w-full max-w-[492px] bg-emerald-50 dark:bg-teal-950/20 p-6 rounded-xl border border-teal-600/20">
-            <p className="text-teal-700 dark:text-teal-400 text-sm font-semibold leading-6 ">
-              ZoikoTime typically pays for itself within 4–8 weeks of full deployment. This calculator models your specific return — not an industry average.
-            </p>
-          </div>
-        </div>
-
-        {/* Right Column: Interactive Panel Matrix */}
-        <div className="lg:col-span-6 flex justify-center lg:justify-start">
-          <div className="w-full max-w-[492px] bg-white dark:bg-slate-900 rounded-2xl shadow-[0px_4px_16px_0px_rgba(13,21,38,0.08)] border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col">
-            
-            {/* Embedded Panel Topbar */}
-            <div className="bg-slate-100 dark:bg-slate-950 px-6 py-[18px] border-b border-slate-200 dark:border-slate-800 text-center">
-              <h3 className="text-slate-900 dark:text-white text-sm font-bold leading-6 ">
-                ROI Calculator — Your Organisation
+          <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            {/* Inputs */}
+            <div className={`${cardBase} bg-slate-50 p-8 dark:bg-gray-800`}>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                Your Workforce Profile
               </h3>
+
+              <div className="mt-8 space-y-8">
+                <Slider
+                  label="Number of Employees"
+                  value={employees}
+                  display={String(employees)}
+                  min={5}
+                  max={1000}
+                  step={5}
+                  onChange={setEmployees}
+                />
+                <Slider
+                  label="Average Hourly Rate"
+                  value={hourlyRate}
+                  display={`$${hourlyRate}`}
+                  min={12}
+                  max={100}
+                  step={1}
+                  onChange={setHourlyRate}
+                />
+                <Slider
+                  label="Average Weekly Hours"
+                  value={weeklyHours}
+                  display={`${weeklyHours}h`}
+                  min={10}
+                  max={60}
+                  step={1}
+                  onChange={setWeeklyHours}
+                />
+                <Slider
+                  label="Estimated Leakage Rate"
+                  value={leakageRate}
+                  display={`${leakageRate}%`}
+                  min={2}
+                  max={20}
+                  step={1}
+                  onChange={setLeakageRate}
+                />
+              </div>
+
+              <p className="mt-8 text-xs leading-5 text-slate-400 dark:text-gray-500">
+                Industry benchmark leakage rate: 8–12% of gross payroll. Adjust to match your
+                internal estimate.
+              </p>
             </div>
 
-            {/* Config Sliders Container */}
-            <div className="divide-y divide-slate-200 dark:divide-slate-800">
-              
-              {/* Controls Rows: Workers */}
-              <div className="px-6 py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 h-auto sm:h-12">
-                <label className="text-slate-700 dark:text-slate-300 text-xs font-semibold  leading-5 shrink-0 w-36">
-                  Number of employees
-                </label>
-                <div className="flex items-center gap-4 w-full">
-                  <input 
-                    type="range" 
-                    min="10" 
-                    max="5000" 
-                    step="10"
-                    value={employees} 
-                    onChange={(e) => setEmployees(Number(e.target.value))}
-                    className="w-full accent-teal-600 cursor-pointer bg-slate-200 dark:bg-slate-800 h-1 rounded-full"
-                  />
-                  <span className="text-teal-600 dark:text-teal-400 text-xs font-bold  leading-5 w-10 text-right">
-                    {employees}
-                  </span>
+            {/* Results */}
+            <div className="rounded-2xl bg-slate-900 p-8 dark:bg-black">
+              <h3 className="text-xl font-bold text-white">Your Financial Case</h3>
+              <p className="mx-auto mt-3 max-w-sm text-center text-xs leading-5 text-white/50">
+                Based on verified ZoikoTime client outcome data. Conservative estimates applied.
+              </p>
+
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                <div className="rounded-xl bg-white/5 p-4">
+                  <p className="text-2xl font-extrabold text-teal-500">{roi.annualLeakage}</p>
+                  <p className="mt-2 text-xs leading-5 text-white/60">
+                    Annual payroll leakage exposure
+                  </p>
+                </div>
+                <div className="rounded-xl bg-white/5 p-4">
+                  <p className="text-2xl font-extrabold text-teal-500">
+                    {roi.estimatedRecovery}
+                  </p>
+                  <p className="mt-2 text-xs leading-5 text-white/60">
+                    Estimated annual recovery (15%)
+                  </p>
+                </div>
+                <div className="rounded-xl bg-white/5 p-4">
+                  <p className="text-2xl font-extrabold text-teal-500">
+                    {roi.zoikoAnnualCost}
+                  </p>
+                  <p className="mt-2 text-xs leading-5 text-white/60">
+                    ZoikoTime annual cost (Governed)
+                  </p>
+                </div>
+                <div className="rounded-xl bg-white/5 p-4">
+                  <p className="text-2xl font-extrabold text-teal-500">{roi.roiPercent}</p>
+                  <p className="mt-2 text-xs leading-5 text-white/60">
+                    Estimated first-year ROI
+                  </p>
                 </div>
               </div>
 
-              {/* Controls Rows: Base Hourly Rate */}
-              <div className="px-6 py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 h-auto sm:h-12">
-                <label className="text-slate-700 dark:text-slate-300 text-xs font-semibold  leading-5 shrink-0 w-36">
-                  Average hourly cost ($)
-                </label>
-                <div className="flex items-center gap-4 w-full">
-                  <input 
-                    type="range" 
-                    min="10" 
-                    max="150" 
-                    step="1"
-                    value={hourlyCost} 
-                    onChange={(e) => setHourlyCost(Number(e.target.value))}
-                    className="w-full accent-teal-600 cursor-pointer bg-slate-200 dark:bg-slate-800 h-1 rounded-full"
-                  />
-                  <span className="text-teal-600 dark:text-teal-400 text-xs font-bold  leading-5 w-10 text-right">
-                    ${hourlyCost}
-                  </span>
-                </div>
+              <div className="mt-4 rounded-xl bg-white/5 p-4">
+                <p className="text-2xl font-extrabold text-teal-500">{roi.paybackMonths}</p>
+                <p className="mt-2 text-xs leading-5 text-white/60">Estimated payback period</p>
               </div>
 
-              {/* Controls Rows: Leakage Rate */}
-              <div className="px-6 py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 h-auto sm:h-12">
-                <label className="text-slate-700 dark:text-slate-300 text-xs font-semibold  leading-5 shrink-0 w-44">
-                  Estimated leakage rate (%)
-                </label>
-                <div className="flex items-center gap-4 w-full">
-                  <input 
-                    type="range" 
-                    min="1" 
-                    max="25" 
-                    step="0.5"
-                    value={leakageRate} 
-                    onChange={(e) => setLeakageRate(Number(e.target.value))}
-                    className="w-full accent-teal-600 cursor-pointer bg-slate-200 dark:bg-slate-800 h-1 rounded-full"
-                  />
-                  <span className="text-teal-600 dark:text-teal-400 text-xs font-bold  leading-5 w-10 text-right">
-                    {leakageRate}%
-                  </span>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Embedded Live Performance Metric Board */}
-            <div className="bg-emerald-50 dark:bg-teal-950/10 p-6 grid grid-cols-2 gap-x-5 gap-y-4 border-t border-b border-slate-200 dark:border-slate-800">
-              
-              {/* Blocks 1 */}
-              <div className="bg-white dark:bg-slate-900 p-4 rounded-md border border-teal-600/10 text-center flex flex-col justify-center items-center h-20 shadow-sm">
-                <span className="text-teal-600 dark:text-teal-400 text-xl font-extrabold  leading-9">
-                  {formatCurrency(monthlyLeakage)}
-                </span>
-                <span className="text-slate-500 dark:text-slate-400 text-xs font-semibold  mt-1 whitespace-nowrap">
-                  Monthly leakage identified
-                </span>
-              </div>
-
-              {/* Blocks 2 */}
-              <div className="bg-white dark:bg-slate-900 p-4 rounded-md border border-teal-600/10 text-center flex flex-col justify-center items-center h-20 shadow-sm">
-                <span className="text-teal-600 dark:text-teal-400 text-xl font-extrabold  leading-9">
-                  {formatCurrency(annualRecoverable)}
-                </span>
-                <span className="text-slate-500 dark:text-slate-400 text-xs font-semibold  mt-1 whitespace-nowrap">
-                  Annual recoverable value
-                </span>
-              </div>
-
-              {/* Blocks 3 */}
-              <div className="bg-white dark:bg-slate-900 p-4 rounded-md border border-teal-600/10 text-center flex flex-col justify-center items-center h-20 shadow-sm">
-                <span className="text-teal-600 dark:text-teal-400 text-xl font-extrabold  leading-9">
-                  {estimatedFirstYearRoi}%
-                </span>
-                <span className="text-slate-500 dark:text-slate-400 text-xs font-semibold  mt-1 whitespace-nowrap">
-                  Estimated first-year ROI
-                </span>
-              </div>
-
-              {/* Blocks 4 */}
-              <div className="bg-white dark:bg-slate-900 p-4 rounded-md border border-teal-600/10 text-center flex flex-col justify-center items-center h-20 shadow-sm">
-                <span className="text-teal-600 dark:text-teal-400 text-xl font-extrabold  leading-9">
-                  {estimatedPaybackWeeks}wk
-                </span>
-                <span className="text-slate-500 dark:text-slate-400 text-xs font-semibold  mt-1 whitespace-nowrap">
-                  Estimated payback period
-                </span>
-              </div>
-
-            </div>
-
-            {/* Action Frame */}
-            <div className="p-6 bg-white dark:bg-slate-900 flex justify-center">
-              <button className="w-full max-w-[384px] bg-teal-600 hover:bg-teal-700 text-white font-bold text-base py-3 px-6 rounded-md shadow-[0px_4px_18px_0px_rgba(0,157,140,0.30)] transition-all text-center">
-                Generate Full ROI Report →
+              <button className="mt-8 w-full rounded-md bg-teal-600 py-3 text-sm font-bold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.30)] hover:bg-teal-700">
+                See Your Custom Quote →
               </button>
-            </div>
 
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <section className="w-full bg-slate-100 dark:bg-slate-950 py-24 text-slate-900 dark:text-white font-sans antialiased selection:bg-teal-500 selection:text-white transition-colors duration-300">
-      <div className="max-w-[1200px] mx-auto px-4 md:px-6 flex flex-col items-center">
-        
-        {/* Headers */}
-        <div className="text-center space-y-4 mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 block ">
-            Compare Plans
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-10 ">
-            Compare Capabilities Across Plans
-          </h2>
-          <p className="text-base md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed max-w-[568px] mx-auto ">
-            Feature-by-feature comparison — with the business outcome each capability delivers, so you can evaluate by impact, not just functionality.
-          </p>
-        </div>
-
-        {/* Matrix Container */}
-        <div className="w-full bg-white dark:bg-slate-900 rounded-2xl shadow-[0px_4px_16px_0px_rgba(13,21,38,0.08)] border border-slate-200 dark:border-slate-800 overflow-hidden overflow-x-auto">
-          <div className="min-w-[980px] flex flex-col">
-            
-            {/* Table Header Section */}
-            <div className="grid grid-cols-12 bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800  font-bold text-xs uppercase tracking-wide">
-              <div className="col-span-5 px-6 py-4 text-slate-900 dark:text-white">Capability</div>
-              <div className="col-span-2 px-4 py-4 text-center text-slate-400 dark:text-slate-500">Essential</div>
-              <div className="col-span-2 px-4 py-4 text-center text-teal-600 dark:text-teal-400 bg-emerald-50 dark:bg-teal-950/20 border-x border-slate-200 dark:border-slate-800">Professional</div>
-              <div className="col-span-1.5 col-start-10 px-4 py-4 text-center text-slate-400 dark:text-slate-500">Enterprise</div>
-              <div className="col-span-1.5 col-start-11.5 px-4 py-4 text-center text-slate-400 dark:text-slate-500">Sovereign</div>
-            </div>
-
-            {/* Category Section: Core Verification */}
-            <div className="bg-slate-900 text-white  text-xs font-semibold uppercase tracking-wide px-6 py-2.5 border-b border-slate-200 dark:border-slate-800">
-              Core Verification
-            </div>
-            <FeatureRow 
-              label="Session tracking & identity verification" 
-              sublabel="Eliminates unverified payroll"
-              essential={check} professional={check} enterprise={check} sovereign={check} isDarkBg
-            />
-            <FeatureRow 
-              label="Confidence scoring per session" 
-              sublabel="Decision-grade verification signal"
-              essential={basic} professional={check} enterprise={check} sovereign={check}
-            />
-            <FeatureRow 
-              label="Device & location validation" 
-              essential={check} professional={check} enterprise={check} sovereign={check} isDarkBg
-            />
-
-            {/* Category Section: Intelligence */}
-            <div className="bg-slate-900 text-white text-xs font-semibold uppercase tracking-wide px-6 py-2.5 border-b border-slate-200 dark:border-slate-800">
-              Intelligence
-            </div>
-            <FeatureRow 
-              label="Performance intelligence engine" 
-              sublabel="Activity → outcome mapping"
-              essential={cross} professional={check} enterprise={check} sovereign={check} isDarkBg
-            />
-            <FeatureRow 
-              label="Anomaly detection & fraud risk scoring" 
-              sublabel="Reduces fraud exposure"
-              essential={cross} professional={check} enterprise={check} sovereign={check}
-            />
-            <FeatureRow 
-              label="AI reasoning embedded in evidence records" 
-              essential={cross} professional={check} enterprise={check} sovereign={check} isDarkBg
-            />
-
-            {/* Category Section: Governance & Compliance */}
-            <div className="bg-slate-900 text-white  text-xs font-semibold uppercase tracking-wide px-6 py-2.5 border-b border-slate-200 dark:border-slate-800">
-              Governance & Compliance
-            </div>
-            <FeatureRow 
-              label="Policy engine & jurisdiction rules" 
-              sublabel="Continuous assurance"
-              essential={cross} professional={cross} enterprise={check} sovereign={check} isDarkBg
-            />
-            <FeatureRow 
-              label="Multi-jurisdiction compliance (native)" 
-              sublabel="40+ jurisdictions supported"
-              essential={cross} professional={cross} enterprise={check} sovereign={check}
-            />
-            <FeatureRow 
-              label="Evidence capture + chain of custody" 
-              sublabel="Audit & legal defensibility"
-              essential={basic} professional={standard} enterprise={checkFull} sovereign={checkFull} isDarkBg
-            />
-            <FeatureRow 
-              label="Audit-ready export (regulator format)" 
-              essential={cross} professional={cross} enterprise={check} sovereign={check}
-            />
-
-            {/* Category Section: Infrastructure */}
-            <div className="bg-slate-900 text-white  text-xs font-semibold uppercase tracking-wide px-6 py-2.5 border-b border-slate-200 dark:border-slate-800">
-              Infrastructure
-            </div>
-            <FeatureRow 
-              label="Dedicated environment (single-tenant)" 
-              essential={cross} professional={cross} enterprise={cross} sovereign={check}
-            />
-            <FeatureRow 
-              label="Custom compliance configuration" 
-              essential={cross} professional={cross} enterprise={standard} sovereign={checkFull} isDarkBg
-            />
-
-            {/* Custom Edge-Row handling mismatched parameters cleanly */}
-            <div className="grid grid-cols-12 items-stretch bg-white dark:bg-slate-900">
-              <div className="col-span-5 px-6 py-4 flex flex-col justify-center">
-                <span className="text-slate-900 dark:text-white text-sm font-semibold ">SLA-backed uptime guarantee</span>
-              </div>
-              <div className="col-span-2 px-4 flex items-center justify-center text-slate-200 dark:text-slate-800 text-sm font-normal">{cross}</div>
-              <div className="col-span-2 px-4 flex items-center justify-center text-amber-600 dark:text-amber-500 font-semibold text-sm bg-teal-600/[0.03] dark:bg-teal-500/[0.02] border-x border-slate-200/60 dark:border-slate-800/60">99.5%</div>
-              <div className="col-span-1.5 col-start-10 px-4 flex items-center justify-center text-teal-600 dark:text-teal-400 font-bold text-sm">99.9%</div>
-              <div className="col-span-1.5 col-start-11.5 px-4 flex items-center justify-center text-teal-600 dark:text-teal-400 font-bold text-sm">99.99%</div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-<section className="py-14 max-w-[1440px] mx-auto px-6 lg:px-[200px]">
-        <div className="flex flex-col items-center text-center space-y-4 mb-12">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-[1.5px] bg-teal-600"></div>
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 block ">
-              By Use Case
-            </span>
-          </div>
-          <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-[44px]">
-            Pricing Tailored to How You Operate
-          </h2>
-          <p className="text-lg text-slate-500 dark:text-slate-400 leading-7 max-w-[595px]">
-            Each workforce context has a different value profile and ROI timeline — see what ZoikoTime delivers for your specific operational model.
-          </p>
-        </div>
-
-        {/* Dynamic Nav Tabs */}
-        <div className="flex justify-center mb-16">
-          <div className="inline-flex p-1 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm max-w-full overflow-x-auto">
-            {useCases.map((uc) => (
-              <button
-                key={uc.id}
-                onClick={() => setActiveTab(uc.id)}
-                className={`px-6 py-2.5 rounded-md text-sm font-semibold     whitespace-nowrap transition-all duration-200 ${
-                  activeTab === uc.id
-                    ? 'bg-teal-600 text-white shadow-sm'
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
-              >
-                {uc.tabLabel}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Content Splitting Grid Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Descriptions */}
-          <div className="lg:col-span-6 space-y-6">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white leading-10    ">
-              {activeData.title}
-            </h3>
-            <p className="text-base text-slate-500 dark:text-slate-400 leading-6 max-w-[458px]    ">
-              {activeData.description}
-            </p>
-            
-            <div className="pt-4 space-y-3">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <span className="text-slate-500 dark:text-slate-400 text-xs font-semibold     leading-5">
-                  Typical pricing range:
-                </span>
-                <span className="text-teal-600 dark:text-teal-400 text-base font-bold     leading-7">
-                  {activeData.priceRange}
-                </span>
-              </div>
-              
-              <div className="inline-block bg-emerald-50 dark:bg-teal-950/20 rounded-full border border-teal-600/20 px-4 py-1.5">
-                <span className="text-teal-700 dark:text-teal-400 text-xs font-bold     leading-5">
-                  {activeData.recommendedPlan}
-                </span>
-              </div>
+              <p className="mx-auto mt-4 max-w-sm text-center text-xs leading-5 text-white/30">
+                Estimates based on average leakage recovery rates across ZoikoTime enterprise
+                deployments.
+              </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Right Column: Mini ROI Spec Card */}
-          <div className="lg:col-span-6 flex justify-center lg:justify-end">
-            <div className="w-full max-w-[492px] bg-white dark:bg-slate-900 rounded-2xl shadow-[0px_4px_16px_0px_rgba(13,21,38,0.06)] border border-slate-200 dark:border-slate-800 p-8 space-y-4">
-              <h4 className="text-slate-900 dark:text-white text-sm font-bold leading-6     mb-6">
-                {activeData.roiTitle}
-              </h4>
-              
-              <div className="space-y-3">
-                {activeData.metrics.map((metric, i) => (
-                  <div key={i} className="flex justify-between items-center bg-slate-50 dark:bg-slate-950 p-4 rounded-md border border-slate-100 dark:border-slate-900">
-                    <span className="text-slate-700 dark:text-slate-400 text-xs font-normal     leading-5">
-                      {metric.label}
-                    </span>
-                    <span className="text-teal-600 dark:text-teal-400 text-sm font-bold     leading-6">
-                      {metric.value}
-                    </span>
-                  </div>
+      {/* FULL CAPABILITY MATRIX */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading eyebrowText="" title="Full Capability Matrix" />
+
+          <div className={`${cardBase} mt-12 overflow-x-auto`}>
+            <table className="w-full min-w-[720px] border-collapse text-left">
+              <thead>
+                <tr className="border-b-2 border-slate-200 dark:border-gray-700">
+                  <th className="w-1/3 px-5 py-4 text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-gray-500">
+                    Feature
+                  </th>
+                  {MATRIX_PLANS.map((p) => (
+                    <th
+                      key={p.label}
+                      className={`px-3 py-4 text-center ${
+                        p.highlight ? "bg-emerald-50 dark:bg-teal-500/10" : ""
+                      }`}
+                    >
+                      <p
+                        className={`text-sm font-extrabold uppercase ${
+                          p.highlight
+                            ? "text-teal-600 dark:text-teal-400"
+                            : p.label === "Enterprise"
+                            ? "text-indigo-500 dark:text-indigo-400"
+                            : "text-slate-700 dark:text-gray-300"
+                        }`}
+                      >
+                        {p.label}
+                      </p>
+                      <p
+                        className={`mt-1 font-mono text-xs font-bold uppercase tracking-wide ${
+                          p.highlight
+                            ? "text-teal-600 dark:text-teal-400"
+                            : "text-slate-500 dark:text-gray-500"
+                        }`}
+                      >
+                        {p.price}
+                      </p>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {MATRIX_GROUPS.map((group) => (
+                  <React.Fragment key={group.title}>
+                    <tr className="bg-slate-100 dark:bg-gray-700/60">
+                      <td
+                        colSpan={5}
+                        className="px-5 py-3 text-xs font-bold uppercase tracking-wide text-slate-900 dark:text-white"
+                      >
+                        {group.title}
+                      </td>
+                    </tr>
+                    {group.rows.map((row) => (
+                      <tr key={row.label} className="border-b border-slate-200 dark:border-gray-700">
+                        <td className="px-5 py-3 text-sm font-semibold text-slate-700 dark:text-gray-300">
+                          {row.label}
+                        </td>
+                        {row.values.map((value, i) => (
+                          <td
+                            key={i}
+                            className={`px-3 py-3 text-center ${
+                              i === 1 ? "bg-teal-600/5" : ""
+                            }`}
+                          >
+                            <Cell value={value} />
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </React.Fragment>
                 ))}
-              </div>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ZOIKOTIME VS ALTERNATIVES */}
+      <section className="bg-slate-100 px-4 py-16 dark:bg-gray-800/60 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading
+            eyebrowText=""
+            title="ZoikoTime vs Activity-Tracking Alternatives"
+            subtitle="ZoikoTime is the platform buyers choose when they need evidence, not just dashboards — confidence, not just activity percentages — and defensible workforce truth, not just monitoring."
+          />
+
+          <div className={`${cardBase} mt-12 overflow-x-auto`}>
+            <table className="w-full min-w-[720px] border-collapse text-left">
+              <thead>
+                <tr className="border-b border-slate-200 dark:border-gray-700">
+                  <th className="px-5 py-3 text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-gray-500">
+                    Capability
+                  </th>
+                  <th className="bg-emerald-50 px-3 py-3 text-center text-xs font-bold uppercase tracking-wide text-teal-700 dark:bg-teal-500/10 dark:text-teal-400">
+                    ZoikoTime
+                  </th>
+                  <th className="px-3 py-3 text-center text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-gray-500">
+                    Time Doctor
+                  </th>
+                  <th className="px-3 py-3 text-center text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-gray-500">
+                    Hubstaff
+                  </th>
+                  <th className="px-3 py-3 text-center text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-gray-500">
+                    ActivTrak
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPETITOR_ROWS.map((row) => (
+                  <tr key={row.label} className="border-b border-slate-200 dark:border-gray-700">
+                    <td className="px-5 py-3 text-sm font-bold text-slate-900 dark:text-gray-200">
+                      {row.label}
+                    </td>
+                    {row.values.map((value, i) => (
+                      <td
+                        key={i}
+                        className={`px-3 py-3 text-center ${i === 0 ? "bg-teal-600/5" : ""}`}
+                      >
+                        <Cell value={value} />
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ENTERPRISE CTA */}
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl bg-slate-900 px-8 py-12 dark:bg-black sm:px-14">
+          <div className="pointer-events-none absolute right-[-80px] top-[-40px] h-72 w-96 rounded-full bg-teal-500/10 blur-3xl" />
+          <div className="relative grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h3 className="text-3xl font-extrabold leading-tight text-white">
+                Fortune 1000 or Complex Deployment?
+              </h3>
+              <p className="mt-4 text-base leading-6 text-white/60">
+                ZoikoTime Enterprise is designed for organisations requiring dedicated
+                infrastructure, custom data residency, compliance advisory, and
+                institutional-grade service commitments. Commercial conversation required —
+                not a self-serve checkout.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4">
+              <button className="w-full rounded-md bg-teal-600 py-3 text-sm font-bold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.30)] hover:bg-teal-700">
+                Request Enterprise Quote
+              </button>
+              <button className="w-full rounded-md border border-white/20 bg-white py-3 text-sm font-bold text-teal-600 hover:bg-gray-50">
+                Schedule Compliance Architecture Review
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2: FULL TRANSPARENCY BLOCK */}
-      <section className="py-24 max-w-[1200px] mx-auto px-4 md:px-6 border-t border-slate-200 dark:border-slate-800">
-        <div className="text-center space-y-4 mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 block    ">
-            Full Transparency
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-10    ">
-            No Hidden Costs. Full Transparency.
+      {/* PRICING FAQ */}
+      <section className="bg-slate-100 px-4 py-16 dark:bg-gray-800/60 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">
+            Pricing FAQ
           </h2>
-          <p className="text-lg text-slate-500 dark:text-slate-400 leading-7 max-w-[508px] mx-auto    ">
-            Every cost component clearly defined — so your finance and procurement teams can plan with precision, not estimates.
-          </p>
-        </div>
 
-        {/* 4 Pillars Grid layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          
-          {/* Card 1 */}
-          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-200 min-h-[320px]">
-            <span className="text-3xl mb-4 block" role="img" aria-label="Licensing">📋</span>
-            <h3 className="text-slate-900 dark:text-white text-base font-bold leading-7     mb-3">
-              Licensing
-            </h3>
-            <p className="text-slate-500 dark:text-slate-400 text-xs font-normal leading-5    ">
-              Per active workforce unit — you only pay for workers who are actively tracked. No charges for inactive accounts or periods of non-use. Transparent per-user billing with volume efficiency built in.
-            </p>
-          </div>
-
-          {/* Card 2 */}
-          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-200 min-h-[320px]">
-            <span className="text-3xl mb-4 block" role="img" aria-label="Implementation">🚀</span>
-            <h3 className="text-slate-900 dark:text-white text-base font-bold leading-7     mb-3">
-              Implementation
-            </h3>
-            <p className="text-slate-500 dark:text-slate-400 text-xs font-normal leading-5    ">
-              Standard deployment is included in Enterprise and Sovereign plans. Professional tier includes guided onboarding documentation. No hidden professional services fees for standard integrations.
-            </p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-200 min-h-[320px]">
-            <img className="text-3xl mb-4 block" role="img" aria-label="Support" src="/trust-goverance/icon.png"/>
-            <h3 className="text-slate-900 dark:text-white text-base font-bold leading-7     mb-3">
-              Support
-            </h3>
-            <p className="text-slate-500 dark:text-slate-400 text-xs font-normal leading-5    ">
-              Email support included in Essential. Priority support in Professional. Dedicated account team in Enterprise and Sovereign. No additional cost for standard support tiers within your plan.
-            </p>
-          </div>
-
-          {/* Card 4 */}
-          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-200 min-h-[320px]">
-            <span className="text-3xl mb-4 block" role="img" aria-label="Scaling">📈</span>
-            <h3 className="text-slate-900 dark:text-white text-base font-bold leading-7     mb-3">
-              Scaling
-            </h3>
-            <p className="text-slate-500 dark:text-slate-400 text-xs font-normal leading-5    ">
-              Automatic volume efficiency applies as your workforce grows — per-user costs reduce at defined scale thresholds. No manual renegotiation required. Scaling is transparent and predictable.
-            </p>
-          </div>
-
-        </div>
-
-        {/* Procurement Bottom Quote Statement */}
-        <div className="max-w-[600px] mx-auto bg-emerald-50 dark:bg-teal-950/20 rounded-xl border border-teal-600/20 p-6 text-center">
-          <p className="text-teal-700 dark:text-teal-400 text-base font-semibold leading-7     italic">
-            "What you see is what you plan — no surprises. ZoikoTime pricing is designed for procurement clarity, not vendor lock-in."
-          </p>
-        </div>
-      </section>
-      <section className="py-12 max-w-[1200px] mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center text-center space-y-4 mb-16">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-[1.5px] bg-teal-600"></div>
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 block  ">
-              Procurement Support
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-10  ">
-            Everything You Need to Get Approval
-          </h2>
-          <p className="text-lg text-slate-500 dark:text-slate-400 leading-7 max-w-[566px]  ">
-            Enterprise procurement requires documentation. We have built it — structured for finance, legal, security, and technical review teams.
-          </p>
-        </div>
-
-        {/* 4 Pillars Matrix Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          
-          {/* Card 1 */}
-          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-200 min-h-[192px]">
-            <h3 className="text-slate-900 dark:text-white text-sm font-bold leading-6   mb-2">
-              Pricing Justification
-            </h3>
-            <p className="text-slate-500 dark:text-slate-400 text-xs font-normal leading-5  ">
-              ROI modelling, cost-benefit analysis, and payback period documentation — structured for CFO and finance review.
-            </p>
-          </div>
-
-          {/* Card 2 */}
-          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-200 min-h-[192px]">
-            <h3 className="text-slate-900 dark:text-white text-sm font-bold leading-6   mb-2">
-              ROI Model
-            </h3>
-            <p className="text-slate-500 dark:text-slate-400 text-xs font-normal leading-5  ">
-              Pre-built financial model with your organisation's inputs — ready for board and executive committee review.
-            </p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-200 min-h-[192px]">
-            <h3 className="text-slate-900 dark:text-white text-sm font-bold leading-6   mb-2">
-              Compliance Documentation
-            </h3>
-            <p className="text-slate-500 dark:text-slate-400 text-xs font-normal leading-5  ">
-              GDPR, ISO 27001, SOC 2 compliance matrix and DPA — structured for legal and compliance review.
-            </p>
-          </div>
-
-          {/* Card 4 */}
-          <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 flex flex-col shadow-sm hover:shadow-md transition-shadow duration-200 min-h-[192px]">
-            <h3 className="text-slate-900 dark:text-white text-sm font-bold leading-6   mb-2">
-              Security Overview
-            </h3>
-            <p className="text-slate-500 dark:text-slate-400 text-xs font-normal leading-5  ">
-              Architecture documentation, penetration test summary, and shared responsibility model for CISO review.
-            </p>
-          </div>
-        </div>
-
-        {/* Download Highlight Box */}
-        <div className="relative w-full max-w-[1040px] mx-auto bg-teal-50 dark:bg-teal-950/20 rounded-2xl p-8 md:p-10 border border-teal-600/10 overflow-hidden text-center flex flex-col items-center">
-          <div className="absolute w-[384px] h-[192px] left-1/2 -translate-x-1/2 -top-10 bg-radial from-teal-500/10 dark:from-teal-400/10 to-transparent pointer-events-none" />
-          <h3 className="text-slate-900 dark:text-white text-lg font-bold leading-7   mb-2 relative z-10">
-            Download the Complete Pricing & ROI Pack
-          </h3>
-          <p className="text-slate-500 dark:text-slate-400 text-sm font-normal leading-6 max-w-[680px] mb-6 relative z-10">
-            All procurement documentation in one structured bundle — ready for distribution to your approval team.
-          </p>
-          <button className="bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 text-white font-bold text-sm px-6 py-3 rounded-md shadow-[0px_4px_12px_0px_rgba(0,157,140,0.35)] transition-all duration-200 relative z-10">
-            Download Pricing & ROI Pack
-          </button>
-        </div>
-      </section>
-
-      {/* SECTION 2: FAQ SECTION */}
-      <section className="bg-slate-100 dark:bg-slate-950/40 py-12 border-y border-slate-200 dark:border-slate-800">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-[200px]">
-          <div className="flex flex-col items-center text-center space-y-4 mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 block  ">
-              FAQ
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-10  ">
-              Common Pricing Questions
-            </h2>
-          </div>
-
-          {/* Interactive Disclosure Blocks Matrix Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-4">
-            {faqItems.map((item) => (
-              <div 
-                key={item.id}
-                className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-all duration-200"
-              >
-                <button
-                  onClick={() => toggleFaq(item.id)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
-                  aria-expanded={openFaq === item.id}
-                >
-                  <span className="text-slate-900 dark:text-white text-base font-bold leading-6   pr-4">
-                    {item.question}
-                  </span>
-                  <span className={`text-teal-600 dark:text-teal-400 text-xl font-bold transition-transform duration-200 transform ${openFaq === item.id ? 'rotate-45' : 'rotate-0'}`}>
-                    ＋
-                  </span>
-                </button>
-                <div 
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    openFaq === item.id ? 'max-h-40 border-t border-slate-100 dark:border-slate-800/50' : 'max-h-0'
-                  }`}
-                >
-                  <div className="p-6 text-slate-500 dark:text-slate-400 text-sm leading-6  ">
-                    {item.answer}
-                  </div>
+          <div className={`${cardBase} mt-10 divide-y divide-slate-200 dark:divide-gray-700`}>
+            {FAQ_ITEMS.map((item, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div key={item.question}>
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    className="flex w-full items-center justify-between px-6 py-5 text-left"
+                  >
+                    <span className="text-base font-bold text-slate-900 dark:text-white">
+                      {item.question}
+                    </span>
+                    <ChevronDown
+                      className={`h-5 w-5 shrink-0 text-teal-600 transition-transform dark:text-teal-400 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {isOpen && (
+                    <div className="px-6 pb-5">
+                      <p className="text-sm leading-6 text-slate-500 dark:text-gray-400">
+                        {item.answer}
+                      </p>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: GET STARTED CTA BANNER */}
-      <section className="relative bg-gradient-to-b from-teal-50 to-emerald-50 dark:from-slate-950 dark:to-slate-900 py-12 overflow-hidden border-b border-slate-200 dark:border-slate-800">
-        {/* Dynamic Multi-Color Linear Gradient Top Accent Stripe Rule */}
-        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-teal-600 via-teal-500 to-teal-600" />
+      {/* FINAL CTA BANNER */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 to-emerald-50 px-4 py-20 text-center dark:from-teal-500/10 dark:to-emerald-500/5 sm:px-6 lg:px-8">
+        <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-teal-600 via-teal-500 to-teal-600" />
 
-        <div className="max-w-[800px] mx-auto text-center px-4 md:px-6 flex flex-col items-center">
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 block   mb-4">
-            Get Started
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white leading-[48px] md:leading-[56px]   tracking-tight mb-6">
-            Find the Right Pricing for Your Organisation and <span className="text-teal-600 dark:text-teal-400 block sm:inline">Unlock Immediate Value</span>
-          </h2>
-          <p className="text-slate-500 dark:text-slate-400 text-lg font-normal leading-7 max-w-[740px] mb-10  ">
-            Start with the ROI calculator to model your specific financial opportunity, or speak to our team for a customised pricing and deployment plan tailored to your workforce structure and compliance requirements.
-          </p>
-          
-          {/* Action Call Controls Group */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-            <button className="bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 text-white font-bold text-base px-8 py-3.5 rounded-md shadow-[0px_4px_18px_0px_rgba(0,157,140,0.30)] transition-all duration-200  ">
-              Calculate ROI
-            </button>
-            <button className="bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 text-white font-bold text-base px-8 py-3.5 rounded-md shadow-[0px_4px_14px_0px_rgba(13,21,38,0.25)] transition-all duration-200  ">
-              Request Custom Pricing
-            </button>
-          </div>
+        <h2 className="text-3xl font-extrabold leading-tight text-slate-900 dark:text-white sm:text-4xl">
+          90 Days. Full Access.{" "}
+          <span className="text-teal-600 dark:text-teal-400">No Credit Card.</span>
+        </h2>
+        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-500 dark:text-gray-400">
+          Start the trial that takes 90 seconds to activate and 90 days to evaluate — with full
+          feature access, zero risk, and no obligation to upgrade.
+        </p>
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <button className="w-full rounded-md bg-teal-600 px-8 py-3 text-base font-bold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)] hover:bg-teal-700 sm:w-auto">
+            Start Free Trial
+          </button>
+          <button className="w-full rounded-md border border-slate-200 bg-white px-8 py-3 text-base font-medium text-slate-700 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700 sm:w-auto">
+            Request Enterprise Quote
+          </button>
         </div>
       </section>
     </div>
