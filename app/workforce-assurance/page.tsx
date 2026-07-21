@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import { useState } from "react";
 import React from 'react';
 
@@ -205,18 +206,23 @@ export default function WorkforceAssuranceHub() {
               Start your journey
             </p>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+
               <button className="px-4 py-2 bg-teal-500/10 hover:bg-teal-500/20 text-teal-600 dark:text-teal-400 text-xs sm:text-sm font-semibold rounded-full border border-teal-500/30 transition-all cursor-pointer">
                 I&apos;m evaluating solutions
               </button>
+
               <button className="px-4 py-2 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-700 dark:text-gray-300 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 dark:border-gray-700 shadow-sm transition-all cursor-pointer">
                 I need to solve a specific problem
               </button>
+
               <button className="px-4 py-2 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-700 dark:text-gray-300 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 dark:border-gray-700 shadow-sm transition-all cursor-pointer">
                 I&apos;m preparing for internal approval
               </button>
+
               <button className="px-4 py-2 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-700 dark:text-gray-300 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 dark:border-gray-700 shadow-sm transition-all cursor-pointer">
                 I want technical details
               </button>
+
             </div>
           </div>
         </div>
@@ -401,9 +407,12 @@ export default function WorkforceAssuranceHub() {
               <p className="text-xs font-semibold text-teal-800 dark:text-teal-400 max-w-xl text-center md:text-left leading-relaxed">
                 Used by enterprise governance, compliance, and HR teams across 40+ jurisdictions to evaluate and implement workforce assurance programmes.
               </p>
-              <button className="bg-teal-600 hover:bg-teal-700 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm shrink-0 transition-all cursor-pointer w-full md:w-auto">
-                Access Full Framework Guide →
-              </button>
+              <Link
+  href="/workforce-assurance#access-full-framework-guide"
+  className="bg-teal-600 hover:bg-teal-700 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm shrink-0 transition-all cursor-pointer w-full md:w-auto inline-flex items-center justify-center"
+>
+  Access Full Framework Guide →
+</Link>
             </div>
           </div>
         </div>
@@ -625,7 +634,9 @@ export default function WorkforceAssuranceHub() {
       </section>
 
       {/* ================= SECTION 5: IMPLEMENTATION DEPLOYMENT ================= */}
-      <section className="w-full max-w-[1440px] mx-auto py-16 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24 border-t border-slate-200 dark:border-gray-800">
+      <section
+      id="access-full-framework-guide"
+       className="w-full max-w-[1440px] mx-auto py-16 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24 border-t border-slate-200 dark:border-gray-800">
         <div className="text-center space-y-3 mb-12 md:mb-16">
           <p className="text-teal-600 dark:text-teal-400 text-xs font-bold uppercase tracking-wider">Implementation</p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">From First Step to Full Deployment</h2>
@@ -735,22 +746,42 @@ export default function WorkforceAssuranceHub() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full sm:w-auto">
-              <button
-                type="button"
-                className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-teal-600 font-semibold text-xs sm:text-sm text-white shadow-[0px_4px_12px_0px_rgba(0,157,140,0.35)] hover:bg-teal-700 transition-all w-full sm:w-auto"
-              >
-                <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 21l-.813-5.096L3 15l5.187-.813L9 9l.813 5.187L15 15l-5.187.813zM18 10.5l-.5 3-.5-3-3-.5 3-.5.5-3 .5 3 3 .5-3 .5z" />
-                </svg>
-                Request Tailored Demo
-              </button>
 
-              <button
-                type="button"
-                className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-transparent border border-teal-600 font-medium text-xs sm:text-sm text-teal-600 dark:text-teal-400 transition-colors hover:bg-teal-50/50 w-full sm:w-auto"
-              >
-                Generate ROI Report
-              </button>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full sm:w-auto">
+
+  {/* Request Tailored Demo */}
+  <Link
+    href="/request-tailored-demo"
+    className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-teal-600 font-semibold text-xs sm:text-sm text-white shadow-[0px_4px_12px_0px_rgba(0,157,140,0.35)] hover:bg-teal-700 transition-all w-full sm:w-auto"
+  >
+    <svg
+      className="w-4 h-4 mr-2"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="2.5"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9.813 15.904L9 21l-.813-5.096L3 15l5.187-.813L9 9l.813 5.187L15 15l-5.187.813zM18 10.5l-.5 3-.5-3-3-.5 3-.5.5-3 .5 3 3 .5-3 .5z"
+      />
+    </svg>
+
+    Request Tailored Demo
+  </Link>
+
+
+  {/* Calculate ROI */}
+  <Link
+    href="/calculate-your-roi"
+    className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-transparent border border-teal-600 font-medium text-xs sm:text-sm text-teal-600 dark:text-teal-400 transition-colors hover:bg-teal-50/50 w-full sm:w-auto"
+  >
+    Generate ROI Report
+  </Link>
+
+</div>
+
             </div>
           </div>
         </div>
@@ -968,6 +999,7 @@ export default function WorkforceAssuranceHub() {
               >
                 Download State of Workforce Assurance 2026
               </button>
+              
             </div>
           </div>
         </div>
@@ -1081,22 +1113,32 @@ export default function WorkforceAssuranceHub() {
           </p>
 
           <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-sm sm:max-w-none mx-auto w-full">
-            <button
-              type="button"
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-teal-600 text-white rounded-lg px-6 sm:px-8 py-3.5 text-xs sm:text-sm font-semibold shadow-md hover:bg-teal-700 transition-all active:scale-[0.99]"
-            >
-              <svg className="w-4 h-4 mr-2 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 002-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-              </svg>
-              Request Demo
-            </button>
-            
-            <button
-              type="button"
-              className="w-full sm:w-auto inline-flex items-center justify-center border border-teal-600 text-teal-600 dark:text-teal-400 dark:border-teal-500 rounded-lg px-6 sm:px-8 py-3.5 text-xs sm:text-sm font-medium hover:bg-teal-50/50 transition-all active:scale-[0.99]"
-            >
-              Speak to Expert
-            </button>
+            <Link
+  href="/request-a-demo"
+  className="w-full sm:w-auto inline-flex items-center justify-center bg-teal-600 text-white rounded-lg px-6 sm:px-8 py-3.5 text-xs sm:text-sm font-semibold shadow-md hover:bg-teal-700 transition-all active:scale-[0.99]"
+>
+  <svg
+    className="w-4 h-4 mr-2 text-white/90"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth="2.5"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 002-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+    />
+  </svg>
+  Request Demo
+</Link>
+
+<Link
+  href="/contact-sales"
+  className="w-full sm:w-auto inline-flex items-center justify-center border border-teal-600 text-teal-600 dark:text-teal-400 dark:border-teal-500 rounded-lg px-6 sm:px-8 py-3.5 text-xs sm:text-sm font-medium hover:bg-teal-50/50 transition-all active:scale-[0.99]"
+>
+  Speak to Expert
+</Link>
           </div>
         </div>
 

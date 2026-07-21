@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function WorkforceDataCTA() {
   return (
@@ -91,49 +92,54 @@ export default function WorkforceDataCTA() {
         >
 
           {/* Primary Button */}
-          <button
-            className="
-              w-full
-              sm:w-60
-              h-12
-              rounded-lg
-              bg-teal-600
-              hover:bg-teal-700
-              text-white
-              text-base
-              font-semibold
-              shadow-[0px_4px_16px_0px_rgba(0,157,140,0.30)]
-              transition
-            "
-          >
-            Request a Demo
-          </button>
+          <Link
+  href="/request-a-demo"
+  className="
+    w-full
+    sm:w-60
+    h-12
+    inline-flex
+    items-center
+    justify-center
+    rounded-lg
+    bg-teal-600
+    hover:bg-teal-700
+    text-white
+    text-base
+    font-semibold
+    shadow-[0px_4px_16px_0px_rgba(0,157,140,0.30)]
+    transition
+  "
+>
+  Request a Demo
+</Link>
 
 
           {/* Secondary Button */}
-          <button
-            className="
-              w-full
-              sm:w-60
-              h-12
-              rounded-lg
-              bg-white
-              dark:bg-slate-800
-              border
-              border-slate-200
-              dark:border-slate-700
-              text-slate-700
-              dark:text-white
-              text-sm
-              font-medium
-              hover:bg-slate-50
-              dark:hover:bg-slate-700
-              transition
-            "
-          >
-            Start Free Trial
-          </button>
-
+          <Link href="/start-free">
+  <button
+    className="
+      w-full
+      sm:w-60
+      h-12
+      rounded-lg
+      bg-white
+      dark:bg-slate-800
+      border
+      border-slate-200
+      dark:border-slate-700
+      text-slate-700
+      dark:text-white
+      text-sm
+      font-medium
+      hover:bg-slate-50
+      dark:hover:bg-slate-700
+      transition
+    "
+  >
+    Start Free Trial
+  </button>
+</Link>
         </div>
 
 

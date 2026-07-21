@@ -51,7 +51,7 @@ export default function Header() {
           </Link>
           
           <Link
-            href="/request-demo"
+            href="/request-a-demo"
             className="h-11 px-6 py-3 bg-sky-900 rounded-full flex justify-center items-center text-white text-base font-semibold  leading-6 [text-shadow:_1px_1px_1px_rgb(69_144_178_/_0.10)] hover:bg-sky-950 shadow-md transition-all"
           >
             Request a demo

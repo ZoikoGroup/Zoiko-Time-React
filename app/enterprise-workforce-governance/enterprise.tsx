@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Enterprise() {
   return (
@@ -125,7 +126,9 @@ export default function Enterprise() {
               pt-4
             ">
 
-              <button className="
+              <Link
+              href ="contact-sales"
+               className="
                 px-8 
                 py-3.5 
                 bg-white 
@@ -137,10 +140,12 @@ export default function Enterprise() {
                 transition
               ">
                 Contact Sales
-              </button>
+              </Link>
 
 
-              <button className="
+              <Link
+              href = "request-a-demo"
+               className="
                 px-8 
                 py-3.5 
                 border 
@@ -152,7 +157,7 @@ export default function Enterprise() {
                 transition
               ">
                 Get a Demo
-              </button>
+              </Link>
 
             </div>
 
@@ -1268,7 +1273,9 @@ export default function Enterprise() {
             gap-4
           ">
 
-            <button className="
+            <Link
+            href ="contact-sales"
+             className="
               px-8
               py-3.5
               bg-teal-600
@@ -1276,10 +1283,12 @@ export default function Enterprise() {
               rounded-lg
             ">
               Contact Sales
-            </button>
+            </Link>
 
 
-            <button className="
+            <Link
+            href ="request-a-demo"
+             className="
               px-8
               py-3.5
               bg-white
@@ -1290,7 +1299,7 @@ export default function Enterprise() {
               rounded-lg
             ">
               Get a Demo
-            </button>
+            </Link>
 
 
           </div>

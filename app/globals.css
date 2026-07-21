@@ -25,7 +25,3 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Smooth anchor scrolling */
-html {
-  scroll-behavior: smooth;
-}

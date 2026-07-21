@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 export default function Distributed() {
   return (
@@ -38,16 +39,65 @@ export default function Distributed() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto sm:max-w-none">
-            <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3.5 bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 text-white font-semibold rounded-lg shadow-md transition-all">
-              {/* Figma-like Play Icon */}
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-              Request Demo
-            </button>
-            <button className="w-full sm:w-auto px-8 py-3.5 border border-teal-600 dark:border-teal-500 text-teal-600 dark:text-teal-400 font-semibold rounded-lg hover:bg-teal-50 dark:hover:bg-slate-800 transition-all">
-              Explore Command Centre
-            </button>
+
+           <Link
+  href="/request-a-demo"
+  className="
+    w-full
+    sm:w-auto
+    flex
+    items-center
+    justify-center
+    gap-2
+    px-8
+    py-3.5
+    bg-teal-600
+    hover:bg-teal-700
+    dark:bg-teal-500
+    dark:hover:bg-teal-600
+    text-white
+    font-semibold
+    rounded-lg
+    shadow-md
+    transition-all
+  "
+>
+  {/* Figma-like Play Icon */}
+  <svg
+    className="w-4 h-4 fill-current"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path d="M8 5v14l11-7z" />
+  </svg>
+
+  Request Demo
+</Link>
+            <Link
+  href="/distributed-workforces#explore-command-centre"
+  className="
+    w-full
+    sm:w-auto
+    px-8
+    py-3.5
+    border
+    border-teal-600
+    dark:border-teal-500
+    text-teal-600
+    dark:text-teal-400
+    font-semibold
+    rounded-lg
+    hover:bg-teal-50
+    dark:hover:bg-slate-800
+    transition-all
+    inline-flex
+    items-center
+    justify-center
+  "
+>
+  Explore Command Centre
+</Link>
+
           </div>
         </div>
       </section>
@@ -115,7 +165,9 @@ export default function Distributed() {
       </section>
 
       {/* The System Section */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      <section 
+      id="explore-command-centre"
+      className="py-20 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-teal-600 dark:text-teal-400 text-xs font-bold tracking-wider uppercase block mb-2">
@@ -364,7 +416,9 @@ export default function Distributed() {
       </section>
 
       {/* Performance Alignment */}
-      <section className="py-20 bg-white dark:bg-slate-900">
+      <section 
+      id ="run-global-scenario"
+      className="py-20 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-teal-600 dark:text-teal-400 text-xs font-bold tracking-wider uppercase block mb-2">Performance Alignment</span>
@@ -620,19 +674,91 @@ export default function Distributed() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-md mx-auto">
-            <button className="w-full flex items-center justify-center gap-2 py-3.5 bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 text-white font-semibold rounded-lg shadow-md transition-all">
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-              Request Demo
-            </button>
-            <button className="w-full py-3.5 border border-teal-600 dark:border-teal-500 text-teal-600 dark:text-teal-400 font-semibold rounded-lg hover:bg-teal-50 dark:hover:bg-slate-800 transition-all">
-              Explore Command Centre
-            </button>
+
+            <div className="w-full flex flex-col gap-4 sm:flex-row">
+  <Link
+    href="/request-a-demo"
+    className="
+      w-full
+      flex
+      items-center
+      justify-center
+      gap-2
+      py-3.5
+      bg-teal-600
+      hover:bg-teal-700
+      dark:bg-teal-500
+      dark:hover:bg-teal-600
+      text-white
+      font-semibold
+      rounded-lg
+      shadow-md
+      transition-all
+    "
+  >
+    <svg
+      className="w-4 h-4 fill-current"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M8 5v14l11-7z" />
+    </svg>
+
+    Request Demo
+  </Link>
+
+
+  <Link
+    href="/distributed-workforce#explore-command-centre"
+    className="
+      w-full
+      flex
+      items-center
+      justify-center
+      py-3.5
+      border
+      border-teal-600
+      dark:border-teal-500
+      text-teal-600
+      dark:text-teal-400
+      font-semibold
+      rounded-lg
+      hover:bg-teal-50
+      dark:hover:bg-slate-800
+      transition-all
+    "
+  >
+    Explore Command Centre
+  </Link>
+</div>
+
           </div>
-          <button className="mt-4 px-6 py-2.5 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-medium text-sm rounded-lg bg-white/50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 transition-all">
-            Run Global Scenario
-          </button>
+         <Link
+  href="/distributed-workforces#run-global-scenario"
+  className="
+    mt-4
+    px-6
+    py-2.5
+    border
+    border-slate-300
+    dark:border-slate-700
+    text-slate-700
+    dark:text-slate-300
+    font-medium
+    text-sm
+    rounded-lg
+    bg-white/50
+    dark:bg-slate-800/50
+    hover:bg-white
+    dark:hover:bg-slate-800
+    transition-all
+    inline-flex
+    items-center
+    justify-center
+  "
+>
+  Run Global Scenario
+</Link>
         </div>
       </section>
     </div>

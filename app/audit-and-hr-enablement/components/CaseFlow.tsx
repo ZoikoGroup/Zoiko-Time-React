@@ -41,45 +41,159 @@ const steps = [
 
 export default function CaseFlow() {
   return (
-    <section className="w-full bg-slate-950 px-4 py-16 text-slate-100 sm:px-6 lg:px-8 lg:py-20">
+    <section
+     id="case-flow"
+      className="
+      w-full
+      bg-white
+      px-4 py-16
+      text-slate-900
+      sm:px-6
+      lg:px-8 lg:py-20
+      dark:bg-slate-950
+      dark:text-slate-100
+      "
+    >
       <div className="mx-auto max-w-[1280px]">
+
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-teal-400">
+
+          <p
+            className="
+            text-xs
+            font-bold
+            uppercase
+            tracking-widest
+            text-teal-600
+            dark:text-teal-400
+            "
+          >
             Case Management
           </p>
 
-          <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
+
+          <h2
+            className="
+            mt-6
+            text-3xl
+            font-bold
+            leading-tight
+            tracking-tight
+            text-slate-900
+            sm:text-4xl
+            dark:text-white
+            "
+          >
             From Detection to Resolution Fully Structured
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
-            An end-to-end case lifecycle that ensures no issue falls through the
-            cracks — every step documented, every decision defensible.
+
+          <p
+            className="
+            mx-auto mt-6
+            max-w-2xl
+            text-base
+            leading-7
+            text-slate-600
+            sm:text-lg
+            dark:text-slate-400
+            "
+          >
+            An end-to-end case lifecycle that ensures no issue falls through
+            the cracks — every step documented, every decision defensible.
           </p>
+
         </div>
 
+
+
         {/* Steps */}
-        <div className="relative mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3">
+        <div
+          className="
+          relative
+          mt-14
+          grid
+          grid-cols-1
+          gap-6
+          sm:grid-cols-2
+          lg:mt-20
+          lg:grid-cols-3
+          "
+        >
+
           {steps.map((step) => (
+
             <article
               key={step.number}
-              className="min-h-[220px] rounded-2xl border border-slate-800 bg-slate-900 p-7 shadow-xl transition-all duration-300 hover:border-teal-500/40 sm:p-8"
+              className="
+              min-h-[220px]
+              rounded-2xl
+              border
+              border-slate-200
+              bg-white
+              p-7
+              shadow-xl
+              transition-all
+              duration-300
+              hover:border-teal-500/40
+              sm:p-8
+
+              dark:border-slate-800
+              dark:bg-slate-900
+              "
             >
-              <p className="font-mono text-xs font-bold tracking-wider text-teal-400">
+
+              {/* Step Number */}
+              <p
+                className="
+                font-mono
+                text-xs
+                font-bold
+                tracking-wider
+                text-teal-600
+                dark:text-teal-400
+                "
+              >
                 {step.number}
               </p>
 
-              <h3 className="mt-4 text-lg font-bold leading-7 text-white">
+
+              {/* Title */}
+              <h3
+                className="
+                mt-4
+                text-lg
+                font-bold
+                leading-7
+                text-slate-900
+                dark:text-white
+                "
+              >
                 {step.title}
               </h3>
 
-              <p className="mt-5 text-sm leading-6 text-slate-400">
+
+              {/* Description */}
+              <p
+                className="
+                mt-5
+                text-sm
+                leading-6
+                text-slate-600
+                dark:text-slate-400
+                "
+              >
                 {step.description}
               </p>
+
+
             </article>
+
           ))}
+
         </div>
+
       </div>
     </section>
   );

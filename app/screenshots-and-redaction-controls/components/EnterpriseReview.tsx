@@ -1,6 +1,7 @@
 // components/EnterpriseReview.tsx
 
 import React from "react";
+import Link from "next/link";
 
 export default function EnterpriseReview() {
   return (
@@ -24,15 +25,25 @@ export default function EnterpriseReview() {
         </p>
 
         {/* Buttons */}
-        <div className="mt-10 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row">
-          <button className="w-full rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/25 transition hover:bg-teal-700 sm:w-auto">
-            Get a Demo
-          </button>
+<div className="mt-10 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row">
 
-          <button className="w-full rounded-lg border border-white/30 bg-white/10 px-8 py-3 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20 sm:w-auto">
-            Contact Sales
-          </button>
-        </div>
+  {/* Get a Demo */}
+  <Link
+    href="/request-a-demo"
+    className="w-full rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/25 transition hover:bg-teal-700 sm:w-auto inline-flex items-center justify-center"
+  >
+    Get a Demo
+  </Link>
+
+  {/* Contact Sales */}
+  <Link
+    href="/contact-sales"
+    className="w-full rounded-lg border border-white/30 bg-white/10 px-8 py-3 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20 sm:w-auto inline-flex items-center justify-center"
+  >
+    Contact Sales
+  </Link>
+
+</div>
       </div>
     </section>
   );

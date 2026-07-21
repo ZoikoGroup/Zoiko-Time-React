@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Decision() {
   return (
@@ -25,13 +26,53 @@ export default function Decision() {
 
         {/* Actions */}
         <div className="mt-[42px] flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="h-11 w-36 rounded-[10px] bg-teal-600 text-base font-semibold leading-4 text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] transition hover:bg-teal-500">
-            Get a Demo
-          </button>
+          {/* Get a Demo */}
+<Link
+  href="/request-a-demo"
+  className="
+    h-11
+    w-36
+    rounded-[10px]
+    bg-teal-600
+    text-base
+    font-semibold
+    leading-4
+    text-white
+    shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)]
+    transition
+    hover:bg-teal-500
+    inline-flex
+    items-center
+    justify-center
+  "
+>
+  Get a Demo
+</Link>
 
-          <button className="h-11 w-40 rounded-[10px] border border-white/30 bg-white/10 text-base font-semibold leading-4 text-white transition hover:bg-white/15">
-            Start Free Trial
-          </button>
+
+{/* Start Free Trial */}
+<Link
+  href="/start-free"
+  className="
+    h-11
+    w-40
+    rounded-[10px]
+    border
+    border-white/30
+    bg-white/10
+    text-base
+    font-semibold
+    leading-4
+    text-white
+    transition
+    hover:bg-white/15
+    inline-flex
+    items-center
+    justify-center
+  "
+>
+  Start Free
+</Link>
         </div>
       </div>
     </section>

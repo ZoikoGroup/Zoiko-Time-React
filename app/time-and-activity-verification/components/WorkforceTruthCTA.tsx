@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function WorkforceTruthCTA() {
   return (
@@ -24,19 +25,21 @@ export default function WorkforceTruthCTA() {
         {/* Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
 
-          <button
-            type="button"
-            className="w-full sm:w-auto rounded-xl bg-teal-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition-all duration-300 hover:bg-teal-700 hover:-translate-y-0.5"
-          >
-            Get a Demo
-          </button>
+          {/* Get a Demo */}
+  <Link
+    href="/request-a-demo"
+    className="w-full sm:w-auto rounded-xl bg-teal-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition-all duration-300 hover:bg-teal-700 hover:-translate-y-0.5 inline-flex items-center justify-center"
+  >
+    Get a Demo
+  </Link>
 
-          <button
-            type="button"
-            className="w-full sm:w-auto rounded-xl border border-white/30 bg-white/10 px-8 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
-          >
-            Start Free Trial
-          </button>
+  {/* Start Free Trial */}
+  <Link
+    href="/start-free"
+    className="w-full sm:w-auto rounded-xl border border-white/30 bg-white/10 px-8 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 inline-flex items-center justify-center"
+  >
+    Start Free Trial
+  </Link>
 
         </div>
 

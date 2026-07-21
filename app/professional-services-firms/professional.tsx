@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
@@ -327,14 +328,54 @@ export default function Professional() {
             </p>
 
             {/* Buttons */}
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <button className="rounded-lg bg-teal-600 px-8 py-3 font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
-                Request a Demo
-              </button>
+<div className="mt-10 flex flex-col gap-4 sm:flex-row">
 
-              <button className="rounded-lg border border-teal-600 px-8 py-3 font-semibold text-teal-600 transition hover:bg-teal-600 hover:text-white dark:text-teal-400 dark:border-teal-400">
-                Start Free Trial
-              </button>
+  <Link
+    href="/request-a-demo"
+    className="
+      rounded-lg
+      bg-teal-600
+      px-8
+      py-3
+      font-semibold
+      text-white
+      shadow-lg
+      shadow-teal-600/30
+      transition
+      hover:bg-teal-700
+      flex
+      items-center
+      justify-center
+    "
+  >
+    Request a Demo
+  </Link>
+
+
+  <Link
+    href="/start-free"
+    className="
+      rounded-lg
+      border
+      border-teal-600
+      px-8
+      py-3
+      font-semibold
+      text-teal-600
+      transition
+      hover:bg-teal-600
+      hover:text-white
+      dark:text-teal-400
+      dark:border-teal-400
+      flex
+      items-center
+      justify-center
+    "
+  >
+    Start Free Trial
+  </Link>
+
+
             </div>
           </div>
 
@@ -561,9 +602,28 @@ export default function Professional() {
 
         {/* Button */}
         <div className="mt-16 flex justify-center">
-          <button className="rounded-lg bg-teal-600 px-10 py-3 font-semibold text-white shadow-lg shadow-teal-600/30 transition duration-300 hover:bg-teal-700 hover:shadow-xl">
-            Request a Demo
-          </button>
+          <Link
+  href="/request-a-demo"
+  className="
+    rounded-lg
+    bg-teal-600
+    px-10
+    py-3
+    font-semibold
+    text-white
+    shadow-lg
+    shadow-teal-600/30
+    transition
+    duration-300
+    hover:bg-teal-700
+    hover:shadow-xl
+    inline-flex
+    items-center
+    justify-center
+  "
+>
+  Request a Demo
+</Link>
         </div>
       </div>
     </section>
@@ -751,10 +811,26 @@ export default function Professional() {
 
         {/* CTA Buttons */}
         <div className="mt-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="rounded-lg bg-teal-600 px-8 py-3 font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
-            Request a Demo
-          </button>
-
+          <Link
+  href="/request-a-demo"
+  className="
+    rounded-lg
+    bg-teal-600
+    px-8
+    py-3
+    font-semibold
+    text-white
+    shadow-lg
+    shadow-teal-600/30
+    transition
+    hover:bg-teal-700
+    inline-flex
+    items-center
+    justify-center
+  "
+>
+  Request a Demo
+</Link>
           <button className="rounded-lg border border-slate-300 bg-white px-8 py-3 font-medium text-slate-700 transition hover:border-teal-600 hover:text-teal-600 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:border-teal-500 dark:hover:text-teal-400">
             Download Free
           </button>
@@ -834,13 +910,58 @@ export default function Professional() {
 
         {/* CTA Buttons */}
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="rounded-lg bg-teal-600 px-8 py-3 font-semibold text-white shadow-lg shadow-teal-600/30 transition-all duration-300 hover:bg-teal-700 hover:shadow-xl">
-            Request a Demo
-          </button>
+          <Link
+    href="/request-a-demo"
+    className="
+      rounded-lg
+      bg-teal-600
+      px-8
+      py-3
+      font-semibold
+      text-white
+      shadow-lg
+      shadow-teal-600/30
+      transition-all
+      duration-300
+      hover:bg-teal-700
+      hover:shadow-xl
+      inline-flex
+      items-center
+      justify-center
+    "
+  >
+    Request a Demo
+  </Link>
 
-          <button className="rounded-lg border border-slate-300 bg-white px-8 py-3 font-medium text-slate-700 transition-all duration-300 hover:border-teal-600 hover:text-teal-600 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:border-teal-500 dark:hover:text-teal-400">
-            Start Free Trial
-          </button>
+
+  <Link
+    href="/start-free"
+    className="
+      rounded-lg
+      border
+      border-slate-300
+      bg-white
+      px-8
+      py-3
+      font-medium
+      text-slate-700
+      transition-all
+      duration-300
+      hover:border-teal-600
+      hover:text-teal-600
+      dark:border-gray-700
+      dark:bg-gray-800
+      dark:text-white
+      dark:hover:border-teal-500
+      dark:hover:text-teal-400
+      inline-flex
+      items-center
+      justify-center
+    "
+  >
+    Start Free Trial
+  </Link>
+
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export default function GetStarted() {
@@ -30,22 +31,65 @@ export default function GetStarted() {
         </p>
 
         {/* Buttons */}
-        <div className="mt-8 flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
-          <button
-            type="button"
-            className="flex h-12 w-full items-center justify-center gap-3 rounded-lg bg-teal-600 px-7 text-base font-semibold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)] transition hover:bg-teal-700 sm:w-52"
-          >
-            <ArrowUpRight className="h-4 w-4" />
-            <span>Request Demo</span>
-          </button>
+<div className="mt-8 flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
 
-          <button
-            type="button"
-            className="h-12 w-full rounded-lg border border-teal-600 px-7 text-base font-semibold text-teal-600 transition hover:bg-teal-600 hover:text-white dark:border-teal-400 dark:text-teal-400 dark:hover:bg-teal-500 dark:hover:text-white sm:w-52"
-          >
-            Run Case Scenario
-          </button>
-        </div>
+  {/* Request Demo */}
+  <Link
+    href="/request-a-demo"
+    className="
+      flex
+      h-12
+      w-full
+      items-center
+      justify-center
+      gap-3
+      rounded-lg
+      bg-teal-600
+      px-7
+      text-base
+      font-semibold
+      text-white
+      shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)]
+      transition
+      hover:bg-teal-700
+      sm:w-52
+    "
+  >
+    <ArrowUpRight className="h-4 w-4" />
+    <span>Request Demo</span>
+  </Link>
+
+
+  {/* Run Case Scenario */}
+  <Link
+    href="/audit-and-hr-enablement#case-flow"
+    className="
+      h-12
+      w-full
+      rounded-lg
+      border
+      border-teal-600
+      px-7
+      text-base
+      font-semibold
+      text-teal-600
+      transition
+      hover:bg-teal-600
+      hover:text-white
+      dark:border-teal-400
+      dark:text-teal-400
+      dark:hover:bg-teal-500
+      dark:hover:text-white
+      sm:w-52
+      inline-flex
+      items-center
+      justify-center
+    "
+  >
+    Run Case Scenario
+  </Link>
+
+</div>
       </div>
     </section>
   );

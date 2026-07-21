@@ -59,7 +59,8 @@ const layers = [
       "Justification recorded and linked to evidence",
       "Immutable decision record with audit metadata",
     ],
-    message: "Every outcome is traceable, defensible, and auditable.",
+    message:
+      "Every outcome is traceable, defensible, and auditable.",
   },
   {
     number: "6",
@@ -77,82 +78,278 @@ const layers = [
 
 export default function Solution() {
   return (
-    <section className="w-full bg-slate-950 px-4 py-16 text-slate-100 sm:px-6 lg:px-8 lg:py-24">
+    <section
+    id="hr-workflows"
+      className="
+      w-full
+      bg-white
+      px-4 py-16
+      text-slate-900
+      sm:px-6
+      lg:px-8 lg:py-24
+      dark:bg-slate-950
+      dark:text-slate-100
+      "
+    >
       <div className="mx-auto max-w-[1200px]">
+
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-teal-400">
+
+          <p
+            className="
+            text-xs font-bold
+            uppercase tracking-widest
+            text-teal-600
+            dark:text-teal-400
+            "
+          >
             The Solution
           </p>
 
-          <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+
+          <h2
+            className="
+            mt-6
+            text-3xl
+            font-bold
+            leading-tight
+            tracking-tight
+            text-slate-900
+            sm:text-4xl
+            lg:text-5xl
+            dark:text-white
+            "
+          >
             The Workforce Decision Operating System
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+
+          <p
+            className="
+            mx-auto mt-6
+            max-w-2xl
+            text-base
+            leading-7
+            text-slate-600
+            sm:text-lg
+            dark:text-slate-400
+            "
+          >
             Six integrated layers that convert raw intelligence into structured,
             governed, and traceable enterprise decisions.
           </p>
+
         </div>
 
+
         {/* Cards */}
-        <div className="mt-14 grid grid-cols-1 gap-6 lg:mt-20 lg:grid-cols-2">
+        <div
+          className="
+          mt-14
+          grid
+          grid-cols-1
+          gap-6
+          lg:mt-20
+          lg:grid-cols-2
+          "
+        >
+
           {layers.map((layer) => (
+
             <article
               key={layer.number}
-              className={`relative min-h-[390px] rounded-2xl border p-7 shadow-2xl transition-all duration-300 sm:p-8 ${
+              className={`
+              relative
+              min-h-[390px]
+              rounded-2xl
+              border
+              p-7
+              shadow-xl
+              transition-all
+              duration-300
+              sm:p-8
+
+              ${
                 layer.core
-                  ? "border-teal-500/40 bg-gradient-to-br from-teal-950/70 via-slate-900 to-slate-900"
-                  : "border-slate-800 bg-slate-900"
-              }`}
+                  ? `
+                  border-teal-500/40
+                  bg-gradient-to-br
+                  from-teal-50
+                  via-white
+                  to-white
+                  dark:from-teal-950/70
+                  dark:via-slate-900
+                  dark:to-slate-900
+                  `
+                  :
+                  `
+                  border-slate-200
+                  bg-white
+                  dark:border-slate-800
+                  dark:bg-slate-900
+                  `
+              }
+              `}
             >
-              {/* Core Engine Badge */}
+
+
+              {/* Core Badge */}
               {layer.core && (
-                <div className="absolute right-0 top-0 rounded-bl-xl rounded-br-xl bg-teal-500 px-4 py-2">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-slate-950">
+                <div
+                  className="
+                  absolute
+                  right-0 top-0
+                  rounded-bl-xl
+                  rounded-br-xl
+                  bg-teal-500
+                  px-4 py-2
+                  "
+                >
+                  <span
+                    className="
+                    text-[10px]
+                    font-bold
+                    uppercase
+                    tracking-wider
+                    text-slate-950
+                    "
+                  >
                     Core Engine
                   </span>
                 </div>
               )}
 
+
               {/* Number */}
-              <div className="flex h-8 w-8 items-center justify-center rounded-full border border-teal-500/40 bg-teal-950 text-xs font-bold text-teal-400">
+              <div
+                className="
+                flex
+                h-8 w-8
+                items-center justify-center
+                rounded-full
+                border
+                border-teal-500/40
+                bg-teal-100
+                text-xs
+                font-bold
+                text-teal-700
+                dark:bg-teal-950
+                dark:text-teal-400
+                "
+              >
                 {layer.number}
               </div>
 
-              {/* Content */}
+
+
               <div className="mt-8">
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+
+                <p
+                  className="
+                  text-xs
+                  font-bold
+                  uppercase
+                  tracking-wider
+                  text-slate-500
+                  "
+                >
                   {layer.label}
                 </p>
 
-                <h3 className="mt-4 text-xl font-bold leading-8 text-white sm:text-2xl">
+
+                <h3
+                  className="
+                  mt-4
+                  text-xl
+                  font-bold
+                  leading-8
+                  text-slate-900
+                  sm:text-2xl
+                  dark:text-white
+                  "
+                >
                   {layer.title}
                 </h3>
 
+
                 {/* Points */}
                 <ul className="mt-6 space-y-4">
+
                   {layer.points.map((point) => (
+
                     <li
                       key={point}
-                      className="flex items-start gap-3 text-sm leading-6 text-slate-400"
+                      className="
+                      flex
+                      items-start
+                      gap-3
+                      text-sm
+                      leading-6
+                      text-slate-600
+                      dark:text-slate-400
+                      "
                     >
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
+
+                      <span
+                        className="
+                        mt-2
+                        h-1.5
+                        w-1.5
+                        shrink-0
+                        rounded-full
+                        bg-teal-500
+                        "
+                      />
+
                       <span>{point}</span>
+
                     </li>
+
                   ))}
+
                 </ul>
 
+
+
                 {/* Message */}
-                <div className="mt-8 rounded-r-lg border-l-2 border-teal-500 bg-teal-950/50 px-4 py-4">
-                  <p className="text-xs font-semibold leading-5 text-teal-300 sm:text-sm">
+                <div
+                  className="
+                  mt-8
+                  rounded-r-lg
+                  border-l-2
+                  border-teal-500
+                  bg-teal-50
+                  px-4 py-4
+                  dark:bg-teal-950/50
+                  "
+                >
+
+                  <p
+                    className="
+                    text-xs
+                    font-semibold
+                    leading-5
+                    text-teal-700
+                    sm:text-sm
+                    dark:text-teal-300
+                    "
+                  >
                     {layer.message}
                   </p>
+
                 </div>
+
+
               </div>
+
+
             </article>
+
           ))}
+
         </div>
+
       </div>
     </section>
   );

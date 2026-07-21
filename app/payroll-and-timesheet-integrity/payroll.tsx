@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { AlertTriangle } from "lucide-react";
 const payrollFaqs = [
   "Does ZoikoTime process payroll?",
@@ -282,13 +283,21 @@ export default function Payroll() {
 
         {/* Buttons */}
         <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_rgba(16,162,141,0.28)] transition-all duration-300 hover:bg-teal-700 hover:shadow-lg">
-            Get a Demo
-          </button>
 
-          <button className="rounded-[10px] border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-slate-800 transition-all duration-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
-            Contact Sales
-          </button>
+          <Link
+  href="/request-a-demo"
+  className="rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_rgba(16,162,141,0.28)] transition-all duration-300 hover:bg-teal-700 hover:shadow-lg"
+>
+  Get a Demo
+</Link>
+
+<Link
+  href="/contact-sales"
+  className="rounded-[10px] border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-slate-800 transition-all duration-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+>
+  Contact Sales
+</Link>
+
         </div>
 
         {/* Footer Note */}
@@ -673,13 +682,21 @@ export default function Payroll() {
 
     {/* Buttons */}
     <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
-      <button className="rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700">
-        Get a Demo
-      </button>
 
-      <button className="rounded-[10px] border border-white/30 bg-white/10 px-8 py-3 text-base font-semibold text-white transition hover:bg-white/20">
-        Contact Sales
-      </button>
+      <Link
+  href="/request-a-demo"
+  className="rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700"
+>
+  Get a Demo
+</Link>
+
+<Link
+  href="/contact-sales"
+  className="rounded-[10px] border border-white/30 bg-white/10 px-8 py-3 text-base font-semibold text-white transition hover:bg-white/20"
+>
+  Contact Sales
+</Link>
+
     </div>
   </div>
 </section>

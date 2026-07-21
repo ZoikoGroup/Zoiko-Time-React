@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 export default function EnterpriseControls() {
@@ -45,37 +47,191 @@ export default function EnterpriseControls() {
   ];
 
   return (
-    <section className="w-full overflow-hidden bg-slate-950 px-5 py-16 sm:px-8 lg:min-h-[689px] lg:px-10 lg:py-[74px]">
-      <div className="mx-auto max-w-[1180px] text-center">
+    <section
+      className="
+        w-full
+        overflow-hidden
+
+        px-5
+        py-16
+
+        transition-colors
+        duration-300
+
+        bg-white
+
+        dark:bg-slate-950
+
+        sm:px-8
+
+        lg:min-h-[689px]
+
+        lg:px-10
+
+        lg:py-[74px]
+      "
+    >
+      <div
+        className="
+          mx-auto
+
+          max-w-[1180px]
+
+          text-center
+        "
+      >
+
         {/* Label */}
-        <p className="text-xs font-semibold uppercase leading-5 tracking-[0.2em] text-teal-400">
+        <p
+          className="
+            text-xs
+
+            font-semibold
+
+            uppercase
+
+            leading-5
+
+            tracking-[0.2em]
+
+            text-teal-600
+
+            dark:text-teal-400
+          "
+        >
           Enterprise Controls
         </p>
 
+
         {/* Heading */}
-        <h2 className="mt-2.5 text-3xl font-bold leading-tight text-slate-100 sm:text-4xl">
+        <h2
+          className="
+            mt-2.5
+
+            text-3xl
+
+            font-bold
+
+            leading-tight
+
+            text-slate-900
+
+            dark:text-slate-100
+
+            sm:text-4xl
+          "
+        >
           Enterprise mobile controls
         </h2>
 
+
         {/* Description */}
-        <p className="mt-4 text-sm font-normal leading-7 text-slate-400 sm:text-base">
+        <p
+          className="
+            mt-4
+
+            text-sm
+
+            font-normal
+
+            leading-7
+
+            text-slate-600
+
+            dark:text-slate-400
+
+            sm:text-base
+          "
+        >
           Mobile extends governance — it never becomes covert monitoring.
         </p>
 
+
         {/* Controls */}
-        <div className="mx-auto mt-12 max-w-[1120px] space-y-6 lg:mt-[66px] lg:space-y-0">
+        <div
+          className="
+            mx-auto
+
+            mt-12
+
+            max-w-[1120px]
+
+            space-y-6
+
+            lg:mt-[66px]
+
+            lg:space-y-0
+          "
+        >
+
           {controls.map((control) => (
-            <div key={control.title} className="text-center">
-              <h3 className="text-sm font-bold leading-5 text-slate-200">
+            <div
+              key={control.title}
+              className="
+                text-center
+
+                rounded-xl
+
+                px-4
+
+                py-3
+
+                transition-colors
+
+                hover:bg-slate-50
+
+                dark:hover:bg-slate-900/50
+              "
+            >
+
+              <h3
+                className="
+                  text-sm
+
+                  font-bold
+
+                  leading-5
+
+                  text-slate-800
+
+                  dark:text-slate-200
+                "
+              >
                 {control.title}
               </h3>
 
-              <p className="mx-auto mt-1 max-w-[850px] text-sm font-normal leading-6 text-slate-400 sm:text-base">
+
+              <p
+                className="
+                  mx-auto
+
+                  mt-1
+
+                  max-w-[850px]
+
+                  text-sm
+
+                  font-normal
+
+                  leading-6
+
+                  text-slate-600
+
+                  dark:text-slate-400
+
+                  sm:text-base
+                "
+              >
                 {control.description}
               </p>
+
+
             </div>
           ))}
+
         </div>
+
+
       </div>
     </section>
   );

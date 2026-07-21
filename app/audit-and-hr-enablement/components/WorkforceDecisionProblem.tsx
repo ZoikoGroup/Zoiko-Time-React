@@ -42,67 +42,205 @@ const problems = [
 
 export default function WorkforceDecisionProblem() {
   return (
-    <section className="relative w-full overflow-hidden bg-slate-950">
-      <div className="mx-auto flex min-h-[821.48px] w-full max-w-[1440px] flex-col items-center px-6 py-[74px] sm:px-10 lg:px-16">
+    <section
+      className="
+      relative w-full overflow-hidden
+      bg-white
+      dark:bg-slate-950
+      "
+    >
+      <div
+        className="
+        mx-auto flex min-h-screen max-w-[1440px]
+        flex-col items-center
+        px-5 py-16
+        sm:px-10
+        lg:px-16 lg:py-[74px]
+        "
+      >
 
         {/* Eyebrow */}
-        <div className="text-center text-xs font-bold uppercase leading-5 tracking-wider text-teal-400">
+        <div
+          className="
+          text-center text-xs font-bold uppercase
+          leading-5 tracking-wider
+          text-teal-600
+          dark:text-teal-400
+          "
+        >
           The Problem
         </div>
 
+
         {/* Heading */}
-        <h2 className="mt-[18px] text-center font-['Plus_Jakarta_Sans'] text-3xl font-bold leading-10 text-white sm:text-4xl">
+        <h2
+          className="
+          mt-5 text-center
+          text-3xl font-bold leading-tight
+          text-slate-900
+          sm:text-4xl
+          dark:text-white
+          "
+        >
           Why Workforce Decisions Break Down
         </h2>
 
+
         {/* Description */}
-        <p className="mt-[18px] max-w-[560px] text-center font-['Plus_Jakarta_Sans'] text-base font-normal leading-7 text-slate-400 sm:text-lg">
+        <p
+          className="
+          mt-5 max-w-[560px]
+          text-center text-base
+          leading-7
+          text-slate-600
+          sm:text-lg
+          dark:text-slate-400
+          "
+        >
           Without structure, decisions become inconsistent — and
           <br className="hidden sm:block" />
           inconsistency creates compounding risk across your organisation.
         </p>
 
+
         {/* Cards */}
-        <div className="mt-[92px] grid w-full max-w-[1040px] grid-cols-1 gap-6 md:grid-cols-3 md:gap-8 lg:gap-[34.66px]">
+        <div
+          className="
+          mt-16 grid w-full
+          max-w-[1040px]
+          grid-cols-1
+          gap-6
+          sm:mt-[92px]
+          md:grid-cols-3
+          md:gap-8
+          lg:gap-[34.66px]
+          "
+        >
           {problems.map((problem) => (
             <div
               key={problem.title}
-              className="relative min-h-[288px] overflow-hidden rounded-xl bg-slate-900 px-[33px] py-[33px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.25)] shadow-[0px_8px_24px_0px_rgba(0,0,0,0.18)] outline outline-1 outline-offset-[-1px] outline-slate-800"
+              className="
+              relative min-h-[288px]
+              overflow-hidden rounded-xl
+              bg-white
+              px-7 py-8
+              shadow-[0px_8px_24px_rgba(0,0,0,0.08)]
+              outline outline-1
+              outline-slate-200
+              dark:bg-slate-900
+              dark:outline-slate-800
+              dark:shadow-[0px_8px_24px_rgba(0,0,0,0.18)]
+              "
             >
-              {/* Top Gradient Line */}
-              <div className="absolute left-0 top-0 h-[3px] w-full bg-gradient-to-r from-teal-500 to-teal-400" />
+
+              {/* Gradient Line */}
+              <div
+                className="
+                absolute left-0 top-0
+                h-[3px] w-full
+                bg-gradient-to-r
+                from-teal-500
+                to-teal-400
+                "
+              />
+
 
               {/* Icon */}
-              <div className="flex size-11 items-center justify-center rounded-lg bg-teal-950/70">
-                <span className="text-xl leading-8 text-slate-200">
+              <div
+                className="
+                flex size-11
+                items-center justify-center
+                rounded-lg
+                bg-teal-100
+                dark:bg-teal-950/70
+                "
+              >
+                <span className="text-xl">
                   {problem.icon}
                 </span>
               </div>
 
+
               {/* Title */}
-              <h3 className="mt-[24px] font-['Plus_Jakarta_Sans'] text-lg font-bold leading-7 text-white">
+              <h3
+                className="
+                mt-6
+                text-lg font-bold
+                leading-7
+                text-slate-900
+                dark:text-white
+                "
+              >
                 {problem.title}
               </h3>
 
+
               {/* Description */}
-              <p className="mt-[12px] font-['Plus_Jakarta_Sans'] text-base font-normal leading-6 text-slate-400">
+              <p
+                className="
+                mt-3
+                text-base
+                leading-6
+                text-slate-600
+                dark:text-slate-400
+                "
+              >
                 {problem.description}
               </p>
+
             </div>
           ))}
         </div>
 
-        {/* Bottom Insight Box */}
-        <div className="mt-[49px] flex min-h-[128px] w-full max-w-[680px] items-center justify-center rounded-xl bg-indigo-950/40 px-6 py-8 text-center outline outline-1 outline-offset-[-1px] outline-indigo-400/20 sm:px-10">
-          <p className="font-['Plus_Jakarta_Sans'] text-base font-semibold leading-7 text-slate-200 sm:text-lg">
+
+        {/* Insight Box */}
+        <div
+          className="
+          mt-12
+          flex min-h-[128px]
+          w-full max-w-[680px]
+          items-center justify-center
+          rounded-xl
+          bg-indigo-50
+          px-6 py-8
+          text-center
+          outline outline-1
+          outline-indigo-200
+          sm:px-10
+          dark:bg-indigo-950/40
+          dark:outline-indigo-400/20
+          "
+        >
+          <p
+            className="
+            text-base
+            font-semibold
+            leading-7
+            text-slate-700
+            sm:text-lg
+            dark:text-slate-200
+            "
+          >
             Without structure, decisions become inconsistent, and
             <br className="hidden sm:block" />
-            <span className="font-extrabold text-teal-400">
+
+            <span
+              className="
+              font-extrabold
+              text-teal-600
+              dark:text-teal-400
+              "
+            >
               inconsistency creates risk
             </span>
-            <span> across every layer of the organisation.</span>
+
+            <span>
+              {" "}across every layer of the organisation.
+            </span>
+
           </p>
         </div>
+
       </div>
     </section>
   );

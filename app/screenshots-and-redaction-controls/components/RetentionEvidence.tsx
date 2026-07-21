@@ -1,6 +1,7 @@
 // components/RetentionEvidence.tsx
 
 import React from "react";
+import Link from "next/link";
 
 const retentionItems = [
   {
@@ -59,15 +60,16 @@ export default function RetentionEvidence() {
         </div>
 
         {/* Related Link */}
-        <div className="mt-12 text-center">
-          <p className="text-base text-gray-500 dark:text-gray-400">
-            Related:{" "}
-            <a
-              href="#"
-              className="font-semibold text-teal-700 transition-colors hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
-            >
-              View Audit-Grade Evidence →
-            </a>
+<div className="mt-12 text-center">
+  <p className="text-base text-gray-500 dark:text-gray-400">
+    Related:{" "}
+    <Link
+      href="/audit-grade-evidence#evidence-layer"
+      className="font-semibold text-teal-700 transition-colors hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
+    >
+      View Audit-Grade Evidence →
+    </Link>
+  
           </p>
         </div>
       </div>

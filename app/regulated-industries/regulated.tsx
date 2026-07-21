@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 type FrameworkVariant = 'indigo' | 'emerald' | 'amber';
 
 interface ComplianceRow {
@@ -536,14 +537,53 @@ export default function Regulated() {
 
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full px-4">
-        <button className="w-full sm:w-64 h-12 bg-teal-600 rounded-lg shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)] flex items-center justify-center text-white text-base font-semibold hover:bg-teal-700 transition-colors">
-          Request Regulator Demo
-        </button>
-        
-        <button className="w-full sm:w-60 h-12 rounded-lg border border-teal-600 flex items-center justify-center text-teal-600 text-base font-semibold hover:bg-teal-50 transition-colors">
-          View Control Mapping
-        </button>
-      </div>
+
+  <Link
+    href="/request-a-demo"
+    className="
+      w-full
+      sm:w-64
+      h-12
+      bg-teal-600
+      rounded-lg
+      shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)]
+      flex
+      items-center
+      justify-center
+      text-white
+      text-base
+      font-semibold
+      hover:bg-teal-700
+      transition-colors
+    "
+  >
+    Request Regulator Demo
+  </Link>
+
+
+  <Link
+    href="/regulated-industries#view-control-mapping"
+    className="
+      w-full
+      sm:w-60
+      h-12
+      rounded-lg
+      border
+      border-teal-600
+      flex
+      items-center
+      justify-center
+      text-teal-600
+      text-base
+      font-semibold
+      hover:bg-teal-50
+      transition-colors
+    "
+  >
+    View Control Mapping
+  </Link>
+
+</div>
 
     </section>
     <section className="w-full bg-slate-100 dark:bg-gray-900 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center ">
@@ -668,7 +708,9 @@ export default function Regulated() {
         </div>
       </div>
     </section>
-    <section className="w-full min-h-[600px] sm:min-h-[919px] relative bg-slate-100 dark:bg-gray-900 py-16 sm:py-24 flex flex-col items-center justify-start font-sans select-none">
+    <section 
+    id ="view-control-mapping"
+    className="w-full min-h-[600px] sm:min-h-[919px] relative bg-slate-100 dark:bg-gray-900 py-16 sm:py-24 flex flex-col items-center justify-start font-sans select-none">
       {/* Upper Headers */}
       <div className="text-center max-w-4xl px-4 z-10">
         <span className="block text-teal-600 text-xs font-bold tracking-wider uppercase mb-3">
@@ -1251,15 +1293,56 @@ export default function Regulated() {
 
         {/* Action Button Blocks */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full px-4">
-          {/* Primary Demo Button */}
-          <button className="w-full sm:w-64 h-12 bg-teal-600 hover:bg-teal-700 transition-colors rounded-lg shadow-[0px_4px_14px_0px_rgba(0,157,140,0.40)] border border-teal-600 text-white text-base font-semibold flex items-center justify-center">
-            Request Regulator Demo
-          </button>
 
-          {/* Secondary Expert Button */}
-          <button className="w-full sm:w-72 h-12 hover:bg-teal-600/5 transition-colors rounded-lg border border-teal-600 text-teal-600 text-base font-medium flex items-center justify-center">
-            Speak to Compliance Expert
-          </button>
+          {/* Primary Demo Button */}
+<Link
+  href="/request-a-demo"
+  className="
+    w-full
+    sm:w-64
+    h-12
+    bg-teal-600
+    hover:bg-teal-700
+    transition-colors
+    rounded-lg
+    shadow-[0px_4px_14px_0px_rgba(0,157,140,0.40)]
+    border
+    border-teal-600
+    text-white
+    text-base
+    font-semibold
+    flex
+    items-center
+    justify-center
+  "
+>
+  Request Regulator Demo
+</Link>
+
+
+{/* Secondary Expert Button */}
+<Link
+  href="/contact-sales"
+  className="
+    w-full
+    sm:w-72
+    h-12
+    hover:bg-teal-600/5
+    transition-colors
+    rounded-lg
+    border
+    border-teal-600
+    text-teal-600
+    text-base
+    font-medium
+    flex
+    items-center
+    justify-center
+  "
+>
+  Speak to Compliance Expert
+</Link>
+
         </div>
 
       </div>

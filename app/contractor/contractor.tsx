@@ -1,5 +1,6 @@
 // app/page.tsx
 'use client';
+import Link from "next/link";
 
 import React, { useState } from 'react';
 
@@ -58,12 +59,59 @@ export default function Contractor() {
 
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-3 md:gap-4 mb-12 md:mb-20 w-full max-w-md mx-auto sm:max-w-none">
-            <button className="w-full sm:w-auto px-8 py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-lg shadow-teal-600/20 hover:bg-teal-700 transition">
-              Request Demo
-            </button>
-            <button className="w-full sm:w-auto px-8 py-3 bg-transparent text-teal-600 dark:text-teal-400 font-semibold rounded-lg border border-teal-600 dark:border-teal-500 hover:bg-teal-50 dark:hover:bg-teal-950/20 transition">
-              Run Revenue Scenario
-            </button>
+
+            <div className="flex flex-col gap-4 sm:flex-row">
+  <Link
+    href="/request-a-demo"
+    className="
+      w-full
+      sm:w-auto
+      px-8
+      py-3
+      bg-teal-600
+      text-white
+      font-semibold
+      rounded-lg
+      shadow-lg
+      shadow-teal-600/20
+      hover:bg-teal-700
+      transition
+      flex
+      items-center
+      justify-center
+    "
+  >
+    Request Demo
+  </Link>
+
+
+  <Link
+    href="/contractor#run-revenue-scenario"
+    className="
+      w-full
+      sm:w-auto
+      px-8
+      py-3
+      bg-transparent
+      text-teal-600
+      dark:text-teal-400
+      font-semibold
+      rounded-lg
+      border
+      border-teal-600
+      dark:border-teal-500
+      hover:bg-teal-50
+      dark:hover:bg-teal-950/20
+      transition
+      flex
+      items-center
+      justify-center
+    "
+  >
+    Run Revenue Scenario
+  </Link>
+</div>
+
           </div>
 
           {/* Platform Live Dashboard Metric Component */}
@@ -112,7 +160,9 @@ export default function Contractor() {
       </section>
 
       {/* SECTION 2: THE RISK LAYER */}
-      <section className="w-full bg-slate-100 dark:bg-slate-950/40 py-16 md:py-20 border-y border-slate-200 dark:border-slate-800">
+      <section
+      id="revenue-assurance"
+       className="w-full bg-slate-100 dark:bg-slate-950/40 py-16 md:py-20 border-y border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <span className="text-teal-600 dark:text-teal-400 text-xs font-bold uppercase tracking-wider block mb-4">The Risk</span>
           <h2 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 max-w-4xl mx-auto">
@@ -151,7 +201,9 @@ export default function Contractor() {
       </section>
 
       {/* SECTION 3: THE SYSTEM LAYER */}
-      <section className="w-full bg-white dark:bg-slate-900 py-16 md:py-20">
+      <section
+      id = "run-revenue-scenario"
+       className="w-full bg-white dark:bg-slate-900 py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <span className="text-teal-600 dark:text-teal-400 text-xs font-bold uppercase tracking-wider block mb-4">The System</span>
           <h2 className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 max-w-4xl mx-auto">
@@ -406,9 +458,28 @@ export default function Contractor() {
               </ul>
             </div>
 
-            <button className="w-full sm:w-auto px-6 py-3 bg-teal-600 text-white font-semibold rounded-lg shadow-md shadow-teal-600/20 hover:bg-teal-700 transition">
-              Explore Revenue Assurance
-            </button>
+           <Link
+  href="/contractor#revenue-assurance"
+  className="
+    w-full
+    sm:w-auto
+    px-6
+    py-3
+    bg-teal-600
+    text-white
+    font-semibold
+    rounded-lg
+    shadow-md
+    shadow-teal-600/20
+    hover:bg-teal-700
+    transition
+    flex
+    items-center
+    justify-center
+  "
+>
+  Explore Revenue Assurance
+</Link>
           </div>
 
           {/* Right Workflow step tracking list block column */}
@@ -987,17 +1058,69 @@ export default function Contractor() {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 max-w-md mx-auto sm:max-w-none">
             {/* Primary CTA: Request Demo */}
-            <button className="w-full sm:w-auto px-8 h-12 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base rounded-lg shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)] transition flex items-center justify-center gap-2.5 group">
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-              <span>Request Demo</span>
-            </button>
 
-            {/* Secondary CTA: Run Revenue Scenario */}
-            <button className="w-full sm:w-auto px-8 h-12 border border-teal-600 dark:border-teal-500 text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-slate-800 font-semibold text-base rounded-lg transition flex items-center justify-center">
-              Run Revenue Scenario
-            </button>
+            <div className="flex flex-col gap-4 sm:flex-row">
+  <Link
+    href="/request-a-demo"
+    className="
+      w-full
+      sm:w-auto
+      px-8
+      h-12
+      bg-teal-600
+      hover:bg-teal-700
+      text-white
+      font-semibold
+      text-base
+      rounded-lg
+      shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)]
+      transition
+      flex
+      items-center
+      justify-center
+      gap-2.5
+      group
+    "
+  >
+    <svg
+      className="w-4 h-4 fill-current"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M8 5v14l11-7z" />
+    </svg>
+
+    <span>Request Demo</span>
+  </Link>
+
+
+  <Link
+    href="/contractor#run-revenue-scenario"
+    className="
+      w-full
+      sm:w-auto
+      px-8
+      h-12
+      border
+      border-teal-600
+      dark:border-teal-500
+      text-teal-600
+      dark:text-teal-400
+      hover:bg-teal-50
+      dark:hover:bg-slate-800
+      font-semibold
+      text-base
+      rounded-lg
+      transition
+      flex
+      items-center
+      justify-center
+    "
+  >
+    Run Revenue Scenario
+  </Link>
+</div>
+
           </div>
         </div>
       </section>

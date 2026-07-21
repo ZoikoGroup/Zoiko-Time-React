@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 const faqs = [
   "Is this one product or three?",
@@ -26,12 +27,23 @@ export default function HR() {
             ZoikoTime helps teams align around governed time records, policy workflows, exception review, workforce analytics, evidence retention, and responsible AI.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <button className="w-full sm:w-36 rounded-[10px] bg-teal-600 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] hover:bg-teal-700 transition">
-              Get a Demo
-            </button>
-            <button className="w-full sm:w-40 rounded-[10px] border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 py-3 text-base font-semibold text-slate-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition">
-              Contact Sales
-            </button>
+
+            <div className="flex flex-col gap-4 sm:flex-row">
+  <Link
+    href="/request-a-demo"
+    className="w-full sm:w-36 rounded-[10px] bg-teal-600 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] hover:bg-teal-700 transition flex items-center justify-center"
+  >
+    Get a Demo
+  </Link>
+
+  <Link
+    href="/contact-sales"
+    className="w-full sm:w-40 rounded-[10px] border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 py-3 text-base font-semibold text-slate-800 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700 transition flex items-center justify-center"
+  >
+    Contact Sales
+  </Link>
+</div>
+
           </div>
         </div>
       </section>
@@ -317,12 +329,21 @@ export default function HR() {
             Talk with the ZoikoTime team about governed records, exception workflows, evidence retention, and cross-functional visibility.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <button className="w-full sm:w-36 rounded-[10px] bg-teal-600 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] hover:bg-teal-700 transition">
-              Get a Demo
-            </button>
-            <button className="w-full sm:w-40 rounded-[10px] border border-white/30 bg-white/10 py-3 text-base font-semibold text-white hover:bg-white/20 transition">
-              Contact Sales
-            </button>
+
+            <Link
+  href="/request-a-demo"
+  className="w-full sm:w-36 rounded-[10px] bg-teal-600 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] hover:bg-teal-700 transition flex items-center justify-center"
+>
+  Get a Demo
+</Link>
+
+<Link
+  href="/contact-sales"
+  className="w-full sm:w-40 rounded-[10px] border border-white/30 bg-white/10 py-3 text-base font-semibold text-white hover:bg-white/20 transition flex items-center justify-center"
+>
+  Contact Sales
+</Link>
+
           </div>
         </div>
       </section>

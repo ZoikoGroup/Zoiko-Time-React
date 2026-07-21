@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 
 const accessibilityFeatures = [
   {
@@ -25,37 +25,162 @@ const accessibilityFeatures = [
 
 export default function AccessibilitySection() {
   return (
-    <section className="w-full bg-gray-50 px-5 py-16 transition-colors duration-300 dark:bg-slate-950 sm:px-8 lg:px-12">
+    <section
+      className="
+        w-full
+        px-5
+        py-16
+
+        transition-colors
+        duration-300
+
+        bg-gray-50
+
+        dark:bg-slate-950
+
+        sm:px-8
+
+        lg:px-12
+      "
+    >
       <div className="mx-auto w-full max-w-[1180px]">
+
         {/* Header */}
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase leading-5 tracking-[0.2em] text-teal-600 dark:text-teal-400">
+
+          <p
+            className="
+              text-xs
+              font-semibold
+              uppercase
+              leading-5
+              tracking-[0.2em]
+
+              text-teal-600
+
+              dark:text-teal-400
+            "
+          >
             Accessibility
           </p>
 
-          <h2 className="mt-2 text-3xl font-bold leading-tight text-slate-800 dark:text-white sm:text-4xl">
+
+          <h2
+            className="
+              mt-2
+
+              text-3xl
+
+              font-bold
+
+              leading-tight
+
+              text-slate-800
+
+              dark:text-white
+
+              sm:text-4xl
+            "
+          >
             Accessibility and mobile usability
           </h2>
 
-          <p className="mt-4 text-sm leading-7 text-gray-500 dark:text-slate-400 sm:text-base">
+
+          <p
+            className="
+              mt-4
+
+              text-sm
+
+              leading-7
+
+              text-gray-600
+
+              dark:text-slate-400
+
+              sm:text-base
+            "
+          >
             Designed to be clear and usable for everyone.
           </p>
+
         </div>
 
+
         {/* Features */}
-        <div className="mx-auto mt-16 max-w-[700px] space-y-5 text-center">
+        <div
+          className="
+            mx-auto
+
+            mt-16
+
+            max-w-[700px]
+
+            space-y-5
+
+            text-center
+          "
+        >
+
           {accessibilityFeatures.map((feature) => (
-            <div key={feature.title}>
-              <h3 className="text-sm font-bold leading-5 text-gray-700 dark:text-slate-200 sm:text-base">
+            <div
+              key={feature.title}
+              className="
+                rounded-xl
+
+                px-5
+                py-4
+
+                transition-colors
+
+                hover:bg-white
+
+                dark:hover:bg-slate-900/60
+              "
+            >
+
+              <h3
+                className="
+                  text-sm
+
+                  font-bold
+
+                  leading-5
+
+                  text-gray-800
+
+                  dark:text-slate-200
+
+                  sm:text-base
+                "
+              >
                 {feature.title}
               </h3>
 
-              <p className="mt-1 text-sm leading-6 text-gray-700 dark:text-slate-400 sm:text-base">
+
+              <p
+                className="
+                  mt-1
+
+                  text-sm
+
+                  leading-6
+
+                  text-gray-600
+
+                  dark:text-slate-400
+
+                  sm:text-base
+                "
+              >
                 {feature.description}
               </p>
+
             </div>
           ))}
+
         </div>
+
       </div>
     </section>
   );

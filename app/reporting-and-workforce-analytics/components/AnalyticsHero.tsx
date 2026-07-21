@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const topMetrics = [
   {
@@ -144,15 +145,59 @@ export default function AnalyticsHero() {
           </div>
 
           {/* Buttons */}
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <button className="h-11 rounded-[10px] bg-teal-600 px-7 text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] transition hover:bg-teal-700">
-              Get a Demo
-            </button>
+<div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
-            <button className="h-11 rounded-[10px] border border-gray-300 bg-white px-7 text-base font-semibold text-slate-800 transition hover:bg-gray-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800">
-              Start Free Trial
-            </button>
-          </div>
+  {/* Get a Demo */}
+  <Link
+    href="/request-a-demo"
+    className="
+      h-11
+      rounded-[10px]
+      bg-teal-600
+      px-7
+      text-base
+      font-semibold
+      text-white
+      shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)]
+      transition
+      hover:bg-teal-700
+      inline-flex
+      items-center
+      justify-center
+    "
+  >
+    Get a Demo
+  </Link>
+
+
+  {/* Start Free Trial */}
+  <Link
+    href="/start-free"
+    className="
+      h-11
+      rounded-[10px]
+      border
+      border-gray-300
+      bg-white
+      px-7
+      text-base
+      font-semibold
+      text-slate-800
+      transition
+      hover:bg-gray-50
+      dark:border-slate-700
+      dark:bg-slate-900
+      dark:text-white
+      dark:hover:bg-slate-800
+      inline-flex
+      items-center
+      justify-center
+    "
+  >
+    Start Free
+  </Link>
+
+</div>
 
           <p className="mt-6 text-xs leading-5 text-gray-500 dark:text-gray-400">
             Built for governance, not surveillance — no employee rankings or

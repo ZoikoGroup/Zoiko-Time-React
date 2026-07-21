@@ -35,38 +35,183 @@ export default function MobilePermissions() {
   ];
 
   return (
-    <section className="w-full bg-slate-950 px-5 py-16 sm:px-8 lg:px-10 lg:py-0">
-      <div className="mx-auto max-w-[1180px] text-center lg:min-h-[500px]">
+    <section
+      className="
+        w-full
+
+        px-5
+        py-16
+
+        transition-colors
+        duration-300
+
+        bg-gray-50
+
+        dark:bg-slate-950
+
+        sm:px-8
+
+        lg:px-10
+
+        lg:py-0
+      "
+    >
+      <div
+        className="
+          mx-auto
+
+          max-w-[1180px]
+
+          text-center
+
+          lg:min-h-[500px]
+        "
+      >
+
         {/* Label */}
-        <p className="text-xs font-semibold uppercase leading-5 tracking-[0.2em] text-teal-400">
+        <p
+          className="
+            text-xs
+
+            font-semibold
+
+            uppercase
+
+            leading-5
+
+            tracking-[0.2em]
+
+            text-teal-600
+
+            dark:text-teal-400
+          "
+        >
           Permissions
         </p>
 
+
         {/* Heading */}
-        <h2 className="mt-2.5 text-3xl font-bold leading-tight text-slate-100 sm:text-4xl">
+        <h2
+          className="
+            mt-2.5
+
+            text-3xl
+
+            font-bold
+
+            leading-tight
+
+            text-slate-900
+
+            dark:text-slate-100
+
+            sm:text-4xl
+          "
+        >
           Mobile permissions and device boundaries
         </h2>
 
+
         {/* Description */}
-        <p className="mx-auto mt-4 max-w-[650px] text-sm font-normal leading-7 text-slate-400 sm:text-base">
+        <p
+          className="
+            mx-auto
+
+            mt-4
+
+            max-w-[650px]
+
+            text-sm
+
+            font-normal
+
+            leading-7
+
+            text-slate-600
+
+            dark:text-slate-400
+
+            sm:text-base
+          "
+        >
           Every permission has a stated purpose — and an explicit list of what
           the app does not access.
         </p>
 
+
         {/* Permissions List */}
-        <div className="mx-auto mt-12 max-w-[1120px] space-y-6 sm:mt-14 lg:mt-[76px] lg:space-y-0">
+        <div
+          className="
+            mx-auto
+
+            mt-12
+
+            max-w-[1120px]
+
+            space-y-6
+
+            sm:mt-14
+
+            lg:mt-[76px]
+
+            lg:space-y-0
+          "
+        >
+
           {permissions.map((permission) => (
-            <div key={permission.title} className="text-center">
-              <h3 className="text-sm font-bold leading-5 text-slate-200">
+
+            <div
+              key={permission.title}
+              className="text-center"
+            >
+
+              <h3
+                className="
+                  text-sm
+
+                  font-bold
+
+                  leading-5
+
+                  text-slate-700
+
+                  dark:text-slate-200
+                "
+              >
                 {permission.title}
               </h3>
 
-              <p className="mx-auto mt-1 max-w-[1120px] text-sm font-normal leading-6 text-slate-400 sm:text-base">
+
+              <p
+                className="
+                  mx-auto
+
+                  mt-1
+
+                  max-w-[1120px]
+
+                  text-sm
+
+                  font-normal
+
+                  leading-6
+
+                  text-slate-600
+
+                  dark:text-slate-400
+
+                  sm:text-base
+                "
+              >
                 {permission.description}
               </p>
+
             </div>
+
           ))}
+
         </div>
+
       </div>
     </section>
   );

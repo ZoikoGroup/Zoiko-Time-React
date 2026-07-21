@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const highlights = [
   "Establish a single source of truth",
@@ -88,13 +89,19 @@ export default function EvidenceCapture() {
 
         {/* CTA Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-5">
-          <button className="rounded-lg bg-teal-600 px-8 py-3 text-white font-semibold shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
-            Request Audit Demo
-          </button>
+          <Link
+  href="/request-a-demo"
+  className="inline-flex items-center justify-center rounded-lg bg-teal-600 px-8 py-3 text-white font-semibold shadow-lg shadow-teal-600/30 transition hover:bg-teal-700"
+>
+  Request Audit Demo
+</Link>
 
-          <button className="rounded-lg border border-teal-600 px-8 py-3 font-semibold text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-slate-800 transition">
-            View Evidence Model
-          </button>
+          <Link
+  href="/evidence-capture#evidence-layer"
+  className="inline-flex items-center justify-center rounded-lg border border-teal-600 px-8 py-3 font-semibold text-teal-600 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-slate-800 transition"
+>
+  View Evidence Model
+</Link>
         </div>
 
         {/* Evidence Card */}

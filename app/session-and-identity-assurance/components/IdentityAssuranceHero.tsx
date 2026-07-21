@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ArrowRight, Shield } from "lucide-react";
 
 export default function IdentityAssuranceHero() {
@@ -47,15 +48,21 @@ export default function IdentityAssuranceHero() {
 
         {/* Buttons */}
         <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="flex items-center gap-2 rounded-lg bg-teal-600 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
+          <Link
+            href="/request-a-demo"
+            className="flex items-center gap-2 rounded-lg bg-teal-600 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700"
+          >
             <Shield size={18} />
             Request Demo
-          </button>
+          </Link>
 
-          <button className="flex items-center gap-2 rounded-lg border border-teal-600 px-7 py-3 text-base font-semibold text-teal-600 transition hover:bg-teal-50 dark:hover:bg-slate-800">
+          <Link
+            href="/security-overview#architecture-table"
+            className="flex items-center gap-2 rounded-lg border border-teal-600 px-7 py-3 text-base font-semibold text-teal-600 transition hover:bg-teal-50 dark:hover:bg-slate-800"
+          >
             View Architecture
             <ArrowRight size={18} />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
