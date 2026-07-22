@@ -1,20 +1,22 @@
+import Link from "next/link";
+
 export default function CtaSection() {
   return (
-    <section className="bg-gradient-to-r from-[#0E1F3D] to-[#14264A] dark:from-slate-950 dark:to-slate-900 px-4 sm:px-6 lg:px-10 xl:px-20 py-12 md:py-16 transition-colors duration-300">
-      <div className="mx-auto max-w-6xl flex flex-col items-center gap-8 text-center">
+    <section className="bg-gradient-to-r from-[#0E1F3D] to-[#14264A] px-4 py-12 transition-colors duration-300 dark:from-slate-950 dark:to-slate-900 sm:px-6 md:py-16 lg:px-10 xl:px-20">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 text-center">
         {/* Heading */}
         <div className="max-w-3xl">
-          <span className="inline-block text-xs font-bold uppercase tracking-[1.3px] text-[#009D8C] mb-3">
+          <span className="mb-3 inline-block text-xs font-bold uppercase tracking-[1.3px] text-[#009D8C]">
             Let's Build Together
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-semibold uppercase text-white leading-tight mb-4">
+          <h2 className="mb-4 text-3xl font-semibold uppercase leading-tight text-white md:text-4xl">
             Build the Future of Workforce Intelligence
             <br className="hidden md:block" />
             with ZoikoTime
           </h2>
 
-          <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-white/80 md:text-base">
             ZoikoTime is seeking trusted partners that can help organizations
             deploy, integrate, govern, and scale workforce intelligence
             responsibly.
@@ -22,14 +24,20 @@ export default function CtaSection() {
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-4 justify-center">
-          <button className="w-full sm:w-auto rounded-lg bg-[#009D8C] px-8 py-3 text-sm font-medium text-white shadow-[0_4px_12px_0_rgba(0,157,140,0.3)] transition-all hover:bg-teal-700">
+        <div className="flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row">
+          <Link
+            href="/partners#contact-partnerships"
+            className="inline-flex w-full items-center justify-center rounded-lg bg-[#009D8C] px-8 py-3 text-sm font-medium text-white shadow-[0_4px_12px_0_rgba(0,157,140,0.3)] transition-all hover:bg-teal-700 sm:w-auto"
+          >
             Contact Partnerships
-          </button>
+          </Link>
 
-          <button className="w-full sm:w-auto rounded-lg border border-white/30 bg-white/10 px-8 py-3 text-sm font-medium text-white transition-all hover:bg-white/20 dark:hover:bg-white/10">
+          <Link
+            href="/request-a-demo"
+            className="inline-flex w-full items-center justify-center rounded-lg border border-white/30 bg-white/10 px-8 py-3 text-sm font-medium text-white transition-all hover:bg-white/20 dark:hover:bg-white/10 sm:w-auto"
+          >
             Request a ZoikoTime Demo
-          </button>
+          </Link>
         </div>
       </div>
     </section>

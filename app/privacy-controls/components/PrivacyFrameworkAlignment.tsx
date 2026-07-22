@@ -13,7 +13,9 @@ const complianceRows = [
 
 export default function PrivacyFrameworkAlignment() {
   return (
-    <section className="bg-slate-100 dark:bg-slate-950 py-24">
+    <section
+    id ="privacy-framework"
+     className="bg-slate-100 dark:bg-slate-950 py-24">
       <div className="max-w-[1200px] mx-auto px-5">
 
         {/* Header */}

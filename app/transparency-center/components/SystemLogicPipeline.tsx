@@ -72,7 +72,9 @@ const nodes = [
 
 export default function SystemLogicPipeline() {
   return (
-    <section className="w-full bg-white dark:bg-slate-950 py-16">
+    <section 
+    id ="view-system-logic"
+    className="w-full bg-white dark:bg-slate-950 py-16">
 
       <div className="max-w-[1200px] mx-auto px-6">
 

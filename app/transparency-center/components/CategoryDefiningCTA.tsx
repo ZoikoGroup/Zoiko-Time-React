@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function CategoryDefiningCTA() {
   return (
@@ -49,45 +50,56 @@ export default function CategoryDefiningCTA() {
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-6">
 
 
-          <button
-            className="
-            h-12
-            px-8
-            rounded-md
-            bg-teal-600
-            text-white
-            text-base
-            font-semibold
-            shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)]
-            hover:bg-teal-700
-            transition
-            "
-          >
-            Explore Explainability Engine
-          </button>
+          <Link
+  href="/transparency-center#explore-explainability-engine"
+  className="
+    inline-flex
+    h-12
+    px-8
+    items-center
+    justify-center
+    rounded-md
+    bg-teal-600
+    whitespace-nowrap
+    text-base
+    font-semibold
+    text-white
+    shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)]
+    transition
+    hover:bg-teal-700
+  "
+>
+  Explore Explainability Engine
+</Link>
 
 
 
-          <button
-            className="
-            h-12
-            px-10
-            rounded-md
-            bg-white
-            dark:bg-slate-900
-            border
-            border-slate-200
-            dark:border-slate-700
-            text-slate-700
-            dark:text-white
-            text-base
-            font-medium
-            hover:bg-slate-50
-            transition
-            "
-          >
-            Request Demo
-          </button>
+          <Link
+  href="/request-a-demo"
+  className="
+    inline-flex
+    h-12
+    px-10
+    items-center
+    justify-center
+    whitespace-nowrap
+    rounded-md
+    border
+    border-slate-200
+    bg-white
+    text-base
+    font-medium
+    text-slate-700
+    transition
+    hover:bg-slate-50
+    dark:border-slate-700
+    dark:bg-slate-900
+    dark:text-white
+    dark:hover:bg-slate-800
+  "
+>
+  Request Demo
+</Link>
 
 
         </div>

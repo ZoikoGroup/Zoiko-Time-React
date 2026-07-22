@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function ImplementationGuide() {
   const roadmap = [
@@ -158,38 +159,52 @@ export default function ImplementationGuide() {
               gap-4
             "
           >
-            <button
-              className="
-                h-11
-                px-8
-                bg-teal-600
-                hover:bg-teal-700
-                text-white
-                rounded-lg
-                font-semibold
-                shadow-md
-              "
-            >
-              Contact Sales
-            </button>
+            {/* Contact Sales */}
+<Link
+  href="/contact-sales"
+  className="
+    inline-flex
+    h-11
+    items-center
+    justify-center
+    rounded-lg
+    bg-teal-600
+    px-8
+    font-semibold
+    text-white
+    shadow-md
+    transition
+    hover:bg-teal-700
+  "
+>
+  Contact Sales
+</Link>
 
-            <button
-              className="
-                h-11
-                px-8
-                bg-white
-                dark:bg-slate-900
-                border
-                border-gray-300
-                dark:border-slate-700
-                text-slate-800
-                dark:text-white
-                rounded-lg
-                font-semibold
-              "
-            >
-              Get a Demo
-            </button>
+{/* Get a Demo */}
+<Link
+  href="/request-a-demo"
+  className="
+    inline-flex
+    h-11
+    items-center
+    justify-center
+    rounded-lg
+    border
+    border-gray-300
+    bg-white
+    px-8
+    font-semibold
+    text-slate-800
+    transition
+    hover:bg-slate-50
+    dark:border-slate-700
+    dark:bg-slate-900
+    dark:text-white
+    dark:hover:bg-slate-800
+  "
+>
+  Get a Demo
+</Link>
           </div>
 
 

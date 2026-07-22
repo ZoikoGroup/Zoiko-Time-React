@@ -1,3 +1,4 @@
+import Link from "next/link";
 const data = [
   "Governance controls",
   "Security review support",
@@ -39,15 +40,21 @@ export default function Hero() {
           </p>
 
           {/* Buttons */}
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <button className="rounded-lg bg-[#009D8C] px-6 py-3 font-medium text-white shadow-[0_4px_20px_rgba(0,157,140,0.35)] transition hover:bg-teal-700">
-              Request an Enterprise Demo
-            </button>
+<div className="mt-8 flex flex-col gap-4 sm:flex-row">
+  <Link
+    href="/request-enterprise-demo"
+    className="inline-flex items-center justify-center rounded-lg bg-[#009D8C] px-6 py-3 font-medium text-white shadow-[0_4px_20px_rgba(0,157,140,0.35)] transition hover:bg-teal-700"
+  >
+    Request an Enterprise Demo
+  </Link>
 
-            <button className="rounded-lg border border-[#009D8C] px-6 py-3 font-medium text-slate-800 transition hover:bg-teal-100 dark:border-teal-400 dark:text-white dark:hover:bg-teal-500/10">
-              Start Free Trial
-            </button>
-          </div>
+  <Link
+    href="/start-free"
+    className="inline-flex items-center justify-center rounded-lg border border-[#009D8C] px-6 py-3 font-medium text-slate-800 transition hover:bg-teal-100 dark:border-teal-400 dark:text-white dark:hover:bg-teal-500/10"
+  >
+    Start Free Trial
+  </Link>
+</div>
         </div>
 
         {/* Right Image */}

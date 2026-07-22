@@ -2,7 +2,9 @@
 
 export default function ContactHero() {
   return (
-    <section className="w-full overflow-hidden bg-gradient-to-br from-[#7CCBC4] via-[#38B7B1] to-[#10AAA7] dark:from-slate-900 dark:via-slate-900 dark:to-slate-800">
+    <section
+    id ="sales-query-and-help"
+     className="w-full overflow-hidden bg-gradient-to-br from-[#7CCBC4] via-[#38B7B1] to-[#10AAA7] dark:from-slate-900 dark:via-slate-900 dark:to-slate-800">
 
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
 

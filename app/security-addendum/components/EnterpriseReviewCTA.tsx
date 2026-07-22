@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function EnterpriseReviewCTA() {
   return (
@@ -65,52 +66,57 @@ export default function EnterpriseReviewCTA() {
 
 
         {/* Buttons */}
-        <div
-          className="
-            mt-10
-            flex
-            flex-col
-            sm:flex-row
-            justify-center
-            gap-4
-          "
-        >
+<div
+  className="
+    mt-10
+    flex
+    flex-col
+    sm:flex-row
+    justify-center
+    gap-4
+  "
+>
+  <Link
+    href="/contact-sales"
+    className="
+      flex
+      items-center
+      justify-center
+      w-40
+      h-11
+      bg-teal-600
+      rounded-[10px]
+      shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)]
+      text-white
+      text-base
+      font-semibold
+      leading-4
+    "
+  >
+    Contact Sales
+  </Link>
 
-          <button
-            className="
-              w-40
-              h-11
-              bg-teal-600
-              rounded-[10px]
-              shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)]
-              text-white
-              text-base
-              font-semibold
-              leading-4
-            "
-          >
-            Contact Sales
-          </button>
-
-
-          <button
-            className="
-              w-64
-              h-11
-              bg-white/10
-              rounded-[10px]
-              border
-              border-white/30
-              text-white
-              text-base
-              font-semibold
-              leading-4
-            "
-          >
-            View Enterprise Readiness
-          </button>
-
-        </div>
+  <Link
+    href="/enterprise-readiness"
+    className="
+      flex
+      items-center
+      justify-center
+      w-64
+      h-11
+      bg-white/10
+      rounded-[10px]
+      border
+      border-white/30
+      text-white
+      text-base
+      font-semibold
+      leading-4
+    "
+  >
+    View Enterprise Readiness
+  </Link>
+</div>
 
       </div>
 

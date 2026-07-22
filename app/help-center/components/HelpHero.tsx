@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+
 
 export default function HelpHero() {
   const tags = [
@@ -60,11 +62,14 @@ export default function HelpHero() {
         </div>
 
         {/* Bottom Link */}
-        <div className="mt-10 text-center">
-          <button className="font-semibold text-teal-700 transition hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300">
-            Browse Product Documentation →
-          </button>
-        </div>
+<div className="mt-10 text-center">
+  <Link
+    href="/product-documentation"
+    className="inline-flex items-center justify-center font-semibold text-teal-700 transition hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
+  >
+    Browse Product Documentation →
+  </Link>
+</div>
       </div>
     </section>
   );

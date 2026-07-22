@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function HelpCTA() {
   return (
@@ -65,54 +66,64 @@ export default function HelpCTA() {
         </p>
 
         {/* Buttons */}
-        <div
-          className="
-            mt-10
-            flex
-            flex-col
-            sm:flex-row
-            justify-center
-            items-center
-            gap-4
-          "
-        >
-          <button
-            className="
-              w-full
-              sm:w-auto
-              px-7
-              py-3
-              rounded-lg
-              bg-teal-600
-              hover:bg-teal-700
-              text-white
-              font-semibold
-              transition-colors
-              shadow-lg
-            "
-          >
-            Visit Help Center
-          </button>
+<div
+  className="
+    mt-10
+    flex
+    flex-col
+    sm:flex-row
+    justify-center
+    items-center
+    gap-4
+  "
+>
+  <Link
+    href="/help-center"
+    className="
+      w-full
+      sm:w-auto
+      px-7
+      py-3
+      rounded-lg
+      bg-teal-600
+      hover:bg-teal-700
+      text-white
+      font-semibold
+      transition-colors
+      shadow-lg
+      flex
+      items-center
+      justify-center
+      text-center
+    "
+  >
+    Visit Help Center
+  </Link>
 
-          <button
-            className="
-              w-full
-              sm:w-auto
-              px-7
-              py-3
-              rounded-lg
-              border
-              border-white/30
-              bg-white/10
-              hover:bg-white/20
-              text-white
-              font-semibold
-              transition-colors
-            "
-          >
-            View Product Documentation
-          </button>
-        </div>
+  <Link
+    href="/product-documentation"
+    className="
+      w-full
+      sm:w-auto
+      px-7
+      py-3
+      rounded-lg
+      border
+      border-white/30
+      bg-white/10
+      hover:bg-white/20
+      text-white
+      font-semibold
+      transition-colors
+      flex
+      items-center
+      justify-center
+      text-center
+    "
+  >
+    View Product Documentation
+  </Link>
+</div>
       </div>
     </section>
   );

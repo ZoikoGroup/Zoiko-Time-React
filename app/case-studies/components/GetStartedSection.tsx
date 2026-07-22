@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function GetStartedSection() {
   return (
@@ -105,48 +106,55 @@ export default function GetStartedSection() {
         >
 
           {/* Primary Button */}
-          <button
-            className="
-              w-full
-              sm:w-52
-              h-12
-              rounded-md
-              bg-teal-600
-              hover:bg-teal-700
-              text-white
-              text-base
-              font-semibold
-              shadow-[0px_4px_14px_rgba(0,157,140,0.28)]
-              transition
-            "
-          >
-            Launch ROI Calculator
-          </button>
+<Link
+  href="/calculate-your-roi"
+  className="
+    inline-flex
+    w-full
+    sm:w-52
+    h-12
+    items-center
+    justify-center
+    rounded-md
+    bg-teal-600
+    text-white
+    text-base
+    font-semibold
+    shadow-[0px_4px_14px_rgba(0,157,140,0.28)]
+    transition
+    hover:bg-teal-700
+  "
+>
+  Launch ROI Calculator
+</Link>
 
-
-          {/* Secondary Button */}
-          <button
-            className="
-              w-full
-              sm:w-52
-              h-12
-              rounded-md
-              bg-white
-              dark:bg-slate-900
-              border
-              border-slate-200
-              dark:border-slate-700
-              text-slate-700
-              dark:text-slate-200
-              text-base
-              font-medium
-              hover:bg-slate-50
-              dark:hover:bg-slate-800
-              transition
-            "
-          >
-            Request Demo
-          </button>
+{/* Secondary Button */}
+<Link
+  href="/request-a-demo"
+  className="
+    inline-flex
+    w-full
+    sm:w-52
+    h-12
+    items-center
+    justify-center
+    rounded-md
+    border
+    border-slate-200
+    bg-white
+    text-slate-700
+    text-base
+    font-medium
+    transition
+    hover:bg-slate-50
+    dark:border-slate-700
+    dark:bg-slate-900
+    dark:text-slate-200
+    dark:hover:bg-slate-800
+  "
+>
+  Request Demo
+</Link>
 
         </div>
 

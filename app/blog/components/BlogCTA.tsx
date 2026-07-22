@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function BlogCTA() {
   return (
@@ -21,14 +22,20 @@ export default function BlogCTA() {
         </div>
 
         {/* Buttons */}
-        <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row lg:flex-col">
-          <button className="rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition-all duration-300 hover:bg-teal-700 hover:shadow-xl">
-            Contact Sales
-          </button>
+<div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row lg:flex-col">
+  <Link
+    href="/contact-sales"
+    className="inline-flex items-center justify-center rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition-all duration-300 hover:bg-teal-700 hover:shadow-xl"
+  >
+    Contact Sales
+  </Link>
 
-          <button className="rounded-lg border border-slate-300 bg-white px-8 py-3 text-sm font-medium text-slate-700 transition-all duration-300 hover:border-teal-600 hover:text-teal-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-500 dark:hover:text-teal-400">
-            View Product Documentation
-          </button>
+  <Link
+    href="/product-documentation"
+    className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-8 py-3 text-sm font-medium text-slate-700 transition-all duration-300 hover:border-teal-600 hover:text-teal-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-500 dark:hover:text-teal-400"
+  >
+    View Product Documentation
+  </Link>
         </div>
       </div>
     </section>

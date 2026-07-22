@@ -1,5 +1,6 @@
 import React from "react";
 import { Search } from "lucide-react";
+import Link from "next/link";
 
 const topics = [
   "Workforce Assurance",
@@ -15,7 +16,9 @@ const topics = [
 
 export default function BlogHero() {
   return (
-    <section className="relative overflow-hidden bg-[#F3FCFB] dark:bg-slate-950">
+    <section
+    id = "browse-topic"
+     className="relative overflow-hidden bg-[#F3FCFB] dark:bg-slate-950">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/5 to-white/10 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900" />
 
@@ -70,13 +73,19 @@ export default function BlogHero() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col gap-6 sm:flex-row">
-          <button className="h-12 w-56 rounded-lg bg-teal-600 text-sm font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
-            Explore Insights
-          </button>
+          <Link
+  href="/blog#explore-insights"
+  className="inline-flex h-12 w-56 items-center justify-center rounded-lg bg-teal-600 text-sm font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700"
+>
+  Explore Insights
+</Link>
 
-          <button className="h-12 w-56 rounded-lg border border-teal-600 bg-transparent text-sm font-medium text-teal-600 transition hover:bg-teal-50 dark:hover:bg-slate-900">
-            Browse Topics
-          </button>
+          <Link
+  href="/blog#browse-topic"
+  className="inline-flex h-12 w-56 items-center justify-center rounded-lg border border-teal-600 bg-transparent text-sm font-medium text-teal-600 transition hover:bg-teal-50 dark:hover:bg-slate-900"
+>
+  Browse Topics
+</Link>
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function DataProcessing() {
@@ -44,9 +45,11 @@ export default function DataProcessing() {
             View Data Processing Agreement
           </button>
 
-          <button className="rounded-md border border-teal-600 px-8 py-3 text-sm font-medium text-teal-600 transition hover:bg-teal-50 dark:hover:bg-slate-900">
+          <Link
+          href="contact"
+           className="rounded-md border border-teal-600 px-8 py-3 text-sm font-medium text-teal-600 transition hover:bg-teal-50 dark:hover:bg-slate-900">
             Contact Privacy Team
-          </button>
+          </Link>
         </div>
 
         {/* Badges */}

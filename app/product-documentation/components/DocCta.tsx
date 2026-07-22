@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function DocCta() {
   return (
@@ -21,15 +22,21 @@ export default function DocCta() {
         </p>
 
         {/* Buttons */}
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-teal-700">
-            Contact Sales
-          </button>
+<div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+  <Link
+    href="/contact-sales"
+    className="inline-flex items-center justify-center rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-lg transition hover:bg-teal-700"
+  >
+    Contact Sales
+  </Link>
 
-          <button className="rounded-lg border border-white/30 bg-white/10 px-8 py-3 text-base font-semibold text-white transition hover:bg-white/20">
-            Get a Demo
-          </button>
-        </div>
+  <Link
+    href="/request-a-demo"
+    className="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-8 py-3 text-base font-semibold text-white transition hover:bg-white/20"
+  >
+    Get a Demo
+  </Link>
+</div>
       </div>
     </section>
   );

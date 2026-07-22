@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const features = [
   "Timestamped events",
@@ -50,13 +51,21 @@ export default function Hero() {
             {/* Buttons */}
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
 
-              <button className="h-14 rounded-xl bg-[#00A99D] px-9 text-[16px] font-semibold text-white shadow-[0_14px_30px_rgba(0,169,157,0.22)] transition-all duration-300 hover:bg-[#009688]">
-                Contact Sales
-              </button>
+              {/* Contact Sales */}
+<Link
+  href="/contact-sales"
+  className="inline-flex h-14 items-center justify-center rounded-xl bg-[#00A99D] px-9 text-[16px] font-semibold text-white shadow-[0_14px_30px_rgba(0,169,157,0.22)] transition-all duration-300 hover:bg-[#009688]"
+>
+  Contact Sales
+</Link>
 
-              <button className="h-14 rounded-xl border border-[#00A99D] bg-white px-8 text-[16px] font-medium text-[#009D8C] transition-all duration-300 hover:bg-[#F2FCFB] dark:bg-slate-900 dark:hover:bg-slate-800">
-                Explore Data Retention &amp; Legal Hold
-              </button>
+{/* Explore Data Retention & Legal Hold */}
+<Link
+  href="/data-retention-and-legal-hold"
+  className="inline-flex h-14 items-center justify-center rounded-xl border border-[#00A99D] bg-white px-8 text-[16px] font-medium text-[#009D8C] transition-all duration-300 hover:bg-[#F2FCFB] dark:bg-slate-900 dark:hover:bg-slate-800"
+>
+  Explore Data Retention &amp; Legal Hold
+</Link>
 
             </div>
 

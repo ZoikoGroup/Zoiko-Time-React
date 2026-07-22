@@ -1,3 +1,5 @@
+import Link  from "next/link";
+
 export default function CtaSection() {
   return (
     <section className="border-t-4 border-[#00C6A9] bg-gradient-to-r from-[#F0FDFB] to-[#EAF9F6] dark:from-gray-900 dark:to-gray-800 px-6 py-12 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
@@ -17,15 +19,21 @@ export default function CtaSection() {
         </div>
 
         {/* Right Buttons */}
-        <div className="flex w-full flex-col gap-3 sm:w-auto sm:min-w-[220px]">
-          <button className="rounded-lg bg-[#009D8C] px-6 py-3 text-[15px] font-medium text-white shadow-sm transition hover:bg-teal-700">
-            Request a ZoikoTime Demo
-          </button>
+<div className="flex w-full flex-col gap-3 sm:w-auto sm:min-w-[220px]">
+  <Link
+    href="/request-a-demo"
+    className="inline-flex items-center justify-center rounded-lg bg-[#009D8C] px-6 py-3 text-center text-[15px] font-medium text-white shadow-sm transition hover:bg-teal-700"
+  >
+    Request a ZoikoTime Demo
+  </Link>
 
-          <button className="rounded-lg border border-slate-300 bg-white px-6 py-3 font-medium text-slate-800 transition hover:border-slate-400 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-500">
-            Start Free Trial
-          </button>
-        </div>
+  <Link
+    href="/start-free"
+    className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-center font-medium text-slate-800 transition hover:border-slate-400 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-gray-500"
+  >
+    Start Free Trial
+  </Link>
+</div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function RetentionCTA() {
@@ -26,14 +27,21 @@ export default function RetentionCTA() {
 
         {/* Right Buttons */}
         <div className="mt-10 flex flex-col gap-4 sm:flex-row lg:mt-0 lg:flex-col">
-          <button className="inline-flex h-12 min-w-[260px] items-center justify-center rounded-lg bg-teal-600 px-8 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition-all duration-300 hover:bg-teal-700">
-            Contact Sales
-          </button>
+          <Link
+  href="/contact-sales"
+  className="inline-flex h-12 min-w-[260px] items-center justify-center rounded-lg bg-teal-600 px-8 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition-all duration-300 hover:bg-teal-700"
+>
+  Contact Sales
+</Link>
 
-          <button className="inline-flex h-12 min-w-[260px] items-center justify-center rounded-lg border border-slate-200 bg-white px-8 text-sm font-medium text-slate-700 transition-all duration-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
-            View Security Addendum
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </button>
+{/* View Security Addendum */}
+<Link
+  href="/security-addendum"
+  className="inline-flex h-12 min-w-[260px] items-center justify-center rounded-lg border border-slate-200 bg-white px-8 text-sm font-medium text-slate-700 transition-all duration-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+>
+  View Security Addendum
+  <ArrowRight className="ml-2 h-4 w-4" />
+</Link>
         </div>
       </div>
     </section>

@@ -44,7 +44,9 @@ export default function CurrentOpenings() {
       : ROLES.filter((role) => role.department === activeDept);
 
   return (
-    <section className="bg-[#F4F7FA] dark:bg-slate-900 px-6 py-16 sm:py-20 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
+    <section
+    id ="open-roles"
+     className="bg-[#F4F7FA] dark:bg-slate-900 px-6 py-16 sm:py-20 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
       <div className="mx-auto max-w-6xl text-center">
         {/* Heading */}
         <span className="inline-block text-xs font-bold uppercase tracking-[1.3px] text-[#009D8C] mb-5">

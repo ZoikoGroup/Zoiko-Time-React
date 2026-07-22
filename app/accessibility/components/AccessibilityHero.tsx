@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const accessibilityItems = [
   "WCAG-aligned design practices",
@@ -47,13 +48,31 @@ export default function AccessibilityHero() {
 
           {/* Buttons */}
           <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-            <button className="h-12 rounded-lg bg-teal-600 px-7 text-sm font-semibold text-white shadow-[0px_4px_20px_0px_rgba(0,157,140,0.40)] transition hover:bg-teal-700">
-              Report an Accessibility Issue
-            </button>
+            <Link
+  href="/accessibility#report-an-issue"
+  className="
+    inline-flex items-center justify-center
+    h-12 rounded-lg bg-teal-600 px-7
+    text-sm font-semibold text-white
+    shadow-[0px_4px_20px_0px_rgba(0,157,140,0.40)]
+    transition hover:bg-teal-700
+  "
+>
+  Report an Accessibility Issue
+</Link>
 
-            <button className="h-12 rounded-lg border border-teal-600 px-8 text-sm font-medium text-teal-600 transition hover:bg-teal-600/10 dark:text-teal-400">
-              Contact Sales
-            </button>
+<Link
+  href="/contact-sales"
+  className="
+    inline-flex items-center justify-center
+    h-12 rounded-lg border border-teal-600 px-8
+    text-sm font-medium text-teal-600
+    transition hover:bg-teal-600/10
+    dark:text-teal-400
+  "
+>
+  Contact Sales
+</Link>
           </div>
         </div>
 

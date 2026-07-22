@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function EnterpriseConfidence() {
   return (
     <section
@@ -102,45 +103,51 @@ export default function EnterpriseConfidence() {
           "
         >
 
-          {/* Primary Button */}
-          <button
-            className="
-              h-12
-              px-8
-              rounded-lg
-              bg-teal-600
-              text-white
-              text-base
-              font-semibold
-              shadow-[0px_4px_14px_rgba(0,157,140,0.40)]
-              hover:bg-teal-700
-              transition
-            "
-          >
-            Contact Security Team
-          </button>
+          <Link
+  href="/security-overview#contact-security-team"
+  className="
+    inline-flex
+    items-center
+    justify-center
+    h-12
+    px-8
+    rounded-lg
+    bg-teal-600
+    text-white
+    text-base
+    font-semibold
+    shadow-[0px_4px_14px_rgba(0,157,140,0.40)]
+    hover:bg-teal-700
+    transition
+  "
+>
+  Contact Security Team
+</Link>
 
 
 
-          {/* Secondary Button */}
-          <button
-            className="
-              h-12
-              px-8
-              rounded-lg
-              border
-              border-teal-600
-              text-teal-600
-              dark:text-teal-400
-              text-base
-              font-medium
-              hover:bg-teal-50
-              dark:hover:bg-teal-950
-              transition
-            "
-          >
-            ↓ Download Security Overview
-          </button>
+          <Link
+  href="/security-overview#download-security-overview"
+  className="
+    inline-flex
+    items-center
+    justify-center
+    h-12
+    px-8
+    rounded-lg
+    border
+    border-teal-600
+    text-teal-600
+    dark:text-teal-400
+    text-base
+    font-medium
+    hover:bg-teal-50
+    dark:hover:bg-teal-950
+    transition
+  "
+>
+  ↓ Download Security Overview
+</Link>
 
         </div>
 

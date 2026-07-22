@@ -41,7 +41,9 @@ const articles = [
 
 export default function PopularHelp() {
   return (
-    <section className="bg-gray-50 py-16 dark:bg-slate-950 transition-colors">
+    <section
+    id ="popular"
+     className="bg-gray-50 py-16 dark:bg-slate-950 transition-colors">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">

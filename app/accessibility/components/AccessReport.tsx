@@ -31,7 +31,9 @@ const enterpriseCards = [
 
 export default function AccessReport() {
   return (
-    <section className="w-full bg-slate-100 px-5 py-20 text-slate-900 transition-colors dark:bg-slate-950 dark:text-white sm:px-8 md:px-12 lg:px-20">
+    <section
+    id ="report-an-issue"
+     className="w-full bg-slate-100 px-5 py-20 text-slate-900 transition-colors dark:bg-slate-950 dark:text-white sm:px-8 md:px-12 lg:px-20">
       <div className="mx-auto grid max-w-[1052px] grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-8">
         {/* LEFT SIDE */}
         <div>

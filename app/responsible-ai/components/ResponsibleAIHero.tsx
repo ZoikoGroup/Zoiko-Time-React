@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const aiLayers = [
   {
@@ -78,15 +79,23 @@ export default function ResponsibleAIHero() {
           </div>
 
           {/* Buttons */}
-          <div className="mt-8 flex flex-wrap gap-4">
-            <button className="rounded-lg bg-teal-600 px-7 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_rgba(16,162,141,0.28)] hover:bg-teal-700">
-              Get a Demo
-            </button>
+<div className="mt-8 flex flex-wrap gap-4">
+  {/* Get a Demo */}
+  <Link
+    href="/request-a-demo"
+    className="inline-flex items-center justify-center rounded-lg bg-teal-600 px-7 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700"
+  >
+    Get a Demo
+  </Link>
 
-            <button className="rounded-lg border border-slate-300 bg-white px-7 py-3 text-base font-semibold text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-white">
-              Contact Sales
-            </button>
-          </div>
+  {/* Contact Sales */}
+  <Link
+    href="/contact-sales"
+    className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-7 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+  >
+    Contact Sales
+  </Link>
+</div>
 
           <p className="mt-8 text-xs leading-5 text-slate-500 dark:text-slate-400">
             ZoikoTime does not make final employment, wage, disciplinary, legal,

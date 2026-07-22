@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function AdminGuideCTA() {
   return (
@@ -87,44 +88,54 @@ export default function AdminGuideCTA() {
             lg:min-w-[160px]
           "
         >
-          <button
-            className="
-              h-12
-              px-7
-              rounded-lg
-              bg-teal-600
-              text-white
-              text-base
-              font-semibold
-              shadow-[0_4px_16px_rgba(0,157,140,0.30)]
-              hover:bg-teal-700
-              transition
-            "
-          >
-            Contact Sales
-          </button>
+          {/* Contact Sales */}
+<Link
+  href="/contact-sales"
+  className="
+    inline-flex
+    h-12
+    items-center
+    justify-center
+    rounded-lg
+    bg-teal-600
+    px-7
+    text-white
+    text-base
+    font-semibold
+    shadow-[0_4px_16px_rgba(0,157,140,0.30)]
+    transition
+    hover:bg-teal-700
+  "
+>
+  Contact Sales
+</Link>
 
-          <button
-            className="
-              h-12
-              px-7
-              rounded-lg
-              bg-white
-              dark:bg-slate-900
-              border
-              border-slate-200
-              dark:border-slate-700
-              text-slate-700
-              dark:text-slate-200
-              text-sm
-              font-medium
-              hover:bg-slate-50
-              dark:hover:bg-slate-800
-              transition
-            "
-          >
-            Get a Demo
-          </button>
+{/* Get a Demo */}
+<Link
+  href="/request-a-demo"
+  className="
+    inline-flex
+    h-12
+    items-center
+    justify-center
+    rounded-lg
+    border
+    border-slate-200
+    bg-white
+    px-7
+    text-slate-700
+    text-sm
+    font-medium
+    transition
+    hover:bg-slate-50
+    dark:border-slate-700
+    dark:bg-slate-900
+    dark:text-slate-200
+    dark:hover:bg-slate-800
+  "
+>
+  Get a Demo
+</Link>
 
           <div
             className="

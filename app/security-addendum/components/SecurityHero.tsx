@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 const securityFeatures = [
@@ -63,14 +64,18 @@ export default function SecurityHero() {
           {/* Buttons */}
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
 
-            <button className="rounded-xl bg-teal-600 px-7 py-3 text-base font-normal text-white shadow-lg transition hover:bg-teal-700">
+            <Link
+            href="contact-sales"
+             className="rounded-xl bg-teal-600 px-7 py-3 text-base font-normal text-white shadow-lg transition hover:bg-teal-700">
               Contact Sales
-            </button>
+            </Link>
 
 
-            <button className="rounded-xl border border-gray-300 bg-white px-7 py-3 text-base font-normal text-slate-800 transition hover:bg-gray-100 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800">
+            <Link
+            href ="enterprise-readiness"
+             className="rounded-xl border border-gray-300 bg-white px-7 py-3 text-base font-normal text-slate-800 transition hover:bg-gray-100 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800">
               View Enterprise Readiness
-            </button>
+            </Link>
 
           </div>
 

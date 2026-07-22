@@ -1,5 +1,6 @@
 import React from "react";
-import { FileText } from "lucide-react";
+import { FileText} from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -41,12 +42,31 @@ export default function Hero() {
           </button>
 
           {/* Secondary Button */}
-          <button
-            type="button"
-            className="h-12 w-full rounded-lg border border-slate-300 px-6 text-base font-medium text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800 sm:w-56"
-          >
-            Explore the Platform
-          </button>
+          <Link
+  href="/product"
+  className="
+    inline-flex
+    h-12
+    w-full
+    items-center
+    justify-center
+    rounded-lg
+    border
+    border-slate-300
+    px-6
+    text-base
+    font-medium
+    text-slate-700
+    transition
+    hover:bg-slate-100
+    dark:border-slate-700
+    dark:text-slate-200
+    dark:hover:bg-slate-800
+    sm:w-56
+  "
+>
+  Explore the Platform
+</Link>
         </div>
       </div>
     </section>

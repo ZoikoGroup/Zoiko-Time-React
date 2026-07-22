@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function CtaSection() {
   return (
     <section
@@ -114,7 +115,8 @@ export default function CtaSection() {
 
 
 
-          <button
+          <Link
+          href="/contact#send-inquiry"
             className="
             bg-white
             dark:bg-transparent
@@ -137,7 +139,7 @@ export default function CtaSection() {
 
             Submit Inquiry
 
-          </button>
+          </Link>
 
 
         </div>

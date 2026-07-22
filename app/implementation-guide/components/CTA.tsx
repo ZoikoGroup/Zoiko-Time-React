@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CTA() {
   return (
     <section className="py-20 bg-gradient-to-br from-slate-800 to-blue-950 transition-colors">
@@ -24,34 +26,50 @@ export default function CTA() {
 
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
 
-          <button
-            className="
-              h-11 px-7 rounded-[10px]
-              bg-teal-600
-              text-white
-              text-base font-semibold
-              shadow-[0_6px_16px_rgba(16,162,141,0.28)]
-              hover:bg-teal-700
-              transition
-            "
-          >
-            Contact Sales
-          </button>
+          {/* Contact Sales */}
+<Link
+  href="/contact-sales"
+  className="
+    inline-flex
+    h-11
+    items-center
+    justify-center
+    rounded-[10px]
+    bg-teal-600
+    px-7
+    text-base
+    font-semibold
+    text-white
+    shadow-[0_6px_16px_rgba(16,162,141,0.28)]
+    transition
+    hover:bg-teal-700
+  "
+>
+  Contact Sales
+</Link>
 
-
-          <button
-            className="
-              h-11 px-7 rounded-[10px]
-              bg-white/10
-              border border-white/30
-              text-white
-              text-base font-semibold
-              hover:bg-white/20
-              transition
-            "
-          >
-            Get a Demo
-          </button>
+{/* Get a Demo */}
+<Link
+  href="/request-a-demo"
+  className="
+    inline-flex
+    h-11
+    items-center
+    justify-center
+    rounded-[10px]
+    border
+    border-white/30
+    bg-white/10
+    px-7
+    text-base
+    font-semibold
+    text-white
+    transition
+    hover:bg-white/20
+  "
+>
+  Get a Demo
+</Link>
 
         </div>
 

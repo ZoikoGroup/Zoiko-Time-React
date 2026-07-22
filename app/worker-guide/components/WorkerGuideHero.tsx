@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function WorkerGuideHero() {
@@ -93,60 +94,70 @@ export default function WorkerGuideHero() {
         </p>
 
         {/* Buttons */}
-        <div
-          className="
-            mt-10
-            flex
-            flex-col
-            sm:flex-row
-            justify-center
-            items-center
-            gap-4
-          "
-        >
-          <button
-            className="
-              w-full
-              sm:w-auto
-              h-11
-              px-8
-              rounded-[10px]
-              bg-teal-600
-              text-white
-              text-base
-              font-semibold
-              shadow-[0_6px_16px_rgba(16,162,141,0.28)]
-              hover:bg-teal-700
-              transition
-            "
-          >
-            Visit Help Center
-          </button>
+<div
+  className="
+    mt-10
+    flex
+    flex-col
+    sm:flex-row
+    justify-center
+    items-center
+    gap-4
+  "
+>
+  <Link
+    href="/help-center"
+    className="
+      w-full
+      sm:w-auto
+      h-11
+      px-8
+      rounded-[10px]
+      bg-teal-600
+      text-white
+      text-base
+      font-semibold
+      shadow-[0_6px_16px_rgba(16,162,141,0.28)]
+      hover:bg-teal-700
+      transition
+      flex
+      items-center
+      justify-center
+      text-center
+    "
+  >
+    Visit Help Center
+  </Link>
 
-          <button
-            className="
-              w-full
-              sm:w-auto
-              h-11
-              px-8
-              rounded-[10px]
-              bg-white
-              dark:bg-slate-900
-              border
-              border-gray-300
-              dark:border-slate-700
-              text-slate-800
-              dark:text-white
-              text-base
-              font-semibold
-              hover:bg-gray-50
-              dark:hover:bg-slate-800
-              transition
-            "
-          >
-            View Product Documentation
-          </button>
-        </div>
+  <Link
+    href="/product-documentation"
+    className="
+      w-full
+      sm:w-auto
+      h-11
+      px-8
+      rounded-[10px]
+      bg-white
+      dark:bg-slate-900
+      border
+      border-gray-300
+      dark:border-slate-700
+      text-slate-800
+      dark:text-white
+      text-base
+      font-semibold
+      hover:bg-gray-50
+      dark:hover:bg-slate-800
+      transition
+      flex
+      items-center
+      justify-center
+      text-center
+    "
+  >
+    View Product Documentation
+  </Link>
+</div>
       </div>
     </section>
   );

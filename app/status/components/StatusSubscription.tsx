@@ -2,7 +2,9 @@ import React from "react";
 
 export default function StatusSubscription() {
   return (
-    <section className="bg-slate-50 px-6 py-16 dark:bg-slate-950 lg:px-8 lg:py-24">
+    <section 
+    id ="subscribe-updates"
+    className="bg-slate-50 px-6 py-16 dark:bg-slate-950 lg:px-8 lg:py-24">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.55fr_1fr]">
         {/* Subscribe Card */}
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0px_10px_30px_rgba(14,31,61,0.10)] dark:border-slate-800 dark:bg-slate-900">

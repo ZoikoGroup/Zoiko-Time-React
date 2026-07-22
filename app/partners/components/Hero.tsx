@@ -1,4 +1,5 @@
 import Image from "next/image";
+import NextLink from "next/link";
 import { Check } from "lucide-react";
 
 const data = [
@@ -46,15 +47,21 @@ export default function Hero() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-3">
-              <button className="bg-[#009D8C] hover:bg-teal-700 shadow-[0_4px_20px_rgba(0,157,140,0.4)] cursor-pointer text-white font-medium px-6 py-3 rounded-lg transition-colors">
-                Contact Partnerships
-              </button>
+            <div className="mb-3 flex flex-col gap-4 sm:flex-row">
+  <NextLink
+    href="/partners#contact-partnerships"
+    className="inline-flex items-center justify-center rounded-lg bg-[#009D8C] px-6 py-3 font-medium text-white shadow-[0_4px_20px_rgba(0,157,140,0.4)] transition-colors hover:bg-teal-700"
+  >
+    Contact Partnerships
+  </NextLink>
 
-              <button className="border border-[#009D8C] dark:border-[#34D399] hover:bg-teal-100 dark:hover:bg-slate-800 cursor-pointer text-slate-800 dark:text-white font-medium px-6 py-3 rounded-lg transition-colors">
-                Request a ZoikoTime Demo
-              </button>
-            </div>
+  <NextLink
+    href="/request-a-demo"
+    className="inline-flex items-center justify-center rounded-lg border border-[#009D8C] px-6 py-3 font-medium text-slate-800 transition-colors hover:bg-teal-100 dark:border-[#34D399] dark:text-white dark:hover:bg-slate-800"
+  >
+    Request a ZoikoTime Demo
+  </NextLink>
+</div>
 
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-10">
               Built by Zoiko Tech Inc., a technology subsidiary of Zoiko Group

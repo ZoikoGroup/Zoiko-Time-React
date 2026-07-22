@@ -1,5 +1,6 @@
-import React from "react";
 
+import React from "react";
+import Link from "next/link";
 export default function DocsHero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 px-6 py-16 transition-colors dark:from-slate-950 dark:to-slate-900 sm:px-8 lg:px-12">
@@ -28,15 +29,22 @@ export default function DocsHero() {
         </p>
 
         {/* Buttons */}
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="rounded-lg bg-teal-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-teal-700">
-            Contact Sales
-          </button>
+<div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+  <Link
+    href="/contact-sales"
+    className="rounded-lg bg-teal-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-teal-700"
+  >
+    Contact Sales
+  </Link>
 
-          <button className="rounded-lg border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700">
-            Get a Demo
-          </button>
-        </div>
+  <Link
+    href="/request-a-demo"
+    className="rounded-lg border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700"
+  >
+    Get a Demo
+  </Link>
+</div>
+
 
         {/* Search */}
         <div className="mx-auto mt-12 flex max-w-2xl flex-col gap-4 sm:flex-row">

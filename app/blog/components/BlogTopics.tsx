@@ -60,7 +60,9 @@ const topics = [
 
 export default function BlogTopics() {
   return (
-    <section className="bg-slate-100 py-20 dark:bg-slate-900">
+    <section
+    id ="featured-resources"
+     className="bg-slate-100 py-20 dark:bg-slate-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">

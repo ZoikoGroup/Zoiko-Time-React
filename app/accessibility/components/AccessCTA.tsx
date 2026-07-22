@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function AccessCTA() {
   return (
@@ -25,13 +26,19 @@ export default function AccessCTA() {
 
         {/* Actions */}
         <div className="flex w-full flex-col items-start lg:w-auto lg:items-end">
-          <button className="h-12 w-full rounded-lg bg-teal-600 px-7 text-base font-semibold text-white shadow-[0px_4px_16px_0px_rgba(0,157,140,0.30)] transition hover:bg-teal-700 sm:w-64">
-            Report an Accessibility Issue
-          </button>
+          <Link
+    href="/accessibility#report-an-issue"
+    className="flex h-12 w-full items-center justify-center rounded-lg bg-teal-600 px-7 text-base font-semibold text-white shadow-[0px_4px_16px_0px_rgba(0,157,140,0.30)] transition hover:bg-teal-700 sm:w-64"
+  >
+    Report an Accessibility Issue
+  </Link>
 
-          <button className="mt-3 h-12 w-full rounded-lg border border-slate-200 bg-white px-6 text-sm font-medium text-slate-700 transition hover:bg-slate-50 dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:hover:bg-white/10 sm:w-40">
-            Visit Help Center
-          </button>
+  <Link
+    href="/contact-sales"
+    className="flex h-12 w-full items-center justify-center rounded-lg border border-slate-200 bg-white px-6 text-sm font-medium text-slate-700 transition hover:bg-slate-50 dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:hover:bg-white/10 sm:w-40"
+  >
+    Contact Sales
+  </Link>
 
           <p className="mt-7 text-left text-xs leading-5 text-slate-400 lg:text-right">
             For enterprise accessibility documentation,

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const contactRoutes = [
   {
@@ -118,19 +119,25 @@ export default function ContactHelp() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-12 text-center">
-          <button className="rounded-lg bg-teal-600 px-8 py-3 font-semibold text-white shadow-lg shadow-teal-600/25 transition hover:bg-teal-700">
-            Contact Support
-          </button>
+       {/* CTA */}
+<div className="mt-12 text-center">
+  <Link
+    href="/contact"
+    className="inline-flex items-center justify-center rounded-lg bg-teal-600 px-8 py-3 font-semibold text-white shadow-lg shadow-teal-600/25 transition hover:bg-teal-700"
+  >
+    Contact Support
+  </Link>
 
-          <p className="mt-6 text-base text-gray-600 dark:text-slate-300">
-            For demos, enterprise pricing, procurement, or plan questions:{" "}
-            <span className="font-semibold text-teal-600">
-              Contact Sales
-            </span>
-          </p>
-        </div>
+  <p className="mt-6 text-base text-gray-600 dark:text-slate-300">
+    For demos, enterprise pricing, procurement, or plan questions:{" "}
+    <Link
+      href="/contact-sales"
+      className="font-semibold text-teal-600 transition-colors hover:text-teal-700 dark:hover:text-teal-400"
+    >
+      Contact Sales
+    </Link>
+  </p>
+</div>
       </div>
     </section>
   );

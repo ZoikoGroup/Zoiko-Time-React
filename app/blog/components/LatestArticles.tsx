@@ -59,7 +59,9 @@ const articles = [
 
 export default function LatestArticles() {
   return (
-    <section className="bg-slate-100 py-24 transition-colors dark:bg-slate-950">
+    <section
+    id ="explore-insights"
+     className="bg-slate-100 py-24 transition-colors dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4">
 
         {/* Heading */}
@@ -125,6 +127,7 @@ export default function LatestArticles() {
           <button className="rounded-lg border border-slate-300 bg-white px-8 py-3 text-sm font-medium text-slate-700 transition hover:border-teal-600 hover:text-teal-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-500 dark:hover:text-teal-400">
             Load More Articles
           </button>
+
         </div>
       </div>
     </section>
