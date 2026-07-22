@@ -19,7 +19,7 @@ const downloads = [
   },
   {
     name: "Linux",
-    icon: "/download-popup/linux.png",
+    icon: "/download-popup/Linux.png",
   },
 ];
 
