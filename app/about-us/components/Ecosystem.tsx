@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 
 const integrations = [
@@ -70,12 +71,34 @@ export default function Ecosystem() {
             reality.
           </p>
 
-          <button
-            type="button"
-            className="mt-10 rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0px_4px_14px_rgba(0,157,140,0.28)] transition-all duration-300 hover:bg-teal-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950"
-          >
-            Explore Integrations
-          </button>
+          <Link
+  href="/product"
+  className="
+    mt-10
+    inline-flex
+    items-center
+    justify-center
+    rounded-lg
+    bg-teal-600
+    px-8
+    py-3
+    text-base
+    font-semibold
+    text-white
+    shadow-[0px_4px_14px_rgba(0,157,140,0.28)]
+    transition-all
+    duration-300
+    hover:bg-teal-700
+    hover:shadow-lg
+    focus:outline-none
+    focus:ring-2
+    focus:ring-teal-500
+    focus:ring-offset-2
+    dark:focus:ring-offset-slate-950
+  "
+>
+  Explore Integrations
+</Link>
         </div>
 
         {/* RIGHT INTEGRATIONS */}

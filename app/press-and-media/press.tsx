@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import React, { useState } from "react";
 
@@ -322,7 +323,9 @@ export default function PressMediaPage() {
       
 
       {/* HERO */}
-      <section className="border-b border-slate-200 bg-gradient-to-b from-teal-50 to-white px-4 py-16 dark:border-gray-800 dark:from-teal-500/5 dark:to-gray-900 sm:px-6 sm:py-24 lg:px-8">
+      <section
+      id ="press-contact"
+       className="border-b border-slate-200 bg-gradient-to-b from-teal-50 to-white px-4 py-16 dark:border-gray-800 dark:from-teal-500/5 dark:to-gray-900 sm:px-6 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">
             Press &amp; Media
@@ -337,12 +340,16 @@ export default function PressMediaPage() {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <button className="w-full rounded-md bg-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-[0px_3px_10px_0px_rgba(0,157,140,0.24)] hover:bg-teal-700 sm:w-auto">
+            <Link
+            href ="/press-and-media#media-kit"
+             className="w-full rounded-md bg-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-[0px_3px_10px_0px_rgba(0,157,140,0.24)] hover:bg-teal-700 sm:w-auto">
               ↓ Download Media Kit
-            </button>
-            <button className="w-full rounded-md border border-slate-200 bg-white px-6 py-2.5 text-sm font-medium text-slate-700 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700 sm:w-auto">
+            </Link>
+            <Link
+            href ="/press-and-media#press-contact"
+             className="w-full rounded-md border border-slate-200 bg-white px-6 py-2.5 text-sm font-medium text-slate-700 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700 sm:w-auto">
               Contact Press Team
-            </button>
+            </Link>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
@@ -524,7 +531,9 @@ export default function PressMediaPage() {
       </section>
 
       {/* MEDIA KIT */}
-      <section className="bg-gray-50 px-4 py-16 dark:bg-gray-800/40 sm:px-6 lg:px-8">
+      <section
+      id = "media-kit"
+       className="bg-gray-50 px-4 py-16 dark:bg-gray-800/40 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrowText="Media Kit"
@@ -646,9 +655,11 @@ export default function PressMediaPage() {
               For custom briefing sessions, structured analyst calls, or institutional
               partnership enquiries, contact the press team directly.
             </p>
-            <button className="mt-5 rounded-md bg-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-[0px_3px_10px_0px_rgba(0,157,140,0.24)] hover:bg-teal-700">
+            <Link
+            href="request-a-demo"
+             className="mt-5 rounded-md bg-teal-600 px-6 py-2.5 text-sm font-semibold text-white shadow-[0px_3px_10px_0px_rgba(0,157,140,0.24)] hover:bg-teal-700">
               Request Analyst Briefing →
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -742,9 +753,11 @@ export default function PressMediaPage() {
           available through one press contact and one media kit download.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <button className="w-full rounded-md bg-teal-600 px-8 py-3 text-sm font-semibold text-white shadow-[0px_4px_12px_0px_rgba(0,157,140,0.35)] hover:bg-teal-700 sm:w-auto">
+          <Link
+          href="/press-and-media#press-contact"
+           className="w-full rounded-md bg-teal-600 px-8 py-3 text-sm font-semibold text-white shadow-[0px_4px_12px_0px_rgba(0,157,140,0.35)] hover:bg-teal-700 sm:w-auto">
             Contact Press Team
-          </button>
+          </Link>
           <button className="w-full rounded-md border border-teal-600 px-8 py-3 text-sm font-medium text-teal-600 hover:bg-teal-100 dark:text-teal-400 dark:hover:bg-teal-500/10 sm:w-auto">
             Request Briefing
           </button>

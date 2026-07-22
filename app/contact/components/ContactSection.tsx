@@ -86,7 +86,9 @@ export default function ContactSection() {
     useState<(typeof TABS)[number]>("Sales");
 
   return (
-    <section className="bg-white px-6 py-12 md:px-10 lg:px-20 dark:bg-slate-950">
+    <section
+    id="send-inquiry"
+     className="bg-white px-6 py-12 md:px-10 lg:px-20 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl">
 
         <div className="

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function DataProcessingConfidence() {
@@ -55,13 +56,17 @@ export default function DataProcessingConfidence() {
           </button>
 
 
-          <button
-            className="h-11 px-7 bg-white dark:bg-slate-900 
-            rounded-md border border-slate-200 dark:border-slate-700
-            text-slate-700 dark:text-white text-sm font-medium"
-          >
-            Contact Privacy Team
-          </button>
+          <Link
+  href="/contact"
+  className="inline-flex items-center justify-center
+    h-11 px-7
+    bg-white dark:bg-slate-900
+    rounded-md border border-slate-200 dark:border-slate-700
+    text-slate-700 dark:text-white
+    text-sm font-medium"
+>
+  Contact Privacy Team
+</Link>
 
         </div>
 

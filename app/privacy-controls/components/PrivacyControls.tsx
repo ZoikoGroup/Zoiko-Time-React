@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function PrivacyControls() {
   const badges = [
     "Privacy-by-Design",
@@ -130,44 +131,57 @@ export default function PrivacyControls() {
           "
         >
 
-          <button
-            className="
-              w-full
-              sm:w-80
-              h-12
-              rounded-md
-              bg-teal-600
-              text-white
-              font-semibold
-              shadow-[0px_4px_14px_rgba(0,157,140,0.28)]
-              hover:bg-teal-700
-              transition
-            "
-          >
-            View Privacy Framework
-          </button>
+          <Link
+  href="/privacy-controls#privacy-framework"
+  className="
+    inline-flex
+    items-center
+    justify-center
+    w-full
+    sm:w-80
+    h-12
+    rounded-md
+    bg-teal-600
+    px-6
+    text-base
+    font-semibold
+    text-white
+    shadow-[0px_4px_14px_rgba(0,157,140,0.28)]
+    transition
+    hover:bg-teal-700
+  "
+>
+  View Privacy Framework
+</Link>
 
 
-          <button
-            className="
-              w-full
-              sm:w-80
-              h-12
-              rounded-md
-              bg-white
-              dark:bg-slate-900
-              border
-              border-slate-200
-              dark:border-slate-700
-              text-slate-700
-              dark:text-slate-300
-              font-medium
-              transition
-            "
-          >
-            Contact Privacy Team
-          </button>
-
+          <Link
+  href="/privacy-controls#contact-privacy-team"
+  className="
+    inline-flex
+    items-center
+    justify-center
+    w-full
+    sm:w-80
+    h-12
+    rounded-md
+    border
+    border-slate-200
+    bg-white
+    px-6
+    text-base
+    font-medium
+    text-slate-700
+    transition
+    hover:bg-slate-50
+    dark:border-slate-700
+    dark:bg-slate-900
+    dark:text-slate-300
+    dark:hover:bg-slate-800
+  "
+>
+  Contact Privacy Team
+</Link>
         </div>
 
 

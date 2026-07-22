@@ -1,6 +1,8 @@
 export default function PrivacyContact() {
   return (
-    <section className="w-full bg-white dark:bg-slate-950 py-16 md:py-24">
+    <section
+    id = "contact-privacy-team"
+     className="w-full bg-white dark:bg-slate-950 py-16 md:py-24">
       <div className="max-w-[1200px] mx-auto px-5">
 
         {/* Header */}

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Bell, History } from "lucide-react";
 
 export default function ServiceStatusHero() {
@@ -47,15 +48,22 @@ export default function ServiceStatusHero() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition-all duration-300 hover:bg-teal-700">
-            <Bell className="h-5 w-5" />
-            Subscribe to Updates
-          </button>
 
-          <button className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-8 py-3 text-base font-semibold text-slate-800 dark:text-white transition-all duration-300 hover:border-teal-600 hover:text-teal-600 dark:hover:text-teal-400">
-            <History className="h-5 w-5" />
-            View Incident History
-          </button>
+          <Link
+  href="/status#subscribe-updates"
+  className="inline-flex items-center justify-center gap-2 rounded-lg bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition-all duration-300 hover:bg-teal-700"
+>
+  <Bell className="h-5 w-5" />
+  Subscribe to Updates
+</Link>
+
+         <Link
+  href="/status#incident-history"
+  className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-8 py-3 text-base font-semibold text-slate-800 transition-all duration-300 hover:border-teal-600 hover:text-teal-600 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:text-teal-400"
+>
+  <History className="h-5 w-5" />
+  View Incident History
+</Link>
         </div>
       </div>
     </section>

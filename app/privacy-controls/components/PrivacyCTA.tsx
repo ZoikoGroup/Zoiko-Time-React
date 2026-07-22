@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function PrivacyCTA() {
   return (
     <section className="w-full overflow-hidden bg-teal-50 dark:bg-slate-950 transition-colors duration-300">
@@ -68,45 +70,62 @@ export default function PrivacyCTA() {
         ">
 
           {/* Primary Button */}
-          <button
-            className="
-              w-full sm:w-[210px]
-              h-12
-              rounded-md
-              bg-teal-600
-              text-white
-              text-sm sm:text-base
-              font-medium
-              font-sans
-              shadow-[0px_4px_14px_0px_rgba(0,157,140,0.40)]
-              hover:bg-teal-700
-              transition
-            "
-          >
-            Contact Privacy Team
-          </button>
+<Link
+  href="/privacy-controls#contact-privacy-team"
+  className="
+    flex
+    h-12
+    w-full
+    sm:w-[250px]
+    items-center
+    justify-center
+    rounded-md
+    bg-teal-600
+    px-6
+    text-center
+    text-sm
+    sm:text-base
+    font-medium
+    font-sans
+    text-white
+    whitespace-nowrap
+    shadow-[0_4px_14px_rgba(0,157,140,0.40)]
+    transition
+    hover:bg-teal-700
+  "
+>
+  Contact Privacy Team
+</Link>
 
 
-          {/* Secondary Button */}
-          <button
-            className="
-              w-full sm:w-[260px]
-              h-12
-              rounded-md
-              border
-              border-teal-600
-              text-teal-600
-              dark:text-teal-400
-              text-sm sm:text-base
-              font-medium
-              font-sans
-              hover:bg-teal-100
-              dark:hover:bg-slate-900
-              transition
-            "
-          >
-            Download Privacy Overview
-          </button>
+          <Link
+  href="/privacy-controls#download-privacy-overview"
+  className="
+    flex
+    h-12
+    w-full
+    sm:w-[260px]
+    items-center
+    justify-center
+    rounded-md
+    border
+    border-teal-600
+    px-6
+    text-center
+    text-sm
+    sm:text-base
+    font-medium
+    font-sans
+    text-teal-600
+    transition
+    hover:bg-teal-100
+    dark:border-teal-400
+    dark:text-teal-400
+    dark:hover:bg-slate-900
+  "
+>
+  Download Privacy Overview
+</Link>
 
         </div>
 

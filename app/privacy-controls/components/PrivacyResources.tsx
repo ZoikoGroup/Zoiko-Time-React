@@ -23,7 +23,9 @@ const resources = [
 
 export default function PrivacyResources() {
   return (
-    <section className="bg-slate-100 dark:bg-slate-950 py-24">
+    <section 
+    id ="download-privacy-overview"
+    className="bg-slate-100 dark:bg-slate-950 py-24">
 
       <div className="max-w-[1040px] mx-auto px-5">
 

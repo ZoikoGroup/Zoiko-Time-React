@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const lifecycleData = [
   {
@@ -79,13 +80,52 @@ export default function DataRetentionHero() {
 
             <div className="mt-10 flex flex-wrap gap-5">
 
-              <button className="rounded-lg bg-teal-600 px-8 py-4 font-semibold text-white shadow-lg shadow-teal-600/30 transition-all duration-300 hover:bg-teal-700">
-                Contact Sales
-              </button>
-
-              <button className="rounded-lg border border-slate-600 bg-slate-900 px-8 py-4 font-medium text-slate-200 transition-all duration-300 hover:border-teal-500 hover:bg-slate-800 hover:text-white">
-                Explore Audit-Grade Evidence
-              </button>
+              <Link
+  href="/contact-sales"
+  className="
+    inline-flex
+    items-center
+    justify-center
+    rounded-lg
+    bg-teal-600
+    px-8
+    py-4
+    whitespace-nowrap
+    font-semibold
+    text-white
+    shadow-lg
+    shadow-teal-600/30
+    transition-all
+    duration-300
+    hover:bg-teal-700
+  "
+>
+  Contact Sales
+</Link>
+              <Link
+  href="/audit-grade-evidence"
+  className="
+    inline-flex
+    items-center
+    justify-center
+    rounded-lg
+    border
+    border-slate-600
+    bg-slate-900
+    px-8
+    py-4
+    whitespace-nowrap
+    font-medium
+    text-slate-200
+    transition-all
+    duration-300
+    hover:border-teal-500
+    hover:bg-slate-800
+    hover:text-white
+  "
+>
+  Explore Audit-Grade Evidence
+</Link>
 
             </div>
 

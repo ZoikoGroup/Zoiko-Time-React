@@ -9,7 +9,9 @@ export default function ExplainabilityEngine() {
   ];
 
   return (
-    <section className="w-full bg-white dark:bg-slate-950 transition-colors">
+    <section
+    id ="explore-explainability-engine"
+     className="w-full bg-white dark:bg-slate-950 transition-colors">
       <div
         className="
         max-w-[1200px] mx-auto

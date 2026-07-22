@@ -82,6 +82,7 @@ export default function SecurityResources() {
 
   return (
     <section
+    id="download-security-overview"
     
      className="w-full bg-slate-100 dark:bg-slate-950 py-20 px-5 transition-colors">
       <div className="max-w-[1100px] mx-auto text-center">

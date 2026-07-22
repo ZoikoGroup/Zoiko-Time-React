@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function AdminHero() {
   const features = [
@@ -75,18 +76,59 @@ export default function AdminHero() {
 
 
             <div className="mt-10 flex flex-wrap gap-5">
+  {/* Contact Sales */}
+  <Link
+  href="/contact-sales"
+  className="
+    relative
+    z-50
+    inline-flex
+    h-12
+    w-40
+    items-center
+    justify-center
+    rounded-lg
+    bg-teal-600
+    px-6
+    font-semibold
+    text-white
+    shadow-lg
+    shadow-teal-600/30
+    transition
+    hover:bg-teal-700
+  "
+>
+  Contact Sales
+</Link>
 
-              <button className="h-12 w-40 rounded-lg bg-teal-600 font-semibold text-white shadow-lg shadow-teal-600/30">
-                Contact Sales
-              </button>
-
-
-              <button className="h-12 w-48 rounded-lg border border-teal-600 text-sm font-medium text-teal-600 dark:text-teal-400">
-                Get a Demo
-              </button>
-
-            </div>
-
+  {/* Get a Demo */}
+  <Link
+  href="/request-a-demo"
+  className="
+    relative
+    z-50
+    inline-flex
+    h-12
+    w-48
+    items-center
+    justify-center
+    rounded-lg
+    border
+    border-teal-600
+    px-6
+    text-sm
+    font-medium
+    text-teal-600
+    transition
+    hover:bg-teal-50
+    dark:border-teal-400
+    dark:text-teal-400
+    dark:hover:bg-slate-800
+  "
+>
+  Get a Demo
+</Link>
+</div>
 
             <p className="mt-8 text-xs text-neutral-800/30 dark:text-white/30">
               Built for permission-based administration, worker transparency,

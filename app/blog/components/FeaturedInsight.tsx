@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 
@@ -52,9 +53,11 @@ export default function FeaturedInsight() {
                 </div>
 
                 {/* Button */}
-                <button className="rounded-lg bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
+                <Link
+                href = "/blog#featured-resources"
+                 className="rounded-lg bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
                   Read Featured Insight →
-                </button>
+                </Link>
               </div>
             </div>
 

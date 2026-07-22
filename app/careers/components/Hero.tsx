@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const FEATURES = [
   "AI-Guided Routing",
@@ -29,13 +30,17 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="w-full sm:w-auto rounded-lg bg-[#009D8C] px-8 py-3 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(0,157,140,0.4)] transition hover:bg-emerald-600 cursor-pointer">
+          <Link 
+          href="/careers#open-roles"
+          className="w-full sm:w-auto rounded-lg bg-[#009D8C] px-8 py-3 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(0,157,140,0.4)] transition hover:bg-emerald-600 cursor-pointer">
             Explore Open Roles
-          </button>
+          </Link>
 
-          <button className="w-full sm:w-auto rounded-lg border border-[#009D8C] px-8 py-3 text-sm font-semibold text-[#009D8C] dark:text-[#00C6A9] dark:border-[#00C6A9] transition hover:bg-emerald-50 dark:hover:bg-slate-800 cursor-pointer">
+          <Link 
+          href="about-us"
+          className="w-full sm:w-auto rounded-lg border border-[#009D8C] px-8 py-3 text-sm font-semibold text-[#009D8C] dark:text-[#00C6A9] dark:border-[#00C6A9] transition hover:bg-emerald-50 dark:hover:bg-slate-800 cursor-pointer">
             Learn About ZoikoTime
-          </button>
+          </Link>
         </div>
 
         {/* Search Box */}

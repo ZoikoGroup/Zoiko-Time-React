@@ -1,5 +1,6 @@
 import React from "react";
 import { Check, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const plans = [
   {
@@ -271,30 +272,29 @@ export default function PricingSection() {
         </p>
 
 
-        <button
-          className="
-            mt-8
-            bg-teal-400
-            hover:bg-teal-300
-            text-gray-900
-            font-semibold
-            rounded-2xl
-            px-8
-            py-3.5
-            shadow-[0px_4px_18px_rgba(77,219,184,0.35)]
-            flex
-            items-center
-            gap-3
-            mx-auto
-            transition
-          "
-        >
-          <ArrowRight size={18} />
-
-          Talk to Sales about the right plan
-
-        </button>
-
+        <Link
+  href="/contact-sales"
+  className="
+    mt-8
+    inline-flex
+    items-center
+    justify-center
+    gap-3
+    mx-auto
+    rounded-2xl
+    bg-teal-400
+    px-8
+    py-3.5
+    font-semibold
+    text-gray-900
+    shadow-[0px_4px_18px_rgba(77,219,184,0.35)]
+    transition
+    hover:bg-teal-300
+  "
+>
+  <ArrowRight size={18} />
+  <span>Talk to Sales about the right plan</span>
+</Link>
       </div>
 
 

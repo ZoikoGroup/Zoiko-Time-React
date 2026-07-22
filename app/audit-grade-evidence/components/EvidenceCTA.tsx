@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const EvidenceCTA = () => {
@@ -27,14 +28,65 @@ const EvidenceCTA = () => {
 
           {/* Right Buttons */}
           <div className="flex flex-col sm:flex-row lg:flex-col gap-4 lg:w-[290px]">
-            <button className="flex items-center justify-center gap-2 rounded-lg bg-teal-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-teal-600/20 transition hover:bg-teal-700">
-              Contact Sales
-              <ArrowRight className="h-5 w-5" />
-            </button>
 
-            <button className="flex items-center justify-center gap-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-8 py-4 text-sm font-medium text-slate-700 dark:text-slate-300 transition hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400">
-              Explore Data Retention &amp; Legal Hold
-            </button>
+            {/* Contact Sales */}
+{/* Contact Sales */}
+<Link
+  href="/contact-sales"
+  className="
+    inline-flex
+    h-12
+    w-[360px]
+    items-center
+    justify-center
+    gap-2
+    rounded-lg
+    bg-teal-600
+    px-8
+    whitespace-nowrap
+    text-base
+    font-semibold
+    text-white
+    shadow-lg
+    shadow-teal-600/20
+    transition
+    hover:bg-teal-700
+  "
+>
+  Contact Sales
+  <ArrowRight className="h-5 w-5" />
+</Link>
+
+{/* Explore Data Retention & Legal Hold */}
+<Link
+  href="/data-retention-and-legal-hold"
+  className="
+    inline-flex
+    h-12
+    w-[360px]
+    items-center
+    justify-center
+    gap-2
+    rounded-lg
+    border
+    border-slate-200
+    bg-white
+    px-8
+    whitespace-nowrap
+    text-sm
+    font-medium
+    text-slate-700
+    transition
+    hover:border-teal-500
+    hover:text-teal-600
+    dark:border-slate-700
+    dark:bg-slate-900
+    dark:text-slate-300
+    dark:hover:text-teal-400
+  "
+>
+  Explore Data Retention &amp; Legal Hold
+</Link>
           </div>
         </div>
       </div>

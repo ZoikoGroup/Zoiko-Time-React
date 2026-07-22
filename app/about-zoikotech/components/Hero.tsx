@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="bg-[#e1f8f4]/50 dark:bg-gray-900 px-6 py-16 md:py-24 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
@@ -25,13 +27,17 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <button className="rounded-lg bg-[#009D8C] px-6 py-3 font-medium text-white transition hover:bg-teal-700">
+            <Link
+            href="request-a-demo"
+             className="rounded-lg bg-[#009D8C] px-6 py-3 font-medium text-white transition hover:bg-teal-700">
               Request a ZoikoTime Demo
-            </button>
+            </Link>
 
-            <button className="rounded-lg border border-[#0F0F0F33] px-6 py-3 font-medium text-[#0F0F0F] transition hover:border-gray-500 dark:border-gray-600 dark:text-white dark:hover:border-gray-400">
+            <Link
+            href = "start-free"
+             className="rounded-lg border border-[#0F0F0F33] px-6 py-3 font-medium text-[#0F0F0F] transition hover:border-gray-500 dark:border-gray-600 dark:text-white dark:hover:border-gray-400">
               Start Free Trial
-            </button>
+            </Link>
           </div>
 
           <p className="mt-5 text-xs text-[#0F0F0F59] dark:text-gray-400">

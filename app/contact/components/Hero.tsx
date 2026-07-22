@@ -123,76 +123,64 @@ export default function Hero() {
 
 
 
-        {/* Search */}
+       <div
+  className="
+    mx-auto
+    mt-8
+    flex
+    max-w-xl
+    items-center
+    rounded-xl
+    bg-white
+    dark:bg-[#111827]
+    p-1.5
+    shadow-md
+    shadow-emerald-900/5
+    border
+    border-transparent
+    dark:border-gray-700
+  "
+>
+  <input
+    type="text"
+    placeholder="Tell us what you need…"
+    className="
+      flex-1
+      bg-transparent
+      px-4
+      py-2.5
+      text-sm
+      text-slate-700
+      dark:text-white
+      placeholder:text-[#191919A6]
+      dark:placeholder:text-gray-500
+      outline-none
+    "
+  />
 
-        <div
-          className="
-          mx-auto
-          mt-8
-          flex
-          max-w-2xl
-          flex-col
-          sm:flex-row
-          items-center
-          rounded-[16px]
-          bg-white
-          dark:bg-[#111827]
-          p-2
-          shadow-md
-          shadow-emerald-900/5
-          border
-          border-transparent
-          dark:border-gray-700
-          "
-        >
-
-          <input
-            type="text"
-            placeholder="Tell us what you need…"
-            className="
-            w-full
-            bg-transparent
-            px-4
-            py-3
-            text-sm
-            text-slate-700
-            dark:text-white
-            placeholder:text-[#191919A6]
-            dark:placeholder:text-gray-500
-            outline-none
-            "
-          />
-
-
-          <button
-            className="
-            mt-2
-            sm:mt-0
-            w-full
-            sm:w-auto
-            flex
-            justify-center
-            items-center
-            gap-1
-            rounded-full
-            bg-[#009D8C]
-            px-6
-            py-3
-            text-sm
-            font-semibold
-            text-white
-            transition
-            hover:bg-emerald-700
-            "
-          >
-
-            Route Me
-            <span>→</span>
-
-          </button>
-
-
-        </div>
+  <button
+    className="
+      ml-2
+      flex
+      items-center
+      gap-1
+      whitespace-nowrap
+      rounded-full
+      bg-[#009D8C]
+      px-5
+      py-2.5
+      text-sm
+      font-semibold
+      text-white
+      transition
+      hover:bg-emerald-700
+      flex-shrink-0
+    "
+  >
+    Route Me
+    <span>→</span>
+  </button>
+</div>
 
 
 

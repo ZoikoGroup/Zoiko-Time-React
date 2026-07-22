@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function GovernedAICTA() {
   return (
@@ -27,22 +28,23 @@ export default function GovernedAICTA() {
 
 
         {/* Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+<div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+  {/* Get a Demo */}
+  <Link
+    href="/request-a-demo"
+    className="inline-flex h-11 items-center justify-center rounded-[10px] bg-teal-600 px-7 text-base font-semibold text-white shadow-[0px_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700"
+  >
+    Get a Demo
+  </Link>
 
-                      <button
-            className="h-11 rounded-[10px] bg-teal-600 px-7 text-base font-semibold text-white shadow-[0px_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700"
-          >
-            Get a Demo
-          </button>
-
-
-          <button
-            className="h-11 rounded-[10px] border border-white/30 bg-white/10 px-7 text-base font-semibold text-white transition hover:bg-white/20"
-          >
-            Contact Sales
-          </button>
-
-        </div>
+  {/* Contact Sales */}
+  <Link
+    href="/contact-sales"
+    className="inline-flex h-11 items-center justify-center rounded-[10px] border border-white/30 bg-white/10 px-7 text-base font-semibold text-white transition hover:bg-white/20"
+  >
+    Contact Sales
+  </Link>
+</div>
 
       </div>
     </section>

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link"
 
 export default function TransparencyHero() {
   const tags = [
@@ -118,44 +119,63 @@ export default function TransparencyHero() {
             gap-4
           "
         >
-          <button
-            className="
-              w-full sm:w-64
-              h-12
-              rounded-md
-              bg-teal-600
-              text-white
-              text-sm sm:text-base
-              font-medium
-              font-sans
-              shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)]
-              hover:bg-teal-700
-              transition
-            "
-          >
-            Explore Explainability Engine
-          </button>
+          <Link
+  href="/transparency-center#explore-explainability-engine"
+  className="
+    flex
+    h-12
+    w-full
+    sm:w-[320px]
+    items-center
+    justify-center
+    rounded-md
+    bg-teal-600
+    px-6
+    whitespace-nowrap
+    text-center
+    text-sm
+    sm:text-base
+    font-medium
+    font-sans
+    text-white
+    shadow-[0px_4px_14px_rgba(0,157,140,0.28)]
+    transition
+    hover:bg-teal-700
+  "
+>
+  Explore Explainability Engine
+</Link>
 
-
-          <button
-            className="
-              w-full sm:w-48
-              h-12
-              rounded-md
-              bg-white
-              dark:bg-slate-900
-              border border-slate-200
-              dark:border-slate-700
-              text-slate-700
-              dark:text-slate-200
-              text-sm sm:text-base
-              font-medium
-              font-sans
-              transition
-            "
-          >
-            View System Logic
-          </button>
+          <Link
+  href="/transparency-center#view-system-logic"
+  className="
+    flex
+    h-12
+    w-full
+    sm:w-48
+    items-center
+    justify-center
+    rounded-md
+    border
+    border-slate-200
+    bg-white
+    px-6
+    text-center
+    text-sm
+    sm:text-base
+    font-medium
+    font-sans
+    text-slate-700
+    transition
+    hover:bg-slate-50
+    dark:border-slate-700
+    dark:bg-slate-900
+    dark:text-slate-200
+    dark:hover:bg-slate-800
+  "
+>
+  View System Logic
+</Link>
         </div>
 
 

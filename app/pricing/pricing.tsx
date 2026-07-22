@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import Link from "next/link";
 import { Check, Minus, Plus, ChevronDown } from "lucide-react";
 import PricingPlans from "./pricingplans";
 
@@ -340,12 +341,16 @@ export default function PricingPage() {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <button className="w-full rounded-md bg-teal-600 px-8 py-3 text-base font-bold text-white shadow-[0px_4px_18px_0px_rgba(0,157,140,0.40)] hover:bg-teal-700 sm:w-auto">
+            <Link
+            href="start-free"
+             className="w-full rounded-md bg-teal-600 px-8 py-3 text-base font-bold text-white shadow-[0px_4px_18px_0px_rgba(0,157,140,0.40)] hover:bg-teal-700 sm:w-auto">
               Start 90 Day Trial — Free
-            </button>
-            <button className="w-full rounded-md border border-teal-600 px-8 py-3 text-base font-medium text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-500/10 sm:w-auto">
+            </Link>
+            <Link
+            href="request-a-demo"
+            className="w-full rounded-md border border-teal-600 px-8 py-3 text-base font-medium text-teal-600 hover:bg-teal-50 dark:hover:bg-teal-500/10 sm:w-auto">
               Watch 2 Minute Demo
-            </button>
+            </Link>
           </div>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -487,9 +492,14 @@ export default function PricingPage() {
                 <p className="mt-2 text-xs leading-5 text-white/60">Estimated payback period</p>
               </div>
 
-              <button className="mt-8 w-full rounded-md bg-teal-600 py-3 text-sm font-bold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.30)] hover:bg-teal-700">
-                See Your Custom Quote →
-              </button>
+              <div className="mt-8 flex justify-center">
+  <Link
+    href="/see-your-custom-quote"
+    className="flex h-12 items-center justify-center rounded-md bg-teal-600 px-8 text-sm font-bold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.30)] transition hover:bg-teal-700"
+  >
+    See Your Custom Quote →
+  </Link>
+</div>
 
               <p className="mx-auto mt-4 max-w-sm text-center text-xs leading-5 text-white/30">
                 Estimates based on average leakage recovery rates across ZoikoTime enterprise
@@ -648,12 +658,20 @@ export default function PricingPage() {
               </p>
             </div>
             <div className="flex flex-col gap-4">
-              <button className="w-full rounded-md bg-teal-600 py-3 text-sm font-bold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.30)] hover:bg-teal-700">
-                Request Enterprise Quote
-              </button>
-              <button className="w-full rounded-md border border-white/20 bg-white py-3 text-sm font-bold text-teal-600 hover:bg-gray-50">
-                Schedule Compliance Architecture Review
-              </button>
+              <div className="mt-8 flex justify-center">
+  <Link
+    href="/request-enterprise-demo"
+    className="flex h-12 w-full max-w-md items-center justify-center rounded-md bg-teal-600 px-8 text-sm font-bold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.30)] transition hover:bg-teal-700"
+  >
+    Request Enterprise Quote
+  </Link>
+</div>
+              <Link
+    href="/schedule-compliance-architecture"
+    className="flex h-12 w-full max-w-md items-center justify-center rounded-md border border-teal-600 bg-white px-8 text-center text-sm font-bold text-teal-600 transition hover:bg-gray-50"
+  >
+    Schedule Compliance Architecture Review
+  </Link>
             </div>
           </div>
         </div>
@@ -711,12 +729,16 @@ export default function PricingPage() {
           feature access, zero risk, and no obligation to upgrade.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <button className="w-full rounded-md bg-teal-600 px-8 py-3 text-base font-bold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)] hover:bg-teal-700 sm:w-auto">
+          <Link
+          href ="start-free"
+           className="w-full rounded-md bg-teal-600 px-8 py-3 text-base font-bold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)] hover:bg-teal-700 sm:w-auto">
             Start Free Trial
-          </button>
-          <button className="w-full rounded-md border border-slate-200 bg-white px-8 py-3 text-base font-medium text-slate-700 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700 sm:w-auto">
+          </Link>
+          <Link
+          href = "request-enterprise-demo"
+           className="w-full rounded-md border border-slate-200 bg-white px-8 py-3 text-base font-medium text-slate-700 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700 sm:w-auto">
             Request Enterprise Quote
-          </button>
+          </Link>
         </div>
       </section>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function CaseStudyHero() {
   return (
@@ -118,21 +119,27 @@ export default function CaseStudyHero() {
           "
         >
 
-          <button
-            className="
-              w-full
-              sm:w-52
-              h-12
-              rounded-md
-              bg-teal-600
-              text-white
-              text-base
-              font-semibold
-              shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)]
-            "
-          >
-            Launch ROI Calculator
-          </button>
+          <Link
+  href="/calculate-your-roi"
+  className="
+    inline-flex
+    w-full
+    sm:w-52
+    h-12
+    items-center
+    justify-center
+    rounded-md
+    bg-teal-600
+    text-white
+    text-base
+    font-semibold
+    shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)]
+    transition
+    hover:bg-teal-700
+  "
+>
+  Launch ROI Calculator
+</Link>
 
 
           <button

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function FaqCta() {
   return (
@@ -21,13 +22,19 @@ export default function FaqCta() {
 
         {/* Right Buttons */}
         <div className="flex flex-col gap-4 sm:w-auto">
-          <button className="rounded-lg bg-teal-600 px-10 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
-            Visit Help Center
-          </button>
+          <Link
+  href="/help-center"
+  className="inline-flex items-center justify-center rounded-lg bg-teal-600 px-10 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700"
+>
+  Visit Help Center
+</Link>
 
-          <button className="rounded-lg border border-slate-200 bg-white px-10 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800">
-            Contact Sales
-          </button>
+<Link
+  href="/contact-sales"
+  className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-10 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+>
+  Contact Sales
+</Link>
         </div>
       </div>
     </section>

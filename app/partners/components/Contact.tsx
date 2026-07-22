@@ -41,7 +41,9 @@ export default function Contact() {
     "block text-sm font-semibold text-[#0D1526] dark:text-white mb-2";
 
   return (
-    <section className="bg-white dark:bg-slate-950 px-4 sm:px-6 lg:px-10 xl:px-20 py-14 md:py-20 transition-colors duration-300">
+    <section
+    id ="contact-partnerships"
+     className="bg-white dark:bg-slate-950 px-4 sm:px-6 lg:px-10 xl:px-20 py-14 md:py-20 transition-colors duration-300">
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
         <div className="text-center mb-10 md:mb-14">

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function HelpCta() {
   return (
@@ -21,13 +22,19 @@ export default function HelpCta() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="rounded-lg bg-teal-600 px-8 py-3 font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
+          <Link
+          href="/help-center#popular"
+           className="rounded-lg bg-teal-600 px-8 py-3 font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
             Search Help Articles
-          </button>
+          </Link>
 
-          <button className="rounded-lg border border-white/30 bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/20">
-            Contact Support
-          </button>
+          <Link
+  href="/contact"
+  className="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-8 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/20"
+>
+  Contact Support
+</Link>
+
         </div>
       </div>
     </section>

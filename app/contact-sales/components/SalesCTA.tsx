@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const SalesCTA = () => {
   return (
@@ -50,45 +51,54 @@ const SalesCTA = () => {
 
 
         {/* Buttons */}
-        <div className="flex flex-col gap-3 w-full sm:w-72">
+<div className="flex w-full flex-col items-center gap-3 sm:w-72 mx-auto">
+  <Link
+    href="/contact-sales#sales-query-and-help"
+    className="
+      inline-flex
+      h-12
+      w-full
+      items-center
+      justify-center
+      rounded-lg
+      bg-teal-600
+      text-base
+      font-semibold
+      text-white
+      shadow-[0px_4px_16px_0px_rgba(0,157,140,0.30)]
+      transition
+      hover:bg-teal-700
+    "
+  >
+    Submit Sales Inquiry
+  </Link>
 
-          <button
-            className="
-              h-12
-              w-full
-              bg-teal-600
-              hover:bg-teal-700
-              text-white
-              rounded-lg
-              shadow-[0px_4px_16px_0px_rgba(0,157,140,0.30)]
-              text-base
-              font-semibold
-            "
-          >
-            Submit Sales Inquiry
-          </button>
-
-
-          <button
-            className="
-              h-12
-              w-full
-              bg-white
-              dark:bg-slate-900
-              border
-              border-slate-200
-              dark:border-slate-700
-              rounded-lg
-              text-slate-700
-              dark:text-slate-300
-              text-sm
-              font-medium
-            "
-          >
-            Visit Help Center
-          </button>
-
-        </div>
+  <Link
+    href="/help-center"
+    className="
+      inline-flex
+      h-12
+      w-full
+      items-center
+      justify-center
+      rounded-lg
+      border
+      border-slate-200
+      bg-white
+      text-sm
+      font-medium
+      text-slate-700
+      transition
+      hover:bg-slate-50
+      dark:border-slate-700
+      dark:bg-slate-900
+      dark:text-slate-300
+      dark:hover:bg-slate-800
+    "
+  >
+    Visit Help Center
+  </Link>
+</div>
 
       </div>
     </section>
