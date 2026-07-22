@@ -1,4 +1,5 @@
 "use client";
+import DownloadPopup from "./downloadpopup";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -280,11 +281,13 @@ const governanceFeatures = [
   },
 ];
 export default function Professional() {
-     const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
   return (
     <>
     <section className="relative overflow-hidden bg-emerald-50 dark:bg-gray-950 py-10 lg:py-10">
@@ -831,9 +834,32 @@ export default function Professional() {
 >
   Request a Demo
 </Link>
-          <button className="rounded-lg border border-slate-300 bg-white px-8 py-3 font-medium text-slate-700 transition hover:border-teal-600 hover:text-teal-600 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:border-teal-500 dark:hover:text-teal-400">
-            Download Free
-          </button>
+          <button
+  type="button"
+  onClick={() => setIsPopupOpen(true)}
+  className="
+    rounded-lg
+    border
+    border-slate-300
+    bg-white
+    px-8
+    py-3
+    font-medium
+    text-slate-700
+    transition-all
+    duration-300
+    hover:border-teal-600
+    hover:text-teal-600
+    dark:border-gray-700
+    dark:bg-gray-800
+    dark:text-white
+    dark:hover:border-teal-500
+    dark:hover:text-teal-400
+  "
+>
+  Download Free
+</button>
+              
         </div>
       </div>
     </section>
@@ -965,6 +991,11 @@ export default function Professional() {
         </div>
       </div>
     </section>
+
+     <DownloadPopup
+      isOpen={isPopupOpen}
+      onClose={() => setIsPopupOpen(false)}
+    />
 
     </>
   );

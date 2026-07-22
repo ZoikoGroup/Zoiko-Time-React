@@ -1,4 +1,5 @@
 "use client"
+import DownloadPopup from "./downloadpopup";
 import Link from "next/link";
 import React from 'react';
 import { useState } from 'react';
@@ -31,6 +32,8 @@ interface ResourceItem {
 }
 export default function Resource() {
     const [bookmarkedItems, setBookmarkedItems] = useState<Record<number, boolean>>({});
+
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const toggleBookmark = (id: number) => {
     setBookmarkedItems(prev => ({ ...prev, [id]: !prev[id] }));
@@ -222,14 +225,29 @@ export default function Resource() {
           </div>
 
           {/* Primary & Secondary Call to Actions Segment */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-            <button className="bg-teal-600 hover:bg-teal-700 dark:bg-teal-500 dark:hover:bg-teal-600 text-white font-bold text-sm px-8 py-3 rounded-md shadow-[0px_4px_14px_0px_rgba(0,157,140,0.35)] transition-all duration-150   ">
-              Start Guided Experience
-            </button>
-            <button className="border border-teal-600 text-teal-600 dark:border-teal-400 dark:text-teal-400 hover:bg-teal-50/50 dark:hover:bg-teal-950/20 font-medium text-sm px-8 py-3 rounded-md transition-all duration-150   ">
-              Browse All Resources
-            </button>
-          </div>
+          <div className="flex justify-center w-full">
+  <button
+    type="button"
+    onClick={() => setIsPopupOpen(true)}
+    className="
+      rounded-lg
+      bg-teal-600
+      px-8
+      py-3
+      font-semibold
+      text-white
+      shadow-lg
+      shadow-teal-600/30
+      transition
+      hover:bg-teal-700
+      inline-flex
+      items-center
+      justify-center
+    "
+  >
+    Download Free
+  </button>
+</div>
         </div>
       </section>
 
@@ -1708,6 +1726,10 @@ export default function Resource() {
 
       </div>
 </section>
+<DownloadPopup
+  isOpen={isPopupOpen}
+  onClose={() => setIsPopupOpen(false)}
+/>
 
 {/* ================= End From Intelligence to Action ================= */}
  
