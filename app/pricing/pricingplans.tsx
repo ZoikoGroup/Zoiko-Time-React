@@ -1,322 +1,286 @@
-import React from 'react';
+"use client";
 
-export default function PricingTiers() {
-   
+import React, { useState } from "react";
+import { Check } from "lucide-react";
+
+/**
+ * PricingPlans
+ * - Standalone section component: app/pricing/pricingplans.tsx
+ * - Renders the 4-tier "Choose Your Level of Workforce Intelligence" pricing cards
+ * - Import into pricing.tsx as: import PricingPlans from "./pricingplans";
+ * - Tailwind CSS with dark mode (`dark:` variants), fully responsive
+ *   (1 col mobile -> 2 col tablet -> 4 col desktop)
+ */
+
+/* ------------------------------------------------------------------ */
+/* Types                                                                */
+/* ------------------------------------------------------------------ */
+
+interface Plan {
+  id: string;
+  eyebrow: string;
+  eyebrowClass: string;
+  monthlyPrice: number | "Custom";
+  userLimit: string;
+  description: string;
+  ctaLabel: string;
+  ctaStyle: "outline" | "solid" | "dark";
+  highlighted?: boolean;
+  badge?: string;
+  inheritedFrom?: string;
+  features: string[];
+}
+
+/* ------------------------------------------------------------------ */
+/* Data                                                                 */
+/* ------------------------------------------------------------------ */
+
+const PLANS: Plan[] = [
+  {
+    id: "verified",
+    eyebrow: "Verified",
+    eyebrowClass: "text-slate-500 dark:text-gray-400",
+    monthlyPrice: 9,
+    userLimit: "Up to 25 users",
+    description:
+      "Cryptographically verified work records for small teams, contractor tracking, and accountability-first environments.",
+    ctaLabel: "Start Free Trial",
+    ctaStyle: "outline",
+    features: [
+      "Automated time tracking — desktop, web, and mobile",
+      "Idle detection with configurable thresholds",
+      "Mouse and keyboard activity signals",
+      "AI confidence scoring — real vs performative work",
+      "Session legitimacy indicators",
+      "Optional screenshots with user-configurable intervals",
+      "Cryptographic audit trail and tamper-evident logs",
+      "Weekly summary reports and exportable timesheets",
+      "Transparency Center and user-facing trust controls",
+      "Blur and redaction controls",
+    ],
+  },
+  {
+    id: "governed",
+    eyebrow: "Governed",
+    eyebrowClass: "text-teal-600 dark:text-teal-400",
+    monthlyPrice: 17,
+    userLimit: "Up to 250 users",
+    description:
+      "Policy-enforced workforce intelligence for growing companies, client-billable work, and SOX/SOC 2-oriented operations.",
+    ctaLabel: "Start Free Trial",
+    ctaStyle: "solid",
+    highlighted: true,
+    badge: "Most Popular",
+    inheritedFrom: "Everything in Verified",
+    features: [
+      "Anomaly detection — ghost work, automation, drift",
+      "Policy enforcement engine — hours, breaks, overtime",
+      "Evidence packaging with audit-ready export bundles",
+      "Focus vs fragmentation analysis",
+      "Manager review workflows and exception queues",
+      "Smart screenshots — activity-triggered capture",
+      "Advanced RBAC — manager, admin, auditor access",
+      "Read/write API access",
+      "Integrations — Slack, Jira, ADP, payroll, ZoikoSuite",
+    ],
+  },
+  {
+    id: "sovereign",
+    eyebrow: "Sovereign",
+    eyebrowClass: "text-slate-500 dark:text-gray-400",
+    monthlyPrice: 29,
+    userLimit: "Unlimited users",
+    description:
+      "Multi-jurisdiction compliance infrastructure for regulated industries, global operations, and organisations that need compliance as infrastructure.",
+    ctaLabel: "Start Free Trial",
+    ctaStyle: "outline",
+    inheritedFrom: "Everything in Governed",
+    features: [
+      "Jurisdiction-aware compliance engine — FLSA, GDPR, WTD",
+      "Legal templates library with wage law frameworks",
+      "Compliance dashboard with real-time violation alerts",
+      "Chain-of-custody logging for evidence handling",
+      "Legal hold and audit preservation controls",
+      "Custom policy builder — no-code rule configuration",
+      "Contractor classification and sensitive-workflow controls",
+      "SSO and SAML support",
+      "Dedicated success manager",
+      "Unlimited retention",
+    ],
+  },
+  {
+    id: "enterprise",
+    eyebrow: "Enterprise",
+    eyebrowClass: "text-indigo-500 dark:text-indigo-400",
+    monthlyPrice: "Custom",
+    userLimit: "Unlimited users",
+    description:
+      "Dedicated infrastructure and implementation for Fortune 1000, complex organisations and high-liability environments requiring private architecture.",
+    ctaLabel: "Request Enterprise Quote",
+    ctaStyle: "dark",
+    inheritedFrom: "Everything in Sovereign",
+    features: [
+      "Private cloud or on-premise deployment options",
+      "Custom data residency and region-specific storage",
+      "Dedicated tenant architecture",
+      "Custom API integrations — Workday, SAP, Oracle",
+      "White-glove implementation and structured onboarding",
+      "Compliance advisory and operating reviews",
+      "SLA guarantees — uptime and response commitments",
+      "24/7 priority support",
+      "Annual security and architecture reviews",
+    ],
+  },
+];
+
+const cardBase =
+  "relative flex flex-col rounded-2xl bg-white dark:bg-gray-800 shadow-[0px_4px_16px_0px_rgba(13,21,38,0.08)]";
+
+function ctaClasses(style: Plan["ctaStyle"]) {
+  switch (style) {
+    case "solid":
+      return "bg-teal-600 text-white shadow-[0px_4px_12px_0px_rgba(0,157,140,0.25)] hover:bg-teal-700";
+    case "dark":
+      return "bg-slate-900 text-white hover:bg-slate-800 dark:bg-black dark:hover:bg-gray-900";
+    case "outline":
+    default:
+      return "border border-slate-300 text-slate-700 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700";
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Component                                                            */
+/* ------------------------------------------------------------------ */
+
+export default function PricingPlans() {
+  const [annual, setAnnual] = useState<boolean>(false);
+
+  const priceFor = (monthly: number | "Custom") => {
+    if (monthly === "Custom") return "Custom";
+    return annual ? Math.round(monthly * 0.8) : monthly;
+  };
+
   return (
-    <div className="w-full bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white font-sans antialiased selection:bg-teal-500 selection:text-white py-24 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="text-center mb-20 space-y-3">
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 block">
-            Pricing Plans
+    <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="text-center text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">
+          Choose Your Level of Workforce Intelligence
+        </h2>
+
+        {/* Billing toggle */}
+        <div className="mt-8 flex items-center justify-center gap-3">
+          <span
+            className={`text-sm font-semibold ${
+              !annual ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-gray-400"
+            }`}
+          >
+            Monthly
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
-            Simple Structure. Enterprise Flexibility.
-          </h2>
-          <p className="text-base sm:text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Four tiers — each unlocking a deeper layer of workforce assurance capability. Pay only for active workforce units.
-          </p>
-        </div>
-
-        {/* Pricing Matrix Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-          
-          {/* Card 1: Essential / Visibility Starter */}
-          <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between relative overflow-hidden transition-all hover:shadow-md">
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-emerald-400 to-emerald-500" />
-            
-            <div className="space-y-6">
-              <div className="flex items-center gap-2">
-                <span className="size-2.5 bg-emerald-500 rounded-full shrink-0" />
-                <span className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                  Essential
-                </span>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                  Visibility Starter
-                </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed min-h-[80px]">
-                  For organisations establishing a baseline of workforce visibility and verified session tracking.
-                </p>
-              </div>
-
-              <div>
-                <div className="flex items-baseline font-mono text-slate-900 dark:text-white">
-                  <span className="text-xl font-bold">£</span>
-                  <span className="text-4xl font-extrabold tracking-tight">8</span>
-                  <span className="text-slate-500 dark:text-slate-400 text-sm font-medium ml-1">/user</span>
-                </div>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
-                  per month · billed annually
-                </p>
-              </div>
-
-              <hr className="border-slate-100 dark:border-slate-800" />
-
-              <ul className="space-y-3.5 text-xs text-slate-700 dark:text-slate-300 min-h-[260px]">
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Session tracking and verification</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Basic activity reporting</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Standard evidence records</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Email support</span>
-                </li>
-                <li className="flex items-start gap-2.5 opacity-40">
-                  <span>✓</span>
-                  <span>Anomaly detection</span>
-                </li>
-                <li className="flex items-start gap-2.5 opacity-40">
-                  <span>✓</span>
-                  <span>Policy engine</span>
-                </li>
-                <li className="flex items-start gap-2.5 opacity-40">
-                  <span>✓</span>
-                  <span>Multi-jurisdiction support</span>
-                </li>
-              </ul>
-            </div>
-
-            <button className="w-full mt-8 bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-700 dark:text-slate-200 font-bold py-3 px-4 text-sm rounded-md border border-slate-200 dark:border-slate-800 transition-colors text-center">
-              Start Free Trial
-            </button>
-          </div>
-
-          {/* Card 2: Professional / Intelligence Layer (MOST POPULAR) */}
-          <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between relative overflow-hidden transition-all hover:shadow-md">
-      
-      {/* Top Gradient Border Accent */}
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-teal-600 to-teal-500" />
-      
-      {/* Figma Absolute Positioned "Most Popular" Badge */}
-      <div className="absolute top-[-6px] left-1/2 transform -translate-x-1/2 z-10 bg-teal-600 text-white  font-bold text-[11px] leading-5 tracking-wide px-5 py-0.5 rounded-full whitespace-nowrap shadow-md">
-        Most Popular
-      </div>
-
-      <div className="space-y-6">
-        {/* Tier Subtitle Category */}
-        <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 bg-teal-600 rounded-full shrink-0" />
-          <span className="text-slate-500 dark:text-slate-400 text-xs font-bold  uppercase tracking-wide">
-            Professional
+          <button
+            onClick={() => setAnnual(!annual)}
+            className="relative h-6 w-11 shrink-0 rounded-full bg-teal-600 transition-colors"
+            aria-label="Toggle annual billing"
+          >
+            <span
+              className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${
+                annual ? "translate-x-5" : "translate-x-0"
+              }`}
+            />
+          </button>
+          <span
+            className={`text-sm font-semibold ${
+              annual ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-gray-400"
+            }`}
+          >
+            Annual
+          </span>
+          <span className="rounded-full border border-emerald-200 bg-emerald-100 px-2.5 py-1 text-xs font-bold text-emerald-800 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-400">
+            Save 20%
           </span>
         </div>
-        
-        {/* Tier Name & Description */}
-        <div>
-          <h3 className="text-slate-900 dark:text-white text-xl font-extrabold leading-9 tracking-tight">
-            Intelligence Layer
-          </h3>
-          <p className="text-slate-500 dark:text-slate-400 text-xs font-normal leading-5 mt-2">
-            For organisations requiring performance intelligence, anomaly detection, and enhanced workforce assurance.
-          </p>
-        </div>
 
-        {/* Pricing Figures */}
-        <div>
-          <div className="flex items-baseline text-slate-900 dark:text-white ">
-            <span className="text-xl font-bold mr-0.5">£</span>
-            <span className="text-4xl font-extrabold tracking-tight">18</span>
-            <span className="text-slate-500 dark:text-slate-400 text-lg font-medium ml-1">/user</span>
-          </div>
-          <p className="text-slate-500 dark:text-slate-400 text-xs font-normal  leading-5 mt-1">
-            per month · billed annually
-          </p>
-        </div>
+        {/* Plan cards */}
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {PLANS.map((plan) => {
+            const price = priceFor(plan.monthlyPrice);
+            return (
+              <div
+                key={plan.id}
+                className={`${cardBase} ${
+                  plan.highlighted
+                    ? "border-2 border-teal-600 shadow-[0px_8px_32px_0px_rgba(0,157,140,0.12)]"
+                    : "border-2 border-slate-200 dark:border-gray-700"
+                }`}
+              >
+                {plan.badge && (
+                  <div className="rounded-t-xl bg-teal-600 py-2 text-center text-xs font-extrabold uppercase tracking-wide text-white">
+                    {plan.badge}
+                  </div>
+                )}
 
-        <hr className="border-slate-100 dark:border-slate-800" />
+                <div className="flex flex-1 flex-col p-6">
+                  <p
+                    className={`text-xs font-extrabold uppercase tracking-wide ${plan.eyebrowClass}`}
+                  >
+                    {plan.eyebrow}
+                  </p>
 
-        {/* Features List */}
-        <ul className="space-y-3.5 text-slate-700 dark:text-slate-300 text-xs  leading-5">
-          <li className="flex items-start gap-2.5">
-            <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-            <span className="font-semibold">Everything in Essential</span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-            <span>Performance intelligence engine</span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-            <span>Anomaly detection + alerts</span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-            <span>Enhanced evidence records</span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-            <span>Priority support</span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-            <span>Confidence scoring per session</span>
-          </li>
-          <li className="flex items-start gap-2.5 opacity-40">
-            <span className="text-slate-400">✓</span>
-            <span>Policy engine</span>
-          </li>
-        </ul>
-      </div>
+                  <div className="mt-4 flex items-end gap-2">
+                    <span className="text-4xl font-extrabold text-slate-900 dark:text-white sm:text-5xl">
+                      {price === "Custom" ? "Custom" : `$${price}`}
+                    </span>
+                    {price !== "Custom" && (
+                      <span className="mb-1 text-xs font-medium text-slate-500 dark:text-gray-400">
+                        / user / month
+                      </span>
+                    )}
+                  </div>
 
-      {/* Action Button */}
-      <button className="w-full bg-teal-600 hover:bg-teal-700 text-white  font-bold text-sm py-3 px-4 rounded-md shadow-[0px_4px_12px_0px_rgba(0,157,140,0.25)] transition-all text-center">
-        Start Free Trial
-      </button>
-    </div>
+                  <span className="mt-4 inline-block w-fit rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-xs font-bold text-slate-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                    {plan.userLimit}
+                  </span>
 
-          {/* Card 3: Enterprise / Assurance Layer */}
-          <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between relative overflow-hidden transition-all hover:shadow-md">
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-indigo-500 to-violet-500" />
-            
-            <div className="space-y-6">
-              <div className="flex items-center gap-2">
-                <span className="size-2.5 bg-indigo-500 rounded-full shrink-0" />
-                <span className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                  Enterprise
-                </span>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                  Assurance Layer
-                </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed min-h-[80px]">
-                  For enterprises requiring full workforce assurance, policy governance, and multi-jurisdiction compliance.
-                </p>
-              </div>
+                  <p className="mt-4 text-xs leading-5 text-slate-500 dark:text-gray-400">
+                    {plan.description}
+                  </p>
 
-              <div>
-                <div className="flex items-baseline font-mono text-teal-600 dark:text-teal-400">
-                  <span className="text-2xl font-bold tracking-tight">Custom</span>
+                  <button
+                    className={`mt-6 w-full rounded-md py-3 text-sm font-bold ${ctaClasses(
+                      plan.ctaStyle
+                    )}`}
+                  >
+                    {plan.ctaLabel}
+                  </button>
+
+                  <p className="mt-8 text-[10px] font-bold uppercase tracking-wide text-slate-400 dark:text-gray-500">
+                    What&apos;s included
+                  </p>
+
+                  {plan.inheritedFrom && (
+                    <p className="mt-3 text-xs font-bold text-teal-600 dark:text-teal-400">
+                      {plan.inheritedFrom}{" "}
+                      <span className="text-[10px] font-bold text-slate-400 dark:text-gray-500">
+                        → then
+                      </span>
+                    </p>
+                  )}
+
+                  <ul className="mt-3 space-y-3">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2">
+                        <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-teal-600 dark:text-teal-400" />
+                        <span className="text-xs leading-5 text-slate-700 dark:text-gray-300">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2 leading-tight">
-                  based on workforce size and configuration
-                </p>
               </div>
-
-              <hr className="border-slate-100 dark:border-slate-800" />
-
-              <ul className="space-y-3.5 text-xs text-slate-700 dark:text-slate-300 min-h-[260px]">
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span className="font-semibold">Everything in Professional</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Full policy engine + enforcement</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Evidence capture + chain of custody</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Multi-jurisdiction compliance</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Audit-ready export and HR enablement</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Dedicated account team</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>SLA-backed uptime</span>
-                </li>
-              </ul>
-            </div>
-
-            <button className="w-full mt-8 bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-4 text-sm rounded-md shadow-[0px_4px_12px_0px_rgba(92,92,235,0.25)] transition-all text-center">
-              Request Pricing
-            </button>
-          </div>
-
-          {/* Card 4: Sovereign / Infrastructure Layer */}
-          <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between relative overflow-hidden transition-all hover:shadow-md">
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-slate-900 to-slate-700 dark:from-slate-700 dark:to-slate-600" />
-            
-            <div className="space-y-6">
-              <div className="flex items-center gap-2">
-                <span className="size-2.5 bg-slate-900 dark:bg-slate-400 rounded-full shrink-0" />
-                <span className="text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                  Sovereign
-                </span>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                  Infrastructure Layer
-                </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed min-h-[80px]">
-                  For organisations requiring dedicated infrastructure, custom compliance frameworks, and premium SLA guarantees.
-                </p>
-              </div>
-
-              <div>
-                <div className="flex items-baseline font-mono text-slate-900 dark:text-white">
-                  <span className="text-2xl font-bold tracking-tight">Premium</span>
-                </div>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2 leading-tight">
-                  dedicated environment · custom commercial terms
-                </p>
-              </div>
-
-              <hr className="border-slate-100 dark:border-slate-800" />
-
-              <ul className="space-y-3.5 text-xs text-slate-700 dark:text-slate-300 min-h-[260px]">
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span className="font-semibold">Everything in Enterprise</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Dedicated environment (single-tenant)</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Custom compliance configuration</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>SLA-backed uptime guarantees</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Executive success programme</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>On-premise or private cloud option</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
-                  <span>Custom API and integration depth</span>
-                </li>
-              </ul>
-            </div>
-
-            <button className="w-full mt-8 bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold py-3 px-4 text-sm rounded-md transition-colors text-center">
-              Contact Sales
-            </button>
-          </div>
-
+            );
+          })}
         </div>
-
       </div>
-    </div>
+    </section>
   );
 }
