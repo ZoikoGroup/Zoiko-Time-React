@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Subscriptionsection() {
      const points = [
@@ -61,14 +62,18 @@ export default function Subscriptionsection() {
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
 
-            <button className="rounded-lg bg-teal-600 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 hover:bg-teal-700">
+            <Link
+            href ="/pricing#plans"
+             className="rounded-lg bg-teal-600 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 hover:bg-teal-700">
               View Plans
-            </button>
+            </Link>
 
 
-            <button className="rounded-lg border border-gray-300 bg-white px-7 py-3 text-base font-semibold text-slate-800 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white">
+            <Link
+            href="contact-sales"
+             className="rounded-lg border border-gray-300 bg-white px-7 py-3 text-base font-semibold text-slate-800 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white">
               Contact Sales
-            </button>
+            </Link>
 
           </div>
 

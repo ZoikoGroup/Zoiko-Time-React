@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SubscriptionHelp() {
   return (
     <section
@@ -78,44 +80,44 @@ export default function SubscriptionHelp() {
           "
         >
 
-          <button
-            className="
-            h-11
-            rounded-[10px]
-            bg-teal-600
-            px-8
-            text-base
-            font-semibold
-            text-white
-            font-['Poppins']
-            shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)]
-            hover:bg-teal-700
-            transition
-            "
-          >
-            Contact Sales
-          </button>
+         <Link
+    href="/contact-sales"
+    className="
+      flex h-11 items-center justify-center
+      rounded-[10px]
+      bg-teal-600
+      px-8
+      text-base
+      font-semibold
+      text-white
+      font-['Poppins']
+      shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)]
+      transition
+      hover:bg-teal-700
+    "
+  >
+    Contact Sales
+  </Link>
 
-
-          <button
-            className="
-            h-11
-            rounded-[10px]
-            border
-            border-white/30
-            bg-white/10
-            px-8
-            text-base
-            font-semibold
-            text-white
-            font-['Poppins']
-            hover:bg-white/20
-            transition
-            "
-          >
-            Visit Help Center
-          </button>
-
+  <Link
+    href="/help-center"
+    className="
+      flex h-11 items-center justify-center
+      rounded-[10px]
+      border
+      border-white/30
+      bg-white/10
+      px-8
+      text-base
+      font-semibold
+      text-white
+      font-['Poppins']
+      transition
+      hover:bg-white/20
+    "
+  >
+    Visit Help Center
+  </Link>
         </div>
 
       </div>

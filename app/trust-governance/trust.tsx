@@ -933,7 +933,10 @@ export default function TrustGovernance() {
 </Link>
 
 
-            <a href="#audit-simulation">
+            <a
+  href="#audit-simulation"
+  className="w-full sm:w-auto px-6 h-12 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 active:bg-slate-200 dark:active:bg-slate-700 font-semibold text-base rounded-lg shadow-md transition-colors flex items-center justify-center"
+>
   Run Audit Simulation
 </a>
           </div>

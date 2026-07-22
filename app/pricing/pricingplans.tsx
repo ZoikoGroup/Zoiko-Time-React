@@ -161,7 +161,9 @@ export default function PricingPlans() {
   };
 
   return (
-    <section className="px-4 py-16 sm:px-6 lg:px-8">
+    <section
+    id = "plans"
+     className="px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <h2 className="text-center text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl">
           Choose Your Level of Workforce Intelligence

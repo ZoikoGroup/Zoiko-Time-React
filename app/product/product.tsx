@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { Play } from 'lucide-react';
+import Link from "next/link";
 
 interface ModuleLayer {
   id: number;
@@ -66,12 +67,14 @@ export default function Product() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 w-full sm:w-auto">
-            <a href="/request-enterprise-demo">
-            <button className="w-full sm:w-72 h-12 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg shadow-[0px_4px_18px_0px_rgba(0,157,140,0.32)] transition-colors flex items-center justify-center gap-2">
+            
+            <Link
+            href="request-enterprise-demo"
+             className="w-full sm:w-72 h-12 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg shadow-[0px_4px_18px_0px_rgba(0,157,140,0.32)] transition-colors flex items-center justify-center gap-2">
               <Play className="w-3 h-3 fill-current" />
               Request Enterprise Demo
-            </button>
-            </a>
+            </Link>
+            
             
             <button className="w-full sm:w-80 h-12 bg-white hover:bg-slate-50 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 dark:border-slate-700 font-semibold rounded-lg border border-slate-300 shadow-sm transition-colors">
               See How It Works in 90 Seconds
@@ -780,10 +783,12 @@ export default function Product() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-            <button className="w-full sm:w-auto px-8 py-3.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-base rounded-lg shadow-[0px_4px_18px_0px_rgba(0,157,140,0.32)] transition-colors flex items-center justify-center gap-2">
+            <Link
+            href ="request-a-demo"
+             className="w-full sm:w-auto px-8 py-3.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-base rounded-lg shadow-[0px_4px_18px_0px_rgba(0,157,140,0.32)] transition-colors flex items-center justify-center gap-2">
               <Play className="w-3 h-3 fill-current" />
               <span>Request Demo</span>
-            </button>
+            </Link>
             
             <button className="w-full sm:w-auto px-8 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-teal-600 dark:text-teal-400 font-semibold text-base rounded-lg shadow-sm border border-teal-600 dark:border-teal-500/50 transition-colors">
               Talk to a Solutions Architect

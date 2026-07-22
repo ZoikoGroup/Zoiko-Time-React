@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Shield } from "lucide-react";
+import { ArrowRight, CirclePlay } from "lucide-react";
 
 export default function IdentityAssuranceHero() {
   const highlights = [
@@ -49,12 +49,12 @@ export default function IdentityAssuranceHero() {
         {/* Buttons */}
         <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
-            href="/request-a-demo"
-            className="flex items-center gap-2 rounded-lg bg-teal-600 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700"
-          >
-            <Shield size={18} />
-            Request Demo
-          </Link>
+  href="/request-a-demo"
+  className="flex items-center gap-3 rounded-lg bg-teal-600 px-7 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700"
+>
+  <CirclePlay className="h-6 w-6" />
+  <span>Request Demo</span>
+</Link>
 
           <Link
             href="/security-overview#architecture-table"

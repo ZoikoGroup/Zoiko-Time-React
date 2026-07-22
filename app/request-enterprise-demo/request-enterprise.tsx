@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   CheckCircle2,
   Clock,
@@ -328,12 +329,19 @@ export default function RequestEnterpriseDemoPage() {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <button className="w-full rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] hover:bg-teal-700 sm:w-auto">
+
+            <Link
+            href="/request-enterprise-demo#enterprise-demo-form"
+             className="w-full rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] hover:bg-teal-700 sm:w-auto">
               Request Enterprise Demo
-            </button>
-            <button className="w-full rounded-[10px] border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-slate-800 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 sm:w-auto">
+            </Link>
+
+            <Link
+            href="/request-enterprise-demo#enterprise-demo-cover"
+             className="w-full rounded-[10px] border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-slate-800 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 sm:w-auto">
               Explore Enterprise Platform
-            </button>
+            </Link>
+
           </div>
 
           <p className="mt-6 text-sm">
@@ -360,7 +368,9 @@ export default function RequestEnterpriseDemoPage() {
       </section>
 
       {/* DEMO REQUEST FORM */}
-      <section className="bg-gray-50 px-4 py-16 dark:bg-gray-800/40 sm:px-6 lg:px-8">
+      <section
+      id="enterprise-demo-form"
+       className="bg-gray-50 px-4 py-16 dark:bg-gray-800/40 sm:px-6 lg:px-8">
         <div className={`mx-auto max-w-2xl ${cardBase} p-6 sm:p-10`}>
           <h2 className="text-center text-2xl font-bold text-slate-800 dark:text-white">
             Request your enterprise demo
@@ -398,7 +408,9 @@ export default function RequestEnterpriseDemoPage() {
       </section>
 
       {/* IN YOUR SESSION */}
-      <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <section
+      id="enterprise-demo-cover"
+       className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrowText="In Your Session"
@@ -539,12 +551,18 @@ export default function RequestEnterpriseDemoPage() {
             and we&apos;ll tailor a demo to exactly what your committee needs to see.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <button className="w-full rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] hover:bg-teal-700 sm:w-auto">
+            <Link
+             href="/request-enterprise-demo#enterprise-demo-form"
+              
+             className="w-full rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] hover:bg-teal-700 sm:w-auto">
               Request Enterprise Demo
-            </button>
-            <button className="w-full rounded-[10px] border border-white/30 bg-white/10 px-8 py-3 text-base font-semibold text-white hover:bg-white/20 sm:w-auto">
+            </Link>
+
+            <Link
+             href="/request-enterprise-demo#enterprise-demo-cover"
+             className="w-full rounded-[10px] border border-white/30 bg-white/10 px-8 py-3 text-base font-semibold text-white hover:bg-white/20 sm:w-auto">
               Explore Enterprise Platform
-            </button>
+            </Link>
           </div>
         </div>
       </section>

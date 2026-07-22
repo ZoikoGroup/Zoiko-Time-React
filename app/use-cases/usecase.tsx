@@ -855,10 +855,12 @@ const layers = [
   Calculate Your ROI
 </Link>
 
-            {/* Action 3: Expert Consultation Access Anchor */}
-            <button className="w-full sm:w-auto sm:col-span-2 px-8 h-12 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 font-medium text-base rounded-lg transition-colors">
-              Speak to Solutions Architect
-            </button>
+            
+            {/*
+<button className="w-full sm:w-auto sm:col-span-2 px-8 h-12 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 font-medium text-base rounded-lg transition-colors">
+  Speak to Solutions Architect
+</button>
+*/}
 
           </div>
 
