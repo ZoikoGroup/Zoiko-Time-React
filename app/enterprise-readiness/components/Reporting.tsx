@@ -33,19 +33,19 @@ const cards = [
 
 export default function Reporting() {
   return (
-    <section className="bg-slate-900 dark:bg-black px-6 py-12 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
+    <section className="bg-white px-6 py-12 transition-colors duration-300 dark:bg-slate-900 md:px-12 lg:px-20 xl:px-32">
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
         <div className="mb-12 text-center">
-          <span className="mb-3 inline-block text-xs font-semibold tracking-[1.3px] text-[#00C6A9] dark:text-teal-400">
+          <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[1.3px] text-[#00C6A9]">
             Reporting and Evidence
           </span>
 
-          <h2 className="mb-5 text-3xl font-bold text-white md:text-[30px]">
+          <h2 className="mb-5 text-3xl font-bold text-slate-900 dark:text-white md:text-[30px]">
             Records That Can Be Reviewed, Explained, and Governed
           </h2>
 
-          <p className="mx-auto max-w-5xl leading-7 text-[#FFFFFF8C] dark:text-gray-300">
+          <p className="mx-auto max-w-5xl leading-7 text-slate-600 dark:text-white/60">
             Enterprise customers need workforce records that can be reviewed,
             explained, exported, and governed. ZoikoTime is designed to support
             reporting and evidence workflows for payroll, billing, audits, and
@@ -58,7 +58,7 @@ export default function Reporting() {
           {cards.map(({ src, title, desc }) => (
             <div
               key={title}
-              className="rounded-[14px] border border-[#FFFFFF14] dark:border-gray-700 bg-[#FFFFFF0D] dark:bg-gray-800 p-6 transition-all duration-300 hover:border-teal-500/40 hover:shadow-lg"
+              className="rounded-[14px] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#00C6A9]/40 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-[#00C6A9]/30 dark:hover:bg-white/10"
             >
               <img
                 src={src}
@@ -66,11 +66,11 @@ export default function Reporting() {
                 className="mb-4 h-14 w-14 object-contain"
               />
 
-              <h3 className="mb-3 text-[15px] font-semibold text-white">
+              <h3 className="mb-3 text-[15px] font-semibold text-slate-900 dark:text-white">
                 {title}
               </h3>
 
-              <p className="text-sm leading-7 text-[#FFFFFF8C] dark:text-gray-300">
+              <p className="text-sm leading-7 text-slate-600 dark:text-white/60">
                 {desc}
               </p>
             </div>

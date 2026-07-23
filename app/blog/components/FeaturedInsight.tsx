@@ -4,21 +4,21 @@ import React from "react";
 
 export default function FeaturedInsight() {
   return (
-    <section className="bg-white py-20 dark:bg-slate-950">
+    <section className="bg-white py-20 transition-colors duration-300 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-[20px] bg-slate-900 shadow-xl">
+        <div className="overflow-hidden rounded-[20px] border border-slate-200 bg-white shadow-xl transition-colors duration-300 dark:border-white/10 dark:bg-slate-900">
           <div className="grid lg:grid-cols-2">
             {/* Left Content */}
             <div className="flex flex-col justify-center px-8 py-10 lg:px-11 lg:py-12">
               {/* Badge */}
               <div className="inline-flex w-fit items-center rounded-full border border-teal-500/20 bg-teal-500/10 px-4 py-2">
-                <span className="text-xs font-bold uppercase tracking-[0.15em] text-teal-500">
+                <span className="text-xs font-bold uppercase tracking-[0.15em] text-teal-600 dark:text-teal-400">
                   Featured Insight · Executive Guide · 8 min read
                 </span>
               </div>
 
               {/* Heading */}
-              <h2 className="mt-7 text-3xl font-semibold leading-tight text-white lg:text-[36px]">
+              <h2 className="mt-7 text-3xl font-semibold leading-tight text-slate-900 dark:text-white lg:text-[36px]">
                 Workforce Assurance:
                 <br />
                 Why Modern Teams Need More
@@ -27,7 +27,7 @@ export default function FeaturedInsight() {
               </h2>
 
               {/* Description */}
-              <p className="mt-6 max-w-md text-base leading-7 text-white/60">
+              <p className="mt-6 max-w-md text-base leading-7 text-slate-600 dark:text-white/60">
                 A leadership-level guide to building reliable workforce
                 records, responsible visibility, stronger timesheet integrity,
                 and audit-ready evidence across distributed and hybrid teams.
@@ -42,11 +42,11 @@ export default function FeaturedInsight() {
                   </div>
 
                   <div>
-                    <p className="text-sm font-semibold text-white">
+                    <p className="text-sm font-semibold text-slate-900 dark:text-white">
                       ZoikoTime Editorial Team
                     </p>
 
-                    <p className="text-xs text-white/40">
+                    <p className="text-xs text-slate-500 dark:text-white/40">
                       May 2026
                     </p>
                   </div>
@@ -54,8 +54,9 @@ export default function FeaturedInsight() {
 
                 {/* Button */}
                 <Link
-                href = "/blog#featured-resources"
-                 className="rounded-lg bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700">
+                  href="/blog#featured-resources"
+                  className="rounded-lg bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700"
+                >
                   Read Featured Insight →
                 </Link>
               </div>

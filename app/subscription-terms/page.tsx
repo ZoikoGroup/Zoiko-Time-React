@@ -10,7 +10,7 @@ import EnterpriseTerms from './components/EnterpriseTerms'
 import LegalNote from './components/LegalNote'
 import SubscriptionFAQ from './components/SubscriptionFAQ'
 import SubscriptionHelp from './components/SubscriptionHelp'
-import Footer from './components/Footer'
+
 
 export default function page() {
   return (
@@ -26,7 +26,7 @@ export default function page() {
         <LegalNote />
         <SubscriptionFAQ />
         <SubscriptionHelp />
-        <Footer />
+
     </main>
   )
 }

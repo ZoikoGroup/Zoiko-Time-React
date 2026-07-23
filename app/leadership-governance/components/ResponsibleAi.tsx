@@ -37,19 +37,19 @@ const FLOW = [
 
 export default function ResponsibleAI() {
   return (
-    <section className="bg-[#0B1220] dark:bg-gray-950 px-6 py-12 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
+    <section className="bg-white px-6 py-12 transition-colors duration-300 dark:bg-slate-900 md:px-12 lg:px-20 xl:px-32">
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
         <div className="text-center">
-          <span className="mb-4 inline-block text-xs font-bold tracking-[1.3px] text-[#00C6A9] dark:text-teal-400">
+          <span className="mb-4 inline-block text-xs font-bold uppercase tracking-[1.3px] text-[#00C6A9]">
             Responsible AI
           </span>
 
-          <h2 className="mb-5 text-3xl font-semibold text-white md:text-[32px]">
+          <h2 className="mb-5 text-3xl font-semibold text-slate-900 dark:text-white md:text-[32px]">
             AI-Assisted Intelligence. Human-Governed Outcomes.
           </h2>
 
-          <p className="mx-auto max-w-5xl leading-7 text-gray-300">
+          <p className="mx-auto max-w-5xl leading-7 text-slate-600 dark:text-white/60">
             ZoikoTime&apos;s AI-assisted capabilities are designed to help
             authorized users understand patterns, detect anomalies, summarize
             workforce data, prioritize review, and improve operational clarity.
@@ -59,7 +59,7 @@ export default function ResponsibleAI() {
         </div>
 
         {/* Notice */}
-        <div className="mx-auto mt-8 max-w-5xl rounded-xl border border-[#00C6A933] bg-[#00C6A914] dark:border-teal-500/30 dark:bg-teal-500/10 p-8 text-center text-sm font-semibold leading-7 text-[#00C6A9] dark:text-teal-300">
+        <div className="mx-auto mt-8 max-w-5xl rounded-xl border border-[#00C6A9]/30 bg-[#00C6A9]/10 p-8 text-center text-sm font-semibold leading-7 text-[#00C6A9] dark:border-[#00C6A9]/30 dark:bg-[#00C6A9]/10 dark:text-teal-300">
           ZoikoTime should not be positioned as automatically making final
           employment, disciplinary, payroll, legal, or worker-impacting
           decisions. Critical decisions should remain subject to appropriate
@@ -73,14 +73,14 @@ export default function ResponsibleAI() {
             {CAPABILITIES.map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl bg-white/5 dark:bg-gray-900/70 p-5 transition-colors duration-300"
+                className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:border-[#00C6A9]/40 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-[#00C6A9]/30 dark:hover:bg-white/10"
               >
-                <h3 className="flex items-center gap-3 text-base font-semibold text-white">
+                <h3 className="flex items-center gap-3 text-base font-semibold text-slate-900 dark:text-white">
                   <span className="text-xl">{item.icon}</span>
                   {item.title}
                 </h3>
 
-                <p className="mt-2 text-sm leading-7 text-gray-300">
+                <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-white/60">
                   {item.body}
                 </p>
               </div>
@@ -88,8 +88,8 @@ export default function ResponsibleAI() {
           </div>
 
           {/* Right Flow */}
-          <div className="rounded-xl bg-white/5 dark:bg-gray-900/70 p-6 transition-colors duration-300">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-gray-400">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 dark:border-white/10 dark:bg-white/5">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-gray-400">
               AI and Human Governance Flow
             </h3>
 
@@ -97,13 +97,13 @@ export default function ResponsibleAI() {
               {FLOW.map((step) => (
                 <div
                   key={step.label}
-                  className={`flex items-center justify-between rounded-lg px-4 py-3 ${
+                  className={`flex items-center justify-between rounded-lg px-4 py-3 transition-colors ${
                     step.done
-                      ? "bg-[#009D8C1A] dark:bg-teal-500/20"
-                      : "bg-white/5 dark:bg-gray-800"
+                      ? "bg-[#00C6A9]/10"
+                      : "bg-slate-100 dark:bg-white/5"
                   }`}
                 >
-                  <span className="flex items-center gap-3 text-sm text-white">
+                  <span className="flex items-center gap-3 text-sm text-slate-900 dark:text-white">
                     <span className="text-lg">{step.icon}</span>
                     {step.label}
                   </span>
@@ -111,8 +111,8 @@ export default function ResponsibleAI() {
                   <span
                     className={`rounded-full px-3 py-1 text-[11px] font-medium ${
                       step.tag === "AI"
-                        ? "bg-teal-800/60 text-teal-200"
-                        : "bg-white/10 text-gray-300"
+                        ? "bg-teal-100 text-teal-700 dark:bg-teal-800/60 dark:text-teal-200"
+                        : "bg-slate-200 text-slate-700 dark:bg-white/10 dark:text-gray-300"
                     }`}
                   >
                     {step.tag}
@@ -121,8 +121,8 @@ export default function ResponsibleAI() {
               ))}
             </div>
 
-            <div className="mt-5 rounded-lg bg-white/5 dark:bg-gray-800 px-4 py-4 text-center">
-              <p className="text-xs leading-6 text-gray-400">
+            <div className="mt-5 rounded-lg bg-slate-100 px-4 py-4 text-center dark:bg-white/5">
+              <p className="text-xs leading-6 text-slate-600 dark:text-gray-400">
                 AI informs. Humans decide. Audit trail records the full sequence
                 from detection through to decision.
               </p>
@@ -134,7 +134,7 @@ export default function ResponsibleAI() {
         <div className="mt-10 text-center">
           <a
             href="#"
-            className="text-sm font-semibold text-teal-400 transition hover:text-teal-300"
+            className="text-sm font-semibold text-[#00C6A9] transition-colors hover:text-teal-600 dark:hover:text-teal-300"
           >
             Learn more about Responsible AI →
           </a>
