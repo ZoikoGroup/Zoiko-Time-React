@@ -799,14 +799,12 @@ const visibleCards = [
           </ul>
 
           {/* Styled Primary Call To Action Trigger Button */}
-          <a href="/workforce">
-          <button
-            type="button"
-            className="mt-2 sm:mt-4 px-6 sm:px-8 py-2.5 sm:py-3 bg-sky-950 hover:bg-sky-900 dark:bg-sky-900 dark:hover:bg-sky-850 text-white text-sm sm:text-base font-semibold rounded-full shadow-[0px_0px_0px_1px_rgba(129,213,251,1.00),_inset_0px_0.5px_0.5px_0px_rgba(69,144,178,0.25),_inset_0px_-6px_12px_0px_rgba(255,255,255,0.10)] transition-all duration-200 active:scale-95"
-          >
-            Read More
-          </button>
-          </a>
+         <Link
+  href="/workforce"
+  className="mt-2 sm:mt-4 px-6 sm:px-8 py-2.5 sm:py-3 bg-sky-950 hover:bg-sky-900 dark:bg-sky-900 dark:hover:bg-sky-850 text-white text-sm sm:text-base font-semibold rounded-full shadow-[0px_0px_0px_1px_rgba(129,213,251,1.00),_inset_0px_0.5px_0.5px_0px_rgba(69,144,178,0.25),_inset_0px_-6px_12px_0px_rgba(255,255,255,0.10)] transition-all duration-200 active:scale-95"
+>
+  Read More
+</Link>
         </div>
 
         {/* ==========================================
@@ -918,11 +916,12 @@ const visibleCards = [
           </div>
 
           <div className="mt-8 sm:mt-14 flex justify-center">
-            <a href="/product">
-            <button className="rounded-full bg-sky-900 dark:bg-sky-700 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-sm transition hover:bg-sky-800 dark:hover:bg-sky-600">
-              View Assurance Architecture
-            </button>
-            </a>
+            <Link
+  href="/product"
+  className="rounded-full bg-sky-900 dark:bg-sky-700 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-semibold text-white shadow-sm transition hover:bg-sky-800 dark:hover:bg-sky-600"
+>
+  View Assurance Architecture
+</Link>
           </div>
         </div>
       </section>
@@ -1048,14 +1047,12 @@ const visibleCards = [
           </div>
 
           {/* Styled Primary CTA Read More Trigger */}
-          <a href="/enterprise">
-          <button
-            type="button"
-            className="px-6 sm:px-8 py-2.5 sm:py-3 bg-sky-950 hover:bg-sky-900 dark:bg-sky-900 dark:hover:bg-sky-850 text-white text-sm sm:text-base font-semibold rounded-full shadow-[0px_0px_0px_1px_rgba(129,213,251,1.00),_inset_0px_0.5px_0.5px_0px_rgba(69,144,178,0.25),_inset_0px_-6px_12px_0px_rgba(255,255,255,0.10)] transition-all duration-200 active:scale-95"
-          >
-            Read More
-          </button>
-          </a>
+          <Link
+  href="/enterprise"
+  className="px-6 sm:px-8 py-2.5 sm:py-3 bg-sky-950 hover:bg-sky-900 dark:bg-sky-900 dark:hover:bg-sky-850 text-white text-sm sm:text-base font-semibold rounded-full shadow-[0px_0px_0px_1px_rgba(129,213,251,1.00),_inset_0px_0.5px_0.5px_0px_rgba(69,144,178,0.25),_inset_0px_-6px_12px_0px_rgba(255,255,255,0.10)] transition-all duration-200 active:scale-95"
+>
+  Read More
+</Link>
         </div>
 
       </div>
@@ -1320,14 +1317,12 @@ const visibleCards = [
           <p className="text-sky-50 text-sm md:text-lg font-normal max-w-md leading-relaxed opacity-90">
             Track every minute and boost your productivity effortlessly.
           </p>
-          <a href="/contact">
-          <button 
-            type="button"
-            className="mt-2 sm:mt-4 bg-white hover:bg-neutral-50 dark:bg-white dark:hover:bg-neutral-100 text-neutral-800 font-semibold px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full text-sm sm:text-base transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
-          >
-            Contact Us
-          </button>
-          </a>
+          <Link
+  href="/contact"
+  className="mt-2 sm:mt-4 bg-white hover:bg-neutral-50 dark:bg-white dark:hover:bg-neutral-100 text-neutral-800 font-semibold px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full text-sm sm:text-base transition-all duration-200 shadow-md hover:shadow-lg active:scale-95"
+>
+  Contact Us
+</Link>
         </div>
 
       </div>
