@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
@@ -603,18 +604,20 @@ const visibleCards = [
             improve productivity without compromising trust.
           </p>
           <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-            <a href="/request-a-demo">
-            <button className="rounded-full bg-white px-5 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-base font-semibold text-cyan-900 shadow-lg transition hover:bg-sky-50">
-              Request a Demo
-            </button>
-            </a>
-            <button
-              onClick={() => setShowDownload(true)}
-              className="rounded-full border border-white px-5 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-base font-semibold text-white transition hover:bg-white/10"
-            >
-              Download Free
-            </button>
-          </div>
+  <Link
+    href="/request-a-demo"
+    className="rounded-full bg-white px-5 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-base font-semibold text-cyan-900 shadow-lg transition hover:bg-sky-50"
+  >
+    Request a Demo
+  </Link>
+
+  <button
+    onClick={() => setShowDownload(true)}
+    className="rounded-full border border-white px-5 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-base font-semibold text-white transition hover:bg-white/10"
+  >
+    Download Free
+  </button>
+</div>
         </div>
 
         <div className="relative mx-auto mt-14 hidden aspect-[1440/430] w-full max-w-6xl sm:mt-16 lg:block">
