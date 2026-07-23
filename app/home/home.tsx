@@ -25,12 +25,12 @@ const platforms = [
     {
       name: 'Windows',
       icon: "/home/microsoft.png",
-      url: "https://storage.googleapis.com/zoikotime-releases/windows%20build/ZoikoTime-Setup-1.0.13.exe",
+      url: "https://storage.googleapis.com/zoikotime-releases/windows%20build/ZoikoTime-Setup.exe",
     },
     {
       name: 'Mac',
       icon: "/home/Vector (1).png",
-      url: "https://storage.googleapis.com/zoikotime-releases/Mac%20Build/ZoikoTime-1.0.13-arm64.dmg",
+      url: "https://storage.googleapis.com/zoikotime-releases/Mac%20Build/ZoikoTime.dmg",
     },
     {
       name: 'Linux',

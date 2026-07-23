@@ -12,12 +12,12 @@ const downloads = [
   {
     name: "Windows",
     icon: "/download-popup/windows.png",
-    url: "https://storage.googleapis.com/zoikotime-releases/windows%20build/ZoikoTime-Setup-1.0.13.exe",
+    url: "https://storage.googleapis.com/zoikotime-releases/windows%20build/ZoikoTime-Setup.exe",
   },
   {
     name: "Mac",
     icon: "/download-popup/mac.png",
-    url: "https://storage.googleapis.com/zoikotime-releases/Mac%20Build/ZoikoTime-1.0.13-arm64.dmg",
+    url: "https://storage.googleapis.com/zoikotime-releases/Mac%20Build/ZoikoTime.dmg",
   },
   {
     name: "Linux",
