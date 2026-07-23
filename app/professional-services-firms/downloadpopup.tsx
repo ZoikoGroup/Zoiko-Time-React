@@ -12,14 +12,17 @@ const downloads = [
   {
     name: "Windows",
     icon: "/download-popup/windows.png",
+    url: "https://storage.googleapis.com/zoikotime-releases/windows%20build/ZoikoTime-Setup-1.0.13.exe",
   },
   {
     name: "Mac",
     icon: "/download-popup/mac.png",
+    url: "https://storage.googleapis.com/zoikotime-releases/Mac%20Build/ZoikoTime-1.0.13-arm64.dmg",
   },
   {
     name: "Linux",
     icon: "/download-popup/Linux.png",
+    url: null,
   },
 ];
 
@@ -53,9 +56,13 @@ export default function DownloadPopup({
             <button
               key={item.name}
               type="button"
-              onClick={() =>
-                alert(`${item.name} download will be available soon.`)
-              }
+              onClick={() => {
+                if (item.url) {
+                  window.location.href = item.url;
+                } else {
+                  alert(item.name + " build is coming soon.");
+                }
+              }}
               className="group flex flex-col items-center rounded-2xl p-5 transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800"
             >
               {/* Same Size Icon Container */}

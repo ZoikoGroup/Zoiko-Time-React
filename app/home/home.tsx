@@ -24,17 +24,18 @@ import {
 const platforms = [
     {
       name: 'Windows',
-      icon: "/home/microsoft.png"
-      ,
+      icon: "/home/microsoft.png",
+      url: "https://storage.googleapis.com/zoikotime-releases/windows%20build/ZoikoTime-Setup-1.0.13.exe",
     },
     {
       name: 'Mac',
-      icon: "/home/Vector (1).png"
-      ,
+      icon: "/home/Vector (1).png",
+      url: "https://storage.googleapis.com/zoikotime-releases/Mac%20Build/ZoikoTime-1.0.13-arm64.dmg",
     },
     {
       name: 'Linux',
       icon: "/home/Linux 1.png",
+      url: null,
     },
   ];
 
@@ -1351,9 +1352,15 @@ const visibleCards = [
             <div className="flex gap-4 sm:gap-6 justify-center items-center">
       {/* 2. Map through the platforms array */}
       {platforms.map((os) => (
-        <a 
-          key={os.name} 
-          href="#" 
+        <a
+          key={os.name}
+          href={os.url || "#"}
+          onClick={(e) => {
+            if (!os.url) {
+              e.preventDefault();
+              alert(os.name + " build is coming soon.");
+            }
+          }}
           className="flex flex-col items-center gap-3 sm:gap-4 group cursor-pointer"
         >
           <img className="mt-4 sm:mt-5 flex h-10 w-10 sm:h-14 sm:w-14 items-center justify-center rounded-xl group-hover:scale-105 transition-transform"
