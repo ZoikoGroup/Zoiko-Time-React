@@ -35,18 +35,18 @@ const cards = [
 
 export default function Security() {
   return (
-    <section className="bg-slate-900 px-6 py-14 md:px-12 lg:px-20 xl:px-32">
+    <section className="bg-white px-6 py-14 transition-colors duration-300 dark:bg-slate-900 md:px-12 lg:px-20 xl:px-32">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
-          <span className="mb-3 inline-block text-xs font-semibold tracking-[1.3px] uppercase text-[#00C6A9]">
+          <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[1.3px] text-[#00C6A9]">
             Security and Procurement
           </span>
 
-          <h2 className="mb-5 text-3xl font-bold text-white md:text-4xl">
+          <h2 className="mb-5 text-3xl font-bold text-slate-900 dark:text-white md:text-4xl">
             Designed to Support Enterprise Buyer Review
           </h2>
 
-          <p className="mx-auto max-w-4xl text-sm leading-7 text-[#FFFFFF8C] md:text-base">
+          <p className="mx-auto max-w-4xl text-sm leading-7 text-slate-600 dark:text-white/60 md:text-base">
             Enterprise buyers often need structured information before adopting a
             workforce intelligence platform. ZoikoTime is designed to support
             review processes involving security, procurement, HR, legal,
@@ -58,7 +58,7 @@ export default function Security() {
           {cards.map(({ src, title, desc }) => (
             <div
               key={title}
-              className="rounded-[14px] border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-[#00C6A9]/30 hover:bg-white/10"
+              className="rounded-[14px] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-[#00C6A9]/40 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:border-[#00C6A9]/30 dark:hover:bg-white/10"
             >
               <Image
                 src={src}
@@ -68,11 +68,11 @@ export default function Security() {
                 className="mb-4"
               />
 
-              <h3 className="mb-2 text-[15px] font-semibold text-white">
+              <h3 className="mb-2 text-[15px] font-semibold text-slate-900 dark:text-white">
                 {title}
               </h3>
 
-              <p className="text-sm leading-6 text-[#FFFFFF8C]">
+              <p className="text-sm leading-6 text-slate-600 dark:text-white/60">
                 {desc}
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function Security() {
         <div className="mt-10 text-center">
           <a
             href="#"
-            className="text-sm font-semibold text-[#00C6A9] transition-colors hover:text-teal-300"
+            className="text-sm font-semibold text-[#00C6A9] transition-colors hover:text-teal-600 dark:hover:text-teal-300"
           >
             Review Security Addendum →
           </a>
