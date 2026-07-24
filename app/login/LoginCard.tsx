@@ -32,7 +32,7 @@ export default function LoginCard() {
       {/* Logo */}
       <div className="mb-7 flex justify-center sm:mb-8">
         <Image
-          src="/login/group.png"
+          src="/login/Group.png"
           alt="Zoiko Time"
           width={120}
           height={45}
