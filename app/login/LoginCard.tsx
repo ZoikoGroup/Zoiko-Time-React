@@ -2,264 +2,338 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Eye, EyeOff, Check } from "lucide-react";
 
 export default function LoginCard() {
   const [showPassword, setShowPassword] = useState(false);
+  const [remember, setRemember] = useState(true);
 
   return (
     <div
       className="
         w-full
-        max-w-[384px]
-        rounded-3xl
+        max-w-[450px]
+        rounded-[28px]
         bg-white
-        px-6
-        py-7
-        shadow-[0px_2px_8px_rgba(10,79,74,0.06),0px_12px_40px_rgba(10,79,74,0.10)]
-        outline
-        outline-1
-        outline-gray-100
-        transition-colors
-
-        sm:px-8
-        sm:py-8
-
-        dark:bg-slate-900
-        dark:outline-slate-800
-        dark:shadow-[0px_12px_40px_rgba(0,0,0,0.35)]
+        px-10
+        pt-8
+        pb-8
+        shadow-[0_20px_60px_rgba(17,54,48,0.10)]
+        border
+        border-[#EEF4F2]
       "
     >
+      
       {/* Logo */}
-      <div className="mb-7 flex justify-center sm:mb-8">
-        <Image
-          src="/login/Group.png"
-          alt="Zoiko Time"
-          width={120}
-          height={45}
-          className="h-auto w-auto"
-        />
-      </div>
+{/* Logo */}
+<div className="flex justify-center">
+  <Image
+    src="/login/Group.png"
+    alt="Zoiko Time"
+    width={170}
+    height={58}
+    className="h-auto w-auto"
+    priority
+  />
+</div>
 
-      {/* Heading */}
-      <div className="mb-7">
-        <h1 className="text-2xl font-semibold text-emerald-950 dark:text-white">
-          Welcome back
-        </h1>
+     
+     
+{/* Heading */}
+<div className="mt-4 text-center">
+  <h1 className="text-[32px] font-bold leading-[40px] text-[#17342E] whitespace-nowrap">
+    Welcome back
+  </h1>
 
-        <p className="mt-1 text-xs leading-5 text-gray-500 dark:text-slate-400">
-          Sign in to access your workspace securely.
-        </p>
-      </div>
+  <p className="mt-2 text-[15px] leading-6 text-[#70827E]">
+    Sign in to access your workspace securely.
+  </p>
+</div>
 
-      {/* Email */}
-      <div className="mb-4">
-        <label className="mb-2 block text-xs font-semibold tracking-tight text-emerald-950 dark:text-slate-200">
-          Work email
-        </label>
-
-        <input
-          type="email"
-          placeholder="you@acmecorp.com"
-          className="
-            h-11
-            w-full
-            rounded-lg
-            border
-            border-gray-200
-            bg-white
-            px-3
-            text-xs
-            text-gray-800
-            outline-none
-            placeholder:text-neutral-500
-            focus:border-teal-500
-
-            dark:border-slate-700
-            dark:bg-slate-800
-            dark:text-white
-            dark:placeholder:text-slate-500
-          "
-        />
-      </div>
-
-      {/* Password */}
-      <div className="mb-4">
-        <label className="mb-2 block text-xs font-semibold tracking-tight text-emerald-950 dark:text-slate-200">
-          Password
-        </label>
-
-        <div className="relative">
-          <input
-            type={showPassword ? "text" : "password"}
-            placeholder="••••••••••••"
+      {/* Tabs */}
+      <div className="mt-8 border-b border-[#E5ECEA]">
+        <div className="flex items-center justify-between">
+          <button
+            type="button"
             className="
-              h-11
-              w-full
-              rounded-lg
-              border
-              border-gray-200
-              bg-white
-              px-3
-              pr-10
-              text-xs
-              text-gray-800
-              outline-none
-              placeholder:text-gray-700
-              focus:border-teal-500
-
-              dark:border-slate-700
-              dark:bg-slate-800
-              dark:text-white
-              dark:placeholder:text-slate-400
+              h-12
+              px-8
+              border-b-2
+              border-[#233B38]
+              text-[16px]
+              font-semibold
+              text-[#233B38]
             "
-          />
+          >
+            Login
+          </button>
 
           <button
             type="button"
-            onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-400 dark:text-slate-400"
-            aria-label={showPassword ? "Hide password" : "Show password"}
+            className="
+              h-12
+              px-4
+              text-[16px]
+              font-medium
+              text-[#A7B2AF]
+            "
           >
-            {showPassword ? "◉" : "◌"}
+            Register
+          </button>
+
+          <button
+            type="button"
+            className="
+              h-12
+              px-2
+              text-[16px]
+              font-medium
+              text-[#A7B2AF]
+            "
+          >
+            Reset Password
           </button>
         </div>
       </div>
 
-      {/* Remember + Forgot */}
-      <div className="mb-6 flex items-center justify-between gap-3">
-        <label className="flex items-center gap-2 text-xs text-gray-700 dark:text-slate-300">
+            {/* Form */}
+      <form className="mt-8">
+        {/* Work Email */}
+        <div>
+          <label className="mb-3 block text-[17px] font-semibold text-[#18352F]">
+            Work email
+          </label>
+
           <input
-            type="checkbox"
-            className="h-3.5 w-3.5 accent-teal-600"
+            type="email"
+            placeholder="you@acmecorp.com"
+            className="
+              h-[56px]
+              w-full
+              rounded-[14px]
+              border
+              border-[#DCE7E4]
+              bg-white
+              px-5
+              text-[17px]
+              text-[#18352F]
+              placeholder:text-[#8C9996]
+              outline-none
+              transition-all
+              focus:border-[#0F9D8A]
+              focus:ring-2
+              focus:ring-[#0F9D8A]/10
+            "
           />
+        </div>
 
-          <span className="whitespace-nowrap">
-            Remember this device
-          </span>
-        </label>
+        {/* Password */}
+        <div className="mt-6">
+          <label className="mb-3 block text-[17px] font-semibold text-[#18352F]">
+            Password
+          </label>
 
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="••••••••••"
+              className="
+                h-[56px]
+                w-full
+                rounded-[14px]
+                border
+                border-[#DCE7E4]
+                bg-white
+                px-5
+                pr-14
+                text-[17px]
+                text-[#18352F]
+                placeholder:text-[#8C9996]
+                outline-none
+                transition-all
+                focus:border-[#0F9D8A]
+                focus:ring-2
+                focus:ring-[#0F9D8A]/10
+              "
+            />
+
+            <button
+  type="button"
+  onClick={() => setShowPassword(!showPassword)}
+  className="
+    absolute
+    right-5
+    top-1/2
+    -translate-y-1/2
+    text-[#7D8A87]
+    transition-colors
+    hover:text-[#18352F]
+  "
+>
+  {showPassword ? (
+    <Eye size={20} />
+  ) : (
+    <EyeOff size={20} />
+  )}
+</button>
+          </div>
+        </div>
+      </form>
+              {/* Remember + Forgot */}
+        <div className="mt-6 flex items-center justify-between">
+          <button
+            type="button"
+            onClick={() => setRemember(!remember)}
+            className="flex items-center gap-3"
+          >
+            <span
+              className={`flex h-[18px] w-[18px] items-center justify-center rounded-[4px] border transition-all ${
+                remember
+                  ? "border-[#0F5B53] bg-[#0F5B53]"
+                  : "border-[#C9D5D2] bg-white"
+              }`}
+            >
+              {remember && <Check size={12} className="text-white" />}
+            </span>
+
+            <span className="text-[15px] font-medium text-[#556562]">
+              Remember this device
+            </span>
+          </button>
+
+          <button
+            type="button"
+            className="text-[15px] font-semibold text-[#0F5B53] transition-colors hover:text-[#0A4741]"
+          >
+            Forgot password?
+          </button>
+        </div>
+
+        {/* Sign In */}
         <button
-          type="button"
-          className="whitespace-nowrap text-xs font-medium text-teal-900 dark:text-teal-400"
+          type="submit"
+          className="
+            mt-8
+            flex
+            h-[60px]
+            w-full
+            items-center
+            justify-center
+            rounded-[16px]
+            bg-[#0F9D8A]
+            text-[20px]
+            font-semibold
+            text-white
+            shadow-[0_12px_28px_rgba(15,157,138,0.28)]
+            transition-all
+            hover:bg-[#0B8A79]
+            active:scale-[0.99]
+          "
         >
-          Forgot password?
+          Sign In
         </button>
-      </div>
+            {/* Divider */}
+      <div className="mt-10 flex items-center gap-4">
+        <div className="h-px flex-1 bg-[#E4ECE9]" />
 
-      {/* Sign In */}
-      <button
-        type="button"
-        className="
-          h-11
-          w-full
-          rounded-lg
-          bg-teal-600
-          text-sm
-          font-semibold
-          text-white
-          transition
-          hover:bg-teal-700
-          dark:bg-teal-600
-          dark:hover:bg-teal-500
-        "
-      >
-        Sign In
-      </button>
-
-      {/* Divider */}
-      <div className="my-6 flex items-center gap-3">
-        <div className="h-px flex-1 bg-gray-200 dark:bg-slate-700" />
-
-        <span className="whitespace-nowrap text-xs font-medium text-gray-400 dark:text-slate-500">
+        <span className="whitespace-nowrap text-[15px] font-medium text-[#94A3A0]">
           or continue with
         </span>
 
-        <div className="h-px flex-1 bg-gray-200 dark:bg-slate-700" />
+        <div className="h-px flex-1 bg-[#E4ECE9]" />
       </div>
 
       {/* Google */}
       <button
         type="button"
         className="
-          mb-3
+          mt-8
           flex
-          h-11
+          h-[56px]
           w-full
           items-center
           justify-center
-          gap-3
-          rounded-lg
+          gap-4
+          rounded-[16px]
           border
-          border-gray-200
+          border-[#DCE7E4]
           bg-white
-          text-xs
+          text-[17px]
           font-medium
-          text-gray-700
-          transition
-          hover:bg-gray-50
-
-          dark:border-slate-700
-          dark:bg-slate-800
-          dark:text-slate-200
-          dark:hover:bg-slate-700
+          text-[#304541]
+          transition-all
+          hover:border-[#C9D5D2]
+          hover:bg-[#FAFCFB]
         "
       >
         <Image
           src="/login/google.png"
           alt="Google"
-          width={18}
-          height={18}
+          width={22}
+          height={22}
+          className="h-[22px] w-[22px]"
         />
 
         Continue with Google
       </button>
 
-      {/* Microsoft */}
-      <button
-        type="button"
-        className="
-          flex
-          h-11
-          w-full
-          items-center
-          justify-center
-          gap-3
-          rounded-lg
-          border
-          border-gray-200
-          bg-white
-          text-xs
-          font-medium
-          text-gray-700
-          transition
-          hover:bg-gray-50
+      
+  {/* Microsoft */}
+<button
+  type="button"
+  className="
+    mt-4
+    flex
+    h-[56px]
+    w-full
+    items-center
+    justify-center
+    gap-4
+    rounded-[16px]
+    border
+    border-[#DCE7E4]
+    bg-white
+    text-[17px]
+    font-medium
+    text-[#304541]
+    transition-all
+    hover:border-[#C9D5D2]
+    hover:bg-[#FAFCFB]
+  "
+>
+  <span className="flex h-[22px] w-[22px] items-center justify-center">
+  <span className="grid grid-cols-2 gap-[1px]">
+    <span className="h-[8px] w-[8px] rounded-[1px] bg-[#F25022]" />
+    <span className="h-[8px] w-[8px] rounded-[1px] bg-[#7FBA00]" />
+    <span className="h-[8px] w-[8px] rounded-[1px] bg-[#00A4EF]" />
+    <span className="h-[8px] w-[8px] rounded-[1px] bg-[#FFB900]" />
+  </span>
+</span>
 
-          dark:border-slate-700
-          dark:bg-slate-800
-          dark:text-slate-200
-          dark:hover:bg-slate-700
-        "
-      >
-        <span className="grid grid-cols-2 gap-[2px]">
-          <span className="h-[7px] w-[7px] bg-red-500" />
-          <span className="h-[7px] w-[7px] bg-green-500" />
-          <span className="h-[7px] w-[7px] bg-blue-500" />
-          <span className="h-[7px] w-[7px] bg-yellow-500" />
-        </span>
+Continue with Microsoft
+</button>
 
-        Continue with Microsoft
-      </button>
 
-      {/* Bottom Text */}
-      <p className="mt-6 text-center text-xs leading-4 text-gray-400 dark:text-slate-500">
-        Need access to your organization?{" "}
+      {/* Bottom */}
+      <div className="mt-10 text-center">
+        <p className="text-[15px] leading-6 text-[#8B9996]">
+          Need access to your organization?
+        </p>
+
         <button
           type="button"
-          className="font-semibold text-teal-600 underline dark:text-teal-400"
+          className="
+            mt-3
+            text-[16px]
+            font-semibold
+            text-[#0F9D8A]
+            transition-colors
+            hover:text-[#0B8A79]
+          "
         >
           Contact your administrator.
         </button>
-      </p>
+      </div>
     </div>
   );
 }
