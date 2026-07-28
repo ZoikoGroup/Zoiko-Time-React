@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ProductMegaMenu from "./ProductMegaMenu";
+import { ChevronDown } from "lucide-react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -33,17 +35,38 @@ export default function Header() {
         </div>
 
         {/* Center Section: Navigation Links (Desktop) */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-neutral-800 text-base font-medium leading-6 tracking-tight hover:text-sky-900 transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+       
+<nav className="hidden md:flex items-center gap-8">
+ {navLinks.map((link) =>
+  link.label === "Product" ? (
+    <div
+      key={link.label}
+      className="relative h-full flex items-center group"
+    >
+      {/* Invisible hover area extending down to the menu */}
+      <div className="absolute left-1/2 top-full h-6 w-[300px] -translate-x-1/2" />
+
+      <Link
+        href="/product"
+        className="flex items-center gap-1 text-neutral-800 text-base font-medium leading-6 tracking-tight hover:text-sky-900 transition-colors"
+      >
+        Product
+        <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+      </Link>
+
+      <ProductMegaMenu />
+    </div>
+  ) : (
+    <Link
+      key={link.label}
+      href={link.href}
+      className="text-neutral-800 text-base font-medium leading-6 tracking-tight hover:text-sky-900 transition-colors"
+    >
+      {link.label}
+    </Link>
+  )
+)}
+</nav>
 
         {/* Right Section: Action Buttons (Desktop) */}
         <div className="hidden md:flex items-center gap-4">
