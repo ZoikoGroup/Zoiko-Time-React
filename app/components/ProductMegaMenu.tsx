@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 
+type ProductMegaMenuProps = {
+  isOpen: boolean;
+};
+
 type MenuItemProps = {
   title: string;
   description: string;
@@ -32,6 +36,7 @@ function MenuItem({
       "
     >
       {/* Icon */}
+
       <div
         className="
           mt-0.5
@@ -48,15 +53,12 @@ function MenuItem({
           alt=""
           width={20}
           height={20}
-          className="
-            h-5
-            w-5
-            object-contain
-          "
+          className="h-5 w-5 object-contain"
         />
       </div>
 
       {/* Text */}
+
       <div className="min-w-0 pt-0.5">
         <div
           className="
@@ -101,11 +103,7 @@ function SectionTitle({
         alt=""
         width={16}
         height={16}
-        className="
-          h-4
-          w-4
-          object-contain
-        "
+        className="h-4 w-4 object-contain"
       />
 
       <div
@@ -125,12 +123,12 @@ function SectionTitle({
   );
 }
 
-export default function ProductMegaMenu() {
+export default function ProductMegaMenu({
+  isOpen,
+}: ProductMegaMenuProps) {
   return (
     <div
-      className="
-        pointer-events-none
-        invisible
+      className={`
         fixed
         left-1/2
         top-[95px]
@@ -138,28 +136,37 @@ export default function ProductMegaMenu() {
         w-[calc(100vw-48px)]
         max-w-[1232px]
         -translate-x-1/2
-        translate-y-2
-        opacity-0
         transition-all
         duration-200
         ease-out
-
-        after:absolute
-        after:-top-4
-        after:left-0
-        after:h-4
-        after:w-full
-
-        group-hover:pointer-events-auto
-        group-hover:visible
-        group-hover:translate-y-0
-        group-hover:opacity-100
-
         max-md:hidden
-      "
+
+        ${
+          isOpen
+            ? "visible translate-y-0 opacity-100 pointer-events-auto"
+            : "invisible translate-y-2 opacity-0 pointer-events-none"
+        }
+      `}
     >
+      {/* Invisible bridge */}
+
       <div
         className="
+          absolute
+          -top-4
+          left-0
+          h-4
+          w-full
+        "
+      />
+
+      {/* =====================================================
+          MAIN DROPDOWN
+      ====================================================== */}
+
+      <div
+        className="
+          relative
           overflow-hidden
           rounded-xl
           border
@@ -171,15 +178,15 @@ export default function ProductMegaMenu() {
           dark:shadow-2xl
         "
       >
-        {/* =====================================================
+        {/* =================================================
             MAIN CONTENT
-        ====================================================== */}
+        ================================================== */}
 
         <div className="grid grid-cols-4">
 
-          {/* ===================================================
+          {/* =================================================
               PLATFORM
-          ==================================================== */}
+          ================================================== */}
 
           <div
             className="
@@ -229,9 +236,9 @@ export default function ProductMegaMenu() {
             </div>
           </div>
 
-          {/* ===================================================
+          {/* =================================================
               TIME & ATTENDANCE
-          ==================================================== */}
+          ================================================== */}
 
           <div
             className="
@@ -281,9 +288,9 @@ export default function ProductMegaMenu() {
             </div>
           </div>
 
-          {/* ===================================================
+          {/* =================================================
               TRUTH & EVIDENCE
-          ==================================================== */}
+          ================================================== */}
 
           <div
             className="
@@ -333,9 +340,9 @@ export default function ProductMegaMenu() {
             </div>
           </div>
 
-          {/* ===================================================
+          {/* =================================================
               FEATURED PANEL
-          ==================================================== */}
+          ================================================== */}
 
           <div
             className="
@@ -348,8 +355,6 @@ export default function ProductMegaMenu() {
               dark:bg-slate-900
             "
           >
-            {/* Text */}
-
             <div>
               <h3
                 className="
@@ -383,9 +388,8 @@ export default function ProductMegaMenu() {
               </p>
             </div>
 
-            {/* Image + Button */}
-
             <div className="mt-8">
+
               {/* Product Image */}
 
               <div
@@ -439,13 +443,14 @@ export default function ProductMegaMenu() {
               >
                 Explore ZoikoTime
               </button>
+
             </div>
           </div>
         </div>
 
-        {/* =====================================================
+        {/* =================================================
             BOTTOM STRIP
-        ====================================================== */}
+        ================================================== */}
 
         <div
           className="
