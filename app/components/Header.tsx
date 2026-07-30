@@ -7,47 +7,42 @@ import { ChevronDown } from "lucide-react";
 
 import ProductMegaMenu from "./ProductMegaMenu";
 import SolutionsMegaMenu from "./SolutionsMegaMenu";
-import TruthGovernanceMegaMenu from "./TruthGovernanceMegaMenu";
+import TrustGovernanceMegaMenu from "./TrustGovernanceMegaMenu";
 import ResourcesMegaMenu from "./ResourcesMegaMenu";
+import EnterpriseMegaMenu from "./EnterpriseMegaMenu";
 
 export default function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] =
-    useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const [isProductMenuOpen, setIsProductMenuOpen] =
-    useState(false);
+  const [isProductMenuOpen, setIsProductMenuOpen] = useState(false);
 
-  const [isSolutionsMenuOpen, setIsSolutionsMenuOpen] =
-    useState(false);
+  const [isSolutionsMenuOpen, setIsSolutionsMenuOpen] = useState(false);
 
   const [
-    isTruthGovernanceMenuOpen,
-    setIsTruthGovernanceMenuOpen,
+    isTrustGovernanceMenuOpen,
+    setIsTrustGovernanceMenuOpen,
   ] = useState(false);
 
-  const [isResourcesMenuOpen, setIsResourcesMenuOpen] =
-    useState(false);
+  const [isResourcesMenuOpen, setIsResourcesMenuOpen] = useState(false);
 
-  const productMenuRef =
-    useRef<HTMLDivElement>(null);
+  const [isEnterpriseMenuOpen, setIsEnterpriseMenuOpen] = useState(false);
 
-  const solutionsMenuRef =
-    useRef<HTMLDivElement>(null);
+  const productMenuRef = useRef<HTMLDivElement>(null);
 
-  const truthGovernanceMenuRef =
-    useRef<HTMLDivElement>(null);
+  const solutionsMenuRef = useRef<HTMLDivElement>(null);
 
-  const resourcesMenuRef =
-    useRef<HTMLDivElement>(null);
+  const trustGovernanceMenuRef = useRef<HTMLDivElement>(null);
+
+  const resourcesMenuRef = useRef<HTMLDivElement>(null);
+
+  const enterpriseMenuRef = useRef<HTMLDivElement>(null);
 
   /* =========================================================
      CLOSE DROPDOWNS WHEN CLICKING OUTSIDE
   ========================================================= */
 
   useEffect(() => {
-    const handleClickOutside = (
-      event: MouseEvent
-    ) => {
+    const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
 
       if (
@@ -65,12 +60,10 @@ export default function Header() {
       }
 
       if (
-        truthGovernanceMenuRef.current &&
-        !truthGovernanceMenuRef.current.contains(
-          target
-        )
+        trustGovernanceMenuRef.current &&
+        !trustGovernanceMenuRef.current.contains(target)
       ) {
-        setIsTruthGovernanceMenuOpen(false);
+        setIsTrustGovernanceMenuOpen(false);
       }
 
       if (
@@ -79,51 +72,21 @@ export default function Header() {
       ) {
         setIsResourcesMenuOpen(false);
       }
+
+      if (
+        enterpriseMenuRef.current &&
+        !enterpriseMenuRef.current.contains(target)
+      ) {
+        setIsEnterpriseMenuOpen(false);
+      }
     };
 
-    document.addEventListener(
-      "mousedown",
-      handleClickOutside
-    );
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  /* =========================================================
-     NAVIGATION LINKS
-  ========================================================= */
-
-  const navLinks = [
-    {
-      label: "Product",
-      href: "/product",
-    },
-    {
-      label: "Solutions",
-      href: "/solutions",
-    },
-    {
-      label: "Truth & Governance",
-      href: "/trust-governance",
-    },
-    {
-      label: "Enterprise",
-      href: "/enterprise",
-    },
-    {
-      label: "Pricings",
-      href: "/pricing",
-    },
-    {
-      label: "Resources",
-      href: "/resources",
-    },
-  ];
 
   /* =========================================================
      CLOSE ALL MEGA MENUS
@@ -132,8 +95,9 @@ export default function Header() {
   const closeAllMegaMenus = () => {
     setIsProductMenuOpen(false);
     setIsSolutionsMenuOpen(false);
-    setIsTruthGovernanceMenuOpen(false);
+    setIsTrustGovernanceMenuOpen(false);
     setIsResourcesMenuOpen(false);
+    setIsEnterpriseMenuOpen(false);
   };
 
   return (
@@ -185,7 +149,8 @@ export default function Header() {
         ====================================================== */}
 
         <nav className="hidden items-center gap-8 md:flex">
-                    {/* ===================================================
+
+          {/* ===================================================
               PRODUCT
           ==================================================== */}
 
@@ -214,13 +179,12 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => {
-                  setIsProductMenuOpen(
-                    (previous) => !previous
-                  );
+                  setIsProductMenuOpen((previous) => !previous);
 
                   setIsSolutionsMenuOpen(false);
-                  setIsTruthGovernanceMenuOpen(false);
+                  setIsTrustGovernanceMenuOpen(false);
                   setIsResourcesMenuOpen(false);
+                  setIsEnterpriseMenuOpen(false);
                 }}
                 className="
                   flex
@@ -242,22 +206,16 @@ export default function Header() {
                     w-4
                     transition-transform
                     duration-200
-                    ${
-                      isProductMenuOpen
-                        ? "rotate-180"
-                        : ""
-                    }
+                    ${isProductMenuOpen ? "rotate-180" : ""}
                   `}
                 />
               </button>
             </div>
 
-            <ProductMegaMenu
-              isOpen={isProductMenuOpen}
-            />
+            <ProductMegaMenu isOpen={isProductMenuOpen} />
           </div>
 
-                    {/* ===================================================
+          {/* ===================================================
               SOLUTIONS
           ==================================================== */}
 
@@ -286,13 +244,12 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => {
-                  setIsSolutionsMenuOpen(
-                    (previous) => !previous
-                  );
+                  setIsSolutionsMenuOpen((previous) => !previous);
 
                   setIsProductMenuOpen(false);
-                  setIsTruthGovernanceMenuOpen(false);
+                  setIsTrustGovernanceMenuOpen(false);
                   setIsResourcesMenuOpen(false);
+                  setIsEnterpriseMenuOpen(false);
                 }}
                 className="
                   flex
@@ -314,26 +271,21 @@ export default function Header() {
                     w-4
                     transition-transform
                     duration-200
-                    ${
-                      isSolutionsMenuOpen
-                        ? "rotate-180"
-                        : ""
-                    }
+                    ${isSolutionsMenuOpen ? "rotate-180" : ""}
                   `}
                 />
               </button>
             </div>
 
-            <SolutionsMegaMenu
-              isOpen={isSolutionsMenuOpen}
-            />
+            <SolutionsMegaMenu isOpen={isSolutionsMenuOpen} />
           </div>
-                    {/* ===================================================
-              TRUTH & GOVERNANCE
+
+          {/* ===================================================
+              TRUST & GOVERNANCE
           ==================================================== */}
 
           <div
-            ref={truthGovernanceMenuRef}
+            ref={trustGovernanceMenuRef}
             className="relative flex h-full items-center"
           >
             <div className="flex items-center gap-1">
@@ -352,18 +304,93 @@ export default function Header() {
                   dark:hover:text-sky-400
                 "
               >
-                Truth &amp; Governance
+                Trust &amp; Governance
               </Link>
 
               <button
                 type="button"
                 onClick={() => {
-                  setIsTruthGovernanceMenuOpen(
+                  setIsTrustGovernanceMenuOpen(
                     (previous) => !previous
                   );
 
                   setIsProductMenuOpen(false);
                   setIsSolutionsMenuOpen(false);
+                  setIsResourcesMenuOpen(false);
+                  setIsEnterpriseMenuOpen(false);
+                }}
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  text-neutral-800
+                  transition-colors
+                  hover:text-sky-900
+                  focus:outline-none
+                  dark:text-slate-100
+                  dark:hover:text-sky-400
+                "
+                aria-label="Toggle Trust and Governance menu"
+                aria-expanded={isTrustGovernanceMenuOpen}
+              >
+                <ChevronDown
+                  className={`
+                    h-4
+                    w-4
+                    transition-transform
+                    duration-200
+                    ${
+                      isTrustGovernanceMenuOpen
+                        ? "rotate-180"
+                        : ""
+                    }
+                  `}
+                />
+              </button>
+            </div>
+
+            <TrustGovernanceMegaMenu
+              isOpen={isTrustGovernanceMenuOpen}
+            />
+          </div>
+
+          {/* ===================================================
+              ENTERPRISE
+          ==================================================== */}
+
+          <div
+            ref={enterpriseMenuRef}
+            className="relative flex h-full items-center"
+          >
+            <div className="flex items-center gap-1">
+              <Link
+                href="/enterprise"
+                className="
+                  whitespace-nowrap
+                  text-base
+                  font-medium
+                  leading-6
+                  tracking-tight
+                  text-neutral-800
+                  transition-colors
+                  hover:text-sky-900
+                  dark:text-slate-100
+                  dark:hover:text-sky-400
+                "
+              >
+                Enterprise
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setIsEnterpriseMenuOpen(
+                    (previous) => !previous
+                  );
+
+                  setIsProductMenuOpen(false);
+                  setIsSolutionsMenuOpen(false);
+                  setIsTrustGovernanceMenuOpen(false);
                   setIsResourcesMenuOpen(false);
                 }}
                 className="
@@ -377,10 +404,8 @@ export default function Header() {
                   dark:text-slate-100
                   dark:hover:text-sky-400
                 "
-                aria-label="Toggle Truth and Governance menu"
-                aria-expanded={
-                  isTruthGovernanceMenuOpen
-                }
+                aria-label="Toggle Enterprise menu"
+                aria-expanded={isEnterpriseMenuOpen}
               >
                 <ChevronDown
                   className={`
@@ -389,7 +414,7 @@ export default function Header() {
                     transition-transform
                     duration-200
                     ${
-                      isTruthGovernanceMenuOpen
+                      isEnterpriseMenuOpen
                         ? "rotate-180"
                         : ""
                     }
@@ -398,36 +423,11 @@ export default function Header() {
               </button>
             </div>
 
-            <TruthGovernanceMegaMenu
-              isOpen={isTruthGovernanceMenuOpen}
-            />
-          </div>  
-
-                    {/* ===================================================
-              ENTERPRISE
-          ==================================================== */}
-
-          <Link
-            href="/enterprise"
-            className="
-              whitespace-nowrap
-              text-base
-              font-medium
-              leading-6
-              tracking-tight
-              text-neutral-800
-              transition-colors
-              hover:text-sky-900
-              dark:text-slate-100
-              dark:hover:text-sky-400
-            "
-            onClick={closeAllMegaMenus}
-          >
-            Enterprise
-          </Link>
+            <EnterpriseMegaMenu isOpen={isEnterpriseMenuOpen} />
+          </div>
 
           {/* ===================================================
-              PRICINGS
+              PRICING
           ==================================================== */}
 
           <Link
@@ -485,7 +485,8 @@ export default function Header() {
 
                   setIsProductMenuOpen(false);
                   setIsSolutionsMenuOpen(false);
-                  setIsTruthGovernanceMenuOpen(false);
+                  setIsTrustGovernanceMenuOpen(false);
+                  setIsEnterpriseMenuOpen(false);
                 }}
                 className="
                   flex
@@ -517,18 +518,15 @@ export default function Header() {
               </button>
             </div>
 
-            <ResourcesMegaMenu
-              isOpen={isResourcesMenuOpen}
-            />
+            <ResourcesMegaMenu isOpen={isResourcesMenuOpen} />
           </div>
         </nav>
 
-                {/* =====================================================
+        {/* =====================================================
             DESKTOP ACTION BUTTONS
         ====================================================== */}
 
         <div className="hidden items-center gap-4 md:flex">
-
           <Link
             href="/login"
             className="
@@ -591,9 +589,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() =>
-            setIsMobileMenuOpen(
-              (previous) => !previous
-            )
+            setIsMobileMenuOpen((previous) => !previous)
           }
           className="
             p-2
@@ -656,12 +652,9 @@ export default function Header() {
           "
         >
           <nav className="flex flex-col gap-4">
-
             <Link
               href="/product"
-              onClick={() =>
-                setIsMobileMenuOpen(false)
-              }
+              onClick={() => setIsMobileMenuOpen(false)}
               className="
                 text-base
                 font-medium
@@ -675,9 +668,7 @@ export default function Header() {
 
             <Link
               href="/solutions"
-              onClick={() =>
-                setIsMobileMenuOpen(false)
-              }
+              onClick={() => setIsMobileMenuOpen(false)}
               className="
                 text-base
                 font-medium
@@ -691,9 +682,7 @@ export default function Header() {
 
             <Link
               href="/trust-governance"
-              onClick={() =>
-                setIsMobileMenuOpen(false)
-              }
+              onClick={() => setIsMobileMenuOpen(false)}
               className="
                 text-base
                 font-medium
@@ -702,14 +691,12 @@ export default function Header() {
                 dark:text-slate-100
               "
             >
-              Truth &amp; Governance
+              Trust &amp; Governance
             </Link>
 
             <Link
               href="/enterprise"
-              onClick={() =>
-                setIsMobileMenuOpen(false)
-              }
+              onClick={() => setIsMobileMenuOpen(false)}
               className="
                 text-base
                 font-medium
@@ -723,9 +710,7 @@ export default function Header() {
 
             <Link
               href="/pricing"
-              onClick={() =>
-                setIsMobileMenuOpen(false)
-              }
+              onClick={() => setIsMobileMenuOpen(false)}
               className="
                 text-base
                 font-medium
@@ -739,9 +724,7 @@ export default function Header() {
 
             <Link
               href="/resources"
-              onClick={() =>
-                setIsMobileMenuOpen(false)
-              }
+              onClick={() => setIsMobileMenuOpen(false)}
               className="
                 text-base
                 font-medium
@@ -770,9 +753,7 @@ export default function Header() {
           >
             <Link
               href="/login"
-              onClick={() =>
-                setIsMobileMenuOpen(false)
-              }
+              onClick={() => setIsMobileMenuOpen(false)}
               className="
                 flex
                 h-11
@@ -799,9 +780,7 @@ export default function Header() {
 
             <Link
               href="/request-a-demo"
-              onClick={() =>
-                setIsMobileMenuOpen(false)
-              }
+              onClick={() => setIsMobileMenuOpen(false)}
               className="
                 flex
                 h-11

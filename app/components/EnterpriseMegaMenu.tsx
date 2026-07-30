@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-type TruthGovernanceMegaMenuProps = {
+type EnterpriseMegaMenuProps = {
   isOpen: boolean;
 };
 
@@ -44,7 +44,7 @@ function MenuItem({ title, icon }: MenuItemProps) {
         "
       >
         <Image
-          src={`/trust-goverance/${icon}`}
+          src={`/enterprise/${icon}`}
           alt=""
           width={18}
           height={18}
@@ -92,9 +92,63 @@ function SectionTitle({
   );
 }
 
-export default function TruthGovernanceMegaMenu({
+const enterprisePlatformItems = [
+  {
+    title: "Enterprise Overview",
+    icon: "enterprise.png",
+  },
+  {
+    title: "Administration & Policy Controls",
+    icon: "administration.png",
+  },
+  {
+    title: "Identity & Access Management",
+    icon: "identity.png",
+  },
+  {
+    title: "Enterprise Integrations",
+    icon: "enterprise-integrations.png",
+  },
+  {
+    title: "Analytics & Reporting",
+    icon: "analytics.png",
+  },
+  {
+    title: "Global Deployment",
+    icon: "global.png",
+  },
+];
+
+const adoptionSupportItems = [
+  {
+    title: "Implementation Services",
+    icon: "implementation.png",
+  },
+  {
+    title: "Data Migration",
+    icon: "data.png",
+  },
+  {
+    title: "Customer Success",
+    icon: "customer.png",
+  },
+  {
+    title: "Training & Adoption",
+    icon: "training.png",
+  },
+  {
+    title: "Enterprise Support",
+    icon: "enterprise-support.png",
+  },
+  {
+    title: "Procurement & Legal Resources",
+    icon: "procurement.png",
+  },
+];
+
+export default function EnterpriseMegaMenu({
   isOpen,
-}: TruthGovernanceMegaMenuProps) {
+}: EnterpriseMegaMenuProps) {
   return (
     <div
       className={`
@@ -103,7 +157,7 @@ export default function TruthGovernanceMegaMenu({
         top-[95px]
         z-[100]
         w-[calc(100vw-64px)]
-        max-w-[1150px]
+        max-w-[1000px]
         -translate-x-1/2
         transition-all
         duration-200
@@ -146,46 +200,31 @@ export default function TruthGovernanceMegaMenu({
         <div
           className="
             grid
-            grid-cols-[245px_285px_290px_1fr]
+            grid-cols-[1fr_1fr_280px]
           "
         >
           {/* =====================================================
-              TRUST
+              ENTERPRISE PLATFORM
           ====================================================== */}
 
           <div className="px-5 pb-6 pt-7">
-            <SectionTitle>Trust</SectionTitle>
+            <SectionTitle>
+              Enterprise Platform
+            </SectionTitle>
 
             <div className="space-y-2">
-              <MenuItem
-                icon="trust.png"
-                title="Trust Center"
-              />
-
-              <MenuItem
-                icon="security.png"
-                title="Security"
-              />
-
-              <MenuItem
-                icon="privacy.png"
-                title="Privacy"
-              />
-
-              <MenuItem
-                icon="platform.png"
-                title="Platform Reliability"
-              />
-
-              <MenuItem
-                icon="system.png"
-                title="System Status"
-              />
+              {enterprisePlatformItems.map((item) => (
+                <MenuItem
+                  key={item.title}
+                  title={item.title}
+                  icon={item.icon}
+                />
+              ))}
             </div>
           </div>
 
           {/* =====================================================
-              GOVERNANCE
+              ADOPTION & SUPPORT
           ====================================================== */}
 
           <div
@@ -198,72 +237,18 @@ export default function TruthGovernanceMegaMenu({
               dark:border-slate-700
             "
           >
-            <SectionTitle>Governance</SectionTitle>
+            <SectionTitle>
+              Adoption &amp; Support
+            </SectionTitle>
 
             <div className="space-y-2">
-              <MenuItem
-                icon="human.png"
-                title="Human-in-Command Controls"
-              />
-
-              <MenuItem
-                icon="ethical.png"
-                title="Ethical Design Principles"
-              />
-
-              <MenuItem
-                icon="ai.png"
-                title="AI Governance"
-              />
-
-              <MenuItem
-                icon="administrative.png"
-                title="Administrative Controls"
-              />
-            </div>
-          </div>
-
-          {/* =====================================================
-              ASSURANCE
-          ====================================================== */}
-
-          <div
-            className="
-              border-l
-              border-gray-200
-              px-5
-              pb-6
-              pt-7
-              dark:border-slate-700
-            "
-          >
-            <SectionTitle>Assurance</SectionTitle>
-
-            <div className="space-y-2">
-              <MenuItem
-                icon="compliance.png"
-                title="Compliance & Assurance"
-              />
-
-              <MenuItem
-                icon="works.png"
-                title="Works-Council & Consultation Resources"
-              />
-
-              <MenuItem
-                icon="accessibility.png"
-                title="Accessibility"
-              />
-
-              <MenuItem
-                icon="responsible.png"
-                title="Responsible Disclosure"
-              />
-
-              <MenuItem
-                icon="data-location.png"
-                title="Data Location & Residency"
-              />
+              {adoptionSupportItems.map((item) => (
+                <MenuItem
+                  key={item.title}
+                  title={item.title}
+                  icon={item.icon}
+                />
+              ))}
             </div>
           </div>
 
@@ -297,7 +282,7 @@ export default function TruthGovernanceMegaMenu({
               "
             >
               <Image
-                src="/trust-goverance/truth.png"
+                src="/enterprise/deploy-zoiko-time.png"
                 alt=""
                 width={26}
                 height={26}
@@ -316,7 +301,9 @@ export default function TruthGovernanceMegaMenu({
                 dark:text-slate-100
               "
             >
-              Truth you can inspect
+              Deploy ZoikoTime across
+              <br />
+              your organization
             </h3>
 
             {/* Description */}
@@ -330,10 +317,10 @@ export default function TruthGovernanceMegaMenu({
                 dark:text-slate-400
               "
             >
-              Review how ZoikoTime protects
-              classification data and preserves
-              human authority over every
-              consequential decision.
+              Work with the enterprise team on
+              deployment, policy configuration,
+              integrations, security review, and
+              more.
             </p>
 
             {/* Button */}
