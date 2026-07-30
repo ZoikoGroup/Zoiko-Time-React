@@ -8,9 +8,11 @@ import { ChevronDown } from "lucide-react";
 import ProductMegaMenu from "./ProductMegaMenu";
 import SolutionsMegaMenu from "./SolutionsMegaMenu";
 import TruthGovernanceMegaMenu from "./TruthGovernanceMegaMenu";
+import ResourcesMegaMenu from "./ResourcesMegaMenu";
 
 export default function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] =
+    useState(false);
 
   const [isProductMenuOpen, setIsProductMenuOpen] =
     useState(false);
@@ -18,19 +20,34 @@ export default function Header() {
   const [isSolutionsMenuOpen, setIsSolutionsMenuOpen] =
     useState(false);
 
-  const [isTruthGovernanceMenuOpen, setIsTruthGovernanceMenuOpen] =
+  const [
+    isTruthGovernanceMenuOpen,
+    setIsTruthGovernanceMenuOpen,
+  ] = useState(false);
+
+  const [isResourcesMenuOpen, setIsResourcesMenuOpen] =
     useState(false);
 
-  const productMenuRef = useRef<HTMLDivElement>(null);
-  const solutionsMenuRef = useRef<HTMLDivElement>(null);
-  const truthGovernanceMenuRef = useRef<HTMLDivElement>(null);
+  const productMenuRef =
+    useRef<HTMLDivElement>(null);
+
+  const solutionsMenuRef =
+    useRef<HTMLDivElement>(null);
+
+  const truthGovernanceMenuRef =
+    useRef<HTMLDivElement>(null);
+
+  const resourcesMenuRef =
+    useRef<HTMLDivElement>(null);
 
   /* =========================================================
      CLOSE DROPDOWNS WHEN CLICKING OUTSIDE
   ========================================================= */
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (
+      event: MouseEvent
+    ) => {
       const target = event.target as Node;
 
       if (
@@ -49,13 +66,25 @@ export default function Header() {
 
       if (
         truthGovernanceMenuRef.current &&
-        !truthGovernanceMenuRef.current.contains(target)
+        !truthGovernanceMenuRef.current.contains(
+          target
+        )
       ) {
         setIsTruthGovernanceMenuOpen(false);
       }
+
+      if (
+        resourcesMenuRef.current &&
+        !resourcesMenuRef.current.contains(target)
+      ) {
+        setIsResourcesMenuOpen(false);
+      }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener(
+      "mousedown",
+      handleClickOutside
+    );
 
     return () => {
       document.removeEventListener(
@@ -104,6 +133,7 @@ export default function Header() {
     setIsProductMenuOpen(false);
     setIsSolutionsMenuOpen(false);
     setIsTruthGovernanceMenuOpen(false);
+    setIsResourcesMenuOpen(false);
   };
 
   return (
@@ -155,8 +185,7 @@ export default function Header() {
         ====================================================== */}
 
         <nav className="hidden items-center gap-8 md:flex">
-
-          {/* ===================================================
+                    {/* ===================================================
               PRODUCT
           ==================================================== */}
 
@@ -191,6 +220,7 @@ export default function Header() {
 
                   setIsSolutionsMenuOpen(false);
                   setIsTruthGovernanceMenuOpen(false);
+                  setIsResourcesMenuOpen(false);
                 }}
                 className="
                   flex
@@ -227,7 +257,7 @@ export default function Header() {
             />
           </div>
 
-          {/* ===================================================
+                    {/* ===================================================
               SOLUTIONS
           ==================================================== */}
 
@@ -262,6 +292,7 @@ export default function Header() {
 
                   setIsProductMenuOpen(false);
                   setIsTruthGovernanceMenuOpen(false);
+                  setIsResourcesMenuOpen(false);
                 }}
                 className="
                   flex
@@ -297,8 +328,7 @@ export default function Header() {
               isOpen={isSolutionsMenuOpen}
             />
           </div>
-
-          {/* ===================================================
+                    {/* ===================================================
               TRUTH & GOVERNANCE
           ==================================================== */}
 
@@ -334,6 +364,7 @@ export default function Header() {
 
                   setIsProductMenuOpen(false);
                   setIsSolutionsMenuOpen(false);
+                  setIsResourcesMenuOpen(false);
                 }}
                 className="
                   flex
@@ -370,9 +401,9 @@ export default function Header() {
             <TruthGovernanceMegaMenu
               isOpen={isTruthGovernanceMenuOpen}
             />
-          </div>
+          </div>  
 
-          {/* ===================================================
+                    {/* ===================================================
               ENTERPRISE
           ==================================================== */}
 
@@ -422,27 +453,77 @@ export default function Header() {
               RESOURCES
           ==================================================== */}
 
-          <Link
-            href="/resources"
-            className="
-              whitespace-nowrap
-              text-base
-              font-medium
-              leading-6
-              tracking-tight
-              text-neutral-800
-              transition-colors
-              hover:text-sky-900
-              dark:text-slate-100
-              dark:hover:text-sky-400
-            "
-            onClick={closeAllMegaMenus}
+          <div
+            ref={resourcesMenuRef}
+            className="relative flex h-full items-center"
           >
-            Resources
-          </Link>
+            <div className="flex items-center gap-1">
+              <Link
+                href="/resources"
+                className="
+                  whitespace-nowrap
+                  text-base
+                  font-medium
+                  leading-6
+                  tracking-tight
+                  text-neutral-800
+                  transition-colors
+                  hover:text-sky-900
+                  dark:text-slate-100
+                  dark:hover:text-sky-400
+                "
+              >
+                Resources
+              </Link>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setIsResourcesMenuOpen(
+                    (previous) => !previous
+                  );
+
+                  setIsProductMenuOpen(false);
+                  setIsSolutionsMenuOpen(false);
+                  setIsTruthGovernanceMenuOpen(false);
+                }}
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  text-neutral-800
+                  transition-colors
+                  hover:text-sky-900
+                  focus:outline-none
+                  dark:text-slate-100
+                  dark:hover:text-sky-400
+                "
+                aria-label="Toggle Resources menu"
+                aria-expanded={isResourcesMenuOpen}
+              >
+                <ChevronDown
+                  className={`
+                    h-4
+                    w-4
+                    transition-transform
+                    duration-200
+                    ${
+                      isResourcesMenuOpen
+                        ? "rotate-180"
+                        : ""
+                    }
+                  `}
+                />
+              </button>
+            </div>
+
+            <ResourcesMegaMenu
+              isOpen={isResourcesMenuOpen}
+            />
+          </div>
         </nav>
 
-        {/* =====================================================
+                {/* =====================================================
             DESKTOP ACTION BUTTONS
         ====================================================== */}
 

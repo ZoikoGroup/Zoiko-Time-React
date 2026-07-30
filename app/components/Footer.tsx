@@ -1,6 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {
+  FaLinkedinIn,
+  FaYoutube,
+  FaInstagram,
+  FaFacebookF,
+  FaPinterestP,
+  FaXTwitter,
+} from "react-icons/fa6";
+
+import { RiThreadsFill } from "react-icons/ri";
 
 interface FooterLink {
   label: string;
@@ -125,6 +135,44 @@ export default function Footer() {
     { label: 'Accessibility', href: '/accessibility' },
   ];
 
+  const socialLinks = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/zoiko-time",
+    icon: <FaLinkedinIn />,
+  },
+  {
+    name: "X",
+    href: "https://x.com/ZoikoTime",
+    icon: <FaXTwitter />,
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@ZoikoTime",
+    icon: <FaYoutube />,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/zoikotime/",
+    icon: <FaInstagram />,
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/ZoikoTime/",
+    icon: <FaFacebookF />,
+  },
+  {
+    name: "Threads",
+    href: "https://www.threads.com/@zoikotime",
+    icon: <RiThreadsFill />,
+  },
+  {
+    name: "Pinterest",
+    href: "https://www.pinterest.com/zoikotime/",
+    icon: <FaPinterestP />,
+  },
+];
+
   return (
     <footer className="relative w-full bg-slate-950 text-white overflow-hidden pt-16 pb-12">
         <Link href="/" className="flex items-center shrink-0 justify-center mb-5">
@@ -219,6 +267,39 @@ export default function Footer() {
             ))}
           </div>
         </div>
+
+        {/* Social Media */}
+<div className="flex flex-col items-center justify-center gap-4 mb-10">
+  <h3 className="text-sm font-bold uppercase tracking-wider text-white">
+    Follow ZoikoTime
+  </h3>
+
+  <div className="flex flex-wrap justify-center gap-4">
+    {socialLinks.map((social) => (
+      <a
+        key={social.name}
+        href={social.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={social.name}
+        className="
+          flex h-10 w-10 items-center justify-center
+          rounded-full
+          border border-white/10
+          bg-white/5
+          text-lg
+          text-white/60
+          transition-all
+          hover:border-teal-500
+          hover:bg-teal-500/20
+          hover:text-white
+        "
+      >
+        {social.icon}
+      </a>
+    ))}
+  </div>
+</div>
 
         {/* Global Addresses & Legal Disclaimers */}
         <div className="flex flex-col items-center text-center gap-4 max-w-[1160px] mx-auto">
