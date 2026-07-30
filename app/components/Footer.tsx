@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+
 import {
   FaLinkedinIn,
   FaYoutube,
@@ -50,6 +51,7 @@ export default function Footer() {
         { label: 'ZoikoTime Mobile App', href: '/mobile-app', badge: 'New' },
       ],
     },
+
     {
       title: 'Solutions',
       links: [
@@ -65,6 +67,7 @@ export default function Footer() {
         { label: 'Workforce Assurance Programs', href: '/workforce-assurance' },
       ],
     },
+
     {
       title: 'Trust & Governance',
       links: [
@@ -80,6 +83,7 @@ export default function Footer() {
         { label: 'Responsible AI', href: '/responsible-ai' },
       ],
     },
+
     {
       title: 'Resources',
       links: [
@@ -95,6 +99,7 @@ export default function Footer() {
         { label: 'Contact Sales', href: '/contact-sales' },
       ],
     },
+
     {
       title: 'Company',
       links: [
@@ -108,6 +113,7 @@ export default function Footer() {
         { label: 'Contact', href: '/contact' },
       ],
     },
+
     {
       title: 'Legal',
       links: [
@@ -120,10 +126,56 @@ export default function Footer() {
         { label: 'Subprocessor List', href: '/subprocessor-list' },
         { label: 'Security Addendum', href: '/security-addendum' },
         { label: 'Service Level Agreement', href: '/service-level-agreement' },
-        { label: 'Data Retention, Deletion & Legal Hold Policy', href: '/data-retention-deletion-and-legal-hold-policy' },
+        {
+          label: 'Data Retention, Deletion & Legal Hold Policy',
+          href: '/data-retention-deletion-and-legal-hold-policy',
+        },
       ],
     },
   ];
+
+
+   // Social media links
+  const socialLinks = [
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/ZoikoTime/",
+      icon: <FaFacebookF />,
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/zoikotime/",
+      icon: <FaInstagram />,
+    },
+    {
+      name: "X",
+      href: "https://x.com/ZoikoTime",
+      icon: <FaXTwitter />,
+    },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/company/zoiko-time",
+      icon: <FaLinkedinIn />,
+    },
+    {
+      name: "YouTube",
+      href: "https://www.youtube.com/@ZoikoTime",
+      icon: <FaYoutube />,
+    },
+    {
+      name: "Pinterest",
+      href: "https://www.pinterest.com/zoikotime/",
+      icon: <FaPinterestP />,
+    },
+    {
+      name: "Threads",
+      href: "https://www.threads.com/@zoikotime",
+      icon: <RiThreadsFill />,
+    },
+  ];
+
+
+
 
   const subLegalLinks = [
     { label: 'Privacy Notice', href: '/privacy-notice' },
@@ -135,67 +187,40 @@ export default function Footer() {
     { label: 'Accessibility', href: '/accessibility' },
   ];
 
-  const socialLinks = [
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/company/zoiko-time",
-    icon: <FaLinkedinIn />,
-  },
-  {
-    name: "X",
-    href: "https://x.com/ZoikoTime",
-    icon: <FaXTwitter />,
-  },
-  {
-    name: "YouTube",
-    href: "https://www.youtube.com/@ZoikoTime",
-    icon: <FaYoutube />,
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/zoikotime/",
-    icon: <FaInstagram />,
-  },
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/ZoikoTime/",
-    icon: <FaFacebookF />,
-  },
-  {
-    name: "Threads",
-    href: "https://www.threads.com/@zoikotime",
-    icon: <RiThreadsFill />,
-  },
-  {
-    name: "Pinterest",
-    href: "https://www.pinterest.com/zoikotime/",
-    icon: <FaPinterestP />,
-  },
-];
+ 
 
   return (
     <footer className="relative w-full bg-slate-950 text-white overflow-hidden pt-16 pb-12">
-        <Link href="/" className="flex items-center shrink-0 justify-center mb-5">
-                  <Image
-                    src="/images/Frame 16.png"
-                    alt="ZoikoDigital"
-                    width={180}
-                    height={40}
-                  />
-                </Link>
+
+      {/* Logo */}
+      <Link
+        href="/"
+        className="flex items-center shrink-0 justify-center mb-5"
+      >
+        <Image
+          src="/images/Frame 16.png"
+          alt="ZoikoDigital"
+          width={180}
+          height={40}
+        />
+      </Link>
+
       {/* 1440px Ambient Aesthetic Background Effects */}
       <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-teal-600/0 via-teal-600 via-[15%] to-teal-600/0" />
+
       <div className="absolute left-[-100px] top-[672px] w-96 h-72 bg-[radial-gradient(circle,rgba(13,148,136,0.05)_0%,transparent_70%)] pointer-events-none" />
+
       <div className="absolute left-[1170px] top-[692px] w-80 h-72 bg-[radial-gradient(circle,rgba(99,102,241,0.05)_0%,transparent_70%)] pointer-events-none" />
+
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-teal-600/5 to-teal-600/0 pointer-events-none max-h-[2%]" />
 
       <div className="max-w-[1282px] mx-auto px-6 lg:px-8">
-        
+
         {/* Compliance Certification Row */}
         <div className="w-full py-4 flex flex-wrap items-center justify-center gap-3 border-t border-b border-white/10 mb-16">
           {complianceTags.map((tag) => (
-            <Link 
-              key={tag.label} 
+            <Link
+              key={tag.label}
               href={tag.href}
               className={`px-3 py-1 rounded-[5px] text-[10px] font-bold uppercase tracking-wide border transition-all hover:bg-white/10 ${
                 tag.active
@@ -212,19 +237,24 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
           {footerSections.map((section) => (
             <div key={section.title} className="flex flex-col gap-4">
+
               <h3 className="text-white text-sm font-extrabold uppercase tracking-wider border-b border-white/5 pb-2">
                 {section.title}
               </h3>
+
               <ul className="flex flex-col gap-2.5">
                 {section.links.map((link) => (
-                  <li key={link.label} className="inline-flex items-center gap-2 group">
+                  <li
+                    key={link.label}
+                    className="inline-flex items-center gap-2 group"
+                  >
                     <Link
                       href={link.href}
                       className="text-white/40 text-xs font-medium leading-5 hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
-                    
+
                     {link.external && (
                       <span className="inline-flex items-center justify-center size-3.5 bg-white/10 rounded-[3px] text-[9px] font-bold text-white/30 group-hover:text-white transition-colors">
                         ↗
@@ -245,77 +275,123 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
+
             </div>
           ))}
+        </div>
+
+
+        {/* Social Media */}
+        <div className="flex flex-col items-center justify-center gap-4 mb-10">
+
+          <div className="flex flex-wrap justify-center gap-4">
+
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.name}
+                title={social.name}
+                className="
+                  flex h-10 w-10 items-center justify-center
+                  rounded-full
+                  border border-white/10
+                  bg-white/5
+                  text-lg
+                  text-white/60
+                  transition-all
+                  hover:border-teal-500
+                  hover:bg-teal-500/20
+                  hover:text-white
+                "
+              >
+                {social.icon}
+              </a>
+            ))}
+
+          </div>
+
+          <h3 className="text-sm font-bold uppercase tracking-wider text-white">
+            Follow Us
+          </h3>
+
         </div>
 
         {/* Horizontal Mini Legal Row */}
         <div className="w-full border-b border-white/5 pb-5 mb-6">
           <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-white/75 text-xs font-medium">
+
             {subLegalLinks.map((link, idx) => (
               <React.Fragment key={link.label}>
-                <Link 
-                  href={link.href} 
+
+                <Link
+                  href={link.href}
                   className="hover:text-white transition-colors"
                 >
                   {link.label}
                 </Link>
+
                 {idx < subLegalLinks.length - 1 && (
                   <span className="size-[3px] bg-white/10 rounded-full" />
                 )}
+
               </React.Fragment>
             ))}
+
           </div>
         </div>
 
-        {/* Social Media */}
-<div className="flex flex-col items-center justify-center gap-4 mb-10">
-  <h3 className="text-sm font-bold uppercase tracking-wider text-white">
-    Follow ZoikoTime
-  </h3>
-
-  <div className="flex flex-wrap justify-center gap-4">
-    {socialLinks.map((social) => (
-      <a
-        key={social.name}
-        href={social.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={social.name}
-        className="
-          flex h-10 w-10 items-center justify-center
-          rounded-full
-          border border-white/10
-          bg-white/5
-          text-lg
-          text-white/60
-          transition-all
-          hover:border-teal-500
-          hover:bg-teal-500/20
-          hover:text-white
-        "
-      >
-        {social.icon}
-      </a>
-    ))}
-  </div>
-</div>
+        
 
         {/* Global Addresses & Legal Disclaimers */}
         <div className="flex flex-col items-center text-center gap-4 max-w-[1160px] mx-auto">
+
           <p className="text-white/60 text-xs leading-5">
-            <span className="font-bold text-white">United States </span>
+
+            <span className="font-bold text-white">
+              United States
+            </span>{" "}
             1401 21st Street, Suite R Sacramento, CA 95811, USA
+
             <span className="mx-3 text-white/20">|</span>
-            <span className="font-bold text-white">Europe </span>
-            67-69 Great Portland Street, 5th Floor London W1W 5PF, United Kingdom
+
+            <span className="font-bold text-white">
+              Europe
+            </span>{" "}
+            67-69 Great Portland Street, 5th Floor London W1W 5PF,
+            United Kingdom
+
           </p>
 
           <p className="text-white/40 text-xs font-normal leading-5">
-            <span className="font-semibold text-white">ZoikoTime</span> — Workforce Assurance & Performance Intelligence. Operated by{' '}
-            <span className="font-semibold text-white">Zoiko Tech Inc.</span>, a subsidiary of{' '}
-            <span className="font-semibold text-white">Zoiko Group Inc.</span> © 2026 Zoiko Group Inc. All rights reserved. ZoikoTime provides workforce intelligence, verification, governance, reporting, and performance-insight tools. Customers are responsible for configuring and using ZoikoTime in accordance with applicable employment, privacy, workplace monitoring, data protection, consultation, and worker-notification laws. ZoikoTime is not a substitute for legal, HR, or compliance advice.
+
+            <span className="font-semibold text-white">
+              ZoikoTime
+            </span>{" "}
+            — Workforce Assurance & Performance Intelligence.
+            Operated by{" "}
+
+            <span className="font-semibold text-white">
+              Zoiko Tech Inc.
+            </span>
+            , a subsidiary of{" "}
+
+            <span className="font-semibold text-white">
+              Zoiko Group Inc.
+            </span>{" "}
+            © 2026 Zoiko Group Inc. All rights reserved. ZoikoTime
+            provides workforce intelligence, verification,
+            governance, reporting, and performance-insight tools.
+            Customers are responsible for configuring and using
+            ZoikoTime in accordance with applicable employment,
+            privacy, workplace monitoring, data protection,
+            consultation, and worker-notification laws. ZoikoTime
+            is not a substitute for legal, HR, or compliance advice.
+
           </p>
+
         </div>
 
       </div>
