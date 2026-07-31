@@ -202,6 +202,7 @@ export default function Footer() {
           alt="ZoikoDigital"
           width={180}
           height={40}
+          className="h-auto w-[180px]"
         />
       </Link>
 

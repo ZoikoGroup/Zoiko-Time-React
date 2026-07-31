@@ -15,31 +15,17 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const [isProductMenuOpen, setIsProductMenuOpen] = useState(false);
-
   const [isSolutionsMenuOpen, setIsSolutionsMenuOpen] = useState(false);
-
-  const [
-    isTrustGovernanceMenuOpen,
-    setIsTrustGovernanceMenuOpen,
-  ] = useState(false);
-
+  const [isTrustGovernanceMenuOpen, setIsTrustGovernanceMenuOpen] =
+    useState(false);
   const [isResourcesMenuOpen, setIsResourcesMenuOpen] = useState(false);
-
   const [isEnterpriseMenuOpen, setIsEnterpriseMenuOpen] = useState(false);
 
   const productMenuRef = useRef<HTMLDivElement>(null);
-
   const solutionsMenuRef = useRef<HTMLDivElement>(null);
-
   const trustGovernanceMenuRef = useRef<HTMLDivElement>(null);
-
   const resourcesMenuRef = useRef<HTMLDivElement>(null);
-
   const enterpriseMenuRef = useRef<HTMLDivElement>(null);
-
-  /* =========================================================
-     CLOSE DROPDOWNS WHEN CLICKING OUTSIDE
-  ========================================================= */
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -88,15 +74,51 @@ export default function Header() {
     };
   }, []);
 
-  /* =========================================================
-     CLOSE ALL MEGA MENUS
-  ========================================================= */
-
   const closeAllMegaMenus = () => {
     setIsProductMenuOpen(false);
     setIsSolutionsMenuOpen(false);
     setIsTrustGovernanceMenuOpen(false);
     setIsResourcesMenuOpen(false);
+    setIsEnterpriseMenuOpen(false);
+  };
+
+  const openProductMenu = () => {
+    setIsProductMenuOpen(true);
+    setIsSolutionsMenuOpen(false);
+    setIsTrustGovernanceMenuOpen(false);
+    setIsResourcesMenuOpen(false);
+    setIsEnterpriseMenuOpen(false);
+  };
+
+  const openSolutionsMenu = () => {
+    setIsProductMenuOpen(false);
+    setIsSolutionsMenuOpen(true);
+    setIsTrustGovernanceMenuOpen(false);
+    setIsResourcesMenuOpen(false);
+    setIsEnterpriseMenuOpen(false);
+  };
+
+  const openTrustGovernanceMenu = () => {
+    setIsProductMenuOpen(false);
+    setIsSolutionsMenuOpen(false);
+    setIsTrustGovernanceMenuOpen(true);
+    setIsResourcesMenuOpen(false);
+    setIsEnterpriseMenuOpen(false);
+  };
+
+  const openEnterpriseMenu = () => {
+    setIsProductMenuOpen(false);
+    setIsSolutionsMenuOpen(false);
+    setIsTrustGovernanceMenuOpen(false);
+    setIsResourcesMenuOpen(false);
+    setIsEnterpriseMenuOpen(true);
+  };
+
+  const openResourcesMenu = () => {
+    setIsProductMenuOpen(false);
+    setIsSolutionsMenuOpen(false);
+    setIsTrustGovernanceMenuOpen(false);
+    setIsResourcesMenuOpen(true);
     setIsEnterpriseMenuOpen(false);
   };
 
@@ -126,9 +148,7 @@ export default function Header() {
           px-8
         "
       >
-        {/* =====================================================
-            LOGO
-        ====================================================== */}
+        {/* LOGO */}
 
         <Link
           href="/"
@@ -140,295 +160,331 @@ export default function Header() {
             alt="ZoikoDigital"
             width={180}
             height={40}
+            className="h-auto w-[180px]"
             priority
           />
         </Link>
 
-        {/* =====================================================
-            DESKTOP NAVIGATION
-        ====================================================== */}
+        {/* DESKTOP NAVIGATION */}
 
         <nav className="hidden items-center gap-8 md:flex">
-
-          {/* ===================================================
-              PRODUCT
-          ==================================================== */}
+          {/* PRODUCT */}
 
           <div
             ref={productMenuRef}
             className="relative flex h-full items-center"
+            onMouseEnter={openProductMenu}
+            onMouseLeave={() => setIsProductMenuOpen(false)}
           >
-            <div className="flex items-center gap-1">
+            <div className="relative flex items-center gap-1">
               <Link
                 href="/product"
-                className="
+                className={`
+                  relative
                   text-base
                   font-medium
                   leading-6
                   tracking-tight
-                  text-neutral-800
                   transition-colors
-                  hover:text-sky-900
-                  dark:text-slate-100
-                  dark:hover:text-sky-400
-                "
+                  ${
+                    isProductMenuOpen
+                      ? "text-sky-900 dark:text-sky-400"
+                      : "text-neutral-800 dark:text-slate-100"
+                  }
+                `}
               >
                 Product
+
+                <span
+                  className={`
+                    absolute
+                    -bottom-[7px]
+                    left-0
+                    h-[2px]
+                    rounded-full
+                    bg-sky-900
+                    transition-all
+                    duration-200
+                    dark:bg-sky-400
+                    ${
+                      isProductMenuOpen
+                        ? "w-full opacity-100"
+                        : "w-0 opacity-0"
+                    }
+                  `}
+                />
               </Link>
 
               <button
                 type="button"
-                onClick={() => {
-                  setIsProductMenuOpen((previous) => !previous);
-
-                  setIsSolutionsMenuOpen(false);
-                  setIsTrustGovernanceMenuOpen(false);
-                  setIsResourcesMenuOpen(false);
-                  setIsEnterpriseMenuOpen(false);
-                }}
-                className="
+                className={`
                   flex
                   items-center
                   justify-center
-                  text-neutral-800
                   transition-colors
-                  hover:text-sky-900
                   focus:outline-none
-                  dark:text-slate-100
-                  dark:hover:text-sky-400
-                "
-                aria-label="Toggle Product menu"
+                  ${
+                    isProductMenuOpen
+                      ? "text-sky-900 dark:text-sky-400"
+                      : "text-neutral-800 dark:text-slate-100"
+                  }
+                `}
+                aria-label="Product menu"
                 aria-expanded={isProductMenuOpen}
               >
                 <ChevronDown
-                  className={`
-                    h-4
-                    w-4
-                    transition-transform
-                    duration-200
-                    ${isProductMenuOpen ? "rotate-180" : ""}
-                  `}
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    isProductMenuOpen ? "rotate-180" : ""
+                  }`}
                 />
               </button>
             </div>
+
+            {/* Invisible hover bridge */}
+            <div className="absolute left-0 right-0 top-full h-5" />
 
             <ProductMegaMenu isOpen={isProductMenuOpen} />
           </div>
 
-          {/* ===================================================
-              SOLUTIONS
-          ==================================================== */}
+          {/* SOLUTIONS */}
 
           <div
             ref={solutionsMenuRef}
             className="relative flex h-full items-center"
+            onMouseEnter={openSolutionsMenu}
+            onMouseLeave={() => setIsSolutionsMenuOpen(false)}
           >
-            <div className="flex items-center gap-1">
+            <div className="relative flex items-center gap-1">
               <Link
                 href="/solutions"
-                className="
+                className={`
+                  relative
                   text-base
                   font-medium
                   leading-6
                   tracking-tight
-                  text-neutral-800
                   transition-colors
-                  hover:text-sky-900
-                  dark:text-slate-100
-                  dark:hover:text-sky-400
-                "
+                  ${
+                    isSolutionsMenuOpen
+                      ? "text-sky-900 dark:text-sky-400"
+                      : "text-neutral-800 dark:text-slate-100"
+                  }
+                `}
               >
                 Solutions
+
+                <span
+                  className={`
+                    absolute
+                    -bottom-[7px]
+                    left-0
+                    h-[2px]
+                    rounded-full
+                    bg-sky-900
+                    transition-all
+                    duration-200
+                    dark:bg-sky-400
+                    ${
+                      isSolutionsMenuOpen
+                        ? "w-full opacity-100"
+                        : "w-0 opacity-0"
+                    }
+                  `}
+                />
               </Link>
 
               <button
                 type="button"
-                onClick={() => {
-                  setIsSolutionsMenuOpen((previous) => !previous);
-
-                  setIsProductMenuOpen(false);
-                  setIsTrustGovernanceMenuOpen(false);
-                  setIsResourcesMenuOpen(false);
-                  setIsEnterpriseMenuOpen(false);
-                }}
-                className="
+                className={`
                   flex
                   items-center
                   justify-center
-                  text-neutral-800
                   transition-colors
-                  hover:text-sky-900
                   focus:outline-none
-                  dark:text-slate-100
-                  dark:hover:text-sky-400
-                "
-                aria-label="Toggle Solutions menu"
+                  ${
+                    isSolutionsMenuOpen
+                      ? "text-sky-900 dark:text-sky-400"
+                      : "text-neutral-800 dark:text-slate-100"
+                  }
+                `}
+                aria-label="Solutions menu"
                 aria-expanded={isSolutionsMenuOpen}
               >
                 <ChevronDown
-                  className={`
-                    h-4
-                    w-4
-                    transition-transform
-                    duration-200
-                    ${isSolutionsMenuOpen ? "rotate-180" : ""}
-                  `}
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    isSolutionsMenuOpen ? "rotate-180" : ""
+                  }`}
                 />
               </button>
             </div>
 
+            {/* Invisible hover bridge */}
+            <div className="absolute left-0 right-0 top-full h-5" />
+
             <SolutionsMegaMenu isOpen={isSolutionsMenuOpen} />
           </div>
 
-          {/* ===================================================
-              TRUST & GOVERNANCE
-          ==================================================== */}
+          {/* TRUST & GOVERNANCE */}
 
           <div
             ref={trustGovernanceMenuRef}
             className="relative flex h-full items-center"
+            onMouseEnter={openTrustGovernanceMenu}
+            onMouseLeave={() => setIsTrustGovernanceMenuOpen(false)}
           >
-            <div className="flex items-center gap-1">
+            <div className="relative flex items-center gap-1">
               <Link
                 href="/trust-governance"
-                className="
+                className={`
+                  relative
                   whitespace-nowrap
                   text-base
                   font-medium
                   leading-6
                   tracking-tight
-                  text-neutral-800
                   transition-colors
-                  hover:text-sky-900
-                  dark:text-slate-100
-                  dark:hover:text-sky-400
-                "
+                  ${
+                    isTrustGovernanceMenuOpen
+                      ? "text-sky-900 dark:text-sky-400"
+                      : "text-neutral-800 dark:text-slate-100"
+                  }
+                `}
               >
                 Trust &amp; Governance
+
+                <span
+                  className={`
+                    absolute
+                    -bottom-[7px]
+                    left-0
+                    h-[2px]
+                    rounded-full
+                    bg-sky-900
+                    transition-all
+                    duration-200
+                    dark:bg-sky-400
+                    ${
+                      isTrustGovernanceMenuOpen
+                        ? "w-full opacity-100"
+                        : "w-0 opacity-0"
+                    }
+                  `}
+                />
               </Link>
 
               <button
                 type="button"
-                onClick={() => {
-                  setIsTrustGovernanceMenuOpen(
-                    (previous) => !previous
-                  );
-
-                  setIsProductMenuOpen(false);
-                  setIsSolutionsMenuOpen(false);
-                  setIsResourcesMenuOpen(false);
-                  setIsEnterpriseMenuOpen(false);
-                }}
-                className="
+                className={`
                   flex
                   items-center
                   justify-center
-                  text-neutral-800
                   transition-colors
-                  hover:text-sky-900
                   focus:outline-none
-                  dark:text-slate-100
-                  dark:hover:text-sky-400
-                "
-                aria-label="Toggle Trust and Governance menu"
+                  ${
+                    isTrustGovernanceMenuOpen
+                      ? "text-sky-900 dark:text-sky-400"
+                      : "text-neutral-800 dark:text-slate-100"
+                  }
+                `}
+                aria-label="Trust and Governance menu"
                 aria-expanded={isTrustGovernanceMenuOpen}
               >
                 <ChevronDown
-                  className={`
-                    h-4
-                    w-4
-                    transition-transform
-                    duration-200
-                    ${
-                      isTrustGovernanceMenuOpen
-                        ? "rotate-180"
-                        : ""
-                    }
-                  `}
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    isTrustGovernanceMenuOpen ? "rotate-180" : ""
+                  }`}
                 />
               </button>
             </div>
+
+            {/* Invisible hover bridge */}
+            <div className="absolute left-0 right-0 top-full h-5" />
 
             <TrustGovernanceMegaMenu
               isOpen={isTrustGovernanceMenuOpen}
             />
           </div>
 
-          {/* ===================================================
-              ENTERPRISE
-          ==================================================== */}
+          {/* ENTERPRISE */}
 
           <div
             ref={enterpriseMenuRef}
             className="relative flex h-full items-center"
+            onMouseEnter={openEnterpriseMenu}
+            onMouseLeave={() => setIsEnterpriseMenuOpen(false)}
           >
-            <div className="flex items-center gap-1">
+            <div className="relative flex items-center gap-1">
               <Link
                 href="/enterprise"
-                className="
+                className={`
+                  relative
                   whitespace-nowrap
                   text-base
                   font-medium
                   leading-6
                   tracking-tight
-                  text-neutral-800
                   transition-colors
-                  hover:text-sky-900
-                  dark:text-slate-100
-                  dark:hover:text-sky-400
-                "
+                  ${
+                    isEnterpriseMenuOpen
+                      ? "text-sky-900 dark:text-sky-400"
+                      : "text-neutral-800 dark:text-slate-100"
+                  }
+                `}
               >
                 Enterprise
+
+                <span
+                  className={`
+                    absolute
+                    -bottom-[7px]
+                    left-0
+                    h-[2px]
+                    rounded-full
+                    bg-sky-900
+                    transition-all
+                    duration-200
+                    dark:bg-sky-400
+                    ${
+                      isEnterpriseMenuOpen
+                        ? "w-full opacity-100"
+                        : "w-0 opacity-0"
+                    }
+                  `}
+                />
               </Link>
 
               <button
                 type="button"
-                onClick={() => {
-                  setIsEnterpriseMenuOpen(
-                    (previous) => !previous
-                  );
-
-                  setIsProductMenuOpen(false);
-                  setIsSolutionsMenuOpen(false);
-                  setIsTrustGovernanceMenuOpen(false);
-                  setIsResourcesMenuOpen(false);
-                }}
-                className="
+                className={`
                   flex
                   items-center
                   justify-center
-                  text-neutral-800
                   transition-colors
-                  hover:text-sky-900
                   focus:outline-none
-                  dark:text-slate-100
-                  dark:hover:text-sky-400
-                "
-                aria-label="Toggle Enterprise menu"
+                  ${
+                    isEnterpriseMenuOpen
+                      ? "text-sky-900 dark:text-sky-400"
+                      : "text-neutral-800 dark:text-slate-100"
+                  }
+                `}
+                aria-label="Enterprise menu"
                 aria-expanded={isEnterpriseMenuOpen}
               >
                 <ChevronDown
-                  className={`
-                    h-4
-                    w-4
-                    transition-transform
-                    duration-200
-                    ${
-                      isEnterpriseMenuOpen
-                        ? "rotate-180"
-                        : ""
-                    }
-                  `}
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    isEnterpriseMenuOpen ? "rotate-180" : ""
+                  }`}
                 />
               </button>
             </div>
 
+            {/* Invisible hover bridge */}
+            <div className="absolute left-0 right-0 top-full h-5" />
+
             <EnterpriseMegaMenu isOpen={isEnterpriseMenuOpen} />
           </div>
 
-          {/* ===================================================
-              PRICING
-          ==================================================== */}
+          {/* PRICING */}
 
           <Link
             href="/pricing"
@@ -449,82 +505,87 @@ export default function Header() {
             Pricings
           </Link>
 
-          {/* ===================================================
-              RESOURCES
-          ==================================================== */}
+          {/* RESOURCES */}
 
           <div
             ref={resourcesMenuRef}
             className="relative flex h-full items-center"
+            onMouseEnter={openResourcesMenu}
+            onMouseLeave={() => setIsResourcesMenuOpen(false)}
           >
-            <div className="flex items-center gap-1">
+            <div className="relative flex items-center gap-1">
               <Link
                 href="/resources"
-                className="
+                className={`
+                  relative
                   whitespace-nowrap
                   text-base
                   font-medium
                   leading-6
                   tracking-tight
-                  text-neutral-800
                   transition-colors
-                  hover:text-sky-900
-                  dark:text-slate-100
-                  dark:hover:text-sky-400
-                "
+                  ${
+                    isResourcesMenuOpen
+                      ? "text-sky-900 dark:text-sky-400"
+                      : "text-neutral-800 dark:text-slate-100"
+                  }
+                `}
               >
                 Resources
+
+                <span
+                  className={`
+                    absolute
+                    -bottom-[7px]
+                    left-0
+                    h-[2px]
+                    rounded-full
+                    bg-sky-900
+                    transition-all
+                    duration-200
+                    dark:bg-sky-400
+                    ${
+                      isResourcesMenuOpen
+                        ? "w-full opacity-100"
+                        : "w-0 opacity-0"
+                    }
+                  `}
+                />
               </Link>
 
               <button
                 type="button"
-                onClick={() => {
-                  setIsResourcesMenuOpen(
-                    (previous) => !previous
-                  );
-
-                  setIsProductMenuOpen(false);
-                  setIsSolutionsMenuOpen(false);
-                  setIsTrustGovernanceMenuOpen(false);
-                  setIsEnterpriseMenuOpen(false);
-                }}
-                className="
+                className={`
                   flex
                   items-center
                   justify-center
-                  text-neutral-800
                   transition-colors
-                  hover:text-sky-900
                   focus:outline-none
-                  dark:text-slate-100
-                  dark:hover:text-sky-400
-                "
-                aria-label="Toggle Resources menu"
+                  ${
+                    isResourcesMenuOpen
+                      ? "text-sky-900 dark:text-sky-400"
+                      : "text-neutral-800 dark:text-slate-100"
+                  }
+                `}
+                aria-label="Resources menu"
                 aria-expanded={isResourcesMenuOpen}
               >
                 <ChevronDown
-                  className={`
-                    h-4
-                    w-4
-                    transition-transform
-                    duration-200
-                    ${
-                      isResourcesMenuOpen
-                        ? "rotate-180"
-                        : ""
-                    }
-                  `}
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    isResourcesMenuOpen ? "rotate-180" : ""
+                  }`}
                 />
               </button>
             </div>
+
+            {/* Invisible hover bridge */}
+            <div className="absolute left-0 right-0 top-full h-5" />
 
             <ResourcesMegaMenu isOpen={isResourcesMenuOpen} />
           </div>
         </nav>
 
-        {/* =====================================================
-            DESKTOP ACTION BUTTONS
-        ====================================================== */}
+        {/* DESKTOP ACTION BUTTONS */}
 
         <div className="hidden items-center gap-4 md:flex">
           <Link
@@ -582,9 +643,7 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* =====================================================
-            MOBILE MENU BUTTON
-        ====================================================== */}
+        {/* MOBILE MENU BUTTON */}
 
         <button
           type="button"
@@ -633,9 +692,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* =======================================================
-          MOBILE MENU
-      ======================================================== */}
+      {/* MOBILE MENU */}
 
       {isMobileMenuOpen && (
         <div
@@ -737,7 +794,7 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Mobile buttons */}
+          {/* MOBILE BUTTONS */}
 
           <div
             className="
