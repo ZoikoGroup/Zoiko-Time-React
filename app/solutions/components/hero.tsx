@@ -7,6 +7,9 @@ import {
   UserRoundCheck,
 } from "lucide-react";
 
+import Link from "next/link";
+
+
 export default function Hero() {
   return (
     <section className="w-full bg-[#F8F9FC] py-16 dark:bg-slate-950 sm:py-20 lg:py-0">
@@ -48,25 +51,24 @@ export default function Hero() {
             {/* Buttons */}
             <div className="flex flex-col gap-3 sm:flex-row">
 
-              {/* View All Solutions */}
-              <button
-                type="button"
-                className="inline-flex h-14 items-center justify-center rounded-lg bg-[#44B97A] px-8 text-base font-semibold leading-6 text-white shadow-md transition hover:bg-[#3EAA70]"
-              >
-                View All Solutions
-                <ArrowRight
-                  className="ml-2 h-4 w-4"
-                  strokeWidth={2}
-                />
-              </button>
+              <Link
+  href="#solutions"
+  className="inline-flex h-14 items-center justify-center rounded-lg bg-[#44B97A] px-8 text-base font-semibold leading-6 text-white shadow-md transition hover:bg-[#3EAA70]"
+>
+  View All Solutions
+  <ArrowRight
+    className="ml-2 h-4 w-4"
+    strokeWidth={2}
+  />
+</Link>
 
               {/* Request Demo */}
-              <button
-                type="button"
-                className="inline-flex h-14 items-center justify-center rounded-lg border border-neutral-300 bg-white px-8 text-base font-semibold leading-6 text-slate-950 shadow-sm transition hover:bg-neutral-50 dark:border-neutral-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
-              >
-                Request Enterprise Demo
-              </button>
+              <Link
+  href="/request-a-demo"
+  className="inline-flex h-14 items-center justify-center rounded-lg border border-neutral-300 bg-white px-8 text-base font-semibold leading-6 text-slate-950 shadow-sm transition hover:bg-neutral-50 dark:border-neutral-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+>
+  Request Enterprise Demo
+</Link>
 
             </div>
 

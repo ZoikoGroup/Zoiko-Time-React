@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TrustGovernanceHero() {
   return (
@@ -37,26 +38,26 @@ export default function TrustGovernanceHero() {
 
             {/* Buttons */}
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <button
-                type="button"
-                className="inline-flex items-center justify-center rounded-lg bg-[#44B97A] px-8 py-4 text-base font-medium text-white transition-all duration-200 hover:bg-[#3EAA70]"
-              >
-                Visit the Trust Center
+              <Link
+  href="#trust-center"
+  className="inline-flex items-center justify-center rounded-lg bg-[#44B97A] px-8 py-4 text-base font-medium text-white transition-all duration-200 hover:bg-[#3EAA70]"
+>
+  Visit the Trust Center
 
-                <svg
-                  className="ml-2 h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 12h14M13 5l7 7-7 7"
-                  />
-                </svg>
-              </button>
+  <svg
+    className="ml-2 h-5 w-5"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M5 12h14M13 5l7 7-7 7"
+    />
+  </svg>
+</Link>
 
               <button
                 type="button"
