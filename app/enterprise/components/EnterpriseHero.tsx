@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import Image from "next/image";
 
 const features = [
@@ -84,35 +84,35 @@ export default function EnterpriseHero() {
             {/* Buttons */}
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
-              <button
-                type="button"
-                className="inline-flex min-h-14 items-center justify-center gap-2 rounded-lg bg-emerald-500 px-7 py-4 text-base font-bold text-white transition hover:bg-emerald-600"
-              >
-                <span>Request Enterprise Demo</span>
+              <Link
+  href="/request-a-demo"
+  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-lg bg-emerald-500 px-7 py-4 text-base font-bold text-white transition hover:bg-emerald-600"
+>
+  <span>Request Enterprise Demo</span>
 
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M3.33 8H12.67M8.67 4L12.67 8L8.67 12"
-                    stroke="currentColor"
-                    strokeWidth="1.33"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M3.33 8H12.67M8.67 4L12.67 8L8.67 12"
+      stroke="currentColor"
+      strokeWidth="1.33"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+</Link>
 
-              <button
-                type="button"
-                className="inline-flex min-h-14 items-center justify-center rounded-lg border-2 border-stone-300 px-8 py-4 text-base font-bold text-sky-950 transition hover:border-sky-950 dark:border-slate-700 dark:text-white dark:hover:border-slate-500"
-              >
-                Contact Sales
-              </button>
+              <Link
+  href="/contact-sales"
+  className="inline-flex min-h-14 items-center justify-center rounded-lg border-2 border-stone-300 px-8 py-4 text-base font-bold text-sky-950 transition hover:border-sky-950 dark:border-slate-700 dark:text-white dark:hover:border-slate-500"
+>
+  Contact Sales
+</Link>
 
             </div>
           </div>

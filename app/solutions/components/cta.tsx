@@ -1,3 +1,5 @@
+
+import Link from "next/link";
 export default function Cta() {
   return (
     <section
@@ -75,102 +77,68 @@ export default function Cta() {
             lg:min-w-[660px]
           "
         >
-          {/* START FREE */}
-          <button
-            type="button"
-            className="
-              flex
-              min-h-[72px]
-              flex-1
-              flex-col
-              items-center
-              justify-center
-              rounded-lg
-              border
-              border-neutral-300
-              bg-[#44B97A]
-              px-6
-              py-3
-              text-center
-              shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]
-              transition
-              hover:bg-[#3EAA70]
-            "
-          >
-            <span
-              className="
-                text-base
-                font-semibold
-                leading-6
-                text-white
-              "
-            >
-              Start Free
-            </span>
+          <Link
+  href="/start-free"
+  className="
+    flex
+    min-h-[72px]
+    flex-1
+    flex-col
+    items-center
+    justify-center
+    rounded-lg
+    border
+    border-neutral-300
+    bg-[#44B97A]
+    px-6
+    py-3
+    text-center
+    shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]
+    transition
+    hover:bg-[#3EAA70]
+  "
+>
+  <span className="text-base font-semibold leading-6 text-white">
+    Start Free
+  </span>
 
-            <span
-              className="
-                pt-1
-                text-xs
-                font-normal
-                leading-4
-                text-white
-              "
-            >
-              30-day free trial
-            </span>
-          </button>
+  <span className="pt-1 text-xs font-normal leading-4 text-white">
+    30-day free trial
+  </span>
+</Link>
 
-          {/* ENTERPRISE DEMO */}
-          <button
-            type="button"
-            className="
-              flex
-              min-h-[72px]
-              flex-1
-              flex-col
-              items-center
-              justify-center
-              rounded-lg
-              border
-              border-neutral-300
-              bg-white
-              px-6
-              py-3
-              text-center
-              shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]
-              transition
-              hover:bg-slate-50
-              dark:border-slate-700
-              dark:bg-slate-800
-              dark:hover:bg-slate-700
-            "
-          >
-            <span
-              className="
-                text-base
-                font-semibold
-                leading-6
-                text-slate-950
-                dark:text-white
-              "
-            >
-              Request Enterprise Demo
-            </span>
+<Link
+  href="/request-a-demo"
+  className="
+    flex
+    min-h-[72px]
+    flex-1
+    flex-col
+    items-center
+    justify-center
+    rounded-lg
+    border
+    border-neutral-300
+    bg-white
+    px-6
+    py-3
+    text-center
+    shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]
+    transition
+    hover:bg-slate-50
+    dark:border-slate-700
+    dark:bg-slate-800
+    dark:hover:bg-slate-700
+  "
+>
+  <span className="text-base font-semibold leading-6 text-slate-950 dark:text-white">
+    Request Enterprise Demo
+  </span>
 
-            <span
-              className="
-                pt-1
-                text-xs
-                font-normal
-                leading-4
-                text-zinc-700
-                dark:text-zinc-300
-              "
-            >
-              Talk to an expert
-            </span>
-          </button>
+  <span className="pt-1 text-xs font-normal leading-4 text-zinc-700 dark:text-zinc-300">
+    Talk to an expert
+  </span>
+</Link>
         </div>
       </div>
     </section>

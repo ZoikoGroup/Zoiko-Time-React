@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+
 
 export default function EnterpriseCTA() {
   return (
@@ -71,70 +73,70 @@ export default function EnterpriseCTA() {
             </p>
 
             {/* Buttons */}
-            <div
-              className="
-                flex
-                flex-col
-                items-stretch
-                gap-3
-                pt-4
-                sm:flex-row
-                sm:items-center
-                sm:gap-4
-              "
-            >
-              <button
-                type="button"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-lg
-                  bg-emerald-500
-                  px-6
-                  py-3
-                  text-sm
-                  font-bold
-                  leading-6
-                  text-white
-                  transition
-                  hover:bg-emerald-600
-                  sm:px-8
-                  sm:py-4
-                  sm:text-base
-                "
-              >
-                Request Enterprise Demo
-                <ArrowRight className="h-4 w-4" strokeWidth={2} />
-              </button>
+<div
+  className="
+    flex
+    flex-col
+    items-stretch
+    gap-3
+    pt-4
+    sm:flex-row
+    sm:items-center
+    sm:gap-4
+  "
+>
+  <Link
+    href="/request-a-demo"
+    className="
+      inline-flex
+      items-center
+      justify-center
+      gap-2
+      rounded-lg
+      bg-emerald-500
+      px-6
+      py-3
+      text-sm
+      font-bold
+      leading-6
+      text-white
+      transition
+      hover:bg-emerald-600
+      sm:px-8
+      sm:py-4
+      sm:text-base
+    "
+  >
+    Request Enterprise Demo
+    <ArrowRight className="h-4 w-4" strokeWidth={2} />
+  </Link>
 
-              <button
-                type="button"
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  rounded-lg
-                  border
-                  border-white/30
-                  px-6
-                  py-3
-                  text-sm
-                  font-bold
-                  leading-6
-                  text-white
-                  transition
-                  hover:border-white/60
-                  hover:bg-white/5
-                  sm:px-8
-                  sm:py-4
-                  sm:text-base
-                "
-              >
-                Contact Sales
-              </button>
-            </div>
+  <Link
+    href="/contact-sales"
+    className="
+      inline-flex
+      items-center
+      justify-center
+      rounded-lg
+      border
+      border-white/30
+      px-6
+      py-3
+      text-sm
+      font-bold
+      leading-6
+      text-white
+      transition
+      hover:border-white/60
+      hover:bg-white/5
+      sm:px-8
+      sm:py-4
+      sm:text-base
+    "
+  >
+    Contact Sales
+  </Link>
+</div>
 
             {/* Support */}
             <div className="pt-3 text-sm leading-5">

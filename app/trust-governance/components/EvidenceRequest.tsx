@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 export default function EvidenceRequest() {
   return (
@@ -21,18 +22,18 @@ export default function EvidenceRequest() {
           {/* Buttons */}
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-lg bg-[#44B97A] px-8 py-4 text-base font-medium text-white transition hover:bg-[#3EAA70]"
-            >
-              Request Security Review
-            </button>
+  type="button"
+  className="inline-flex items-center justify-center rounded-lg bg-[#44B97A] px-8 py-4 text-base font-medium text-white transition hover:bg-[#3EAA70]"
+>
+  Request Security Review
+</button>
 
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-[#44B97A] px-8 py-4 text-base font-medium text-[#44B97A] transition hover:bg-[#44B97A] hover:text-white"
-            >
-              Request Enterprise Demo
-            </button>
+            <Link
+  href="/request-a-demo"
+  className="inline-flex items-center justify-center rounded-lg border-2 border-[#44B97A] px-8 py-4 text-base font-medium text-[#44B97A] transition hover:bg-[#44B97A] hover:text-white"
+>
+  Request Enterprise Demo
+</Link>
           </div>
 
           {/* Features */}

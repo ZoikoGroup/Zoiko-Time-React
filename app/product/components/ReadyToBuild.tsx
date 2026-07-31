@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ReadyToBuild() {
   return (
@@ -29,10 +30,13 @@ export default function ReadyToBuild() {
           </div>
 
           {/* Right */}
-          <button className="rounded-md bg-emerald-500 px-8 py-5 text-base text-white transition-all duration-300 hover:bg-emerald-600 hover:shadow-lg">
-            <span className="font-bold">Start Free </span>
-            <span className="font-normal">30-day free trial</span>
-          </button>
+          <Link
+  href="/start-free"
+  className="rounded-lg bg-emerald-500 px-8 py-4 text-center shadow-lg transition-all duration-300 hover:bg-emerald-600 hover:shadow-xl"
+>
+  <span className="font-bold">Start Free</span>
+  <span className="font-normal">30-day free trial</span>
+</Link>
         </div>
       </div>
     </section>
