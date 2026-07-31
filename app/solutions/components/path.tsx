@@ -26,7 +26,9 @@ const roles = [
 
 export default function SolutionsPath() {
   return (
-    <section className="w-full bg-white py-16 dark:bg-slate-950 sm:py-20 lg:py-24">
+    <section
+    id="solutions"
+     className="w-full bg-white py-16 dark:bg-slate-950 sm:py-20 lg:py-24">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
 
         {/* HEADER */}

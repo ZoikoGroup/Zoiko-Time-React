@@ -61,7 +61,9 @@ const trustCards = [
 
 export default function TrustCenter() {
   return (
-    <section className="bg-white py-16 dark:bg-slate-950 md:py-24">
+    <section 
+    id ="trust-center"
+    className="bg-white py-16 dark:bg-slate-950 md:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">

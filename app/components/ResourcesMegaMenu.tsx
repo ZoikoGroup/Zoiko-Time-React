@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-type TruthGovernanceMegaMenuProps = {
+type ResourcesMegaMenuProps = {
   isOpen: boolean;
 };
 
@@ -44,7 +44,7 @@ function MenuItem({ title, icon }: MenuItemProps) {
         "
       >
         <Image
-          src={`/trust-goverance/${icon}`}
+          src={`/resources/${icon}`}
           alt=""
           width={18}
           height={18}
@@ -92,9 +92,78 @@ function SectionTitle({
   );
 }
 
-export default function TruthGovernanceMegaMenu({
+const learnItems = [
+  {
+    title: "Resource Center",
+    icon: "resource.png",
+  },
+  {
+    title: "Blog & Insights",
+    icon: "blog.png",
+  },
+  {
+    title: "Guides",
+    icon: "guides.png",
+  },
+  {
+    title: "Customer Stories",
+    icon: "customer.png",
+  },
+  {
+    title: "Webinars & Events",
+    icon: "webinars.png",
+  },
+];
+
+const useItems = [
+  {
+    title: "Getting Started",
+    icon: "getting.png",
+  },
+  {
+    title: "Help Center",
+    icon: "help.png",
+  },
+  {
+    title: "Product Documentation",
+    icon: "product.png",
+  },
+  {
+    title: "Frequently Asked Questions",
+    icon: "frequently.png",
+  },
+  {
+    title: "Video Tutorials",
+    icon: "video.png",
+  },
+];
+
+const buildItems = [
+  {
+    title: "Developer Documentation",
+    icon: "developer.png",
+  },
+  {
+    title: "API Reference",
+    icon: "api.png",
+  },
+  {
+    title: "Integrations Directory",
+    icon: "integrations.png",
+  },
+  {
+    title: "Release Notes",
+    icon: "release.png",
+  },
+  {
+    title: "Product Updates",
+    icon: "product2.png",
+  },
+];
+
+export default function ResourcesMegaMenu({
   isOpen,
-}: TruthGovernanceMegaMenuProps) {
+}: ResourcesMegaMenuProps) {
   return (
     <div
       className={`
@@ -146,46 +215,31 @@ export default function TruthGovernanceMegaMenu({
         <div
           className="
             grid
-            grid-cols-[245px_285px_290px_1fr]
+            grid-cols-[1fr_1fr_1fr_280px]
           "
         >
           {/* =====================================================
-              TRUST
+              LEARN
           ====================================================== */}
 
           <div className="px-5 pb-6 pt-7">
-            <SectionTitle>Trust</SectionTitle>
+            <SectionTitle>
+              Learn
+            </SectionTitle>
 
             <div className="space-y-2">
-              <MenuItem
-                icon="trust.png"
-                title="Trust Center"
-              />
-
-              <MenuItem
-                icon="security.png"
-                title="Security"
-              />
-
-              <MenuItem
-                icon="privacy.png"
-                title="Privacy"
-              />
-
-              <MenuItem
-                icon="platform.png"
-                title="Platform Reliability"
-              />
-
-              <MenuItem
-                icon="system.png"
-                title="System Status"
-              />
+              {learnItems.map((item) => (
+                <MenuItem
+                  key={item.title}
+                  title={item.title}
+                  icon={item.icon}
+                />
+              ))}
             </div>
           </div>
 
           {/* =====================================================
-              GOVERNANCE
+              USE ZOIKOTIME
           ====================================================== */}
 
           <div
@@ -198,33 +252,23 @@ export default function TruthGovernanceMegaMenu({
               dark:border-slate-700
             "
           >
-            <SectionTitle>Governance</SectionTitle>
+            <SectionTitle>
+              Use ZoikoTime
+            </SectionTitle>
 
             <div className="space-y-2">
-              <MenuItem
-                icon="human.png"
-                title="Human-in-Command Controls"
-              />
-
-              <MenuItem
-                icon="ethical.png"
-                title="Ethical Design Principles"
-              />
-
-              <MenuItem
-                icon="ai.png"
-                title="AI Governance"
-              />
-
-              <MenuItem
-                icon="administrative.png"
-                title="Administrative Controls"
-              />
+              {useItems.map((item) => (
+                <MenuItem
+                  key={item.title}
+                  title={item.title}
+                  icon={item.icon}
+                />
+              ))}
             </div>
           </div>
 
           {/* =====================================================
-              ASSURANCE
+              BUILD & STAY UPDATED
           ====================================================== */}
 
           <div
@@ -237,33 +281,18 @@ export default function TruthGovernanceMegaMenu({
               dark:border-slate-700
             "
           >
-            <SectionTitle>Assurance</SectionTitle>
+            <SectionTitle>
+              Build &amp; Stay Updated
+            </SectionTitle>
 
             <div className="space-y-2">
-              <MenuItem
-                icon="compliance.png"
-                title="Compliance & Assurance"
-              />
-
-              <MenuItem
-                icon="works.png"
-                title="Works-Council & Consultation Resources"
-              />
-
-              <MenuItem
-                icon="accessibility.png"
-                title="Accessibility"
-              />
-
-              <MenuItem
-                icon="responsible.png"
-                title="Responsible Disclosure"
-              />
-
-              <MenuItem
-                icon="data-location.png"
-                title="Data Location & Residency"
-              />
+              {buildItems.map((item) => (
+                <MenuItem
+                  key={item.title}
+                  title={item.title}
+                  icon={item.icon}
+                />
+              ))}
             </div>
           </div>
 
@@ -297,7 +326,7 @@ export default function TruthGovernanceMegaMenu({
               "
             >
               <Image
-                src="/trust-goverance/truth.png"
+                src="/resources/resource.png"
                 alt=""
                 width={26}
                 height={26}
@@ -316,7 +345,11 @@ export default function TruthGovernanceMegaMenu({
                 dark:text-slate-100
               "
             >
-              Truth you can inspect
+              Get more value
+              <br />
+              from your
+              <br />
+              workforce record
             </h3>
 
             {/* Description */}
@@ -330,10 +363,11 @@ export default function TruthGovernanceMegaMenu({
                 dark:text-slate-400
               "
             >
-              Review how ZoikoTime protects
-              classification data and preserves
-              human authority over every
-              consequential decision.
+              Practical guidance,
+              implementation resources,
+              and documentation for
+              administrators, developers,
+              workers, and evaluators.
             </p>
 
             {/* Button */}

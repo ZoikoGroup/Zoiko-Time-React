@@ -38,8 +38,8 @@ export default function Hero() {
 
 {/* Buttons */}
 <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-  <button
-    type="button"
+  <Link
+    href="/start-free"
     className="rounded-lg bg-emerald-500 px-8 py-4 text-center shadow-lg transition-all duration-300 hover:bg-emerald-600 hover:shadow-xl"
   >
     <span className="block text-lg font-bold text-white">
@@ -49,20 +49,20 @@ export default function Hero() {
     <span className="mt-1 block text-xs text-white/80">
       30-day free trial
     </span>
-  </button>
+  </Link>
 
-  <button
-    type="button"
-    className="rounded-lg border border-slate-300 bg-white px-8 py-4 text-center transition-all duration-300 hover:border-emerald-500 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
-  >
-    <span className="block text-lg font-bold text-slate-900 dark:text-white">
-      Request Enterprise Demo
-    </span>
+  <Link
+  href="/request-a-demo"
+  className="rounded-lg border border-slate-300 bg-white px-8 py-4 text-center transition-all duration-300 hover:border-emerald-500 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+>
+  <span className="block text-lg font-bold text-slate-900 dark:text-white">
+    Request Enterprise Demo
+  </span>
 
-    <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
-      Talk to an expert
-    </span>
-  </button>
+  <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
+    Talk to an expert
+  </span>
+</Link>
 </div>
 
             {/* Features */}
