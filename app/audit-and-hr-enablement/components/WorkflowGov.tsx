@@ -113,6 +113,7 @@ export default function WorkflowGov() {
         {/* Feature Cards */}
         <div
           className="
+          px-30
             mt-14
 
             grid

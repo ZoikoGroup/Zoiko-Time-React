@@ -135,7 +135,7 @@ export default function GovernanceHero() {
 
 
         {/* Heading */}
-        <h1
+        <h2
           className="
             mt-5
             max-w-[700px]
@@ -148,8 +148,8 @@ export default function GovernanceHero() {
 
             dark:text-white
 
-            sm:text-5xl
-            lg:text-6xl
+            sm:text-4xl
+            lg:text-5xl
           "
         >
           From Workforce Insight to
@@ -163,14 +163,14 @@ export default function GovernanceHero() {
           >
             Governed Decisions
           </span>
-        </h1>
+        </h2>
 
 
         {/* Description */}
         <p
           className="
             mt-8
-            max-w-[984px]
+            max-w-[584px]
             text-base
             leading-7
 
@@ -181,8 +181,23 @@ export default function GovernanceHero() {
           "
         >
           ZoikoTime transforms intelligence and evidence into structured
-          decisions, case workflows, and enterprise actions ensuring every
-          outcome is consistent, traceable, and defensible.
+          
+        </p>
+         <p
+          className="
+            
+            max-w-[984px]
+            text-base
+            leading-7
+
+            text-slate-600
+            dark:text-slate-400
+
+            sm:text-lg
+          "
+        >
+decisions, case workflows, and enterprise actions ensuring every
+          outcome is consistent, traceable, and defensible.          
         </p>
 
 
