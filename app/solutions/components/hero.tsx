@@ -64,7 +64,7 @@ export default function Hero() {
 
               {/* Request Demo */}
               <Link
-  href="/request-a-demo"
+  href="/request-enterprise-demo"
   className="inline-flex h-14 items-center justify-center rounded-lg border border-neutral-300 bg-white px-8 text-base font-semibold leading-6 text-slate-950 shadow-sm transition hover:bg-neutral-50 dark:border-neutral-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
 >
   Request Enterprise Demo

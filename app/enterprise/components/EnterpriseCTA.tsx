@@ -86,7 +86,7 @@ export default function EnterpriseCTA() {
   "
 >
   <Link
-    href="/request-a-demo"
+    href="/request-enterprise-demo"
     className="
       inline-flex
       items-center
