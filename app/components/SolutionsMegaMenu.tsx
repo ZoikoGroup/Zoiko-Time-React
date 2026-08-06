@@ -179,8 +179,8 @@ export default function SolutionsMegaMenu({
             <div className="space-y-2">
               <MenuItem
                 icon="hr.png"
-                title="Hr legal operations"
-                href="/hr-legal-operations"
+                title="HR & People Teams"
+                href="/hr-people-teams"
                  onLinkClick={onLinkClick}
               />
 
@@ -234,13 +234,14 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="time.png"
                 title="Verify Time & Attendance"
+                href="/verify-time-attendance"
                  onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="improve.png"
                 title="Improve Payroll Accuracy"
-                href="#"
+                href="/improve-payroll-accuracy"
                  onLinkClick={onLinkClick}
               />
 

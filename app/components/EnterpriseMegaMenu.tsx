@@ -116,7 +116,7 @@ const enterprisePlatformItems = [
   {
     title: "Identity & Access Management",
     icon: "identity.png",
-    href: "#",
+    href: "/identity-access-management",
   },
   {
     title: "Enterprise Integrations",
@@ -131,7 +131,7 @@ const enterprisePlatformItems = [
   {
     title: "Global Deployment",
     icon: "global.png",
-    href: "#",
+    href: "global-deployment",
   },
 ];
 
