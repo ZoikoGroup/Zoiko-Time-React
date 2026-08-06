@@ -1,600 +1,282 @@
-import Link from "next/link";
+import React from 'react';
 
-export default function DesktopMobileAppsHero() {
+interface AppAvailabilityRow {
+  experience: string;
+  platform: string;
+  role: string;
+  status: 'Supported' | 'Limited' | 'Not published';
+}
+
+const availabilityData: AppAvailabilityRow[] = [
+  {
+    experience: 'Worker mobile',
+    platform: 'Mobile family',
+    role: 'Worker',
+    status: 'Supported',
+  },
+  {
+    experience: 'Worker desktop',
+    platform: 'Desktop / web',
+    role: 'Worker',
+    status: 'Supported',
+  },
+  {
+    experience: 'Reviewer',
+    platform: 'Desktop / web',
+    role: 'Manager',
+    status: 'Limited',
+  },
+  {
+    experience: 'Admin console',
+    platform: 'Desktop / web',
+    role: 'Admin',
+    status: 'Supported',
+  },
+  {
+    experience: 'Offline capture',
+    platform: '—',
+    role: '—',
+    status: 'Not published',
+  },
+];
+
+export default function AppPreviewHeroSection() {
+  const getStatusBadge = (status: AppAvailabilityRow['status']) => {
+    switch (status) {
+      case 'Supported':
+        return (
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/80 dark:text-emerald-400">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            Supported
+          </span>
+        );
+      case 'Limited':
+        return (
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-700 dark:bg-amber-950/80 dark:text-amber-400">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+            Limited
+          </span>
+        );
+      case 'Not published':
+        return (
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-700 dark:bg-rose-950/80 dark:text-rose-400">
+            <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
+            Not published
+          </span>
+        );
+    }
+  };
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
+    <section className="relative w-full bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 font-sans overflow-hidden transition-colors duration-200">
+      
+      {/* Background Radial Glow */}
+      <div 
+        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-radial from-teal-500/15 to-transparent blur-2xl pointer-events-none" 
+        aria-hidden="true" 
+      />
 
-      {/* Background Glow */}
-      <div className="absolute left-1/2 top-0 h-[450px] w-[760px] -translate-x-1/2 rounded-full bg-teal-500/10 blur-[130px]" />
-
-      <div className="relative mx-auto max-w-[1440px] px-6 pb-28 pt-16">
-
-        {/* Label */}
-        <div className="flex justify-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-teal-600 dark:text-teal-400">
+      <div className="max-w-[1180px] mx-auto flex flex-col items-center gap-10 relative z-10">
+        
+        {/* Header Content */}
+        <div className="max-w-[760px] text-center flex flex-col items-center gap-4">
+          <span className="text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-widest">
             Desktop &amp; Mobile Apps
           </span>
-        </div>
-
-
-        {/* Heading */}
-        <h1 className="mx-auto mt-5 max-w-4xl text-center text-4xl font-bold leading-tight text-slate-900 dark:text-white md:text-5xl lg:text-[56px] lg:leading-[64px]">
-
-          Review and manage workforce
-          <br />
-
-          records across{" "}
-
-          <span className="text-teal-600 dark:text-teal-400">
-            supported apps
-          </span>
-
-        </h1>
-
-
-        {/* Description */}
-        <p className="mx-auto mt-8 max-w-5xl text-center text-[17px] leading-8 text-slate-600 dark:text-slate-300">
-
-          ZoikoTime gives workers, reviewers, and authorized administrators
-          application experiences for visible record sessions, review,
-          correction, approval, evidence, and administration — with platform
-          support confirmed through current documentation.
-
-        </p>
-
-
-        {/* Buttons */}
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-
-          <Link
-            href="/start-free"
-            className="rounded-xl bg-teal-600 px-9 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700"
-          >
-            Start Free
-          </Link>
-
-
-          <Link
-            href="/request-enterprise-demo"
-            className="rounded-xl border border-slate-300 bg-white px-9 py-3.5 text-base font-semibold text-slate-900 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
-          >
-            Request Enterprise Demo
-          </Link>
-
-        </div>
-
-
-        {/* Trial Text */}
-        <p className="mt-6 text-center text-sm text-slate-500 dark:text-slate-400">
-
-          30-day trial · Human authority remains controlling · Platform and
-          feature support vary by approved environment, role, plan, version,
-          and region
-
-        </p>
-
-
-
-        {/* Device Preview Wrapper */}
-        <div className="relative mt-16 flex justify-center lg:mt-24">
-
-
-          {/* Desktop Monitor */}
-          <div className="relative w-full max-w-[1180px] rounded-[28px] bg-slate-900 p-3 shadow-[0_30px_70px_rgba(14,31,61,0.30)]">
-
-
-            {/* Camera */}
-            <div className="absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-slate-700" />
-
-
-            {/* Screen */}
-            <div className="overflow-hidden rounded-2xl bg-white dark:bg-slate-900">
-
-
-              {/* Window Header */}
-              <div className="flex h-11 items-center gap-2 bg-slate-900 px-5">
-
-                <span className="h-2.5 w-2.5 rounded-full bg-white/30" />
-                <span className="h-2.5 w-2.5 rounded-full bg-white/30" />
-                <span className="h-2.5 w-2.5 rounded-full bg-white/30" />
-
-
-                <span className="ml-4 text-xs font-medium text-white/90">
-                  ZoikoTime • Administrator Console
-                </span>
-
-              </div>
-
-
-
-              {/* Dashboard Area */}
-              <div className="flex min-h-[520px]">
-
-
-                {/* Sidebar */}
-                <aside className="hidden w-[195px] border-r border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-900 lg:block">
-
-
-                  <div className="px-6 pt-7">
-
-                    <h3 className="text-sm font-extrabold tracking-wide">
-
-                      <span className="text-slate-900 dark:text-white">
-                        ZOIKO
-                      </span>
-
-                      <span className="text-teal-600">
-                        TIME
-                      </span>
-
-                    </h3>
-
-                  </div>
-
-
-                  <nav className="mt-6 space-y-2 px-3">
-
-
-                    <div className="flex items-center gap-3 rounded-lg bg-white px-4 py-3 shadow-sm dark:bg-slate-800">
-
-                      <span className="h-2 w-2 rounded-full bg-teal-600" />
-
-                      <span className="text-sm font-medium text-slate-900 dark:text-white">
-                        Overview
-                      </span>
-
-                    </div>
-
-
-                    {[
-                      "Application access",
-                      "Roles & permissions",
-                      "Policies",
-                      "Availability",
-                      "Releases",
-                      "Audit",
-                    ].map((item) => (
-
-                      <div
-                        key={item}
-                        className="flex items-center gap-3 px-4 py-3 text-sm text-slate-500 dark:text-slate-400"
-                      >
-
-                        <span className="h-2 w-2 rounded-full bg-slate-300" />
-
-                        {item}
-
-                      </div>
-
-                    ))}
-
-
-                  </nav>
-
-
-                </aside>
-
-
-
-                {/* Main Dashboard Content */}
-                <div className="flex-1 px-5 py-7 sm:px-8">
-
-
-                  <div className="flex items-center justify-between">
-
-                    <h2 className="text-xl font-semibold text-slate-900 dark:text-white sm:text-2xl">
-                      Application availability
-                    </h2>
-
-
-                    <div className="flex h-8 items-center gap-2 rounded-full bg-emerald-50 px-4 dark:bg-emerald-900/20">
-
-                      <span className="h-2 w-2 rounded-full bg-emerald-500" />
-
-                      <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400">
-                        Healthy
-                      </span>
-
-                    </div>
-
-
-                  </div>
-
-
-                  {/* Table Wrapper Starts in Part 2 */}
-
-                                    {/* Table */}
-                  <div className="mt-8 overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
-
-                    <div className="min-w-[800px]">
-
-
-                      {/* Table Header */}
-                      <div className="grid grid-cols-[220px_220px_140px_220px] bg-slate-50 dark:bg-slate-800">
-
-
-                        <div className="border-b border-slate-200 px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:border-slate-700">
-                          Experience
-                        </div>
-
-
-                        <div className="border-b border-slate-200 px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:border-slate-700">
-                          Platform
-                        </div>
-
-
-                        <div className="border-b border-slate-200 px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:border-slate-700">
-                          Role
-                        </div>
-
-
-                        <div className="border-b border-slate-200 px-6 py-4 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:border-slate-700">
-                          Status
-                        </div>
-
-
-                      </div>
-
-
-
-                      {/* Rows */}
-
-                      {[
-                        {
-                          experience: "Worker mobile",
-                          platform: "Mobile family",
-                          role: "Worker",
-                          status: "Supported",
-                          color:
-                            "bg-emerald-100 text-teal-700 dark:bg-emerald-900/20 dark:text-teal-300",
-                        },
-
-                        {
-                          experience: "Worker desktop",
-                          platform: "Desktop / Web",
-                          role: "Worker",
-                          status: "Supported",
-                          color:
-                            "bg-emerald-100 text-teal-700 dark:bg-emerald-900/20 dark:text-teal-300",
-                        },
-
-                        {
-                          experience: "Reviewer",
-                          platform: "Desktop / Web",
-                          role: "Manager",
-                          status: "Limited",
-                          color:
-                            "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/20 dark:text-yellow-300",
-                        },
-
-                        {
-                          experience: "Admin console",
-                          platform: "Desktop / Web",
-                          role: "Admin",
-                          status: "Supported",
-                          color:
-                            "bg-emerald-100 text-teal-700 dark:bg-emerald-900/20 dark:text-teal-300",
-                        },
-
-                        {
-                          experience: "Offline capture",
-                          platform: "—",
-                          role: "—",
-                          status: "Not published",
-                          color:
-                            "bg-red-100 text-red-700 dark:bg-red-900/20 dark:text-red-300",
-                        },
-                      ].map((row, index) => (
-
-                        <div
-                          key={row.experience}
-                          className={`grid grid-cols-[220px_220px_140px_220px] ${
-                            index !== 4
-                              ? "border-b border-slate-200 dark:border-slate-700"
-                              : ""
-                          }`}
-                        >
-
-                          <div className="px-6 py-4 text-sm text-slate-800 dark:text-slate-200">
-                            {row.experience}
-                          </div>
-
-
-                          <div
-                            className={`px-6 py-4 text-sm ${
-                              row.platform === "—"
-                                ? "text-slate-400"
-                                : "text-slate-800 dark:text-slate-200"
-                            }`}
-                          >
-                            {row.platform}
-                          </div>
-
-
-                          <div
-                            className={`px-6 py-4 text-sm ${
-                              row.role === "—"
-                                ? "text-slate-400"
-                                : "text-slate-800 dark:text-slate-200"
-                            }`}
-                          >
-                            {row.role}
-                          </div>
-
-
-                          <div className="flex items-center px-6 py-4">
-
-                            <span
-                              className={`rounded-full px-4 py-1 text-xs font-semibold ${row.color}`}
-                            >
-                              {row.status}
-                            </span>
-
-                          </div>
-
-
-                        </div>
-
-                      ))}
-
-
-                    </div>
-
-                  </div>
-
-
-                </div>
-
-
-              </div>
-
-
-              {/* Desktop Monitor Stand Shadow */}
-              <div className="mx-auto mt-8 h-4 w-[92%] rounded-b-2xl bg-slate-300 shadow-xl dark:bg-slate-700" />
-
-
-            </div>
-
-                      {/* Mobile Mockup */}
-          <div className="absolute -right-16 bottom-[-40px] z-20 hidden lg:block">
-
-
-            <div className="relative w-[255px] rounded-[42px] bg-slate-900 p-[10px] shadow-[0_30px_60px_rgba(14,31,61,0.30)]">
-
-
-              {/* Phone Notch */}
-              <div className="absolute left-1/2 top-2 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-slate-900" />
-
-
-              {/* Phone Screen */}
-              <div className="overflow-hidden rounded-[32px] bg-slate-50 dark:bg-slate-900">
-
-
-                {/* Header */}
-                <div className="bg-gradient-to-r from-teal-600 to-teal-700 px-5 pb-6 pt-5">
-
-                  <p className="text-[10px] text-white/80">
-                    Northwind Ops • Tue, Aug 5
-                  </p>
-
-                  <h3 className="mt-2 text-lg font-semibold text-white">
-                    Home
-                  </h3>
-
-                </div>
-
-
-
-                {/* Status */}
-                <div className="px-4 pt-4">
-
-                  <div className="flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-2 dark:bg-emerald-900/20">
-
-                    <span className="h-2 w-2 rounded-full bg-emerald-500" />
-
-                    <span className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">
-                      Recording time state · active
-                    </span>
-
-                  </div>
-
-                </div>
-
-
-
-                {/* Current Record */}
-                <div className="px-4 pt-4">
-
-                  <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-800">
-
-                    <p className="text-[10px] uppercase tracking-wider text-slate-500">
-                      Current Record
-                    </p>
-
-
-                    <h4 className="mt-2 text-sm font-semibold text-slate-900 dark:text-white">
-                      Shift · Started 09:00 · v3
-                    </h4>
-
-
-                  </div>
-
-                </div>
-
-
-
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-3 px-4 pt-4">
-
-
-                  {[
-                    {
-                      value: "6h 12m",
-                      label: "Recorded",
-                    },
-                    {
-                      value: (
-                        <>
-                          On
-                          <br />
-                          Break
-                        </>
-                      ),
-                      label: "Status",
-                    },
-                    {
-                      value: "1",
-                      label: "To review",
-                    },
-                  ].map((item) => (
-
-                    <div
-                      key={item.label}
-                      className="rounded-lg border border-slate-200 bg-white p-3 text-center dark:border-slate-700 dark:bg-slate-800"
-                    >
-
-                      <h5 className="text-lg font-bold text-slate-900 dark:text-white">
-                        {item.value}
-                      </h5>
-
-
-                      <p className="mt-1 text-[10px] text-slate-500">
-                        {item.label}
-                      </p>
-
-
-                    </div>
-
-                  ))}
-
-
-                </div>
-
-
-
-                {/* Buttons */}
-                <div className="px-4 pt-5">
-
-                  <button className="w-full rounded-xl bg-teal-600 py-3 text-sm font-semibold text-white transition hover:bg-teal-700">
-                    Review &amp; Complete Timesheet
-                  </button>
-
-                </div>
-
-
-
-                <div className="px-4 pt-3">
-
-                  <button className="w-full rounded-xl border border-slate-300 bg-white py-3 text-sm font-semibold text-slate-900 dark:border-slate-700 dark:bg-slate-800 dark:text-white">
-                    Request a Correction
-                  </button>
-
-                </div>
-
-
-
-                {/* Privacy */}
-                <div className="px-4 pt-4">
-
-                  <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-800">
-
-                    <p className="text-[10px] uppercase tracking-wider text-slate-500">
-                      Privacy &amp; Sync
-                    </p>
-
-
-                    <p className="mt-2 text-xs leading-5 text-slate-600 dark:text-slate-300">
-                      Last synced 09:31 · 0 pending · What's in use
-                    </p>
-
-                  </div>
-
-                </div>
-
-
-
-                {/* Bottom Navigation */}
-                <div className="mt-5 flex items-center justify-between border-t border-slate-200 bg-white px-5 py-4 dark:border-slate-700 dark:bg-slate-900">
-
-
-                  {[
-                    "Home",
-                    "Records",
-                    "Actions",
-                    "History",
-                    "More",
-                  ].map((item, index) => (
-
-                    <div
-                      key={item}
-                      className="flex flex-col items-center gap-1"
-                    >
-
-                      <div
-                        className={`h-4 w-4 rounded ${
-                          index === 0
-                            ? "bg-emerald-100"
-                            : "bg-slate-200 dark:bg-slate-700"
-                        }`}
-                      />
-
-                      <span
-                        className={`text-[10px] ${
-                          index === 0
-                            ? "font-semibold text-teal-600"
-                            : "text-slate-500"
-                        }`}
-                      >
-                        {item}
-                      </span>
-
-                    </div>
-
-                  ))}
-
-
-                </div>
-
-
-              </div>
-
-
-
-              {/* Phone Buttons */}
-              <div className="absolute -left-[2px] top-28 h-14 w-[3px] rounded-l bg-slate-800" />
-
-              <div className="absolute right-0 top-24 h-10 w-[3px] rounded-r bg-slate-800" />
-
-              <div className="absolute right-0 top-40 h-8 w-[3px] rounded-r bg-slate-800" />
-
-
-            </div>
-
-
+          
+          <h1 className="text-3xl sm:text-5xl font-bold text-slate-800 dark:text-white leading-tight">
+            Review and manage workforce records across{' '}
+            <span className="text-teal-600 dark:text-teal-400">supported apps</span>
+          </h1>
+
+          <p className="max-w-[700px] text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+            ZoikoTime gives workers, reviewers, and authorized administrators application experiences for visible record sessions, review, correction, approval, evidence, and administration — with platform support confirmed through current documentation.
+          </p>
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+            <button className="w-full sm:w-auto px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base rounded-xl shadow-md shadow-teal-600/20 transition-colors">
+              Start Free
+            </button>
+            <button className="w-full sm:w-auto px-6 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-semibold text-base rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+              Request Enterprise Demo
+            </button>
           </div>
 
+          {/* Disclaimer / Fine Print */}
+          <p className="text-slate-500 dark:text-slate-400 text-xs leading-normal pt-1">
+            30-day trial &middot; Human authority remains controlling &middot; Platform and feature support vary by approved environment, role, plan, version, and region
+          </p>
+        </div>
 
+        {/* Mockups Container (Desktop + Mobile) */}
+        <div className="w-full max-w-[1100px] flex flex-col lg:flex-row items-center lg:items-end justify-center gap-8 pt-6">
+          
+          {/* Laptop Mockup Wrapper */}
+          <div className="w-full lg:max-w-[780px] bg-slate-900 rounded-t-2xl p-3 pb-0 shadow-2xl border border-slate-800">
+            {/* Laptop Window Frame */}
+            <div className="bg-white dark:bg-slate-900 rounded-t-lg overflow-hidden border border-slate-800">
+              
+              {/* Window Header */}
+              <div className="bg-slate-800 px-4 py-2.5 flex items-center gap-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
+                <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
+                <div className="w-2.5 h-2.5 rounded-full bg-slate-600" />
+                <span className="ml-2 text-xs font-medium text-slate-300">
+                  ZoikoTime &middot; Administrator Console
+                </span>
+              </div>
+
+              {/* Admin Layout Body */}
+              <div className="flex min-h-[320px]">
+                
+                {/* Sidebar */}
+                <aside className="w-44 bg-slate-50 dark:bg-slate-800/50 border-r border-slate-200 dark:border-slate-700 p-3 flex flex-col gap-1.5 text-xs">
+                  <div className="px-2 py-1 font-extrabold text-slate-800 dark:text-white tracking-tight">
+                    ZOIKO<span className="text-teal-600">TIME</span>
+                  </div>
+                  
+                  <nav className="flex flex-col gap-1 mt-2">
+                    <button className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-white dark:bg-slate-700 font-semibold text-slate-800 dark:text-white shadow-xs">
+                      <span className="w-1.5 h-1.5 rounded-sm bg-teal-600" />
+                      Overview
+                    </button>
+                    {['Application access', 'Roles & permissions', 'Policies', 'Availability', 'Releases', 'Audit'].map((item) => (
+                      <button key={item} className="flex items-center gap-2 px-2.5 py-1.5 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200">
+                        <span className="w-1.5 h-1.5 rounded-sm bg-slate-300 dark:bg-slate-600" />
+                        {item}
+                      </button>
+                    ))}
+                  </nav>
+                </aside>
+
+                {/* Console Main Content */}
+                <main className="flex-1 p-5 overflow-x-auto">
+                  <div className="flex items-center justify-between pb-4">
+                    <h3 className="text-base font-semibold text-slate-800 dark:text-white">
+                      Application availability
+                    </h3>
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/80 dark:text-emerald-400">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                      Healthy
+                    </span>
+                  </div>
+
+                  {/* Availability Table */}
+                  <table className="w-full text-left text-xs min-w-[400px]">
+                    <thead>
+                      <tr className="border-b border-slate-200 dark:border-slate-700 text-slate-400 font-semibold uppercase">
+                        <th className="py-2">Experience</th>
+                        <th className="py-2">Platform</th>
+                        <th className="py-2">Role</th>
+                        <th className="py-2">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                      {availabilityData.map((row, idx) => (
+                        <tr key={idx} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40">
+                          <td className="py-2.5 text-slate-800 dark:text-slate-200 font-medium">
+                            {row.experience}
+                          </td>
+                          <td className="py-2.5 text-slate-600 dark:text-slate-400">
+                            {row.platform}
+                          </td>
+                          <td className="py-2.5 text-slate-600 dark:text-slate-400">
+                            {row.role}
+                          </td>
+                          <td className="py-2.5">{getStatusBadge(row.status)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </main>
+
+              </div>
+            </div>
+
+            {/* Laptop Base Stand */}
+            <div className="h-3 bg-slate-700 rounded-b-lg border-t border-slate-600 flex justify-center">
+              <div className="w-20 h-1 bg-slate-500 rounded-b-md" />
+            </div>
+          </div>
+
+          {/* Mobile Phone Mockup */}
+          <div className="w-64 bg-slate-900 p-2.5 rounded-[36px] shadow-2xl border border-slate-800 shrink-0">
+            <div className="relative bg-slate-50 dark:bg-slate-900 rounded-[28px] overflow-hidden border border-slate-800 text-xs">
+              
+              {/* Phone Header */}
+              <div className="bg-gradient-to-r from-teal-600 to-teal-700 text-white p-3 pt-4">
+                <span className="text-[10px] opacity-80 block">Northwind Ops &middot; Tue, Aug 5</span>
+                <span className="text-sm font-semibold">Home</span>
+              </div>
+
+              {/* Status Banner */}
+              <div className="p-3 space-y-3">
+                <div className="bg-emerald-50 dark:bg-emerald-950/60 p-2 rounded-xl flex items-center gap-2 text-teal-700 dark:text-emerald-400 font-semibold text-[10px]">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  Recording time state &middot; active
+                </div>
+
+                {/* Shift Card */}
+                <div className="bg-white dark:bg-slate-800 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-xs">
+                  <span className="text-[9px] uppercase text-slate-400 font-semibold block">
+                    Current record
+                  </span>
+                  <span className="font-semibold text-slate-800 dark:text-white">
+                    Shift &middot; started 09:00 &middot; v3
+                  </span>
+                </div>
+
+                {/* Quick Stats Grid */}
+                <div className="grid grid-cols-3 gap-2 text-center">
+                  <div className="bg-white dark:bg-slate-800 p-2 rounded-lg border border-slate-200 dark:border-slate-700">
+                    <span className="font-bold text-slate-800 dark:text-white block">6h 12m</span>
+                    <span className="text-[9px] text-slate-400">Recorded</span>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 p-2 rounded-lg border border-slate-200 dark:border-slate-700">
+                    <span className="font-bold text-slate-800 dark:text-white block leading-tight">On break</span>
+                    <span className="text-[9px] text-slate-400">Status</span>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 p-2 rounded-lg border border-slate-200 dark:border-slate-700">
+                    <span className="font-bold text-slate-800 dark:text-white block">1</span>
+                    <span className="text-[9px] text-slate-400">To review</span>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="space-y-1.5 pt-1">
+                  <button className="w-full py-2 bg-teal-600 text-white font-semibold rounded-lg text-xs hover:bg-teal-700 transition-colors">
+                    Review &amp; complete timesheet
+                  </button>
+                  <button className="w-full py-2 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white font-semibold rounded-lg text-xs hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                    Request a correction
+                  </button>
+                </div>
+
+                {/* Sync Note */}
+                <div className="bg-white dark:bg-slate-800 p-2 rounded-xl border border-slate-200 dark:border-slate-700 text-[9.5px] text-slate-500 dark:text-slate-400">
+                  <span className="font-semibold text-slate-400 uppercase text-[8px] block">
+                    Privacy &amp; sync
+                  </span>
+                  Last synced 09:31 &middot; 0 pending
+                </div>
+              </div>
+
+              {/* Bottom Mobile Nav */}
+              <div className="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 px-2 py-2 flex justify-around text-[9px] text-slate-400">
+                <span className="text-teal-600 font-bold">Home</span>
+                <span>Records</span>
+                <span>Actions</span>
+                <span>History</span>
+                <span>More</span>
+              </div>
+
+            </div>
+          </div>
 
         </div>
 
-
-
-        {/* Desktop Stand */}
-        <div className="absolute -bottom-6 left-1/2 h-4 w-[96%] -translate-x-1/2 rounded-b-2xl bg-gradient-to-b from-slate-300 to-slate-400 shadow-[0_14px_22px_rgba(14,31,61,0.18)] dark:from-slate-700 dark:to-slate-800">
-
-
-          <div className="mx-auto h-2 w-24 rounded-b-lg bg-slate-400 dark:bg-slate-600" />
-
-
-        </div>
-
-
-</div>
       </div>
-
-
     </section>
   );
 }
-
-    

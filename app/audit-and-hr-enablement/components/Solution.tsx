@@ -117,7 +117,7 @@ export default function Solution() {
             tracking-tight
             text-slate-900
             sm:text-4xl
-            lg:text-5xl
+            lg:text-4xl
             dark:text-white
             "
           >
@@ -136,7 +136,7 @@ export default function Solution() {
             dark:text-slate-400
             "
           >
-            Six integrated layers that convert raw intelligence into structured,
+            Six integrated layers that convert raw intelligence into structured,<br/>
             governed, and traceable enterprise decisions.
           </p>
 
@@ -146,7 +146,9 @@ export default function Solution() {
         {/* Cards */}
         <div
           className="
-          mt-14
+          
+          px-22
+          
           grid
           grid-cols-1
           gap-6

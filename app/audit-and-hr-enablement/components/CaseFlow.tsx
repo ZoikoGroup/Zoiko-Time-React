@@ -100,8 +100,8 @@ export default function CaseFlow() {
             dark:text-slate-400
             "
           >
-            An end-to-end case lifecycle that ensures no issue falls through
-            the cracks — every step documented, every decision defensible.
+            An end-to-end case lifecycle that ensures no issue falls through 
+            the <br/>cracks — every step documented, every decision defensible.
           </p>
 
         </div>
@@ -111,6 +111,7 @@ export default function CaseFlow() {
         {/* Steps */}
         <div
           className="
+          px-10
           relative
           mt-14
           grid
