@@ -5,22 +5,28 @@ import Link from "next/link";
 
 type ProductMegaMenuProps = {
   isOpen: boolean;
+  onLinkClick: () => void;
 };
 
 type MenuItemProps = {
   title: string;
   description: string;
   icon: string;
+  href: string;
+  onLinkClick: () => void;
 };
 
 function MenuItem({
   title,
   description,
   icon,
+  href,
+  onLinkClick,
 }: MenuItemProps) {
   return (
-    <button
-      type="button"
+    <Link
+      href={href}
+      onClick={onLinkClick}
       className="
         group/item
         flex
@@ -86,7 +92,7 @@ function MenuItem({
           {description}
         </div>
       </div>
-    </button>
+    </Link>
   );
 }
 
@@ -126,6 +132,7 @@ function SectionTitle({
 
 export default function ProductMegaMenu({
   isOpen,
+  onLinkClick,
 }: ProductMegaMenuProps) {
   return (
     <div
@@ -179,13 +186,9 @@ export default function ProductMegaMenu({
           dark:shadow-2xl
         "
       >
-        {/* =================================================
-            MAIN CONTENT
-        ================================================== */}
-
         <div className="grid grid-cols-4">
 
-          {/* =================================================
+                    {/* =================================================
               PLATFORM
           ================================================== */}
 
@@ -200,45 +203,49 @@ export default function ProductMegaMenu({
               dark:border-slate-700
             "
           >
-           <SectionTitle icon="platform-icon.png">
-  Platform
-</SectionTitle>
+            <SectionTitle icon="platform-icon.png">
+              Platform
+            </SectionTitle>
 
-<div className="space-y-3">
-  <Link href="/product#product">
-    <MenuItem
-      icon="product-overview.png"
-      title="Product Overview"
-      description="Platform overview and principles."
-    />
-  </Link>
+            <div className="space-y-3">
+              <MenuItem
+                icon="product-overview.png"
+                title="Product Overview"
+                description="Platform overview and principles."
+                href="#"
+                onLinkClick={onLinkClick}
+              />
 
-              <Link href="/how-zoikotime-works">
-  <MenuItem
-    icon="zoikotimeworks.png"
-    title="How ZoikoTime Works"
-    description="Architecture & components."
-  />
-</Link>
+              <MenuItem
+                icon="zoikotimeworks.png"
+                title="How ZoikoTime Works"
+                description="Architecture & components."
+                href="/how-zoikotime-works"
+                onLinkClick={onLinkClick}
+              />
 
-              <Link href="/desktop-and-mobile-apps">
-  <MenuItem
-    icon="desktop.png"
-    title="Desktop & Mobile Apps"
-    description="Work from anywhere."
-  />
-</Link>
+              <MenuItem
+                icon="desktop.png"
+                title="Desktop & Mobile Apps"
+                description="Work from anywhere."
+                href="/desktop-and-mobile-apps"
+                onLinkClick={onLinkClick}
+              />
 
               <MenuItem
                 icon="zoikosema.png"
                 title="Zoiko Sema Integration"
                 description="Communication layer."
+                href="#"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="kairos.png"
                 title="Kairos Assistant"
                 description="Conversational AI assistant."
+                href="#"
+                onLinkClick={onLinkClick}
               />
             </div>
           </div>
@@ -262,40 +269,49 @@ export default function ProductMegaMenu({
               Time & Attendance
             </SectionTitle>
 
-            <div className="space-y-3">
+            <div className="space-y-3"> 
               <MenuItem
                 icon="timetracking.png"
-                title="Time Tracking"
+                title="Time and activity verification"
                 description="Accurate time capture."
+                href="time-and-activity-verification"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="timesheets.png"
                 title="Timesheets & Approvals"
                 description="Submit, review, approve."
+                href="#"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="attendance.png"
                 title="Attendance & Presence"
                 description="Verify attendance in real time."
+                href="#"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="break.png"
                 title="Break & Rest Compliance"
                 description="Meal & rest compliance."
+                href="#"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="shift.png"
                 title="Shift Integrity Controls"
                 description="Ensure shift accuracy."
+                href="#"
+                onLinkClick={onLinkClick}
               />
             </div>
           </div>
-
-          {/* =================================================
+                    {/* =================================================
               TRUTH & EVIDENCE
           ================================================== */}
 
@@ -319,30 +335,40 @@ export default function ProductMegaMenu({
                 icon="deterministic.png"
                 title="Deterministic Time Classification"
                 description="Policy-bound, deterministic."
+                href="#"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="evidence.png"
                 title="Evidence Ledger"
                 description="Immutable audit trail."
+                href="#"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="workforce.png"
                 title="Workforce Record Insights"
                 description="Organization-level insights."
+                href="#"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="reports.png"
                 title="Reports & Dashboards"
                 description="Real-time reporting."
+                href="#"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="anomaly.png"
                 title="Anomaly Flags & Alerts"
                 description="Detect issues early."
+                href="#"
+                onLinkClick={onLinkClick}
               />
             </div>
           </div>
@@ -396,7 +422,6 @@ export default function ProductMegaMenu({
             </div>
 
             <div className="mt-8">
-
               {/* Product Image */}
 
               <div
@@ -422,11 +447,11 @@ export default function ProductMegaMenu({
                   priority
                 />
               </div>
-
-              {/* Explore Button */}
+                            {/* Explore Button */}
 
               <button
                 type="button"
+                onClick={onLinkClick}
                 className="
                   mt-6
                   flex
@@ -450,7 +475,6 @@ export default function ProductMegaMenu({
               >
                 Explore ZoikoTime
               </button>
-
             </div>
           </div>
         </div>
