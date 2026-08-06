@@ -243,7 +243,8 @@ export default function Header() {
             {/* Invisible hover bridge */}
             <div className="absolute left-0 right-0 top-full h-5" />
 
-            <ProductMegaMenu isOpen={isProductMenuOpen} />
+            <ProductMegaMenu isOpen={isProductMenuOpen} 
+            onLinkClick={closeAllMegaMenus}/>
           </div>
 
           {/* SOLUTIONS */}
@@ -321,7 +322,8 @@ export default function Header() {
             {/* Invisible hover bridge */}
             <div className="absolute left-0 right-0 top-full h-5" />
 
-            <SolutionsMegaMenu isOpen={isSolutionsMenuOpen} />
+            <SolutionsMegaMenu isOpen={isSolutionsMenuOpen}
+            onLinkClick={closeAllMegaMenus} />
           </div>
 
           {/* TRUST & GOVERNANCE */}
@@ -402,6 +404,7 @@ export default function Header() {
 
             <TrustGovernanceMegaMenu
               isOpen={isTrustGovernanceMenuOpen}
+               onLinkClick={closeAllMegaMenus}
             />
           </div>
 
@@ -481,7 +484,9 @@ export default function Header() {
             {/* Invisible hover bridge */}
             <div className="absolute left-0 right-0 top-full h-5" />
 
-            <EnterpriseMegaMenu isOpen={isEnterpriseMenuOpen} />
+            <EnterpriseMegaMenu isOpen={isEnterpriseMenuOpen}
+            onLinkClick={closeAllMegaMenus}
+              />
           </div>
 
           {/* PRICING */}
@@ -601,7 +606,8 @@ export default function Header() {
             {/* Invisible hover bridge */}
             <div className="absolute left-0 right-0 top-full h-5" />
 
-            <ResourcesMegaMenu isOpen={isResourcesMenuOpen} />
+            <ResourcesMegaMenu isOpen={isResourcesMenuOpen}
+            onLinkClick={closeAllMegaMenus} />
           </div>
         </nav>
 

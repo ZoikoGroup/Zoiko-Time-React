@@ -1,35 +1,28 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 type TrustGovernanceMegaMenuProps = {
   isOpen: boolean;
+  onLinkClick: () => void;
 };
 
 type MenuItemProps = {
   title: string;
   icon: string;
+  href?: string;
+  onLinkClick?: () => void;
 };
 
-function MenuItem({ title, icon }: MenuItemProps) {
-  return (
-    <button
-      type="button"
-      className="
-        group/item
-        flex
-        w-full
-        items-center
-        gap-3
-        rounded-xl
-        px-3
-        py-2.5
-        text-left
-        transition-colors
-        hover:bg-slate-100
-        dark:hover:bg-slate-800/70
-      "
-    >
+function MenuItem({
+  title,
+  icon,
+  href = "#",
+  onLinkClick,
+}: MenuItemProps) {
+  const content = (
+    <>
       <div
         className="
           flex
@@ -45,7 +38,7 @@ function MenuItem({ title, icon }: MenuItemProps) {
       >
         <Image
           src={`/trust-goverance/${icon}`}
-          alt=""
+          alt={title}
           width={18}
           height={18}
           className="h-[18px] w-[18px] object-contain"
@@ -64,6 +57,53 @@ function MenuItem({ title, icon }: MenuItemProps) {
       >
         {title}
       </span>
+    </>
+  );
+
+  if (href !== "#") {
+    return (
+      <Link
+        href={href}
+        onClick={onLinkClick}
+        className="
+          group/item
+          flex
+          w-full
+          items-center
+          gap-3
+          rounded-xl
+          px-3
+          py-2.5
+          text-left
+          transition-colors
+          hover:bg-slate-100
+          dark:hover:bg-slate-800/70
+        "
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      className="
+        group/item
+        flex
+        w-full
+        items-center
+        gap-3
+        rounded-xl
+        px-3
+        py-2.5
+        text-left
+        transition-colors
+        hover:bg-slate-100
+        dark:hover:bg-slate-800/70
+      "
+    >
+      {content}
     </button>
   );
 }
@@ -94,6 +134,7 @@ function SectionTitle({
 
 export default function TrustGovernanceMegaMenu({
   isOpen,
+  onLinkClick,
 }: TrustGovernanceMegaMenuProps) {
   return (
     <div
@@ -128,7 +169,7 @@ export default function TrustGovernanceMegaMenu({
         "
       />
 
-      {/* Main dropdown */}
+      {/* Main Dropdown */}
       <div
         className="
           relative
@@ -149,7 +190,8 @@ export default function TrustGovernanceMegaMenu({
             grid-cols-[245px_285px_290px_1fr]
           "
         >
-          {/* TRUST */}
+
+                    {/* Trust */}
           <div className="px-5 pb-6 pt-7">
             <SectionTitle>Trust</SectionTitle>
 
@@ -162,11 +204,15 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="security.png"
                 title="Security"
+                href="/security-overview"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="privacy.png"
                 title="Privacy"
+                href="/privacy-controls"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
@@ -181,7 +227,7 @@ export default function TrustGovernanceMegaMenu({
             </div>
           </div>
 
-          {/* GOVERNANCE */}
+          {/* Governance */}
           <div
             className="
               border-l
@@ -217,7 +263,7 @@ export default function TrustGovernanceMegaMenu({
             </div>
           </div>
 
-          {/* ASSURANCE */}
+          {/* Assurance */}
           <div
             className="
               border-l
@@ -244,6 +290,8 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="accessibility.png"
                 title="Accessibility"
+                href="/accessibility"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
@@ -258,7 +306,7 @@ export default function TrustGovernanceMegaMenu({
             </div>
           </div>
 
-          {/* FEATURED CARD */}
+          {/* Featured Card */}
           <div
             className="
               m-4
@@ -286,14 +334,14 @@ export default function TrustGovernanceMegaMenu({
             >
               <Image
                 src="/trust-goverance/truth.png"
-                alt=""
+                alt="Truth"
                 width={26}
                 height={26}
                 className="h-[26px] w-[26px] object-contain"
               />
             </div>
 
-            {/* Heading */}
+                        {/* Heading */}
             <h3
               className="
                 mt-5
@@ -318,10 +366,8 @@ export default function TrustGovernanceMegaMenu({
                 dark:text-slate-400
               "
             >
-              Review how ZoikoTime protects
-              classification data and preserves
-              human authority over every
-              consequential decision.
+              Review how ZoikoTime protects classification data and preserves
+              human authority over every consequential decision.
             </p>
 
             {/* Button */}

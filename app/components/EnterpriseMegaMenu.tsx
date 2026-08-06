@@ -1,20 +1,30 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 type EnterpriseMegaMenuProps = {
   isOpen: boolean;
+  onLinkClick: () => void;
 };
 
 type MenuItemProps = {
   title: string;
   icon: string;
+  href: string;
+  onLinkClick: () => void;
 };
 
-function MenuItem({ title, icon }: MenuItemProps) {
+function MenuItem({
+  title,
+  icon,
+  href,
+  onLinkClick,
+}: MenuItemProps) {
   return (
-    <button
-      type="button"
+    <Link
+      href={href}
+      onClick={onLinkClick}
       className="
         group/item
         flex
@@ -64,7 +74,7 @@ function MenuItem({ title, icon }: MenuItemProps) {
       >
         {title}
       </span>
-    </button>
+    </Link>
   );
 }
 
@@ -96,26 +106,32 @@ const enterprisePlatformItems = [
   {
     title: "Enterprise Overview",
     icon: "enterprise.png",
+    href: "#",
   },
   {
     title: "Administration & Policy Controls",
     icon: "administration.png",
+    href: "/administration-policy-controls",
   },
   {
     title: "Identity & Access Management",
     icon: "identity.png",
+    href: "#",
   },
   {
     title: "Enterprise Integrations",
     icon: "enterprise-integrations.png",
+    href: "#",
   },
   {
     title: "Analytics & Reporting",
     icon: "analytics.png",
+    href: "/analytics-reporting",
   },
   {
     title: "Global Deployment",
     icon: "global.png",
+    href: "#",
   },
 ];
 
@@ -123,31 +139,38 @@ const adoptionSupportItems = [
   {
     title: "Implementation Services",
     icon: "implementation.png",
+    href: "#",
   },
   {
     title: "Data Migration",
     icon: "data.png",
+    href: "data-migration",
   },
   {
     title: "Customer Success",
     icon: "customer.png",
+    href: "#",
   },
   {
     title: "Training & Adoption",
     icon: "training.png",
+    href: "#",
   },
   {
     title: "Enterprise Support",
     icon: "enterprise-support.png",
+    href: "/#",
   },
   {
     title: "Procurement & Legal Resources",
     icon: "procurement.png",
+    href: "#",
   },
 ];
 
 export default function EnterpriseMegaMenu({
   isOpen,
+  onLinkClick,
 }: EnterpriseMegaMenuProps) {
   return (
     <div
@@ -203,7 +226,8 @@ export default function EnterpriseMegaMenu({
             grid-cols-[1fr_1fr_280px]
           "
         >
-          {/* =====================================================
+
+                    {/* =====================================================
               ENTERPRISE PLATFORM
           ====================================================== */}
 
@@ -218,6 +242,8 @@ export default function EnterpriseMegaMenu({
                   key={item.title}
                   title={item.title}
                   icon={item.icon}
+                  href={item.href}
+                  onLinkClick={onLinkClick}
                 />
               ))}
             </div>
@@ -247,6 +273,8 @@ export default function EnterpriseMegaMenu({
                   key={item.title}
                   title={item.title}
                   icon={item.icon}
+                  href={item.href}
+                  onLinkClick={onLinkClick}
                 />
               ))}
             </div>
@@ -323,9 +351,10 @@ export default function EnterpriseMegaMenu({
               more.
             </p>
 
-            {/* Button */}
+                        {/* Button */}
             <button
               type="button"
+              onClick={onLinkClick}
               className="
                 mt-auto
                 flex

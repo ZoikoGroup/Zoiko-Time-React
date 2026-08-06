@@ -1,35 +1,30 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 
 type SolutionsMegaMenuProps = {
   isOpen: boolean;
+  onLinkClick: () => void;
 };
 
 type MenuItemProps = {
   title: string;
   icon: string;
+  href?: string;
+  onLinkClick?: () => void;
 };
 
-function MenuItem({ title, icon }: MenuItemProps) {
-  return (
-    <button
-      type="button"
-      className="
-        group/item
-        flex
-        w-full
-        items-center
-        gap-3
-        rounded-xl
-        px-3
-        py-2.5
-        text-left
-        transition-colors
-        hover:bg-slate-100
-        dark:hover:bg-slate-800/70
-      "
-    >
+function MenuItem({
+  title,
+  icon,
+  href,
+  onLinkClick,
+}: MenuItemProps) {
+
+
+  const content = (
+    <>
       <div
         className="
           flex
@@ -64,6 +59,39 @@ function MenuItem({ title, icon }: MenuItemProps) {
       >
         {title}
       </div>
+    </>
+  );
+
+  const className = `
+    group/item
+    flex
+    w-full
+    items-center
+    gap-3
+    rounded-xl
+    px-3
+    py-2.5
+    text-left
+    transition-colors
+    hover:bg-slate-100
+    dark:hover:bg-slate-800/70
+  `;
+
+  if (href) {
+    return (
+     <Link
+  href={href}
+  onClick={onLinkClick}
+  className={className}
+>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button type="button" className={className}>
+      {content}
     </button>
   );
 }
@@ -90,6 +118,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 
 export default function SolutionsMegaMenu({
   isOpen,
+  onLinkClick,
 }: SolutionsMegaMenuProps) {
   return (
     <div
@@ -140,7 +169,6 @@ export default function SolutionsMegaMenu({
         "
       >
         <div className="grid grid-cols-[245px_315px_290px_1fr]">
-
           {/* =====================================================
               BY ROLE
           ====================================================== */}
@@ -151,27 +179,37 @@ export default function SolutionsMegaMenu({
             <div className="space-y-2">
               <MenuItem
                 icon="hr.png"
-                title="HR & People Teams"
+                title="Hr legal operations"
+                href="/hr-legal-operations"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="finance.png"
                 title="Finance & Payroll Teams"
+                href="/finance-and-payroll-teams"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="operations.png"
                 title="Operations Leaders"
+                href="/operational-leaders"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="teamlead.png"
                 title="Team Lead & Managers"
+                href="/team-lead-managers"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="workers.png"
                 title="Workers"
+                href="/solutions-workers"
+                 onLinkClick={onLinkClick}
               />
             </div>
           </div>
@@ -196,31 +234,42 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="time.png"
                 title="Verify Time & Attendance"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="improve.png"
                 title="Improve Payroll Accuracy"
+                href="#"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="eliminate.png"
                 title="Eliminate Time Disputes"
+                href="#"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="create.png"
                 title="Create Auditable Time Records"
+                href="#"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="control.png"
                 title="Control Project Time & Cost"
+                href="#"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="manage.png"
                 title="Manage Remote & Hybrid Work"
+                href="#"
+                 onLinkClick={onLinkClick}
               />
             </div>
           </div>
@@ -245,26 +294,36 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="remote.png"
                 title="Remote Teams"
+                href="#"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="hybrid.png"
                 title="Hybrid Workforces"
+                href="#"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="contractor.png"
                 title="Contractor-Heavy Workforces"
+                href="#"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="project.png"
                 title="Project-Based Businesses"
+                href="#"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="global.png"
                 title="Global Workforces"
+                href="#"
+                 onLinkClick={onLinkClick}
               />
             </div>
           </div>
@@ -335,28 +394,27 @@ export default function SolutionsMegaMenu({
             </p>
 
             <button
-              type="button"
-              className="
-                mt-auto
-                flex
-                h-10
-                w-full
-                items-center
-                justify-center
-                rounded-lg
-                bg-teal-600
-                px-4
-                text-sm
-                font-semibold
-                text-white
-                transition-colors
-                hover:bg-teal-700
-                dark:bg-teal-500
-                dark:hover:bg-teal-400
-              "
-            >
-              Download Zoiko Time
-            </button>
+  type="button"
+  onClick={onLinkClick}
+  className="
+    mt-auto
+    flex
+    h-10
+    w-full
+    items-center
+    justify-center
+    rounded-lg
+    bg-teal-600
+    px-4
+    text-sm
+    font-semibold
+    text-white
+    transition-colors
+    hover:bg-teal-700
+  "
+>
+  Download Zoiko Time
+</button>
           </div>
         </div>
       </div>

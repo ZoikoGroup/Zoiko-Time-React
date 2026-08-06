@@ -1,4 +1,4 @@
-import Link from "next/link";
+  import Link from "next/link";
 
 export default function DesktopMobileAppsHero() {
   return (
@@ -595,6 +595,4 @@ export default function DesktopMobileAppsHero() {
 
     </section>
   );
-}
-
-    
+}       

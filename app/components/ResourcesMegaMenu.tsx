@@ -1,20 +1,31 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 type ResourcesMegaMenuProps = {
   isOpen: boolean;
+  onLinkClick: () => void;
 };
 
 type MenuItemProps = {
   title: string;
   icon: string;
+  href: string;
+  onLinkClick: () => void;
 };
 
-function MenuItem({ title, icon }: MenuItemProps) {
+function MenuItem({
+  title,
+  icon,
+  href,
+  onLinkClick,
+}: MenuItemProps) {
+
   return (
-    <button
-      type="button"
+    <Link
+  href={href}
+  onClick={onLinkClick}
       className="
         group/item
         flex
@@ -64,7 +75,7 @@ function MenuItem({ title, icon }: MenuItemProps) {
       >
         {title}
       </span>
-    </button>
+    </Link>
   );
 }
 
@@ -96,22 +107,27 @@ const learnItems = [
   {
     title: "Resource Center",
     icon: "resource.png",
+    href: "#"
   },
   {
-    title: "Blog & Insights",
-    icon: "blog.png",
-  },
+  title: "Blog & Insights",
+  icon: "blog.png",
+  href: "/blog",
+},
   {
     title: "Guides",
     icon: "guides.png",
+    href: "#"
   },
   {
     title: "Customer Stories",
     icon: "customer.png",
+    href: "#"
   },
   {
     title: "Webinars & Events",
     icon: "webinars.png",
+    href: "#"
   },
 ];
 
@@ -119,22 +135,27 @@ const useItems = [
   {
     title: "Getting Started",
     icon: "getting.png",
+    href: "#"
   },
   {
     title: "Help Center",
     icon: "help.png",
+    href: "/help-center"
   },
   {
     title: "Product Documentation",
     icon: "product.png",
+    href: "/product-documentation"
   },
   {
     title: "Frequently Asked Questions",
     icon: "frequently.png",
+    href: "/faqs"
   },
   {
     title: "Video Tutorials",
     icon: "video.png",
+    href: "#"
   },
 ];
 
@@ -142,27 +163,33 @@ const buildItems = [
   {
     title: "Developer Documentation",
     icon: "developer.png",
+    href: "#"
   },
   {
     title: "API Reference",
     icon: "api.png",
+    href: "#"
   },
   {
     title: "Integrations Directory",
     icon: "integrations.png",
+    href: "#"
   },
   {
     title: "Release Notes",
     icon: "release.png",
+    href: "#"
   },
   {
     title: "Product Updates",
     icon: "product2.png",
+    href: "#"
   },
 ];
 
 export default function ResourcesMegaMenu({
   isOpen,
+  onLinkClick,
 }: ResourcesMegaMenuProps) {
   return (
     <div
@@ -229,11 +256,13 @@ export default function ResourcesMegaMenu({
 
             <div className="space-y-2">
               {learnItems.map((item) => (
-                <MenuItem
-                  key={item.title}
-                  title={item.title}
-                  icon={item.icon}
-                />
+               <MenuItem
+  key={item.title}
+  title={item.title}
+  icon={item.icon}
+  href={item.href}
+  onLinkClick={onLinkClick}
+/>
               ))}
             </div>
           </div>
@@ -259,10 +288,12 @@ export default function ResourcesMegaMenu({
             <div className="space-y-2">
               {useItems.map((item) => (
                 <MenuItem
-                  key={item.title}
-                  title={item.title}
-                  icon={item.icon}
-                />
+  key={item.title}
+  title={item.title}
+  icon={item.icon}
+  href={item.href}
+  onLinkClick={onLinkClick}
+/>
               ))}
             </div>
           </div>
@@ -288,10 +319,12 @@ export default function ResourcesMegaMenu({
             <div className="space-y-2">
               {buildItems.map((item) => (
                 <MenuItem
-                  key={item.title}
-                  title={item.title}
-                  icon={item.icon}
-                />
+  key={item.title}
+  title={item.title}
+  icon={item.icon}
+  href={item.href}
+  onLinkClick={onLinkClick}
+/>
               ))}
             </div>
           </div>
@@ -370,30 +403,30 @@ export default function ResourcesMegaMenu({
               workers, and evaluators.
             </p>
 
-            {/* Button */}
-            <button
-              type="button"
-              className="
-                mt-auto
-                flex
-                h-10
-                w-full
-                items-center
-                justify-center
-                rounded-lg
-                bg-teal-600
-                px-4
-                text-sm
-                font-bold
-                text-white
-                transition-colors
-                hover:bg-teal-700
-                dark:bg-teal-500
-                dark:hover:bg-teal-400
-              "
-            >
-              Download Zoiko Time
-            </button>
+      <button
+  type="button"
+  onClick={onLinkClick}
+  className="
+    mt-auto
+    flex
+    h-10
+    w-full
+    items-center
+    justify-center
+    rounded-lg
+    bg-teal-600
+    px-4
+    text-sm
+    font-bold
+    text-white
+    transition-colors
+    hover:bg-teal-700
+    dark:bg-teal-500
+    dark:hover:bg-teal-400
+  "
+>
+  Download Zoiko Time
+</button>
           </div>
         </div>
       </div>
