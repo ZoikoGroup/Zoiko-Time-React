@@ -29,7 +29,7 @@ export default function EvidenceRequest() {
 </button>
 
             <Link
-  href="/request-a-demo"
+  href="/request-enterprise-demo"
   className="inline-flex items-center justify-center rounded-lg border-2 border-[#44B97A] px-8 py-4 text-base font-medium text-[#44B97A] transition hover:bg-[#44B97A] hover:text-white"
 >
   Request Enterprise Demo
