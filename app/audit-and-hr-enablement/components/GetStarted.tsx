@@ -15,7 +15,7 @@ export default function GetStarted() {
         </div>
 
         {/* Heading */}
-        <h2 className="max-w-[700px] text-3xl font-extrabold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-5xl lg:leading-[1.05]">
+        <h2 className="max-w-[700px] text-3xl font-extrabold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-4xl lg:leading-[1.05]">
           If Decisions Are Not Structured,
           <br className="hidden sm:block" /> They{" "}
           <span className="text-teal-600 dark:text-teal-400">
