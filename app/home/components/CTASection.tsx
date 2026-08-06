@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Clock3, Eye, Zap } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   { icon: '/home/Icon (13).png', title: "Faster approvals", subtitle: "Keep work moving" },
@@ -42,13 +43,20 @@ export default function CTASection() {
           </div>
 
           <div className="flex flex-col gap-4 sm:flex-row">
-            <button className="rounded-lg bg-slate-950 px-8 py-4 text-base font-bold text-white transition-opacity hover:opacity-90 dark:bg-emerald-500">
-              Request Enterprise Demo
-            </button>
-            <button className="rounded-lg border border-zinc-500 bg-white px-8 py-4 text-base font-bold text-slate-950 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800">
-              Start Free
-            </button>
-          </div>
+  <Link
+    href="/request-enterprise-demo"
+    className="rounded-lg bg-slate-950 px-8 py-4 text-center text-base font-bold text-white transition-opacity hover:opacity-90 dark:bg-emerald-500"
+  >
+    Request Enterprise Demo
+  </Link>
+
+  <Link
+    href="/start-free"
+    className="rounded-lg border border-zinc-500 bg-white px-8 py-4 text-center text-base font-bold text-slate-950 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800"
+  >
+    Start Free
+  </Link>
+</div>
         </div>
 
         <div className="relative">

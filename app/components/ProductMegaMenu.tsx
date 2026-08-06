@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 type ProductMegaMenuProps = {
   isOpen: boolean;
@@ -199,28 +200,34 @@ export default function ProductMegaMenu({
               dark:border-slate-700
             "
           >
-            <SectionTitle icon="platform-icon.png">
-              Platform
-            </SectionTitle>
+           <SectionTitle icon="platform-icon.png">
+  Platform
+</SectionTitle>
 
-            <div className="space-y-3">
-              <MenuItem
-                icon="product-overview.png"
-                title="Product Overview"
-                description="Platform overview and principles."
-              />
+<div className="space-y-3">
+  <Link href="/product#product">
+    <MenuItem
+      icon="product-overview.png"
+      title="Product Overview"
+      description="Platform overview and principles."
+    />
+  </Link>
 
-              <MenuItem
-                icon="zoikotimeworks.png"
-                title="How ZoikoTime Works"
-                description="Architecture & components."
-              />
+              <Link href="/how-zoikotime-works">
+  <MenuItem
+    icon="zoikotimeworks.png"
+    title="How ZoikoTime Works"
+    description="Architecture & components."
+  />
+</Link>
 
-              <MenuItem
-                icon="desktop.png"
-                title="Desktop & Mobile Apps"
-                description="Work from anywhere."
-              />
+              <Link href="/desktop-and-mobile-apps">
+  <MenuItem
+    icon="desktop.png"
+    title="Desktop & Mobile Apps"
+    description="Work from anywhere."
+  />
+</Link>
 
               <MenuItem
                 icon="zoikosema.png"

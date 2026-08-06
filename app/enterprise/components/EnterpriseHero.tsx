@@ -85,7 +85,7 @@ export default function EnterpriseHero() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
               <Link
-  href="/request-a-demo"
+  href="/request-enterprise-demo"
   className="inline-flex min-h-14 items-center justify-center gap-2 rounded-lg bg-emerald-500 px-7 py-4 text-base font-bold text-white transition hover:bg-emerald-600"
 >
   <span>Request Enterprise Demo</span>

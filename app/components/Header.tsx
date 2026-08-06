@@ -486,24 +486,44 @@ export default function Header() {
 
           {/* PRICING */}
 
-          <Link
-            href="/pricing"
-            className="
-              whitespace-nowrap
-              text-base
-              font-medium
-              leading-6
-              tracking-tight
-              text-neutral-800
-              transition-colors
-              hover:text-sky-900
-              dark:text-slate-100
-              dark:hover:text-sky-400
-            "
-            onClick={closeAllMegaMenus}
-          >
-            Pricings
-          </Link>
+          {/* PRICING */}
+
+<Link
+  href="/pricing"
+  className="
+    relative
+    whitespace-nowrap
+    text-base
+    font-medium
+    leading-6
+    tracking-tight
+    text-neutral-800
+    transition-colors
+    hover:text-sky-900
+    dark:text-slate-100
+    dark:hover:text-sky-400
+    group
+  "
+  onClick={closeAllMegaMenus}
+>
+  Pricing
+
+  <span
+    className="
+      absolute
+      -bottom-[7px]
+      left-0
+      h-[2px]
+      w-0
+      rounded-full
+      bg-sky-900
+      transition-all
+      duration-200
+      group-hover:w-full
+      dark:bg-sky-400
+    "
+  />
+</Link>
 
           {/* RESOURCES */}
 

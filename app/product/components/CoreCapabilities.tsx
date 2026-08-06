@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 const capabilities = [
   {
@@ -40,34 +43,42 @@ const capabilities = [
 ];
 
 export default function CoreCapabilities() {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleCapabilities = showAll
+    ? capabilities
+    : capabilities.slice(0, 3);
+
   return (
     <section className="bg-white py-16 dark:bg-slate-950 lg:py-24">
       <div className="mx-auto max-w-7xl px-6">
-        {/* Section Header */}
+
+        {/* Header */}
         <div className="mx-auto max-w-6xl text-center">
-  <span className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400">
-    Core Capabilities
-  </span>
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400">
+            Core Capabilities
+          </span>
 
-  <h2 className="mt-4 whitespace-nowrap text-3xl font-bold text-slate-900 dark:text-white md:text-4xl lg:text-5xl">
-    The infrastructure behind a trustworthy record
-  </h2>
+          <h2 className="mt-4 whitespace-nowrap text-3xl font-bold text-slate-900 dark:text-white md:text-4xl lg:text-5xl">
+            The infrastructure behind a trustworthy record
+          </h2>
 
-  <p className="mx-auto mt-6 max-w-2xl text-lg leading-7 text-slate-600 dark:text-slate-300">
-    Everything we build is designed to produce a record that is
-    accurate, verifiable, and defensible.
-  </p>
-</div>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-7 text-slate-600 dark:text-slate-300">
+            Everything we build is designed to produce a record that is
+            accurate, verifiable, and defensible.
+          </p>
+        </div>
+
 
         {/* Cards */}
         <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
-                      {capabilities.map((item) => (
+          {visibleCapabilities.map((item) => (
             <div
               key={item.title}
               className="group overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
             >
-              {/* Image */}
+
               <div className="overflow-hidden rounded-t-2xl bg-slate-100 dark:bg-slate-800">
                 <Image
                   src={item.image}
@@ -78,7 +89,7 @@ export default function CoreCapabilities() {
                 />
               </div>
 
-              {/* Content */}
+
               <div className="p-6">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                   {item.title}
@@ -88,34 +99,41 @@ export default function CoreCapabilities() {
                   {item.description}
                 </p>
               </div>
+
             </div>
           ))}
+
         </div>
 
-        {/* CTA Button */}
-        {/* CTA Button */}
-<div className="mt-14 flex justify-center">
-  <button
-    type="button"
-    className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-8 py-3 text-base font-semibold text-slate-900 transition-all duration-300 hover:border-emerald-500 hover:bg-emerald-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
-  >
-    Explore All Capabilities
 
-    <svg
-      className="h-5 w-5"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2}
-      viewBox="0 0 24 24"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M5 12h14M13 5l7 7-7 7"
-      />
-    </svg>
-  </button>
-</div>
+        {/* CTA Button */}
+        {!showAll && (
+          <div className="mt-14 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAll(true)}
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-8 py-3 text-base font-semibold text-slate-900 transition-all duration-300 hover:border-emerald-500 hover:bg-emerald-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+            >
+              Explore All Capabilities
+
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 12h14M13 5l7 7-7 7"
+                />
+              </svg>
+
+            </button>
+          </div>
+        )}
+
       </div>
     </section>
   );
