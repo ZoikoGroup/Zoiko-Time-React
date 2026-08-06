@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 const items = [
   "Distributed workforces at scale",
@@ -48,10 +49,13 @@ export default function CapabilitiesSection() {
             <button className="rounded-lg bg-emerald-400 px-8 py-4 text-base font-bold text-white transition-colors hover:bg-emerald-500">
               Explore The Platform
             </button>
-            <button className="flex items-center justify-center gap-2 rounded-md border border-emerald-400 px-8 py-4 text-base font-bold text-emerald-400 transition-colors hover:bg-emerald-400/10">
-              Request Demo
-              <ArrowRight className="size-4" />
-            </button>
+            <Link
+  href="/request-a-demo"
+  className="flex items-center justify-center gap-2 rounded-md border border-emerald-400 px-8 py-4 text-base font-bold text-emerald-400 transition-colors hover:bg-emerald-400/10"
+>
+  Request Demo
+  <ArrowRight className="size-4" />
+</Link>
           </div>
         </div>
       </div>

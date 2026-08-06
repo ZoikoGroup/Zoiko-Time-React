@@ -35,7 +35,7 @@ export default function ReadyToBuild() {
   className="rounded-lg bg-emerald-500 px-8 py-4 text-center shadow-lg transition-all duration-300 hover:bg-emerald-600 hover:shadow-xl"
 >
   <span className="font-bold">Start Free</span>
-  <span className="font-normal">30-day free trial</span>
+  <span className="font-normal"> 30-day free trial</span>
 </Link>
         </div>
       </div>

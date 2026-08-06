@@ -108,7 +108,7 @@ export default function Cta() {
 </Link>
 
 <Link
-  href="/request-a-demo"
+  href="/request-enterprise-demo"
   className="
     flex
     min-h-[72px]

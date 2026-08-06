@@ -52,7 +52,7 @@ export default function Hero() {
   </Link>
 
   <Link
-  href="/request-a-demo"
+  href="/request-enterprise-demo"
   className="rounded-lg border border-slate-300 bg-white px-8 py-4 text-center transition-all duration-300 hover:border-emerald-500 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
 >
   <span className="block text-lg font-bold text-slate-900 dark:text-white">

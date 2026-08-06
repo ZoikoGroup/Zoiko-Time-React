@@ -1,5 +1,6 @@
 import { CheckCircle2} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -24,14 +25,21 @@ export default function Hero() {
             keystroke capture, or workforce surveillance.
           </p>
 
-          <div className="flex w-full flex-col gap-4 pt-2 sm:w-auto sm:flex-row">
-            <button className="rounded-lg bg-emerald-400 px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-emerald-500">
-              Request Enterprise Demo
-            </button>
-            <button className="rounded-lg border border-zinc-500 bg-white px-8 py-4 text-base font-semibold text-slate-950 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
-              Start Free
-            </button>
-          </div>
+         <div className="flex w-full flex-col gap-4 pt-2 sm:w-auto sm:flex-row">
+  <Link
+    href="/request-enterprise-demo"
+    className="rounded-lg bg-emerald-400 px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:bg-emerald-500"
+  >
+    Request Enterprise Demo
+  </Link>
+
+  <Link
+    href="/start-free"
+    className="rounded-lg border border-zinc-500 bg-white px-8 py-4 text-center text-base font-semibold text-slate-950 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+  >
+    Start Free
+  </Link>
+</div>
 
           <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4">
             {["No screenshots", "No keystroke capture", "No URL monitoring"].map(
