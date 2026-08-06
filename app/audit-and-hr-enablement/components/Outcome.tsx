@@ -98,7 +98,7 @@ export default function Outcome() {
             "
           >
             ZoikoTime doesn&apos;t just execute decisions — it measures,
-            analyses, and learns from them, continuously improving governance
+            analyses, <br/>and learns from them, continuously improving governance
             quality over time.
           </p>
 
@@ -108,6 +108,7 @@ export default function Outcome() {
         {/* Feature Cards */}
         <div
           className="
+          px-20
             mt-14
             grid
             grid-cols-1
@@ -240,7 +241,7 @@ export default function Outcome() {
 
             border
 
-            px-6
+            px-10
             py-10
 
             text-center
