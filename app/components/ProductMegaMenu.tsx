@@ -269,7 +269,7 @@ export default function ProductMegaMenu({
               Time & Attendance
             </SectionTitle>
 
-            <div className="space-y-3">
+            <div className="space-y-3"> 
               <MenuItem
                 icon="timetracking.png"
                 title="Time and activity verification"
