@@ -25,3 +25,95 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/*
+  Page-scoped typography.
+  These rules only apply inside .gd-type / .hr-type / .vta-type / .ipa-type /
+  .iam-type, which the pages themselves set on their root wrapper. No other
+  page is affected — everything else keeps the body font above.
+*/
+
+/* Global Deployment — Figtree for display text, Inter for prose */
+.gd-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.gd-type h1,
+.gd-type h2,
+.gd-type h3,
+.gd-type a,
+.gd-type button,
+.gd-type th,
+.gd-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
+/* HR & People Teams — Poppins throughout */
+.hr-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Verified Time & Attendance — Poppins throughout */
+.vta-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Improve Payroll Accuracy — Poppins throughout */
+.ipa-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Identity & Access Management — Poppins throughout */
+.iam-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Training & Adoption — Poppins throughout */
+.ta-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Shift Integrity Controls — Poppins throughout */
+.sic-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Deterministic Time Classification — Poppins throughout */
+.dtc-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Enterprise Integrations — Poppins throughout */
+.ei-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Trust Center — Figtree for display text, Inter for prose */
+.tc-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.tc-type h1,
+.tc-type h2,
+.tc-type h3,
+.tc-type a,
+.tc-type button,
+.tc-type th,
+.tc-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
+/* Works-Council & Consultation — Figtree for display text, Inter for prose */
+.wcc-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.wcc-type h1,
+.wcc-type h2,
+.wcc-type h3,
+.wcc-type a,
+.wcc-type button,
+.wcc-type th,
+.wcc-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
