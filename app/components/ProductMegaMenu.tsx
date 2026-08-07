@@ -244,7 +244,7 @@ export default function ProductMegaMenu({
                 icon="kairos.png"
                 title="Kairos Assistant"
                 description="Conversational AI assistant."
-                href="#"
+                href="kairos-assistant"
                 onLinkClick={onLinkClick}
               />
             </div>
@@ -282,7 +282,7 @@ export default function ProductMegaMenu({
                 icon="timesheets.png"
                 title="Timesheets & Approvals"
                 description="Submit, review, approve."
-                href="#"
+                href="time-sheet-approvals"
                 onLinkClick={onLinkClick}
               />
 
@@ -298,7 +298,7 @@ export default function ProductMegaMenu({
                 icon="break.png"
                 title="Break & Rest Compliance"
                 description="Meal & rest compliance."
-                href="#"
+                href="break-rest-compliance"
                 onLinkClick={onLinkClick}
               />
 
@@ -306,7 +306,7 @@ export default function ProductMegaMenu({
                 icon="shift.png"
                 title="Shift Integrity Controls"
                 description="Ensure shift accuracy."
-                href="#"
+                href="/shift-integrity-controls"
                 onLinkClick={onLinkClick}
               />
             </div>
@@ -335,7 +335,7 @@ export default function ProductMegaMenu({
                 icon="deterministic.png"
                 title="Deterministic Time Classification"
                 description="Policy-bound, deterministic."
-                href="#"
+                href="/deterministic-time-classification"
                 onLinkClick={onLinkClick}
               />
 

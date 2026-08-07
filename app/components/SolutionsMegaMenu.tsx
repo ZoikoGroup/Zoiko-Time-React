@@ -262,14 +262,14 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="control.png"
                 title="Control Project Time & Cost"
-                href="#"
+                href="control-project-time-and-cost"
                  onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="manage.png"
                 title="Manage Remote & Hybrid Work"
-                href="#"
+                href="manage-remote-hybrid-work"
                  onLinkClick={onLinkClick}
               />
             </div>
@@ -295,7 +295,7 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="remote.png"
                 title="Remote Teams"
-                href="#"
+                href="remote-teams"
                  onLinkClick={onLinkClick}
               />
 
