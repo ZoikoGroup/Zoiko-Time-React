@@ -67,3 +67,53 @@ body {
   font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 
+/* Training & Adoption — Poppins throughout */
+.ta-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Shift Integrity Controls — Poppins throughout */
+.sic-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Deterministic Time Classification — Poppins throughout */
+.dtc-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Enterprise Integrations — Poppins throughout */
+.ei-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Trust Center — Figtree for display text, Inter for prose */
+.tc-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.tc-type h1,
+.tc-type h2,
+.tc-type h3,
+.tc-type a,
+.tc-type button,
+.tc-type th,
+.tc-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
+/* Works-Council & Consultation — Figtree for display text, Inter for prose */
+.wcc-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.wcc-type h1,
+.wcc-type h2,
+.wcc-type h3,
+.wcc-type a,
+.wcc-type button,
+.wcc-type th,
+.wcc-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
