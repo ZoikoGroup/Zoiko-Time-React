@@ -117,17 +117,17 @@ const learnItems = [
   {
     title: "Guides",
     icon: "guides.png",
-    href: "#"
+    href: "guides"
   },
   {
     title: "Customer Stories",
     icon: "customer.png",
-    href: "#"
+    href: "customer-stories"
   },
   {
     title: "Webinars & Events",
     icon: "webinars.png",
-    href: "#"
+    href: "webinars-and-events"
   },
 ];
 

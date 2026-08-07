@@ -121,7 +121,7 @@ const enterprisePlatformItems = [
   {
     title: "Enterprise Integrations",
     icon: "enterprise-integrations.png",
-    href: "#",
+    href: "/enterprise-integrations",
   },
   {
     title: "Analytics & Reporting",
@@ -131,7 +131,7 @@ const enterprisePlatformItems = [
   {
     title: "Global Deployment",
     icon: "global.png",
-    href: "global-deployment",
+    href: "/global-deployment",
   },
 ];
 
@@ -139,7 +139,7 @@ const adoptionSupportItems = [
   {
     title: "Implementation Services",
     icon: "implementation.png",
-    href: "implimentation-services",
+    href: "/implementation-services",
   },
   {
     title: "Data Migration",
@@ -149,12 +149,12 @@ const adoptionSupportItems = [
   {
     title: "Customer Success",
     icon: "customer.png",
-    href: "#",
+    href: "customer-success",
   },
   {
     title: "Training & Adoption",
     icon: "training.png",
-    href: "#",
+    href: "training-adoption",
   },
   {
     title: "Enterprise Support",
@@ -164,7 +164,7 @@ const adoptionSupportItems = [
   {
     title: "Procurement & Legal Resources",
     icon: "procurement.png",
-    href: "#",
+    href: "procurement-and-legal-resources",
   },
 ];
 
