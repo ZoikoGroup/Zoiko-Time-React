@@ -248,7 +248,7 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="eliminate.png"
                 title="Eliminate Time Disputes"
-                href="#"
+                href="/eliminate-time-disputes"
                  onLinkClick={onLinkClick}
               />
 
@@ -262,14 +262,14 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="control.png"
                 title="Control Project Time & Cost"
-                href="control-project-time-and-cost"
+                href="/control-project-time-and-cost"
                  onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="manage.png"
                 title="Manage Remote & Hybrid Work"
-                href="manage-remote-hybrid-work"
+                href="/manage-remote-hybrid-work"
                  onLinkClick={onLinkClick}
               />
             </div>
@@ -295,7 +295,7 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="remote.png"
                 title="Remote Teams"
-                href="remote-teams"
+                href="/remote-teams"
                  onLinkClick={onLinkClick}
               />
 
@@ -309,7 +309,7 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="contractor.png"
                 title="Contractor-Heavy Workforces"
-                href="#"
+                href="/contractor-heavy-workforces"
                  onLinkClick={onLinkClick}
               />
 
@@ -394,8 +394,8 @@ export default function SolutionsMegaMenu({
               happened and what gets paid.
             </p>
 
-            <button
-  type="button"
+           <Link
+  href="/download-zoiko-time"
   onClick={onLinkClick}
   className="
     mt-auto
@@ -415,7 +415,7 @@ export default function SolutionsMegaMenu({
   "
 >
   Download Zoiko Time
-</button>
+</Link>
           </div>
         </div>
       </div>

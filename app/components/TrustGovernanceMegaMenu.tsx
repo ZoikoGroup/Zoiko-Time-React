@@ -200,6 +200,7 @@ export default function TrustGovernanceMegaMenu({
                 icon="trust.png"
                 title="Trust Center"
                 href="/trust-center"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
@@ -212,19 +213,22 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="privacy.png"
                 title="Privacy"
-                href="/privacy-controls"
+                href="/privacy"
                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="platform.png"
                 title="Platform Reliability"
+                href="/platform-reliability"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="system.png"
                 title="System Status"
-                href="system-status"
+                href="/system-status"
+                 onLinkClick={onLinkClick}
               />
             </div>
           </div>
@@ -246,21 +250,27 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="human.png"
                 title="Human-in-Command Controls"
+                href="/human-in-command"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="ethical.png"
                 title="Ethical Design Principles"
+                href="/ethical-design"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="ai.png"
                 title="AI Governance"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="administrative.png"
                 title="Administrative Controls"
+                 onLinkClick={onLinkClick}
               />
             </div>
           </div>
@@ -282,12 +292,14 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="compliance.png"
                 title="Compliance & Assurance"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="works.png"
                 title="Works-Council & Consultation Resources"
                 href="/work-council-consultation"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
@@ -300,11 +312,13 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="responsible.png"
                 title="Responsible Disclosure"
+                 onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="data-location.png"
                 title="Data Location & Residency"
+                 onLinkClick={onLinkClick}
               />
             </div>
           </div>
