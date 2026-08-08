@@ -173,7 +173,7 @@ const buildItems = [
   {
     title: "Integrations Directory",
     icon: "integrations.png",
-    href: "/intigration-directory"
+    href: "/integration-directory"
   },
   {
     title: "Release Notes",
