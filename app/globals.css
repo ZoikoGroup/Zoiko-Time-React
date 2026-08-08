@@ -117,3 +117,90 @@ body {
   font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
 }
 
+/* Integration Directory — Poppins for prose, Inter for protocol labels */
+.id-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+.id-type .id-mono {
+  font-family: var(--font-inter), ui-monospace, monospace;
+}
+
+/* API Reference — Poppins for prose, Inter for code and identifiers */
+.api-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+.api-type .api-mono {
+  font-family: var(--font-inter), ui-monospace, monospace;
+}
+
+/* Product Updates — Poppins throughout */
+.pu-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+/* Ethical Design Principles — Figtree for display text, Inter for prose */
+.ed-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.ed-type h1,
+.ed-type h2,
+.ed-type h3,
+.ed-type h4,
+.ed-type a,
+.ed-type button,
+.ed-type th,
+.ed-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
+/* Human-in-Command Controls — Figtree for display text, Inter for prose */
+.hic-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.hic-type h1,
+.hic-type h2,
+.hic-type h3,
+.hic-type h4,
+.hic-type a,
+.hic-type button,
+.hic-type th,
+.hic-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
+/* Privacy — Figtree for display text, Inter for prose */
+.pv-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.pv-type h1,
+.pv-type h2,
+.pv-type h3,
+.pv-type h4,
+.pv-type a,
+.pv-type button,
+.pv-type th,
+.pv-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
+/* Platform Reliability — Figtree for display text, Inter for prose */
+.pr-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.pr-type h1,
+.pr-type h2,
+.pr-type h3,
+.pr-type h4,
+.pr-type a,
+.pr-type button,
+.pr-type th,
+.pr-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
