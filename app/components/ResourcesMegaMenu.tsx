@@ -117,17 +117,17 @@ const learnItems = [
   {
     title: "Guides",
     icon: "guides.png",
-    href: "guides"
+    href: "/guides"
   },
   {
     title: "Customer Stories",
     icon: "customer.png",
-    href: "customer-stories"
+    href: "/customer-stories"
   },
   {
     title: "Webinars & Events",
     icon: "webinars.png",
-    href: "webinars-and-events"
+    href: "/webinars-and-events"
   },
 ];
 
@@ -155,7 +155,7 @@ const useItems = [
   {
     title: "Video Tutorials",
     icon: "video.png",
-    href: "#"
+    href: "/video-tutorials"
   },
 ];
 
@@ -163,17 +163,17 @@ const buildItems = [
   {
     title: "Developer Documentation",
     icon: "developer.png",
-    href: "#"
+    href: "/development-documentation"
   },
   {
     title: "API Reference",
     icon: "api.png",
-    href: "#"
+    href: "/api-reference"
   },
   {
     title: "Integrations Directory",
     icon: "integrations.png",
-    href: "#"
+    href: "/intigration-directory"
   },
   {
     title: "Release Notes",
@@ -183,7 +183,7 @@ const buildItems = [
   {
     title: "Product Updates",
     icon: "product2.png",
-    href: "#"
+    href: "/product-updates"
   },
 ];
 

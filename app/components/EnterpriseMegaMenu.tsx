@@ -111,7 +111,7 @@ const enterprisePlatformItems = [
   {
     title: "Administration & Policy Controls",
     icon: "administration.png",
-    href: "/administration-policy-controls",
+    href: "/adminstration-policy-controls",
   },
   {
     title: "Identity & Access Management",
@@ -144,17 +144,17 @@ const adoptionSupportItems = [
   {
     title: "Data Migration",
     icon: "data.png",
-    href: "data-migration",
+    href: "/data-migration",
   },
   {
     title: "Customer Success",
     icon: "customer.png",
-    href: "customer-success",
+    href: "/customer-success",
   },
   {
     title: "Training & Adoption",
     icon: "training.png",
-    href: "training-adoption",
+    href: "/training-adoption",
   },
   {
     title: "Enterprise Support",
@@ -164,7 +164,7 @@ const adoptionSupportItems = [
   {
     title: "Procurement & Legal Resources",
     icon: "procurement.png",
-    href: "procurement-and-legal-resources",
+    href: "/procurement-and-legal-resources",
   },
 ];
 
