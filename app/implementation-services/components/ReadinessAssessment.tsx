@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 // Options definitions
 const scopeOptions = [
@@ -322,12 +323,12 @@ export default function ReadinessAssessment() {
               >
                 Get my readiness summary
               </button>
-              <button
-                type="button"
+              <Link
+                href="/contact-sales"
                 className="px-6 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 text-slate-900 dark:text-white font-bold text-base rounded-lg transition-colors text-center"
               >
                 Talk to Sales instead
-              </button>
+              </Link>
             </div>
 
             {/* Disclaimer */}

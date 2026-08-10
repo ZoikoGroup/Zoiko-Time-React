@@ -53,7 +53,7 @@ const evidenceData: EvidenceRecord[] = [
 
 export default function EvidenceContinuitySection() {
   return (
-    <section className="w-full bg-slate-900 px-4 py-16 font-sans text-slate-100 transition-colors dark:bg-slate-900 sm:px-6 sm:py-20 lg:px-8">
+    <section id="evidence-continuity" className="w-full bg-slate-900 px-4 py-16 font-sans text-slate-100 transition-colors dark:bg-slate-900 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto flex max-w-[1180px] flex-col gap-8">
         <header className="mx-auto flex max-w-[800px] flex-col items-center gap-3 text-center">
           <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">

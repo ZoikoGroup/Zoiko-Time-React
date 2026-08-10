@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const cards = [
   {
@@ -84,9 +85,12 @@ export default function ResponsibleContext() {
             </span>{" "}
             It should not be positioned as a covert monitoring tool.
             Explore{" "}
-            <span className="font-semibold text-teal-700 dark:text-teal-400 cursor-pointer hover:underline">
+            <Link
+              href="/screenshots-and-redaction-controls"
+              className="font-semibold text-teal-700 dark:text-teal-400 cursor-pointer hover:underline"
+            >
               Screenshots &amp; Redaction Controls
-            </span>
+            </Link>
             .
           </p>
         </div>

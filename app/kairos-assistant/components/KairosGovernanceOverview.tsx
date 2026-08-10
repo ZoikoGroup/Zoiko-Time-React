@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const permittedRoles = [
   'Help a person find information already available in their authorized scope',
@@ -98,18 +99,18 @@ export default function KairosGovernanceOverview() {
 
         {/* Footer Actions */}
         <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2 w-full sm:w-auto">
-          <button
-            type="button"
+          <Link
+            href="/how-zoikotime-works"
             className="w-full sm:w-auto px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold text-base rounded-lg border border-slate-300 dark:border-slate-700 transition-colors cursor-pointer text-center"
           >
             See How ZoikoTime Works
-          </button>
-          <button
-            type="button"
+          </Link>
+          <Link
+            href="/responsible-ai"
             className="w-full sm:w-auto px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold text-base rounded-lg border border-slate-300 dark:border-slate-700 transition-colors cursor-pointer text-center"
           >
             Review AI Governance
-          </button>
+          </Link>
         </div>
 
       </div>

@@ -82,7 +82,7 @@ export default function EnterpriseTrust() {
             is role-based, and completion, certification, and adoption reports
             contribute to governed evidence.{" "}
             <Link
-              href="/trust-governance"
+              href="/trust-center"
               className="font-semibold text-teal-700 underline-offset-2 hover:underline dark:text-teal-400"
             >
               Visit Trust Center →

@@ -50,7 +50,7 @@ const checklistExclusions = [
 
 export default function SourceScopeRegistrySection() {
   return (
-    <section className="w-full bg-slate-50 px-4 py-16 font-sans text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100 sm:px-6 sm:py-20 lg:px-8">
+    <section id="source-registry" className="w-full bg-slate-50 px-4 py-16 font-sans text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto flex max-w-[1180px] flex-col gap-10">
         <header className="mx-auto flex max-w-[800px] flex-col items-center gap-3 text-center">
           <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">

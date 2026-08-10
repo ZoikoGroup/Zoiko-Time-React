@@ -13,21 +13,21 @@ const boundaryCards: BoundaryCard[] = [
     description:
       'Policy-bound, jurisdiction-aware, and reviewable. It prepares records for review. It is not AI, and it does not approve anything.',
     actionText: 'Classification',
-    href: '#classification',
+    href: '/deterministic-time-classification',
   },
   {
     title: 'Kairos Assistant',
     description:
       'May retrieve, summarize, and explain permitted records with sources and limitations. It decides nothing and cannot approve, return, or reopen.',
     actionText: 'Kairos Assistant',
-    href: '#kairos-assistant',
+    href: '/kairos-assistant',
   },
   {
     title: 'Zoiko Sema',
     description:
       'Any connected context is optional, mapped, permissioned, and reviewable — and both products keep independent identity. Communication context never becomes an approval.',
     actionText: 'Zoiko Sema Integration',
-    href: '#zoiko-sema',
+    href: '#',
   },
 ];
 

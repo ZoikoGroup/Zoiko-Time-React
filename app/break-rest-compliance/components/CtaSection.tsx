@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function CtaSection() {
   return (
@@ -26,24 +27,24 @@ export default function CtaSection() {
         {/* Action Buttons */}
         <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
           {/* Primary CTA */}
-          <button
-            type="button"
+          <Link
+            href="/start-free"
             className="w-full sm:w-auto px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm rounded-full shadow-md transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-[#0B1528]"
           >
             Start free trial
-          </button>
+          </Link>
 
           {/* Secondary CTA */}
-          <button
-            type="button"
+          <Link
+            href="/request-a-demo"
             className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/15 text-white font-semibold text-sm rounded-full border border-white/15 backdrop-blur-xs transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-white/20"
           >
             Request a demo
-          </button>
+          </Link>
 
           {/* Tertiary CTA / Link */}
           <a
-            href="#docs"
+            href="/product-documentation"
             className="w-full sm:w-auto px-6 py-3 text-slate-300 hover:text-white font-medium text-sm transition-colors duration-150"
           >
             Explore documentation →

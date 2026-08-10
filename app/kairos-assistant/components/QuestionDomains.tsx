@@ -18,7 +18,7 @@ const domainCards: QuestionDomainCard[] = [
       </>
     ),
     linkText: 'Time Tracking',
-    linkHref: '#time-tracking',
+    linkHref: '/time-and-activity-verification',
   },
   {
     title: 'Attendance, presence, break & rest',
@@ -29,7 +29,7 @@ const domainCards: QuestionDomainCard[] = [
       </>
     ),
     linkText: 'Attendance & Presence',
-    linkHref: '#attendance-presence',
+    linkHref: '#',
   },
   {
     title: 'Evidence, reports & record health',
@@ -40,7 +40,7 @@ const domainCards: QuestionDomainCard[] = [
       </>
     ),
     linkText: 'Evidence Ledger',
-    linkHref: '#evidence-ledger',
+    linkHref: '#',
   },
 ];
 

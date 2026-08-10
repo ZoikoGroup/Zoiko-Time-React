@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const confirmedPoints = [
   'What is supported for your sources and objects today',
   'What requires preparation on your side',
@@ -97,24 +99,24 @@ export default function ServiceAvailabilitySection() {
 
           <div className="flex flex-col gap-4 pt-2">
             <div className="flex flex-wrap items-center gap-3.5">
-              <button
-                type="button"
+              <Link
+                href="/request-enterprise-demo"
                 className="cursor-pointer rounded-lg bg-emerald-500 px-6 py-3 text-base font-bold text-white shadow-xs transition-colors hover:bg-emerald-600 active:bg-emerald-700"
               >
                 Request Enterprise Demo
-              </button>
-              <button
-                type="button"
+              </Link>
+              <Link
+                href="/contact-sales"
                 className="cursor-pointer rounded-lg border border-slate-200 bg-white px-6 py-3 text-base font-bold text-slate-900 transition-colors hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-700"
               >
                 Talk to Sales
-              </button>
+              </Link>
             </div>
 
             <p className="text-xs text-slate-500 dark:text-slate-400">
               Already a customer?{' '}
               <a
-                href="#signin"
+                href="/login"
                 className="inline-flex items-center font-bold text-emerald-600 hover:underline dark:text-emerald-400"
               >
                 Sign in

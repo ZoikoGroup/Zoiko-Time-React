@@ -1,5 +1,6 @@
 'use client'
 import { useState, type FormEvent } from 'react';
+import Link from 'next/link';
 
 type TimingIntent = 'exploring' | 'planning' | 'procurement' | 'active_program' | 'urgent_issue';
 
@@ -402,12 +403,12 @@ export default function MigrationReadinessAssessment() {
               >
                 Get my preparedness summary
               </button>
-              <button
-                type="button"
+              <Link
+                href="/contact-sales"
                 className="rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-800 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
               >
                 Talk to Sales instead
-              </button>
+              </Link>
             </div>
           </section>
         </form>

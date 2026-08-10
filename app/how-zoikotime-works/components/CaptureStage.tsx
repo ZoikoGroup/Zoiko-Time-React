@@ -116,7 +116,7 @@ export default function CaptureStage() {
 
             <div className="mt-10">
               <Link
-                href="/time-tracking"
+                href="/time-and-activity-verification"
                 className="inline-flex items-center justify-center rounded-[10px] border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
               >
                 Explore Time Tracking

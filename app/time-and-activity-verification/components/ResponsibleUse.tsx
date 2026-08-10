@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const faqs = [
   "Is this employee surveillance?",
@@ -40,9 +41,12 @@ export default function ResponsibleUse() {
             monitoring, and automatic disciplinary action. Activity context
             supports human review under clear permissions and worker
             transparency. Learn more about{" "}
-            <span className="font-semibold text-teal-700 dark:text-teal-400 cursor-pointer hover:underline">
+            <Link
+              href="/responsible-ai"
+              className="font-semibold text-teal-700 dark:text-teal-400 cursor-pointer hover:underline"
+            >
               Responsible AI
-            </span>
+            </Link>
             .
           </p>
         </div>

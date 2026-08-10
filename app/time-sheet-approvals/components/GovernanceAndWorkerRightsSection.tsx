@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const configCards = [
   {
@@ -111,18 +112,18 @@ export default function GovernanceAndWorkerRightsSection() {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-3 pt-2">
-            <button
-              type="button"
+            <Link
+              href="/privacy"
               className="px-5 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-900 dark:text-white text-sm font-bold shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all"
             >
               Privacy
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href="/trust-center"
               className="px-5 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-900 dark:text-white text-sm font-bold shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all"
             >
               Trust Center
-            </button>
+            </Link>
           </div>
         </div>
 

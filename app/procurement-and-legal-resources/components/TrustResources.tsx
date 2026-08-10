@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const resources = [
   {
@@ -9,6 +10,7 @@ const resources = [
       "Architecture, access control, and incident response — with current attestations linked where held.",
     image: "/procurement-and-legal-resources/security.png",
     action: "Visit Security →",
+    href: "/security",
   },
   {
     title: "Privacy",
@@ -16,6 +18,7 @@ const resources = [
       "Data minimization, the negative capability set, and the current data map.",
     image: "/procurement-and-legal-resources/privacy.png",
     action: "Visit Privacy →",
+    href: "/privacy",
   },
   {
     title: "Accessibility",
@@ -23,6 +26,7 @@ const resources = [
       "WCAG 2.2 AA conformance approach and testing methodology.",
     image: "/procurement-and-legal-resources/accessibility.png",
     action: "Visit Accessibility →",
+    href: "/accessibility",
   },
 ];
 
@@ -66,9 +70,9 @@ export default function TrustResources() {
                   {item.description}
                 </p>
 
-                <button className="mt-5 text-sm font-semibold text-teal-700 transition hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300">
+                <Link href={item.href} className="mt-5 text-sm font-semibold text-teal-700 transition hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300">
                   {item.action}
-                </button>
+                </Link>
               </div>
             </div>
           ))}

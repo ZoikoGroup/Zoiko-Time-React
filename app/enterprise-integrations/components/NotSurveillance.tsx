@@ -54,7 +54,7 @@ export default function NotSurveillance() {
             can navigate documentation only after separate approval; it cannot
             create or approve mappings or resolve conflicts.{" "}
             <Link
-              href="/trust-governance"
+              href="/trust-center"
               className="font-semibold text-teal-700 underline-offset-2 hover:underline dark:text-teal-400"
             >
               Visit Trust Center →

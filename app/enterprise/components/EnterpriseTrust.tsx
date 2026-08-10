@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function EnterpriseTrust() {
   return (
     <section className="w-full px-5 py-10 sm:px-8 lg:px-10">
@@ -28,19 +30,19 @@ export default function EnterpriseTrust() {
 
           {/* Buttons */}
           <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:absolute lg:right-8 lg:top-1/2 lg:mt-0 lg:-translate-y-1/2">
-            <button
-              type="button"
+            <Link
+              href="/trust-center"
               className="inline-flex h-9 items-center justify-center rounded-lg bg-emerald-500 px-6 text-sm font-bold leading-5 text-white transition hover:bg-emerald-600"
             >
               Visit Trust Center →
-            </button>
+            </Link>
 
-            <button
-              type="button"
+            <Link
+              href="/procurement-and-legal-resources"
               className="inline-flex h-9 items-center justify-center rounded-lg border border-white/30 px-6 text-sm font-bold leading-5 text-white transition hover:bg-white/10"
             >
               Review Procurement
-            </button>
+            </Link>
           </div>
 
           {/* Decorative Shape */}

@@ -106,7 +106,7 @@ const enterprisePlatformItems = [
   {
     title: "Enterprise Overview",
     icon: "enterprise.png",
-    href: "#",
+    href: "/enterprise",
   },
   {
     title: "Administration & Policy Controls",
@@ -159,7 +159,7 @@ const adoptionSupportItems = [
   {
     title: "Enterprise Support",
     icon: "enterprise-support.png",
-    href: "/#",
+    href: "#",
   },
   {
     title: "Procurement & Legal Resources",

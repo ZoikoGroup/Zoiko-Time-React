@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const featurePills = [
   'Human authority.',
@@ -32,24 +33,24 @@ export default function TraceableWorkflowSection() {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
-              <button
-                type="button"
+              <Link
+                href="/start-free"
                 className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base rounded-xl shadow-sm transition-all focus:ring-2 focus:ring-emerald-400 focus:outline-none"
               >
                 Start Free
-              </button>
-              <button
-                type="button"
+              </Link>
+              <Link
+                href="/request-enterprise-demo"
                 className="px-6 py-3.5 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 font-bold text-base rounded-xl shadow-sm transition-all focus:ring-2 focus:ring-slate-300 focus:outline-none"
               >
                 Request Enterprise Demo
-              </button>
+              </Link>
             </div>
 
             {/* Secondary Link */}
             <div className="pt-1">
               <a
-                href="#explore"
+                href="#"
                 className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors group"
               >
                 <span>Explore ZoikoTime</span>
