@@ -1,5 +1,6 @@
 // GlobalPolicy.tsx
 
+import Link from "next/link";
 import React from "react";
 
 const policyData = [
@@ -198,9 +199,12 @@ export default function GlobalPolicy() {
 
         {/* CTA */}
         <div className="mt-10 flex justify-center">
-          <button className="rounded-lg border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-slate-800 transition-all duration-300 hover:bg-gray-50 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800">
+          <Link
+            href="/global-deployment"
+            className="rounded-lg border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-slate-800 transition-all duration-300 hover:bg-gray-50 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+          >
             Discuss Global Deployment
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -16,7 +16,7 @@ const scenarioCards: ScenarioCard[] = [
     title: 'A remote worker reviewing their own record',
     description: 'Sees the flagged session, adds context, and tracks status through to approval.',
     linkText: 'Remote Teams',
-    href: '#remote-teams',
+    href: '/remote-teams',
   },
   {
     id: 'hybrid',
@@ -24,7 +24,7 @@ const scenarioCards: ScenarioCard[] = [
     title: 'A hybrid manager clearing the approval queue',
     description: 'Reviews the reason, requests information once, and approves with an amendment reason.',
     linkText: 'Hybrid Workforces',
-    href: '#hybrid-workforces',
+    href: '/hybrid-workforces',
   },
   {
     id: 'field',
@@ -32,7 +32,7 @@ const scenarioCards: ScenarioCard[] = [
     title: 'A field team adding project context on site',
     description: 'Records the task, customer, and cost code at the point of work, on mobile.',
     linkText: 'Contractor-Heavy Workforces',
-    href: '#contractor-workforces',
+    href: '/contractor-heavy-workforces',
   },
   {
     id: 'multi-site',
@@ -40,7 +40,7 @@ const scenarioCards: ScenarioCard[] = [
     title: 'A department head comparing team readiness',
     description: 'Checks completeness and exception aging by team before the period closes.',
     linkText: 'Global Workforces',
-    href: '#global-workforces',
+    href: '/global-workforces',
   },
 ];
 

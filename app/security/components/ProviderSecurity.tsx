@@ -94,7 +94,7 @@ export default function ProviderSecurity() {
           {/* Action Button */}
           <div className="pt-2">
             <a
-              href="#integrations"
+              href="/enterprise-integrations"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 font-bold text-sm rounded-lg border border-slate-200 dark:border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400"
             >
               Enterprise Integrations

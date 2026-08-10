@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function PayrollHero() {
@@ -75,13 +76,19 @@ export default function PayrollHero() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="rounded-xl bg-teal-600 px-8 py-3 font-semibold text-white shadow-lg transition hover:bg-teal-700">
+          <Link
+            href="/request-enterprise-demo"
+            className="rounded-xl bg-teal-600 px-8 py-3 font-semibold text-white shadow-lg transition hover:bg-teal-700"
+          >
             Request Enterprise Demo
-          </button>
+          </Link>
 
-          <button className="rounded-xl border border-gray-300 bg-white px-8 py-3 font-semibold text-slate-800 transition hover:bg-gray-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800">
+          <Link
+            href="/start-free"
+            className="rounded-xl border border-gray-300 bg-white px-8 py-3 font-semibold text-slate-800 transition hover:bg-gray-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+          >
             Start Free
-          </button>
+          </Link>
         </div>
 
         {/* Note */}

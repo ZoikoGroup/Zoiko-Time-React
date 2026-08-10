@@ -139,18 +139,20 @@ export default function AttendanceCoverage() {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap justify-center items-center gap-3.5 pt-2">
+          <a href="attendance-and-presence">
           <button
             type="button"
             className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white text-base font-bold rounded-lg transition-colors shadow-sm"
           >
             Explore Attendance &amp; Presence
-          </button>
+          </button></a>
+          <a href="/verify-time-attendance">
           <button
             type="button"
             className="px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-900 text-base font-bold rounded-lg border border-slate-200 transition-colors"
           >
             Verify Time &amp; Attendance
-          </button>
+          </button></a>
         </div>
 
       </div>

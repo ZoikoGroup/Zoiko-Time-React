@@ -28,14 +28,14 @@ export default function AccessCTA() {
         <div className="flex w-full flex-col items-start lg:w-auto lg:items-end">
           <Link
     href="/accessibility#report-an-issue"
-    className="flex h-12 w-full items-center justify-center rounded-lg bg-teal-600 px-7 text-base font-semibold text-white shadow-[0px_4px_16px_0px_rgba(0,157,140,0.30)] transition hover:bg-teal-700 sm:w-64"
+    className="flex h-12 w-full   rounded-lg bg-teal-600 px-2 justify-center items-center text-base font-semibold text-white shadow-[0px_4px_16px_0px_rgba(0,157,140,0.30)] transition hover:bg-teal-700 sm:w-64"
   >
     Report an Accessibility Issue
   </Link>
 
   <Link
     href="/contact-sales"
-    className="flex h-12 w-full items-center justify-center rounded-lg border border-slate-200 bg-white px-6 text-sm font-medium text-slate-700 transition hover:bg-slate-50 dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:hover:bg-white/10 sm:w-40"
+    className=" mt-5 flex h-12 w-full items-center justify-center rounded-lg border border-slate-200 bg-white px-6 text-sm font-medium text-slate-700 transition hover:bg-slate-50 dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:hover:bg-white/10 sm:w-40"
   >
     Contact Sales
   </Link>

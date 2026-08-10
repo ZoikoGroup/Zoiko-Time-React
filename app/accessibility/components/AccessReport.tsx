@@ -199,9 +199,10 @@ export default function AccessReport() {
                 or implementation planning support.
               </p>
 
+              <a href="/contact-sales">
               <button className="mt-4 text-xs font-bold text-teal-600 transition hover:text-teal-700 dark:text-teal-400">
                 Contact Sales →
-              </button>
+              </button></a>
             </div>
           </div>
         </div>

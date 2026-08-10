@@ -126,22 +126,22 @@ export default function SecurityQuestionsFAQ() {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
-          <button
-            type="button"
+          <a
+            href="/security-overview#contact-security-team"
             className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400 shadow-xs"
           >
             Request Security Review
-          </button>
-          
+          </a>
+
           <a
-            href="#enterprise-demo"
+            href="/request-enterprise-demo"
             className="px-6 py-3.5 bg-white dark:bg-slate-900 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 font-bold text-sm rounded-lg border border-slate-200 dark:border-slate-800 transition-colors"
           >
             Request Enterprise Demo
           </a>
 
           <a
-            href="#system-status"
+            href="/system-status"
             className="px-6 py-3.5 bg-white dark:bg-slate-900 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 font-bold text-sm rounded-lg border border-slate-200 dark:border-slate-800 transition-colors"
           >
             System Status

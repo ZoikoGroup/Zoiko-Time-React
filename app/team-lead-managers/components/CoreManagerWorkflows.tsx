@@ -14,7 +14,7 @@ const workflows: WorkflowCard[] = [
     title: 'Time and attendance readiness',
     description: 'See whether required work records are complete and which items need action.',
     linkText: 'Time Tracking',
-    linkHref: '#time-tracking',
+    linkHref: '/attendance-and-presence',
     icon: (
       <Clock  className='w-4 h-4 text-teal-600'/>
     ),
@@ -23,7 +23,7 @@ const workflows: WorkflowCard[] = [
     title: 'Exception ownership',
     description: 'Assign incomplete or conflicting records and monitor aging without accusatory labels.',
     linkText: 'Human-in-Command Controls',
-    linkHref: '#controls',
+    linkHref: '/human-in-command',
     icon: (
       <TriangleAlert className='w-4 h-4 text-teal-600'/>
     ),
@@ -32,7 +32,7 @@ const workflows: WorkflowCard[] = [
     title: 'Approvals and change control',
     description: 'Preserve who approved, what changed, why it changed, and whether reapproval is required.',
     linkText: 'Timesheets & Approvals',
-    linkHref: '#approvals',
+    linkHref: '/time-sheet-approvals',
     icon: (
       <SquareCheck className='w-4 h-4 text-teal-600'/>
     ),
@@ -41,7 +41,7 @@ const workflows: WorkflowCard[] = [
     title: 'Project and task attribution',
     description: 'Connect approved time to work, customer, or cost structures where configured.',
     linkText: 'Control Project Time & Cost',
-    linkHref: '#project-cost',
+    linkHref: '/control-project-time-and-cost',
     icon: (
       <Folder className='w-4 h-4 text-teal-600'/>
     ),
@@ -50,7 +50,7 @@ const workflows: WorkflowCard[] = [
     title: 'Remote and hybrid coordination',
     description: 'Maintain clear records across locations and schedules without invasive monitoring.',
     linkText: 'Manage Remote & Hybrid Work',
-    linkHref: '#remote-work',
+    linkHref: '/manage-remote-hybrid-work',
     icon: (
       <Globe className='w-4 h-4 text-teal-600'/>
     ),
@@ -59,7 +59,7 @@ const workflows: WorkflowCard[] = [
     title: 'Contractor team management',
     description: 'Support distinct worker types, review rights, project context, and commercial records.',
     linkText: 'Contractor-Heavy Workforces',
-    linkHref: '#contractors',
+    linkHref: '/contractor-heavy-workforcea',
     icon: (
       <User className='w-4 h-4 text-teal-600'/>
     ),

@@ -352,6 +352,7 @@ export default function EnterpriseMegaMenu({
             </p>
 
                         {/* Button */}
+                        <a href="/download-zoiko-time">
             <button
               type="button"
               onClick={onLinkClick}
@@ -375,7 +376,7 @@ export default function EnterpriseMegaMenu({
               "
             >
               Download Zoiko Time
-            </button>
+            </button></a>
           </div>
         </div>
       </div>

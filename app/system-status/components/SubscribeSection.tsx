@@ -14,7 +14,7 @@ export default function SubscribeSection() {
   };
 
   return (
-    <section className="w-full bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 py-16 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
+    <section id="subscribe" className="w-full bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 py-16 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
       <div className="max-w-[1180px] mx-auto flex flex-col items-center gap-8">
         
         {/* Section Header */}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from 'react';
 
 const viewsList = [
@@ -73,18 +74,18 @@ export default function ProjectTimeCostControl() {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-3.5 pt-2">
-            <button
-              type="button"
+            <Link
+              href="/control-project-time-and-cost"
               className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors shadow-sm"
             >
               Explore Control Project Time &amp; Cost
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href="/project-based-businesses"
               className="px-6 py-3.5 bg-white hover:bg-slate-100 text-slate-900 font-bold text-base rounded-lg border border-slate-200 transition-colors"
             >
               Project-Based Businesses
-            </button>
+            </Link>
           </div>
 
           {/* Scope Boundary Footnote */}
