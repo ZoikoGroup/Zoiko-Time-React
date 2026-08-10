@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface OutcomeCard {
   title: string;
@@ -19,7 +20,7 @@ const outcomes: OutcomeCard[] = [
       </>
     ),
     guideCountText: '— guides →',
-    href: '#reduce-payroll-errors',
+    href: "/improve-payroll-accuracy",
     icon: (
       <svg
         className="w-5 h-5 text-teal-600 dark:text-teal-400"
@@ -46,7 +47,7 @@ const outcomes: OutcomeCard[] = [
       </>
     ),
     guideCountText: '— guides →',
-    href: '#pass-an-audit',
+    href: "/compliance-assurance",
     icon: (
       <svg
         className="w-5 h-5 text-teal-600 dark:text-teal-400"
@@ -75,7 +76,7 @@ const outcomes: OutcomeCard[] = [
       </>
     ),
     guideCountText: '— guides →',
-    href: '#reduce-time-disputes',
+    href: "/eliminate-time-disputes",
     icon: (
       <svg
         className="w-5 h-5 text-teal-600 dark:text-teal-400"
@@ -102,7 +103,7 @@ const outcomes: OutcomeCard[] = [
       </>
     ),
     guideCountText: '— guides →',
-    href: '#support-remote-hybrid',
+    href: "/manage-remote-hybrid-work",
     icon: (
       <svg
         className="w-5 h-5 text-teal-600 dark:text-teal-400"

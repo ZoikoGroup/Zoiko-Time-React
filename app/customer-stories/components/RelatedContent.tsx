@@ -1,6 +1,7 @@
 "use client";
 
 import { FiArrowRight } from "react-icons/fi";
+import Link from "next/link";
 
 const relatedContent = [
   {
@@ -8,18 +9,21 @@ const relatedContent = [
     title: "Procurement & Legal Resources",
     description:
       "Evidence packs, access classes, and the request workflow.",
+      href:"/procurement-and-legal-resources"
   },
   {
     category: "Trust & Governance",
     title: "Break & Rest Compliance",
     description:
       "How configured policy becomes a reviewable record.",
+      href:"/break-rest-compliance"
   },
   {
     category: "Resources",
     title: "Webinars & Events",
     description:
       "Hear directly from customers and product leads, live.",
+      href:"/webinars-and-events"
   },
 ];
 

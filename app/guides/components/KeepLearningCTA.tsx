@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 export default function KeepLearningCTA() {
   return (
@@ -49,12 +50,12 @@ export default function KeepLearningCTA() {
           </a>
 
           {/* Secondary Button - Glassy */}
-          <a
-            href="#get-a-demo"
-            className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-xl border border-white/20 hover:border-white/40 transition-all active:scale-95 text-center min-w-[130px]"
-          >
-            Get a Demo
-          </a>
+         <Link
+  href="/request-a-demo"
+  className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded-xl border border-white/20 hover:border-white/40 transition-all active:scale-95 text-center min-w-[130px]"
+>
+  Get a Demo
+</Link>
         </div>
 
       </div>
