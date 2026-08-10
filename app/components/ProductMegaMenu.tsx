@@ -236,7 +236,7 @@ export default function ProductMegaMenu({
                 icon="zoikosema.png"
                 title="Zoiko Sema Integration"
                 description="Communication layer."
-                href="#"
+                href="/zoiko-sema-integration"
                 onLinkClick={onLinkClick}
               />
 

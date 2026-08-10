@@ -264,7 +264,7 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="ai.png"
                 title="AI Governance"
-                href="#"
+                href="ai-governance"
                  onLinkClick={onLinkClick}
               />
 
@@ -322,7 +322,7 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="data-location.png"
                 title="Data Location & Residency"
-                href="#"
+                href="/data-location-and-residency"
                  onLinkClick={onLinkClick}
               />
             </div>
