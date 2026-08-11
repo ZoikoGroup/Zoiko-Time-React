@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function StageThree() {
   return (
@@ -55,12 +56,12 @@ export default function StageThree() {
 
           {/* Button */}
           <div className="mt-8">
-            <button
-              type="button"
+            <Link
+              href="/solutions-workers"
               className="inline-flex min-h-11 items-center justify-center rounded-[10px] border border-gray-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-800 transition hover:bg-gray-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
             >
               Explore Workers
-            </button>
+            </Link>
           </div>
         </div>
 

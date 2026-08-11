@@ -44,7 +44,7 @@ export default function AntiSurveillanceBanner() {
 
         {/* Right Link */}
         <Link
-          href="#"
+          href="/responsible-ai"
           className="group inline-flex items-center gap-2 text-base font-semibold text-emerald-500 transition hover:text-emerald-600"
         >
           Read our Anti-Surveillance Principles

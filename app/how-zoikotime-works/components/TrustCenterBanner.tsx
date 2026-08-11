@@ -36,7 +36,7 @@ export default function TrustCenterBanner() {
                   any tier or configuration.
 
                   <a
-                    href="#"
+                    href="/trust-center"
                     className="ml-2 inline-flex items-center font-semibold text-teal-600 transition hover:text-teal-500 dark:text-teal-400 dark:hover:text-teal-300"
                   >
                     Visit Trust Center

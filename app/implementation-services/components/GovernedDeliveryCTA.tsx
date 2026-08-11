@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function GovernedDeliveryCTA() {
   return (
@@ -24,18 +25,18 @@ export default function GovernedDeliveryCTA() {
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
-              <button className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+              <Link href="/request-enterprise-demo" className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
                 Request Enterprise Demo
-              </button>
-              <button className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400">
+              </Link>
+              <Link href="/contact-sales" className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400">
                 Talk to Sales
-              </button>
+              </Link>
             </div>
 
             {/* Existing Customer Link */}
             <div>
               <a
-                href="#signin"
+                href="/login"
                 className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 text-sm font-bold hover:underline group"
               >
                 <span>Existing customer? Sign in for implementation help</span>

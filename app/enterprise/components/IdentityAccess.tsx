@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const features = [
   "SSO & MFA integrations",
@@ -63,12 +64,12 @@ export default function IdentityAccess() {
           </div>
 
           {/* Learn More */}
-          <button
-            type="button"
+          <Link
+            href="/identity-access-management"
             className="mt-8 text-base font-bold leading-6 text-emerald-500 transition hover:text-emerald-600"
           >
             Learn more →
-          </button>
+          </Link>
         </div>
 
         {/* Image */}

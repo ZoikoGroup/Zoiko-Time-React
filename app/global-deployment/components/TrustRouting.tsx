@@ -6,33 +6,33 @@ const topics = [
     treatment:
       "Least privilege, change control, evidence, incident routing, support access, current limitations.",
     routeLabel: "Security",
-    href: "/security-overview",
+    href: "/security",
   },
   {
     topic: "Privacy",
     treatment:
       "Minimization, data categories, location and transfer, retention, rights, current terms.",
     routeLabel: "Privacy & DPA",
-    href: "/privacy-notice",
+    href: "/privacy",
   },
   {
     topic: "Anti-surveillance",
     treatment: "The exact invariant, across every tier and configuration.",
     routeLabel: "Anti-Surveillance",
-    href: "/anti-surveillance-principles",
+    href: "#",
   },
   {
     topic: "Human control",
     treatment: "Named approval, neutral states, correction, escalation.",
     routeLabel: "Human-in-Command",
-    href: "/human-controls",
+    href: "/human-in-command",
   },
   {
     topic: "AI governance",
     treatment:
       "Deterministic classification, approved AI scope only, Kairos decides nothing.",
     routeLabel: "AI Governance",
-    href: "/ai-and-automated-insights-policy",
+    href: "/ai-governance",
   },
   {
     topic: "Accessibility",
@@ -45,14 +45,14 @@ const topics = [
     topic: "Reliability and incidents",
     treatment: "Operational status and communications.",
     routeLabel: "System Status",
-    href: "/status",
+    href: "/system-status",
   },
   {
     topic: "Procurement",
     treatment:
       "Current artifacts with status, owner, review date, and withdrawal handling.",
     routeLabel: "Procurement & Legal",
-    href: "/enterprise-approval-pack",
+    href: "/procurement-and-legal-resources",
   },
 ];
 

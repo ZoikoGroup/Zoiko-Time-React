@@ -43,7 +43,7 @@ export default function EvidenceAndGovernance() {
             </div>
             <div>
               <a
-                href="#sema-integration"
+                href="#"
                 className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 group transition-colors"
               >
                 <span>Zoiko Sema Integration</span>

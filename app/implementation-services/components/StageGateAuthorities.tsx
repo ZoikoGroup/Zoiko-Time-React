@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface DomainCard {
   title: string;
@@ -83,12 +84,12 @@ export default function StageGateAuthorities() {
 
           {/* Action / Principle Badges */}
           <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
-            <div className="px-5 py-3.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700/80 shadow-sm text-slate-900 dark:text-white font-bold text-sm">
+            <Link href="#" className="px-5 py-3.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700/80 shadow-sm text-slate-900 dark:text-white font-bold text-sm">
               Anti-Surveillance Principles
-            </div>
-            <div className="px-5 py-3.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700/80 shadow-sm text-slate-900 dark:text-white font-bold text-sm">
+            </Link>
+            <Link href="/human-in-command" className="px-5 py-3.5 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700/80 shadow-sm text-slate-900 dark:text-white font-bold text-sm">
               Human-in-Command Controls
-            </div>
+            </Link>
           </div>
 
           {/* Compliance Disclaimer Footer */}

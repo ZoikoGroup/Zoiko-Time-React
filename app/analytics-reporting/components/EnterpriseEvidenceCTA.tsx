@@ -1,6 +1,7 @@
 // app/components/EnterpriseEvidenceCTA.tsx
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function EnterpriseEvidenceCTA() {
   return (
@@ -87,7 +88,8 @@ export default function EnterpriseEvidenceCTA() {
 
           <div className="flex flex-wrap gap-3.5 pt-2">
 
-            <button
+            <Link
+              href="/request-enterprise-demo"
               className="
               rounded-lg
               bg-emerald-500
@@ -101,10 +103,11 @@ export default function EnterpriseEvidenceCTA() {
               "
             >
               Request Enterprise Demo
-            </button>
+            </Link>
 
 
-            <button
+            <Link
+              href="/contact-sales"
               className="
               rounded-lg
               border
@@ -121,7 +124,7 @@ export default function EnterpriseEvidenceCTA() {
               "
             >
               Contact Sales
-            </button>
+            </Link>
 
 
           </div>
@@ -130,7 +133,7 @@ export default function EnterpriseEvidenceCTA() {
 
 
           <a
-            href="#"
+            href="/trust-center"
             className="
             text-sm
             font-bold

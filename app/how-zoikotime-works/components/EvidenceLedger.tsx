@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function EvidenceLedger() {
   const events = [
@@ -164,9 +165,12 @@ export default function EvidenceLedger() {
             does not claim universal legal admissibility or guarantee an
             external decision.{" "}
 
-            <span className="font-semibold text-teal-700 dark:text-teal-300">
+            <Link
+              href="#"
+              className="font-semibold text-teal-700 dark:text-teal-300"
+            >
               Explore Evidence Ledger →
-            </span>
+            </Link>
           </p>
 
         </div>

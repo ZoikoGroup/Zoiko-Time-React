@@ -29,7 +29,7 @@ const registryData: RegistryRow[] = [
     boundary: {
       type: 'link',
       linkText: 'Administration & Policy Controls',
-      href: '#admin-policy-controls',
+      href: '/adminstration-policy-controls',
     },
   },
   {
@@ -39,7 +39,7 @@ const registryData: RegistryRow[] = [
     boundary: {
       type: 'link',
       linkText: 'Identity & Access Management',
-      href: '#identity-access-management',
+      href: '/identity-access-management',
     },
   },
   {
@@ -49,7 +49,7 @@ const registryData: RegistryRow[] = [
     boundary: {
       type: 'link',
       linkText: 'Enterprise Integrations',
-      href: '#enterprise-integrations',
+      href: '/enterprise-integrations',
     },
   },
   {
@@ -59,7 +59,7 @@ const registryData: RegistryRow[] = [
     boundary: {
       type: 'link',
       linkText: 'Analytics & Reporting',
-      href: '#analytics-reporting',
+      href: '/analytics-reporting',
     },
   },
   {
@@ -69,7 +69,7 @@ const registryData: RegistryRow[] = [
     boundary: {
       type: 'link-with-text',
       linkText: 'Global Deployment',
-      href: '#global-deployment',
+      href: '/global-deployment',
       suffixText: ' No unverified region claims.',
     },
   },
@@ -117,7 +117,7 @@ const registryData: RegistryRow[] = [
     boundary: {
       type: 'link',
       linkText: 'Procurement & Legal Resources',
-      href: '#procurement-legal-resources',
+      href: '/procurement-and-legal-resources',
     },
   },
 ];

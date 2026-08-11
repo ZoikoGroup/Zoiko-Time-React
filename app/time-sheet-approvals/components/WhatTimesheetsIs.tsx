@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface PrincipleCard {
   title: string;
@@ -29,9 +30,9 @@ const principleCards: PrincipleCard[] = [
 ];
 
 const navigationTabs = [
-  'Anti-Surveillance Principles',
-  'Human-in-Command Controls',
-  'Evidence Ledger',
+  { label: 'Anti-Surveillance Principles', href: '/responsible-ai' },
+  { label: 'Human-in-Command Controls', href: '/human-in-command' },
+  { label: 'Evidence Ledger', href: '#' },
 ];
 
 export default function WhatTimesheetsIs() {
@@ -69,13 +70,13 @@ export default function WhatTimesheetsIs() {
         {/* Navigation Action Badges / Buttons */}
         <div className="w-full flex flex-wrap items-center justify-center gap-3.5 pt-2">
           {navigationTabs.map((tab, idx) => (
-            <button
+            <Link
               key={idx}
-              type="button"
+              href={tab.href}
               className="px-6 py-3.5 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold text-sm sm:text-base rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950"
             >
-              {tab}
-            </button>
+              {tab.label}
+            </Link>
           ))}
         </div>
 

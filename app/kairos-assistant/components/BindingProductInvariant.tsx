@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function BindingProductInvariant() {
   return (
@@ -27,22 +28,22 @@ export default function BindingProductInvariant() {
 
         {/* Call to Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3.5 pt-3 w-full sm:w-auto">
-          <button
-            type="button"
+          <Link
+            href="/responsible-ai"
             className="w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors cursor-pointer text-center"
           >
             Read Anti-Surveillance Principles
-          </button>
-          
-          <button
-            type="button"
+          </Link>
+
+          <Link
+            href="/trust-center"
             className="w-full sm:w-auto px-6 py-3.5 bg-transparent hover:bg-slate-800 text-white font-bold text-base rounded-lg border border-slate-600 transition-colors cursor-pointer inline-flex items-center justify-center gap-2 group"
           >
             <span>Visit Trust Center</span>
             <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">
               →
             </span>
-          </button>
+          </Link>
         </div>
 
       </div>

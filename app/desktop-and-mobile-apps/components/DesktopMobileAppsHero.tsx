@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface AppAvailabilityRow {
   experience: string;
@@ -95,12 +96,12 @@ export default function AppPreviewHeroSection() {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
-            <button className="w-full sm:w-auto px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base rounded-xl shadow-md shadow-teal-600/20 transition-colors">
+            <Link href="/start-free" className="w-full sm:w-auto px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base rounded-xl shadow-md shadow-teal-600/20 transition-colors">
               Start Free
-            </button>
-            <button className="w-full sm:w-auto px-6 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-semibold text-base rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+            </Link>
+            <Link href="/request-enterprise-demo" className="w-full sm:w-auto px-6 py-3 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-semibold text-base rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
               Request Enterprise Demo
-            </button>
+            </Link>
           </div>
 
           {/* Disclaimer / Fine Print */}
