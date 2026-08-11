@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const verifiedBoundaries: string[] = [
   'Governance model, stage gates, and decision records',
@@ -93,22 +94,22 @@ export default function ServiceAvailability() {
 
           {/* Action Buttons */}
           <div className="pt-3 flex flex-wrap items-center gap-3.5">
-            <button className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+            <Link href="/request-enterprise-demo" className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
               Request Enterprise Demo
-            </button>
-            <button className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400">
+            </Link>
+            <Link href="/contact-sales" className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400">
               Talk to Sales
-            </button>
-            <button className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400">
+            </Link>
+            <Link href="/procurement-and-legal-resources" className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400">
               Procurement &amp; Legal Resources
-            </button>
+            </Link>
           </div>
 
           {/* Existing Customer Link */}
           <div className="text-xs text-slate-500 dark:text-slate-400 flex flex-wrap items-center gap-1">
             <span>Already a customer?</span>
             <a
-              href="#signin"
+              href="/login"
               className="text-emerald-600 dark:text-emerald-400 text-sm font-bold hover:underline"
             >
               Sign in

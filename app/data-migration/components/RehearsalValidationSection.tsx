@@ -147,7 +147,7 @@ const getStatusBadge = (status: LedgerRow['status']) => {
 
 export default function RehearsalValidationSection() {
   return (
-    <section className="w-full bg-slate-50 px-4 py-16 font-sans text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100 sm:px-6 sm:py-20 lg:px-8">
+    <section id="rehearsal-model" className="w-full bg-slate-50 px-4 py-16 font-sans text-slate-900 transition-colors dark:bg-slate-950 dark:text-slate-100 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto flex max-w-[1180px] flex-col gap-10">
         <header className="mx-auto flex max-w-[800px] flex-col items-center gap-3 text-center">
           <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
@@ -182,7 +182,7 @@ export default function RehearsalValidationSection() {
           ))}
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+        <div id="reconciliation-ledger" className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
           <div className="overflow-x-auto">
             <table className="min-w-[900px] w-full border-collapse text-left">
               <thead>

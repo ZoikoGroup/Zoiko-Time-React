@@ -93,7 +93,7 @@ export default function ChooseYourPath() {
           "
         >
           <Link
-            href="start-free"
+            href="/start-free"
             className="
               rounded-[10px]
               bg-teal-600
@@ -112,7 +112,7 @@ export default function ChooseYourPath() {
 
 
           <Link
-            href="request-enterprise-demo"
+            href="/request-enterprise-demo"
             className="
               rounded-[10px]
               border

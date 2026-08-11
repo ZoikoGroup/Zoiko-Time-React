@@ -57,7 +57,7 @@ const groups: { heading: string; cards: Card[] }[] = [
         title: "AI Governance",
         body: "Approved ML scope, prohibited uses, and the Kairos boundary.",
         state: "Current",
-        action: { label: "Open", href: "/ai-and-automated-insights-policy" },
+        action: { label: "Open", href: "/ai-governance" },
       },
       {
         title: "Administrative Controls",

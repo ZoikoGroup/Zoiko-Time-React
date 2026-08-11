@@ -33,21 +33,21 @@ export default function CTASection() {
         {/* Call to Action Buttons */}
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <Link
-            href="/demo"
+            href="/request-enterprise-demo"
             className="flex h-11 w-full sm:w-auto items-center justify-center rounded-[10px] bg-teal-600 px-6 text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] transition-all hover:bg-teal-500 active:scale-[0.98]"
           >
             Request Enterprise Demo
           </Link>
 
           <Link
-            href="/signup"
+            href="/start-free"
             className="flex h-11 w-full sm:w-auto items-center justify-center rounded-[10px] bg-white/10 px-6 text-base font-semibold text-white outline outline-1 outline-offset-[-1px] outline-white/30 backdrop-blur-sm transition-all hover:bg-white/20 active:scale-[0.98]"
           >
             Start Free
           </Link>
 
           <Link
-            href="/explore"
+            href="#"
             className="flex h-11 w-full sm:w-auto items-center justify-center rounded-[10px] bg-white/10 px-6 text-base font-semibold text-white outline outline-1 outline-offset-[-1px] outline-white/30 backdrop-blur-sm transition-all hover:bg-white/20 active:scale-[0.98]"
           >
             Explore ZoikoTime

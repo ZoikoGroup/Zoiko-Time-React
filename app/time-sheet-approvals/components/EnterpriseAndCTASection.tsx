@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface RoleUseCase {
   role: string;
@@ -43,12 +44,12 @@ const roleUseCases: RoleUseCase[] = [
 ];
 
 const customerLinks = [
-  { label: 'Open Timesheets', href: '#open-timesheets' },
-  { label: 'Documentation', href: '#documentation' },
-  { label: 'Service Status', href: '#service-status' },
-  { label: 'Release Notes', href: '#release-notes' },
-  { label: 'Help Center', href: '#help-center' },
-  { label: 'Contact Support', href: '#contact-support' },
+  { label: 'Open Timesheets', href: '#' },
+  { label: 'Documentation', href: '/product-documentation' },
+  { label: 'Service Status', href: '/system-status' },
+  { label: 'Release Notes', href: '/product-updates' },
+  { label: 'Help Center', href: '/help-center' },
+  { label: 'Contact Support', href: '/contact' },
 ];
 
 export default function EnterpriseAndCTASection() {
@@ -105,18 +106,18 @@ export default function EnterpriseAndCTASection() {
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
-              <button
-                type="button"
+              <Link
+                href="/start-free"
                 className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base rounded-xl shadow-sm transition-all focus:ring-2 focus:ring-emerald-400 focus:outline-none"
               >
                 Start Free
-              </button>
-              <button
-                type="button"
+              </Link>
+              <Link
+                href="/request-enterprise-demo"
                 className="px-6 py-3.5 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 font-bold text-base rounded-xl shadow-sm transition-all focus:ring-2 focus:ring-slate-300 focus:outline-none"
               >
                 Request Enterprise Demo
-              </button>
+              </Link>
             </div>
 
             <p className="text-xs text-slate-500 dark:text-slate-400 pt-1 leading-normal">

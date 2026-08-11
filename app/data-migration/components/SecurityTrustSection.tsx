@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 interface SecurityDomainCard {
   title: string;
   description: string;
@@ -38,7 +40,11 @@ const domainCards: SecurityDomainCard[] = [
   },
 ];
 
-const pills = ['Security', 'Privacy', 'Anti-Surveillance'];
+const pills = [
+  { label: 'Security', href: '/security' },
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Anti-Surveillance', href: '#' },
+];
 
 export default function SecurityTrustSection() {
   return (
@@ -79,12 +85,13 @@ export default function SecurityTrustSection() {
 
           <div className="flex flex-wrap gap-2.5">
             {pills.map((pill) => (
-              <span
-                key={pill}
+              <Link
+                key={pill.label}
+                href={pill.href}
                 className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-800 shadow-xs dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200"
               >
-                {pill}
-              </span>
+                {pill.label}
+              </Link>
             ))}
           </div>
 

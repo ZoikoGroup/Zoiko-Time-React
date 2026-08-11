@@ -42,14 +42,14 @@ export default function RemoteTeamsHero() {
         {/* Buttons */}
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <Link
-            href="#"
+            href="/request-a-demo"
             className="rounded-full bg-emerald-600 px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:bg-emerald-500"
           >
             Get a demo
           </Link>
 
           <Link
-            href="#"
+            href="/contact-sales"
             className="rounded-full border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:bg-white/10"
           >
             Talk to sales

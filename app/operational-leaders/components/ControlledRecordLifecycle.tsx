@@ -186,18 +186,20 @@ export default function ControlledRecordLifecycle() {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+         <a href="/deterministic-time-classification">
           <button
             type="button"
             className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors shadow-sm"
           >
             Explore Deterministic Time Classification
-          </button>
+          </button></a>
+          <a href="/human-in-command">
           <button
             type="button"
             className="px-6 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg border border-slate-200 dark:border-slate-700 transition-colors shadow-sm"
           >
             Human-in-Command Controls
-          </button>
+          </button></a>
         </div>
 
       </div>

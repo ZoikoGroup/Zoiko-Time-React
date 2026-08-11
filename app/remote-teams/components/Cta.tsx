@@ -31,14 +31,14 @@ export default function Cta() {
         {/* Buttons */}
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <Link
-            href="/get-a-demo"
+            href="/request-a-demo"
             className="rounded-full bg-emerald-500 px-7 py-3.5 text-base font-semibold text-white transition hover:bg-emerald-400"
           >
             Get a demo
           </Link>
 
           <Link
-            href="/talk-to-sales"
+            href="/contact-sales"
             className="rounded-full border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition hover:bg-white/10"
           >
             Talk to sales

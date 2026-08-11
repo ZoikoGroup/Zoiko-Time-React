@@ -25,7 +25,12 @@ export default function ZoikoEcosystem() {
               Sema&apos;s independent platform identity.
             </p>
 
-            <div className="mt-8 inline-flex items-center gap-2 font-bold text-slate-600 dark:text-gray-200">
+            <a
+              href="https://zoikosema.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 font-bold text-slate-600 dark:text-gray-200"
+            >
   <span>Learn more about Zoiko Sema</span>
 
   <svg
@@ -42,7 +47,7 @@ export default function ZoikoEcosystem() {
       d="M5 12h14M13 5l7 7-7 7"
     />
   </svg>
-</div>
+</a>
           </div>
 
           {/* Right */}

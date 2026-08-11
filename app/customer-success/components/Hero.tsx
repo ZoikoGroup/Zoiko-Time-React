@@ -1,4 +1,6 @@
 'use client'
+import Link from 'next/link';
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white dark:bg-gray-900">
@@ -22,18 +24,18 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#"
+            <Link
+              href="/request-enterprise-demo"
               className="rounded-[10px] bg-teal-600 px-6 py-3 text-center text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] hover:bg-teal-700 transition-colors"
             >
               Request Enterprise Demo
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/contact-sales"
               className="rounded-[10px] border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-6 py-3 text-center text-base font-semibold text-slate-800 dark:text-white hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors"
             >
               Talk to Sales
-            </a>
+            </Link>
           </div>
 
           <div className="mt-7 flex flex-wrap gap-3">

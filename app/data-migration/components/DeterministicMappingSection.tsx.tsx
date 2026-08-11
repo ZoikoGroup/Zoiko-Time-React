@@ -40,7 +40,7 @@ const features: FeatureItem[] = [
 
 export default function DeterministicMappingSection() {
   return (
-    <section className="w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
+    <section id="mapping-controls" className="w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
         
         {/* Left Column: Content */}

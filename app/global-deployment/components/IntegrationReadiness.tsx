@@ -208,7 +208,7 @@ export default function IntegrationReadiness() {
         <div className="mt-7 flex justify-center">
 
           <Link
-            href="/enterprise"
+            href="/enterprise-integrations"
             className="inline-flex items-center gap-2 rounded-lg border border-stone-200 bg-white px-6 py-3.5 text-base font-bold leading-6 text-sky-950 transition hover:border-sky-950 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-slate-500"
           >
             <span>Enterprise Integrations</span>

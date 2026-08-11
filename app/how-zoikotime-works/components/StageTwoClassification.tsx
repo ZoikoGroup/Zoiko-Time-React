@@ -55,7 +55,7 @@ export default function StageTwoClassification() {
             </div>
 
             <Link
-              href="/classification"
+              href="/deterministic-time-classification"
               className="mt-8 inline-flex h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
             >
               Explore Classification

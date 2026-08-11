@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 interface ProductAreaCard {
   title: string | React.ReactNode;
@@ -24,7 +25,7 @@ const productAreas: ProductAreaCard[] = [
       </>
     ),
     guideCountText: '— guides →',
-    href: '#time-classification',
+    href: "/deterministic-time-classification",
   },
   {
     title: 'Shift Integrity Controls',
@@ -36,7 +37,7 @@ const productAreas: ProductAreaCard[] = [
       </>
     ),
     guideCountText: '— guides →',
-    href: '#shift-integrity',
+    href: "/shift-integrity-controls",
   },
   {
     title: 'Break & Rest Compliance',
@@ -48,7 +49,7 @@ const productAreas: ProductAreaCard[] = [
       </>
     ),
     guideCountText: '— guides →',
-    href: '#break-rest-compliance',
+    href: "/break-rest-compliance",
   },
   {
     title: (
@@ -66,7 +67,7 @@ const productAreas: ProductAreaCard[] = [
       </>
     ),
     guideCountText: '— guides →',
-    href: '#evidence-ledger',
+    href: "/evidence-ledger",
   },
 ];
 

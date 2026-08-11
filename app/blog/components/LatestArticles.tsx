@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 const articles = [
   {
@@ -58,61 +61,68 @@ const articles = [
 ];
 
 export default function LatestArticles() {
-  return (
-    <section
-    id ="explore-insights"
-     className="bg-slate-100 py-24 transition-colors dark:bg-slate-950">
-      <div className="mx-auto max-w-7xl px-4">
+  const [showAll, setShowAll] = useState(false);
 
+  const visibleArticles = showAll ? articles : articles.slice(0, 3);
+
+  return (
+    <section className="w-full bg-white px-4 py-16 dark:bg-slate-950 sm:px-6 sm:py-20 md:px-8 lg:px-10 lg:py-24">
+      <div className="mx-auto w-full max-w-[1200px]">
         {/* Heading */}
         <div className="flex flex-col items-center">
           <div className="mb-5 flex items-center gap-3">
             <div className="h-px w-5 bg-teal-600" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-teal-600">
+
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-teal-600 sm:text-xs">
               Latest Articles
             </span>
+
+            <div className="h-px w-5 bg-teal-600" />
           </div>
 
-          <h2 className="max-w-3xl text-center text-4xl font-semibold leading-tight text-slate-900 dark:text-white">
+          <h2 className="max-w-3xl text-center text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl md:text-5xl dark:text-white">
             Fresh Insights for Workforce Leaders
           </h2>
 
-          <p className="mt-6 max-w-2xl text-center text-base leading-7 text-slate-500 dark:text-slate-400">
-            Explore the latest thinking on workforce assurance, time integrity,
-            governance, and responsible visibility.
+          <p className="mt-5 max-w-2xl text-center text-sm leading-7 text-slate-500 sm:mt-6 sm:text-base sm:leading-7 dark:text-slate-400">
+            Explore the latest thinking on workforce assurance, time
+            integrity, governance, and responsible visibility.
           </p>
         </div>
 
         {/* Articles */}
-        <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {articles.map((article) => (
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-14 sm:gap-7 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {visibleArticles.map((article) => (
             <article
               key={article.title}
-              className="overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 dark:hover:border-teal-500/40"
+              className="group overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 dark:hover:border-teal-500/40"
             >
-              <div className="relative h-56 w-full overflow-hidden">
+              {/* Image */}
+              <div className="relative h-52 w-full overflow-hidden sm:h-56">
                 <Image
                   src={article.image}
                   alt={article.title}
                   fill
-                  className="object-cover transition duration-500 hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition duration-500 group-hover:scale-105"
                 />
               </div>
 
-              <div className="p-6">
-                <p className="text-xs font-bold uppercase tracking-wider text-teal-600">
+              {/* Content */}
+              <div className="p-5 sm:p-6">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-teal-600 sm:text-xs">
                   {article.category}
                 </p>
 
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-slate-900 dark:text-white">
+                <h3 className="mt-3 text-base font-semibold leading-6 text-slate-900 sm:text-lg dark:text-white">
                   {article.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                <p className="mt-3 text-sm leading-6 text-slate-500 dark:text-slate-400">
                   {article.description}
                 </p>
 
-                <div className="mt-6 flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500">
+                <div className="mt-5 flex flex-wrap items-center gap-2 text-[11px] text-slate-400 sm:mt-6 sm:text-xs dark:text-slate-500">
                   <span>ZoikoTime Editorial</span>
                   <span>•</span>
                   <span>{article.read}</span>
@@ -122,13 +132,18 @@ export default function LatestArticles() {
           ))}
         </div>
 
-        {/* Button */}
-        <div className="mt-16 flex justify-center">
-          <button className="rounded-lg border border-slate-300 bg-white px-8 py-3 text-sm font-medium text-slate-700 transition hover:border-teal-600 hover:text-teal-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-500 dark:hover:text-teal-400">
-            Load More Articles
-          </button>
-
-        </div>
+        {/* Load More Button */}
+        {!showAll && (
+          <div className="mt-12 flex justify-center sm:mt-16">
+            <button
+              type="button"
+              onClick={() => setShowAll(true)}
+              className="rounded-lg border border-slate-300 bg-white px-6 py-3 text-sm font-medium text-slate-700 transition-all duration-200 hover:border-teal-600 hover:text-teal-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-teal-500 dark:hover:text-teal-400 sm:px-8"
+            >
+              Load More Articles
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

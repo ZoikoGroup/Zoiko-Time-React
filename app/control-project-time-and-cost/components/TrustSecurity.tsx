@@ -62,7 +62,7 @@ export default function TrustSecurity() {
           </p>
 
           <Link
-            href="#"
+            href="/trust-center"
             className="mt-5 inline-flex items-center font-semibold text-teal-700 transition hover:text-teal-800 dark:text-emerald-400 dark:hover:text-emerald-300"
           >
             Visit Trust Center →

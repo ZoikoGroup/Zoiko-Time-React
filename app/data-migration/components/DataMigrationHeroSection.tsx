@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const keyPillars = [
   'Source-aware',
@@ -42,12 +43,12 @@ export default function DataMigrationHeroSection() {
 
           {/* Primary & Secondary Action CTAs */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto pt-2">
-            <button className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400">
+            <Link href="/request-enterprise-demo" className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400">
               Request Enterprise Demo
-            </button>
-            <button className="px-6 py-3.5 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 font-bold text-base rounded-lg transition-colors focus:outline-none">
+            </Link>
+            <Link href="/contact-sales" className="px-6 py-3.5 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 font-bold text-base rounded-lg transition-colors focus:outline-none">
               Talk to Sales
-            </button>
+            </Link>
           </div>
 
           {/* Text Link with Arrow */}

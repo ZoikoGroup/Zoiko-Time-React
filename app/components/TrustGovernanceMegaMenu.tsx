@@ -264,12 +264,14 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="ai.png"
                 title="AI Governance"
+                href="ai-governance"
                  onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="administrative.png"
                 title="Administrative Controls"
+                href="#"
                  onLinkClick={onLinkClick}
               />
             </div>
@@ -292,7 +294,8 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="compliance.png"
                 title="Compliance & Assurance"
-                 onLinkClick={onLinkClick}
+                href="/compliance-assurance"
+                onLinkClick={onLinkClick}
               />
 
               <MenuItem
@@ -312,12 +315,14 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="responsible.png"
                 title="Responsible Disclosure"
+                href="#"
                  onLinkClick={onLinkClick}
               />
 
               <MenuItem
                 icon="data-location.png"
                 title="Data Location & Residency"
+                href="/data-location-and-residency"
                  onLinkClick={onLinkClick}
               />
             </div>
@@ -388,8 +393,10 @@ export default function TrustGovernanceMegaMenu({
             </p>
 
             {/* Button */}
+            <a href="/download-zoiko-time">
             <button
               type="button"
+               onClick={onLinkClick}
               className="
                 mt-auto
                 flex
@@ -410,7 +417,7 @@ export default function TrustGovernanceMegaMenu({
               "
             >
               Download Zoiko Time
-            </button>
+            </button></a>
           </div>
         </div>
       </div>

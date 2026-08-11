@@ -8,7 +8,7 @@ const problems = [
     description:
       "Start, stop, break, or synchronization gaps leave the record unresolved.",
     resolution: "See what's missing and who resolves it",
-    href: "#attendance-states",
+    href: "/human-in-command",
   },
   {
     icon: "/verify-time-attendance/Schedule-time-conflict.svg",
@@ -16,7 +16,7 @@ const problems = [
     description:
       "Captured events and expected schedules differ and need context.",
     resolution: "Compare context without assuming misconduct",
-    href: "#verification-lifecycle",
+    href: "/anomaly-flags-and-alerts",
   },
   {
     icon: "/verify-time-attendance/Inconsistent-policy-application.svg",
@@ -24,7 +24,7 @@ const problems = [
     description:
       "Different teams or reviewers interpret the same situation differently.",
     resolution: "Apply versioned rules consistently",
-    href: "#capture-context",
+    href: "/deterministic-time-classification",
   },
   {
     icon: "/verify-time-attendance/Late-unclear-approvals.svg",
@@ -32,14 +32,14 @@ const problems = [
     description:
       "No one knows who owns the next action or whether a record is ready.",
     resolution: "Make status and ownership visible",
-    href: "#verification-workspace",
+    href: "/time-sheet-approvals",
   },
   {
     icon: "/verify-time-attendance/Disputed-changed-records.svg",
     title: "Disputed or changed records",
     description: "Corrections occur without accessible rationale or history.",
     resolution: "Preserve before/after values and actors",
-    href: "#exception-resolution",
+    href: "/evidence-ledger",
   },
   {
     icon: "/verify-time-attendance/Downstream-rework.svg",
@@ -47,7 +47,7 @@ const problems = [
     description:
       "Payroll, billing, or audit teams discover incomplete records too late.",
     resolution: "Release only complete, approved records",
-    href: "#attendance-states",
+    href: "/reports-and-dashboards",
   },
 ];
 

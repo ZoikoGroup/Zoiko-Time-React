@@ -236,7 +236,7 @@ export default function ProductMegaMenu({
                 icon="zoikosema.png"
                 title="Zoiko Sema Integration"
                 description="Communication layer."
-                href="#"
+                href="/zoiko-sema-integration"
                 onLinkClick={onLinkClick}
               />
 
@@ -298,7 +298,7 @@ export default function ProductMegaMenu({
                 icon="break.png"
                 title="Break & Rest Compliance"
                 description="Meal & rest compliance."
-                href="break-rest-compliance"
+                href="/break-rest-compliance"
                 onLinkClick={onLinkClick}
               />
 
@@ -451,7 +451,7 @@ export default function ProductMegaMenu({
 
               <button
                 type="button"
-                onClick={onLinkClick}
+                onClick={onLinkClick}   
                 className="
                   mt-6
                   flex

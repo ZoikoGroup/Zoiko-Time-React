@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import { useState } from 'react';
 
 const viewsList = [
@@ -90,12 +91,12 @@ export default function ProjectLaborCostControl() {
 
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
-            <button className="px-3 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400">
+            <Link href="/control-project-time-and-cost" className="px-3 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400">
               Explore Control Project Time &amp; Cost
-            </button>
-            <button className="px-3 py-2.5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700/60 text-slate-900 dark:text-white font-bold text-base rounded-lg border border-slate-200 dark:border-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400">
+            </Link>
+            <Link href="/project-based-businesses" className="px-3 py-2.5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700/60 text-slate-900 dark:text-white font-bold text-base rounded-lg border border-slate-200 dark:border-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400">
               Project-Based Businesses
-            </button>
+            </Link>
           </div>
 
           {/* Scope Boundary Footnote */}

@@ -128,14 +128,14 @@ export default function ProjectHero() {
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link
-              href="/get-a-demo"
+              href="/request-a-demo"
               className="inline-flex h-12 items-center justify-center rounded-xl bg-emerald-500 px-8 text-sm font-semibold text-white transition hover:bg-emerald-600"
             >
               Get a Demo
             </Link>
 
             <Link
-              href="/talk-to-sales"
+              href="/contact-sales"
               className="inline-flex h-12 items-center justify-center rounded-xl border border-slate-600 px-8 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
               Talk to Sales

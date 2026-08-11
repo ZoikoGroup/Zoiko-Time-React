@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const historyItems = [
   'Submission · assignment · views where appropriate',
@@ -80,8 +81,8 @@ export default function EvidenceAndReleaseSection() {
 
           {/* Action Button / Link */}
           <div className="pt-2">
-            <button
-              type="button"
+            <Link
+              href="#"
               className="inline-flex items-center gap-2 px-5 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-900 dark:text-white text-base font-bold shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all group"
             >
               <span>Evidence Ledger</span>
@@ -98,7 +99,7 @@ export default function EvidenceAndReleaseSection() {
                   d="M14 5l7 7m0 0l-7 7m7-7H3"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
 

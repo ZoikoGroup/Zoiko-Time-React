@@ -194,7 +194,7 @@ export default function ControlledSecurityReview() {
               </span>
               <p className="text-xs text-rose-800 dark:text-rose-300 leading-relaxed">
                 Credentials, secrets, exploit or vulnerability detail, worker records, customer data, or legal strategy. If you are reporting a vulnerability, use the{' '}
-                <a href="#reporting-route" className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
+                <a href="/security-overview#contact-security-team" className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
                   security reporting route
                 </a>{' '}
                 instead — not this form.
@@ -223,7 +223,7 @@ export default function ControlledSecurityReview() {
                 Submit request
               </button>
               <a
-                href="#public-evidence"
+                href="/security-overview#download-security-overview"
                 className="px-6 py-3.5 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 font-bold text-sm rounded-lg border border-slate-200 dark:border-slate-700 transition-colors"
               >
                 Read public evidence instead

@@ -123,18 +123,20 @@ export default function IdentityAndAccess() {
 
         {/* Action Buttons Row */}
         <div className="flex flex-wrap items-center gap-3.5 pt-2">
+          <a href="/identity-access-management">
           <button
             type="button"
             className="px-6 py-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 font-bold text-base rounded-lg border border-slate-200 dark:border-slate-800 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-400"
           >
             Identity &amp; Access Management
-          </button>
+          </button></a>
+          <a href="/adminstration-policy-controls">
           <button
             type="button"
             className="px-6 py-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 font-bold text-base rounded-lg border border-slate-200 dark:border-slate-800 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-400"
           >
             Administrative Controls
-          </button>
+          </button></a>
         </div>
 
       </div>

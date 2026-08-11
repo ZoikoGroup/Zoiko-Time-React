@@ -204,3 +204,83 @@ body {
   font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
 }
 
+
+/* Data Location & Residency — Figtree for display text, Inter for prose */
+.dlr-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.dlr-type h1,
+.dlr-type h2,
+.dlr-type h3,
+.dlr-type h4,
+.dlr-type a,
+.dlr-type button,
+.dlr-type th,
+.dlr-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
+/* Compliance & Assurance — Figtree for display text, Inter for prose */
+.ca-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.ca-type h1,
+.ca-type h2,
+.ca-type h3,
+.ca-type h4,
+.ca-type a,
+.ca-type button,
+.ca-type th,
+.ca-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
+/* AI Governance — Figtree for display text, Inter for prose */
+.aig-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.aig-type h1,
+.aig-type h2,
+.aig-type h3,
+.aig-type h4,
+.aig-type a,
+.aig-type button,
+.aig-type th,
+.aig-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
+/* Administrative Controls — Figtree for display text, Inter for prose */
+.ac-type {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.ac-type h1,
+.ac-type h2,
+.ac-type h3,
+.ac-type h4,
+.ac-type a,
+.ac-type button,
+.ac-type th,
+.ac-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}
+
+/* Zoiko Sema Integration — Figtree for display text, Poppins for prose */
+.zsi-type {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+.zsi-type h1,
+.zsi-type h2,
+.zsi-type h3,
+.zsi-type h4,
+.zsi-type a,
+.zsi-type button,
+.zsi-type th,
+.zsi-type [class*="uppercase"] {
+  font-family: var(--font-figtree), Arial, Helvetica, sans-serif;
+}

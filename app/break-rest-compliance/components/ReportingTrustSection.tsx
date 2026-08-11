@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface FeatureCard {
   title: string;
@@ -115,12 +116,12 @@ export default function ReportingTrustSection() {
           <p className="text-sm text-slate-500 dark:text-slate-400 max-w-[600px] leading-relaxed">
             Need document-level evidence packs or controlled/customer-specific resources?
           </p>
-          <button
-            type="button"
+          <Link
+            href="#"
             className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 text-sm font-semibold rounded-full border border-slate-200 dark:border-slate-700 shadow-xs transition-all whitespace-nowrap"
           >
             Open Evidence Center
-          </button>
+          </Link>
         </div>
 
       </div>

@@ -1,5 +1,6 @@
 import { CircleCheck } from 'lucide-react';
 import React from 'react';
+import Link from 'next/link';
 
 interface TrustItem {
   text: string;
@@ -57,18 +58,18 @@ export default function BreakRestHeroSection() {
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
-            <button
-              type="button"
+            <Link
+              href="/start-free"
               className="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-base rounded-full shadow-sm transition-all focus:ring-2 focus:ring-teal-400 focus:outline-none"
             >
               Start Free
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href="/request-enterprise-demo"
               className="px-6 py-3 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 font-semibold text-base rounded-full shadow-sm transition-all focus:ring-2 focus:ring-slate-300 focus:outline-none"
             >
               Request Enterprise Demo
-            </button>
+            </Link>
           </div>
 
           {/* Bullet Highlights */}

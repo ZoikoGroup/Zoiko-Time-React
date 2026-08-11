@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from 'react';
 
 export default function WorkerWorkspaceSection() {
@@ -200,13 +201,13 @@ export default function WorkerWorkspaceSection() {
                   </div>
 
                   {/* Action Buttons */}
-                  <button className="w-full py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-colors">
+                  <Link href="/time-sheet-approvals" className="w-full py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-colors text-center">
                     Add context
-                  </button>
+                  </Link>
 
-                  <button className="w-full py-2 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-gray-300 dark:border-slate-700 rounded-lg text-xs font-semibold transition-colors">
+                  <Link href="/time-sheet-approvals" className="w-full py-2 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 border border-gray-300 dark:border-slate-700 rounded-lg text-xs font-semibold transition-colors text-center">
                     Request a correction
-                  </button>
+                  </Link>
 
                   {/* Sync Status Card */}
                   <div className="bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-700/60 shadow-sm">
