@@ -47,7 +47,7 @@ const customerLinks = [
   { label: 'Open Timesheets', href: '#' },
   { label: 'Documentation', href: '/product-documentation' },
   { label: 'Service Status', href: '/system-status' },
-  { label: 'Release Notes', href: '/product-updates' },
+  { label: 'Release Notes', href: '/release-notes' },
   { label: 'Help Center', href: '/help-center' },
   { label: 'Contact Support', href: '/contact' },
 ];

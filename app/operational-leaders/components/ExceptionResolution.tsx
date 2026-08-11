@@ -134,7 +134,7 @@ export default function ExceptionResolution() {
               Explore Human-in-Command Controls
             </Link>
             <Link
-              href="/time-and-activity-verification"
+              href="/eliminate-time-disputes"
               className="px-6 py-3.5 bg-white hover:bg-slate-100 text-slate-900 font-bold text-base rounded-lg border border-slate-200 transition-colors"
             >
               Eliminate Time Disputes
