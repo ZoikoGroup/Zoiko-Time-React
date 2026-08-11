@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const governanceBadges = [
   'No screenshots.',
@@ -33,24 +34,24 @@ export default function InspectableByDesignHero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
-              <button
-                type="button"
+              <Link
+                href="/start-free"
                 className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white font-bold text-base rounded-xl shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
               >
                 Start Free
-              </button>
-              <button
-                type="button"
+              </Link>
+              <Link
+                href="/request-enterprise-demo"
                 className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 active:bg-slate-200 dark:active:bg-slate-600 text-slate-900 dark:text-white font-bold text-base rounded-xl border border-slate-300 dark:border-slate-700 transition-all focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
               >
                 Request Enterprise Demo
-              </button>
+              </Link>
             </div>
 
             {/* Secondary Route Link */}
             <div className="pt-1">
               <a
-                href="#explore-zoikotime"
+                href="#"
                 className="inline-flex items-center gap-2 text-sm font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 group transition-colors"
               >
                 <span>Explore ZoikoTime</span>

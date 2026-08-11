@@ -127,7 +127,7 @@ export default function DeterministicClassification() {
         {/* CTA / Related Link Banner */}
         <div className="flex justify-center">
           <a
-            href="#deterministic-classification"
+            href="/deterministic-time-classification"
             className="inline-flex items-center gap-2 px-6 py-3.5 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all text-slate-900 dark:text-white font-bold text-base group"
           >
             <span>Deterministic Time Classification</span>

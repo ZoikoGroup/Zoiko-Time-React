@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const features = [
   "Role & permission management",
@@ -75,12 +76,12 @@ export default function AdministrationPolicy() {
           </div>
 
           {/* Learn More */}
-          <button
-            type="button"
+          <Link
+            href="/adminstration-policy-controls"
             className="mt-8 text-base font-bold leading-6 text-emerald-500 transition hover:text-emerald-600"
           >
             Learn more →
-          </button>
+          </Link>
 
         </div>
       </div>

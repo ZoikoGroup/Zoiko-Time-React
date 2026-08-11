@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import Link from "next/link";
 import { Check, ArrowRight } from 'lucide-react';
 
 export default function OperationsCommandCenter() {
@@ -92,7 +93,7 @@ export default function OperationsCommandCenter() {
           </div>
 
           {/* Feature Checklist */}
-          <div className="flex flex-col gap-3 py-2">
+          <div  className="flex flex-col gap-3 py-2">
             {[
               "Required records complete and review SLA",
               "Open exceptions with a named owner and age",
@@ -130,14 +131,14 @@ export default function OperationsCommandCenter() {
 
           {/* Call to Actions */}
           <div className="flex flex-wrap items-center gap-4 pt-4">
-            <button
-              type="button"
+            <Link
+              href="/request-enterprise-demo"
               className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-slate-950 font-bold text-base rounded-lg transition-colors shadow-sm"
             >
               Request Enterprise Demo
-            </button>
+            </Link>
             <a
-              href="#reporting-controls"
+              href="#reporting"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg border border-slate-700 hover:border-slate-500 text-white font-bold text-base transition-colors group"
             >
               <span>See reporting controls</span>
@@ -147,7 +148,7 @@ export default function OperationsCommandCenter() {
         </div>
 
         {/* Right Column: Dashboard UI Preview */}
-        <div className="flex flex-col gap-6 bg-slate-900/80 p-6 rounded-2xl border border-slate-800 shadow-2xl">
+        <div  id="reporting" className="flex flex-col gap-6 bg-slate-900/80 p-6 rounded-2xl border border-slate-800 shadow-2xl">
           
           {/* Filters Bar */}
           <div className="flex flex-wrap gap-2">

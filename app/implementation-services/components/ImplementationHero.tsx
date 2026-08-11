@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Check } from 'lucide-react';
 
 export default function ImplementationHero() {
@@ -45,18 +46,18 @@ export default function ImplementationHero() {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-3.5 pt-2 w-full sm:w-auto">
-            <button
-              type="button"
+            <Link
+              href="/request-enterprise-demo"
               className="w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors shadow-sm"
             >
               Request Enterprise Demo
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href="/contact-sales"
               className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 font-bold text-base rounded-lg transition-colors shadow-xs"
             >
               Talk to Sales
-            </button>
+            </Link>
           </div>
 
           {/* Secondary Text Link */}

@@ -59,7 +59,7 @@ export default function IdentityAccess() {
             </p>
 
             <Link
-              href="/session-and-identity-assurance"
+              href="/identity-access-management"
               className="mt-5 inline-flex items-center gap-2 self-start text-sm font-bold leading-6 text-emerald-600 transition hover:text-emerald-700 dark:text-emerald-400"
             >
               <span>Identity &amp; Access</span>

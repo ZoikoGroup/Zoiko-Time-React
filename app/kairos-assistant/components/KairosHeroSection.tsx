@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const featureHighlights = [
   'Permission-bound',
@@ -32,23 +33,23 @@ export default function KairosHeroSection() {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-3.5 pt-2 w-full sm:w-auto">
-            <button
-              type="button"
+            <Link
+              href="/start-free"
               className="w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white font-bold text-base rounded-lg shadow-xs transition-colors cursor-pointer text-center"
             >
               Start Free
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href="/request-enterprise-demo"
               className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold text-base rounded-lg border border-slate-300 dark:border-slate-700 transition-colors cursor-pointer text-center"
             >
               Request Enterprise Demo
-            </button>
+            </Link>
           </div>
 
           {/* Text Link */}
           <a
-            href="#explore"
+            href="#"
             className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors pt-1 group"
           >
             Explore ZoikoTime

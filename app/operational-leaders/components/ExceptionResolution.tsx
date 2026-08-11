@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from 'react';
 import { ShieldAlert } from 'lucide-react';
 
@@ -126,18 +127,18 @@ export default function ExceptionResolution() {
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <button
-              type="button"
+            <Link
+              href="/human-in-command"
               className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors shadow-sm"
             >
               Explore Human-in-Command Controls
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href="/time-and-activity-verification"
               className="px-6 py-3.5 bg-white hover:bg-slate-100 text-slate-900 font-bold text-base rounded-lg border border-slate-200 transition-colors"
             >
               Eliminate Time Disputes
-            </button>
+            </Link>
           </div>
 
         </div>

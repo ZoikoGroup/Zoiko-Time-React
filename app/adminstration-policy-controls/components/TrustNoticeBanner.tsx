@@ -34,7 +34,7 @@ export default function TrustNoticeBanner() {
               <p className="text-sm sm:text-base font-medium leading-relaxed text-white">
                 No screenshots, keystroke content, URL history, application-name monitoring, or clipboard collection under any tier or configuration.{' '}
                 <Link
-                  href="/trust"
+                  href="/trust-center"
                   className="inline-flex items-center font-semibold text-teal-400 transition-colors hover:text-teal-300 dark:text-teal-400 dark:hover:text-teal-200"
                 >
                   Visit Trust Center &rarr;

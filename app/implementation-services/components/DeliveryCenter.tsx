@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 // Data structures for clear code organization
 interface MetricCard {
@@ -157,9 +158,9 @@ export default function DeliveryCenter() {
 
           {/* CTA Button */}
           <div className="pt-3">
-            <button className="px-6 py-3.5 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-base rounded-lg transition-colors shadow-sm">
+            <Link href="/request-enterprise-demo" className="px-6 py-3.5 bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-base rounded-lg transition-colors shadow-sm">
               Request Enterprise Demo
-            </button>
+            </Link>
           </div>
         </div>
 

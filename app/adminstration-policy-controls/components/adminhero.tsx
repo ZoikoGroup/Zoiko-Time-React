@@ -137,14 +137,14 @@ export default function HeroSection() {
           {/* Action Buttons */}
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link
-              href="/demo"
+              href="/request-enterprise-demo"
               className="flex h-11 w-full sm:w-auto items-center justify-center rounded-[10px] bg-teal-600 px-6 text-base font-semibold text-white shadow-[0px_6px_16px_0px_rgba(16,162,141,0.28)] transition-all hover:bg-teal-500 active:scale-[0.98]"
             >
               Request Enterprise Demo
             </Link>
 
             <Link
-              href="/signup"
+              href="/start-free"
               className="flex h-11 w-full sm:w-auto items-center justify-center rounded-[10px] bg-white px-6 text-base font-semibold text-slate-800 outline outline-1 outline-offset-[-1px] outline-gray-300 transition-all hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:outline-gray-700 dark:hover:bg-gray-700 active:scale-[0.98]"
             >
               Start Free

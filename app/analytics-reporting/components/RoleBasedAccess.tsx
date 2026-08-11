@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function RoleBasedAccess() {
   const roles = [
     {
@@ -176,7 +178,8 @@ export default function RoleBasedAccess() {
         {/* CTA */}
         <div className="flex w-full justify-center">
 
-          <button
+          <Link
+            href="/identity-access-management"
             className="
             inline-flex items-center gap-2
             rounded-lg
@@ -202,7 +205,7 @@ export default function RoleBasedAccess() {
               →
             </span>
 
-          </button>
+          </Link>
 
         </div>
 

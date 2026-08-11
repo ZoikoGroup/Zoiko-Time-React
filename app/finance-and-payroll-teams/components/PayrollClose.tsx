@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Check } from "lucide-react";
 
@@ -69,10 +70,13 @@ export default function PayrollClose() {
 
         {/* CTA */}
         <div className="mt-12 flex justify-center">
-          <button className="rounded-xl bg-teal-600 px-8 py-4 text-center text-base font-semibold text-white shadow-[0px_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700">
+          <Link
+            href="/request-enterprise-demo"
+            className="rounded-xl bg-teal-600 px-8 py-4 text-center text-base font-semibold text-white shadow-[0px_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700"
+          >
             Request Enterprise Demo — bring your payroll calendar and export
             workflow
-          </button>
+          </Link>
         </div>
       </div>
     </section>

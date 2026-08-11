@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 import Image from 'next/image';
 
 export default function WorkerHeroSection() {
@@ -41,18 +42,18 @@ export default function WorkerHeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto mb-8">
-              <button
-                type="button"
+              <Link
+                href="/request-a-demo"
                 className="px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white text-base font-semibold rounded-lg shadow-lg shadow-teal-600/25 transition-all focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 text-center"
               >
                 Request a Demo
-              </button>
-              <button
-                type="button"
+              </Link>
+              <Link
+                href="/how-zoikotime-works"
                 className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 text-base font-semibold rounded-lg border border-gray-300 dark:border-slate-700 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-teal-500 text-center"
               >
                 See How It Works
-              </button>
+              </Link>
             </div>
 
             {/* Feature Checklist Grid */}

@@ -164,13 +164,16 @@ export default function AttendanceCoverageSection() {
         </div>
 
         {/* Action Buttons */}
+      
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4 w-full sm:w-auto">
+           <a href="/attendance-and-presence">
           <button className="w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400 shadow-sm">
             Explore Attendance &amp; Presence
-          </button>
+          </button></a>
+          <a href="/verify-time-attendance">
           <button className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg border border-slate-200 dark:border-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400">
             Verify Time &amp; Attendance
-          </button>
+          </button></a>
         </div>
 
       </div>

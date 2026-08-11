@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function EvidenceHero() {
   return (
@@ -41,12 +42,12 @@ export default function EvidenceHero() {
               Request Procurement Resources
             </button>
 
-            <button
-              type="button"
+            <Link
+              href="/request-enterprise-demo"
               className="rounded-lg border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-800 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
             >
               Request Enterprise Demo
-            </button>
+            </Link>
           </div>
         </div>
 

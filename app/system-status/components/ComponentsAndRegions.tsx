@@ -199,7 +199,7 @@ export default function ComponentsAndRegions() {
         <p className="w-full text-xs text-slate-500 dark:text-slate-400 leading-relaxed text-left sm:text-center">
           Region and environment selectors appear only where states genuinely differ and the public scope is approved. A region appearing in a status filter does not mean that region exists as a data-residency option — see{' '}
           <a
-            href="#trust-center"
+            href="/trust-center"
             className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
           >
             Trust Center

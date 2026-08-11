@@ -20,7 +20,7 @@ const cardsData: IncidentCard[] = [
         label: 'Current state',
         value: (
           <span>
-            <a href="#status" className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
+            <a href="/system-status" className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
               System Status
             </a>{' '}
             is authoritative
@@ -49,7 +49,7 @@ const cardsData: IncidentCard[] = [
       {
         label: 'Report to',
         value: (
-          <a href="#report" className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
+          <a href="/security-overview#contact-security-team" className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
             Security reporting route
           </a>
         ),

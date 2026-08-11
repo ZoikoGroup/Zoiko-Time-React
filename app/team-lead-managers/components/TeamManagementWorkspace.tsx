@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import React, { useState } from 'react';
 
 interface MetricCard {
@@ -189,13 +190,13 @@ export default function TeamManagementWorkspace() {
 
           {/* Action CTAs */}
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <button className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white text-base font-bold rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400">
+            <Link href="/request-enterprise-demo" className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white text-base font-bold rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400">
               Request Enterprise Demo
-            </button>
-            <button className="px-6 py-3.5 border border-white/25 hover:bg-white/5 text-white text-base font-bold rounded-lg transition-colors flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-white/50 group">
+            </Link>
+            <Link href="/time-sheet-approvals" className="px-6 py-3.5 border border-white/25 hover:bg-white/5 text-white text-base font-bold rounded-lg transition-colors flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-white/50 group">
               <span>See approval controls</span>
               <span className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
-            </button>
+            </Link>
           </div>
         </div>
 

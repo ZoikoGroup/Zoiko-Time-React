@@ -106,7 +106,7 @@ const enterprisePlatformItems = [
   {
     title: "Enterprise Overview",
     icon: "enterprise.png",
-    href: "#",
+    href: "/enterprise",
   },
   {
     title: "Administration & Policy Controls",
@@ -159,7 +159,7 @@ const adoptionSupportItems = [
   {
     title: "Enterprise Support",
     icon: "enterprise-support.png",
-    href: "/#",
+    href: "#",
   },
   {
     title: "Procurement & Legal Resources",
@@ -352,6 +352,7 @@ export default function EnterpriseMegaMenu({
             </p>
 
                         {/* Button */}
+                        <a href="/download-zoiko-time">
             <button
               type="button"
               onClick={onLinkClick}
@@ -375,7 +376,7 @@ export default function EnterpriseMegaMenu({
               "
             >
               Download Zoiko Time
-            </button>
+            </button></a>
           </div>
         </div>
       </div>

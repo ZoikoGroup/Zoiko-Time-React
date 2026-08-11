@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from 'react';
 
 export default function PilotScorecard() {
@@ -29,12 +30,12 @@ export default function PilotScorecard() {
 
         {/* CTA Button */}
         <div className="flex justify-center pt-2">
-          <button
-            type="button"
+          <Link
+            href="/request-enterprise-demo"
             className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors shadow-sm"
           >
             Request an operational readiness review
-          </button>
+          </Link>
         </div>
 
       </div>
