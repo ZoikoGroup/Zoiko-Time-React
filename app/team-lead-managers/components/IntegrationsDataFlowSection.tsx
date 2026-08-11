@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from 'react';
 
 interface Step {
@@ -171,9 +172,9 @@ export default function IntegrationsDataFlowSection() {
 
         {/* Action Call to Action */}
         <div className="flex justify-center pt-2 w-full sm:w-auto">
-          <button className="w-full sm:w-auto px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400">
+          <Link href="/enterprise-integrations" className="w-full sm:w-auto px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-400">
             Explore Integrations
-          </button>
+          </Link>
         </div>
 
       </div>

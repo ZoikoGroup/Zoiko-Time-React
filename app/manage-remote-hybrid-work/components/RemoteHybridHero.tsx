@@ -55,7 +55,7 @@ export default function RemoteHybridHero() {
             </Link>
 
             <Link
-              href="#"
+              href="/contact-sales"
               className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-7 py-3 text-base font-semibold text-slate-900 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
             >
               Talk to Sales

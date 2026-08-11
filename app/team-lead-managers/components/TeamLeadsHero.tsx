@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from 'react';
 
 const privacyPoints: string[] = [
@@ -45,12 +46,12 @@ export default function TeamLeadsHero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center gap-3.5 pt-2">
-            <button className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
+            <Link href="/request-enterprise-demo" className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2">
               Request Enterprise Demo
-            </button>
-            <button className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400">
+            </Link>
+            <Link href="/start-free" className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400">
               Start Free
-            </button>
+            </Link>
           </div>
 
           {/* Subtext */}

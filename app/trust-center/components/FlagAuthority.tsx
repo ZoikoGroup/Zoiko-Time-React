@@ -79,7 +79,7 @@ export default function FlagAuthority() {
             </ul>
 
             <Link
-              href="/responsible-ai"
+              href="/human-in-command"
               className="mt-7 inline-flex items-center justify-center gap-2 self-start rounded-lg border border-stone-300 bg-white px-6 py-3.5 text-base font-bold text-sky-950 transition hover:border-sky-950 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-slate-500"
             >
               <span>Human-in-Command Controls</span>
@@ -164,7 +164,7 @@ export default function FlagAuthority() {
             <div className="mt-6 flex flex-col gap-3.5 sm:flex-row">
 
               <Link
-                href="/ai-and-automated-insights-policy"
+                href="/ai-governance"
                 className="inline-flex items-center justify-center rounded-lg border border-stone-300 bg-white px-6 py-3.5 text-base font-bold text-sky-950 transition hover:border-sky-950 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-slate-500"
               >
                 AI Governance

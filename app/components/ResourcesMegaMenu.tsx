@@ -402,7 +402,7 @@ export default function ResourcesMegaMenu({
               administrators, developers,
               workers, and evaluators.
             </p>
-
+<a href="/download-zoiko-time">
       <button
   type="button"
   onClick={onLinkClick}
@@ -426,7 +426,7 @@ export default function ResourcesMegaMenu({
   "
 >
   Download Zoiko Time
-</button>
+</button></a>
           </div>
         </div>
       </div>

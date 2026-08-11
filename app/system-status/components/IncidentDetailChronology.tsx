@@ -54,7 +54,7 @@ const reviewStates = ['Not required', 'Pending', 'Restricted', 'Published', 'Una
 
 export default function IncidentDetailChronology() {
   return (
-    <section className="w-full bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 py-16 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
+    <section id="chronology" className="w-full bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 py-16 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
       <div className="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
         
         {/* LEFT COLUMN: Incident Detail & Chronology */}
@@ -215,7 +215,7 @@ export default function IncidentDetailChronology() {
             <p className="text-xs text-rose-800 dark:text-rose-300 leading-relaxed">
               No universal “no data was lost” statement without verified reconciliation and approved evidence. And public resolution never means all customer-specific remediation is complete — account-specific reconciliation routes to{' '}
               <a
-                href="#enterprise-support"
+                href="/contact"
                 className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
               >
                 Enterprise Support

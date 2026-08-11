@@ -75,7 +75,7 @@ const incidents: IncidentDetails[] = [
 
 export default function ActiveIncidentsSection() {
   return (
-    <section className="w-full bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 py-16 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
+    <section id="active-incident" className="w-full bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 py-16 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
       <div className="max-w-[1180px] mx-auto flex flex-col items-center gap-10">
         
         {/* Section Header */}

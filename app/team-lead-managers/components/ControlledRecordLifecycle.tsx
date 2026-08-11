@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import React, { useState } from 'react';
 
 interface LifecycleStep {
@@ -94,8 +95,8 @@ export default function ControlledRecordLifecycle() {
   const activeStep = steps[activeStepIndex];
 
   return (
-    <section className="w-full bg-slate-50 dark:bg-slate-900 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 font-sans transition-colors duration-200">
-      <div className="max-w-[1180px] mx-auto flex flex-col items-center gap-8">
+    <section id="lifecycle" className="w-full bg-slate-50 dark:bg-slate-900 py-16 sm:py-20 px-4 sm:px-6 lg:px-8 font-sans transition-colors duration-200">
+      <div  className="max-w-[1180px] mx-auto flex flex-col items-center gap-8">
         
         {/* Header Block */}
         <div className="max-w-[780px] text-center flex flex-col gap-3">
@@ -195,12 +196,12 @@ export default function ControlledRecordLifecycle() {
 
         {/* Action / Navigation Buttons */}
         <div className="flex flex-wrap justify-center items-center gap-4 pt-2">
-          <button className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          <Link href="/deterministic-time-classification" className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
             Explore Deterministic Time Classification
-          </button>
-          <button className="px-6 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400">
+          </Link>
+          <Link href="/human-in-command" className="px-6 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-base rounded-lg transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400">
             Human-in-Command Controls
-          </button>
+          </Link>
         </div>
 
       </div>

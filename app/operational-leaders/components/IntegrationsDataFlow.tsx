@@ -179,12 +179,13 @@ export default function IntegrationsDataFlow() {
 
         {/* CTA Button */}
         <div className="flex justify-center pt-2">
+          <a href="/integration">
           <button
             type="button"
             className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors shadow-sm"
           >
             Explore Integrations
-          </button>
+          </button></a>
         </div>
 
       </div>

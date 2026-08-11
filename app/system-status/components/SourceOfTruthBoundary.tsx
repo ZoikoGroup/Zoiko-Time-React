@@ -26,13 +26,13 @@ const cards: DestinationCard[] = [
     title: 'Enterprise Support',
     description:
       'Customer-specific impact, account diagnostics, and private cases — through authenticated channels.',
-    actionUrl: '#enterprise-support',
+    actionUrl: '/contact',
   },
   {
     title: 'Trust Center',
     description:
       'Cross-domain trust claims and the evidence directory.',
-    actionUrl: '#trust-center',
+    actionUrl: '/trust-center',
   },
 ];
 

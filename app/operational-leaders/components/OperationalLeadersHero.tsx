@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -46,18 +47,18 @@ export default function OperationalLeadersHero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center gap-3.5 pt-2 w-full sm:w-auto">
-            <button
-              type="button"
+            <Link
+              href="/request-enterprise-demo"
               className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white text-base font-bold rounded-lg shadow-sm transition-colors duration-150 w-full sm:w-auto text-center"
             >
               Request Enterprise Demo
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href="/start-free"
               className="px-6 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-base font-bold rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm transition-colors duration-150 w-full sm:w-auto text-center"
             >
               Start Free
-            </button>
+            </Link>
           </div>
 
           {/* Trial Subtext */}

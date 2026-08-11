@@ -38,21 +38,23 @@ export default function AntiSurveillanceBanner() {
         {/* Action Button Group */}
         <div className="flex flex-wrap justify-center items-center gap-3.5 pt-2">
           {/* Primary Action Button */}
+          <a href="/privacy-controls">
           <button
             type="button"
             className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base rounded-lg shadow-sm transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950"
           >
             Privacy &amp; collection limits
-          </button>
+          </button></a>
 
           {/* Secondary Action Button */}
+          <a href="/human-in-command">
           <button
             type="button"
             className="group px-6 py-3.5 rounded-lg border border-white/30 hover:border-white/60 bg-white/5 hover:bg-white/10 text-white font-bold text-base transition-all inline-flex items-center gap-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50"
           >
             <span>Human-in-Command Controls</span>
             <ArrowRightIcon />
-          </button>
+          </button></a>
         </div>
 
       </div>

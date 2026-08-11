@@ -27,10 +27,10 @@ export default function Hero() {
 
          <div className="flex w-full flex-col gap-4 pt-2 sm:w-auto sm:flex-row">
   <Link
-    href="/request-enterprise-demo"
+    href="/download-zoiko-time"
     className="rounded-lg bg-emerald-400 px-8 py-4 text-center text-base font-semibold text-white transition-colors hover:bg-emerald-500"
   >
-    Request Enterprise Demo
+    Download Zoiko Time Free
   </Link>
 
   <Link

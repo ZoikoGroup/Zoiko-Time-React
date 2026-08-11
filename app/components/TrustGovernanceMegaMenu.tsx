@@ -393,6 +393,7 @@ export default function TrustGovernanceMegaMenu({
             </p>
 
             {/* Button */}
+            <a href="/download-zoiko-time">
             <button
               type="button"
                onClick={onLinkClick}
@@ -416,7 +417,7 @@ export default function TrustGovernanceMegaMenu({
               "
             >
               Download Zoiko Time
-            </button>
+            </button></a>
           </div>
         </div>
       </div>
