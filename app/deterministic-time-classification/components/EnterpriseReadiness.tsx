@@ -16,7 +16,7 @@ const cards = [
     title: "Auditors & compliance",
     body: "Trace any result back to its exact rule, version, and effective date.",
     linkLabel: "Explore Evidence Ledger →",
-    href: "/audit-grade-evidence",
+    href: "#",
   },
   {
     image: "/deterministic-time-classification/HR-IT.png",
@@ -24,7 +24,7 @@ const cards = [
     title: "HR & IT",
     body: "One governed rule set, understandable by policy owners and engineers alike.",
     linkLabel: "Visit Trust Center →",
-    href: "/trust-governance",
+    href: "/trust-center",
   },
 ];
 
