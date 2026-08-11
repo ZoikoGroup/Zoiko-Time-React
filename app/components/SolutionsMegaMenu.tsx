@@ -255,7 +255,7 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="create.png"
                 title="Create Auditable Time Records"
-                href="auditable-time-records"
+                href="/auditable-time-records"
                  onLinkClick={onLinkClick}
               />
 
@@ -302,7 +302,7 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="hybrid.png"
                 title="Hybrid Workforces"
-                href="#"
+                href="hybrid-workforces"
                  onLinkClick={onLinkClick}
               />
 
@@ -316,7 +316,7 @@ export default function SolutionsMegaMenu({
               <MenuItem
                 icon="project.png"
                 title="Project-Based Businesses"
-                href="#"
+                href="project-based"
                  onLinkClick={onLinkClick}
               />
 
