@@ -178,7 +178,7 @@ const buildItems = [
   {
     title: "Release Notes",
     icon: "release.png",
-    href: "#"
+    href: "/release-notes"
   },
   {
     title: "Product Updates",

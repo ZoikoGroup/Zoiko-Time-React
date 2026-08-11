@@ -2,10 +2,13 @@
 
 import Image from "next/image";
 import { FiCheckCircle } from "react-icons/fi";
+import Link from "next/link";
 
 export default function CustomerStories() {
   return (
-    <section className="bg-white py-20 dark:bg-slate-950">
+    <section
+    id="customer-stories"
+     className="bg-white py-20 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-2">
           {/* Left Content */}
@@ -37,13 +40,19 @@ export default function CustomerStories() {
 
             {/* Buttons */}
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <button className="rounded-full bg-teal-600 px-8 py-3 text-sm font-semibold text-white transition hover:bg-teal-700">
-                Explore Customer Stories
-              </button>
+              <a
+  href="#customer-stories"
+  className="rounded-full bg-teal-600 px-8 py-3 text-sm font-semibold text-white transition hover:bg-teal-700"
+>
+  Explore Customer Stories
+</a>
 
-              <button className="rounded-full border border-slate-200 bg-white px-8 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800">
-                Talk to Sales
-              </button>
+              <Link
+  href="/contact-sales"
+  className="rounded-full border border-slate-200 bg-white px-8 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+>
+  Talk to Sales
+</Link>
             </div>
 
             {/* Features */}

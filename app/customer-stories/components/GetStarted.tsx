@@ -29,21 +29,21 @@ export default function GetStarted() {
           {/* Buttons */}
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="#"
+              href="#customer-stories"
               className="rounded-full bg-teal-500 px-8 py-3 text-sm font-semibold text-white transition hover:bg-teal-600"
             >
               Explore Customer Stories
             </Link>
 
             <Link
-              href="#"
+              href="request-a-demo"
               className="rounded-full border border-white/30 bg-white/5 px-8 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
             >
               Get a Demo
             </Link>
 
             <Link
-              href="#"
+              href="contact-sales"
               className="rounded-full border border-white/30 bg-white/5 px-8 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10"
             >
               Talk to Sales

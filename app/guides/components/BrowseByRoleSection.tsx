@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface RoleCard {
   title: string;
@@ -12,43 +13,45 @@ const roleCards: RoleCard[] = [
     title: 'HR & People',
     description: 'Onboarding, worker communication, and consultation resources.',
     guideCountText: '— guides →',
-    href: '#hr-people',
+    href: "/hr-people-teams",
   },
   {
     title: 'Payroll & Finance',
     description: 'Close readiness, exports, and reconciliation workflows.',
     guideCountText: '— guides →',
-    href: '#payroll-finance',
+    href: "/finance-and-payroll-teams",
   },
   {
     title: 'Managers',
     description: 'Review queues, exception handling, and team-level reporting.',
     guideCountText: '— guides →',
-    href: '#managers',
+    href: "/team-lead-managers",
   },
   {
     title: 'Workers',
     description: 'Recording time, understanding status, and requesting corrections.',
     guideCountText: '— guides →',
-    href: '#workers',
+    href: "/solutions-workers",
   },
   {
     title: 'IT & Admins',
     description: 'Configuration, integrations, security, and access control.',
     guideCountText: '— guides →',
-    href: '#it-admins',
+    href: "/admin-guide",
   },
   {
     title: 'Compliance & Audit',
     description: 'Evidence structure, retention, and jurisdiction-scoped policy.',
     guideCountText: '— guides →',
-    href: '#compliance-audit',
+    href: "/compliance-assurance",
   },
 ];
 
 export default function BrowseByRoleSection() {
   return (
-    <section className="w-full bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
+    <section 
+      id="browse-by-role" 
+    className="w-full bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
       <div className="max-w-[1180px] mx-auto flex flex-col items-center gap-10">
         
         {/* Section Header */}
