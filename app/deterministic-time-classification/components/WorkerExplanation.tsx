@@ -22,7 +22,7 @@ export default function WorkerExplanation() {
 
         <div className="mt-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <Image
-            src="\deterministic-time-classification\Worker-Explanation.png"
+            src="/deterministic-time-classification/Worker-Explanation.png"
             alt="A worker reading the explanation for a classification"
             width={441}
             height={331}
