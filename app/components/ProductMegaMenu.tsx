@@ -244,7 +244,7 @@ export default function ProductMegaMenu({
                 icon="kairos.png"
                 title="Kairos Assistant"
                 description="Conversational AI assistant."
-                href="kairos-assistant"
+                href="/kairos-assistant"
                 onLinkClick={onLinkClick}
               />
             </div>
@@ -274,7 +274,7 @@ export default function ProductMegaMenu({
                 icon="timetracking.png"
                 title="Time and activity verification"
                 description="Accurate time capture."
-                href="time-and-activity-verification"
+                href="/time-and-activity-verification"
                 onLinkClick={onLinkClick}
               />
 
@@ -282,7 +282,7 @@ export default function ProductMegaMenu({
                 icon="timesheets.png"
                 title="Timesheets & Approvals"
                 description="Submit, review, approve."
-                href="time-sheet-approvals"
+                href="/time-sheet-approvals"
                 onLinkClick={onLinkClick}
               />
 
@@ -343,7 +343,7 @@ export default function ProductMegaMenu({
                 icon="evidence.png"
                 title="Evidence Ledger"
                 description="Immutable audit trail."
-                href="#"
+                href="/evidence-ledger"
                 onLinkClick={onLinkClick}
               />
 
@@ -359,7 +359,7 @@ export default function ProductMegaMenu({
                 icon="reports.png"
                 title="Reports & Dashboards"
                 description="Real-time reporting."
-                href="#"
+                href="/reports-dashboards"
                 onLinkClick={onLinkClick}
               />
 
@@ -449,32 +449,32 @@ export default function ProductMegaMenu({
               </div>
                             {/* Explore Button */}
 
-              <button
-                type="button"
-                onClick={onLinkClick}   
-                className="
-                  mt-6
-                  flex
-                  w-full
-                  items-center
-                  justify-center
-                  rounded-lg
-                  bg-emerald-500
-                  px-6
-                  py-4
-                  text-center
-                  text-base
-                  font-bold
-                  leading-6
-                  text-white
-                  transition-colors
-                  hover:bg-emerald-600
-                  dark:bg-emerald-500
-                  dark:hover:bg-emerald-400
-                "
-              >
-                Explore ZoikoTime
-              </button>
+             <Link
+  href="/explore-zoikotime"
+  onClick={onLinkClick}
+  className="
+    mt-6
+    flex
+    w-full
+    items-center
+    justify-center
+    rounded-lg
+    bg-emerald-500
+    px-6
+    py-4
+    text-center
+    text-base
+    font-bold
+    leading-6
+    text-white
+    transition-colors
+    hover:bg-emerald-600
+    dark:bg-emerald-500
+    dark:hover:bg-emerald-400
+  "
+>
+  Explore ZoikoTime
+</Link>
             </div>
           </div>
         </div>
