@@ -351,7 +351,7 @@ export default function ProductMegaMenu({
                 icon="workforce.png"
                 title="Workforce Record Insights"
                 description="Organization-level insights."
-                href="#"
+                href="/workforce-record-insights"
                 onLinkClick={onLinkClick}
               />
 
@@ -367,7 +367,7 @@ export default function ProductMegaMenu({
                 icon="anomaly.png"
                 title="Anomaly Flags & Alerts"
                 description="Detect issues early."
-                href="#"
+                href="/anomaly-flags-alerts"
                 onLinkClick={onLinkClick}
               />
             </div>
