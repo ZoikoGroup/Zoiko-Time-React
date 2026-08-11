@@ -9,8 +9,7 @@ import Integrations from './components/Integrations'
 import Adoption from './components/Adoption'
 import Proof from './components/Proof'
 import TruthCta from './components/TruthCta'
-
-export default function page() {
+ export default function page() {
   return (
     <main>
         <HybridWorkforceHero />
