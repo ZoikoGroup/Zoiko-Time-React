@@ -29,7 +29,7 @@ const domainCards: QuestionDomainCard[] = [
       </>
     ),
     linkText: 'Attendance & Presence',
-    linkHref: '#',
+    linkHref: '/attendace-and-presence',
   },
   {
     title: 'Evidence, reports & record health',
@@ -40,7 +40,7 @@ const domainCards: QuestionDomainCard[] = [
       </>
     ),
     linkText: 'Evidence Ledger',
-    linkHref: '#',
+    linkHref: '/evidence-ledger',
   },
 ];
 

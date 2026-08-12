@@ -82,7 +82,7 @@ export default function EvidenceAndReleaseSection() {
           {/* Action Button / Link */}
           <div className="pt-2">
             <Link
-              href="#"
+              href="/evidence-ledger"
               className="inline-flex items-center gap-2 px-5 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-slate-900 dark:text-white text-base font-bold shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all group"
             >
               <span>Evidence Ledger</span>

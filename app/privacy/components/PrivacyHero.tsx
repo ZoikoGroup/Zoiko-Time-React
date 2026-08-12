@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 const quickLinks = [
-  { label: "Security", href: "/security-overview" },
-  { label: "Human-in-Command Controls", href: "/responsible-ai" },
+  { label: "Security", href: "/security" },
+  { label: "Human-in-Command Controls", href: "/human-in-command" },
   { label: "Accessibility", href: "/accessibility" },
   { label: "System Status", href: "/system-status" },
 ];

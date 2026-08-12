@@ -24,7 +24,7 @@ const controls = [
 ];
 
 const connections = [
-  { label: "Evidence Ledger", href: "/audit-grade-evidence" },
+  { label: "Evidence Ledger", href: "/evidence-ledger" },
   { label: "Timesheets & Approvals", href: "/time-sheet-approvals" },
   { label: "Integrations", href: "/enterprise-integrations" },
   { label: "System Status", href: "/system-status" },

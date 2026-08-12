@@ -50,7 +50,7 @@ export default function GovernedConnectionCTA() {
 
               <div className="mt-6">
                 <Link
-                  href="/"
+                  href="https://getzoikotime.com/"
                   className="inline-flex items-center font-bold text-emerald-600 transition hover:text-emerald-700"
                 >
                   Explore ZoikoTime

@@ -16,7 +16,7 @@ const cards = [
     title: "Policy governance",
     body: "Version history and change timelines keep every policy update accountable and traceable.",
     linkLabel: "Visit Trust Center →",
-    href: "/trust-governance",
+    href: "/trust-center",
   },
   {
     image: "/shift-integrity-controls/Audit-ready-evidence.png",

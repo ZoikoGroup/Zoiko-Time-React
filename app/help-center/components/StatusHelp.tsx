@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const statusItems = [
   {
@@ -6,24 +7,28 @@ const statusItems = [
     description:
       "View current availability, degraded service notices, maintenance windows, and incident updates.",
     link: "Check System Status →",
+    href: "/system-status",
   },
   {
     title: "View Incident Updates",
     description:
       "Follow active incidents, maintenance notices, and resolution updates.",
     link: "View Incident & Availability Status →",
+    href: "/status",
   },
   {
     title: "Security Questions",
     description:
       "Review security controls, access, encryption, infrastructure, enterprise posture, and documentation.",
     link: "View Security Addendum →",
+    href: "/security-addendum",
   },
   {
     title: "Retention & Legal Hold",
     description:
       "Review data retention, legal hold, record preservation, and evidence governance guidance.",
     link: "View Data Retention & Legal Hold →",
+    href: "/data-retention-deletion-and-legal-hold-policy",
   },
 ];
 
@@ -31,6 +36,7 @@ export default function StatusHelp() {
   return (
     <section className="bg-white py-16 dark:bg-slate-900 transition-colors">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
@@ -62,9 +68,12 @@ export default function StatusHelp() {
                 {item.description}
               </p>
 
-              <button className="mt-6 text-sm font-semibold text-teal-700 transition-colors hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300">
+              <Link
+                href={item.href}
+                className="mt-6 inline-block text-sm font-semibold text-teal-700 transition-colors hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
+              >
                 {item.link}
-              </button>
+              </Link>
             </div>
           ))}
         </div>
