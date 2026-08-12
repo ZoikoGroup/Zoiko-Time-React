@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const resources = [
   {
@@ -6,24 +7,28 @@ const resources = [
     description:
       "Detailed guidance across features, workflows, roles, and configuration.",
     action: "View Docs →",
+    href: "/product-documentation",
   },
   {
     title: "Implementation Guide",
     description:
       "Rollout, training, configuration, and launch readiness guidance.",
     action: "View Guide →",
+    href: "/implementation-guide",
   },
   {
     title: "Worker Guide",
     description:
       "Plain-language guidance for individual users.",
     action: "View Worker Guide →",
+    href: "/worker-guide",
   },
   {
     title: "Security Addendum",
     description:
       "Security, access, infrastructure, and enterprise control details.",
     action: "View Addendum →",
+    href: "/security-addendum",
   },
 ];
 
@@ -31,6 +36,7 @@ export default function Resources() {
   return (
     <section className="bg-white py-16 dark:bg-slate-900 transition-colors">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
@@ -57,9 +63,12 @@ export default function Resources() {
                 {resource.description}
               </p>
 
-              <button className="mt-6 text-sm font-semibold text-teal-700 transition-colors hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300">
+              <Link
+                href={resource.href}
+                className="mt-6 inline-block text-sm font-semibold text-teal-700 transition-colors hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
+              >
                 {resource.action}
-              </button>
+              </Link>
             </div>
           ))}
         </div>

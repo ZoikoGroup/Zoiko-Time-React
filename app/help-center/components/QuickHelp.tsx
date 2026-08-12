@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const helpCards = [
   {
@@ -6,6 +7,7 @@ const helpCards = [
     description:
       "Password resets, workspace access, login errors, SSO issues, verification emails, locked accounts, and role access.",
     link: "Get Login Help →",
+    href: "/identity-access-management",
     image: "/QuikHelp/access.svg",
   },
   {
@@ -13,6 +15,7 @@ const helpCards = [
     description:
       "Clock-in/out, breaks, missing entries, submission, approvals, returned timesheets, and correction requests.",
     link: "Get Time & Timesheet Help →",
+    href: "/time-sheet-approvals",
     image: "/QuikHelp/time.svg",
   },
   {
@@ -20,6 +23,7 @@ const helpCards = [
     description:
       "Workspace setup, departments, workers, permissions, policies, projects, reporting, and launch configuration.",
     link: "View Admin Guide →",
+    href: "/adminstration-policy-controls",
     image: "/QuikHelp/setup.svg",
   },
   {
@@ -27,6 +31,7 @@ const helpCards = [
     description:
       "Mobile login, clock-in, notifications, field work, device issues, connectivity, and troubleshooting.",
     link: "View Mobile App Help →",
+    href: "/desktop-and-mobile-apps",
     image: "/QuikHelp/mobile.svg",
   },
   {
@@ -34,6 +39,7 @@ const helpCards = [
     description:
       "Invoices, payments, plans, trial questions, renewals, failed payments, and billing account access.",
     link: "Get Billing Help →",
+    href: "#",
     image: "/QuikHelp/billing.svg",
   },
   {
@@ -41,6 +47,7 @@ const helpCards = [
     description:
       "Service interruptions, degraded performance, planned maintenance, and incident updates.",
     link: "Check System Status →",
+    href: "/system-status",
     image: "/QuikHelp/availability.svg",
   },
 ];
@@ -49,6 +56,7 @@ export default function QuickHelp() {
   return (
     <section className="bg-gray-50 py-16 dark:bg-slate-950 transition-colors">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
@@ -91,9 +99,12 @@ export default function QuickHelp() {
               </p>
 
               {/* Link */}
-              <button className="mt-6 text-sm font-semibold text-teal-700 transition-colors hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300">
+              <Link
+                href={card.href}
+                className="mt-6 inline-block text-sm font-semibold text-teal-700 transition-colors hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300"
+              >
                 {card.link}
-              </button>
+              </Link>
             </div>
           ))}
         </div>
