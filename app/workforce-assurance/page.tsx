@@ -1,4 +1,4 @@
-import WorkforceAssuranceHub from "./page";
+import WorkforceAssuranceHub from "./workforce";
 
 export default function(){
     return(

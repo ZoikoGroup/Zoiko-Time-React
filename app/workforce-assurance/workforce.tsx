@@ -45,6 +45,12 @@ interface BriefCard {
   linkText: string;
 }
 
+const briefCardHrefs = [
+  '/calculate-your-roi',
+  '/security-overview',
+  '/enterprise-workforce-governance',
+];
+
 const briefCards: BriefCard[] = [
   {
     tag: 'CFO Brief',
@@ -121,12 +127,25 @@ interface ToolCard {
   actionText: string;
 }
 
+const toolHrefs = [
+  '/calculate-your-roi',
+  '/workforce-record-insights',
+  '/enterprise-approval-pack',
+  '/enterprise-approval-pack',
+];
+
 interface RecommendationCard {
   icon: string;
   title: string;
   description: string;
   actionText: string;
 }
+
+const recommendationHrefs = [
+  '/workforce-record-insights',
+  '/calculate-your-roi',
+  '/request-enterprise-demo',
+];
 
 const interactiveTools: ToolCard[] = [
   {
@@ -207,21 +226,21 @@ export default function WorkforceAssuranceHub() {
             </p>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
 
-              <button className="px-4 py-2 bg-teal-500/10 hover:bg-teal-500/20 text-teal-600 dark:text-teal-400 text-xs sm:text-sm font-semibold rounded-full border border-teal-500/30 transition-all cursor-pointer">
+              <Link href="/request-a-demo" className="px-4 py-2 bg-teal-500/10 hover:bg-teal-500/20 text-teal-600 dark:text-teal-400 text-xs sm:text-sm font-semibold rounded-full border border-teal-500/30 transition-all cursor-pointer">
                 I&apos;m evaluating solutions
-              </button>
+              </Link>
 
-              <button className="px-4 py-2 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-700 dark:text-gray-300 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 dark:border-gray-700 shadow-sm transition-all cursor-pointer">
+              <Link href="/workforce-record-insights" className="px-4 py-2 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-700 dark:text-gray-300 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 dark:border-gray-700 shadow-sm transition-all cursor-pointer">
                 I need to solve a specific problem
-              </button>
+              </Link>
 
-              <button className="px-4 py-2 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-700 dark:text-gray-300 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 dark:border-gray-700 shadow-sm transition-all cursor-pointer">
+              <Link href="/enterprise-approval-pack" className="px-4 py-2 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-700 dark:text-gray-300 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 dark:border-gray-700 shadow-sm transition-all cursor-pointer">
                 I&apos;m preparing for internal approval
-              </button>
+              </Link>
 
-              <button className="px-4 py-2 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-700 dark:text-gray-300 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 dark:border-gray-700 shadow-sm transition-all cursor-pointer">
+              <Link href="/security-overview" className="px-4 py-2 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-700 dark:text-gray-300 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 dark:border-gray-700 shadow-sm transition-all cursor-pointer">
                 I want technical details
-              </button>
+              </Link>
 
             </div>
           </div>
@@ -257,9 +276,9 @@ export default function WorkforceAssuranceHub() {
                 </ul>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-gray-800">
-                <a href="#" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
+                <Link href="/request-a-demo" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
                   See if ZoikoTime fits your organisation →
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -280,9 +299,9 @@ export default function WorkforceAssuranceHub() {
                 </ul>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-gray-800">
-                <a href="#" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
+                <Link href="/workforce-record-insights" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
                   Explore solution by problem →
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -303,9 +322,9 @@ export default function WorkforceAssuranceHub() {
                 </ul>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-gray-800">
-                <a href="#" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
+                <Link href="/enterprise-approval-pack" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
                   Download approval pack →
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -326,9 +345,9 @@ export default function WorkforceAssuranceHub() {
                 </ul>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-gray-800">
-                <a href="#" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
+                <Link href="/security-overview" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
                   View architecture →
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -352,9 +371,9 @@ export default function WorkforceAssuranceHub() {
               <p className="text-xs sm:text-sm font-normal text-slate-500 dark:text-gray-400 max-w-2xl leading-relaxed">
                 A comprehensive model for governed, defensible, and intelligent workforce management applicable across all enterprise workforce types and operating environments.
               </p>
-              <button className="mt-2 bg-teal-600 hover:bg-teal-700 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm transition-all cursor-pointer">
+              <Link href="/download-zoiko-time" className="mt-2 bg-teal-600 hover:bg-teal-700 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm transition-all cursor-pointer">
                 ↓ Download Framework
-              </button>
+              </Link>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:grid-cols-2 lg:divide-y-0 lg:divide-x divide-slate-200 dark:divide-gray-800 border-b border-slate-200 dark:border-gray-800">
@@ -430,21 +449,21 @@ export default function WorkforceAssuranceHub() {
 
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12 md:mb-16">
           <span className="text-slate-400 dark:text-gray-500 text-xs font-bold uppercase tracking-wide mr-1 sm:mr-2">Role:</span>
-          <button className="px-3.5 py-1.5 bg-emerald-50 dark:bg-emerald-950/40 text-teal-600 dark:text-teal-400 text-xs font-semibold rounded-full border border-teal-600/20 shadow-xs cursor-pointer">
+          <Link href="/workforce-assurance" className="px-3.5 py-1.5 bg-emerald-50 dark:bg-emerald-950/40 text-teal-600 dark:text-teal-400 text-xs font-semibold rounded-full border border-teal-600/20 shadow-xs cursor-pointer">
             All
-          </button>
-          <button className="px-3.5 py-1.5 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-500 dark:text-gray-400 text-xs font-semibold rounded-full border border-slate-200 dark:border-gray-700 transition-all cursor-pointer">
+          </Link>
+          <Link href="/calculate-your-roi" className="px-3.5 py-1.5 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-500 dark:text-gray-400 text-xs font-semibold rounded-full border border-slate-200 dark:border-gray-700 transition-all cursor-pointer">
             CFO
-          </button>
-          <button className="px-3.5 py-1.5 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-500 dark:text-gray-400 text-xs font-semibold rounded-full border border-slate-200 dark:border-gray-700 transition-all cursor-pointer">
+          </Link>
+          <Link href="/security-overview" className="px-3.5 py-1.5 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-500 dark:text-gray-400 text-xs font-semibold rounded-full border border-slate-200 dark:border-gray-700 transition-all cursor-pointer">
             CIO / CISO
-          </button>
-          <button className="px-3.5 py-1.5 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-500 dark:text-gray-400 text-xs font-semibold rounded-full border border-slate-200 dark:border-gray-700 transition-all cursor-pointer">
+          </Link>
+          <Link href="/workforce" className="px-3.5 py-1.5 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-500 dark:text-gray-400 text-xs font-semibold rounded-full border border-slate-200 dark:border-gray-700 transition-all cursor-pointer">
             CHRO
-          </button>
-          <button className="px-3.5 py-1.5 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-500 dark:text-gray-400 text-xs font-semibold rounded-full border border-slate-200 dark:border-gray-700 transition-all cursor-pointer">
+          </Link>
+          <Link href="/enterprise-approval-pack" className="px-3.5 py-1.5 bg-white dark:bg-gray-800 hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-500 dark:text-gray-400 text-xs font-semibold rounded-full border border-slate-200 dark:border-gray-700 transition-all cursor-pointer">
             Procurement
-          </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-[1120px] mx-auto">
@@ -616,16 +635,15 @@ export default function WorkforceAssuranceHub() {
                     </div>
                   </div>
 
-                  <button 
-                    type="button" 
-                    onClick={() => alert(`Preparing briefing pack for ${study.industry}...`)}
+                  <Link
+                    href="/enterprise-approval-pack"
                     className="inline-flex items-center justify-center w-full rounded-lg bg-white dark:bg-gray-800 border border-slate-300 dark:border-gray-700 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-700 dark:text-gray-300 shadow-sm transition-colors hover:bg-slate-50 dark:hover:bg-gray-700 hover:text-slate-900 dark:hover:text-white focus:outline-none"
                   >
                     <svg className="mr-2 h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                     </svg>
                     Send This to Your CFO
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -953,9 +971,9 @@ export default function WorkforceAssuranceHub() {
                 </div>
                 
                 <div className="mt-5 md:mt-6">
-                  <a href="#" className="inline-flex text-teal-600 dark:text-teal-400 text-xs font-bold transition-colors hover:text-teal-700">
+                  <Link href={briefCardHrefs[idx] ?? '/calculate-your-roi'} className="inline-flex text-teal-600 dark:text-teal-400 text-xs font-bold transition-colors hover:text-teal-700">
                     {card.linkText}
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -993,12 +1011,12 @@ export default function WorkforceAssuranceHub() {
                 </div>
               </div>
 
-              <button
-                type="button"
+              <Link
+                href="/workforce-record-insights"
                 className="inline-flex items-center justify-center bg-teal-600 text-white rounded-lg px-6 py-3 text-xs sm:text-sm font-semibold shadow-sm hover:bg-teal-700 active:scale-[0.99] w-full sm:w-auto"
               >
                 Download State of Workforce Assurance 2026
-              </button>
+              </Link>
               
             </div>
           </div>
@@ -1041,12 +1059,12 @@ export default function WorkforceAssuranceHub() {
                 </div>
 
                 <div className="mt-6 md:mt-8 pt-1">
-                  <button
-                    type="button"
-                    className="w-full bg-emerald-50 dark:bg-gray-800 border border-teal-600/20 text-teal-600 dark:text-teal-400 rounded-lg py-2.5 text-xs font-semibold tracking-wide transition-all group-hover:bg-teal-600 group-hover:text-white dark:group-hover:bg-teal-600"
+                  <Link
+                    href={toolHrefs[index] ?? '/enterprise-approval-pack'}
+                    className="w-full bg-emerald-50 dark:bg-gray-800 border border-teal-600/20 text-teal-600 dark:text-teal-400 rounded-lg py-2.5 text-xs font-semibold tracking-wide transition-all group-hover:bg-teal-600 group-hover:text-white dark:group-hover:bg-teal-600 inline-flex items-center justify-center"
                   >
                     {tool.actionText}
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -1083,9 +1101,9 @@ export default function WorkforceAssuranceHub() {
                     </p>
                   </div>
                   <div className="mt-4">
-                    <a href="#" className="inline-flex items-center text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors">
+                    <Link href={recommendationHrefs[index] ?? '/workforce-record-insights'} className="inline-flex items-center text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors">
                       {rec.actionText}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
