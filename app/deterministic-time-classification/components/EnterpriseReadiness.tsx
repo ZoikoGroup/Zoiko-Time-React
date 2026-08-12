@@ -8,7 +8,7 @@ const cards = [
     title: "Policy owners",
     body: "Read and approve the exact rule logic before it's ever published.",
     linkLabel: "Policy Governance →",
-    href: "/adminstration-policy-controls",
+    href: "/leadership-governance",
   },
   {
     image: "/deterministic-time-classification/Auditors-compliance.png",
@@ -16,7 +16,7 @@ const cards = [
     title: "Auditors & compliance",
     body: "Trace any result back to its exact rule, version, and effective date.",
     linkLabel: "Explore Evidence Ledger →",
-    href: "#",
+    href: "/evidence-ledger",
   },
   {
     image: "/deterministic-time-classification/HR-IT.png",

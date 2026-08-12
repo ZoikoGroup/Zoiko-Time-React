@@ -2,8 +2,8 @@
 
 export default function EventUpdatesCTA() {
   return (
-    <section className="bg-white py-20 dark:bg-slate-950">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="get-event-update" className="bg-white py-20 dark:bg-slate-950">
+      <div  className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="rounded-3xl border border-emerald-100 bg-emerald-50 p-8 dark:border-emerald-900/40 dark:bg-emerald-950/20">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             {/* Left Content */}

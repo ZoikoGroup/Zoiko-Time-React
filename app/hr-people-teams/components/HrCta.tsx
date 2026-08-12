@@ -3,7 +3,8 @@ import Link from "next/link";
 const footerLinks = [
   { label: "Pricing", href: "/pricing" },
   { label: "Workers", href: "/solutions-workers" },
-  { label: "Anti-Surveillance Principles", href: "/anti-surveillance-principles" },
+  // { label: "Anti-Surveillance Principles", href: "/anti-surveillance-principles" },
+  { label: "", href: "/anti-surveillance-principles" },
   { label: "Security", href: "/security" },
   { label: "Help Center", href: "/help-center" },
 ];

@@ -127,7 +127,7 @@ export default function SecurityQuestionsFAQ() {
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3.5 pt-2">
           <a
-            href="/security-overview#contact-security-team"
+            href="/contact"
             className="px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-400 shadow-xs"
           >
             Request Security Review

@@ -22,7 +22,7 @@ export default function EnterpriseTrust() {
 
             {/* Description */}
             <p className="mt-4 text-sm font-normal leading-5 text-white/80">
-              Security, Privacy, Anti-Surveillance Principles, Human-in-Command
+              Security, Privacy,Anti-Surveillance Principles, Human-in-Command
               Controls, AI Governance, and System Status route to the canonical
               Trust &amp; Governance surfaces.
             </p>

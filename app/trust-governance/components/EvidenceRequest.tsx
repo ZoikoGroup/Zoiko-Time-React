@@ -21,12 +21,13 @@ export default function EvidenceRequest() {
 
           {/* Buttons */}
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a href="/contact">
             <button
   type="button"
   className="inline-flex items-center justify-center rounded-lg bg-[#44B97A] px-8 py-4 text-base font-medium text-white transition hover:bg-[#3EAA70]"
 >
   Request Security Review
-</button>
+</button></a>
 
             <Link
   href="/request-enterprise-demo"

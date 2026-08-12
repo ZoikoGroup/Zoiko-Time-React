@@ -275,7 +275,7 @@ export default function CtaSection() {
               </p>
 
               <a
-                href={card.title === "Explore the Platform" ? "https://getzoikotime.com/" : "#"}
+                href={card.title === "Explore the Platform" ? "/explore-zoikotime" : "#"}
                 className="
                   mt-auto
                   font-sans
