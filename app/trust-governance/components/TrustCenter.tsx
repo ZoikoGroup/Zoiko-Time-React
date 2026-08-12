@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link";
 import {
   ShieldCheck,
   LockKeyhole,
@@ -22,7 +25,7 @@ const trustCards = [
     description:
       "How we collect, use, store, and protect data with transparency and user rights.",
     button: "View Privacy",
-    href: "/privacy-notice",
+    href: "/privacy",
     icon: LockKeyhole,
   },
   {
@@ -30,7 +33,7 @@ const trustCards = [
     description:
       "Our commitment to not profiling, tracking, or manipulating user choices.",
     button: "View Principles",
-    href: "/anti-surveillance-principles",
+    href: "#",
     icon: EyeOff,
   },
   {
@@ -46,7 +49,7 @@ const trustCards = [
     description:
       "How human authority, review, and appeals are operationalized.",
     button: "View Controls",
-    href: "/human-controls",
+    href: "/human-in-command",
     icon: UserCheck,
   },
   {
@@ -54,16 +57,17 @@ const trustCards = [
     description:
       "Real-time status, uptime, incident history, and notifications.",
     button: "View Live Status",
-    href: "/status",
+    href: "/system-status",
     icon: Activity,
   },
 ];
 
 export default function TrustCenter() {
   return (
-    <section 
-    id ="trust-center"
-    className="bg-white py-16 dark:bg-slate-950 md:py-24">
+    <section
+      id="trust-center"
+      className="bg-white py-16 dark:bg-slate-950 md:py-24"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
@@ -102,9 +106,9 @@ export default function TrustCenter() {
                   {card.description}
                 </p>
 
-                {/* Button */}
-                <button
-                  type="button"
+                {/* Link */}
+                <Link
+                  href={card.href}
                   className="mt-6 inline-flex items-center gap-2 font-semibold text-[#44B97A] transition-colors hover:text-[#3EAA70]"
                 >
                   {card.button}
@@ -113,7 +117,7 @@ export default function TrustCenter() {
                     className="h-4 w-4"
                     strokeWidth={2.5}
                   />
-                </button>
+                </Link>
               </div>
             );
           })}

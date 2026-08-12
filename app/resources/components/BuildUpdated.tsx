@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function BuildUpdated() {
@@ -42,8 +43,8 @@ export default function BuildUpdated() {
               </div>
 
               {/* View Release Notes */}
-              <button
-                type="button"
+              <Link
+                href="/release-notes"
                 className="mt-8 inline-flex items-center gap-1 text-sm font-semibold leading-5 text-emerald-700 transition hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
               >
                 View Release Notes
@@ -52,7 +53,7 @@ export default function BuildUpdated() {
                   className="h-4 w-4"
                   strokeWidth={1.8}
                 />
-              </button>
+              </Link>
             </div>
           </div>
 

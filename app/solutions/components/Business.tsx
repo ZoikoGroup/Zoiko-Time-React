@@ -1,17 +1,23 @@
+"use client";
+
 import { ArrowRight, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const businessNeeds = [
   {
     title: "Verify Time & Attendance",
     description: "Ensure presence and time are accurate.",
+    href: "/verify-time-attendance",
   },
   {
     title: "Improve Payroll Accuracy",
     description: "Reduce errors and overpayments.",
+    href: "/improve-payroll-accuracy",
   },
   {
     title: "Create Auditable Time Records",
     description: "Build defensible records for audits and reviews.",
+    href: "/auditable-time-records",
   },
 ];
 
@@ -19,7 +25,6 @@ export default function Business() {
   return (
     <section className="w-full bg-white py-16 dark:bg-slate-950 sm:py-20 lg:py-24">
       <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8">
-
         <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch">
 
           {/* IMAGE */}
@@ -36,7 +41,6 @@ export default function Business() {
 
             {/* HEADER */}
             <div className="flex items-center gap-4">
-
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#44B97A]">
                 <img
                   src="/solutions/business-icon.png"
@@ -56,19 +60,17 @@ export default function Business() {
                   to achieve.
                 </p>
               </div>
-
             </div>
 
             {/* ITEMS */}
             <div className="mt-8 flex flex-col gap-4">
-
               {businessNeeds.map((item) => (
-                <div
+                <Link
                   key={item.title}
-                  className="group rounded-lg p-4 transition-colors hover:bg-white dark:hover:bg-slate-800"
+                  href={item.href}
+                  className="group block rounded-lg p-4 transition-colors hover:bg-white dark:hover:bg-slate-800"
                 >
                   <div className="flex items-center justify-between gap-3">
-
                     <h3 className="text-base font-semibold leading-6 text-slate-950 dark:text-white">
                       {item.title}
                     </h3>
@@ -77,22 +79,19 @@ export default function Business() {
                       className="h-4 w-4 shrink-0 text-zinc-700 transition-transform group-hover:translate-x-1 dark:text-zinc-300"
                       strokeWidth={1.8}
                     />
-
                   </div>
 
                   <p className="mt-1 text-sm leading-5 text-zinc-700 dark:text-zinc-300">
                     {item.description}
                   </p>
-                </div>
+                </Link>
               ))}
-
             </div>
 
             {/* BOTTOM */}
             <div className="mt-auto border-t border-neutral-300 pt-6 dark:border-neutral-700">
-
-              <button
-                type="button"
+              <Link
+                href="#"
                 className="group inline-flex items-center gap-2 text-base font-semibold leading-6 text-[#44B97A]"
               >
                 Explore by need
@@ -100,12 +99,10 @@ export default function Business() {
                 <ArrowRight
                   className="h-4 w-4 transition-transform group-hover:translate-x-1"
                 />
-              </button>
-
+              </Link>
             </div>
 
           </div>
-
         </div>
       </div>
     </section>

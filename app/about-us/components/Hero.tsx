@@ -43,7 +43,7 @@ export default function Hero() {
 
           {/* Secondary Button */}
           <Link
-  href="/product"
+  href="#"
   className="
     inline-flex
     h-12

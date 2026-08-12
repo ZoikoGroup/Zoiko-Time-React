@@ -22,28 +22,28 @@ const topics = [
     title: "Timesheets & Payroll Integrity",
     description:
       "Practical guidance on timesheet review, approval discipline, payroll readiness, and reducing time leakage.",
-    href: "/time-sheet-approvals",
+    href: "/payroll-and-timesheet-integrity",
   },
   {
     image: "/BlogTopics/analytics.png",
     title: "Workforce Analytics",
     description:
       "How to interpret workforce data responsibly to support operations, staffing, and business decisions.",
-    href: "#",
+    href: "/analytics-reporting",
   },
   {
     image: "/BlogTopics/analytics1.png",
     title: "Worker Transparency & Privacy",
     description:
       "How organizations can deploy workforce oversight responsibly while maintaining worker trust and compliance.",
-    href: "#",
+    href: "/privacy-notice",
   },
   {
     image: "/BlogTopics/ai.png",
     title: "Responsible AI",
     description:
       "ZoikoTime's approach to AI governance, explainability, human oversight, and responsible decision support.",
-    href: "#",
+    href: "/responsible-ai",
   },
   {
     image: "/BlogTopics/governance.png",
@@ -64,7 +64,7 @@ const topics = [
     title: "Professional Services",
     description:
       "How consulting firms, agencies, and project-based businesses can protect billable time and improve client billing.",
-    href: "#",
+    href: "/professional-services-firms",
   },
 ];
 
@@ -72,6 +72,7 @@ export default function BlogTopics() {
   return (
     <section className="w-full bg-white px-4 py-16 dark:bg-slate-950 sm:px-6 sm:py-20 md:px-8 lg:px-10 lg:py-24">
       <div className="mx-auto w-full max-w-[1200px]">
+
         {/* Header */}
         <div className="text-center">
           <div className="flex items-center justify-center gap-3">
@@ -84,11 +85,11 @@ export default function BlogTopics() {
             <div className="h-px w-5 bg-teal-600" />
           </div>
 
-          <h2 className="mt-4 text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl md:text-5xl dark:text-white">
+          <h2 className="mt-4 text-3xl font-semibold leading-tight text-slate-900 dark:text-white sm:text-4xl md:text-5xl">
             Explore Workforce Assurance Topics
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base dark:text-slate-400">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-400 sm:text-base">
             Browse insights organized by subject area — from time integrity
             and payroll readiness to responsible AI and enterprise governance.
           </p>
@@ -99,7 +100,22 @@ export default function BlogTopics() {
           {topics.map((topic) => (
             <div
               key={topic.title}
-              className="group rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900 dark:hover:border-teal-500/40 sm:p-6"
+              className="
+                group
+                rounded-2xl
+                border
+                border-slate-200
+                bg-white
+                p-5
+                transition
+                duration-300
+                hover:-translate-y-1
+                hover:shadow-xl
+                dark:border-slate-700
+                dark:bg-slate-900
+                dark:hover:border-teal-500/40
+                sm:p-6
+              "
             >
               {/* Icon */}
               <div className="relative h-12 w-12">
@@ -123,20 +139,31 @@ export default function BlogTopics() {
               </p>
 
               {/* Link */}
-              {topic.href && (
-                <Link
-                  href={topic.href}
-                  className="mt-6 inline-flex items-center text-sm font-semibold text-teal-600 transition-colors hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300"
-                >
-                  View Topic
-                  <span className="ml-1 transition-transform duration-200 group-hover:translate-x-1">
-                    →
-                  </span>
-                </Link>
-              )}
+              <Link
+                href={topic.href}
+                className="
+                  mt-6
+                  inline-flex
+                  items-center
+                  text-sm
+                  font-semibold
+                  text-teal-600
+                  transition-colors
+                  hover:text-teal-700
+                  dark:text-teal-400
+                  dark:hover:text-teal-300
+                "
+              >
+                View Topic
+
+                <span className="ml-1 transition-transform duration-200 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
