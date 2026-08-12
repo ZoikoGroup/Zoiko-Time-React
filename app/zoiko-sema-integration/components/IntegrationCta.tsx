@@ -58,7 +58,7 @@ export default function IntegrationCta() {
               <p className="mt-5 flex flex-wrap items-center gap-x-2 text-sm font-bold leading-6 text-emerald-700 dark:text-emerald-400">
 
                 <Link
-                  href="/product"
+                  href="https://getzoikotime.com/"
                   className="inline-flex items-center gap-1.5 transition hover:text-emerald-800"
                 >
                   Explore ZoikoTime <span aria-hidden="true">→</span>

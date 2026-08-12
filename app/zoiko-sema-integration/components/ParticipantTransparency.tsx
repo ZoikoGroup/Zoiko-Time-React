@@ -163,7 +163,7 @@ export default function ParticipantTransparency() {
 
             <div className="mt-5">
               <Link
-                href="/audit-grade-evidence"
+                href="/evidence-ledger"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-stone-300 bg-white px-6 py-3.5 text-base font-bold text-sky-950 transition hover:border-sky-950 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-slate-500"
               >
                 Evidence Ledger <span aria-hidden="true">→</span>

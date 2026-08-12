@@ -53,7 +53,7 @@ export default function TimesheetsAndApprovalsHero() {
           {/* Secondary Link */}
           <div>
             <a
-              href="#"
+              href="https://getzoikotime.com/"
               className="inline-flex items-center gap-2 text-sm font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 group transition-colors"
             >
               <span>Explore ZoikoTime</span>
