@@ -5,7 +5,7 @@ import Link from "next/link";
 const plans = [
   {
     name: "Verified",
-    price: "$8",
+    price: "$9",
     description:
       "Best for small teams needing verified time records and basic accountability.",
     features: [
@@ -17,7 +17,7 @@ const plans = [
   },
   {
     name: "Governed",
-    price: "$15",
+    price: "$17",
     description:
       "Best for growing teams needing policy controls, reporting, and stronger governance.",
     features: [
@@ -31,7 +31,7 @@ const plans = [
   },
   {
     name: "Sovereign",
-    price: "$25",
+    price: "$29",
     description:
       "Best for regulated, multi-jurisdiction, or high-accountability workforces.",
     features: [
@@ -73,13 +73,11 @@ export default function PricingSection() {
         overflow-hidden
       "
     >
-
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto">
-
         <div
           className="
-            text-teal-400
+            text-[#3FB97A]
             text-xs
             font-bold
             uppercase
@@ -89,7 +87,6 @@ export default function PricingSection() {
         >
           Pricing
         </div>
-
 
         <h2
           className="
@@ -102,7 +99,6 @@ export default function PricingSection() {
         >
           Transparent pricing. No surprises.
         </h2>
-
 
         <p
           className="
@@ -117,9 +113,7 @@ export default function PricingSection() {
           available for advanced security, data residency, and custom
           integrations.
         </p>
-
       </div>
-
 
       {/* Pricing Cards */}
       <div
@@ -132,9 +126,7 @@ export default function PricingSection() {
           mt-12
         "
       >
-
         {plans.map((plan) => (
-
           <div
             key={plan.name}
             className={`
@@ -146,19 +138,18 @@ export default function PricingSection() {
 
               ${
                 plan.popular
-                  ? "bg-teal-400/10 border-teal-400"
+                  ? "bg-[#3FB97A]/10 border-[#3FB97A]"
                   : "bg-white/20 border-white/10"
               }
             `}
           >
-
             {plan.popular && (
               <div
                 className="
                   absolute
                   top-4
                   right-4
-                  bg-teal-400
+                  bg-[#3FB97A]
                   text-gray-900
                   text-[10px]
                   font-bold
@@ -173,7 +164,6 @@ export default function PricingSection() {
               </div>
             )}
 
-
             <p
               className="
                 text-white/50
@@ -186,9 +176,7 @@ export default function PricingSection() {
               {plan.name}
             </p>
 
-
             <div className="flex items-end gap-2 mt-3">
-
               <h3
                 className="
                   text-white
@@ -199,15 +187,12 @@ export default function PricingSection() {
                 {plan.price}
               </h3>
 
-
               {plan.price !== "Custom" && (
                 <span className="text-white/60 text-sm mb-1">
                   / user / mo
                 </span>
               )}
-
             </div>
-
 
             <p
               className="
@@ -220,11 +205,8 @@ export default function PricingSection() {
               {plan.description}
             </p>
 
-
             <ul className="mt-6 space-y-3">
-
               {plan.features.map((feature) => (
-
                 <li
                   key={feature}
                   className="
@@ -235,31 +217,21 @@ export default function PricingSection() {
                     text-xs
                   "
                 >
-
                   <Check
                     size={14}
-                    className="text-teal-400 shrink-0"
+                    className="text-[#3FB97A] shrink-0"
                   />
 
                   {feature}
-
                 </li>
-
               ))}
-
             </ul>
-
-
           </div>
-
         ))}
-
       </div>
-
 
       {/* Bottom CTA */}
       <div className="text-center mt-12">
-
         <p
           className="
             text-white/70
@@ -271,33 +243,30 @@ export default function PricingSection() {
           right tier to your needs.
         </p>
 
-
         <Link
-  href="/contact-sales"
-  className="
-    mt-8
-    inline-flex
-    items-center
-    justify-center
-    gap-3
-    mx-auto
-    rounded-2xl
-    bg-teal-400
-    px-8
-    py-3.5
-    font-semibold
-    text-gray-900
-    shadow-[0px_4px_18px_rgba(77,219,184,0.35)]
-    transition
-    hover:bg-teal-300
-  "
->
-  <ArrowRight size={18} />
-  <span>Talk to Sales about the right plan</span>
-</Link>
+          href="/contact-sales"
+          className="
+            mt-8
+            inline-flex
+            items-center
+            justify-center
+            gap-3
+            mx-auto
+            rounded-2xl
+            bg-[#3FB97A]
+            px-8
+            py-3.5
+            font-semibold
+            text-gray-900
+            shadow-[0px_4px_18px_rgba(63,185,122,0.35)]
+            transition
+            hover:bg-[#3FB97A]
+          "
+        >
+          <ArrowRight size={18} />
+          <span>Talk to Sales about the right plan</span>
+        </Link>
       </div>
-
-
     </section>
   );
 }

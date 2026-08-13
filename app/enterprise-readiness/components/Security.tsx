@@ -81,7 +81,7 @@ export default function Security() {
 
         <div className="mt-10 text-center">
           <a
-            href="#"
+            href="/security-addendum"
             className="text-sm font-semibold text-[#00C6A9] transition-colors hover:text-teal-600 dark:hover:text-teal-300"
           >
             Review Security Addendum →

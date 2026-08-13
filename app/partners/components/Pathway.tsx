@@ -86,7 +86,7 @@ export default function Pathway() {
         {/* CTA */}
         <div className="mt-16 text-center md:mt-20">
           <a
-            href="#"
+            href="/enterprise-readiness"
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#0B8675] transition-colors hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300"
           >
             Explore Enterprise Readiness

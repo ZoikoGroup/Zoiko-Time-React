@@ -291,9 +291,8 @@ export default function Compliance() {
           </p>
         </div>
 
-        {/* CTA Button */}
+      {/* CTA Button
 <div className="mt-12 flex items-center justify-center">
-
   <Link
     href="/request-a-demo"
     className="
@@ -315,8 +314,10 @@ export default function Compliance() {
   >
     Request Compliance Briefing
   </Link>
-
 </div>
+*/}
+
+
 
         {/* Compliance Tags */}
         <div className="mx-auto mt-14 flex max-w-5xl flex-wrap justify-center gap-4">

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const cards = [
   {
     src: "/about-zoikotech/long.png",
@@ -18,8 +20,9 @@ const cards = [
 
 export default function GroupBackingSection() {
   return (
-    <section className="bg-white dark:bg-gray-900 px-6 py-12 md:px-12 lg:px-20 xl:px-32 transition-colors duration-300">
+    <section className="bg-white px-6 py-12 transition-colors duration-300 dark:bg-gray-900 md:px-12 lg:px-20 xl:px-32">
       <div className="mx-auto max-w-7xl">
+
         {/* Heading */}
         <div className="mb-12 text-center">
           <span className="mb-3 inline-block text-xs font-semibold tracking-[1.32px] text-[#009D8C] dark:text-teal-400">
@@ -30,7 +33,7 @@ export default function GroupBackingSection() {
             Long-Term Commitment Through Zoiko Group Inc.
           </h2>
 
-          <p className="mx-auto max-w-4xl text-[#5A6E87] dark:text-gray-300 leading-7">
+          <p className="mx-auto max-w-4xl leading-7 text-[#5A6E87] dark:text-gray-300">
             Zoiko Tech Inc. operates as part of Zoiko Group Inc., a diversified
             organization developing businesses across technology,
             communications, healthcare, financial services, foods, media,
@@ -39,11 +42,11 @@ export default function GroupBackingSection() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
+        <div className="mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map(({ src, title, desc }) => (
             <div
               key={title}
-              className="rounded-2xl border border-[#E4EBF4] bg-white dark:bg-gray-800 dark:border-gray-700 p-6 transition-colors duration-300"
+              className="rounded-2xl border border-[#E4EBF4] bg-white p-6 transition-colors duration-300 dark:border-gray-700 dark:bg-gray-800"
             >
               <img
                 src={src}
@@ -64,13 +67,14 @@ export default function GroupBackingSection() {
 
         {/* Footer Link */}
         <div className="text-center">
-          <a
-            href="#"
+          <Link
+            href="/enterprise-readiness"
             className="font-medium text-[#009D8C] transition hover:underline dark:text-teal-400"
           >
             Explore ZoikoTime Enterprise Readiness →
-          </a>
+          </Link>
         </div>
+
       </div>
     </section>
   );

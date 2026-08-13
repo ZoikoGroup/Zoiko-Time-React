@@ -70,7 +70,7 @@ export default function Implementation() {
 
       <div className="mt-8 text-center">
         <a
-          href="#"
+          href="/implementation-guide"
           className="text-sm font-semibold text-[#009D8C] hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300 transition-colors"
         >
           View Implementation Guide →
