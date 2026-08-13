@@ -1,17 +1,23 @@
+"use client";
+
 import { ArrowRight, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const workingEnvironments = [
   {
     title: "Remote Teams",
     description: "Build connection with trusted time data.",
+    href: "/remote-teams",
   },
   {
     title: "Hybrid Workforces",
     description: "Unify in-office and remote work records.",
+    href: "/hybrid-workforces",
   },
   {
     title: "Contractor-Heavy Workforces",
     description: "Manage contingent work with confidence.",
+    href: "/contractor-heavy-workforces",
   },
 ];
 
@@ -89,10 +95,12 @@ export default function Working() {
             {/* WORKING ENVIRONMENTS */}
             <div className="mt-8 flex flex-col gap-4">
               {workingEnvironments.map((item) => (
-                <div
+                <Link
                   key={item.title}
+                  href={item.href}
                   className="
                     group
+                    block
                     rounded-lg
                     p-4
                     transition-colors
@@ -141,7 +149,7 @@ export default function Working() {
                   >
                     {item.description}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -155,8 +163,8 @@ export default function Working() {
                 dark:border-neutral-700
               "
             >
-              <button
-                type="button"
+              <Link
+                href="#"
                 className="
                   group
                   inline-flex
@@ -179,7 +187,7 @@ export default function Working() {
                   "
                   strokeWidth={2}
                 />
-              </button>
+              </Link>
             </div>
           </div>
 

@@ -36,7 +36,7 @@ export default function GetStarted() {
               {/* CTA Buttons */}
               <div className="mt-6 flex w-full flex-col items-center justify-center gap-3 sm:flex-row">
                 <Link
-                  href="/signup"
+                  href="/start-free"
                   className="inline-flex min-h-11 items-center justify-center rounded-full bg-green-400 px-6 py-2.5 text-sm font-semibold leading-5 text-white transition hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 focus:ring-offset-[#16345F]"
                 >
                   Start Free

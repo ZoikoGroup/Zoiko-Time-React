@@ -1,15 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, BookOpen } from "lucide-react";
 
 export default function LearnSection() {
   return (
-    <section className="w-full bg-white py-16 dark:bg-slate-950 sm:py-20 lg:py-24">
+    <section
+    id="resources"
+     className="w-full bg-white py-16 dark:bg-slate-950 sm:py-20 lg:py-24">
       <div className="mx-auto w-full max-w-[1232px] px-5 sm:px-8 lg:px-0">
         <div className="flex min-h-[444px] flex-col overflow-hidden rounded-2xl bg-green-50 dark:bg-emerald-950/40 lg:flex-row">
 
           {/* Left Content */}
           <div className="flex w-full flex-col justify-center p-8 sm:p-10 lg:w-[50%] lg:px-12">
-
             <div className="flex flex-col items-center">
 
               {/* Icon + Text Side by Side */}
@@ -38,8 +40,8 @@ export default function LearnSection() {
               </div>
 
               {/* Browse Resource Center */}
-              <button
-                type="button"
+              <Link
+                href="/resource-center"
                 className="mt-8 inline-flex items-center gap-1 text-sm font-semibold leading-5 text-emerald-700 transition hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
               >
                 Browse Resource Center
@@ -48,7 +50,7 @@ export default function LearnSection() {
                   className="h-4 w-4"
                   strokeWidth={1.8}
                 />
-              </button>
+              </Link>
             </div>
           </div>
 

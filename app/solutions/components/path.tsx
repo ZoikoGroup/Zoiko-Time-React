@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -5,30 +7,35 @@ import {
   CircleDollarSign,
   UsersRound,
 } from "lucide-react";
+import Link from "next/link";
 
 const roles = [
   {
     title: "HR & People Teams",
     description: "Build trusted attendance and time records.",
     icon: UsersRound,
+    href: "/hr-people-teams",
   },
   {
     title: "Finance & Payroll Teams",
     description: "Ensure accurate payroll and financial control.",
     icon: CircleDollarSign,
+    href: "/finance-and-payroll-teams",
   },
   {
     title: "Workers",
     description: "Track time, protect rights, and stay informed.",
     icon: BriefcaseBusiness,
+    href: "/solutions-workers",
   },
 ];
 
 export default function SolutionsPath() {
   return (
     <section
-    id="solutions"
-     className="w-full bg-white py-16 dark:bg-slate-950 sm:py-20 lg:py-24">
+      id="solutions"
+      className="w-full bg-white py-16 dark:bg-slate-950 sm:py-20 lg:py-24"
+    >
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
 
         {/* HEADER */}
@@ -87,9 +94,10 @@ export default function SolutionsPath() {
                 const Icon = role.icon;
 
                 return (
-                  <div
+                  <Link
                     key={role.title}
-                    className="group rounded-lg p-4 transition hover:bg-white dark:hover:bg-slate-800"
+                    href={role.href}
+                    className="group block rounded-lg p-4 transition hover:bg-white dark:hover:bg-slate-800"
                   >
                     <div className="flex items-center justify-between gap-3">
 
@@ -105,13 +113,15 @@ export default function SolutionsPath() {
                     </div>
 
                     <div className="mt-1 flex items-center gap-2">
+
                       <Icon className="hidden h-3.5 w-3.5 text-[#44B97A]" />
 
                       <p className="text-sm font-normal leading-5 text-zinc-700 dark:text-zinc-300">
                         {role.description}
                       </p>
+
                     </div>
-                  </div>
+                  </Link>
                 );
               })}
 
@@ -120,8 +130,8 @@ export default function SolutionsPath() {
             {/* Bottom Link */}
             <div className="mt-8 border-t border-neutral-300 pt-6 dark:border-neutral-700">
 
-              <button
-                type="button"
+              <Link
+                href="/#"
                 className="group inline-flex items-center gap-2 text-base font-semibold leading-6 text-[#44B97A]"
               >
                 Explore by role
@@ -130,7 +140,7 @@ export default function SolutionsPath() {
                   className="h-4 w-4 transition-transform group-hover:translate-x-1"
                   strokeWidth={2}
                 />
-              </button>
+              </Link>
 
             </div>
           </div>

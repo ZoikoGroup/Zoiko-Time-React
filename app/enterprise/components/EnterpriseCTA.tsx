@@ -144,8 +144,8 @@ export default function EnterpriseCTA() {
                 Existing customers{" "}
               </span>
 
-              <a
-                href="#"
+              <Link
+                href="/enterprise-support"
                 className="
                   text-white
                   underline
@@ -155,7 +155,7 @@ export default function EnterpriseCTA() {
                 "
               >
                 Enterprise Support →
-              </a>
+              </Link>
             </div>
           </div>
         </div>
