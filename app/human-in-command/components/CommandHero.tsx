@@ -3,13 +3,13 @@ import Image from "next/image";
 
 const quickLinks = [
   { label: "Privacy", href: "/privacy" },
-  { label: "Security", href: "/security-overview" },
+  { label: "Security", href: "/security" },
   {
     label: "Deterministic Classification",
     href: "/deterministic-time-classification",
   },
-  { label: "Evidence Ledger", href: "/audit-grade-evidence" },
-  { label: "AI Governance", href: "/ai-and-automated-insights-policy" },
+  { label: "Evidence Ledger", href: "/evidence-ledger" },
+  { label: "AI Governance", href: "/ai-governance" },
 ];
 
 export default function CommandHero() {

@@ -242,7 +242,7 @@ export default function EvidenceDirectory() {
             </p>
 
             <Link
-              href="#request-security-review"
+              href="/contact"
               className="group mt-4 inline-flex items-center gap-1.5 self-start border-t border-stone-200 pt-3 text-sm font-bold leading-6 text-emerald-700 transition hover:text-emerald-800 dark:border-slate-800 dark:text-emerald-400"
             >
 

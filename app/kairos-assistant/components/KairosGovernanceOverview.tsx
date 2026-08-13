@@ -106,12 +106,12 @@ export default function KairosGovernanceOverview() {
             See How ZoikoTime Works
           </Link>
           <Link
-            href="/responsible-ai"
+            href="/ai-governance"
             className="w-full sm:w-auto px-6 py-3 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-slate-100 font-bold text-base rounded-lg border border-slate-300 dark:border-slate-700 transition-colors cursor-pointer text-center"
           >
             Review AI Governance
           </Link>
-        </div>
+        </div>  
 
       </div>
     </section>

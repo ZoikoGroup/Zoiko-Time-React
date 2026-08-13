@@ -16,7 +16,7 @@ const workflows = [
     description:
       "Apply configured meal and rest policies, surface exceptions neutrally, and preserve review history.",
     linkLabel: "Break & Rest Compliance",
-    href: "/schedule-compliance-architecture",
+    href: "/break-rest-compliance",
   },
   {
     icon: "/hr-people-teams/review-corrections.png",
@@ -24,7 +24,7 @@ const workflows = [
     description:
       "Let authorized workers and managers add context, request correction, and resolve discrepancies before downstream use.",
     linkLabel: "Human-in-Command Controls",
-    href: "/human-controls",
+    href: "/human-in-command",
   },
   {
     icon: "/hr-people-teams/payroll-handoff.png",
@@ -40,7 +40,7 @@ const workflows = [
     description:
       "Apply role, location, schedule, and worker-type policy without monitoring screens, URLs, or application names.",
     linkLabel: "Manage Remote & Hybrid Work",
-    href: "/distributed-workforces",
+    href: "/manage-remote-hybrid-work",
   },
   {
     icon: "/hr-people-teams/worker-transparency.png",

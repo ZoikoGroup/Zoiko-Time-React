@@ -62,12 +62,12 @@ export default function WorkerVisibility() {
             {/* Section CTAs */}
             <div className="mt-7 flex flex-col items-start gap-3.5">
 
-              <Link
+             {/* <Link
                 href="#"
                 className="inline-flex items-center justify-center rounded-lg border border-stone-200 bg-white px-6 py-3.5 text-base font-bold leading-6 text-sky-950 transition hover:border-sky-950 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-slate-500"
               >
-                Anti-Surveillance Principles
-              </Link>
+                 Anti-Surveillance Principles
+              </Link>*/}
 
               <Link
                 href="/human-in-command"

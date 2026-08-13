@@ -90,7 +90,7 @@ export default function CaptureAcrossDevicesSection() {
 
               {/* Requirement Link */}
               <a 
-                href="#" 
+                href="https://getzoikotime.com/" 
                 className="text-xs font-semibold text-teal-700 dark:text-teal-400 hover:underline inline-flex items-center"
               >
                 {card.linkText}

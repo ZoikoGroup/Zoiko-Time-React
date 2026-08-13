@@ -71,6 +71,7 @@ const caseStudies = [
 export default function CaseStudyCards() {
   return (
     <section
+    id="case-studies"
       className="
         bg-slate-100
         dark:bg-slate-950

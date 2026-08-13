@@ -27,7 +27,7 @@ const boundaryCards: BoundaryCard[] = [
     description:
       'Any connected context is optional, mapped, permissioned, and reviewable — and both products keep independent identity. Communication context never becomes an approval.',
     actionText: 'Zoiko Sema Integration',
-    href: '#',
+    href: '/zoiko-sema-integration',
   },
 ];
 

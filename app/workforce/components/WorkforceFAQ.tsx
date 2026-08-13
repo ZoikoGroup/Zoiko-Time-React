@@ -1,14 +1,42 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 
 const faqs = [
-  "Is workforce intelligence the same as employee monitoring?",
-  "Can ZoikoTime help with payroll and timesheet accuracy?",
-  "Does ZoikoTime use AI to make employment decisions?",
-  "Is ZoikoTime suitable for professional services firms?",
-  "Can ZoikoTime support audits or disputes?",
+  {
+    question: "Is workforce intelligence the same as employee monitoring?",
+    answer:
+      "No. Workforce intelligence focuses on understanding workforce operations, time, attendance, capacity, and work patterns using governed data. It is not designed as a tool for invasive employee surveillance or continuous tracking of individual behavior.",
+  },
+  {
+    question: "Can ZoikoTime help with payroll and timesheet accuracy?",
+    answer:
+      "Yes. ZoikoTime can help improve the accuracy of time and attendance records by providing structured workforce data, reducing manual reconciliation, and supporting review of exceptions before information is used in payroll or related processes.",
+  },
+  {
+    question: "Does ZoikoTime use AI to make employment decisions?",
+    answer:
+      "No. ZoikoTime is designed to support workforce operations and provide information for authorized users. It does not independently make employment decisions such as hiring, termination, promotion, or disciplinary decisions.",
+  },
+  {
+    question: "Is ZoikoTime suitable for professional services firms?",
+    answer:
+      "Yes. ZoikoTime can support professional services organizations that need accurate time records, workforce visibility, project-based tracking, payroll inputs, and operational reporting across teams, clients, and work arrangements.",
+  },
+  {
+    question: "Can ZoikoTime support audits or disputes?",
+    answer:
+      "Yes. ZoikoTime can provide structured workforce records and supporting evidence that help authorized users review historical activity, investigate exceptions, and support audits or workforce-related disputes.",
+  },
 ];
 
 export default function WorkforceFAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <section
       className="
@@ -28,7 +56,6 @@ export default function WorkforceFAQ() {
           lg:px-0
         "
       >
-
         {/* Label */}
         <div
           className="
@@ -42,7 +69,6 @@ export default function WorkforceFAQ() {
         >
           Common Questions
         </div>
-
 
         {/* Heading */}
         <h2
@@ -60,7 +86,6 @@ export default function WorkforceFAQ() {
           Workforce Intelligence FAQ
         </h2>
 
-
         {/* FAQ Box */}
         <div
           className="
@@ -77,55 +102,85 @@ export default function WorkforceFAQ() {
             dark:bg-slate-900
           "
         >
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
 
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className={`
-                min-h-[56px]
-                flex
-                items-center
-                justify-between
-                gap-4
-                px-5
-                py-4
-                ${
-                  index !== faqs.length - 1
-                    ? "border-b border-slate-200 dark:border-slate-700"
-                    : ""
-                }
-              `}
-            >
-
-              <p
-                className="
-                  text-sm
-                  sm:text-base
-                  font-semibold
-                  text-slate-900
-                  dark:text-white
-                "
+            return (
+              <div
+                key={faq.question}
+                className={`
+                  ${
+                    index !== faqs.length - 1
+                      ? "border-b border-slate-200 dark:border-slate-700"
+                      : ""
+                  }
+                `}
               >
-                {faq}
-              </p>
+                {/* Question */}
+                <button
+                  type="button"
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={isOpen}
+                  className="
+                    flex
+                    w-full
+                    min-h-[56px]
+                    items-center
+                    justify-between
+                    gap-4
+                    px-5
+                    py-4
+                    text-left
+                    transition-colors
+                    hover:bg-slate-50
+                    dark:hover:bg-slate-800/60
+                  "
+                >
+                  <p
+                    className="
+                      text-sm
+                      sm:text-base
+                      font-semibold
+                      text-slate-900
+                      dark:text-white
+                    "
+                  >
+                    {faq.question}
+                  </p>
 
+                  {/* Plus / Minus */}
+                  <span
+                    className="
+                      flex-shrink-0
+                      text-teal-600
+                      text-xl
+                      font-normal
+                      leading-none
+                    "
+                  >
+                    {isOpen ? "−" : "+"}
+                  </span>
+                </button>
 
-              <span
-                className="
-                  flex-shrink-0
-                  text-teal-600
-                  text-xl
-                  font-normal
-                "
-              >
-                +
-              </span>
-
-            </div>
-          ))}
-
+                {/* Answer */}
+                {isOpen && (
+                  <div className="px-5 pb-5">
+                    <p
+                      className="
+                        text-sm
+                        leading-6
+                        text-slate-600
+                        dark:text-slate-300
+                      "
+                    >
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
-
 
         {/* View All */}
         <div
@@ -142,8 +197,6 @@ export default function WorkforceFAQ() {
         >
           View All FAQs
         </div>
-
-
       </div>
     </section>
   );

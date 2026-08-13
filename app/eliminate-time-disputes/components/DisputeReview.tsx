@@ -57,26 +57,28 @@ export default function DisputeReview() {
 
           {/* CTAs */}
           <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <button
+            <a href="/request-a-demo">
+            <button 
               type="button"
               className="rounded-[10px] bg-green-400 px-6 py-3.5 text-base font-semibold leading-4 text-white shadow-[0_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-green-500"
             >
               Get a Demo
-            </button>
+            </button></a>
 
+            <a href="/contact-sales">
             <button
               type="button"
               className="rounded-[10px] border border-gray-300 bg-white px-6 py-3.5 text-base font-semibold leading-4 text-slate-800 transition hover:bg-gray-50 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
             >
               Talk to Sales
-            </button>
+            </button></a>
 
-            <button
+            {/* <button
               type="button"
               className="px-2 py-2 text-sm font-semibold leading-6 text-teal-700 dark:text-teal-400"
             >
               See the review workflow →
-            </button>
+            </button> */}
           </div>
         </div>
 

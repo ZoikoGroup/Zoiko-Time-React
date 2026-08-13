@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ResourcesHero() {
   return (
@@ -38,8 +39,10 @@ export default function ResourcesHero() {
 
           {/* Buttons */}
           <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:gap-4">
-            <button
-              type="button"
+
+            {/* Explore Resources */}
+            <Link
+              href="/resources#resources"
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-700 px-6 py-3 text-base font-semibold leading-6 text-white transition hover:bg-emerald-800 dark:bg-emerald-600 dark:hover:bg-emerald-500"
             >
               Explore Resources
@@ -59,10 +62,11 @@ export default function ResourcesHero() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </Link>
 
-            <button
-              type="button"
+            {/* Getting Started */}
+            <Link
+              href="/getting-started"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-6 py-3 text-base font-semibold leading-6 text-gray-800 transition hover:bg-gray-50 dark:border-slate-700 dark:bg-slate-900 dark:text-gray-100 dark:hover:bg-slate-800"
             >
               Getting Started
@@ -82,7 +86,8 @@ export default function ResourcesHero() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </Link>
+
           </div>
         </div>
 
@@ -97,6 +102,7 @@ export default function ResourcesHero() {
             sizes="(max-width: 1024px) 100vw, 616px"
           />
         </div>
+
       </div>
     </section>
   );

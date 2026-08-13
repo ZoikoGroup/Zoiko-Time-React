@@ -159,7 +159,7 @@ const adoptionSupportItems = [
   {
     title: "Enterprise Support",
     icon: "enterprise-support.png",
-    href: "#",
+    href: "/enterprise-support",
   },
   {
     title: "Procurement & Legal Resources",

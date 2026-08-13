@@ -6,7 +6,7 @@ interface OperationCard {
   title: string;
   description: string;
   linkText: string;
-  href?: string;
+  href: string;
 }
 
 const cardData: OperationCard[] = [
@@ -16,6 +16,7 @@ const cardData: OperationCard[] = [
     description:
       'Sees the flagged session, adds context, and tracks the status through to approval.',
     linkText: 'Remote Teams',
+    href:"/remote-teams"
   },
   {
     badge: 'Hybrid',
@@ -23,6 +24,8 @@ const cardData: OperationCard[] = [
     description:
       'Reviews the reason, requests information once, and approves with an amendment reason.',
     linkText: 'Hybrid Workforces',
+   href:"/hybrid-workforces"
+
   },
   {
     badge: 'Field & contractor',
@@ -30,6 +33,7 @@ const cardData: OperationCard[] = [
     description:
       'Records the task, customer, and cost code at the point of work on mobile.',
     linkText: 'Contractor-Heavy Workforces',
+    href:"/contractor-heavy-workforces"
   },
   {
     badge: 'Regional operations',
@@ -37,6 +41,7 @@ const cardData: OperationCard[] = [
     description:
       'Checks completeness and exception aging by region before the period closes.',
     linkText: 'Global Workforces',
+    href:"/global-workforces"
   },
 ];
 
@@ -114,13 +119,13 @@ export default function RemoteDistributedOperations() {
             <p className="text-base text-slate-600 leading-relaxed max-w-[644px]">
               Workers can see the records that describe their work, add context, and request corrections. That is what makes a record defensible later — not the amount of activity captured.
             </p>
-            <a
+            {/* <a
               href="#"
               className="inline-flex items-center gap-1.5 text-emerald-600 hover:text-emerald-700 font-bold text-sm pt-3 transition-colors hover:underline self-start group"
             >
               <span>Anti-Surveillance Principles</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </a> */}
           </div>
 
         </div>
