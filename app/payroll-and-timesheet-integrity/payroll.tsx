@@ -1,14 +1,33 @@
 "use client";
+
 import Link from "next/link";
+import { useState } from "react";
 import { AlertTriangle } from "lucide-react";
+
 const payrollFaqs = [
-  "Does ZoikoTime process payroll?",
-  "How does this reduce billing leakage?",
-  "Can approved records flow into our payroll or billing systems?",
-  "What happens to records during a dispute?",
+  {
+    question: "Does ZoikoTime process payroll?",
+    answer:
+      "No. ZoikoTime does not replace payroll systems or process payroll itself. It helps organizations capture, validate, review, approve, correct, retain, and export workforce time records so approved records can be prepared for downstream payroll workflows.",
+  },
+  {
+    question: "How does this reduce billing leakage?",
+    answer:
+      "ZoikoTime helps reduce billing leakage by improving timesheet completeness, approval discipline, project and client allocation, and visibility into time that may otherwise be missed, delayed, or written off. Teams can review records before they reach billing.",
+  },
+  {
+    question: "Can approved records flow into our payroll or billing systems?",
+    answer:
+      "Yes, where the required integrations or export workflows are configured. Approved workforce records can be prepared for downstream payroll, billing, HRIS, finance, or accounting processes without requiring ZoikoTime to replace those systems.",
+  },
+  {
+    question: "What happens to records during a dispute?",
+    answer:
+      "Disputed records can remain available for authorized review along with relevant correction history, approval history, comments, and supporting evidence. Retention and legal hold capabilities depend on the organization's configuration, plan, and applicable requirements.",
+  },
 ];
 
-  const operatingModelCards = [
+const operatingModelCards = [
   {
     label: "Payroll",
     title: "Payroll team",
@@ -86,6 +105,7 @@ const evidenceItems = [
       "Support traceability for records used in sensitive matters.",
   },
 ];
+
 const revenueCards = [
   {
     title: "Billable time visibility",
@@ -161,6 +181,7 @@ const problems = [
       "Records that can't be explained create exposure during audits.",
   },
 ];
+
 const workflowSteps = [
   {
     step: "1",
@@ -205,6 +226,7 @@ const workflowSteps = [
       "Preserve records with retention rules, audit history, and legal hold support.",
   },
 ];
+
 const controls = [
   {
     title: "Completeness checks",
@@ -249,457 +271,463 @@ const controls = [
 ];
 
 export default function Payroll() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq((current) => (current === index ? null : index));
+  };
+
   return (
     <>
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-10 lg:py-10 dark:from-gray-950 dark:to-gray-900">
-      {/* Radial Background */}
-      <div className="absolute left-1/2 top-[-180px] h-[450px] w-[760px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(13,148,136,0.12)_0%,transparent_70%)] dark:bg-[radial-gradient(circle,rgba(20,184,166,0.18)_0%,transparent_70%)]" />
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-10 dark:from-gray-950 dark:to-gray-900 lg:py-10">
+        <div className="absolute left-1/2 top-[-180px] h-[450px] w-[760px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(13,148,136,0.12)_0%,transparent_70%)] dark:bg-[radial-gradient(circle,rgba(20,184,166,0.18)_0%,transparent_70%)]" />
 
-      <div className="relative mx-auto max-w-6xl px-6">
-        {/* Badge */}
-        <div className="flex justify-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
-            Payroll &amp; Timesheet Integrity
-          </span>
-        </div>
-
-        {/* Heading */}
-        <div className="mx-auto mt-6 max-w-5xl text-center">
-          <h1 className=" text-4xl font-bold leading-tight text-slate-800 dark:text-white lg:text-6xl">
-            Payroll accuracy starts with{" "}
-            <span className="text-teal-600">
-              trusted
-              <br />
-              timesheets
+        <div className="relative mx-auto max-w-6xl px-6">
+          <div className="flex justify-center">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
+              Payroll &amp; Timesheet Integrity
             </span>
-          </h1>
-
-          <p className="mx-auto mt-8 max-w-3xl  text-base leading-8 text-gray-500 dark:text-gray-300">
-            ZoikoTime helps organizations capture, review, approve, correct,
-            retain, and export workforce time records before they reach
-            payroll, billing, finance, or audit workflows.
-          </p>
-        </div>
-
-        {/* Buttons */}
-        <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-
-          <Link
-  href="/request-a-demo"
-  className="rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_rgba(16,162,141,0.28)] transition-all duration-300 hover:bg-teal-700 hover:shadow-lg"
->
-  Get a Demo
-</Link>
-
-<Link
-  href="/contact-sales"
-  className="rounded-[10px] border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-slate-800 transition-all duration-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
->
-  Contact Sales
-</Link>
-
-        </div>
-
-        {/* Footer Note */}
-        <p className="mx-auto mt-12 max-w-4xl text-center font-['Poppins'] text-xs leading-6 text-gray-500 dark:text-gray-400">
-          ZoikoTime supports payroll readiness and timesheet governance. It
-          does not replace payroll, tax, legal, or employer decision-making.
-        </p>
-      </div>
-    </section>
-     <section className="bg-gray-50 py-16 lg:py-24 dark:bg-gray-900">
-      <div className="mx-auto max-w-6xl px-6">
-        {/* Heading */}
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="font-['Poppins'] text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
-            The Problem
-          </p>
-
-          <h2 className="mt-4 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-5xl">
-            Weak timesheet records create payroll
-            <br className="hidden md:block" />
-            and billing risk
-          </h2>
-
-          <p className="mx-auto mt-8 max-w-3xl text-base leading-8 text-gray-500 dark:text-gray-300">
-            Payroll and billing problems often start upstream — incomplete
-            timesheets, inconsistent approvals, disputed corrections, and
-            records that cannot be easily explained.
-          </p>
-        </div>
-
-        {/* Cards */}
-        <div className="mt-16 grid gap-4 md:grid-cols-2 md:grid-cols-3">
-          {problems.map((item, index) => (
-            <div
-              key={index}
-              className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_6px_18px_rgba(14,31,61,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
-            >
-              <h3 className="text-xl font-semibold text-slate-800 dark:text-white">
-                {item.title}
-              </h3>
-
-              <p className="mt-5 text-sm leading-7 text-gray-500 dark:text-gray-300">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Statement */}
-        <div className="mt-16 text-center">
-          <p className="text-lg font-bold leading-8 text-gray-600 dark:text-gray-300">
-            The payroll system can only be as reliable as the workforce records
-            it
-            <br className="hidden md:block" />
-            receives.
-          </p>
-        </div>
-      </div>
-    </section>
-     <section className="bg-white py-10 lg:py-11 dark:bg-gray-950">
-      <div className="mx-auto max-w-7xl px-6">
-        {/* Heading */}
-        <div className="mx-auto max-w-4xl text-center">
-          <p className=" text-xs font-semibold uppercase tracking-[0.3em] text-teal-600">
-            Readiness Workflow
-          </p>
-
-          <h2 className="mt-4 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl ">
-            Move timesheets from capture to payroll
-            <br className="hidden md:block" />
-            readiness
-          </h2>
-
-          <p className="mx-auto mt-8 max-w-3xl text-base leading-8 text-gray-500 dark:text-gray-300">
-            ZoikoTime helps teams move workforce records through a structured
-            readiness workflow before payroll or billing handoff.
-          </p>
-        </div>
-
-        {/* Timeline */}
-        <div className="relative mx-auto mt-16 max-w-4xl">
-          {/* Vertical Line */}
-
-          <div className="space-y-10">
-            {workflowSteps.map((item) => (
-              <div key={item.step} className="relative  gap-8">
-                {/* Number */}
-                <div className=" h-10 w-10  text-sm font-bold text-white shadow-lg">
-                  {item.step}
-                 
-                </div>
- 
-                {/* Content */}
-                <div>
-                  <h3 className="mt-2 text-lg font-bold  text-slate-800 dark:text-white">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-2 text-base leading-7    text-gray-500 dark:text-gray-300">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
           </div>
-        </div>
 
-        {/* Footer */}
-        <div className="mt-16 text-center">
-          <p className="text-base leading-8 text-gray-500 dark:text-gray-300">
-            Readiness states:{" "}
-            <span className="font-bold text-slate-700 dark:text-white">
-              Ready
-            </span>{" "}
-            · Needs Manager Review · Needs Worker Action ·
-            <br className="hidden md:block" />
-            Exception Open · Payroll Hold.
+          <div className="mx-auto mt-6 max-w-5xl text-center">
+            <h1 className="text-4xl font-bold leading-tight text-slate-800 dark:text-white lg:text-6xl">
+              Payroll accuracy starts with{" "}
+              <span className="text-teal-600">
+                trusted
+                <br />
+                timesheets
+              </span>
+            </h1>
+
+            <p className="mx-auto mt-8 max-w-3xl text-base leading-8 text-gray-500 dark:text-gray-300">
+              ZoikoTime helps organizations capture, review, approve, correct,
+              retain, and export workforce time records before they reach
+              payroll, billing, finance, or audit workflows.
+            </p>
+          </div>
+
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/request-a-demo"
+              className="rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_rgba(16,162,141,0.28)] transition-all duration-300 hover:bg-teal-700 hover:shadow-lg"
+            >
+              Get a Demo
+            </Link>
+
+            <Link
+              href="/contact-sales"
+              className="rounded-[10px] border border-gray-300 bg-white px-8 py-3 text-base font-semibold text-slate-800 transition-all duration-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+            >
+              Contact Sales
+            </Link>
+          </div>
+
+          <p className="mx-auto mt-12 max-w-4xl text-center text-xs leading-6 text-gray-500 dark:text-gray-400">
+            ZoikoTime supports payroll readiness and timesheet governance. It
+            does not replace payroll, tax, legal, or employer decision-making.
           </p>
         </div>
-      </div>
-    </section>
-     <section className="bg-gray-50 py-10 lg:py-10 dark:bg-gray-900">
-      <div className="mx-auto max-w-6xl px-6">
-        {/* Heading */}
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal-600">
-            Controls
-          </p>
+      </section>
 
-          <h2 className="mt-4 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
-            Control completeness, approval,
-            
-            and cutoff risk
-          </h2>
+      {/* THE PROBLEM */}
+      <section className="bg-gray-50 py-16 dark:bg-gray-900 lg:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
+              The Problem
+            </p>
 
-          <p className="mx-auto mt-8 max-w-3xl text-base leading-8 text-gray-500 dark:text-gray-300">
-            See which timesheets are ready, which records are incomplete,
-         
-            and which
-               <br/> items require action before payroll deadlines.
-          </p>
-        </div>
+            <h2 className="mt-4 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-5xl">
+              Weak timesheet records create payroll
+              <br className="hidden md:block" />
+              and billing risk
+            </h2>
 
-        {/* Controls List */}
-        <div className="mx-auto mt-16 max-w-5xl rounded-2xl bg-white p-8 shadow-sm  dark:bg-gray-900 ">
-          <div className="space-y-2">
-            {controls.map((item, index) => (
+            <p className="mx-auto mt-8 max-w-3xl text-base leading-8 text-gray-500 dark:text-gray-300">
+              Payroll and billing problems often start upstream — incomplete
+              timesheets, inconsistent approvals, disputed corrections, and
+              records that cannot be easily explained.
+            </p>
+          </div>
+
+          <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {problems.map((item, index) => (
               <div
                 key={index}
-                className=" pb-2 last:border-none last:pb-0 "
+                className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0_6px_18px_rgba(14,31,61,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
               >
-                <h3 className="text-lg font-bold text-slate-800 dark:text-white">
+                <h3 className="text-xl font-semibold text-slate-800 dark:text-white">
                   {item.title}
                 </h3>
 
-                <p className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-300">
+                <p className="mt-5 text-sm leading-7 text-gray-500 dark:text-gray-300">
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
-        </div>
-      </div>
-    </section>
- <section className="bg-white py-16 lg:py-12 dark:bg-gray-950">
-      <div className="mx-auto max-w-7xl px-6">
-        {/* Heading */}
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal-600">
-            Corrections
-          </p>
 
-          <h2 className="mt-5 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
-            Resolve corrections before they become
-            <br className="hidden md:block" />
-            payroll problems
-          </h2>
-
-          <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
-            ZoikoTime gives organizations a structured way to manage
-            corrections, review gaps, exceptions, and disputes before they
-            create downstream issues.
-          </p>
-        </div>
-
-        {/* Warning Card */}
-        <div className="mx-auto mt-14 max-w-4xl rounded-xl border border-orange-200 bg-yellow-50 p-6 dark:border-yellow-800 dark:bg-yellow-900/20">
-          <div className="flex items-start gap-4">
-            <AlertTriangle
-              size={20}
-              className="mt-0.5 shrink-0 text-yellow-800 dark:text-yellow-400"
-            />
-
-            <p className="text-sm leading-6 text-yellow-800 dark:text-yellow-200">
-              ZoikoTime helps organize workforce records, evidence, and review
-              workflows. It does{" "}
-              <span className="font-bold text-yellow-900 dark:text-yellow-100">
-                not
-              </span>{" "}
-              automatically determine wages owed, legal liability, tax
-              treatment, or disciplinary outcomes.
+          <div className="mt-16 text-center">
+            <p className="text-lg font-bold leading-8 text-gray-600 dark:text-gray-300">
+              The payroll system can only be as reliable as the workforce
+              records it
+              <br className="hidden md:block" />
+              receives.
             </p>
           </div>
         </div>
-      </div>
-    </section>
-    <section className="bg-gray-50 py-16 lg:py-12 dark:bg-gray-900">
-      <div className="mx-auto max-w-6xl px-6">
-        {/* Heading */}
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
-            Revenue Assurance
-          </p>
+      </section>
 
-          <h2 className="mt-6 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
-            Protect revenue with better time and billing
-            <br className="hidden md:block" />
-            support
-          </h2>
+      {/* READINESS WORKFLOW */}
+      <section className="bg-white py-10 dark:bg-gray-950 lg:py-11">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal-600">
+              Readiness Workflow
+            </p>
 
-          <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
-            For professional services, agencies, consulting, and project-based
-            organizations, timesheet integrity directly affects revenue.
-          </p>
+            <h2 className="mt-4 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
+              Move timesheets from capture to payroll
+              <br className="hidden md:block" />
+              readiness
+            </h2>
+
+            <p className="mx-auto mt-8 max-w-3xl text-base leading-8 text-gray-500 dark:text-gray-300">
+              ZoikoTime helps teams move workforce records through a structured
+              readiness workflow before payroll or billing handoff.
+            </p>
+          </div>
+
+          <div className="relative mx-auto mt-16 max-w-4xl">
+            <div className="space-y-10">
+              {workflowSteps.map((item) => (
+                <div key={item.step} className="relative gap-8">
+                  <div className="h-10 w-10 text-sm font-bold text-white shadow-lg">
+                    {item.step}
+                  </div>
+
+                  <div>
+                    <h3 className="mt-2 text-lg font-bold text-slate-800 dark:text-white">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-2 text-base leading-7 text-gray-500 dark:text-gray-300">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <p className="text-base leading-8 text-gray-500 dark:text-gray-300">
+              Readiness states:{" "}
+              <span className="font-bold text-slate-700 dark:text-white">
+                Ready
+              </span>{" "}
+              · Needs Manager Review · Needs Worker Action ·
+              <br className="hidden md:block" />
+              Exception Open · Payroll Hold.
+            </p>
+          </div>
         </div>
+      </section>
 
-        {/* Cards */}
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {revenueCards.map((card, index) => (
-            <div
-              key={index}
-              className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_6px_18px_rgba(14,31,61,0.05),0_1px_3px_rgba(14,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800"
-            >
-              <h3 className="text-lg font-semibold leading-7 text-slate-800 dark:text-white">
-                {card.title}
-              </h3>
+      {/* CONTROLS */}
+      <section className="bg-gray-50 py-10 dark:bg-gray-900 lg:py-10">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal-600">
+              Controls
+            </p>
 
-              <p className="mt-5 text-sm leading-7 text-gray-500 dark:text-gray-300">
-                {card.description}
+            <h2 className="mt-4 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
+              Control completeness, approval,
+              <br />
+              and cutoff risk
+            </h2>
+
+            <p className="mx-auto mt-8 max-w-3xl text-base leading-8 text-gray-500 dark:text-gray-300">
+              See which timesheets are ready, which records are incomplete, and
+              which items require action before payroll deadlines.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-16 max-w-5xl rounded-2xl bg-white p-8 shadow-sm dark:bg-gray-900">
+            <div className="space-y-2">
+              {controls.map((item, index) => (
+                <div key={index} className="pb-2">
+                  <h3 className="text-lg font-bold text-slate-800 dark:text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-300">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CORRECTIONS */}
+      <section className="bg-white py-16 dark:bg-gray-950 lg:py-12">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-teal-600">
+              Corrections
+            </p>
+
+            <h2 className="mt-5 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
+              Resolve corrections before they become
+              <br className="hidden md:block" />
+              payroll problems
+            </h2>
+
+            <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
+              ZoikoTime gives organizations a structured way to manage
+              corrections, review gaps, exceptions, and disputes before they
+              create downstream issues.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-14 max-w-4xl rounded-xl border border-orange-200 bg-yellow-50 p-6 dark:border-yellow-800 dark:bg-yellow-900/20">
+            <div className="flex items-start gap-4">
+              <AlertTriangle
+                size={20}
+                className="mt-0.5 shrink-0 text-yellow-800 dark:text-yellow-400"
+              />
+
+              <p className="text-sm leading-6 text-yellow-800 dark:text-yellow-200">
+                ZoikoTime helps organize workforce records, evidence, and
+                review workflows. It does{" "}
+                <span className="font-bold text-yellow-900 dark:text-yellow-100">
+                  not
+                </span>{" "}
+                automatically determine wages owed, legal liability, tax
+                treatment, or disciplinary outcomes.
               </p>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
-     <section className="bg-white py-16 lg:py-24 dark:bg-gray-950">
-      <div className="mx-auto max-w-6xl px-6">
-        {/* Heading */}
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
-            Evidence
-          </p>
+      </section>
 
-          <h2 className="mt-6 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
-            Keep payroll and timesheet records
-            <br className="hidden md:block" />
-            reviewable
-          </h2>
+      {/* REVENUE ASSURANCE */}
+      <section className="bg-gray-50 py-16 dark:bg-gray-900 lg:py-12">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
+              Revenue Assurance
+            </p>
 
-          <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
-            When records affect pay, billing, audits, or disputes,
-            organizations need more than summary totals.
-          </p>
-        </div>
+            <h2 className="mt-6 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
+              Protect revenue with better time and billing
+              <br className="hidden md:block" />
+              support
+            </h2>
 
-        {/* Evidence List */}
-        <div className="mx-auto mt-16 max-w-5xl">
-          <div className="space-y-3">
-            {evidenceItems.map((item, index) => (
+            <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
+              For professional services, agencies, consulting, and
+              project-based organizations, timesheet integrity directly
+              affects revenue.
+            </p>
+          </div>
+
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {revenueCards.map((card, index) => (
               <div
                 key={index}
-                className=" pb-3"
+                className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_6px_18px_rgba(14,31,61,0.05),0_1px_3px_rgba(14,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800"
               >
-                <h3 className="text-sm font-bold text-slate-700 dark:text-white">
-                  {item.title}
+                <h3 className="text-lg font-semibold leading-7 text-slate-800 dark:text-white">
+                  {card.title}
                 </h3>
 
-                <p className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-300">
-                  {item.description}
+                <p className="mt-5 text-sm leading-7 text-gray-500 dark:text-gray-300">
+                  {card.description}
                 </p>
               </div>
             ))}
           </div>
         </div>
-      </div>
-    </section>
-  
+      </section>
 
+      {/* EVIDENCE */}
+      <section className="bg-white py-16 dark:bg-gray-950 lg:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
+              Evidence
+            </p>
 
-    <section className="bg-gray-50 py-16 lg:py-24 dark:bg-gray-900">
-      <div className="mx-auto max-w-6xl px-6">
-        {/* Heading */}
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
-            Operating Model
+            <h2 className="mt-6 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
+              Keep payroll and timesheet records
+              <br className="hidden md:block" />
+              reviewable
+            </h2>
+
+            <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
+              When records affect pay, billing, audits, or disputes,
+              organizations need more than summary totals.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-16 max-w-5xl">
+            <div className="space-y-3">
+              {evidenceItems.map((item, index) => (
+                <div key={index} className="pb-3">
+                  <h3 className="text-sm font-bold text-slate-700 dark:text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-base leading-7 text-gray-600 dark:text-gray-300">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OPERATING MODEL */}
+      <section className="bg-gray-50 py-16 dark:bg-gray-900 lg:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
+              Operating Model
+            </p>
+
+            <h2 className="mt-6 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
+              Designed to support the systems you already
+              <br className="hidden md:block" />
+              use
+            </h2>
+
+            <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
+              ZoikoTime fits into your existing payroll, finance, HR,
+              operations, legal, and IT workflows without replacing the
+              systems you already rely on.
+            </p>
+          </div>
+
+          <div className="mt-16 grid gap-8 md:grid-cols-3 xl:grid-cols-3">
+            {operatingModelCards.map((card, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_6px_18px_rgba(14,31,61,0.05),0_1px_3px_rgba(14,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800"
+              >
+                <p className="text-xs font-semibold uppercase tracking-widest text-teal-600">
+                  {card.label}
+                </p>
+
+                <h3 className="mt-4 text-xl font-semibold text-slate-800 dark:text-white">
+                  {card.title}
+                </h3>
+
+                <p className="mt-6 text-sm leading-7 text-gray-500 dark:text-gray-300">
+                  {card.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-white py-16 dark:bg-gray-950 lg:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+
+          <div className="text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
+              Questions
+            </p>
+
+            <h2 className="mt-6 text-3xl font-bold text-slate-800 dark:text-white lg:text-4xl">
+              Payroll &amp; Timesheet Integrity FAQs
+            </h2>
+          </div>
+
+          <div className="mx-auto mt-14 max-w-5xl space-y-3">
+            {payrollFaqs.map((faq, index) => {
+              const isOpen = openFaq === index;
+
+              return (
+                <div
+                  key={faq.question}
+                  className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-gray-800 dark:bg-gray-900"
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(index)}
+                    aria-expanded={isOpen}
+                    className="flex w-full items-center justify-between gap-5 px-6 py-5 text-left transition-colors hover:bg-gray-50 dark:hover:bg-gray-800"
+                  >
+                    <div className="flex items-center gap-4">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center text-xl font-medium leading-none text-teal-600">
+                        {isOpen ? "−" : "+"}
+                      </span>
+
+                      <span className="text-base font-medium text-slate-700 dark:text-gray-200">
+                        {faq.question}
+                      </span>
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <div className="border-t border-slate-200 px-6 pb-6 pt-4 dark:border-gray-800">
+                      <p className="pl-10 text-sm leading-7 text-gray-600 dark:text-gray-300">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-gradient-to-r from-slate-800 to-blue-950 py-20 dark:from-slate-900 dark:to-slate-950">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+
+          <p className="text-base font-semibold uppercase tracking-[0.16em] text-teal-500">
+            Strengthen Payroll Inputs
           </p>
 
-          <h2 className="mt-6 text-3xl font-bold leading-tight text-slate-800 dark:text-white lg:text-4xl">
-            Designed to support the systems you already
+          <h2 className="mt-8 text-4xl font-bold leading-tight text-white lg:text-5xl">
+            Strengthen the workforce records behind
             <br className="hidden md:block" />
-            use
+            payroll and billing
           </h2>
 
-          <p className="mt-6 text-base leading-7 text-gray-500 dark:text-gray-300">
-            ZoikoTime fits into your existing payroll, finance, HR, operations,
-            legal, and IT workflows without replacing the systems you already
-            rely on.
+          <p className="mx-auto mt-8 max-w-2xl text-base leading-7 text-white/80">
+            Talk with the ZoikoTime team about timesheet completeness,
+            approval control, corrections, billing support, and audit-ready
+            evidence.
           </p>
-        </div>
 
-        {/* Cards */}
-        <div className="mt-16 grid gap-8 md:grid-cols-3 xl:grid-cols-3">
-          {operatingModelCards.map((card, index) => (
-            <div
-              key={index}
-              className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_6px_18px_rgba(14,31,61,0.05),0_1px_3px_rgba(14,31,61,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800"
+          <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
+              href="/request-a-demo"
+              className="rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700"
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-teal-600">
-                {card.label}
-              </p>
+              Get a Demo
+            </Link>
 
-              <h3 className="mt-4 text-xl font-semibold text-slate-800 dark:text-white">
-                {card.title}
-              </h3>
-
-              <p className="mt-6 text-sm leading-7 text-gray-500 dark:text-gray-300">
-                {card.description}
-              </p>
-            </div>
-          ))}
+            <Link
+              href="/contact-sales"
+              className="rounded-[10px] border border-white/30 bg-white/10 px-8 py-3 text-base font-semibold text-white transition hover:bg-white/20"
+            >
+              Contact Sales
+            </Link>
+          </div>
         </div>
-      </div>
-    </section>
-<section className="bg-white py-16 lg:py-24 dark:bg-gray-950">
-  <div className="mx-auto max-w-6xl px-6">
-    {/* Heading */}
-    <div className="text-center">
-      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-teal-600">
-        Questions
-      </p>
-
-      <h2 className="mt-6 text-3xl font-bold text-slate-800 dark:text-white lg:text-4xl">
-        Payroll & Timesheet Integrity FAQs
-      </h2>
-    </div>
-
-    {/* FAQ */}
-    <div className="mt-14 rounded-2xl ">
-      {payrollFaqs.map((faq, index) => (
-        <button
-          key={index}
-          className="flex w-full items-center justify-between  px-6 py-2 text-left "
-        >
-          <span className="text-base text-slate-700 dark:text-gray-200">
-            . {faq}
-          </span>
-        </button>
-      ))}
-    </div>
-  </div>
-</section>
-<section className="bg-gradient-to-r from-slate-800 to-blue-950 py-20 dark:from-slate-900 dark:to-slate-950">
-  <div className="mx-auto max-w-5xl px-6 text-center">
-    {/* Label */}
-    <p className="text-base font-semibold uppercase tracking-[0.16em] text-teal-500">
-      Strengthen Payroll Inputs
-    </p>
-
-    {/* Heading */}
-    <h2 className="mt-8 text-4xl font-bold leading-tight text-white lg:text-5xl">
-      Strengthen the workforce records behind
-      <br className="hidden md:block" />
-      payroll and billing
-    </h2>
-
-    {/* Description */}
-    <p className="mx-auto mt-8 max-w-2xl text-base leading-7 text-white/80">
-      Talk with the ZoikoTime team about timesheet completeness,
-      approval control, corrections, billing support, and
-      audit-ready evidence.
-    </p>
-
-    {/* Buttons */}
-    <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
-
-      <Link
-  href="/request-a-demo"
-  className="rounded-[10px] bg-teal-600 px-8 py-3 text-base font-semibold text-white shadow-[0_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700"
->
-  Get a Demo
-</Link>
-
-<Link
-  href="/contact-sales"
-  className="rounded-[10px] border border-white/30 bg-white/10 px-8 py-3 text-base font-semibold text-white transition hover:bg-white/20"
->
-  Contact Sales
-</Link>
-
-    </div>
-  </div>
-</section>
+      </section>
     </>
   );
 }

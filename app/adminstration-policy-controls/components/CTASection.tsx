@@ -47,7 +47,7 @@ export default function CTASection() {
           </Link>
 
           <Link
-            href="https://getzoikotime.com/"
+            href="/explore-zoikotime"
             className="flex h-11 w-full sm:w-auto items-center justify-center rounded-[10px] bg-white/10 px-6 text-base font-semibold text-white outline outline-1 outline-offset-[-1px] outline-white/30 backdrop-blur-sm transition-all hover:bg-white/20 active:scale-[0.98]"
           >
             Explore ZoikoTime

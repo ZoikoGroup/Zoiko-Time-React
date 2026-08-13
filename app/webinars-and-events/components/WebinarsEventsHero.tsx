@@ -60,14 +60,14 @@ export default function WebinarsEventsHero() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
             <Link
-              href="#"
+              href="#upcoming-event"
               className="inline-flex h-12 items-center justify-center rounded-full bg-teal-600 px-8 text-sm font-semibold text-white transition hover:bg-teal-500"
             >
               Browse Upcoming Events
             </Link>
 
             <Link
-              href="#"
+              href="#get-event-update"
               className="inline-flex h-12 items-center justify-center rounded-full border border-white/40 bg-white/10 px-8 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
             >
               Get Event Updates

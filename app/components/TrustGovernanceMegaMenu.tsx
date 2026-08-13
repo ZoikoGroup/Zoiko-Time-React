@@ -315,7 +315,7 @@ export default function TrustGovernanceMegaMenu({
               <MenuItem
                 icon="responsible.png"
                 title="Responsible Disclosure"
-                href="#"
+                href="/responsible-disclosure"
                  onLinkClick={onLinkClick}
               />
 

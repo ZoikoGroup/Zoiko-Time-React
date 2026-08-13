@@ -142,25 +142,32 @@ export default function CaseStudyHero() {
 </Link>
 
 
-          <button
-            className="
-              w-full
-              sm:w-52
-              h-12
-              rounded-md
-              bg-white
-              dark:bg-slate-900
-              border
-              border-slate-200
-              dark:border-slate-700
-              text-slate-700
-              dark:text-slate-200
-              text-base
-              font-medium
-            "
-          >
-            Explore Case Studies
-          </button>
+         <a
+  href="#case-studies"
+  className="
+    flex
+    w-full
+    sm:w-52
+    h-12
+    items-center
+    justify-center
+    rounded-md
+    bg-white
+    dark:bg-slate-900
+    border
+    border-slate-200
+    dark:border-slate-700
+    text-slate-700
+    dark:text-slate-200
+    text-base
+    font-medium
+    transition
+    hover:bg-slate-50
+    dark:hover:bg-slate-800
+  "
+>
+  Explore Case Studies
+</a>
 
         </div>
 

@@ -119,13 +119,13 @@ export default function RemoteDistributedOperations() {
             <p className="text-base text-slate-600 leading-relaxed max-w-[644px]">
               Workers can see the records that describe their work, add context, and request corrections. That is what makes a record defensible later — not the amount of activity captured.
             </p>
-            <a
+            {/* <a
               href="#"
               className="inline-flex items-center gap-1.5 text-emerald-600 hover:text-emerald-700 font-bold text-sm pt-3 transition-colors hover:underline self-start group"
             >
               <span>Anti-Surveillance Principles</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </a> */}
           </div>
 
         </div>

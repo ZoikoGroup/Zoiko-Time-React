@@ -117,7 +117,7 @@ export default function ReportingTrustSection() {
             Need document-level evidence packs or controlled/customer-specific resources?
           </p>
           <Link
-            href="#"
+            href="/evidence-ledger"
             className="px-6 py-3 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 text-sm font-semibold rounded-full border border-slate-200 dark:border-slate-700 shadow-xs transition-all whitespace-nowrap"
           >
             Open Evidence Center

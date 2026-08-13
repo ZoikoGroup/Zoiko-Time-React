@@ -1,17 +1,41 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 
 const faqs = [
-  "Is this employee surveillance?",
-  "What does ZoikoTime actually verify?",
-  "How are exceptions handled?",
-  "Does activity context prove productivity?",
+  {
+    question: "Is this employee surveillance?",
+    answer:
+      "No. ZoikoTime is designed for accountable time and activity verification, not invasive employee surveillance. It avoids spyware, keystroke monitoring, and continuous behavioral tracking. Information is used within defined permissions and with appropriate worker transparency.",
+  },
+  {
+    question: "What does ZoikoTime actually verify?",
+    answer:
+      "ZoikoTime verifies configured workforce records such as time, attendance, work activity context, and related events. The information available for verification depends on the organization's policies, enabled features, integrations, and permissions.",
+  },
+  {
+    question: "How are exceptions handled?",
+    answer:
+      "Exceptions are surfaced for review rather than automatically treated as misconduct. Authorized users can investigate the available context, apply organizational policies, document the outcome, and escalate the matter when human judgment is required.",
+  },
+  {
+    question: "Does activity context prove productivity?",
+    answer:
+      "No. Activity context should not be treated as a definitive measure of productivity. It provides additional information that can help authorized users understand a workforce event or exception, while productivity and employment decisions require appropriate human judgment and context.",
+  },
 ];
 
 export default function ResponsibleUse() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <section className="bg-white dark:bg-slate-950 py-16 px-6">
-      <div className="max-w-[1180px] mx-auto">
+    <section className="bg-white px-6 py-16 dark:bg-slate-950">
+      <div className="mx-auto max-w-[1180px]">
 
         {/* Top Section */}
         <div className="text-center">
@@ -19,20 +43,21 @@ export default function ResponsibleUse() {
             Responsible Use
           </p>
 
-          <h2 className="mt-4 text-3xl md:text-4xl font-bold text-slate-800 dark:text-white">
+          <h2 className="mt-4 text-3xl font-bold text-slate-800 dark:text-white md:text-4xl">
             Verification must be responsible
           </h2>
 
-          <p className="mt-5 text-base text-gray-500 dark:text-gray-400 max-w-3xl mx-auto leading-7">
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-gray-500 dark:text-gray-400">
             ZoikoTime is built for accountability without defaulting to
             invasive surveillance.
           </p>
         </div>
 
         {/* Information Box */}
-        <div className="mt-10 max-w-[760px] mx-auto rounded-xl border border-orange-200 dark:border-orange-700 bg-yellow-50 dark:bg-yellow-950/30 p-6 flex items-start gap-4">
+        <div className="mx-auto mt-10 flex max-w-[760px] items-start gap-4 rounded-xl border border-orange-200 bg-yellow-50 p-6 dark:border-orange-700 dark:bg-yellow-950/30">
+
           {/* Icon */}
-          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-yellow-700 dark:border-yellow-400 text-yellow-700 dark:text-yellow-300 font-bold text-sm">
+          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 border-yellow-700 text-sm font-bold text-yellow-700 dark:border-yellow-400 dark:text-yellow-300">
             !
           </div>
 
@@ -43,7 +68,7 @@ export default function ResponsibleUse() {
             transparency. Learn more about{" "}
             <Link
               href="/responsible-ai"
-              className="font-semibold text-teal-700 dark:text-teal-400 cursor-pointer hover:underline"
+              className="font-semibold text-teal-700 hover:underline dark:text-teal-400"
             >
               Responsible AI
             </Link>
@@ -58,25 +83,46 @@ export default function ResponsibleUse() {
               Questions
             </p>
 
-            <h2 className="mt-4 text-3xl md:text-4xl font-bold text-slate-800 dark:text-white">
+            <h2 className="mt-4 text-3xl font-bold text-slate-800 dark:text-white md:text-4xl">
               Time &amp; Activity Verification FAQs
             </h2>
           </div>
 
-          <div className="mt-10 max-w-5xl mx-auto divide-y divide-slate-200 dark:divide-slate-700 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900">
-            {faqs.map((faq, index) => (
-              <button
-                key={index}
-                type="button"
-                className="w-full flex items-center gap-4 px-6 py-5 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-              >
-                <span className="text-teal-600 font-semibold text-lg">•</span>
+          {/* FAQ List */}
+          <div className="mx-auto mt-10 max-w-5xl divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white dark:divide-slate-700 dark:border-slate-700 dark:bg-slate-900">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
 
-                <span className="text-base text-gray-700 dark:text-gray-200">
-                  {faq}
-                </span>
-              </button>
-            ))}
+              return (
+                <div key={faq.question}>
+
+                  {/* Question */}
+                  <button
+                    type="button"
+                    onClick={() => toggleFAQ(index)}
+                    aria-expanded={isOpen}
+                    className="flex w-full items-center gap-4 px-6 py-5 text-left transition-colors hover:bg-slate-50 dark:hover:bg-slate-800"
+                  >
+                    <span className="shrink-0 text-lg font-semibold text-teal-600">
+                      {isOpen ? "−" : "+"}
+                    </span>
+
+                    <span className="text-base text-gray-700 dark:text-gray-200">
+                      {faq.question}
+                    </span>
+                  </button>
+
+                  {/* Answer */}
+                  {isOpen && (
+                    <div className="px-6 pb-6 pl-[52px]">
+                      <p className="text-sm leading-6 text-gray-600 dark:text-gray-300">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
 

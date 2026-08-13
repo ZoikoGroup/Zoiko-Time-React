@@ -1,11 +1,14 @@
 import React from "react";
+import Link from "next/link";
 
 export default function StatusSubscription() {
   return (
-    <section 
-    id ="subscribe-updates"
-    className="bg-slate-50 px-6 py-16 dark:bg-slate-950 lg:px-8 lg:py-24">
+    <section
+      id="subscribe-updates"
+      className="bg-slate-50 px-6 py-16 dark:bg-slate-950 lg:px-8 lg:py-24"
+    >
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.55fr_1fr]">
+
         {/* Subscribe Card */}
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-[0px_10px_30px_rgba(14,31,61,0.10)] dark:border-slate-800 dark:bg-slate-900">
           <h2 className="text-2xl font-bold text-slate-800 dark:text-white">
@@ -28,7 +31,7 @@ export default function StatusSubscription() {
               <input
                 type="email"
                 placeholder="you@company.com"
-                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-slate-800 placeholder:text-slate-400 outline-none transition focus:border-teal-600 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder:text-slate-500"
+                className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-slate-800 outline-none placeholder:text-slate-400 transition focus:border-teal-600 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:placeholder:text-slate-500"
               />
             </div>
 
@@ -45,7 +48,7 @@ export default function StatusSubscription() {
               </span>
             </label>
 
-            {/* Button */}
+            {/* Subscribe Button */}
             <button
               type="submit"
               className="w-full rounded-lg bg-teal-600 px-6 py-3 text-base font-semibold text-white shadow-[0px_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700"
@@ -67,15 +70,20 @@ export default function StatusSubscription() {
             updates is the fastest way to receive status information.
           </p>
 
-          <button className="mt-8 w-full rounded-lg border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:hover:bg-slate-800">
+          {/* Help Center Link */}
+          <Link
+            href="/help-center"
+            className="mt-8 flex w-full items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-800 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:hover:bg-slate-800"
+          >
             Visit Help Center
-          </button>
+          </Link>
 
           <p className="mt-6 text-xs leading-6 text-slate-500 dark:text-slate-400">
             Please avoid opening duplicate tickets during a broad incident —
             subscribe above for the latest updates.
           </p>
         </div>
+
       </div>
     </section>
   );

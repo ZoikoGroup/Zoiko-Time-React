@@ -72,7 +72,7 @@ export default function Ecosystem() {
           </p>
 
           <Link
-  href="/product"
+  href="/integration"
   className="
     mt-10
     inline-flex

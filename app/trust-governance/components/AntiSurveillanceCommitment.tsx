@@ -35,17 +35,18 @@ export default function AntiSurveillanceCommitment() {
               </p>
 
               {/* Button */}
-              <button
+              {/* <button
                 type="button"
+                aria-label="Read Anti-Surveillance Principles"
                 className="mt-8 inline-flex items-center gap-2 font-semibold text-[#44B97A] transition-colors hover:text-[#3EAA70]"
               >
-                Read Anti-Surveillance Principles
+                 Read Anti-Surveillance Principles 
 
                 <ArrowRight
                   className="h-4 w-4"
                   strokeWidth={2.5}
                 />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

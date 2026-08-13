@@ -132,7 +132,7 @@ export default function ChooseYourPath() {
 
 
           <Link
-            href="https://getzoikotime.com/"
+            href="/explore-zoikotime"
             className="
               rounded-[10px]
               border

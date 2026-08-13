@@ -114,7 +114,7 @@ export default function DistributedTeamsSection() {
             <p className="max-w-[644px] text-slate-600 dark:text-slate-300 text-base leading-relaxed">
               Workers can see the records that describe their work, add context, and request corrections. That is what makes a record defensible three months later &mdash; not the amount of activity captured.
             </p>
-            <a
+            {/* <a
               href="#anti-surveillance"
               className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors group pt-1"
             >
@@ -122,7 +122,7 @@ export default function DistributedTeamsSection() {
               <span className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
                 &rarr;
               </span>
-            </a>
+            </a> */}
           </div>
 
         </div>

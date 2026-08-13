@@ -73,12 +73,12 @@ export default function DisputeReview() {
               Talk to Sales
             </button></a>
 
-            <button
+            {/* <button
               type="button"
               className="px-2 py-2 text-sm font-semibold leading-6 text-teal-700 dark:text-teal-400"
             >
               See the review workflow →
-            </button>
+            </button> */}
           </div>
         </div>
 

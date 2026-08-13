@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function UseZoikoTime() {
@@ -53,8 +54,8 @@ export default function UseZoikoTime() {
               </div>
 
               {/* Get Started */}
-              <button
-                type="button"
+              <Link
+                href="/getting-started"
                 className="mt-8 inline-flex items-center gap-1 text-sm font-semibold leading-5 text-emerald-700 transition hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
               >
                 Get Started
@@ -63,7 +64,7 @@ export default function UseZoikoTime() {
                   className="h-4 w-4"
                   strokeWidth={1.8}
                 />
-              </button>
+              </Link>
             </div>
           </div>
 
