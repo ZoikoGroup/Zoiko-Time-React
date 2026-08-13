@@ -135,7 +135,7 @@ const useItems = [
   {
     title: "Getting Started",
     icon: "getting.png",
-    href: "#"
+    href: "/getting-started"
   },
   {
     title: "Help Center",

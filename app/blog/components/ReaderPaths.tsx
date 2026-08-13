@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const paths = [
@@ -8,6 +9,7 @@ const paths = [
     description:
       "Learn how ZoikoTime differs from basic time tracking and supports workforce assurance, evidence, and governance.",
     action: "Start Evaluation →",
+    href: "/explore-zoikotime",
   },
   {
     image: "/ReaderPaths/security.png",
@@ -15,6 +17,7 @@ const paths = [
     description:
       "Explore responsible AI, worker transparency, access control, and security review resources.",
     action: "Review Trust Resources →",
+    href: "/trust-and-governance",
   },
   {
     image: "/ReaderPaths/planning.png",
@@ -22,6 +25,7 @@ const paths = [
     description:
       "Practical guidance on rollout planning, admin readiness, and worker communication.",
     action: "Plan Implementation →",
+    href: "/implementation-services",
   },
   {
     image: "/ReaderPaths/payroll.png",
@@ -29,6 +33,7 @@ const paths = [
     description:
       "Strengthen time records, review workflows, approvals, and audit trails for payroll and billing confidence.",
     action: "Explore Topics →",
+    href: "/payroll-and-timesheet-integrity",
   },
 ];
 
@@ -36,6 +41,7 @@ export default function ReaderPaths() {
   return (
     <section className="bg-white py-20 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-5 flex items-center justify-center gap-3">
@@ -44,6 +50,8 @@ export default function ReaderPaths() {
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-teal-600">
               Popular Reader Paths
             </span>
+
+            <div className="h-px w-6 bg-teal-600" />
           </div>
 
           <h2 className="text-4xl font-semibold leading-tight text-slate-900 dark:text-white">
@@ -60,14 +68,29 @@ export default function ReaderPaths() {
           {paths.map((path) => (
             <div
               key={path.title}
-              className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-300 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              className="
+                rounded-2xl
+                border
+                border-slate-200
+                bg-white
+                p-6
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:border-teal-300
+                hover:shadow-xl
+                dark:border-slate-700
+                dark:bg-slate-900
+              "
             >
+
               {/* Icon */}
               <div className="relative h-12 w-12">
                 <Image
                   src={path.image}
                   alt={path.title}
                   fill
+                  sizes="48px"
                   className="object-contain"
                 />
               </div>
@@ -83,12 +106,28 @@ export default function ReaderPaths() {
               </p>
 
               {/* CTA */}
-              <button className="mt-6 text-sm font-bold text-teal-600 transition hover:text-teal-700">
+              <Link
+                href={path.href}
+                className="
+                  mt-6
+                  inline-flex
+                  items-center
+                  text-sm
+                  font-bold
+                  text-teal-600
+                  transition
+                  hover:text-teal-700
+                  dark:text-teal-400
+                  dark:hover:text-teal-300
+                "
+              >
                 {path.action}
-              </button>
+              </Link>
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

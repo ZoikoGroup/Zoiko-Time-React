@@ -22,7 +22,7 @@ const downloads = [
   {
     name: "Linux",
     icon: "/download-popup/Linux.png",
-    url: null,
+    url: "https://storage.googleapis.com/zoikotime-releases/Linux%20Build/ZoikoTime-linux.deb",
   },
 ];
 
@@ -39,7 +39,9 @@ export default function DownloadPopup({
 
         {/* Close Button */}
         <button
+          type="button"
           onClick={onClose}
+          aria-label="Close download popup"
           className="absolute right-5 top-5 rounded-full p-2 transition hover:bg-slate-100 dark:hover:bg-slate-800"
         >
           <X className="h-6 w-6 text-slate-700 dark:text-slate-300" />
@@ -57,11 +59,7 @@ export default function DownloadPopup({
               key={item.name}
               type="button"
               onClick={() => {
-                if (item.url) {
-                  window.location.href = item.url;
-                } else {
-                  alert(item.name + " build is coming soon.");
-                }
+                window.location.href = item.url;
               }}
               className="group flex flex-col items-center rounded-2xl p-5 transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800"
             >

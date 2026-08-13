@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const resources = [
   {
@@ -9,6 +10,7 @@ const resources = [
     description:
       "Everything procurement and executive teams need to evaluate workforce intelligence software.",
     link: "Read Guide →",
+    href: "/workforce-assurance",
   },
   {
     image: "/FeaturedResources/checklist.png",
@@ -17,6 +19,7 @@ const resources = [
     description:
       "A structured checklist for evaluating workforce intelligence platforms against enterprise deployment requirements.",
     link: "View Checklist →",
+    href: "/enterprise-readiness",
   },
   {
     image: "/FeaturedResources/governance.png",
@@ -25,6 +28,7 @@ const resources = [
     description:
       "How to deploy AI-assisted workforce tools with transparency, governance, and human oversight.",
     link: "Read Guide →",
+    href: "/responsible-ai",
   },
   {
     image: "/FeaturedResources/distribute.png",
@@ -33,6 +37,7 @@ const resources = [
     description:
       "Step-by-step setup, configuration, and rollout guidance for distributed and hybrid workforces.",
     link: "View Guide →",
+    href: "/implementation-services",
   },
 ];
 
@@ -40,6 +45,7 @@ export default function FeaturedResources() {
   return (
     <section className="bg-white py-20 transition-colors dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4">
+
         {/* Heading */}
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal-600">
@@ -61,14 +67,29 @@ export default function FeaturedResources() {
           {resources.map((item) => (
             <div
               key={item.title}
-              className="rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-500 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+              className="
+                rounded-2xl
+                border
+                border-slate-200
+                bg-white
+                p-6
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:border-teal-500
+                hover:shadow-xl
+                dark:border-slate-800
+                dark:bg-slate-900
+              "
             >
+
               {/* Image */}
               <div className="relative h-14 w-14">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
+                  sizes="56px"
                   className="object-contain"
                 />
               </div>
@@ -89,12 +110,28 @@ export default function FeaturedResources() {
               </p>
 
               {/* Link */}
-              <button className="mt-8 text-sm font-semibold text-teal-600 transition hover:text-teal-700 dark:hover:text-teal-400">
+              <Link
+                href={item.href}
+                className="
+                  mt-8
+                  inline-flex
+                  items-center
+                  text-sm
+                  font-semibold
+                  text-teal-600
+                  transition
+                  hover:text-teal-700
+                  dark:text-teal-400
+                  dark:hover:text-teal-300
+                "
+              >
                 {item.link}
-              </button>
+              </Link>
+
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

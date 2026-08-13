@@ -1,6 +1,5 @@
-import Payroll from "./payroll"
-export default function(){
-    return(
-        <Payroll/>
-    )
+import Payroll from "./payroll";
+
+export default function Page() {
+  return <Payroll />;
 }
