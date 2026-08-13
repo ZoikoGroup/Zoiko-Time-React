@@ -50,7 +50,7 @@ export default function TraceableWorkflowSection() {
             {/* Secondary Link */}
             <div className="pt-1">
               <a
-                href="https://getzoikotime.com/"
+                href="/explore-zoikotime"
                 className="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors group"
               >
                 <span>Explore ZoikoTime</span>

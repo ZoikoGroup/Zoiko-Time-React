@@ -23,14 +23,14 @@ export default function SecurityHero() {
           </p>
 
           <div className="flex flex-wrap items-center gap-3.5 pt-2">
-            <a
+            {/* <a
               href="/security-overview#architecture-table"
               className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base rounded-lg shadow-sm transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
             >
               Explore Security Controls
-            </a>
+            </a> */}
             <a
-              href="/security-overview#contact-security-team"
+              href="/contact"
               className="px-6 py-3 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 font-bold text-base rounded-lg border border-slate-200 dark:border-slate-800 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-400"
             >
               Request Security Review

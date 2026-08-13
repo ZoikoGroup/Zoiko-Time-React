@@ -43,7 +43,7 @@ export default function Hero() {
 
           {/* Secondary Button */}
           <Link
-  href="#"
+  href="/explore-zoikotime"
   className="
     inline-flex
     h-12
@@ -65,7 +65,7 @@ export default function Hero() {
     sm:w-56
   "
 >
-  Explore the Platform
+  Explore the platform
 </Link>
         </div>
       </div>

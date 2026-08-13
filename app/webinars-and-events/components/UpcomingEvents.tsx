@@ -36,7 +36,7 @@ const events = [
 export default function UpcomingEvents() {
   return (
     <section className="bg-slate-50 py-20 dark:bg-slate-950">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div id="upcoming-event" className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Heading */}
         <div className="mb-12">
           <div className="flex items-center gap-3">

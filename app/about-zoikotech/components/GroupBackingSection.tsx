@@ -65,7 +65,7 @@ export default function GroupBackingSection() {
         {/* Footer Link */}
         <div className="text-center">
           <a
-            href="#"
+            href="/explore-zoikotime"
             className="font-medium text-[#009D8C] transition hover:underline dark:text-teal-400"
           >
             Explore ZoikoTime Enterprise Readiness →

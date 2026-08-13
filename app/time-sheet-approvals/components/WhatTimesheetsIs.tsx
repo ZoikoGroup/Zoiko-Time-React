@@ -30,7 +30,8 @@ const principleCards: PrincipleCard[] = [
 ];
 
 const navigationTabs = [
-  { label: 'Anti-Surveillance Principles', href: '/responsible-ai' },
+  // { label: 'Anti-Surveillance Principles', href: '/responsible-ai' },
+  { label: '', href: '/responsible-ai' },
   { label: 'Human-in-Command Controls', href: '/human-in-command' },
   { label: 'Evidence Ledger', href: '#' },
 ];

@@ -62,7 +62,7 @@ export default function StageFive() {
             {/* CTA */}
             <div className="mt-8">
               <Link
-                href="#"
+                href="https://getzoikotime.com/"
                 className="inline-flex min-h-11 items-center justify-center rounded-[10px] border border-gray-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-800 transition hover:bg-gray-100 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
               >
                 Explore Reports &amp; Integrations
