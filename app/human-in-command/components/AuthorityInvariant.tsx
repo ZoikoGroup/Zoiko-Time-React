@@ -41,7 +41,7 @@ export default function AuthorityInvariant() {
             </Link>
 
             <Link
-              href="#mechanisms"
+              href="/classification-ai-boundaries"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/[0.28] px-6 py-3.5 text-base font-bold text-white transition hover:border-white/60"
             >
               <span>Classification &amp; AI boundaries</span>
