@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const ctas = [
   { label: "Explore product updates", href: "#latest-updates", primary: true },
-  { label: "Read Release Notes", href: "/product-documentation" },
-  { label: "Explore ZoikoTime", href: "/product" },
+  { label: "Read Release Notes", href: "/release-notes" },
+  { label: "Explore ZoikoTime", href: "/explore-zoikotime" },
 ];
 
 export default function UpdatesCta() {

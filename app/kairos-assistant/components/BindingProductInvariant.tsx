@@ -28,12 +28,13 @@ export default function BindingProductInvariant() {
 
         {/* Call to Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3.5 pt-3 w-full sm:w-auto">
-          <Link
+          {/* <Link
             href="/responsible-ai"
+            aria-label="Read Anti-Surveillance Principles"
             className="w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 text-white font-bold text-base rounded-lg transition-colors cursor-pointer text-center"
           >
-            Read Anti-Surveillance Principles
-          </Link>
+              Read Anti-Surveillance Principles
+          </Link> */}
 
           <Link
             href="/trust-center"

@@ -28,7 +28,7 @@ export default function PilotScorecard() {
           />
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button
         <div className="flex justify-center pt-2">
           <Link
             href="/request-enterprise-demo"
@@ -36,7 +36,7 @@ export default function PilotScorecard() {
           >
             Request an operational readiness review
           </Link>
-        </div>
+        </div> */}
 
       </div>
     </section>

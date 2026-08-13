@@ -43,7 +43,7 @@ export default function UpdatesHero() {
               </Link>
 
               <Link
-                href="/product-documentation"
+                href="/release-notes"
                 className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-7 py-3.5 text-sm font-semibold text-slate-800 transition hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
               >
                 Read Release Notes

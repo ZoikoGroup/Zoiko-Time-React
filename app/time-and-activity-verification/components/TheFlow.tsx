@@ -218,7 +218,7 @@ export default function TheFlow() {
   </span>
 
   <Link
-    href="/workforce-assurance"
+    href="/reporting-and-workforce-analytics"
     className="
       text-teal-700
       dark:text-teal-400

@@ -141,7 +141,7 @@ export default function SupportReadiness() {
         <div className="mt-8 flex flex-col justify-center gap-3.5 sm:flex-row">
 
           <Link
-            href="#"
+            href="/enterpise-support"
             className="inline-flex items-center justify-center rounded-lg border border-stone-200 bg-white px-6 py-3.5 text-base font-bold leading-6 text-sky-950 transition hover:border-sky-950 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-slate-500"
           >
             Enterprise Support
