@@ -133,7 +133,7 @@ export default function ResponsibleAI() {
         {/* CTA */}
         <div className="mt-10 text-center">
           <a
-            href="#"
+            href="/responsible-ai"
             className="text-sm font-semibold text-[#00C6A9] transition-colors hover:text-teal-600 dark:hover:text-teal-300"
           >
             Learn more about Responsible AI →

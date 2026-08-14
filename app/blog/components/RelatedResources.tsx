@@ -1,29 +1,32 @@
-import React from "react";
+import Link from "next/link";
 
 const resources = [
   {
     title: "Product Documentation",
     action: "View Docs →",
+    href: "/product-documentation",
   },
   {
     title: "Implementation Guide",
     action: "View Guide →",
+    href: "/implementation-guide",
   },
   {
     title: "Responsible AI",
     action: "View Policy →",
+    href: "/responsible-ai",
   },
   {
     title: "Security Addendum",
     action: "View Security →",
+    href: "/security-addendum",
   },
 ];
 
 export default function RelatedResources() {
   return (
-    <section className="bg-slate-100 py-20 dark:bg-slate-900 transition-colors">
+    <section className="bg-slate-100 py-20 transition-colors dark:bg-slate-900">
       <div className="mx-auto max-w-7xl px-4">
-
         <div className="grid gap-16 lg:grid-cols-2">
 
           {/* Left */}
@@ -42,9 +45,12 @@ export default function RelatedResources() {
                     {item.title}
                   </h3>
 
-                  <button className="text-xs font-bold text-teal-600 hover:text-teal-700 dark:hover:text-teal-400">
+                  <Link
+                    href={item.href}
+                    className="text-xs font-bold text-teal-600 transition hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300"
+                  >
                     {item.action}
-                  </button>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -63,7 +69,6 @@ export default function RelatedResources() {
             </p>
 
             <form className="mt-8 space-y-5">
-
               <input
                 type="email"
                 placeholder="Your business email address"

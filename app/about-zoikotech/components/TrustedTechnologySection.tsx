@@ -42,12 +42,14 @@ export default function TrustedTechnologySection() {
             usability, governance, scalability, and responsible innovation.
           </p>
 
-          <a
-            href="#"
-            className="font-medium text-[#009D8C] transition hover:underline dark:text-teal-400"
-          >
-            Visit ZoikoTech.com for the broader company portfolio ↗
-          </a>
+          {/* 
+<a 
+  href="#" 
+  className="font-medium text-[#009D8C] transition hover:underline dark:text-teal-400" 
+>
+  Visit ZoikoTech.com for the broader company portfolio ↗ 
+</a>
+*/}
         </div>
 
         {/* Right Cards */}

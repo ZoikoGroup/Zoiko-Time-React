@@ -107,7 +107,7 @@ const learnItems = [
   {
     title: "Resource Center",
     icon: "resource.png",
-    href: "#"
+    href: "/resource-center"
   },
   {
   title: "Blog & Insights",

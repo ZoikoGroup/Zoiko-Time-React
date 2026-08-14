@@ -3,13 +3,14 @@ import Link from "next/link";
 
 const helpCards = [
   {
-    title: "Sign In or Account Access",
-    description:
-      "Password resets, workspace access, login errors, SSO issues, verification emails, locked accounts, and role access.",
-    link: "Get Login Help →",
-    href: "/identity-access-management",
-    image: "/QuikHelp/access.svg",
-  },
+  title: "Sign In or Account Access",
+  description:
+    "Password resets, workspace access, login errors, SSO issues, verification emails, locked accounts, and role access.",
+  link: "Get Login Help →",
+  href: "https://share.google/B6BDSBH0RczXJ7Mna",
+  image: "/QuikHelp/access.svg",
+},
+
   {
     title: "Time or Timesheet Help",
     description:
@@ -39,7 +40,7 @@ const helpCards = [
     description:
       "Invoices, payments, plans, trial questions, renewals, failed payments, and billing account access.",
     link: "Get Billing Help →",
-    href: "#",
+    href: "/pricing",
     image: "/QuikHelp/billing.svg",
   },
   {

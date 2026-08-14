@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-
+import Link from "next/link";
 
 const plans = [
   {
     name: "Verified",
-    monthly: "$10",
-    annual: "$8",
+    monthly: "$9",
+    annual: "$7",
+    annualYearly: "$84",
+    annualSavings: "Save 22% vs monthly",
     description:
       "Small teams needing verified time records and basic accountability.",
     features: [
@@ -17,17 +19,15 @@ const plans = [
       "90-day retention",
       "Basic reporting",
     ],
-    disabled: [
-      "Policy engine",
-      "Evidence packages",
-    ],
+    disabled: ["Policy engine", "Evidence packages"],
   },
-
 
   {
     name: "Governed",
-    monthly: "$20",
-    annual: "$16",
+    monthly: "$17",
+    annual: "$14",
+    annualYearly: "$168",
+    annualSavings: "Save 18% vs monthly",
     popular: true,
     description:
       "Growing teams needing policy governance, stronger evidence, and admin controls.",
@@ -42,11 +42,12 @@ const plans = [
     ],
   },
 
-
   {
     name: "Sovereign",
-    monthly: "$35",
-    annual: "$28",
+    monthly: "$29",
+    annual: "$23",
+    annualYearly: "$276",
+    annualSavings: "Save 21% vs monthly",
     description:
       "High-accountability, multi-jurisdiction, legal, compliance, or audit-sensitive teams.",
     features: [
@@ -59,11 +60,12 @@ const plans = [
     ],
   },
 
-
   {
     name: "Enterprise",
     monthly: "Custom",
     annual: "Custom",
+    annualYearly: null,
+    annualSavings: null,
     enterprise: true,
     description:
       "Large, regulated, complex, or procurement-led deployments requiring custom contracts.",
@@ -76,693 +78,375 @@ const plans = [
       "Custom SLA & support model",
     ],
   },
-
 ];
 
-
-
 export default function Pricing() {
-
-
-  const [billing,setBilling] =
-  useState<"monthly"|"annual">("annual");
-
-
+  const [billing, setBilling] = useState<"monthly" | "annual">("annual");
 
   return (
-
-<section
-className="
-w-full
-bg-white
-dark:bg-slate-950
-py-20
-transition-colors
-"
->
-
-
-{/* HEADER */}
-
-<div
-className="
-mx-auto
-max-w-5xl
-text-center
-px-5
-"
->
-
-
-<p
-className="
-text-xs
-uppercase
-tracking-widest
-font-bold
-text-teal-900
-dark:text-teal-400
-"
->
-Pricing
-</p>
-
-
-
-<h1
-className="
-mt-5
-text-3xl
-sm:text-4xl
-lg:text-5xl
-font-black
-text-gray-900
-dark:text-white
-"
->
-Start free. Upgrade when ready.
-</h1>
-
-
-
-
-<p
-className="
-mt-5
-text-sm
-sm:text-base
-text-gray-500
-dark:text-gray-400
-"
->
-All plans start with a 30-day free trial.
-Your trial workspace becomes your paid
-workspace — no restart, no data loss.
-</p>
-
-
-
-
-{/* BILLING TOGGLE */}
-
-<div
-className="
-mt-10
-flex
-justify-center
-items-center
-gap-5
-"
->
-
-
-<span
-className={`
-text-sm
-transition
-
-${
-billing==="monthly"
-?
-"text-teal-900 dark:text-teal-400 font-bold"
-:
-"text-gray-500"
-}
-
-`}
->
-Monthly
-</span>
-
-
-
-
-<button
-
-onClick={()=>
-
-
-setBilling(
-billing==="monthly"
-?
-"annual"
-:
-"monthly"
-)
-
-
-}
-
-className="
-relative
-w-10
-h-6
-rounded-full
-bg-teal-900
-"
-
->
-
-
-<span
-
-className={`
-absolute
-top-1
-w-4
-h-4
-bg-white
-rounded-full
-transition-all
-duration-300
-
-
-${
-billing==="annual"
-?
-"left-5"
-:
-"left-1"
-}
-
-`}
-
-/>
-
-
-</button>
-
-
-
-
-
-<span
-
-className={`
-text-sm
-transition
-
-${
-billing==="annual"
-?
-"text-teal-900 dark:text-teal-400 font-bold"
-:
-"text-gray-500"
-}
-
-`}
-
->
-
-Annual
-
-</span>
-
-
-
-
-<span
-
-className="
-px-3
-py-1
-rounded-full
-bg-emerald-100
-dark:bg-emerald-900/40
-text-emerald-700
-dark:text-emerald-300
-text-xs
-font-bold
-"
-
->
-
-Save ~20%
-
-</span>
-
-
-
-</div>
-
-
-
-</div>
-
-{/* PRICING CARDS */}
-
-<div
-className="
-mx-auto
-mt-16
-max-w-6xl
-px-5
-grid
-grid-cols-1
-sm:grid-cols-2
-lg:grid-cols-4
-gap-6
-"
->
-
-
-{
-plans.map((plan)=>(
-
-
-<div
-key={plan.name}
-
-className={`
-relative
-rounded-2xl
-p-6
-transition-all
-
-
-${
-plan.popular
-
-?
-
-`
-bg-white
-dark:bg-slate-900
-border
-border-teal-900
-dark:border-teal-500
-shadow-[0_0_0_4px_rgba(10,79,74,0.06)]
-`
-
-:
-
-`
-bg-slate-100
-dark:bg-slate-900
-border
-border-zinc-200
-dark:border-slate-700
-`
-}
-
-
-`}
-
->
-
-
-
-{/* POPULAR BADGE */}
-
-{
-
-plan.popular &&
-
-<div
-className="
-absolute
--top-1
-left-1/2
--translate-x-1/2
-bg-teal-900
-text-white
-text-[10px]
-font-bold
-px-4
-py-1
-rounded-b-lg
-"
->
-
-Most popular
-
-</div>
-
-}
-
-
-
-
-{/* PLAN NAME */}
-
-
-<p
-className="
-text-xs
-uppercase
-tracking-wide
-font-bold
-text-gray-400
-"
->
-
-{plan.name}
-
-</p>
-
-
-
-
-
-{/* PRICE */}
-
-
-<div
-className="
-mt-4
-flex
-items-end
-gap-2
-"
->
-
-
-<h2
-className="
-text-4xl
-font-black
-text-gray-900
-dark:text-white
-"
->
-
-{
-plan[billing]
-}
-
-</h2>
-
-
-
-{
-
-!plan.enterprise &&
-
-<span
-className="
-mb-1
-text-sm
-text-gray-500
-dark:text-gray-400
-"
->
-/ worker
-</span>
-
-}
-
-
-</div>
-
-
-
-
-
-{/* BILLING TEXT */}
-
-
-<p
-className="
-mt-2
-text-xs
-text-gray-400
-"
->
-
-{
-
-plan.enterprise
-
-?
-
-"talk to sales · pilot-led"
-
-:
-
-billing==="annual"
-
-?
-
-"per month · billed annually"
-
-:
-
-"per month · billed monthly"
-
-}
-
-</p>
-
-
-
-
-
-
-{/* DESCRIPTION */}
-
-
-<div
-className="
-mt-6
-pb-6
-border-b
-border-zinc-200
-dark:border-slate-700
-"
->
-
-
-<p
-className="
-text-xs
-leading-5
-text-gray-500
-dark:text-gray-400
-"
->
-
-{plan.description}
-
-</p>
-
-
-</div>
-
-
-
-
-
-{/* FEATURES */}
-
-
-<ul
-className="
-mt-6
-space-y-4
-"
->
-
-
-{
-
-plan.features.map((feature)=>(
-
-
-<li
-
-key={feature}
-
-className="
-flex
-gap-3
-items-start
-text-xs
-text-gray-700
-dark:text-gray-300
-"
-
->
-
-
-<span
-className="
-text-emerald-700
-dark:text-emerald-400
-"
->
-
-✓
-
-</span>
-
-
-<span>
-
-{feature}
-
-</span>
-
-
-</li>
-
-
-))
-
-}
-
-
-
-
-
-{
-
-plan.disabled?.map((feature)=>(
-
-
-<li
-
-key={feature}
-
-className="
-flex
-gap-3
-items-start
-text-xs
-text-gray-400
-dark:text-gray-600
-"
-
->
-
-
-<span>
-
-✕
-
-</span>
-
-
-<span>
-
-{feature}
-
-</span>
-
-
-</li>
-
-
-))
-
-}
-
-
-
-</ul>
-
-{/* BUTTON */}
-
-
-<button
-
-className={`
-mt-8
-w-full
-h-10
-rounded-lg
-text-xs
-font-black
-transition-all
-
-
-${
-plan.popular
-
-?
-
-`
-bg-teal-900
-hover:bg-teal-800
-text-white
-shadow-[0px_2px_8px_rgba(10,79,74,0.20)]
-`
-
-:
-
-plan.enterprise
-
-?
-
-`
-bg-white
-dark:bg-slate-900
-border
-border-teal-500
-text-teal-500
-hover:bg-teal-50
-dark:hover:bg-slate-800
-`
-
-:
-
-`
-bg-white
-dark:bg-slate-800
-border
-border-teal-900
-dark:border-teal-500
-text-teal-900
-dark:text-teal-400
-hover:bg-gray-50
-dark:hover:bg-slate-700
-`
-
-}
-
-`}
-
->
-
-
-{
-
-plan.enterprise
-
-?
-
-"Get a Demo"
-
-:
-
-"Start Free"
-
-}
-
-
-</button>
-
-
-
-
-
-</div>
-
-
-))
-
-
-}
-
-
-</div>
-
-
-
-
-
-</section>
-
-
+    <section
+      className="
+        w-full
+        bg-white
+        py-20
+        transition-colors
+        dark:bg-slate-950
+      "
+    >
+      {/* HEADER */}
+      <div className="mx-auto max-w-5xl px-5 text-center">
+        <p
+          className="
+            text-xs
+            font-bold
+            uppercase
+            tracking-widest
+            text-[#3FB97A]
+          "
+        >
+          Pricing
+        </p>
+
+        <h1
+          className="
+            mt-5
+            text-3xl
+            font-black
+            text-gray-900
+            dark:text-white
+            sm:text-4xl
+            lg:text-5xl
+          "
+        >
+          Start free. Upgrade when ready.
+        </h1>
+
+        <p
+          className="
+            mt-5
+            text-sm
+            text-gray-500
+            dark:text-gray-400
+            sm:text-base
+          "
+        >
+          All plans start with a 30-day free trial. Your trial workspace
+          becomes your paid workspace — no restart, no data loss.
+        </p>
+
+        {/* BILLING TOGGLE */}
+        <div className="mt-10 flex items-center justify-center gap-5">
+          <span
+            className={`text-sm transition ${
+              billing === "monthly"
+                ? "font-bold text-[#3FB97A]"
+                : "text-gray-500"
+            }`}
+          >
+            Monthly
+          </span>
+
+          <button
+            type="button"
+            onClick={() =>
+              setBilling(billing === "monthly" ? "annual" : "monthly")
+            }
+            aria-label="Toggle billing period"
+            aria-pressed={billing === "annual"}
+            className="
+              relative
+              h-6
+              w-10
+              rounded-full
+              bg-[#3FB97A]
+            "
+          >
+            <span
+              className={`absolute top-1 h-4 w-4 rounded-full bg-white transition-all duration-300 ${
+                billing === "annual" ? "left-5" : "left-1"
+              }`}
+            />
+          </button>
+
+          <span
+            className={`text-sm transition ${
+              billing === "annual"
+                ? "font-bold text-[#3FB97A]"
+                : "text-gray-500"
+            }`}
+          >
+            Annual
+          </span>
+
+          <span
+            className="
+              rounded-full
+              bg-[#3FB97A]/10
+              px-3
+              py-1
+              text-xs
+              font-bold
+              text-[#3FB97A]
+              dark:bg-[#3FB97A]/20
+            "
+          >
+            Save up to 22%
+          </span>
+        </div>
+
+        {/* BILLING DESCRIPTION */}
+        <p className="mt-3 text-xs text-gray-400 dark:text-gray-500">
+          {billing === "annual"
+            ? "Annual pricing is billed once per year at the annual amount shown."
+            : "Monthly pricing is billed monthly."}
+        </p>
+      </div>
+
+      {/* PRICING CARDS */}
+      <div
+        className="
+          mx-auto
+          mt-16
+          grid
+          max-w-6xl
+          grid-cols-1
+          gap-6
+          px-5
+          sm:grid-cols-2
+          lg:grid-cols-4
+        "
+      >
+        {plans.map((plan) => {
+          const price = plan[billing];
+
+          return (
+            <div
+              key={plan.name}
+              className={`relative rounded-2xl p-6 transition-all ${
+                plan.popular
+                  ? `
+                    border
+                    border-[#3FB97A]
+                    bg-white
+                    shadow-[0_0_0_4px_rgba(63,185,122,0.06)]
+                    dark:bg-slate-900
+                  `
+                  : `
+                    border
+                    border-zinc-200
+                    bg-slate-100
+                    dark:border-slate-700
+                    dark:bg-slate-900
+                  `
+              }`}
+            >
+              {/* POPULAR BADGE */}
+              {plan.popular && (
+                <div
+                  className="
+                    absolute
+                    left-1/2
+                    -top-1
+                    -translate-x-1/2
+                    rounded-b-lg
+                    bg-[#3FB97A]
+                    px-4
+                    py-1
+                    text-[10px]
+                    font-bold
+                    text-white
+                  "
+                >
+                  Most popular
+                </div>
+              )}
+
+              {/* PLAN NAME */}
+              <p
+                className="
+                  text-xs
+                  font-bold
+                  uppercase
+                  tracking-wide
+                  text-gray-400
+                "
+              >
+                {plan.name}
+              </p>
+
+              {/* PRICE */}
+              <div className="mt-4 flex items-end gap-2">
+                <h2
+                  className="
+                    text-4xl
+                    font-black
+                    text-gray-900
+                    dark:text-white
+                  "
+                >
+                  {price}
+                </h2>
+
+                {!plan.enterprise && (
+                  <span
+                    className="
+                      mb-1
+                      text-sm
+                      text-gray-500
+                      dark:text-gray-400
+                    "
+                  >
+                    / user / month
+                  </span>
+                )}
+              </div>
+
+              {/* BILLING TEXT */}
+              <p className="mt-2 text-xs text-gray-400">
+                {plan.enterprise ? (
+                  "Talk to sales · pilot-led"
+                ) : billing === "annual" ? (
+                  <>Billed annually at {plan.annualYearly}/user/year</>
+                ) : (
+                  "Billed monthly"
+                )}
+              </p>
+
+              {/* ANNUAL SAVINGS */}
+              {!plan.enterprise && billing === "annual" && (
+                <p className="mt-1 text-xs font-semibold text-[#3FB97A]">
+                  {plan.annualSavings}
+                </p>
+              )}
+
+              {/* DESCRIPTION */}
+              <div
+                className="
+                  mt-6
+                  border-b
+                  border-zinc-200
+                  pb-6
+                  dark:border-slate-700
+                "
+              >
+                <p
+                  className="
+                    text-xs
+                    leading-5
+                    text-gray-500
+                    dark:text-gray-400
+                  "
+                >
+                  {plan.description}
+                </p>
+              </div>
+
+              {/* FEATURES */}
+              <ul className="mt-6 space-y-4">
+                {plan.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-xs
+                      text-gray-700
+                      dark:text-gray-300
+                    "
+                  >
+                    <span className="text-[#3FB97A]">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+
+                {plan.disabled?.map((feature) => (
+                  <li
+                    key={feature}
+                    className="
+                      flex
+                      items-start
+                      gap-3
+                      text-xs
+                      text-gray-400
+                      dark:text-gray-600
+                    "
+                  >
+                    <span>✕</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* BUTTON */}
+              {plan.enterprise ? (
+                <Link
+                  href="/request-a-demo"
+                  className="
+                    mt-8
+                    flex
+                    h-10
+                    w-full
+                    items-center
+                    justify-center
+                    rounded-lg
+                    border
+                    border-[#3FB97A]
+                    bg-white
+                    text-xs
+                    font-black
+                    text-[#3FB97A]
+                    transition-all
+                    hover:bg-[#3FB97A]/10
+                    dark:bg-slate-900
+                    dark:text-[#3FB97A]
+                    dark:hover:bg-slate-800
+                  "
+                >
+                  Get a Demo
+                </Link>
+              ) : (
+                <Link
+                  href="/start-free"
+                  className={`
+                    mt-8
+                    flex
+                    h-10
+                    w-full
+                    items-center
+                    justify-center
+                    rounded-lg
+                    text-xs
+                    font-black
+                    transition-all
+                    ${
+                      plan.popular
+                        ? `
+                          bg-[#3FB97A]
+                          text-white
+                          shadow-[0px_2px_8px_rgba(63,185,122,0.20)]
+                          hover:bg-[#3FB97A]
+                        `
+                        : `
+                          border
+                          border-[#3FB97A]
+                          bg-white
+                          text-[#3FB97A]
+                          hover:bg-[#3FB97A]/10
+                          dark:bg-slate-800
+                          dark:text-[#3FB97A]
+                          dark:hover:bg-slate-700
+                        `
+                    }
+                  `}
+                >
+                  Start Free
+                </Link>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
-
 }
