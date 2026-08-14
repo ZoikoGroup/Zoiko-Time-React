@@ -46,9 +46,10 @@ export default function CapabilitiesSection() {
           </ul>
 
           <div className="flex flex-col gap-4 pt-6 sm:flex-row">
+            <Link href="https://getzoikotime.com/">
             <button className="rounded-lg bg-emerald-400 px-8 py-4 text-base font-bold text-white transition-colors hover:bg-emerald-500">
               Explore The Platform
-            </button>
+            </button></Link>
             <Link
   href="/request-a-demo"
   className="flex items-center justify-center gap-2 rounded-md border border-emerald-400 px-8 py-4 text-base font-bold text-emerald-400 transition-colors hover:bg-emerald-400/10"

@@ -28,14 +28,14 @@ const trustCards = [
     href: "/privacy",
     icon: LockKeyhole,
   },
-  {
-    title: "Anti-Surveillance",
-    description:
-      "Our commitment to not profiling, tracking, or manipulating user choices.",
-    button: "View Principles",
-    href: "#",
-    icon: EyeOff,
-  },
+  // {
+  //   title: "Anti-Surveillance",
+  //   description:
+  //     "Our commitment to not profiling, tracking, or manipulating user choices.",
+  //   button: "View Principles",
+  //   href: "#",
+  //   icon: EyeOff,
+  // },
   {
     title: "Accessibility",
     description:

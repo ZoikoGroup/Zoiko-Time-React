@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 const paths = [
   {
@@ -112,12 +113,18 @@ export default function Paths() {
               </div>
 
               {/* CTA */}
-              <button
-                type="button"
-                className="mt-auto flex h-9 w-full items-center justify-center rounded-full border border-sky-950/20 text-sm font-semibold text-sky-950 transition hover:bg-sky-950 hover:text-white dark:border-white/20 dark:text-white dark:hover:bg-white dark:hover:text-slate-950"
+              <Link
+                href={
+                  path.role === "Owners & Admins"
+                    ? "/zoikotime-path-steps?role=owner"
+                    : path.role === "Managers"
+                    ? "/zoikotime-path-steps?role=manager"
+                    : "/zoikotime-path-steps?role=worker"
+                }
+                className="mt-auto flex h-9 w-full items-center justify-center rounded-full border border-sky-950/20 text-sm font-semibold text-sky-950 transition hover:bg-sky-950 hover:text-white dark:border-white/20 dark:text-white dark:hover:bg-white dark:hover:text-slate-950 text-center cursor-pointer"
               >
                 Start this path
-              </button>
+              </Link>
             </article>
           ))}
         </div>

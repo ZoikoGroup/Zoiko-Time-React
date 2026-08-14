@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface FeatureCardProps {
   title: string;
@@ -46,9 +47,9 @@ export default function KairosBoundarySection() {
               </div>
 
               {/* Action Link */}
-              <a
+              <Link
                 href={card.actionHref || '#'}
-                className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-bold   text-sm transition-colors group w-fit"
+                className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-bold   text-sm transition-colors group w-fit cursor-pointer"
               >
                 <span>{card.actionText}</span>
                 <svg
@@ -60,7 +61,7 @@ export default function KairosBoundarySection() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
-              </a>
+              </Link>
             </div>
           ))}
         </div>

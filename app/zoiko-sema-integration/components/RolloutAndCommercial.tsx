@@ -41,7 +41,7 @@ const customerRoutes = [
   { label: "Service Status", href: "/system-status" },
   { label: "Product Updates", href: "/product-updates" },
   { label: "Contact Support", href: "/contact" },
-  { label: "Enterprise Support", href: "#" },
+  { label: "Enterprise Support", href: "/enterprise-support" },
 ];
 
 export default function RolloutAndCommercial() {
