@@ -28,6 +28,7 @@ export default function PolicyEvidenceHero() {
               </span>
             </p>
           </div>
+          <a href="/request-a-demo">
           <button className="group mt-2 inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3.5 text-base font-bold text-white shadow-lg transition-all duration-200 hover:bg-emerald-600 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
             Start Demo
             <svg
@@ -39,7 +40,7 @@ export default function PolicyEvidenceHero() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
-          </button>
+          </button></a>
         </div>
 
         {/* Right Graphic Placeholder (Responsive CSS Mockup) */}

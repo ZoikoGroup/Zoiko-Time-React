@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const evidenceCards = [
   {
@@ -45,12 +46,12 @@ const readinessQuestions = [
 ];
 
 const customerLinks = [
-  "Open Flag Inbox",
-  "Documentation",
-  "Service Status",
-  "Product Updates",
-  "Help Center",
-  "Enterprise Support",
+  { label: "Open Flag Inbox", href: "/login" },
+  { label: "Documentation", href: "/product-documentation" },
+  { label: "Service Status", href: "/status" },
+  { label: "Product Updates", href: "/release-notes" },
+  { label: "Help Center", href: "/help-center" },
+  { label: "Enterprise Support", href: "/enterprise-support" },
 ];
 
 export default function EvidenceAndReadinessSection() {
@@ -125,14 +126,14 @@ export default function EvidenceAndReadinessSection() {
             {/* Links Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {customerLinks.map((link, idx) => (
-                <a
+                <Link
                   key={idx}
-                  href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={link.href}
                   className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-bold   text-sm transition-colors group py-1"
                 >
-                  <span>{link}</span>
+                  <span>{link.label}</span>
                   <span className="transition-transform group-hover:translate-x-1">→</span>
-                </a>
+                </Link>
               ))}
             </div>
 

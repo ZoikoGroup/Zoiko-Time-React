@@ -7,10 +7,9 @@ const helpCards = [
   description:
     "Password resets, workspace access, login errors, SSO issues, verification emails, locked accounts, and role access.",
   link: "Get Login Help →",
-  href: "https://share.google/B6BDSBH0RczXJ7Mna",
+  href: "https://getzoikotime.com/start",
   image: "/QuikHelp/access.svg",
 },
-
   {
     title: "Time or Timesheet Help",
     description:

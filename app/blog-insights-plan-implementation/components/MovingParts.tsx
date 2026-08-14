@@ -46,7 +46,7 @@ export default function MovingParts() {
       <div className="mx-auto max-w-6xl px-6 space-y-10">
         {/* Header */}
         <div className="text-center space-y-3">
-          <span className="text-[#10A28D] text-xs font-bold uppercase tracking-widest text-teal-650 dark:text-teal-400">
+          <span className="text-[#10A28D] text-xs font-bold uppercase tracking-widest ">
             Coordinate Dependencies
           </span>
           <h2 className="text-3xl font-bold text-slate-855 dark:text-white leading-tight">

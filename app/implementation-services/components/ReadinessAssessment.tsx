@@ -69,7 +69,9 @@ export default function ReadinessAssessment() {
   };
 
   return (
-    <section className="w-full bg-slate-50 dark:bg-slate-900 py-16 lg:py-24 px-4 sm:px-6 lg:px-8 font-sans transition-colors duration-200">
+    <section
+    id="implementation-readiness"
+     className="w-full bg-slate-50 dark:bg-slate-900 py-16 lg:py-24 px-4 sm:px-6 lg:px-8 font-sans transition-colors duration-200">
       <div className="max-w-[1124px] mx-auto flex flex-col items-center gap-10">
         
         {/* Header Section */}

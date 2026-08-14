@@ -16,9 +16,10 @@ export default function CallToAction() {
             at every step.
           </p>
           <div className="mt-2">
+            <a href="/start-free">
             <button className="rounded-lg bg-emerald-500 px-6 py-3 text-base font-bold text-white transition hover:bg-emerald-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-800">
               Start Free
-            </button>
+            </button></a>
           </div>
         </div>
         

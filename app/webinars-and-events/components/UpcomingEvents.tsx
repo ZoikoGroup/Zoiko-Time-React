@@ -88,12 +88,14 @@ export default function UpcomingEvents() {
                 </p>
 
                 <div className="mt-8 flex items-center justify-between">
+                  {/*}
                   <Link
                     href="#"
                     className="text-sm font-semibold text-slate-900 transition hover:text-teal-600 dark:text-white dark:hover:text-teal-400"
                   >
                     Register →
                   </Link>
+                  */}
 
                   <span className="text-xs text-slate-500 dark:text-slate-400">
                     {event.footer}

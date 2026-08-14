@@ -6,7 +6,7 @@ export default function ReadinessAndChangeControl() {
     <div className="mx-auto max-w-7.5xl px-6 py-16 font-sans">
       {/* Title */}
       <div className="text-center space-y-3 mb-10">
-        <span className="text-xs font-bold uppercase tracking-widest text-teal-650 dark:text-teal-400">
+        <span className="text-xs font-bold uppercase tracking-widest text-[#10A28D]">
           Validation, Change &amp; Risk
         </span>
         <h2 className="text-3xl font-bold text-slate-855 dark:text-white leading-tight">

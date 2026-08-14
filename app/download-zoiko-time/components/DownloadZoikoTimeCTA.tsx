@@ -1,3 +1,7 @@
+"use client";
+
+import Link from "next/link";
+
 export default function DownloadZoikoTimeCTA() {
   return (
     <section className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
@@ -26,26 +30,26 @@ export default function DownloadZoikoTimeCTA() {
         {/* Buttons */}
         <div className="mt-5 flex w-full flex-wrap items-center justify-center gap-3">
 
-          <button
-            type="button"
+          <Link
+            href="/download-zoiko-time"
             className="rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold leading-6 text-white transition-colors hover:bg-teal-500"
           >
             Download for Zoiko Time
-          </button>
+          </Link>
 
-          <button
-            type="button"
+          <Link
+            href="/start-free"
             className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold leading-6 text-white transition-colors hover:bg-white/10"
           >
             Start Free
-          </button>
+          </Link>
 
-          <button
-            type="button"
+          <Link
+            href="/request-enterprise-demo"
             className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold leading-6 text-white transition-colors hover:bg-white/10"
           >
             Request Enterprise Demo
-          </button>
+          </Link>
 
         </div>
 

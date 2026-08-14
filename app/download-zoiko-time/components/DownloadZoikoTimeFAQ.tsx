@@ -3,11 +3,31 @@
 import { useState } from "react";
 
 const faqs = [
-  "Is the ZoikoTime app free to download?",
-  "Does ZoikoTime track my location or activity?",
-  "Can IT deploy this across the organization?",
-  "Which architecture should I choose on Mac?",
-  "Do I need to install anything to use ZoikoTime?",
+  {
+    question: "Is the ZoikoTime app free to download?",
+    answer:
+      "Yes. ZoikoTime is free to download and install. You can get started without paying an installation fee, while available plans and features may vary depending on your organization’s needs.",
+  },
+  {
+    question: "Does ZoikoTime track my location or activity?",
+    answer:
+      "No. ZoikoTime is not surveillance, productivity monitoring, or GPS tracking software. It focuses on verified time records and accountability without continuously tracking an employee’s physical location or personal activity.",
+  },
+  {
+    question: "Can IT deploy this across the organization?",
+    answer:
+      "Yes. IT and administrators can deploy ZoikoTime across their organization using the appropriate platform and architecture. Enterprise teams can also use centralized policies and deployment controls to support larger rollouts.",
+  },
+  {
+    question: "Which architecture should I choose on Mac?",
+    answer:
+      "Choose the architecture that matches your Mac’s processor. Apple Silicon Macs, such as those with M-series chips, should use the Apple Silicon version. Intel-based Macs should use the Intel version.",
+  },
+  {
+    question: "Do I need to install anything to use ZoikoTime?",
+    answer:
+      "For desktop-based time tracking, you need to install the ZoikoTime application on the supported device. Installation allows the app to securely capture and verify the required time records according to your organization’s configuration.",
+  },
 ];
 
 export default function DownloadZoikoTimeFAQ() {
@@ -34,12 +54,12 @@ export default function DownloadZoikoTimeFAQ() {
 
         {/* Questions */}
         <div className="mt-10 w-full border-b border-slate-200 dark:border-slate-800">
-          {faqs.map((question, index) => {
+          {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
               <div
-                key={question}
+                key={faq.question}
                 className="border-t border-slate-200 dark:border-slate-800"
               >
                 <button
@@ -51,7 +71,7 @@ export default function DownloadZoikoTimeFAQ() {
                   className="flex w-full items-center justify-between gap-5 py-5 text-left"
                 >
                   <span className="text-sm font-semibold leading-6 text-slate-800 dark:text-slate-100 sm:text-base">
-                    {question}
+                    {faq.question}
                   </span>
 
                   {/* Plus / Minus */}
@@ -63,6 +83,15 @@ export default function DownloadZoikoTimeFAQ() {
                     )}
                   </span>
                 </button>
+
+                {/* Answer */}
+                {isOpen && (
+                  <div className="pb-5 pr-10">
+                    <p className="text-sm leading-6 text-slate-600 dark:text-slate-400 sm:text-base">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
               </div>
             );
           })}

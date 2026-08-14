@@ -87,7 +87,9 @@ const queue = [
 
 export default function AnalyticsGovernanceCenter() {
   return (
-    <section className="w-full bg-slate-950 px-4 py-16 text-white sm:px-6 sm:py-20 md:px-8 lg:px-10 lg:py-24">
+    <section
+    id="analytics-governance-center"
+     className="w-full bg-slate-950 px-4 py-16 text-white sm:px-6 sm:py-20 md:px-8 lg:px-10 lg:py-24">
       <div className="mx-auto w-full max-w-[1400px]">
         {/* Main responsive layout */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16 xl:gap-20">

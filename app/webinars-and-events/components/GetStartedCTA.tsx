@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function GetStartedCTA() {
   return (
@@ -23,26 +24,26 @@ export default function GetStartedCTA() {
 
         {/* Buttons */}
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center">
-          <button
-            type="button"
+          <Link
+            href="#upcoming-event"
             className="inline-flex h-12 items-center justify-center rounded-full bg-teal-600 px-8 text-sm font-semibold text-white transition hover:bg-teal-700"
           >
             Browse Upcoming Events
-          </button>
+          </Link>
 
-          <button
-            type="button"
+          <Link
+           href="#watch-on-demand"
             className="inline-flex h-12 items-center justify-center rounded-full border border-white/60 bg-white/10 px-8 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
           >
             Watch On-Demand
-          </button>
+          </Link>
 
-          <button
-            type="button"
+          <Link
+            href="/request-a-demo"
             className="inline-flex h-12 items-center justify-center rounded-full border border-white/60 bg-white/10 px-8 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
           >
             Request Demo
-          </button>
+          </Link>
         </div>
       </div>
     </section>

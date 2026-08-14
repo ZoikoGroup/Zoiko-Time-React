@@ -81,7 +81,9 @@ const correctionParams: Param[] = [
 
 export default function RecordsSection() {
   return (
-    <section className="mt-14 flex flex-col">
+    <section 
+    id="records"
+    className="mt-14 flex flex-col">
 
       <SectionHeading id="records" title="Records" />
 

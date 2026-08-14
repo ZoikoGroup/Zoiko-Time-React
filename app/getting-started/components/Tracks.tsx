@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 type IconProps = {
   className?: string;
@@ -145,6 +146,7 @@ const tracks = [
     title: "Owners & Admins",
     subtitle: "Org setup & policy configuration",
     icon: icons.owners,
+    href: "/administrative-controls",
     steps: [
       "Configure organization profile",
       "Assign roles & permissions",
@@ -155,6 +157,7 @@ const tracks = [
     title: "HR & People Ops",
     subtitle: "Rosters & worker communication",
     icon: icons.hr,
+    href: "/hr-people-teams",
     steps: [
       "Import worker roster",
       "Send worker transparency notice",
@@ -165,6 +168,7 @@ const tracks = [
     title: "Managers",
     subtitle: "Team schedules & approvals",
     icon: icons.managers,
+    href: "/team-lead-managers",
     steps: [
       "Review team roster",
       "Configure shift schedules",
@@ -175,6 +179,7 @@ const tracks = [
     title: "Workers",
     subtitle: "Daily use, clock-in & verification",
     icon: icons.workers,
+    href: "/solutions-workers",
     steps: [
       "Download & sign in to app",
       "Verify identity once",
@@ -185,6 +190,7 @@ const tracks = [
     title: "Payroll Reviewers",
     subtitle: "Evidence review & export",
     icon: icons.payroll,
+    href: "/payroll-and-timesheet-integrity",
     steps: [
       "Connect payroll system",
       "Learn the reviewer queue",
@@ -195,6 +201,7 @@ const tracks = [
     title: "IT & Security",
     subtitle: "Access, identity & integrations",
     icon: icons.security,
+    href: "/security",
     steps: [
       "Configure SSO",
       "Set data retention rules",
@@ -205,6 +212,7 @@ const tracks = [
     title: "Privacy Teams",
     subtitle: "Data review & worker notice",
     icon: icons.privacy,
+    href: "/privacy",
     steps: [
       "Review data collection scope",
       "Approve worker notice language",
@@ -215,6 +223,7 @@ const tracks = [
     title: "Partners",
     subtitle: "Client onboarding & handoff",
     icon: icons.partners,
+    href: "/partners",
     steps: [
       "Set up client workspace",
       "Configure handoff checklist",
@@ -301,12 +310,12 @@ export default function Tracks() {
                 </ul>
 
                 {/* LINK */}
-                <button
-                  type="button"
+                <Link
+                  href={track.href}
                   className="mt-auto pt-5 text-left text-xs font-bold text-emerald-600 transition hover:text-emerald-500 dark:text-emerald-400"
                 >
                   View track →
-                </button>
+                </Link>
               </article>
             );
           })}

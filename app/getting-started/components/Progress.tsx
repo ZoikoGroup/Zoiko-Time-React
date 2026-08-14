@@ -74,7 +74,9 @@ function StatusBadge({
 
 export default function Progress() {
   return (
-    <section className="w-full bg-white px-5 py-16 dark:bg-slate-950 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+    <section 
+    id="progress"
+    className="w-full bg-white px-5 py-16 dark:bg-slate-950 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
       <div className="mx-auto max-w-[1232px]">
         {/* HEADER */}
         <div>
