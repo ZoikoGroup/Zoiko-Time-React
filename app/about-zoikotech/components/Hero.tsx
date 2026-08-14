@@ -28,13 +28,13 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link
-            href="request-a-demo"
+            href="/request-a-demo"
              className="rounded-lg bg-[#009D8C] px-6 py-3 font-medium text-white transition hover:bg-teal-700">
               Request a ZoikoTime Demo
             </Link>
 
             <Link
-            href = "start-free"
+            href = "/start-free"
              className="rounded-lg border border-[#0F0F0F33] px-6 py-3 font-medium text-[#0F0F0F] transition hover:border-gray-500 dark:border-gray-600 dark:text-white dark:hover:border-gray-400">
               Start Free Trial
             </Link>

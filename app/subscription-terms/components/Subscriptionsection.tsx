@@ -70,7 +70,7 @@ export default function Subscriptionsection() {
 
 
             <Link
-            href="contact-sales"
+            href="/contact-sales"
              className="rounded-lg border border-gray-300 bg-white px-7 py-3 text-base font-semibold text-slate-800 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-white">
               Contact Sales
             </Link>

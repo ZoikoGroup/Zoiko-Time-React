@@ -33,17 +33,17 @@ export default function Hero() {
         {/* Buttons */}
         <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
           {/* Primary Button */}
-          <button
-            type="button"
+          <Link
+            href="/contact"
             className="flex h-12 w-full items-center justify-center gap-3 rounded-lg bg-teal-600 px-6 text-base font-semibold text-white shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)] transition hover:bg-teal-500 sm:w-72"
           >
             <FileText size={16} strokeWidth={1.67} />
             <span>Request Executive Briefing</span>
-          </button>
+          </Link>
 
-          {/* Secondary Button */}
-          <Link
-  href="/explore-zoikotime"
+    {/* Secondary Button */}
+<Link
+  href="https://share.google/B6BDSBH0RczXJ7Mna"
   className="
     inline-flex
     h-12
@@ -65,7 +65,7 @@ export default function Hero() {
     sm:w-56
   "
 >
-  Explore the platform
+  Explore the Platform
 </Link>
         </div>
       </div>

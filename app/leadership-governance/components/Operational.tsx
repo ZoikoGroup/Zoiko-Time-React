@@ -73,7 +73,7 @@ export default function Operational() {
       {/* Footer Link */}
       <div className="mt-8 text-center">
         <a
-          href="#"
+          href="/enterprise-readiness"
           className="text-sm font-semibold text-[#009D8C] transition hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300"
         >
           Explore Enterprise Readiness →

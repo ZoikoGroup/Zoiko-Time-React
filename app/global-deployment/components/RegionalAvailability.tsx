@@ -144,7 +144,7 @@ export default function RegionalAvailability() {
             </ul>
 
             <Link
-              href="/contact-sales"
+              href="/confirm-availability"
               className="mt-7 inline-flex self-start rounded-lg bg-emerald-400 px-6 py-3.5 text-base font-bold leading-6 text-white transition hover:bg-emerald-500"
             >
               Confirm availability for your intended deployment scope

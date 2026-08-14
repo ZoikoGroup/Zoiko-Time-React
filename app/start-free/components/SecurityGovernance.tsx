@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 
 const cards = [
   {
@@ -6,6 +9,7 @@ const cards = [
     description:
       "Your workforce records belong to your organization.",
     link: "Privacy Notice / DPA",
+    href: "/privacy-notice",
     icon: "/start-free/data.png",
   },
   {
@@ -13,6 +17,7 @@ const cards = [
     description:
       "Data Processing Addendum for eligible customers and deployment types.",
     link: "Trust Center",
+    href: "/trust-center",
     icon: "/start-free/dpa.png",
   },
   {
@@ -20,6 +25,7 @@ const cards = [
     description:
       "Export core workforce records subject to plan and retention rules.",
     link: "Data export guide",
+    href: "/guides",
     icon: "/start-free/export.png",
   },
   {
@@ -27,6 +33,7 @@ const cards = [
     description:
       "ZoikoTime supports clear worker notices and policy-based monitoring disclosure.",
     link: "Transparency Center",
+    href: "/transparency-center",
     icon: "/start-free/transparency.png",
   },
 ];
@@ -68,9 +75,12 @@ export default function SecurityGovernance() {
               </p>
 
               {/* Link */}
-              <button className="text-sm font-semibold text-teal-700 transition hover:text-teal-900 dark:text-teal-400 dark:hover:text-teal-300">
+              <Link
+                href={card.href}
+                className="text-sm font-semibold text-teal-700 transition hover:text-teal-900 dark:text-teal-400 dark:hover:text-teal-300"
+              >
                 {card.link} →
-              </button>
+              </Link>
             </div>
           ))}
         </div>

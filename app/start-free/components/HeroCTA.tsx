@@ -1,6 +1,10 @@
+"use client";
+
+import Link from "next/link";
+
 export default function HeroCTA() {
   return (
-    <section className="w-full bg-[#0B5D56] dark:bg-slate-950 rounded-2xl">
+    <section className="w-full rounded-2xl bg-[#0B5D56] dark:bg-slate-950">
       <div className="mx-auto flex max-w-7xl flex-col items-center px-5 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 rounded-full border border-teal-400/20 bg-teal-400/10 px-5 py-2">
@@ -27,10 +31,14 @@ export default function HeroCTA() {
         {/* Buttons */}
         <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row">
           {/* Compare Plans */}
-          <button
+          <Link
+            href="/pricing"
             className="
+              flex
               h-12
               w-full
+              items-center
+              justify-center
               rounded-lg
               bg-white
               px-8
@@ -47,10 +55,11 @@ export default function HeroCTA() {
             "
           >
             Compare plans
-          </button>
+          </Link>
 
           {/* Get Demo */}
-          <button
+          <Link
+            href="/request-a-demo"
             className="
               flex
               h-12
@@ -76,7 +85,7 @@ export default function HeroCTA() {
           >
             <span className="text-xs"></span>
             Get a demo instead
-          </button>
+          </Link>
         </div>
       </div>
     </section>
