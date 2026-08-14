@@ -26,7 +26,7 @@ const evidenceItems = [
     description:
       "See how one record's current value links to original source, derivation, changes, and use.",
     link: "Inspect Lineage →",
-    href: "#",
+    href: "/auditable-time-record-lineage",
     icon: "lineage",
   },
   {
@@ -35,7 +35,7 @@ const evidenceItems = [
     description:
       "Preserve the exact rule and context applicable at the record date — no silent reclassification.",
     link: "See Policy Evidence →",
-    href: "/deterministic-time-classification",
+    href: "/auditable-time-records-policy-evidence",
     icon: "policy",
   },
   {
@@ -44,7 +44,7 @@ const evidenceItems = [
     description:
       "Append-only changes, rationale, notices, and authority — auditable without becoming punitive.",
     link: "Review History →",
-    href: "/time-sheet-approvals",
+    href: "/auditable-time-records-review-history",
     icon: "history",
   },
   {
@@ -53,7 +53,7 @@ const evidenceItems = [
     description:
       "Purpose-based, manifest-backed evidence packaging — never just a downloaded spreadsheet.",
     link: "View Bundle →",
-    href: "#",
+    href: "/auditable-time-records-evidence-bundle",
     icon: "bundle",
   },
   {
@@ -63,7 +63,7 @@ const evidenceItems = [
       "Role-appropriate transparency and correction rights for the record subject.",
     link: "View Worker Experience →",
     href: "/human-in-command",
-    icon: "worker",
+    icon: "/auditable-time-records-worker-experience",
   },
 ];
 

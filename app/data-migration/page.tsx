@@ -11,7 +11,7 @@ import ServiceAvailabilitySection from './components/ServiceAvailabilitySection'
 import SecurityTrustSection from './components/SecurityTrustSection';
 import SourceScopeRegistrySection from './components/SourceScopeRegistrySection';
 import WhyGovernedMigrationMatters from './components/WhyGovernedMigrationMatters';
-import DeterministicMappingSection from './components/DeterministicMappingSection.tsx';
+import DeterministicMappingSection from './components/DeterministicMappingSection';
 import GovernedMigrationHero from './components/GovernedMigrationHero';
 
 export default function Page() {
