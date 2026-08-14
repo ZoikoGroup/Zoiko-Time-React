@@ -82,7 +82,7 @@ const ctas = [
     primary: true,
   },
   { label: "Security", href: "/security-overview" },
-  { label: "Enterprise Support", href: "/contact" },
+  { label: "Enterprise Support", href: "/enterprise-support" },
   { label: "Request Enterprise Demo", href: "/request-enterprise-demo" },
 ];
 

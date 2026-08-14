@@ -69,7 +69,7 @@ export default function GlobalDeploymentHero() {
 
             {/* Existing Customer Link */}
             <Link
-              href="/login"
+              href="#deployment-readiness"
               className="mt-5 inline-flex items-center gap-2 self-start text-sm font-bold leading-6 text-emerald-600 transition hover:text-emerald-700 dark:text-emerald-400"
             >
               <span>Already a customer? Review deployment readiness</span>

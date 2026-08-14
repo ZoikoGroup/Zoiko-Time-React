@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   FiActivity,
   FiBookOpen,
@@ -19,6 +20,7 @@ const apiResources = [
       </>
     ),
     label: "Records →",
+    href: "/api-reference/#records",
     icon: FiClock,
   },
   {
@@ -30,6 +32,7 @@ const apiResources = [
       </>
     ),
     label: "Auth →",
+    href: "/api-reference#authentication",
     icon: FiShield,
   },
   {
@@ -41,6 +44,7 @@ const apiResources = [
       </>
     ),
     label: "Policies →",
+    href: "/policy-and-location-context",
     icon: FiFileText,
   },
   {
@@ -52,6 +56,7 @@ const apiResources = [
       </>
     ),
     label: "Evidence →",
+    href: "/evidence-ledger",
     icon: FiDatabase,
   },
   {
@@ -63,12 +68,14 @@ const apiResources = [
       </>
     ),
     label: "Events →",
+    href: "/webinars-and-events",
     icon: FiActivity,
   },
   {
     title: "Reports",
     description: <>Query aggregate, governed reporting data.</>,
     label: "Reports →",
+    href: "/reports-dashboards",
     icon: FiBookOpen,
   },
 ];
@@ -100,8 +107,9 @@ export default function ApiRef() {
             const Icon = resource.icon;
 
             return (
-              <div
+              <Link
                 key={resource.title}
+                href={resource.href}
                 className="group min-h-[208px] rounded-2xl border border-slate-200 bg-white p-[23px] shadow-[0_6px_18px_rgba(14,31,61,0.05),0_1px_3px_rgba(14,31,61,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(14,31,61,0.08)] dark:border-slate-700 dark:bg-slate-900 dark:shadow-none dark:hover:border-slate-600"
               >
                 {/* Icon */}
@@ -123,7 +131,7 @@ export default function ApiRef() {
                 <div className="mt-4 text-xs font-semibold leading-5 text-teal-700 dark:text-teal-400">
                   {resource.label}
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

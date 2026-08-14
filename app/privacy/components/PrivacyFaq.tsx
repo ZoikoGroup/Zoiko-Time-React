@@ -49,8 +49,8 @@ const faqs = [
 
 const ctas = [
   { label: "Request Privacy Review", href: "#privacy-requests", primary: true },
-  { label: "Security", href: "/security-overview" },
-  { label: "Human-in-Command", href: "/responsible-ai" },
+  { label: "Security", href: "/security" },
+  { label: "Human-in-Command", href: "/human-in-command" },
   { label: "Request Enterprise Demo", href: "/request-enterprise-demo" },
 ];
 

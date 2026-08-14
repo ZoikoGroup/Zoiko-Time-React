@@ -53,7 +53,7 @@ export default function DataMigrationHeroSection() {
 
           {/* Text Link with Arrow */}
           <a
-            href="#readiness"
+           href="#readiness"
             className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline group pt-1"
           >
             Review migration readiness

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 const supportOptions = [
   {
@@ -14,6 +15,7 @@ const supportOptions = [
     ),
     action: "Browse articles →",
     icon: "help",
+    href: "/help-center",
   },
   {
     title: "Talk to a Specialist",
@@ -26,6 +28,7 @@ const supportOptions = [
     ),
     action: "Book a session →",
     icon: "specialist",
+    href: "/contact-sales",
   },
   {
     title: "Admin Guide",
@@ -38,6 +41,7 @@ const supportOptions = [
     ),
     action: "Open guide →",
     icon: "guide",
+    href: "/admin-guide",
   },
   {
     title: "Contact Support",
@@ -50,6 +54,7 @@ const supportOptions = [
     ),
     action: "Contact us →",
     icon: "support",
+    href: "/contact",
   },
 ];
 
@@ -173,12 +178,12 @@ export default function Support() {
               </p>
 
               {/* ACTION */}
-              <button
-                type="button"
+              <Link
+                href={option.href}
                 className="mt-auto pt-5 text-left text-xs font-bold text-emerald-600 transition hover:text-emerald-500 dark:text-emerald-400"
               >
                 {option.action}
-              </button>
+              </Link>
             </article>
           ))}
         </div>

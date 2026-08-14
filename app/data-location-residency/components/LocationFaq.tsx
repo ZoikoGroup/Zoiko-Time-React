@@ -73,7 +73,7 @@ const ctas = [
   },
   { label: "Privacy", href: "/privacy" },
   { label: "Security", href: "/security-overview" },
-  { label: "Enterprise Support", href: "/contact" },
+  { label: "Enterprise Support", href: "/enterprise-support" },
 ];
 
 export default function LocationFaq() {

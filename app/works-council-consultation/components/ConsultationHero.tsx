@@ -44,7 +44,7 @@ export default function ConsultationHero() {
             <div className="mt-7 flex flex-col items-start gap-3.5">
 
               <Link
-                href="/contact-sales"
+                href="#prepare-consultation-pack"
                 className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3.5 text-base font-bold text-white transition hover:bg-emerald-600"
               >
                 Prepare Consultation Pack

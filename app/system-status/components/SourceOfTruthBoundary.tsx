@@ -26,7 +26,7 @@ const cards: DestinationCard[] = [
     title: 'Enterprise Support',
     description:
       'Customer-specific impact, account diagnostics, and private cases — through authenticated channels.',
-    actionUrl: '/contact',
+    actionUrl: '/enterprise-support',
   },
   {
     title: 'Trust Center',

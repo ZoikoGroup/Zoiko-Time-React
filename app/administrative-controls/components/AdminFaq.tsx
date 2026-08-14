@@ -58,7 +58,7 @@ const ctas = [
     label: "Enterprise Administration & Policy",
     href: "/adminstration-policy-controls",
   },
-  { label: "Enterprise Support", href: "/contact" },
+  { label: "Enterprise Support", href: "/enterprise-support" },
 ];
 
 export default function AdminFaq() {

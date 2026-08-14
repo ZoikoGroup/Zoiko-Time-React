@@ -69,7 +69,7 @@ const ctas = [
   { label: "Open System Status", href: "/system-status", primary: true },
   { label: "Request Reliability Review", href: "#request-reliability-review" },
   { label: "Request Enterprise Demo", href: "/request-enterprise-demo" },
-  { label: "Enterprise Support", href: "/contact" },
+  { label: "Enterprise Support", href: "/enterprise-support" },
 ];
 
 export default function ReliabilityFaq() {

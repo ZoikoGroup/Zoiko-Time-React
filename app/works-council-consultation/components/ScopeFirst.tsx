@@ -48,7 +48,9 @@ function ScopeList({ heading, items }: { heading: string; items: string[] }) {
 
 export default function ScopeFirst() {
   return (
-    <section className="w-full overflow-hidden bg-slate-50 dark:bg-slate-950">
+    <section
+    id="prepare-consultation-pack"
+     className="w-full overflow-hidden bg-slate-50 dark:bg-slate-950">
       <div className="mx-auto w-full max-w-[1280px] px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">

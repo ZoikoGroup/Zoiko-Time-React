@@ -8,10 +8,10 @@ type BillingType = "monthly" | "annual";
 const plans = [
   {
     name: "Verified",
-    monthly: 9,
-    annualMonthly: 7,
-    annualYearly: 84,
-    annualSavings: "Save 22% vs monthly",
+    monthly: 8,
+    annualMonthly: 6.58,
+    annualYearly: 79,
+    annualSavings: "Save 18% vs monthly",
     users: "Up to 25 users",
     description: (
       <>
@@ -44,10 +44,10 @@ const plans = [
 
   {
     name: "Governed",
-    monthly: 17,
-    annualMonthly: 14,
-    annualYearly: 168,
-    annualSavings: "Save 18% vs monthly",
+    monthly: 15,
+    annualMonthly: 12.42,
+    annualYearly: 149,
+    annualSavings: "Save 17% vs monthly",
     users: "Up to 250 users",
     description: (
       <>
@@ -79,10 +79,10 @@ const plans = [
 
   {
     name: "Sovereign",
-    monthly: 29,
-    annualMonthly: 23,
-    annualYearly: 276,
-    annualSavings: "Save 21% vs monthly",
+    monthly: 25,
+    annualMonthly: 20,
+    annualYearly: 240,
+    annualSavings: "Save 20% vs monthly",
     users: "Unlimited users",
     description: (
       <>
@@ -226,7 +226,7 @@ export default function Pricing() {
           {/* SAVING BADGE */}
           <div className="mt-3 flex min-h-8 w-full max-w-[310px] items-center justify-center rounded-full border border-[#3FB97A]/20 bg-[#3FB97A]/10 px-4 dark:border-[#3FB97A]/30 dark:bg-[#3FB97A]/10">
             <span className="text-xs font-medium leading-5 text-[#3FB97A]">
-              Save up to 22% with annual billing
+              Save up to 20% with annual billing
             </span>
           </div>
 
@@ -274,7 +274,7 @@ export default function Pricing() {
                     <>
                       <div className="flex items-end gap-2">
                         <span className="text-[38px] font-extrabold leading-10 tracking-tight text-slate-800 dark:text-white">
-                          ${displayPrice}
+                          ${displayPrice?.toFixed(2)}
                         </span>
 
                         <span className="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">
@@ -290,7 +290,7 @@ export default function Pricing() {
                         <>
                           <div className="mt-1 text-xs leading-5 text-gray-500 dark:text-gray-400">
                             Billed annually at $
-                            {plan.annualYearly}/user/year
+                            {plan.annualYearly?.toFixed(2)}/user/year
                           </div>
 
                           <div className="mt-1 text-xs font-medium text-[#3FB97A]">

@@ -59,7 +59,7 @@ export default function TrustGovernanceHero() {
   </svg>
 </Link>
 
-              <a href="/contact">
+              <a href="/security">
               <button
                 type="button"
                 className="inline-flex items-center justify-center rounded-lg border-2 border-slate-900 px-8 py-4 text-base font-medium text-slate-900 transition-all duration-200 hover:bg-slate-900 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-slate-900"

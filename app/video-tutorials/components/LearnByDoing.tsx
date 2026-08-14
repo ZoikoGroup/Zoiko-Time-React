@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function LearnByDoing() {
   return (
@@ -23,19 +24,19 @@ export default function LearnByDoing() {
         {/* Actions */}
         <div className="mt-8 flex w-full flex-col items-center justify-center gap-3 sm:w-auto sm:flex-row">
 
-          <button
-            type="button"
+          <Link
+            href="/contact"
             className="w-full rounded-[10px] bg-teal-600 px-7 py-3 text-sm font-semibold leading-4 text-white shadow-[0_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700 sm:w-auto sm:min-w-[216px]"
           >
             Contact Support team
-          </button>
+          </Link>
 
-          <button
-            type="button"
+          <Link
+            href="/request-a-demo"
             className="w-full rounded-[10px] border border-white/30 bg-white/10 px-7 py-3 text-sm font-semibold leading-4 text-white transition hover:bg-white/15 sm:w-auto sm:min-w-[144px]"
           >
             Get a Demo
-          </button>
+          </Link>
 
         </div>
       </div>

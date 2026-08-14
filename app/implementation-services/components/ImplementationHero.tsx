@@ -63,7 +63,7 @@ export default function ImplementationHero() {
           {/* Secondary Text Link */}
           <div className="pt-1">
             <a
-              href="#readiness"
+              href="#implementation-readiness"
               className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-bold text-sm transition-colors group"
             >
               <span>Review implementation readiness</span>
