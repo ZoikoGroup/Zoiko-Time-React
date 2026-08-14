@@ -36,9 +36,10 @@ export default function TwoClearPaths() {
               </div>
             </div>
             <div className="pt-5">
+              <a href="/request-enterprise-demo">
               <span className="text-teal-700 dark:text-teal-400 text-xs font-semibold cursor-pointer hover:underline">
                 Request Enterprise Demo →
-              </span>
+              </span></a>
             </div>
           </div>
 
@@ -59,9 +60,10 @@ export default function TwoClearPaths() {
               </div>
             </div>
             <div className="pt-5">
+              <a href="/login">
               <span className="text-teal-700 dark:text-teal-400 text-xs font-semibold cursor-pointer hover:underline">
                 Continue with your account →
-              </span>
+              </span></a>
             </div>
           </div>
         </div>

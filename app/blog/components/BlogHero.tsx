@@ -74,14 +74,14 @@ export default function BlogHero() {
         {/* Buttons */}
         <div className="mt-10 flex flex-col gap-6 sm:flex-row">
           <Link
-  href="/blog#explore-insights"
+  href="#insight"
   className="inline-flex h-12 w-56 items-center justify-center rounded-lg bg-teal-600 text-sm font-semibold text-white shadow-lg shadow-teal-600/30 transition hover:bg-teal-700"
 >
   Explore Insights
 </Link>
 
           <Link
-  href="/blog#browse-topic"
+  href="#topic"
   className="inline-flex h-12 w-56 items-center justify-center rounded-lg border border-teal-600 bg-transparent text-sm font-medium text-teal-600 transition hover:bg-teal-50 dark:hover:bg-slate-900"
 >
   Browse Topics

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function SystemBoundaries() {
   const lanes = [
@@ -10,7 +11,8 @@ export default function SystemBoundaries() {
       may: "Apply approved policy-bound rules, expose rule trace, show limitations.",
       mustNot: "AI/ML inference, probabilistic judgment, hidden model behavior.",
       evidence: "Rule trace, policy version, inputs, output.",
-      link: "Explore Deterministic Time Classification →"
+      href: "/deterministic-time-classification",
+      link: "Explore Deterministic Time Classification ->",
     },
     {
       lane: "Lane 2",
@@ -20,7 +22,8 @@ export default function SystemBoundaries() {
       may: "Surface anomaly/signal-quality info to support review.",
       mustNot: "Consequential decision, worker ranking, punitive score.",
       evidence: "Signal type, purpose, version/status, limitations.",
-      link: "Review AI Governance →"
+      href: "/ai-governance",
+      link: "Review AI Governance ->",
     },
     {
       lane: "Lane 3",
@@ -30,8 +33,9 @@ export default function SystemBoundaries() {
       may: "Retrieve, summarize, explain authorized governed data.",
       mustNot: "Classify, approve, decide payroll/discipline/legal.",
       evidence: "Sources, freshness, scope, limitations.",
-      link: "Meet Kairos →"
-    }
+      href: "/kairos-assistant",
+      link: "Meet Kairos ->",
+    },
   ];
 
   return (
@@ -101,9 +105,12 @@ export default function SystemBoundaries() {
               </div>
 
               {/* Link block */}
-              <div className="pt-6 border-t border-gray-100 dark:border-slate-800/80 mt-6 text-teal-700 dark:text-teal-400 text-xs font-semibold cursor-pointer hover:underline select-none">
+              <Link
+                href={item.href}
+                className="pt-6 border-t border-gray-100 dark:border-slate-800/80 mt-6 text-teal-700 dark:text-teal-400 text-xs font-semibold hover:underline select-none"
+              >
                 {item.link}
-              </div>
+              </Link>
             </div>
           ))}
         </div>

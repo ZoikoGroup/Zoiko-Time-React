@@ -30,11 +30,7 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Zoiko Sema Integration | ZoikoTime",
-  description:
-    "Map approved Zoiko Sema workspaces to ZoikoTime teams or organizational units, apply roles, permissions, privacy modes, policy scope, and jurisdiction controls — then review connection health and approved operational context.",
-};
+
 
 export default function Page() {
   return (

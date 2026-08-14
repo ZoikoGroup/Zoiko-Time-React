@@ -62,8 +62,8 @@ const evidenceItems = [
     description:
       "Role-appropriate transparency and correction rights for the record subject.",
     link: "View Worker Experience →",
-    href: "/human-in-command",
-    icon: "/auditable-time-records-worker-experience",
+    href: "auditable-time-records-worker-experience",
+    icon: "worker",
   },
 ];
 
