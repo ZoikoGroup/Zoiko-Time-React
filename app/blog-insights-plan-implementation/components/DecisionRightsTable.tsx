@@ -72,7 +72,7 @@ export default function DecisionRightsTable() {
     <div className="mx-auto max-w-6xl px-6 py-16 font-sans">
       {/* Header */}
       <div className="text-center space-y-3 mb-10">
-        <span className="text-xs text-[#C9EAE2] font-bold uppercase tracking-widest text-teal-650 dark:text-teal-400">
+        <span className="text-xs text-[#C9EAE2] font-bold uppercase tracking-widest ">
           Responsibilities &amp; Decision Rights
         </span>
         <h2 className="text-3xl font-bold text-slate-855 dark:text-white leading-tight">

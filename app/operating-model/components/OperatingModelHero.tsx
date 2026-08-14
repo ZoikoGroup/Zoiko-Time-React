@@ -22,12 +22,14 @@ export default function HeroOperatingModelSection() {
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
+            <a href="/request-enterprise-demo">
             <button className="px-6 py-3 bg-teal-600 hover:bg-teal-500 text-white font-semibold text-base rounded-xl shadow-md transition-colors cursor-pointer">
               Request Enterprise Demo
-            </button>
+            </button></a>
+            <a href="/start-free">
             <button className="px-6 py-3 bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-white font-semibold text-base rounded-xl transition-colors cursor-pointer">
               Start Free
-            </button>
+            </button></a>
           </div>
         </div>
 

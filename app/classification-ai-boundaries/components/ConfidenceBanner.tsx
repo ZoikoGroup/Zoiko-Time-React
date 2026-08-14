@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function ConfidenceBanner() {
   return (
@@ -19,12 +20,18 @@ export default function ConfidenceBanner() {
 
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
-          <button className="px-7 py-3.5 text-base font-semibold text-white bg-[#10A28D] rounded-xl shadow-md hover:bg-teal-700 transition-all cursor-pointer">
+          <Link
+            href="/request-enterprise-demo"
+            className="px-7 py-3.5 text-base font-semibold text-white bg-[#10A28D] rounded-xl shadow-md hover:bg-teal-700 transition-all cursor-pointer"
+          >
             Request Enterprise Demo
-          </button>
-          <button className="px-7 py-3.5 text-base font-semibold text-white bg-white/10 border border-white/20 rounded-xl hover:bg-white/15 transition-all cursor-pointer">
+          </Link>
+          <Link
+            href="/start-free"
+            className="px-7 py-3.5 text-base font-semibold text-white bg-white/10 border border-white/20 rounded-xl hover:bg-white/15 transition-all cursor-pointer"
+          >
             Start Free
-          </button>
+          </Link>
         </div>
 
         {/* Note subtext */}

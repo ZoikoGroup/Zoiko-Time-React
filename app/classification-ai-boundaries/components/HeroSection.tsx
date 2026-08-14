@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ShieldAlert } from "lucide-react";
 
 export default function HeroSection() {
@@ -19,12 +20,22 @@ export default function HeroSection() {
 
           {/* Buttons */}
           <div className="pt-2 flex flex-wrap gap-4">
-            <button className="px-7 py-3 text-sm font-bold text-white bg-[#10A28D] rounded-xl shadow-[0px_6px_16px_0px_rgba(16,162,141,0.25)] hover:bg-teal-700 transition-all cursor-pointer">
+            <Link
+              href="/request-enterprise-demo">
+<button
+              className="px-7 py-3 text-sm font-bold text-white bg-[#10A28D] rounded-xl shadow-[0px_6px_16px_0px_rgba(16,162,141,0.25)] hover:bg-teal-700 transition-all cursor-pointer"
+            >
               Request Enterprise Demo
-            </button>
-            <button className="px-7 py-3 text-sm font-bold text-slate-800 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 dark:bg-slate-900 dark:border-slate-800 dark:text-white transition-all cursor-pointer">
+              </button>
+            </Link>
+            <Link
+              href="/start-free">
+                <button
+              className="px-7 py-3 text-sm font-bold text-slate-800 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 dark:bg-slate-900 dark:border-slate-800 dark:text-white transition-all cursor-pointer"
+            >
               Start Free
-            </button>
+              </button>
+            </Link>
           </div>
 
           {/* Subtitle bottom note */}

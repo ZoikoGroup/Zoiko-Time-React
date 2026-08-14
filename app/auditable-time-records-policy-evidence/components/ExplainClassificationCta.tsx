@@ -20,9 +20,10 @@ export default function ExplainClassificationCta() {
                 and a stated human boundary make a time record explainable years after it was
                 created.
               </p>
+              <a href="/request-enterprise-demo">
               <button className="group inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3.5 text-base font-bold text-white shadow-lg transition-all duration-200 hover:bg-emerald-650 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
                 Request Enterprise Demo
-              </button>
+              </button></a>
             </div>
 
             {/* Right Graphic CSS Placeholder (Mockup Checklist) */}
