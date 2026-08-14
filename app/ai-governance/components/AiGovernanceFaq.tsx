@@ -51,7 +51,7 @@ const ctas = [
   { label: "Explore Governed Uses", href: "#capability-register", primary: true },
   { label: "Human-in-Command Controls", href: "/human-in-command" },
   { label: "Request AI Governance Review", href: "#request-governance-review" },
-  { label: "Enterprise Support", href: "/contact" },
+  { label: "Enterprise Support", href: "/enterprise-support" },
 ];
 
 export default function AiGovernanceFaq() {

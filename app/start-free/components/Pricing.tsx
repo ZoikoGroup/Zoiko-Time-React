@@ -6,10 +6,10 @@ import Link from "next/link";
 const plans = [
   {
     name: "Verified",
-    monthly: "$9",
-    annual: "$7",
-    annualYearly: "$84",
-    annualSavings: "Save 22% vs monthly",
+    monthly: "$8.00",
+    annual: "$6.58",
+    annualYearly: "$79.00",
+    annualSavings: "Save 18% vs monthly",
     description:
       "Small teams needing verified time records and basic accountability.",
     features: [
@@ -24,10 +24,10 @@ const plans = [
 
   {
     name: "Governed",
-    monthly: "$17",
-    annual: "$14",
-    annualYearly: "$168",
-    annualSavings: "Save 18% vs monthly",
+    monthly: "$15.00",
+    annual: "$12.42",
+    annualYearly: "$149.00",
+    annualSavings: "Save 17% vs monthly",
     popular: true,
     description:
       "Growing teams needing policy governance, stronger evidence, and admin controls.",
@@ -44,10 +44,10 @@ const plans = [
 
   {
     name: "Sovereign",
-    monthly: "$29",
-    annual: "$23",
-    annualYearly: "$276",
-    annualSavings: "Save 21% vs monthly",
+    monthly: "$25.00",
+    annual: "$20.00",
+    annualYearly: "$240.00",
+    annualSavings: "Save 20% vs monthly",
     description:
       "High-accountability, multi-jurisdiction, legal, compliance, or audit-sensitive teams.",
     features: [
@@ -190,7 +190,7 @@ export default function Pricing() {
               dark:bg-[#3FB97A]/20
             "
           >
-            Save up to 22%
+            Save up to 20%
           </span>
         </div>
 

@@ -59,7 +59,9 @@ export default function GettingStarted() {
       </section>
 
       {/* Authentication */}
-      <section className="mt-14 flex flex-col">
+      <section
+      id="authentication"
+       className="mt-14 flex flex-col">
 
         <SectionHeading id="authentication" title="Authentication" />
 

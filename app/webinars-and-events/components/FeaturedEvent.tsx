@@ -132,6 +132,7 @@ export default function FeaturedEvent() {
               </div>
 
               {/* CTA */}
+              {/*
               <div className="mt-10">
                 <Link
                   href="#"
@@ -139,7 +140,9 @@ export default function FeaturedEvent() {
                 >
                   Registrations Open Soon
                 </Link>
+                
               </div>
+              */}
             </div>
           </div>
         </div>

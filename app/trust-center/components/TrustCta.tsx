@@ -52,7 +52,7 @@ export default function TrustCta() {
               <div className="mt-7 flex flex-col gap-3.5 sm:flex-row">
 
                 <Link
-                  href="/contact"
+                  href="/security"
                   className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3.5 text-base font-bold text-white transition hover:bg-emerald-600"
                 >
                   Request Security Review

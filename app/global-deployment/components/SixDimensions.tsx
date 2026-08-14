@@ -53,7 +53,9 @@ const dimensions = [
 
 export default function SixDimensions() {
   return (
-    <section className="w-full overflow-hidden bg-white dark:bg-slate-950">
+    <section 
+    id="deployment-readiness"
+    className="w-full overflow-hidden bg-white dark:bg-slate-950">
       <div className="mx-auto w-full max-w-[1280px] px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
 
         {/* Section Heading */}

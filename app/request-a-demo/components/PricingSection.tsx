@@ -5,7 +5,7 @@ import Link from "next/link";
 const plans = [
   {
     name: "Verified",
-    price: "$9",
+    price: "$8",
     description:
       "Best for small teams needing verified time records and basic accountability.",
     features: [
@@ -17,7 +17,7 @@ const plans = [
   },
   {
     name: "Governed",
-    price: "$17",
+    price: "$15",
     description:
       "Best for growing teams needing policy controls, reporting, and stronger governance.",
     features: [
@@ -31,7 +31,7 @@ const plans = [
   },
   {
     name: "Sovereign",
-    price: "$29",
+    price: "$25",
     description:
       "Best for regulated, multi-jurisdiction, or high-accountability workforces.",
     features: [
@@ -143,6 +143,7 @@ export default function PricingSection() {
               }
             `}
           >
+            {/* Popular Badge */}
             {plan.popular && (
               <div
                 className="
@@ -164,6 +165,7 @@ export default function PricingSection() {
               </div>
             )}
 
+            {/* Plan Name */}
             <p
               className="
                 text-white/50
@@ -176,6 +178,7 @@ export default function PricingSection() {
               {plan.name}
             </p>
 
+            {/* Price */}
             <div className="flex items-end gap-2 mt-3">
               <h3
                 className="
@@ -194,6 +197,7 @@ export default function PricingSection() {
               )}
             </div>
 
+            {/* Description */}
             <p
               className="
                 mt-3
@@ -205,6 +209,7 @@ export default function PricingSection() {
               {plan.description}
             </p>
 
+            {/* Features */}
             <ul className="mt-6 space-y-3">
               {plan.features.map((feature) => (
                 <li
@@ -222,7 +227,7 @@ export default function PricingSection() {
                     className="text-[#3FB97A] shrink-0"
                   />
 
-                  {feature}
+                  <span>{feature}</span>
                 </li>
               ))}
             </ul>

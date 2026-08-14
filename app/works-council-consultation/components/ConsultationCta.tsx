@@ -58,7 +58,7 @@ export default function ConsultationCta() {
                 </Link>
 
                 <Link
-                  href="/contact-sales"
+                  href="#prepare-consultation-pack"
                   className="inline-flex items-center justify-center rounded-lg border border-stone-300 bg-white px-6 py-3.5 text-base font-bold text-sky-950 transition hover:border-sky-950 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-slate-500"
                 >
                   Prepare a consultation pack
@@ -99,7 +99,7 @@ export default function ConsultationCta() {
                 </span>
 
                 <Link
-                  href="/help-center"
+                  href="/enterprise-support"
                   className="transition hover:text-emerald-800"
                 >
                   Enterprise Support

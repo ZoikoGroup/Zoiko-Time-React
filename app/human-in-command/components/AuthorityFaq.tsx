@@ -50,7 +50,7 @@ const faqs = [
 const ctas = [
   { label: "Explore Review Rights", href: "#review-rights", primary: true },
   { label: "Trust Center", href: "/trust-center" },
-  { label: "Enterprise Support", href: "/contact" },
+  { label: "Enterprise Support", href: "/enterprise-support" },
   { label: "Request Enterprise Demo", href: "/request-enterprise-demo" },
 ];
 

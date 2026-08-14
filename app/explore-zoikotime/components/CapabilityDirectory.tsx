@@ -60,7 +60,7 @@ const capabilities = [
 ];
 
 const otherCapabilities = [
-  { label: "Attendance & Presence", href: "/verify-time-attendance" },
+  { label: "Attendance & Presence", href: "/attendance-and-presence" },
   { label: "Break & Rest Compliance", href: "/break-rest-compliance" },
   { label: "Workforce Record Insights", href: "/reporting-and-workforce-analytics" },
   { label: "Reports & Dashboards", href: "/analytics-reporting" },

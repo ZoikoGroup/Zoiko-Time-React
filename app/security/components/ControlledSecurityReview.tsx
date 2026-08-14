@@ -223,7 +223,7 @@ export default function ControlledSecurityReview() {
                 Submit request
               </button>
               <a
-                href="/security-overview#download-security-overview"
+                href="/public-security-evidence"
                 className="px-6 py-3.5 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 font-bold text-sm rounded-lg border border-slate-200 dark:border-slate-700 transition-colors"
               >
                 Read public evidence instead

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import React from "react";
 
@@ -24,26 +25,26 @@ export default function ReadyCTA() {
 
         {/* ACTIONS */}
         <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center">
-          <button
-            type="button"
+          <Link
+            href="#path-finder"
             className="inline-flex h-12 items-center justify-center rounded-full bg-teal-600 px-6 text-sm font-semibold text-white transition hover:bg-teal-500 sm:text-base"
           >
             Choose Your Starting Point
-          </button>
+          </Link>
 
-          <button
-            type="button"
+          <Link
+          href="#path-finder"
             className="inline-flex h-12 items-center justify-center rounded-full border border-white/30 px-7 text-sm font-semibold text-white transition hover:bg-white/10 sm:text-base"
           >
             Show My Path
-          </button>
+          </Link>
 
-          <button
-            type="button"
+          <Link
+            href= "#progress"
             className="inline-flex h-12 items-center justify-center rounded-full border border-white/30 px-7 text-sm font-semibold text-white transition hover:bg-white/10 sm:text-base"
           >
             Review Readiness
-          </button>
+          </Link>
         </div>
       </div>
     </section>

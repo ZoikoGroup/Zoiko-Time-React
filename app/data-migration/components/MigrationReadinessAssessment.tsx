@@ -67,7 +67,9 @@ export default function MigrationReadinessAssessment() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 px-4 py-12 font-sans text-slate-800 transition-colors dark:bg-slate-950 dark:text-slate-100 sm:px-6 lg:px-8">
+    <div
+    id="readiness"
+     className="min-h-screen bg-slate-50 px-4 py-12 font-sans text-slate-800 transition-colors dark:bg-slate-950 dark:text-slate-100 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl space-y-8">
         <header className="space-y-3 text-center">
           <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">

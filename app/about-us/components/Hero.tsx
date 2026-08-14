@@ -43,7 +43,7 @@ export default function Hero() {
 
     {/* Secondary Button */}
 <Link
-  href="https://share.google/B6BDSBH0RczXJ7Mna"
+  href="https://getzoikotime.com/start"
   className="
     inline-flex
     h-12
