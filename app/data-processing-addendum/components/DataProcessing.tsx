@@ -43,7 +43,7 @@ export default function DataProcessing() {
         {/* Buttons */}
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
-          <Link
+          {/*<Link
             href="#"
             className="
               rounded-md
@@ -60,7 +60,7 @@ export default function DataProcessing() {
             "
           >
             View Data Processing Agreement
-          </Link>
+          </Link>*/}
 
           <Link
             href="/privacy"

@@ -212,7 +212,7 @@ export default function ProductMegaMenu({
                 icon="product-overview.png"
                 title="Product Overview"
                 description="Platform overview and principles."
-                href="#"
+                href="/product"
                 onLinkClick={onLinkClick}
               />
 

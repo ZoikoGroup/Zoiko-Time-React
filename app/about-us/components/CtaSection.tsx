@@ -30,6 +30,7 @@ export default function CtaSection() {
         </>
       ),
       link: "Schedule Briefing →",
+      href: "#",
     },
     {
       image: "/about-us/sms.png",
@@ -50,6 +51,7 @@ export default function CtaSection() {
         </>
       ),
       link: "Talk to Sales →",
+      href: "/contact-sales",
     },
     {
       image: "/about-us/telescope.png",
@@ -70,6 +72,7 @@ export default function CtaSection() {
         </>
       ),
       link: "Explore Platform →",
+      href: "https://getzoikotime.com/start",
     },
   ];
 
@@ -275,7 +278,7 @@ export default function CtaSection() {
               </p>
 
               <a
-                href={card.title === "Explore the Platform" ? "/explore-zoikotime" : "#"}
+                href={card.href}
                 className="
                   mt-auto
                   font-sans

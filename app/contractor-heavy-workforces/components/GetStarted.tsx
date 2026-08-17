@@ -49,12 +49,12 @@ export default function GetStarted() {
                   Request Enterprise Demo
                 </Link>
 
-                <Link
-                    href="/platform"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-400/60 bg-transparent px-6 py-2.5 text-sm font-semibold leading-5 text-white transition hover:border-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50"
-                >
-                  Explore the Platform
-                </Link>
+               <a
+  href="https://getzoikotime.com/start"
+  className="inline-flex min-h-11 items-center justify-center rounded-full border border-slate-400/60 bg-transparent px-6 py-2.5 text-sm font-semibold leading-5 text-white transition hover:border-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50"
+>
+  Explore the Platform
+</a>
               </div>
 
               {/* Privacy note */}

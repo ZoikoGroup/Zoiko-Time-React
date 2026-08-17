@@ -36,7 +36,7 @@ const qualified = [
 ];
 
 const customerRoutes = [
-  { label: "Open Integration Settings", href: "#" },
+  { label: "Open Integration Settings", href: "/integration" },
   { label: "Documentation", href: "/product-documentation" },
   { label: "Service Status", href: "/system-status" },
   { label: "Product Updates", href: "/product-updates" },

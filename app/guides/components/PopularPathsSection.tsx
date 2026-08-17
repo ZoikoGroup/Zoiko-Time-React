@@ -1,37 +1,29 @@
-import React from 'react';
+import React from "react";
 
 interface PathCard {
   number: string;
   title: string;
   description: string;
-  actionText: string;
-  actionHref: string;
 }
 
 const paths: PathCard[] = [
   {
-    number: '1',
-    title: 'New to ZoikoTime',
+    number: "1",
+    title: "New to ZoikoTime",
     description:
-      'Core concepts, first-week setup, and what to expect from your first pay period.',
-    actionText: 'Start with: Core concepts in 10 minutes →',
-    actionHref: '#core-concepts',
+      "Core concepts, first-week setup, and what to expect from your first pay period.",
   },
   {
-    number: '2',
-    title: 'Preparing for an audit',
+    number: "2",
+    title: "Preparing for an audit",
     description:
-      'Evidence, version history, and the records auditors ask for first.',
-    actionText: 'Start with: What auditors ask for →',
-    actionHref: '#audit-prep',
+      "Evidence, version history, and the records auditors ask for first.",
   },
   {
-    number: '3',
-    title: 'Rolling out to a distributed team',
+    number: "3",
+    title: "Rolling out to a distributed team",
     description:
-      'Remote, hybrid, field, and global configuration in one sequence.',
-    actionText: 'Start with: Global team setup →',
-    actionHref: '#distributed-team',
+      "Remote, hybrid, field, and global configuration in one sequence.",
   },
 ];
 
@@ -39,12 +31,12 @@ export default function PopularPathsSection() {
   return (
     <section className="w-full bg-gray-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
       <div className="max-w-[1140px] mx-auto flex flex-col items-center gap-10">
-        
         {/* Header Section */}
         <header className="flex flex-col items-center text-center gap-2">
           <span className="text-teal-600 dark:text-teal-400 text-xs font-semibold uppercase tracking-widest">
             Popular Paths
           </span>
+
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-800 dark:text-white leading-tight">
             Start where your team actually is
           </h2>
@@ -68,25 +60,17 @@ export default function PopularPathsSection() {
                   <h3 className="text-base font-semibold text-slate-800 dark:text-white">
                     {path.title}
                   </h3>
+
                   <p className="text-xs text-gray-500 dark:text-slate-400 leading-relaxed">
                     {path.description}
                   </p>
                 </div>
 
-                {/* Action Link */}
-                <a
-                  href={path.actionHref}
-                  className="inline-flex items-center text-xs font-semibold text-teal-700 dark:text-teal-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors pt-2"
-                >
-                  <span className="group-hover:translate-x-0.5 transition-transform">
-                    {path.actionText}
-                  </span>
-                </a>
+                {/* Action link removed */}
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
