@@ -225,6 +225,14 @@ export default function ProductMegaMenu({
               />
 
               <MenuItem
+                icon="product-overview.png"
+                title="Operating Model"
+                description="Governed stages & lifecycle."
+                href="/operating-model"
+                onLinkClick={onLinkClick}
+              />
+
+              <MenuItem
                 icon="desktop.png"
                 title="Desktop & Mobile Apps"
                 description="Work from anywhere."

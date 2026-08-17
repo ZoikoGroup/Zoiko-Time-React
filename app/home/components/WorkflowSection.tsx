@@ -47,10 +47,11 @@ export default function WorkflowSection() {
             ))}
           </div>
 
+          <a href="https://getzoikotime.com/">
           <button className="flex w-fit items-center gap-2 rounded-lg bg-emerald-400 px-8 py-4 text-base font-bold text-white transition-colors hover:bg-emerald-500">
             Explore Core Workflows
             <ArrowRight className="size-4" />
-          </button>
+          </button></a>
         </div>
       </div>
     </section>

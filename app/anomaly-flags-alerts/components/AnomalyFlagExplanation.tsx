@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function AnomalyFlagExplanation() {
   return (
@@ -62,18 +63,18 @@ export default function AnomalyFlagExplanation() {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2 w-full sm:w-auto">
-          <a
+          <Link
             href="/human-in-command"
-            className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold   text-base rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm transition-all text-center"
+            className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold   text-base rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm transition-all text-center cursor-pointer"
           >
             Human-in-Command Controls
-          </a>
-          <a
+          </Link>
+          <Link
             href="/trust-center"
-            className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold   text-base rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm transition-all text-center"
+            className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold   text-base rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm transition-all text-center cursor-pointer"
           >
             Trust Center
-          </a>
+          </Link>
         </div>
 
       </div>

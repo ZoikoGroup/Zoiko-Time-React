@@ -344,7 +344,7 @@ export default function Pricing() {
                 ) : (
                   <>
                     <Link
-                      href="/start-free"
+                      href="/checkout"
                       className="flex h-11 w-full items-center justify-center rounded-[10px] bg-[#3FB97A] text-sm font-bold text-white transition hover:bg-[#3FB97A]"
                     >
                       Start 14-Day Free Trial

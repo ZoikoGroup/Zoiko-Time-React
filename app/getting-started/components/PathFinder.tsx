@@ -252,7 +252,7 @@ export default function PathFinder() {
 
               {/* CTA */}
               <Link
-                href="/request-a-demo"
+                href="/zoikotime-path-steps"
                 className="mt-8 inline-flex rounded-full bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-700"
               >
                 Start this path

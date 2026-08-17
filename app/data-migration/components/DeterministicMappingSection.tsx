@@ -40,12 +40,13 @@ const features: FeatureItem[] = [
 
 export default function DeterministicMappingSection() {
   return (
-    <section id="mapping-controls" className="w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-sans transition-colors">
+    <section
+      id="mapping-controls"
+      className="w-full bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 font-sans transition-colors"
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
-        
         {/* Left Column: Content */}
         <div className="flex flex-col gap-6">
-          
           {/* Header */}
           <header className="space-y-2">
             <span className="text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">
@@ -55,7 +56,7 @@ export default function DeterministicMappingSection() {
               Explicit Enough for Business, Privacy, and Audit Reviewers
             </h2>
             <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed pt-1">
-              A mapping is a reviewable artifact with an author, a reviewer, test cases, and a version — not a hidden script.
+              A mapping is a reviewable artifact with an author, a reviewer, test cases, and a version â€” not a hidden script.
             </p>
           </header>
 
@@ -71,7 +72,7 @@ export default function DeterministicMappingSection() {
                   <strong className="font-bold text-slate-900 dark:text-white">
                     {item.title}
                   </strong>
-                  {' — '}
+                  {' â€” '}
                   <span>{item.description}</span>
                 </p>
               </li>
@@ -97,7 +98,6 @@ export default function DeterministicMappingSection() {
               Any mapping change invalidates the affected rehearsal and validation evidence, and requires a re-run before cutover. Evidence does not survive the thing it was evidence for.
             </p>
           </div>
-
         </div>
 
         {/* Right Column: Visual Preview / Diagram */}
@@ -111,7 +111,6 @@ export default function DeterministicMappingSection() {
             />
           </div>
         </div>
-
       </div>
     </section>
   );

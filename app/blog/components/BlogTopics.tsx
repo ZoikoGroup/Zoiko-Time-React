@@ -74,7 +74,7 @@ export default function BlogTopics() {
       <div className="mx-auto w-full max-w-[1200px]">
 
         {/* Header */}
-        <div className="text-center">
+        <div id="topic" className="text-center">
           <div className="flex items-center justify-center gap-3">
             <div className="h-px w-5 bg-teal-600" />
 

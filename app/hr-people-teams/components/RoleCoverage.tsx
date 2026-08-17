@@ -42,14 +42,14 @@ const workflows = [
     linkLabel: "Manage Remote & Hybrid Work",
     href: "/manage-remote-hybrid-work",
   },
-  {
-    icon: "/hr-people-teams/worker-transparency.png",
-    title: "Worker Transparency & Communication",
-    description:
-      "Make the record, status, reason, and review path understandable to the worker; support communications and consultation.",
-    linkLabel: "Anti-Surveillance Principles",
-    href: "/anti-surveillance-principles",
-  },
+  // {
+  //   icon: "/hr-people-teams/worker-transparency.png",
+  //   title: "Worker Transparency & Communication",
+  //   description:
+  //     "Make the record, status, reason, and review path understandable to the worker; support communications and consultation.",
+  //   linkLabel: "Anti-Surveillance Principles",
+  //   href: "/anti-surveillance-principles",
+  // },
 ];
 
 export default function RoleCoverage() {

@@ -17,7 +17,7 @@ const paths = [
     description:
       "Explore responsible AI, worker transparency, access control, and security review resources.",
     action: "Review Trust Resources →",
-    href: "/trust-and-governance",
+    href: "/blog-insight-review",
   },
   {
     image: "/ReaderPaths/planning.png",
@@ -25,7 +25,7 @@ const paths = [
     description:
       "Practical guidance on rollout planning, admin readiness, and worker communication.",
     action: "Plan Implementation →",
-    href: "/implementation-services",
+    href: "/blog-insights-plan-implementation",
   },
   {
     image: "/ReaderPaths/payroll.png",
@@ -33,7 +33,7 @@ const paths = [
     description:
       "Strengthen time records, review workflows, approvals, and audit trails for payroll and billing confidence.",
     action: "Explore Topics →",
-    href: "/payroll-and-timesheet-integrity",
+    href: "/blog-insight-explore-topics",
   },
 ];
 

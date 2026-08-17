@@ -25,8 +25,8 @@ export default function AuditableTimeRecordLineageHero() {
           </p>
         </div>
         <img
-          className="h-auto w-full rounded-[20px] border border-gray-200 shadow-2xl dark:border-gray-700"
-          src="https://placehold.co/598x736"
+          className="h-auto w-full rounded-[20px] "
+          src="/lineage/div.mock (1).png"
           alt="Lineage graph preview"
         />
       </div>

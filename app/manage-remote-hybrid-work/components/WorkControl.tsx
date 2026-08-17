@@ -78,7 +78,7 @@ export default function WorkControl() {
                 </Link>
 
                 <Link
-                  href="/how-zoikotime-works"
+                  href="/operating-model"
                   className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-base font-semibold text-slate-900 transition hover:bg-slate-100 dark:text-white dark:hover:bg-slate-800"
                 >
                   See the operating model

@@ -4,7 +4,7 @@ import React from "react";
 
 export default function FeaturedInsight() {
   return (
-    <section className="bg-white py-20 transition-colors duration-300 dark:bg-slate-950">
+    <section id="insight" className="bg-white py-20 transition-colors duration-300 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-[20px] border border-slate-200 bg-white shadow-xl transition-colors duration-300 dark:border-white/10 dark:bg-slate-900">
           <div className="grid lg:grid-cols-2">
