@@ -298,7 +298,7 @@ export default function ProductMegaMenu({
                 icon="attendance.png"
                 title="Attendance & Presence"
                 description="Verify attendance in real time."
-                href="#"
+                href="/verify-time-attendance"
                 onLinkClick={onLinkClick}
               />
 
