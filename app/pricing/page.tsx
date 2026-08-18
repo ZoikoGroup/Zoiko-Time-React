@@ -1,16 +1,18 @@
 import React from 'react'
-import Pricing from './components/Pricing'
-import Billing from './components/Billing'
+import PricingHero from './components/PricingHero'
+import PricingPlans from './components/PricingPlans'
+import BillingClearly from './components/BillingClearly'
 import PricingFAQ from './components/PricingFAQ'
-import EnterprisePricingCTA from './components/EnterprisePricingCTA'
+import PricingEnterpriseCTA from './components/PricingEnterpriseCTA'
 
 export default function page() {
   return (
     <main>
-        <Pricing />
-        <Billing />
+        <PricingHero />
+        <PricingPlans />
+        <BillingClearly />
         <PricingFAQ />
-        <EnterprisePricingCTA />
+        <PricingEnterpriseCTA />
     </main>
   )
 }
