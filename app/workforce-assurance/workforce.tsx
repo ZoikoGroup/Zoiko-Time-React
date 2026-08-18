@@ -198,6 +198,24 @@ const recommendations: RecommendationCard[] = [
 export default function WorkforceAssuranceHub() {
   const [region, setRegion] = useState('European Union (GDPR)');
   const [industry, setIndustry] = useState('Financial Services');
+  const [isTechModalOpen, setIsTechModalOpen] = useState(false);
+  const [activeTechTab, setActiveTechTab] = useState<'architecture' | 'ai-governance' | 'data-privacy' | 'integration-api'>('architecture');
+
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsTechModalOpen(false);
+      }
+    };
+    if (isTechModalOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isTechModalOpen]);
 
   return (
     <div className="w-full bg-slate-50 dark:bg-gray-900 text-slate-900 dark:text-white antialiased min-h-screen transition-colors duration-200">
@@ -322,9 +340,13 @@ export default function WorkforceAssuranceHub() {
                 </ul>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-gray-800">
-                <Link href="/enterprise-approval-pack" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
+                <a
+                  href="/ZoikoTime-Internal-Approval-Pack.pdf"
+                  download="ZoikoTime-Internal-Approval-Pack.pdf"
+                  className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug cursor-pointer"
+                >
                   Download approval pack →
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -345,9 +367,15 @@ export default function WorkforceAssuranceHub() {
                 </ul>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-gray-800">
-                <Link href="/security-overview" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
+                <button
+                  onClick={() => {
+                    setIsTechModalOpen(true);
+                    setActiveTechTab('architecture');
+                  }}
+                  className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug cursor-pointer bg-transparent border-none p-0 align-baseline"
+                >
                   View architecture →
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -1163,6 +1191,495 @@ export default function WorkforceAssuranceHub() {
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-72 h-72 bg-teal-200/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-200/10 rounded-full blur-3xl pointer-events-none" />
       </section>
+
+      {/* System Architecture & Governance Modal */}
+      {isTechModalOpen && (
+        <div 
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setIsTechModalOpen(false);
+            }
+          }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-[1.50px] p-4 overflow-y-auto"
+        >
+          {/* Modal Box */}
+          <div className="w-full max-w-[900px] bg-white dark:bg-slate-900 rounded-2xl shadow-[0px_40px_90px_0px_rgba(0,0,0,0.35)] overflow-hidden flex flex-col relative my-8">
+            {/* Header */}
+            <div className="w-full bg-gradient-to-r from-slate-800 to-sky-950 p-6 md:p-8 relative">
+              <div className="text-teal-300 text-xs font-extrabold uppercase tracking-wide mb-2 font-sans">
+                CIO / CISO · Technical Deep Dive
+              </div>
+              <div className="text-white text-xl md:text-2xl font-bold font-sans mb-3">
+                System Architecture &amp; Governance
+              </div>
+              <div className="text-white/80 text-xs md:text-sm font-normal leading-relaxed font-sans max-w-2xl">
+                Architecture, AI governance, the data &amp; privacy model, and the integration/API reference — everything a technical reviewer needs.
+              </div>
+              {/* Close button */}
+              <button
+                onClick={() => setIsTechModalOpen(false)}
+                className="absolute right-6 top-6 size-9 bg-white/10 rounded-lg outline outline-1 outline-white/25 flex items-center justify-center text-white text-base hover:bg-white/20 transition-all cursor-pointer border-none"
+                aria-label="Close modal"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Tab Bar */}
+            <div className="w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-gray-800 flex overflow-x-auto scrollbar-none">
+              <button
+                onClick={() => setActiveTechTab('architecture')}
+                className={`px-6 py-3.5 text-xs sm:text-sm font-semibold whitespace-nowrap cursor-pointer transition-all border-b-[3px] bg-transparent border-none ${
+                  activeTechTab === 'architecture'
+                    ? 'border-teal-600 text-slate-800 dark:text-white'
+                    : 'border-transparent text-gray-500 hover:text-slate-800 dark:hover:text-white'
+                }`}
+              >
+                Architecture
+              </button>
+              <button
+                onClick={() => setActiveTechTab('ai-governance')}
+                className={`px-6 py-3.5 text-xs sm:text-sm font-semibold whitespace-nowrap cursor-pointer transition-all border-b-[3px] bg-transparent border-none ${
+                  activeTechTab === 'ai-governance'
+                    ? 'border-teal-600 text-slate-800 dark:text-white'
+                    : 'border-transparent text-gray-500 hover:text-slate-800 dark:hover:text-white'
+                }`}
+              >
+                AI Governance
+              </button>
+              <button
+                onClick={() => setActiveTechTab('data-privacy')}
+                className={`px-6 py-3.5 text-xs sm:text-sm font-semibold whitespace-nowrap cursor-pointer transition-all border-b-[3px] bg-transparent border-none ${
+                  activeTechTab === 'data-privacy'
+                    ? 'border-teal-600 text-slate-800 dark:text-white'
+                    : 'border-transparent text-gray-500 hover:text-slate-800 dark:hover:text-white'
+                }`}
+              >
+                Data &amp; Privacy
+              </button>
+              <button
+                onClick={() => setActiveTechTab('integration-api')}
+                className={`px-6 py-3.5 text-xs sm:text-sm font-semibold whitespace-nowrap cursor-pointer transition-all border-b-[3px] bg-transparent border-none ${
+                  activeTechTab === 'integration-api'
+                    ? 'border-teal-600 text-slate-800 dark:text-white'
+                    : 'border-transparent text-gray-500 hover:text-slate-800 dark:hover:text-white'
+                }`}
+              >
+                Integration &amp; API
+              </button>
+            </div>
+
+            {/* Content Area */}
+            <div className="p-6 md:p-8 overflow-y-auto max-h-[60vh] bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200">
+              
+              {/* Architecture Tab Content */}
+              {activeTechTab === 'architecture' && (
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-slate-800 dark:text-white text-base font-bold mb-2">System architecture</h4>
+                    <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-normal leading-relaxed">
+                      A layered architecture captures time and declared context at the edge, applies policy deterministically, and writes signed, append-only evidence that powers reporting and integrations.
+                    </p>
+                  </div>
+
+                  {/* Layers Stack */}
+                  <div className="space-y-4">
+                    {/* Layer 1: Clients */}
+                    <div className="bg-white dark:bg-slate-900 rounded-[10px] p-4 border border-slate-200 dark:border-gray-800">
+                      <div className="text-teal-700 dark:text-teal-400 text-[10px] font-extrabold uppercase tracking-wider mb-3">Clients</div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Desktop</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">Win / macOS / Linux agent</div>
+                        </div>
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Web</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">Reviewer &amp; admin console</div>
+                        </div>
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Mobile</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">iOS / Android</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="text-center text-teal-600 dark:text-teal-400 text-base font-normal select-none leading-none">↓</div>
+
+                    {/* Layer 2: Ingestion & API */}
+                    <div className="bg-white dark:bg-slate-900 rounded-[10px] p-4 border border-slate-200 dark:border-gray-800">
+                      <div className="text-teal-700 dark:text-teal-400 text-[10px] font-extrabold uppercase tracking-wider mb-3">Ingestion &amp; API</div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Secure ingest</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">TLS, auth, validation</div>
+                        </div>
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">REST API</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">records, policies, evidence, events</div>
+                        </div>
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Webhooks</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">signed event delivery</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="text-center text-teal-600 dark:text-teal-400 text-base font-normal select-none leading-none">↓</div>
+
+                    {/* Layer 3: Policy Engine */}
+                    <div className="bg-white dark:bg-slate-900 rounded-[10px] p-4 border border-slate-200 dark:border-gray-800">
+                      <div className="text-teal-700 dark:text-teal-400 text-[10px] font-extrabold uppercase tracking-wider mb-3">Policy Engine (deterministic)</div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Rule evaluation</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">jurisdiction-aware</div>
+                        </div>
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Assistive AI</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">anomaly &amp; signal quality</div>
+                        </div>
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Human review</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">exception queues</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="text-center text-teal-600 dark:text-teal-400 text-base font-normal select-none leading-none">↓</div>
+
+                    {/* Layer 4: Evidence Ledger */}
+                    <div className="bg-white dark:bg-slate-900 rounded-[10px] p-4 border border-slate-200 dark:border-gray-800">
+                      <div className="text-teal-700 dark:text-teal-400 text-[10px] font-extrabold uppercase tracking-wider mb-3">Evidence Ledger</div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Append-only</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">integrity-signed</div>
+                        </div>
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Versioning</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">no overwrite</div>
+                        </div>
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Export</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">PDF/A + JSON</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="text-center text-teal-600 dark:text-teal-400 text-base font-normal select-none leading-none">↓</div>
+
+                    {/* Layer 5: Analytics & Integrations */}
+                    <div className="bg-white dark:bg-slate-900 rounded-[10px] p-4 border border-slate-200 dark:border-gray-800">
+                      <div className="text-teal-700 dark:text-teal-400 text-[10px] font-extrabold uppercase tracking-wider mb-3">Analytics &amp; Integrations</div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Reporting</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">decision-ready views</div>
+                        </div>
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">Payroll / HR</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">ADP, Workday, SAP</div>
+                        </div>
+                        <div className="bg-gray-50 dark:bg-slate-800 p-3 rounded-lg border border-emerald-100 dark:border-emerald-950/40">
+                          <div className="text-slate-800 dark:text-white text-xs font-bold mb-1">SIEM / SSO</div>
+                          <div className="text-gray-500 dark:text-gray-400 text-xs">logs &amp; identity</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Deployment & Resilience Cards */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-white dark:bg-slate-900 rounded-[10px] p-4 border border-slate-200 dark:border-gray-800">
+                      <div className="text-slate-800 dark:text-white text-xs font-bold mb-2">Deployment options</div>
+                      <div className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
+                        Multi-tenant cloud, dedicated single-tenant, private cloud, or on-premises (Enterprise), with region-specific data residency.
+                      </div>
+                    </div>
+                    <div className="bg-white dark:bg-slate-900 rounded-[10px] p-4 border border-slate-200 dark:border-gray-800">
+                      <div className="text-slate-800 dark:text-white text-xs font-bold mb-2">Availability &amp; resilience</div>
+                      <div className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
+                        Redundant components, encrypted backups, configurable RTO/RPO, and monitored health with alerting.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* AI Governance Tab Content */}
+              {activeTechTab === 'ai-governance' && (
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-slate-800 dark:text-white text-base font-bold mb-2">AI explainability &amp; governance</h4>
+                  </div>
+
+                  {/* Cards Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-white dark:bg-slate-900 rounded-[10px] p-4 border border-slate-200 dark:border-gray-800">
+                      <div className="text-slate-800 dark:text-white text-xs font-bold mb-2">Deterministic core</div>
+                      <div className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
+                        Time classification uses explicit, policy-bound rules — reproducible and inspectable. No opaque scoring decides whether work occurred.
+                      </div>
+                    </div>
+                    <div className="bg-white dark:bg-slate-900 rounded-[10px] p-4 border border-slate-200 dark:border-gray-800">
+                      <div className="text-slate-800 dark:text-white text-xs font-bold mb-2">Where AI assists</div>
+                      <div className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
+                        Bounded to anomaly detection and signal-quality checks. AI surfaces candidates for human review; it never takes consequential action.
+                      </div>
+                    </div>
+                    <div className="bg-white dark:bg-slate-900 rounded-[10px] p-4 border border-slate-200 dark:border-gray-800">
+                      <div className="text-slate-800 dark:text-white text-xs font-bold mb-2">Explainability</div>
+                      <div className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
+                        Assistive outputs carry reason codes and the inputs considered, so reviewers understand why something was flagged.
+                      </div>
+                    </div>
+                    <div className="bg-white dark:bg-slate-900 rounded-[10px] p-4 border border-slate-200 dark:border-gray-800">
+                      <div className="text-slate-800 dark:text-white text-xs font-bold mb-2">Human-in-command</div>
+                      <div className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
+                        Pay, discipline, and classification outcomes require an authorized human. No worker risk scores or leaderboards.
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bullet points */}
+                  <div className="space-y-3">
+                    <h5 className="text-slate-800 dark:text-white text-xs font-bold font-sans">Model &amp; provider data handling</h5>
+                    <ul className="space-y-2">
+                      <li className="flex items-start gap-2.5">
+                        <span className="size-1.5 mt-1.5 shrink-0 bg-teal-600 rounded-full" />
+                        <span className="text-gray-700 dark:text-gray-300 text-xs font-normal">
+                          Model/provider data is bounded and documented; inputs are minimized to what a check requires.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="size-1.5 mt-1.5 shrink-0 bg-teal-600 rounded-full" />
+                        <span className="text-gray-700 dark:text-gray-300 text-xs font-normal">
+                          No training on customer content without explicit, contracted consent.
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2.5">
+                        <span className="size-1.5 mt-1.5 shrink-0 bg-teal-600 rounded-full" />
+                        <span className="text-gray-700 dark:text-gray-300 text-xs font-normal">
+                          EU AI Act posture: transparency and human oversight for assistive, non-decisional AI.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Boundary Banner */}
+                  <div className="bg-emerald-50 dark:bg-emerald-950/20 p-4 rounded-lg border-l-4 border-teal-600 text-xs">
+                    <span className="text-teal-700 dark:text-teal-400 font-bold mr-1">Boundary:</span>
+                    <span className="text-slate-800 dark:text-slate-200">
+                      the platform provides evidence and applies policy; people decide. The system never determines misconduct, pay, or discipline.
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {/* Data & Privacy Tab Content */}
+              {activeTechTab === 'data-privacy' && (
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-slate-800 dark:text-white text-base font-bold mb-2">Data governance &amp; privacy model</h4>
+                  </div>
+
+                  {/* Table */}
+                  <div className="overflow-hidden rounded-lg border border-slate-200 dark:border-gray-800">
+                    <div className="grid grid-cols-[1fr_2fr] bg-slate-800 text-[10px] font-semibold text-white uppercase tracking-wider">
+                      <div className="p-3">Dimension</div>
+                      <div className="p-3 border-l border-slate-700">Model</div>
+                    </div>
+                    <div className="divide-y divide-slate-200 dark:divide-gray-800 text-xs">
+                      <div className="grid grid-cols-[1fr_2fr] bg-gray-50 dark:bg-slate-800/40">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Collected</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                          Time &amp; attendance, declared/configured work context, policy outcomes, review actions.
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-[1fr_2fr] bg-white dark:bg-slate-900">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Never collected</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                          Keystroke content, URL history, application-name monitoring, clipboard — under any tier or configuration.
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-[1fr_2fr] bg-gray-50 dark:bg-slate-800/40">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Screenshots</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                          Optional, user-configurable intervals, with blur/redaction and a Transparency Center.
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-[1fr_2fr] bg-white dark:bg-slate-900">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Minimization</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                          Only data required for the configured policy is processed.
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-[1fr_2fr] bg-gray-50 dark:bg-slate-800/40">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Retention &amp; deletion</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                          Configurable by data type within governed limits; deletion on request or end of term.
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-[1fr_2fr] bg-white dark:bg-slate-900">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Residency &amp; encryption</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                          Region-specific storage (Enterprise); AES-256 at rest, TLS in transit.
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-[1fr_2fr] bg-gray-50 dark:bg-slate-800/40">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Access &amp; rights</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                          RBAC + SSO/SAML; DSAR workflows with request tracking; append-only audit logs.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Privacy Banner */}
+                  <div className="bg-emerald-50 dark:bg-emerald-950/20 p-4 rounded-lg border-l-4 border-teal-600 text-xs">
+                    <span className="text-teal-700 dark:text-teal-400 font-bold mr-1">Privacy by design:</span>
+                    <span className="text-slate-800 dark:text-slate-200">
+                      the anti-surveillance boundary is a product guarantee, not a setting — it holds under every tier and configuration.
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {/* Integration & API Tab Content */}
+              {activeTechTab === 'integration-api' && (
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-slate-800 dark:text-white text-base font-bold mb-2">Integration &amp; API reference</h4>
+                  </div>
+
+                  {/* Settings Table */}
+                  <div className="overflow-hidden rounded-lg border border-slate-200 dark:border-gray-800">
+                    <div className="grid grid-cols-[1fr_2fr] bg-slate-800 text-[10px] font-semibold text-white uppercase tracking-wider">
+                      <div className="p-3">Setting</div>
+                      <div className="p-3 border-l border-slate-700">Value</div>
+                    </div>
+                    <div className="divide-y divide-slate-200 dark:divide-gray-800 text-xs">
+                      <div className="grid grid-cols-[1fr_2fr] bg-gray-50 dark:bg-slate-800/40">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Base URL</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-teal-700 dark:text-teal-400 font-mono">
+                          https://api.zoikotime.com/v1
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-[1fr_2fr] bg-white dark:bg-slate-900">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Authentication</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                          OAuth 2.0 (client credentials) or scoped API keys
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-[1fr_2fr] bg-gray-50 dark:bg-slate-800/40">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Identity</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                          SSO via SAML 2.0 / OIDC; SCIM 2.0 provisioning
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-[1fr_2fr] bg-white dark:bg-slate-900">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Events</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                          Signed webhooks for record, policy &amp; evidence events
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-[1fr_2fr] bg-gray-50 dark:bg-slate-800/40">
+                        <div className="p-3 font-bold text-gray-700 dark:text-gray-300">Rate limits</div>
+                        <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                          Per-token limits with standard rate-limit headers
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Core Resources Table */}
+                  <div className="space-y-2">
+                    <h5 className="text-slate-800 dark:text-white text-xs font-bold">Core resources</h5>
+                    <div className="overflow-hidden rounded-lg border border-slate-200 dark:border-gray-800">
+                      <div className="grid grid-cols-[1.5fr_2.5fr] bg-slate-800 text-[10px] font-semibold text-white uppercase tracking-wider">
+                        <div className="p-3">Endpoint</div>
+                        <div className="p-3 border-l border-slate-700">Purpose</div>
+                      </div>
+                      <div className="divide-y divide-slate-200 dark:divide-gray-800 text-xs">
+                        <div className="grid grid-cols-[1.5fr_2.5fr] bg-gray-50 dark:bg-slate-800/40">
+                          <div className="p-3 text-teal-700 dark:text-teal-400 font-mono font-bold">GET /v1/records</div>
+                          <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                            Retrieve session/time records with filters.
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-[1.5fr_2.5fr] bg-white dark:bg-slate-900">
+                          <div className="p-3 text-teal-700 dark:text-teal-400 font-mono font-bold">GET /v1/policies</div>
+                          <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                            List effective-dated policies &amp; versions.
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-[1.5fr_2.5fr] bg-gray-50 dark:bg-slate-800/40">
+                          <div className="p-3 text-teal-700 dark:text-teal-400 font-mono font-bold">GET /v1/evidence/{"{id}"}</div>
+                          <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                            Fetch a signed evidence record.
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-[1.5fr_2.5fr] bg-white dark:bg-slate-900">
+                          <div className="p-3 text-teal-700 dark:text-teal-400 font-mono font-bold">POST /v1/exports</div>
+                          <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                            Generate an evidence bundle (PDF/A + JSON).
+                          </div>
+                        </div>
+                        <div className="grid grid-cols-[1.5fr_2.5fr] bg-gray-50 dark:bg-slate-800/40">
+                          <div className="p-3 text-teal-700 dark:text-teal-400 font-mono font-bold">GET /v1/events</div>
+                          <div className="p-3 border-l border-slate-200 dark:border-gray-800 text-gray-600 dark:text-gray-400">
+                            Read the append-only event stream.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Code Examples */}
+                  <div className="space-y-4">
+                    <div>
+                      <div className="text-slate-800 dark:text-white text-xs font-bold mb-2">Example request</div>
+                      <pre className="bg-slate-800 dark:bg-slate-950 p-4 rounded-lg overflow-x-auto text-emerald-100 font-mono text-xs leading-relaxed">
+                        {"# Fetch verified records for a period\n"}
+                        {"curl https://api.zoikotime.com/v1/records \\\n"}
+                        {"  -H \"Authorization: Bearer $TOKEN\" \\\n"}
+                        {"  -G --data-urlencode \"from=2026-03-01\" \\\n"}
+                        {"     --data-urlencode \"to=2026-03-31\""}
+                      </pre>
+                    </div>
+
+                    <div>
+                      <pre className="bg-slate-800 dark:bg-slate-950 p-4 rounded-lg overflow-x-auto text-emerald-100 font-mono text-xs leading-relaxed">
+                        {"// 200 OK\n"}
+                        {"{\n"}
+                        {"  \"record_id\": \"SES-2026-08841\",\n"}
+                        {"  \"policy_referenced\": \"remote-session-uk@3.2\",\n"}
+                        {"  \"policy_outcome\": \"compliant\",\n"}
+                        {"  \"human_review_required\": false,\n"}
+                        {"  \"integrity_signature\": \"sha256:3c77bd3c…\"\n"}
+                        {"}"}
+                      </pre>
+                    </div>
+                  </div>
+
+                  {/* Integration Banner */}
+                  <div className="bg-emerald-50 dark:bg-emerald-950/20 p-4 rounded-lg border-l-4 border-teal-600 text-xs">
+                    <span className="text-teal-700 dark:text-teal-400 font-bold mr-1">Full reference:</span>
+                    <span className="text-slate-800 dark:text-slate-200">
+                      complete API docs, SSO/SCIM setup, and webhook payloads live in the developer documentation and the Security Overview.
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Footer */}
+            <div className="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-gray-800 px-6 py-4 flex items-center justify-between text-xs text-gray-500">
+              <div>ZoikoTime™ · Confidential — for evaluation</div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
