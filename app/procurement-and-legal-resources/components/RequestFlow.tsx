@@ -79,11 +79,11 @@ export default function RequestFlow() {
         </div>
 
         {/* CTA */}
-        <div className="mt-10">
+       {/*} <div className="mt-10">
           <button className="rounded-lg bg-green-400 px-6 py-3.5 text-base font-semibold text-white shadow-[0px_6px_16px_rgba(14,31,61,0.28)] transition hover:bg-green-500">
             Request Procurement Resources
           </button>
-        </div>
+        </div>*/}
       </div>
     </section>
   );

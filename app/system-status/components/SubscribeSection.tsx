@@ -234,12 +234,12 @@ export default function SubscribeSection() {
               >
                 Subscribe
               </button>
-              <button
+              {/*<button
                 type="button"
                 className="px-6 py-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 font-bold text-base rounded-lg border border-slate-200 dark:border-slate-700 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-400"
               >
                 Manage an existing subscription
-              </button>
+              </button>*/}
             </div>
 
             <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">

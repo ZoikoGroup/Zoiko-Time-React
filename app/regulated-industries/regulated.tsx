@@ -892,16 +892,15 @@ export default function Regulated() {
               ))}
             </div>
 
-            {/* Box Bottom Generation Bar */}
-            <div className="bg-emerald-50 dark:bg-gray-900 p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <p className="text-teal-700 text-xs font-semibold leading-5 max-w-[288px] whitespace-pre-line text-center sm:text-left">
-                ⏱ Package generated in &lt;4 minutes — no manual{"\n"}preparation required
-              </p>
-              <button className="bg-teal-600 hover:bg-teal-700 transition-colors text-white text-xs font-bold py-2 px-4 rounded-lg flex flex-col items-center justify-center text-center shrink-0 shadow-sm leading-tight">
-                <span>↓ Generate</span>
-                <span>Package</span>
-              </button>
-            </div>
+           
+           {/* Box Bottom Generation Bar */}
+<div className="bg-emerald-50 dark:bg-gray-900 p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+  <p className="text-teal-700 text-xs font-semibold leading-5 max-w-[288px] whitespace-pre-line text-center sm:text-left">
+    ⏱ Package generated in &lt;4 minutes — no manual{"\n"}preparation required
+  </p>
+
+  {/* Generate Package button removed */}
+</div>
 
           </div>
         </div>

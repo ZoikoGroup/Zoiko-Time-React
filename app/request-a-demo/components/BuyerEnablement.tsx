@@ -1,11 +1,9 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
 
 interface Resource {
   image: string;
   title: string;
   description: string;
-  action: string;
 }
 
 const resources: Resource[] = [
@@ -14,35 +12,30 @@ const resources: Resource[] = [
     title: "ROI Calculator",
     description:
       "Quantify payroll leakage, billing disputes, admin overhead, and compliance exposure for your team size.",
-    action: "Calculate ROI",
   },
   {
     image: "/BuyerEnablement/kit.png",
     title: "Buyer Kit",
     description:
       "Champion bundle: one-pager, pricing overview, implementation plan, and security overview for internal presentations.",
-    action: "Get the buyer kit",
   },
   {
     image: "/BuyerEnablement/security.png",
     title: "IT & Security FAQ",
     description:
       "Answers for your IT and procurement team: data model, access controls, sub-processors, integrations, and security documentation.",
-    action: "Review IT FAQ",
   },
   {
     image: "/BuyerEnablement/implimentation.png",
     title: "Implementation Guide",
     description:
       "30-day rollout timeline, responsibilities breakdown, employee communication templates, and first-sprint priorities.",
-    action: "See rollout guide",
   },
   {
     image: "/BuyerEnablement/protection.png",
     title: "Data Protection",
     description:
       "DPA, sub-processor list, data residency options, GDPR/CCPA compliance documentation, and legal review resources.",
-    action: "Review DPA resources",
   },
 ];
 
@@ -62,10 +55,8 @@ export default function BuyerEnablement() {
         overflow-hidden
       "
     >
-
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto">
-
         <p
           className="
             text-teal-400
@@ -77,7 +68,6 @@ export default function BuyerEnablement() {
         >
           Buyer enablement
         </p>
-
 
         <h2
           className="
@@ -91,7 +81,6 @@ export default function BuyerEnablement() {
           Help your team say yes.
         </h2>
 
-
         <p
           className="
             mt-5
@@ -103,9 +92,7 @@ export default function BuyerEnablement() {
           Resources to help you build internal confidence, get IT and legal
           sign-off, and move your evaluation forward.
         </p>
-
       </div>
-
 
       {/* Cards */}
       <div
@@ -118,9 +105,7 @@ export default function BuyerEnablement() {
           gap-5
         "
       >
-
         {resources.map((item) => (
-
           <div
             key={item.title}
             className="
@@ -134,7 +119,6 @@ export default function BuyerEnablement() {
               flex-col
             "
           >
-
             {/* Image Icon */}
             <div
               className="
@@ -158,7 +142,6 @@ export default function BuyerEnablement() {
               />
             </div>
 
-
             <h3
               className="
                 mt-6
@@ -169,7 +152,6 @@ export default function BuyerEnablement() {
             >
               {item.title}
             </h3>
-
 
             <p
               className="
@@ -183,28 +165,10 @@ export default function BuyerEnablement() {
               {item.description}
             </p>
 
-
-            <button
-              className="
-                mt-5
-                flex
-                items-center
-                gap-2
-                text-teal-400
-                text-xs
-                font-bold
-              "
-            >
-              {item.action}
-              <ArrowRight size={14} />
-            </button>
-
+            {/* Action button removed */}
           </div>
-
         ))}
-
       </div>
-
     </section>
   );
 }

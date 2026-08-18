@@ -128,7 +128,7 @@ export default function SolutionsPath() {
             </div>
 
             {/* Bottom Link */}
-            <div className="mt-8 border-t border-neutral-300 pt-6 dark:border-neutral-700">
+            {/*<div className="mt-8 border-t border-neutral-300 pt-6 dark:border-neutral-700">
 
               <Link
                 href="/#"
@@ -142,7 +142,7 @@ export default function SolutionsPath() {
                 />
               </Link>
 
-            </div>
+            </div>*/}
           </div>
 
           {/* RIGHT IMAGE */}

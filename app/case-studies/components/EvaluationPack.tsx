@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const packs = [
   {
@@ -48,7 +49,6 @@ export default function EvaluationPack() {
           Procurement-Ready
         </p>
 
-
         <h2
           className="
             mt-6
@@ -61,7 +61,6 @@ export default function EvaluationPack() {
         >
           Download the Enterprise Evaluation Pack
         </h2>
-
 
         <p
           className="
@@ -77,7 +76,6 @@ export default function EvaluationPack() {
           to remove friction from procurement, legal, finance, and technical review teams.
         </p>
 
-
         <div
           className="
             mt-12
@@ -87,7 +85,6 @@ export default function EvaluationPack() {
             gap-6
           "
         >
-
           {packs.map((item) => (
             <div
               key={item.title}
@@ -103,11 +100,9 @@ export default function EvaluationPack() {
                 text-center
               "
             >
-
               <div className="text-3xl">
                 {item.icon}
               </div>
-
 
               <h3
                 className="
@@ -121,7 +116,6 @@ export default function EvaluationPack() {
                 {item.title}
               </h3>
 
-
               <p
                 className="
                   mt-4
@@ -134,7 +128,6 @@ export default function EvaluationPack() {
                 {item.description}
               </p>
 
-
               <p
                 className="
                   mt-6
@@ -145,12 +138,9 @@ export default function EvaluationPack() {
               >
                 {item.action}
               </p>
-
             </div>
           ))}
-
         </div>
-
 
         <div
           className="
@@ -164,7 +154,6 @@ export default function EvaluationPack() {
             overflow-hidden
           "
         >
-
           <div
             className="
               absolute
@@ -180,7 +169,6 @@ export default function EvaluationPack() {
             "
           />
 
-
           <h3
             className="
               relative
@@ -191,7 +179,6 @@ export default function EvaluationPack() {
           >
             Download the Complete Enterprise Evaluation Pack
           </h3>
-
 
           <p
             className="
@@ -204,8 +191,9 @@ export default function EvaluationPack() {
             All four components in one structured bundle — ready for distribution across your entire procurement team.
           </p>
 
-
-          <button
+          <Link
+            href="/case-studies/enterprise-evaluation-pack.pdf"
+            download
             className="
               relative
               mt-8
@@ -218,10 +206,16 @@ export default function EvaluationPack() {
               text-sm
               font-bold
               shadow-[0px_4px_12px_0px_rgba(0,157,140,0.35)]
+              flex
+              items-center
+              justify-center
+              mx-auto
+              hover:bg-teal-700
+              transition-colors
             "
           >
             Download Enterprise Evaluation Pack
-          </button>
+          </Link>
 
         </div>
 
