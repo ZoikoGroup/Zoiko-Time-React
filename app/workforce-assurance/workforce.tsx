@@ -42,14 +42,10 @@ interface BriefCard {
   icon: string;
   title: string;
   description: string;
-  linkText: string;
+
 }
 
-const briefCardHrefs = [
-  '/calculate-your-roi',
-  '/security-overview',
-  '/enterprise-workforce-governance',
-];
+
 
 const briefCards: BriefCard[] = [
   {
@@ -57,21 +53,18 @@ const briefCards: BriefCard[] = [
     icon: '📋',
     title: 'The Hidden Cost of Workforce Uncertainty',
     description: 'A financial analysis of the measurable cost of workforce data gaps — including payroll leakage benchmarks, billing inaccuracy rates, and the compounding effect of unverified contractor activity across enterprise operations.',
-    linkText: 'Read Brief →',
   },
   {
     tag: 'Governance Paper',
     icon: '🤖',
     title: 'AI Governance in Workforce Systems',
     description: 'A framework for implementing explainable, human-in-command AI in workforce governance — with specific guidance on bias controls, transparency requirements, and board-level AI accountability standards.',
-    linkText: 'Read Paper →',
   },
   {
     tag: 'Executive Brief',
     icon: '📊',
     title: 'Workforce Assurance: The Board Agenda for 2026',
     description: 'Why workforce verification, evidence infrastructure, and AI governance are moving from operational considerations to board-level risk agenda items — and what enterprises need to do now.',
-    linkText: 'Read Brief →',
   },
 ];
 
@@ -124,15 +117,9 @@ interface ToolCard {
   icon: string;
   title: string;
   description: string;
-  actionText: string;
 }
 
-const toolHrefs = [
-  '/calculate-your-roi',
-  '/workforce-record-insights',
-  '/enterprise-approval-pack',
-  '/enterprise-approval-pack',
-];
+
 
 interface RecommendationCard {
   icon: string;
@@ -141,36 +128,28 @@ interface RecommendationCard {
   actionText: string;
 }
 
-const recommendationHrefs = [
-  '/workforce-record-insights',
-  '/calculate-your-roi',
-  '/request-enterprise-demo',
-];
+
 
 const interactiveTools: ToolCard[] = [
   {
     icon: '💰',
     title: 'ROI Calculator',
     description: "Model your organisation's specific financial opportunity — leakage rate, workforce size, billing structure — and generate a CFO-ready justification with payback period.",
-    actionText: 'Launch Calculator →',
   },
   {
     icon: '🔍',
     title: 'Workforce Risk Scanner',
     description: 'Answer 12 questions about your current workforce operations and receive a tailored risk assessment — identifying hidden financial, compliance, and operational exposure.',
-    actionText: 'Scan My Risks →',
   },
   {
     icon: '✅',
     title: 'Compliance Readiness Tool',
     description: 'Assess your current audit and compliance readiness across the four pillars of the Workforce Assurance Framework™ — with a structured remediation roadmap based on your gaps.',
-    actionText: 'Check Readiness →',
   },
   {
     icon: '📊',
     title: 'Board Presentation Generator',
     description: 'Input your organisation details and evaluation findings — receive a customised slide deck for internal approval, structured for board and executive committee presentation.',
-    actionText: 'Generate Deck →',
   },
 ];
 
@@ -294,7 +273,7 @@ export default function WorkforceAssuranceHub() {
                 </ul>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-gray-800">
-                <Link href="/request-a-demo" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
+                <Link href="/how-zoikotime-works" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
                   See if ZoikoTime fits your organisation →
                 </Link>
               </div>
@@ -317,7 +296,7 @@ export default function WorkforceAssuranceHub() {
                 </ul>
               </div>
               <div className="pt-6 border-t border-slate-50 dark:border-gray-800">
-                <Link href="/workforce-record-insights" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
+                <Link href="/solutions" className="inline-block text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors leading-snug">
                   Explore solution by problem →
                 </Link>
               </div>
@@ -399,9 +378,9 @@ export default function WorkforceAssuranceHub() {
               <p className="text-xs sm:text-sm font-normal text-slate-500 dark:text-gray-400 max-w-2xl leading-relaxed">
                 A comprehensive model for governed, defensible, and intelligent workforce management applicable across all enterprise workforce types and operating environments.
               </p>
-              <Link href="/download-zoiko-time" className="mt-2 bg-teal-600 hover:bg-teal-700 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm transition-all cursor-pointer">
+              {/* <Link href="/download-zoiko-time" className="mt-2 bg-teal-600 hover:bg-teal-700 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm transition-all cursor-pointer">
                 ↓ Download Framework
-              </Link>
+              </Link> */}
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:grid-cols-2 lg:divide-y-0 lg:divide-x divide-slate-200 dark:divide-gray-800 border-b border-slate-200 dark:border-gray-800">
@@ -454,12 +433,12 @@ export default function WorkforceAssuranceHub() {
               <p className="text-xs font-semibold text-teal-800 dark:text-teal-400 max-w-xl text-center md:text-left leading-relaxed">
                 Used by enterprise governance, compliance, and HR teams across 40+ jurisdictions to evaluate and implement workforce assurance programmes.
               </p>
-              <Link
+              {/* <Link
   href="/workforce-assurance#access-full-framework-guide"
   className="bg-teal-600 hover:bg-teal-700 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg shadow-sm shrink-0 transition-all cursor-pointer w-full md:w-auto inline-flex items-center justify-center"
 >
   Access Full Framework Guide →
-</Link>
+</Link> */}
             </div>
           </div>
         </div>
@@ -663,7 +642,7 @@ export default function WorkforceAssuranceHub() {
                     </div>
                   </div>
 
-                  <Link
+                  {/* <Link
                     href="/enterprise-approval-pack"
                     className="inline-flex items-center justify-center w-full rounded-lg bg-white dark:bg-gray-800 border border-slate-300 dark:border-gray-700 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-700 dark:text-gray-300 shadow-sm transition-colors hover:bg-slate-50 dark:hover:bg-gray-700 hover:text-slate-900 dark:hover:text-white focus:outline-none"
                   >
@@ -671,7 +650,7 @@ export default function WorkforceAssuranceHub() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                     </svg>
                     Send This to Your CFO
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             ))}
@@ -942,12 +921,12 @@ export default function WorkforceAssuranceHub() {
               </div>
 
               <div className="p-5 md:p-6 bg-white dark:bg-gray-900 flex flex-col items-center">
-                <button
+                {/* <button
                   type="button"
                   className="w-full bg-teal-600 text-white rounded-lg py-2.5 md:py-3 px-4 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-sm hover:bg-teal-700 active:scale-[0.99] transition-all"
                 >
                   <span>🔧</span> Generate My Compliance Pack
-                </button>
+                </button> */}
                 <p className="mt-3 text-[11px] sm:text-xs font-normal text-slate-400 dark:text-gray-500 text-center leading-5">
                   Pack generated as PDF bundle within 2 business hours
                 </p>
@@ -998,11 +977,7 @@ export default function WorkforceAssuranceHub() {
                   </p>
                 </div>
                 
-                <div className="mt-5 md:mt-6">
-                  <Link href={briefCardHrefs[idx] ?? '/calculate-your-roi'} className="inline-flex text-teal-600 dark:text-teal-400 text-xs font-bold transition-colors hover:text-teal-700">
-                    {card.linkText}
-                  </Link>
-                </div>
+               
               </div>
             ))}
           </div>
@@ -1039,13 +1014,13 @@ export default function WorkforceAssuranceHub() {
                 </div>
               </div>
 
-              <Link
+              {/* <Link
                 href="/workforce-record-insights"
                 className="inline-flex items-center justify-center bg-teal-600 text-white rounded-lg px-6 py-3 text-xs sm:text-sm font-semibold shadow-sm hover:bg-teal-700 active:scale-[0.99] w-full sm:w-auto"
               >
                 Download State of Workforce Assurance 2026
               </Link>
-              
+               */}
             </div>
           </div>
         </div>
@@ -1086,14 +1061,7 @@ export default function WorkforceAssuranceHub() {
                   </p>
                 </div>
 
-                <div className="mt-6 md:mt-8 pt-1">
-                  <Link
-                    href={toolHrefs[index] ?? '/enterprise-approval-pack'}
-                    className="w-full bg-emerald-50 dark:bg-gray-800 border border-teal-600/20 text-teal-600 dark:text-teal-400 rounded-lg py-2.5 text-xs font-semibold tracking-wide transition-all group-hover:bg-teal-600 group-hover:text-white dark:group-hover:bg-teal-600 inline-flex items-center justify-center"
-                  >
-                    {tool.actionText}
-                  </Link>
-                </div>
+                
               </div>
             ))}
           </div>
@@ -1128,11 +1096,7 @@ export default function WorkforceAssuranceHub() {
                       {rec.description}
                     </p>
                   </div>
-                  <div className="mt-4">
-                    <Link href={recommendationHrefs[index] ?? '/workforce-record-insights'} className="inline-flex items-center text-xs font-bold text-teal-600 dark:text-teal-400 hover:text-teal-700 transition-colors">
-                      {rec.actionText}
-                    </Link>
-                  </div>
+                 
                 </div>
               </div>
             ))}
