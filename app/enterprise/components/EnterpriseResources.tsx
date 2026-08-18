@@ -5,44 +5,34 @@ import {
   BookOpen,
   ClipboardCheck,
   FileQuestion,
-  Download,
-  ArrowRight,
 } from "lucide-react";
 
 type Resource = {
   type: string;
   title: string;
-  action: string;
   icon: React.ElementType;
-  download?: boolean;
 };
 
 const resources: Resource[] = [
   {
     type: "WHITEPAPER",
     title: "Policy-First Workforce Truth Infrastructure",
-    action: "Download",
     icon: FileText,
-    download: true,
   },
   {
     type: "GUIDE",
     title: "Enterprise Deployment Best Practices",
-    action: "Read guide",
     icon: BookOpen,
   },
   {
     type: "CHECKLIST",
     title: "Evaluation & Procurement Readiness",
-    action: "View checklist",
     icon: ClipboardCheck,
   },
   {
     type: "TEMPLATE",
     title: "RPP Security & Privacy Questionnaire",
-    action: "Download",
     icon: FileQuestion,
-    download: true,
   },
 ];
 
@@ -71,7 +61,7 @@ export default function EnterpriseResources() {
               <article
                 key={resource.type}
                 className="
-                  flex min-h-[208px] flex-col justify-between
+                  flex min-h-[208px] flex-col
                   rounded-lg border border-sky-950/5
                   bg-white p-6
                   transition-all duration-200
@@ -80,51 +70,28 @@ export default function EnterpriseResources() {
                   dark:bg-slate-800
                 "
               >
-                <div>
-                  {/* Icon */}
-                  <div className="flex h-8 w-8 items-center justify-start">
-                    <Icon
-                      size={26}
-                      strokeWidth={2}
-                      className="text-sky-950/40 dark:text-white/50"
-                    />
-                  </div>
-
-                  {/* Type */}
-                  <div className="pt-3">
-                    <span className="text-xs font-bold uppercase leading-4 tracking-wider text-emerald-500">
-                      {resource.type}
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="mt-1 text-base font-bold leading-6 text-sky-950 dark:text-white">
-                    {resource.title}
-                  </h3>
+                {/* Icon */}
+                <div className="flex h-8 w-8 items-center justify-start">
+                  <Icon
+                    size={26}
+                    strokeWidth={2}
+                    className="text-sky-950/40 dark:text-white/50"
+                  />
                 </div>
 
-                {/* Action */}
-                <div className="pt-4">
-                  <button
-                    type="button"
-                    className="
-                      inline-flex items-center gap-1
-                      text-sm font-bold leading-5
-                      text-emerald-500
-                      transition-colors
-                      hover:text-emerald-600
-                      dark:hover:text-emerald-400
-                    "
-                  >
-                    {resource.action}
-
-                    {resource.download ? (
-                      <Download size={16} strokeWidth={2} />
-                    ) : (
-                      <ArrowRight size={16} strokeWidth={2} />
-                    )}
-                  </button>
+                {/* Type */}
+                <div className="pt-3">
+                  <span className="text-xs font-bold uppercase leading-4 tracking-wider text-emerald-500">
+                    {resource.type}
+                  </span>
                 </div>
+
+                {/* Title */}
+                <h3 className="mt-1 text-base font-bold leading-6 text-sky-950 dark:text-white">
+                  {resource.title}
+                </h3>
+
+                {/* Action buttons removed */}
               </article>
             );
           })}

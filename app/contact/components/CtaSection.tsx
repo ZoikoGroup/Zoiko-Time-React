@@ -89,7 +89,7 @@ export default function CtaSection() {
         >
 
 
-          <button
+          {/*<button
             className="
             bg-[#009D8C]
             hover:bg-teal-700
@@ -109,7 +109,7 @@ export default function CtaSection() {
 
             Start AI Conversation
 
-          </button>
+          </button>*/}
 
 
 

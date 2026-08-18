@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
 
 const outcomes = [
   {
@@ -9,7 +8,6 @@ const outcomes = [
     description:
       "Switched from manual timesheets to ZoikoTime verified records. Client disputes dropped in first billing cycle, with timestamped audit evidence settling most cases without escalation.",
     footer: "COO · Professional Services · 140 employees",
-    link: "See this workflow in demo",
   },
   {
     category: "Distributed Staffing · 320 contractors",
@@ -18,7 +16,6 @@ const outcomes = [
     description:
       "Policy-aware attendance records eliminated manual reconciliation. Payroll exports are now audit-ready on submission, with jurisdiction-aware overtime and break rules applied automatically.",
     footer: "CFO · Distributed Staffing · 320 contractors",
-    link: "See payroll workflow in demo",
   },
   {
     category: "Healthcare Network · Multi-jurisdiction",
@@ -28,7 +25,6 @@ const outcomes = [
     description:
       "ZoikoTime's evidence package capability allowed the compliance team to generate complete, jurisdiction-specific audit packs without chasing managers or reconstructing records.",
     footer: "Compliance Officer · Healthcare · 4 jurisdictions",
-    link: "See compliance workflow in demo",
   },
 ];
 
@@ -45,10 +41,8 @@ export default function CustomerOutcomes() {
         py-14
       "
     >
-
       {/* Header */}
       <div className="text-center max-w-5xl mx-auto">
-
         <div
           className="
             text-teal-900
@@ -63,7 +57,6 @@ export default function CustomerOutcomes() {
           Customer outcomes
         </div>
 
-
         <h2
           className="
             text-gray-900
@@ -76,9 +69,7 @@ export default function CustomerOutcomes() {
         >
           Proof for operators, finance leaders, and executives.
         </h2>
-
       </div>
-
 
       {/* Cards */}
       <div
@@ -93,9 +84,7 @@ export default function CustomerOutcomes() {
           gap-6
         "
       >
-
         {outcomes.map((item) => (
-
           <div
             key={item.category}
             className="
@@ -108,10 +97,8 @@ export default function CustomerOutcomes() {
               p-6
             "
           >
-
             {/* Category */}
             <div className="flex items-center gap-2">
-
               <span
                 className="
                   w-1.5
@@ -134,9 +121,7 @@ export default function CustomerOutcomes() {
               >
                 {item.category}
               </p>
-
             </div>
-
 
             {/* Result */}
             <div
@@ -151,7 +136,6 @@ export default function CustomerOutcomes() {
               {item.value}
             </div>
 
-
             <h3
               className="
                 mt-3
@@ -165,7 +149,6 @@ export default function CustomerOutcomes() {
               {item.title}
             </h3>
 
-
             <p
               className="
                 mt-4
@@ -178,7 +161,6 @@ export default function CustomerOutcomes() {
               {item.description}
             </p>
 
-
             {/* Footer */}
             <div
               className="
@@ -189,7 +171,6 @@ export default function CustomerOutcomes() {
                 dark:border-slate-700
               "
             >
-
               <p
                 className="
                   text-gray-400
@@ -201,33 +182,11 @@ export default function CustomerOutcomes() {
                 {item.footer}
               </p>
 
-
-              <button
-                className="
-                  mt-5
-                  flex
-                  items-center
-                  gap-2
-                  text-teal-900
-                  dark:text-teal-400
-                  text-xs
-                  font-semibold
-                "
-              >
-                {item.link}
-
-                <ArrowRight size={14} />
-
-              </button>
-
+              {/* Demo workflow link removed */}
             </div>
-
           </div>
-
         ))}
-
       </div>
-
     </section>
   );
 }

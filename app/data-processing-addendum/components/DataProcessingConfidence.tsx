@@ -39,7 +39,7 @@ export default function DataProcessingConfidence() {
         {/* Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
 
-          <button
+          {/*<button
             className="h-11 px-6 bg-teal-600 hover:bg-teal-700 
             rounded-md shadow-lg text-white text-sm font-semibold"
           >
@@ -53,7 +53,7 @@ export default function DataProcessingConfidence() {
             text-slate-700 dark:text-white text-sm font-medium"
           >
             Execute DPA
-          </button>
+          </button>*/}
 
 
           <Link

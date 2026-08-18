@@ -20,7 +20,6 @@ const safeguards = [
         signature.
       </>
     ),
-    button: "↓ Download SCC Pack",
   },
   {
     icon: "/CrossBorderDataTransfer/decision.png",
@@ -40,7 +39,6 @@ const safeguards = [
         destination countries.
       </>
     ),
-    button: "↓ View Adequacy Map",
   },
   {
     icon: "/CrossBorderDataTransfer/measure.png",
@@ -60,7 +58,6 @@ const safeguards = [
         organisational controls.
       </>
     ),
-    button: "↓ Download Transfer Impact Assessment",
   },
 ];
 
@@ -68,7 +65,6 @@ export default function CrossBorderDataTransfer() {
   return (
     <section className="bg-slate-100 dark:bg-slate-950 py-16 px-6">
       <div className="max-w-7xl mx-auto">
-
         {/* Heading */}
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold text-slate-900 dark:text-white">
@@ -83,46 +79,33 @@ export default function CrossBorderDataTransfer() {
           </p>
         </div>
 
-
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-
           {safeguards.map((item, index) => (
             <div
               key={index}
               className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm p-7 text-center"
             >
-
               <Image
-  src={item.icon}
-  alt={item.title}
-  width={48}
-  height={48}
-  className="mx-auto mb-6"
-/>
-
+                src={item.icon}
+                alt={item.title}
+                width={48}
+                height={48}
+                className="mx-auto mb-6"
+              />
 
               <h3 className="text-base font-bold text-slate-900 dark:text-white mb-4">
                 {item.title}
               </h3>
 
-
               <p className="text-xs leading-5 text-slate-500 dark:text-slate-400 min-h-[140px]">
                 {item.description}
               </p>
 
-
-              <button
-                className="mt-6 bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold rounded-md px-5 py-3"
-              >
-                {item.button}
-              </button>
-
+              {/* Action button removed */}
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

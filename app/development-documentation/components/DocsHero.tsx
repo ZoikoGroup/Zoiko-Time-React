@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { FiSearch, FiArrowRight } from "react-icons/fi";
 
 const responseCode = [
@@ -79,6 +80,45 @@ function CodeToken({
 }
 
 export default function DocsHero() {
+  const [search, setSearch] = useState("");
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  // Focus search when "/" is pressed
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (
+        event.key === "/" &&
+        document.activeElement !== searchInputRef.current
+      ) {
+        event.preventDefault();
+        searchInputRef.current?.focus();
+      }
+
+      if (event.key === "Escape") {
+        searchInputRef.current?.blur();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const query = search.trim();
+
+    if (!query) {
+      return;
+    }
+
+    // Replace this with your actual docs search/navigation logic.
+    console.log("Searching docs for:", query);
+  };
+
   return (
     <section className="w-full bg-white py-14 text-slate-800 dark:bg-slate-950 dark:text-white sm:py-16 lg:py-20">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-5 sm:px-8 lg:flex-row lg:items-center lg:gap-14 lg:px-10 xl:px-14">
@@ -108,27 +148,51 @@ export default function DocsHero() {
               classification and human authority built in.
             </p>
 
-            {/* Button */}
-            <button
-              type="button"
-              className="mt-7 inline-flex h-11 items-center justify-center gap-2 rounded-[10px] bg-teal-600 px-6 text-sm font-semibold text-white shadow-[0_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950"
-            >
-              Get API keys
-              <FiArrowRight className="h-4 w-4" />
-            </button>
-
             {/* Search */}
-            <div className="mt-7 flex h-14 w-full max-w-xl items-center rounded-2xl border border-slate-200 bg-white px-4 shadow-[0_6px_18px_rgba(14,31,61,0.05)] dark:border-slate-700 dark:bg-slate-900 dark:shadow-none">
-              <FiSearch className="h-4 w-4 shrink-0 text-gray-500 dark:text-slate-400" />
+            <form
+              onSubmit={handleSearch}
+              className="mt-7 w-full max-w-xl"
+            >
+              <div className="flex h-14 w-full items-center rounded-2xl border border-slate-200 bg-white px-4 shadow-[0_6px_18px_rgba(14,31,61,0.05)] transition focus-within:border-teal-500 focus-within:ring-2 focus-within:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900 dark:shadow-none"
+              >
+                <FiSearch className="h-4 w-4 shrink-0 text-gray-500 dark:text-slate-400" />
 
-              <span className="ml-4 flex-1 text-sm text-gray-500 dark:text-slate-400">
-                Search the docs…
-              </span>
+                <input
+                  ref={searchInputRef}
+                  type="search"
+                  value={search}
+                  onChange={(event) => setSearch(event.target.value)}
+                  placeholder="Search the docs…"
+                  aria-label="Search the documentation"
+                  className="ml-4 flex-1 bg-transparent text-sm text-slate-800 outline-none placeholder:text-gray-500 dark:text-white dark:placeholder:text-slate-400"
+                />
 
-              <kbd className="flex h-6 w-6 items-center justify-center rounded-md border border-slate-200 bg-gray-50 text-xs font-normal text-gray-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400">
-                /
-              </kbd>
-            </div>
+                {search && (
+                  <button
+                    type="submit"
+                    aria-label="Search documentation"
+                    className="mr-2 text-teal-600 transition hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300"
+                  >
+                    <FiArrowRight className="h-4 w-4" />
+                  </button>
+                )}
+
+                <kbd className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-slate-200 bg-gray-50 text-xs font-normal text-gray-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400">
+                  /
+                </kbd>
+              </div>
+            </form>
+
+            {/* Search Result / Status */}
+            {search.trim() && (
+              <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
+                Searching documentation for{" "}
+                <span className="font-semibold text-teal-600 dark:text-teal-400">
+                  "{search}"
+                </span>
+                ...
+              </p>
+            )}
           </div>
         </div>
 
@@ -163,7 +227,6 @@ export default function DocsHero() {
                 </code>
               </pre>
             </div>
-
           </div>
         </div>
 
