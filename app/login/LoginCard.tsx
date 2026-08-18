@@ -107,7 +107,6 @@ const COUNTRIES = [
   "Kenya",
   "Kiribati",
   "Kuwait",
-  "Kyrgyzstan",
   "Laos",
   "Latvia",
   "Lebanon",
@@ -1045,10 +1044,7 @@ export default function LoginCard() {
             </p>
           </div>
 
-          {/* =====================================================
-              SEARCHABLE REGISTERED COUNTRY
-          ===================================================== */}
-
+          {/* Searchable Registered Country */}
           <div className="mt-[25.84px]">
             <label className="block text-sm font-bold leading-5 text-slate-900">
               Company registered country{" "}
@@ -1472,9 +1468,18 @@ export default function LoginCard() {
                 ·
               </span>
 
-              <span className="font-semibold text-teal-600">
+              {/* Data Residency Link */}
+              <Link
+                href="/data-location-residency"
+                className="
+                  font-semibold
+                  text-teal-600
+                  hover:text-teal-700
+                  hover:underline
+                "
+              >
                 Data residency info
-              </span>
+              </Link>
             </p>
           </div>
         </form>
