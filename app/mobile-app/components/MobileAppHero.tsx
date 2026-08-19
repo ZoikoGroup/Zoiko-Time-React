@@ -234,7 +234,7 @@ export default function MobileAppHero() {
 </Link>
 
 
-              <Link
+              {/*<Link
   href="/request-a-demo"
   className="
     h-12
@@ -257,7 +257,7 @@ export default function MobileAppHero() {
   "
 >
   Request Mobile App Pilot Access
-</Link>
+</Link>*/}
 
             </div>
 

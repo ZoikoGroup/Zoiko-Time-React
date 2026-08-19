@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FileText, ArrowRight } from "lucide-react";
+import { FileText } from "lucide-react";
 
 const resources = [
   {
@@ -55,17 +55,7 @@ export default function ResourcesCompliance() {
                   {item.description}
                 </p>
 
-                <button
-                  type="button"
-                  className="mt-6 inline-flex items-center gap-1 font-bold text-[#44B97A] transition-colors hover:text-[#3EAA70]"
-                >
-                  {item.button}
-
-                  <ArrowRight
-                    className="h-4 w-4"
-                    strokeWidth={2.5}
-                  />
-                </button>
+                {/* Button removed */}
               </div>
 
               <div className="ml-6 shrink-0">

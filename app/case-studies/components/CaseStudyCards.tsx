@@ -227,7 +227,7 @@ export default function CaseStudyCards() {
                 </div>
 
 
-                <button
+                {/*<button
                   className="
                     mt-6
                     w-full
@@ -242,7 +242,7 @@ export default function CaseStudyCards() {
                   "
                 >
                   📤 Send This to Your CFO
-                </button>
+                </button>*/}
 
               </div>
 

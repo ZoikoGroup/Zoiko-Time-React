@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import {
   Eye,
@@ -17,18 +18,23 @@ export default function LoginCard() {
   const [activeTab, setActiveTab] = useState<Tab>("login");
 
   const [showPassword, setShowPassword] = useState(false);
-  const [showRegisterPassword, setShowRegisterPassword] = useState(false);
-  const [showResetPassword, setShowResetPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showRegisterPassword, setShowRegisterPassword] =
+    useState(false);
+  const [showResetPassword, setShowResetPassword] =
+    useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] =
+    useState(false);
 
   const [remember, setRemember] = useState(true);
   const [authorized, setAuthorized] = useState(false);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const [country, setCountry] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
+  const [registerPassword, setRegisterPassword] =
+    useState("");
   const [resetPassword, setResetPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] =
+    useState("");
 
   const passwordChecks = {
     length: resetPassword.length >= 12,
@@ -827,16 +833,29 @@ export default function LoginCard() {
                 <option value="">
                   Select registered country…
                 </option>
+
                 <option value="india">India</option>
+
                 <option value="usa">
                   United States
                 </option>
+
                 <option value="uk">
                   United Kingdom
                 </option>
-                <option value="germany">Germany</option>
-                <option value="france">France</option>
-                <option value="canada">Canada</option>
+
+                <option value="germany">
+                  Germany
+                </option>
+
+                <option value="france">
+                  France
+                </option>
+
+                <option value="canada">
+                  Canada
+                </option>
+
                 <option value="australia">
                   Australia
                 </option>
@@ -969,28 +988,22 @@ export default function LoginCard() {
             </span>
 
             <span className="text-sm leading-5 text-slate-700">
-              I confirm that I am authorised to create or evaluate a ZoikoTime
+              I confirm that I am authorised to create or evaluate a
+              ZoikoTime
               <br />
               workspace for this organisation.
             </span>
           </button>
 
           {/* Terms */}
-          <button
-            type="button"
-            onClick={() =>
-              setAcceptedTerms(!acceptedTerms)
-            }
-            className="
-              mt-[13.37px]
-              flex
-              w-full
-              items-start
-              gap-[20.99px]
-              text-left
-            "
-          >
-            <span
+          <div className="mt-[13.37px] flex w-full items-start gap-[20.99px] text-left">
+            {/* Checkbox */}
+            <button
+              type="button"
+              onClick={() =>
+                setAcceptedTerms(!acceptedTerms)
+              }
+              aria-label="Accept Terms and Privacy Notice"
               className={`
                 mt-[2px]
                 flex
@@ -1014,25 +1027,55 @@ export default function LoginCard() {
                   className="text-white"
                 />
               )}
-            </span>
+            </button>
 
+            {/* Legal Text */}
             <span className="text-sm leading-5 text-slate-700">
               By creating a workspace, I agree to ZoikoTime&apos;s{" "}
-              <span className="font-semibold text-teal-600">
+
+              <Link
+                href="/terms-of-service"
+                className="
+                  font-semibold
+                  text-teal-600
+                  hover:text-teal-700
+                  hover:underline
+                "
+              >
                 Terms of Service
-              </span>
+              </Link>
               ,
+
               <br />
-              <span className="font-semibold text-teal-600">
+
+              <Link
+                href="/privacy-notice"
+                className="
+                  font-semibold
+                  text-teal-600
+                  hover:text-teal-700
+                  hover:underline
+                "
+              >
                 Privacy Notice
-              </span>
+              </Link>
               , and{" "}
-              <span className="font-semibold text-teal-600">
+
+              <Link
+                href="/data-processing-addendum"
+                className="
+                  font-semibold
+                  text-teal-600
+                  hover:text-teal-700
+                  hover:underline
+                "
+              >
                 Data Processing terms
-              </span>{" "}
+              </Link>{" "}
+
               where applicable.
             </span>
-          </button>
+          </div>
 
           {/* Create Workspace */}
           <button
@@ -1072,6 +1115,7 @@ export default function LoginCard() {
 
             <p className="text-xs leading-5 text-slate-500">
               EU data residency available on eligible plans.
+
               <span className="mx-2 text-slate-300">
                 ·
               </span>
@@ -1394,13 +1438,12 @@ export default function LoginCard() {
           Back to Sign In
         </button>
 
-      
-       {/* Security Note */}
-<div className="mb-[34px] mt-[20.65px]">
-  <p className="text-xs leading-4 text-gray-500">
-    Use a unique password you do not use on other services.
-  </p>
-</div>
+        {/* Security Note */}
+        <div className="mb-[34px] mt-[20.65px]">
+          <p className="text-xs leading-4 text-gray-500">
+            Use a unique password you do not use on other services.
+          </p>
+        </div>
       </div>
     </div>
   );

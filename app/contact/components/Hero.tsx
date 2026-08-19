@@ -189,7 +189,7 @@ export default function Hero() {
 
         {/* CTA Buttons */}
 
-        <div
+        {/*<div
           className="
           mt-6
           flex
@@ -248,7 +248,7 @@ export default function Hero() {
           </button>
 
 
-        </div>
+        </div>*/}
 
 
 

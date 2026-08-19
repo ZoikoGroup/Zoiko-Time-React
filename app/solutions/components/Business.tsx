@@ -89,7 +89,7 @@ export default function Business() {
             </div>
 
             {/* BOTTOM */}
-            <div className="mt-auto border-t border-neutral-300 pt-6 dark:border-neutral-700">
+            {/*<div className="mt-auto border-t border-neutral-300 pt-6 dark:border-neutral-700">
               <Link
                 href="#"
                 className="group inline-flex items-center gap-2 text-base font-semibold leading-6 text-[#44B97A]"
@@ -100,7 +100,7 @@ export default function Business() {
                   className="h-4 w-4 transition-transform group-hover:translate-x-1"
                 />
               </Link>
-            </div>
+            </div>*/}
 
           </div>
         </div>

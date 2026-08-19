@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const releases = [
   {
     version: "v6.4.2",
@@ -26,7 +28,6 @@ export default function UpdatesReleaseNotes() {
 
         {/* Header */}
         <div className="flex w-full max-w-[600px] flex-col items-start gap-3.5 pt-1">
-
           <div className="flex items-center gap-2">
             <div className="h-1.5 w-1.5 rounded-sm bg-teal-600 dark:bg-teal-400" />
 
@@ -77,19 +78,23 @@ export default function UpdatesReleaseNotes() {
 
           {/* Bottom Links */}
           <div className="flex flex-col gap-3 border-t border-slate-200 bg-gray-50 px-5 py-4 dark:border-slate-800 dark:bg-slate-800/50 sm:flex-row sm:items-center sm:gap-8">
-            <button
-              type="button"
-              className="text-left text-xs font-semibold leading-5 text-teal-700 transition-colors hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-300"
+
+            {/* Release Notes */}
+            <Link
+              href="/release-notes"
+              className="text-left text-xs font-semibold leading-5 text-teal-700 transition-colors hover:text-teal-800 hover:underline dark:text-teal-400 dark:hover:text-teal-300"
             >
               View full Release Notes →
-            </button>
+            </Link>
 
-            <button
-              type="button"
-              className="text-left text-xs font-semibold leading-5 text-teal-700 transition-colors hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-300"
+            {/* Product Page */}
+            <Link
+              href="/product"
+              className="text-left text-xs font-semibold leading-5 text-teal-700 transition-colors hover:text-teal-800 hover:underline dark:text-teal-400 dark:hover:text-teal-300"
             >
               See what's new in Product Updates →
-            </button>
+            </Link>
+
           </div>
         </div>
       </div>

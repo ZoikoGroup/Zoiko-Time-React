@@ -35,12 +35,12 @@ export default function EvidenceHero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button
+            {/*<button
               type="button"
               className="rounded-lg bg-emerald-400 px-6 py-3.5 text-base font-semibold text-white shadow-lg transition hover:bg-emerald-500"
             >
               Request Procurement Resources
-            </button>
+            </button>*/}
 
             <Link
               href="/request-enterprise-demo"

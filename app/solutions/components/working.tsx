@@ -154,7 +154,7 @@ export default function Working() {
             </div>
 
             {/* BOTTOM LINK */}
-            <div
+            {/*<div
               className="
                 mt-auto
                 border-t
@@ -188,7 +188,7 @@ export default function Working() {
                   strokeWidth={2}
                 />
               </Link>
-            </div>
+            </div>*/}
           </div>
 
           {/* IMAGE */}
