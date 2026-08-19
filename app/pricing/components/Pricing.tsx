@@ -1,398 +1,342 @@
-"use client";
+'use client'
+import React, { useState } from 'react';
 
-import Link from "next/link";
-import { useState } from "react";
-
-type BillingType = "monthly" | "annual";
-
-const plans = [
-  {
-    name: "Verified",
-    monthly: 8,
-    annualMonthly: 6.58,
-    annualYearly: 79,
-    annualSavings: "Save 18% vs monthly",
-    users: "Up to 25 users",
-    description: (
-      <>
-        Cryptographically verified work
-        <br />
-        records for small teams,
-        <br />
-        contractor tracking, and
-        <br />
-        accountability-first
-        <br />
-        environments.
-      </>
-    ),
-    includes: "Includes",
-    features: [
-      "Automated time tracking — desktop, web, and mobile",
-      "Idle detection with configurable thresholds",
-      "Mouse and keyboard activity signals",
-      "AI confidence scoring — real vs performative work",
-      "Session legitimacy indicators",
-      "Optional screenshots with user-configurable intervals",
-      "Cryptographic audit trail and tamper-evident logs",
-      "Weekly summary reports and exportable timesheets",
-      "Transparency Center and user-facing trust controls",
-      "Blur and redaction controls",
-    ],
-    featured: false,
-  },
-
-  {
-    name: "Governed",
-    monthly: 15,
-    annualMonthly: 12.42,
-    annualYearly: 149,
-    annualSavings: "Save 17% vs monthly",
-    users: "Up to 250 users",
-    description: (
-      <>
-        Policy-enforced workforce
-        <br />
-        intelligence for growing
-        <br />
-        companies, client-billable work,
-        <br />
-        and SOX/SOC 2-oriented
-        <br />
-        operations.
-      </>
-    ),
-    includes: "Everything in Verified, plus:",
-    features: [
-      "Anomaly detection — ghost work, automation, drift",
-      "Policy enforcement engine — hours, breaks, overtime",
-      "Evidence packaging with audit-ready export bundles",
-      "Focus vs fragmentation analysis",
-      "Manager review workflows and exception queues",
-      "Smart screenshots — activity-triggered capture",
-      "Advanced RBAC — manager, admin, auditor access",
-      "Read/write API access",
-      "Integrations — Slack, Jira, ADP, payroll, ZoikoSuite",
-    ],
-    featured: true,
-  },
-
-  {
-    name: "Sovereign",
-    monthly: 25,
-    annualMonthly: 20,
-    annualYearly: 240,
-    annualSavings: "Save 20% vs monthly",
-    users: "Unlimited users",
-    description: (
-      <>
-        Multi-jurisdiction compliance
-        <br />
-        infrastructure for regulated
-        <br />
-        industries, global operations, and
-        <br />
-        organizations that need
-        <br />
-        compliance as infrastructure.
-      </>
-    ),
-    includes: "Everything in Governed, plus:",
-    features: [
-      "Jurisdiction-aware compliance engine — FLSA, GDPR, WTD",
-      "Legal templates library with wage-law frameworks",
-      "Compliance dashboard with real-time violation alerts",
-      "Chain-of-custody logging for evidence handling",
-      "Legal hold and audit preservation controls",
-      "Custom policy builder — no-code rule configuration",
-      "Contractor classification and sensitive-workflow controls",
-      "SSO and SAML support",
-      "Dedicated success manager",
-      "Unlimited retention",
-    ],
-    featured: false,
-  },
-
-  {
-    name: "Enterprise",
-    monthly: null,
-    annualMonthly: null,
-    annualYearly: null,
-    annualSavings: null,
-    users: "Unlimited users",
-    description: (
-      <>
-        Dedicated infrastructure and
-        <br />
-        implementation for Fortune 1000,
-        <br />
-        complex organizations, and high-
-        <br />
-        liability environments requiring
-        <br />
-        private architecture.
-      </>
-    ),
-    includes: "Everything in Sovereign, plus:",
-    features: [
-      "Private cloud or on-premises deployment options",
-      "Custom data residency and region-specific storage",
-      "Dedicated tenant architecture",
-      "Custom API integrations — Workday, SAP, Oracle",
-      "White-glove implementation and structured onboarding",
-      "Compliance advisory and operating reviews",
-      "SLA guarantees — uptime and response commitments",
-      "24/7 priority support",
-      "Annual security and architecture reviews",
-    ],
-    featured: false,
-  },
-];
-
-function CheckIcon() {
-  return (
-    <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
-      <span className="relative block h-4 w-4">
-        <span className="absolute left-[3px] top-[5px] h-[6px] w-[10px] rotate-[-45deg] border-b-[1.6px] border-l-[1.6px] border-[#3FB97A]" />
-      </span>
-    </span>
-  );
-}
-
-export default function Pricing() {
-  const [billing, setBilling] = useState<BillingType>("monthly");
+export default function PricingSection() {
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annual'>('monthly');
 
   return (
-    <section
-      id="pricing"
-      className="w-full overflow-hidden bg-white py-16 text-slate-800 transition-colors duration-300 dark:bg-slate-950 dark:text-white sm:py-20 lg:py-24"
-    >
-      <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
-        {/* HEADER */}
-        <div className="mx-auto flex max-w-[760px] flex-col items-center text-center">
-          <span className="text-[11px] font-semibold uppercase leading-5 tracking-[0.22em] text-[#3FB97A] sm:text-xs">
-            Plans &amp; Pricing
-          </span>
-
-          <h1 className="mt-4 text-[30px] font-extrabold leading-[1.25] tracking-[-0.02em] text-slate-800 dark:text-white sm:text-[38px] sm:leading-[1.35] lg:text-[42px]">
-            Choose Your Level of Workforce
-            <br className="hidden sm:block" />
-            Intelligence
-          </h1>
-
-          <p className="mt-5 max-w-[610px] text-sm font-normal leading-6 text-gray-500 dark:text-gray-400 sm:text-base">
-            Four plans, transparent pricing, and a 14-day free trial on
-            standard plans —
-            <br className="hidden sm:block" />
-            no credit card required. Monthly by default; switch to annual for
-            the better-value commitment.
-          </p>
-
-          {/* BILLING TOGGLE */}
-          <div className="mt-8 flex h-14 w-[240px] items-center rounded-full border border-gray-300 bg-white p-1 shadow-[0px_6px_18px_0px_rgba(14,31,61,0.05),0px_1px_3px_0px_rgba(14,31,61,0.06)] dark:border-slate-700 dark:bg-slate-900 dark:shadow-none sm:mt-9">
+    <section className="w-full min-h-screen bg-gray-50 dark:bg-gray-900 text-slate-900 dark:text-white px-4 py-12 transition-colors duration-200">
+      <div className="max-w-6xl mx-auto flex flex-col items-center gap-10">
+        
+        {/* Billing Toggle Bar */}
+        <div className="w-full max-w-5xl flex flex-col sm:flex-row items-center justify-start gap-4">
+          <div className="relative w-80 h-14 bg-white dark:bg-gray-800 rounded-full p-1.5 shadow-md border border-gray-300 dark:border-gray-700 flex items-center justify-between">
             <button
-              type="button"
-              onClick={() => setBilling("monthly")}
-              aria-pressed={billing === "monthly"}
-              className={`flex h-11 flex-1 items-center justify-center gap-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                billing === "monthly"
-                  ? "bg-[#3FB97A] text-white shadow-sm"
-                  : "text-gray-500 hover:text-slate-800 dark:text-gray-400 dark:hover:text-white"
+              onClick={() => setBillingCycle('monthly')}
+              className={`flex-1 h-11 rounded-full text-sm font-semibold transition-all flex items-center justify-center gap-1.5 ${
+                billingCycle === 'monthly'
+                  ? 'bg-slate-800 text-white shadow-sm'
+                  : 'text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
               }`}
             >
-              {billing === "monthly" && (
-                <span className="text-xs font-bold">✓</span>
-              )}
+              {billingCycle === 'monthly' && <span>✓</span>}
               Monthly
             </button>
-
             <button
-              type="button"
-              onClick={() => setBilling("annual")}
-              aria-pressed={billing === "annual"}
-              className={`flex h-11 flex-1 items-center justify-center gap-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                billing === "annual"
-                  ? "bg-[#3FB97A] text-white shadow-sm"
-                  : "text-gray-500 hover:text-slate-800 dark:text-gray-400 dark:hover:text-white"
+              onClick={() => setBillingCycle('annual')}
+              className={`flex-1 h-11 rounded-full text-sm font-semibold transition-all flex items-center justify-center gap-1 ${
+                billingCycle === 'annual'
+                  ? 'bg-slate-800 text-white shadow-sm'
+                  : 'text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200'
               }`}
             >
-              {billing === "annual" && (
-                <span className="text-xs font-bold">✓</span>
-              )}
               Annual
+              <span className="text-teal-600 dark:text-teal-400 font-bold text-xs">· Save 20%</span>
             </button>
           </div>
+          <span className="text-gray-500 dark:text-gray-400 text-xs font-normal">
+            Showing {billingCycle} pricing. Billed {billingCycle === 'monthly' ? 'monthly' : 'annually'}.
+          </span>
+        </div>
 
-          {/* SAVING BADGE */}
-          <div className="mt-3 flex min-h-8 w-full max-w-[310px] items-center justify-center rounded-full border border-[#3FB97A]/20 bg-[#3FB97A]/10 px-4 dark:border-[#3FB97A]/30 dark:bg-[#3FB97A]/10">
-            <span className="text-xs font-medium leading-5 text-[#3FB97A]">
-              Save up to 20% with annual billing
-            </span>
+        {/* Pricing Cards Grid */}
+        <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch pt-4">
+          
+          {/* Card 1: Verified */}
+          <div className="relative flex flex-col justify-between bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md border border-slate-200 dark:border-gray-700">
+            <div>
+              <div className="text-center text-blue-600 dark:text-blue-400 text-sm font-extrabold uppercase tracking-wide">
+                Verified
+              </div>
+              <div className="mt-4 text-center text-slate-800 dark:text-white text-4xl font-extrabold">
+                {billingCycle === 'monthly' ? '$8.00' : '$6.40'}
+              </div>
+              <div className="mt-2 text-center text-gray-500 dark:text-gray-400 text-xs">
+                / active worker / month
+              </div>
+              <div className="text-center text-gray-500 dark:text-gray-400 text-xs mt-1">
+                Billed {billingCycle}
+              </div>
+
+              <div className="mt-6 p-3 bg-indigo-50 dark:bg-indigo-950/40 rounded-lg text-center text-blue-600 dark:text-blue-300 text-xs font-bold leading-4">
+                Best for 1–25 workers or a single site
+              </div>
+
+              <p className="mt-4 text-center text-gray-500 dark:text-gray-400 text-xs leading-5">
+                Verified work records for entry-level workforce assurance.
+              </p>
+
+              <ul className="mt-6 space-y-3 text-xs text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">✓</span>
+                  <span>Basic policy configuration</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">✓</span>
+                  <span>Human review exception workflow</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">✓</span>
+                  <span>Standard evidence export</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">✓</span>
+                  <span>Bi-weekly individual inactivity alerts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 dark:text-blue-400 font-bold">✓</span>
+                  <span>Weekly summaries and exportable snapshots</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3">
+               <a href=" https://getzoikotime.com/">
+              <button className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-lg transition-colors">
+                Start 14-Day Free Trial
+              </button></a>
+               <a href=" https://getzoikotime.com/">
+              <button className="w-full py-2.5 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 font-bold text-sm rounded-lg border border-blue-600 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors">
+                Subscribe now
+              </button></a>
+              
+              <p className="text-center text-gray-500 dark:text-gray-400 text-xs">
+                No credit card required for the trial
+              </p>
+            </div>
           </div>
 
-          <p className="mt-2 text-xs leading-5 text-gray-500 dark:text-gray-400">
-            {billing === "monthly"
-              ? "Showing monthly pricing, billed monthly."
-              : "Showing annual pricing (per-user-per-month equivalent), billed once per year."}
-          </p>
-        </div>
+          {/* Card 2: Governed (RECOMMENDED) */}
+          <div className="relative flex flex-col justify-between bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl border-2 border-teal-600 dark:border-teal-500">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-teal-600 text-white text-[10px] font-extrabold uppercase tracking-wide rounded-full">
+              RECOMMENDED
+            </div>
 
-        {/* PRICING CARDS */}
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-14 md:grid-cols-2 xl:grid-cols-4">
-          {plans.map((plan) => {
-            const displayPrice =
-              billing === "annual"
-                ? plan.annualMonthly
-                : plan.monthly;
-
-            return (
-              <div
-                key={plan.name}
-                className={`relative flex min-h-[900px] flex-col rounded-2xl border bg-white p-6 transition-colors duration-300 dark:bg-slate-900 ${
-                  plan.featured
-                    ? "border-2 border-[#3FB97A] shadow-[0px_10px_30px_0px_rgba(14,31,61,0.10)] dark:border-[#3FB97A] dark:shadow-none"
-                    : "border-gray-300 shadow-[0px_6px_18px_0px_rgba(14,31,61,0.05),0px_1px_3px_0px_rgba(14,31,61,0.06)] dark:border-slate-700 dark:shadow-none"
-                }`}
-              >
-                {/* MOST POPULAR */}
-                {plan.featured && (
-                  <div className="absolute left-1/2 top-0 flex h-7 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#3FB97A]">
-                    <span className="text-[10px] font-extrabold uppercase tracking-wide text-white">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-
-                {/* PLAN NAME */}
-                <div className="text-xs font-extrabold uppercase leading-5 tracking-wide text-slate-800 dark:text-white">
-                  {plan.name}
-                </div>
-
-                {/* PRICE */}
-                <div className="mt-4 min-h-[68px]">
-                  {plan.monthly !== null ? (
-                    <>
-                      <div className="flex items-end gap-2">
-                        <span className="text-[38px] font-extrabold leading-10 tracking-tight text-slate-800 dark:text-white">
-                          ${displayPrice?.toFixed(2)}
-                        </span>
-
-                        <span className="mb-1 text-xs font-medium text-gray-500 dark:text-gray-400">
-                          / user / month
-                        </span>
-                      </div>
-
-                      {billing === "monthly" ? (
-                        <div className="mt-1 text-xs leading-5 text-gray-500 dark:text-gray-400">
-                          Billed monthly
-                        </div>
-                      ) : (
-                        <>
-                          <div className="mt-1 text-xs leading-5 text-gray-500 dark:text-gray-400">
-                            Billed annually at $
-                            {plan.annualYearly?.toFixed(2)}/user/year
-                          </div>
-
-                          <div className="mt-1 text-xs font-medium text-[#3FB97A]">
-                            {plan.annualSavings}
-                          </div>
-                        </>
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      <div className="text-[36px] font-extrabold leading-10 tracking-tight text-slate-800 dark:text-white">
-                        Custom
-                      </div>
-
-                      <div className="mt-2 text-xs leading-5 text-gray-500 dark:text-gray-400">
-                        Contract pricing
-                      </div>
-                    </>
-                  )}
-                </div>
-
-                {/* USERS */}
-                <div className="mt-7 flex h-10 items-center justify-center rounded-lg border border-slate-200 bg-gray-50 dark:border-slate-700 dark:bg-slate-800">
-                  <span className="text-xs font-bold text-slate-800 dark:text-gray-200">
-                    {plan.users}
-                  </span>
-                </div>
-
-                {/* DESCRIPTION */}
-                <div className="mt-5 min-h-[120px] text-xs leading-5 text-gray-500 dark:text-gray-400">
-                  {plan.description}
-                </div>
-
-                {/* CTA */}
-                {plan.name === "Enterprise" ? (
-                  <>
-                    <Link
-                      href="/request-enterprise-demo"
-                      className="flex h-11 w-full items-center justify-center rounded-[10px] border border-black bg-white text-sm font-bold text-slate-800 transition hover:bg-gray-50 dark:border-white dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
-                    >
-                      Request Enterprise Quote
-                    </Link>
-
-                    <Link
-                      href="/contact-sales"
-                      className="mt-3 block text-center text-xs font-semibold text-[#3FB97A] transition hover:text-[#3FB97A] dark:text-[#3FB97A]"
-                    >
-                      Talk to Sales →
-                    </Link>
-                  </>
-                ) : (
-                  <>
-                    <Link
-                      href="/checkout"
-                      className="flex h-11 w-full items-center justify-center rounded-[10px] bg-[#3FB97A] text-sm font-bold text-white transition hover:bg-[#3FB97A]"
-                    >
-                      Start 14-Day Free Trial
-                    </Link>
-
-                    <div className="mt-3 text-center text-xs leading-5 text-gray-500 dark:text-gray-400">
-                      No credit card required
-                    </div>
-                  </>
-                )}
-
-                {/* DIVIDER */}
-                <div className="my-7 border-t border-slate-200 dark:border-slate-700" />
-
-                {/* INCLUDES */}
-                <div className="mb-5 text-xs font-bold leading-5 text-slate-800 dark:text-white">
-                  {plan.includes}
-                </div>
-
-                {/* FEATURES */}
-                <div className="space-y-3.5">
-                  {plan.features.map((feature) => (
-                    <div
-                      key={feature}
-                      className="flex items-start gap-2.5"
-                    >
-                      <CheckIcon />
-
-                      <span className="text-xs leading-5 text-gray-700 dark:text-gray-300">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+            <div>
+              <div className="text-center text-teal-600 dark:text-teal-400 text-sm font-extrabold uppercase tracking-wide mt-1">
+                Governed
               </div>
-            );
-          })}
-        </div>
+              <div className="mt-4 text-center text-slate-800 dark:text-white text-4xl font-extrabold">
+                {billingCycle === 'monthly' ? '$15.00' : '$12.00'}
+              </div>
+              <div className="mt-2 text-center text-gray-500 dark:text-gray-400 text-xs">
+                / active worker / month
+              </div>
+              <div className="text-center text-gray-500 dark:text-gray-400 text-xs mt-1">
+                Billed {billingCycle}
+              </div>
 
-        {/* FOOTNOTE */}
-        <div className="mx-auto mt-10 max-w-[900px] text-center text-[11px] leading-5 text-gray-500 dark:text-gray-400 sm:mt-12 sm:text-xs">
-          All prices are per user / month in USD. Annual plans are billed once
-          per year at the annual amount shown; the annual headline rate is a
-          monthly equivalent, not a monthly charge. Seat caps: Verified up to
-          25, Governed up to 250, Sovereign and Enterprise unlimited users.
-          “Unlimited” refers only to the dimension stated. Compliance
-          capabilities (FLSA, GDPR, WTD, SOX/SOC 2) reflect approved product
-          wording.
+              <div className="mt-6 p-2.5 bg-emerald-50 dark:bg-emerald-950/40 rounded-lg text-center text-teal-600 dark:text-teal-300 text-xs font-bold leading-4">
+                Best for 26–250 workers
+              </div>
+
+              <p className="mt-4 text-center text-gray-500 dark:text-gray-400 text-xs leading-5">
+                Policy-based workforce assurance for teams accountable to payroll, finance and legal.
+              </p>
+
+              <div className="mt-6 text-teal-600 dark:text-teal-400 text-xs font-bold mb-3">
+                Everything in Verified, plus
+              </div>
+
+              <ul className="space-y-3 text-xs text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
+                  <span>Multiple default and custom evidence policies</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
+                  <span>Policy controls (hours, breaks &amp; locations) with alerts &amp; audit trail</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
+                  <span>Designated approver &amp; exception workflows</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
+                  <span>Evidence highlights with sensitivity masks</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
+                  <span>Advanced access controls, API, webhooks &amp; SSO</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
+                  <span>Centralised evidence (7-year retention)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
+                  <span>SOC 2 evidence &amp; data residency</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal-600 dark:text-teal-400 font-bold">✓</span>
+                  <span>5+ pre-built dashboard clarity metrics</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3">
+              <a href=" https://getzoikotime.com/">
+              <button className="w-full py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm rounded-lg transition-colors">
+                Start 14-Day Free Trial
+              </button></a>
+               <a href=" https://getzoikotime.com/">
+              <button className="w-full py-2.5 bg-white dark:bg-gray-800 text-teal-600 dark:text-teal-400 font-bold text-sm rounded-lg border border-teal-600 dark:border-teal-400 hover:bg-teal-50 dark:hover:bg-gray-700 transition-colors">
+                Subscribe now
+              </button></a>
+              <p className="text-center text-gray-500 dark:text-gray-400 text-xs">
+                No credit card required for the trial
+              </p>
+            </div>
+          </div>
+
+          {/* Card 3: Sovereign */}
+          <div className="relative flex flex-col justify-between bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md border border-slate-200 dark:border-gray-700">
+            <div>
+              <div className="text-center text-indigo-500 dark:text-indigo-400 text-sm font-extrabold uppercase tracking-wide">
+                Sovereign
+              </div>
+              <div className="mt-4 text-center text-slate-800 dark:text-white text-4xl font-extrabold">
+                {billingCycle === 'monthly' ? '$25.00' : '$20.00'}
+              </div>
+              <div className="mt-2 text-center text-gray-500 dark:text-gray-400 text-xs">
+                / active worker / month
+              </div>
+              <div className="text-center text-gray-500 dark:text-gray-400 text-xs mt-1">
+                Billed {billingCycle}
+              </div>
+
+              <div className="mt-6 p-2.5 bg-violet-100 dark:bg-violet-950/40 rounded-lg text-center text-indigo-500 dark:text-indigo-300 text-xs font-bold leading-4">
+                For regulated, unionised and multi-country workforces
+              </div>
+
+              <p className="mt-4 text-center text-gray-500 dark:text-gray-400 text-xs leading-5">
+                Jurisdiction-aware workforce governance with advanced controls and audit trails.
+              </p>
+
+              <div className="mt-6 text-indigo-500 dark:text-indigo-400 text-xs font-bold mb-3">
+                Everything in Governed, plus
+              </div>
+
+              <ul className="space-y-3 text-xs text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-indigo-500 dark:text-indigo-400 font-bold">✓</span>
+                  <span>Multi-country &amp; jurisdiction policy matrices</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-indigo-500 dark:text-indigo-400 font-bold">✓</span>
+                  <span>Data sovereignty controls with data-region residency</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-indigo-500 dark:text-indigo-400 font-bold">✓</span>
+                  <span>Immutable audit trail with chain of custody</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-indigo-500 dark:text-indigo-400 font-bold">✓</span>
+                  <span>Compliance dashboards with real-time violation alerts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-indigo-500 dark:text-indigo-400 font-bold">✓</span>
+                  <span>Policy overrides &amp; legal hold with approvals</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-indigo-500 dark:text-indigo-400 font-bold">✓</span>
+                  <span>E-discovery export</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-indigo-500 dark:text-indigo-400 font-bold">✓</span>
+                  <span>Redaction &amp; privilege safeguards</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-indigo-500 dark:text-indigo-400 font-bold">✓</span>
+                  <span>Multi-entity &amp; group workforce benchmarks</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-indigo-500 dark:text-indigo-400 font-bold">✓</span>
+                  <span>24/7 priority support</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3">
+              <a href="/request-enterprise-demo">
+              <button className="w-full py-2.5 bg-indigo-500 hover:bg-indigo-600 text-white font-bold text-sm rounded-lg transition-colors">
+                Request Enterprise Demo
+              </button></a>
+              <p className="text-center text-gray-500 dark:text-gray-400 text-xs">
+                Guided Assurance Pilot available
+              </p>
+            </div>
+          </div>
+
+          {/* Card 4: Enterprise */}
+          <div className="relative flex flex-col justify-between bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md border-2 border-slate-800 dark:border-gray-600">
+            <div>
+              <div className="text-center text-slate-800 dark:text-gray-200 text-sm font-extrabold uppercase tracking-wide">
+                Enterprise
+              </div>
+              <div className="mt-4 text-center text-slate-800 dark:text-white text-3xl font-extrabold">
+                Custom
+              </div>
+              <div className="mt-2 text-center text-gray-500 dark:text-gray-400 text-xs">
+                Contract pricing
+              </div>
+
+              <div className="mt-10 p-2.5 bg-gray-100 dark:bg-gray-700 rounded-lg text-center text-slate-800 dark:text-gray-200 text-xs font-bold leading-4">
+                For complex and strategic deployments
+              </div>
+
+              <p className="mt-4 text-center text-gray-500 dark:text-gray-400 text-xs leading-5">
+                Private architecture, integrations and configurable accountability at scale across jurisdictions.
+              </p>
+
+              <div className="mt-6 text-slate-800 dark:text-gray-200 text-xs font-bold mb-3">
+                Everything in Sovereign, plus
+              </div>
+
+              <ul className="space-y-3 text-xs text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-slate-800 dark:text-gray-200 font-bold">✓</span>
+                  <span>Dedicated tenant architecture</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-slate-800 dark:text-gray-200 font-bold">✓</span>
+                  <span>Priority data residency options</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-slate-800 dark:text-gray-200 font-bold">✓</span>
+                  <span>Custom integrations (including Workday, SAP, Oracle)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-slate-800 dark:text-gray-200 font-bold">✓</span>
+                  <span>Dedicated customer success manager</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-slate-800 dark:text-gray-200 font-bold">✓</span>
+                  <span>Security &amp; compliance reviews</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-slate-800 dark:text-gray-200 font-bold">✓</span>
+                  <span>Negotiated SLAs &amp; audit options</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-slate-800 dark:text-gray-200 font-bold">✓</span>
+                  <span>Commercial terms structured for your enterprise</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3">
+              <a href="/request-enterprise-demo">
+              <button className="w-full py-2.5 bg-slate-800 hover:bg-slate-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-bold text-sm rounded-lg transition-colors">
+                Request Enterprise Demo
+              </button></a>
+              <a href="/contact-sales">
+              <button className="w-full text-center text-teal-700 dark:text-teal-400 font-bold text-xs hover:underline">
+                Talk to Sales →
+              </button></a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
