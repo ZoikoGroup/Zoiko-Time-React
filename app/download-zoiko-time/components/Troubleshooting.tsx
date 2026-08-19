@@ -3,25 +3,21 @@ const troubleshootingItems = [
     title: "Installer won't open",
     description:
       "Usually a blocked download or an outdated OS version. Confirm your OS meets the minimum version above.",
-    action: "View troubleshooting guide →",
   },
   {
     title: "Can't sign in after install",
     description:
       "Check that your organization's SSO is enabled, or reset your ZoikoTime password.",
-    action: "Contact support →",
   },
   {
     title: "Records not syncing",
     description:
       "Confirm you're on the latest version and connected to the internet, then restart the app.",
-    action: "Check current status →",
   },
   {
     title: "Need to uninstall or reinstall",
     description:
       "Use your OS's standard uninstall process, then download the latest version above.",
-    action: "Uninstall guide →",
   },
 ];
 
@@ -32,7 +28,6 @@ export default function Troubleshooting() {
 
         {/* Header */}
         <div className="flex w-full max-w-[600px] flex-col items-start gap-3 pt-1">
-
           <div className="flex items-center gap-2">
             <div className="h-1.5 w-1.5 rounded-sm bg-teal-600 dark:bg-teal-400" />
 
@@ -48,7 +43,6 @@ export default function Troubleshooting() {
 
         {/* Troubleshooting Cards */}
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-
           {troubleshootingItems.map((item) => (
             <div
               key={item.title}
@@ -77,17 +71,8 @@ export default function Troubleshooting() {
               <p className="mt-3 max-w-[560px] text-xs font-normal leading-5 text-gray-500 dark:text-slate-400 sm:text-sm">
                 {item.description}
               </p>
-
-              {/* Action */}
-              <button
-                type="button"
-                className="mt-auto pt-5 text-left text-xs font-semibold leading-5 text-blue-950 transition-colors hover:text-teal-700 dark:text-blue-300 dark:hover:text-teal-400"
-              >
-                {item.action}
-              </button>
             </div>
           ))}
-
         </div>
       </div>
     </section>

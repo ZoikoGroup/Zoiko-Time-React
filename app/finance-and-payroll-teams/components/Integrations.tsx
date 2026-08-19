@@ -1,6 +1,7 @@
 // Integrations.tsx
 
 import React from "react";
+import Link from "next/link";
 
 const integrationCards = [
   {
@@ -84,9 +85,12 @@ export default function Integrations() {
             claim appears until an integration is production-ready,
             documented, supported, and approved. Until then, category cards
             route requirements to{" "}
-            <span className="font-semibold text-teal-700 dark:text-teal-400">
+            <Link
+              href="/request-enterprise-demo"
+              className="font-semibold text-teal-700 transition-colors hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-300"
+            >
               Request Enterprise Demo
-            </span>
+            </Link>
             .
           </p>
         </div>

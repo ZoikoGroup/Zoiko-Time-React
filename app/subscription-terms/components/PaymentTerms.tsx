@@ -27,52 +27,25 @@ export default function PaymentTerms() {
   ];
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 py-16">
+    <section className="bg-gray-50 py-16 dark:bg-gray-900">
       <div className="mx-auto max-w-6xl px-6">
-
         {/* Header */}
-        <p className="text-center text-xs font-semibold uppercase tracking-widest text-teal-600 font-['Poppins']">
+        <p className="text-center text-xs font-semibold uppercase tracking-widest text-teal-600">
           Payments
         </p>
 
-        <h2 className="
-          mt-4 
-          text-center 
-          text-3xl 
-          md:text-4xl 
-          font-bold 
-          text-slate-800 
-          dark:text-white
-          font-['Poppins']
-        ">
+        <h2 className="mt-4 text-center text-3xl font-bold text-slate-800 dark:text-white md:text-4xl">
           Payments, taxes, and refunds
         </h2>
 
-        <p className="
-          mx-auto 
-          mt-4 
-          max-w-2xl 
-          text-center 
-          text-base 
-          leading-7
-          text-gray-500 
-          dark:text-gray-400
-          font-['Poppins']
-        ">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-7 text-gray-500 dark:text-gray-400">
           Payment processing, taxes, refunds, and account access may depend on
           billing configuration, agreement, payment provider rules, applicable
           law, and location.
         </p>
 
-
         {/* Cards */}
-        <div className="
-          mt-12 
-          grid 
-          gap-6 
-          md:grid-cols-2
-        ">
-
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           {cards.map((card) => (
             <div
               key={card.title}
@@ -80,53 +53,27 @@ export default function PaymentTerms() {
                 rounded-xl
                 border
                 border-slate-200
-                dark:border-gray-700
                 bg-white
-                dark:bg-gray-800
                 p-6
                 shadow-sm
+                dark:border-gray-700
+                dark:bg-gray-800
               "
             >
-
               <div className="flex items-center gap-3">
+                <span className="h-1.5 w-1.5 rounded-sm bg-teal-600" />
 
-                <span className="
-                  h-1.5 
-                  w-1.5 
-                  rounded-sm 
-                  bg-teal-600
-                " />
-
-                <h3 className="
-                  text-base
-                  font-semibold
-                  text-slate-800
-                  dark:text-white
-                  font-['Poppins']
-                ">
+                <h3 className="text-base font-semibold text-slate-800 dark:text-white">
                   {card.title}
                 </h3>
-
               </div>
 
-
-              <p className="
-                mt-5
-                text-sm
-                leading-6
-                text-gray-500
-                dark:text-gray-400
-                font-['Poppins']
-              ">
+              <p className="mt-5 text-sm leading-6 text-gray-500 dark:text-gray-400">
                 {card.text}
               </p>
-
-
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

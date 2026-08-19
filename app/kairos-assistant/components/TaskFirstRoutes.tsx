@@ -6,7 +6,7 @@ interface QuickLink {
 }
 
 const taskRoutes: QuickLink[] = [
-  { label: 'Open Kairos', href: '#' },
+ // { label: 'Open Kairos', href: '#' },
   { label: 'Documentation', href: '/product-documentation' },
   { label: 'Service Status', href: '/system-status' },
   { label: 'Product Updates', href: '/product-updates' },

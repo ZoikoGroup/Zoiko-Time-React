@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -76,7 +77,7 @@ interface ArchiveItem {
 }
 
 /* ------------------------------------------------------------------ */
-/* Small Components                                                    */
+/* Small Components                                                   */
 /* ------------------------------------------------------------------ */
 
 function SectionHeading({
@@ -126,17 +127,8 @@ function FilterPills({
 }
 
 /* ------------------------------------------------------------------ */
-/* Content Data                                                        */
+/* Content Data                                                       */
 /* ------------------------------------------------------------------ */
-
-const NAV_LINKS: string[] = [
-  "Product",
-  "Use Cases",
-  "Trust & Governance",
-  "Enterprise",
-  "Pricing",
-  "Resources",
-];
 
 const ANNOUNCEMENTS: Announcement[] = [
   {
@@ -371,6 +363,7 @@ export default function PressMediaPage() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 dark:bg-gray-900 dark:text-white">
+
       {/* HERO */}
       <section
         id="press-contact"
@@ -508,8 +501,6 @@ export default function PressMediaPage() {
                 <p className="mt-3 flex-1 text-xs leading-5 text-slate-500 dark:text-gray-400">
                   {item.body}
                 </p>
-
-                {/* Read announcement button removed */}
               </div>
             ))}
           </div>
@@ -556,8 +547,6 @@ export default function PressMediaPage() {
                     {item.body}
                   </p>
                 </div>
-
-                {/* Read Release button removed */}
               </div>
             ))}
           </div>
@@ -644,8 +633,6 @@ export default function PressMediaPage() {
                 <p className="mt-3 text-xs leading-5 text-slate-500 dark:text-gray-400">
                   {item.body}
                 </p>
-
-                {/* Download button removed */}
               </div>
             ))}
           </div>
@@ -661,8 +648,6 @@ export default function PressMediaPage() {
               All assets in a single structured bundle — logos, visuals, bios,
               guidelines, and boilerplate.
             </p>
-
-            {/* Download Complete Media Kit button removed */}
           </div>
         </div>
       </section>
@@ -677,7 +662,17 @@ export default function PressMediaPage() {
 
           <div className={`${cardBase} mt-10 p-6 shadow-md sm:p-9`}>
             <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-              <div className="h-20 w-20 shrink-0 rounded-2xl bg-zinc-500" />
+
+              {/* LENNOX MCLEOD IMAGE */}
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl">
+                <Image
+                  src="/press-and-media/image.png"
+                  alt="Lennox McLeod"
+                  fill
+                  sizes="80px"
+                  className="object-cover"
+                />
+              </div>
 
               <div>
                 <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white">
@@ -718,9 +713,7 @@ export default function PressMediaPage() {
             </div>
 
             <div className="mt-6 flex justify-center">
-              {/*<button className="rounded-md border border-slate-200 bg-white px-5 py-2.5 text-xs font-semibold text-slate-700 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700">
-                Request Interview
-              </button>*/}
+              {/* Request Interview button removed */}
             </div>
           </div>
         </div>
@@ -757,8 +750,6 @@ export default function PressMediaPage() {
               institutional partnership enquiries, contact the press team
               directly.
             </p>
-
-            {/* Request Analyst Briefing button removed */}
           </div>
         </div>
       </section>
@@ -773,6 +764,7 @@ export default function PressMediaPage() {
 
           <div className={`${cardBase} mt-10 p-6 shadow-md sm:p-9`}>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+
               <div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                   ZoikoTime Press &amp; Communications
@@ -818,6 +810,7 @@ export default function PressMediaPage() {
                   ))}
                 </ul>
               </div>
+
             </div>
           </div>
         </div>

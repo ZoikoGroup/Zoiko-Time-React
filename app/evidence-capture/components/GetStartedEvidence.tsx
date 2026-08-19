@@ -107,7 +107,7 @@ export default function GetStartedEvidence() {
     gap-3
   "
 >
-  <span className="text-lg">◉</span>
+  <span className="text-lg"></span>
   Request Audit Demo
 </Link>
 

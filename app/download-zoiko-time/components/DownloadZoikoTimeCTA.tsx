@@ -31,7 +31,7 @@ export default function DownloadZoikoTimeCTA() {
         <div className="mt-5 flex w-full flex-wrap items-center justify-center gap-3">
 
           <Link
-            href="/download-zoiko-time"
+            href="#download-zoiko-time"
             className="rounded-full bg-teal-600 px-6 py-3 text-sm font-semibold leading-6 text-white transition-colors hover:bg-teal-500"
           >
             Download for Zoiko Time

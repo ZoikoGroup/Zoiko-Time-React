@@ -31,6 +31,7 @@ export default function CtaSection() {
       ),
       link: "Schedule Briefing →",
       href: "#",
+      enabled: false,
     },
     {
       image: "/about-us/sms.png",
@@ -52,6 +53,7 @@ export default function CtaSection() {
       ),
       link: "Talk to Sales →",
       href: "/contact-sales",
+      enabled: true,
     },
     {
       image: "/about-us/telescope.png",
@@ -73,6 +75,7 @@ export default function CtaSection() {
       ),
       link: "Explore Platform →",
       href: "https://getzoikotime.com/start",
+      enabled: true,
     },
   ];
 
@@ -125,6 +128,7 @@ export default function CtaSection() {
       />
 
       <div className="relative mx-auto max-w-[1040px]">
+
         {/* Section label */}
         <div className="mb-7 flex items-center justify-center gap-3">
           <span className="hidden h-px w-6 bg-teal-500 sm:block" />
@@ -277,6 +281,7 @@ export default function CtaSection() {
                 {card.description}
               </p>
 
+              {/* Schedule Briefing CTA intentionally disabled
               <a
                 href={card.href}
                 className="
@@ -293,6 +298,27 @@ export default function CtaSection() {
               >
                 {card.link}
               </a>
+              */}
+
+              {/* Active CTAs */}
+              {card.enabled && (
+                <a
+                  href={card.href}
+                  className="
+                    mt-auto
+                    font-sans
+                    text-xs
+                    font-semibold
+                    text-teal-600
+                    transition-colors
+                    hover:text-teal-700
+                    dark:text-teal-400
+                    dark:hover:text-teal-300
+                  "
+                >
+                  {card.link}
+                </a>
+              )}
             </div>
           ))}
         </div>
