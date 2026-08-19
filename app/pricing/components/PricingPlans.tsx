@@ -10,8 +10,7 @@ const plans = [
     annual: "$79.00",
     annualMonthly: "$6.58",
     users: "Up to 25 users",
-    description:
-      "Verified work records for small teams and contractors.",
+    description: "Verified work records for small teams and contractors.",
     popular: false,
     enterprise: false,
     features: [
@@ -107,8 +106,6 @@ export default function PricingPlans() {
             BILLING TOGGLE
         ========================== */}
         <div className="mb-8 flex w-full flex-col items-start justify-start gap-4 sm:mb-10 sm:flex-row sm:items-center">
-
-          {/* Toggle */}
           <div className="flex h-14 w-full max-w-[320px] items-center rounded-[30px] bg-white p-[5px] shadow-[0px_6px_18px_rgba(14,31,61,0.05),0px_1px_3px_rgba(14,31,61,0.06)] outline outline-1 outline-gray-300 transition-colors dark:bg-slate-900 dark:outline-slate-700">
 
             {/* Monthly */}
@@ -163,7 +160,6 @@ export default function PricingPlans() {
             PRICING CARDS
         ========================== */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -273,12 +269,12 @@ export default function PricingPlans() {
                   Request Enterprise Quote
                 </Link>
               ) : (
-                <Link
-                  href="/start-free"
+                <a
+                  href="https://getzoikotime.com/"
                   className="mt-4 flex h-11 w-full items-center justify-center rounded-[10px] bg-teal-600 text-xs font-bold leading-6 text-white transition-all duration-200 hover:bg-teal-700 sm:text-sm"
                 >
                   Start 14-Day Free Trial
-                </Link>
+                </a>
               )}
 
               {/* =========================
@@ -290,21 +286,23 @@ export default function PricingPlans() {
                     No credit card required
                   </div>
 
-                  {/* Subscribe now - NO LINK */}
-                  <button
-                    type="button"
-                    className="mt-1 w-full text-center text-xs font-semibold leading-5 text-teal-700 transition-colors hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-300"
+                  {/* Subscribe now */}
+                  <a
+                    href="https://getzoikotime.com/"
+                    className="mt-1 block w-full text-center text-[15px] font-semibold leading-5 text-teal-700 transition-colors hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-300"
                   >
                     Subscribe now →
-                  </button>
+                  </a>
                 </>
               )}
 
-              {/* Enterprise Sales Link */}
+              {/* =========================
+                  ENTERPRISE SALES LINK
+              ========================== */}
               {plan.enterprise && (
                 <Link
                   href="/contact-sales"
-                  className="mt-4 block text-center text-xs font-medium leading-5 text-teal-700 hover:underline dark:text-teal-400"
+                  className="mt-4 block text-center text-[15px] font-medium leading-5 text-teal-700 hover:underline dark:text-teal-400"
                 >
                   Talk to Sales →
                 </Link>

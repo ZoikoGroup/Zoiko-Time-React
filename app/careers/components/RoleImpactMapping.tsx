@@ -1,3 +1,5 @@
+"use client";
+
 const ROLES = [
   {
     eyebrow: "PRODUCT & STRATEGY",
@@ -134,10 +136,10 @@ export default function RoleImpactMapping() {
               {/* Footer */}
               <div className="border-t border-slate-100 dark:border-slate-700 px-5 py-4 text-center">
                 <a
-                  href="#"
+                  href="/careers/apply"
                   className="text-sm font-semibold text-[#009D8C] hover:text-teal-700 dark:hover:text-teal-400 transition-colors"
                 >
-                  View Role Detail →
+                  Apply for This Role →
                 </a>
               </div>
             </div>

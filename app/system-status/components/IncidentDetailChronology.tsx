@@ -215,7 +215,7 @@ export default function IncidentDetailChronology() {
             <p className="text-xs text-rose-800 dark:text-rose-300 leading-relaxed">
               No universal “no data was lost” statement without verified reconciliation and approved evidence. And public resolution never means all customer-specific remediation is complete — account-specific reconciliation routes to{' '}
               <a
-                href="/contact"
+                href="/enterprise-support"
                 className="font-bold text-emerald-600 dark:text-emerald-400 hover:underline"
               >
                 Enterprise Support

@@ -89,76 +89,114 @@ export default function AdminGuideCTA() {
           "
         >
           {/* Contact Sales */}
-<Link
-  href="/contact-sales"
-  className="
-    inline-flex
-    h-12
-    items-center
-    justify-center
-    rounded-lg
-    bg-teal-600
-    px-7
-    text-white
-    text-base
-    font-semibold
-    shadow-[0_4px_16px_rgba(0,157,140,0.30)]
-    transition
-    hover:bg-teal-700
-  "
->
-  Contact Sales
-</Link>
+          <Link
+            href="/contact-sales"
+            className="
+              inline-flex
+              h-12
+              items-center
+              justify-center
+              rounded-lg
+              bg-teal-600
+              px-7
+              text-white
+              text-base
+              font-semibold
+              shadow-[0_4px_16px_rgba(0,157,140,0.30)]
+              transition
+              hover:bg-teal-700
+            "
+          >
+            Contact Sales
+          </Link>
 
-{/* Get a Demo */}
-<Link
-  href="/request-a-demo"
-  className="
-    inline-flex
-    h-12
-    items-center
-    justify-center
-    rounded-lg
-    border
-    border-slate-200
-    bg-white
-    px-7
-    text-slate-700
-    text-sm
-    font-medium
-    transition
-    hover:bg-slate-50
-    dark:border-slate-700
-    dark:bg-slate-900
-    dark:text-slate-200
-    dark:hover:bg-slate-800
-  "
->
-  Get a Demo
-</Link>
+          {/* Get a Demo */}
+          <Link
+            href="/request-a-demo"
+            className="
+              inline-flex
+              h-12
+              items-center
+              justify-center
+              rounded-lg
+              border
+              border-slate-200
+              bg-white
+              px-7
+              text-slate-700
+              text-sm
+              font-medium
+              transition
+              hover:bg-slate-50
+              dark:border-slate-700
+              dark:bg-slate-900
+              dark:text-slate-200
+              dark:hover:bg-slate-800
+            "
+          >
+            Get a Demo
+          </Link>
 
+          {/* Related Resources */}
           <div
             className="
+              mt-2
+              text-center
               text-xs
               text-slate-400
               dark:text-slate-500
-              mt-2
-              text-center
             "
           >
-            Also view:
-            <span className="text-teal-600 dark:text-teal-400 font-semibold">
-              {" "}
+            Also view:{" "}
+
+            <Link
+              href="/product-documentation"
+              className="
+                font-semibold
+                text-teal-600
+                transition
+                hover:text-teal-700
+                hover:underline
+                dark:text-teal-400
+                dark:hover:text-teal-300
+              "
+            >
               Product Documentation
-            </span>
+            </Link>
+
             {" · "}
-            <span className="text-teal-600 dark:text-teal-400 font-semibold">
+
+            <Link
+              href="/worker-guide"
+              className="
+                font-semibold
+                text-teal-600
+                transition
+                hover:text-teal-700
+                hover:underline
+                dark:text-teal-400
+                dark:hover:text-teal-300
+              "
+            >
               Worker Guide
-            </span>
+            </Link>
+
             {" · "}
-            <span className="text-teal-600 dark:text-teal-400 font-semibold">
+
+            <Link
+              href="/help-center"
+              className="
+                font-semibold
+                text-teal-600
+                transition
+                hover:text-teal-700
+                hover:underline
+                dark:text-teal-400
+                dark:hover:text-teal-300
+              "
+            >
               Help Center
-            </span>
+            </Link>
           </div>
         </div>
       </div>

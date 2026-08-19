@@ -2,58 +2,46 @@ export default function LegalNote() {
   return (
     <div
       className="
-      rounded-xl
-      border
-      border-orange-200
-      dark:border-yellow-700
-      bg-yellow-50
-      dark:bg-yellow-950/40
-      p-5
-      flex
-      gap-4
-      transition-colors
+        flex
+        gap-4
+        rounded-xl
+        border
+        border-orange-200
+        bg-yellow-50
+        p-5
+        transition-colors
+        dark:border-yellow-700
+        dark:bg-yellow-950/40
       "
     >
-
       {/* Icon */}
       <div className="flex-shrink-0">
-
         <div
           className="
-          flex
-          h-4
-          w-4
-          items-center
-          justify-center
-          rounded-full
-          border
-          border-yellow-800
-          dark:border-yellow-400
+            flex
+            h-4
+            w-4
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-yellow-800
+            dark:border-yellow-400
           "
         >
-          <span
-            className="
-            text-[10px]
-            font-bold
-            text-yellow-800
-            dark:text-yellow-400
-            "
-          >
+          <span className="text-[10px] font-bold text-yellow-800 dark:text-yellow-400">
             !
           </span>
         </div>
-
       </div>
-
 
       {/* Text */}
       <p
         className="
-        text-sm
-        leading-5
-        font-['Poppins']
-        text-yellow-800
-        dark:text-yellow-200
+          text-sm
+          leading-5
+          text-yellow-800
+          dark:text-yellow-200
         "
       >
         <span className="font-bold text-yellow-900 dark:text-yellow-300">
@@ -67,7 +55,6 @@ export default function LegalNote() {
         this page and a signed or accepted legal agreement, the applicable
         legal agreement governs to the extent stated in that agreement.
       </p>
-
     </div>
   );
 }

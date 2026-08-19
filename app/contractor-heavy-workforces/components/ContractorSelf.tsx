@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { FiCheckCircle } from "react-icons/fi";
 
 const benefits = [
   "Plain-language view of engagement and time",
@@ -59,7 +60,10 @@ export default function ContractorSelf() {
               >
                 {/* Check icon */}
                 <div className="flex h-4 w-4 shrink-0 items-center justify-center">
-                  <div className="h-3 w-3 rounded-full border-[1.5px] border-teal-600 dark:border-teal-400" />
+                  <FiCheckCircle
+                    className="h-4 w-4 text-teal-600 dark:text-teal-400"
+                    strokeWidth={2}
+                  />
                 </div>
 
                 <span className="text-sm font-normal leading-6 text-gray-700 dark:text-slate-300">

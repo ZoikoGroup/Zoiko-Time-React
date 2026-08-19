@@ -11,7 +11,7 @@ const useCases = [
     description:
       "Verify work across time zones without micromanagement. Policy-based accountability for remote workers.",
     action: "Start Free",
-    href: "/start-free",
+    href: "https://getzoikotime.com/",
     color: "bg-sky-100 dark:bg-sky-900/30",
   },
   {
@@ -20,7 +20,7 @@ const useCases = [
     description:
       "Track contractor time, approvals, evidence, and billing-ready reports in one workspace.",
     action: "Start Free",
-    href: "/start-free",
+    href: "https://getzoikotime.com/",
     color: "bg-emerald-100 dark:bg-emerald-900/30",
   },
   {
@@ -38,7 +38,7 @@ const useCases = [
     description:
       "Reduce dispute risk with structured, verified records and approval-ready payroll reports.",
     action: "Start Free",
-    href: "/start-free",
+    href: "https://getzoikotime.com/",
     color: "bg-purple-100 dark:bg-purple-900/30",
   },
   {
@@ -98,13 +98,23 @@ export default function UseCase() {
               </p>
 
               {/* Action */}
-              <Link
-                href={item.href}
-                className="mt-8 inline-flex items-center gap-2 font-semibold text-[#3FB97A] transition-colors hover:text-[#3FB97A]"
-              >
-                {item.action}
-                <span>→</span>
-              </Link>
+              {item.href.startsWith("http") ? (
+                <a
+                  href={item.href}
+                  className="mt-8 inline-flex items-center gap-2 font-semibold text-[#3FB97A] transition-colors hover:text-[#3FB97A]"
+                >
+                  {item.action}
+                  <span>→</span>
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="mt-8 inline-flex items-center gap-2 font-semibold text-[#3FB97A] transition-colors hover:text-[#3FB97A]"
+                >
+                  {item.action}
+                  <span>→</span>
+                </Link>
+              )}
             </div>
           ))}
         </div>
