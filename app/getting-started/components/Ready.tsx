@@ -141,12 +141,12 @@ export default function Ready() {
                 Check off items as your team completes them.
               </p>
 
-              <button
+              {/*<button
                 type="button"
                 className="mt-6 flex h-12 w-full items-center justify-center rounded-full bg-teal-600 px-6 text-sm font-semibold text-white transition hover:bg-teal-500 sm:text-base"
               >
                 Review Readiness
-              </button>
+              </button>*/}
             </div>
           </div>
         </div>

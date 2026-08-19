@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FiCheckCircle } from "react-icons/fi";
 
 const crossDeviceBenefits = [
   "Real-time sync across desktop, mobile, and web",
@@ -58,10 +59,11 @@ export default function CrossDeviceExperience() {
                   key={benefit}
                   className="flex items-center gap-2.5 py-2"
                 >
-                  {/* Check */}
-                  <div className="flex h-4 w-4 shrink-0 items-center justify-center">
-                    <div className="h-3 w-3 rounded-full border-[1.5px] border-blue-600 dark:border-blue-400" />
-                  </div>
+                  {/* Check Circle Icon */}
+                  <FiCheckCircle
+                    className="h-4 w-4 shrink-0 text-teal-600 dark:text-teal-400"
+                    strokeWidth={2}
+                  />
 
                   <span className="text-sm font-normal leading-6 text-gray-700 dark:text-slate-300">
                     {benefit}

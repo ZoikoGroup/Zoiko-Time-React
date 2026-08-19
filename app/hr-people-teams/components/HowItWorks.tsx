@@ -133,7 +133,7 @@ export default function HowItWorks() {
             </div>
 
             <Link
-              href="#"
+              href="/how-zoikotime-works"
               className="inline-flex items-center gap-2 self-start text-sm font-semibold leading-6 text-emerald-500 transition hover:text-emerald-400"
             >
               <span>See How ZoikoTime Works</span>

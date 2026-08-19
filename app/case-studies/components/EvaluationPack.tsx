@@ -73,7 +73,8 @@ export default function EvaluationPack() {
         >
           Everything required for a complete enterprise evaluation — structured
           <br className="hidden md:block" />
-          to remove friction from procurement, legal, finance, and technical review teams.
+          to remove friction from procurement, legal, finance, and technical
+          review teams.
         </p>
 
         <div
@@ -128,6 +129,7 @@ export default function EvaluationPack() {
                 {item.description}
               </p>
 
+              {/* Individual card CTA - intentionally commented out
               <p
                 className="
                   mt-6
@@ -138,6 +140,7 @@ export default function EvaluationPack() {
               >
                 {item.action}
               </p>
+              */}
             </div>
           ))}
         </div>
@@ -188,7 +191,8 @@ export default function EvaluationPack() {
               text-white/95
             "
           >
-            All four components in one structured bundle — ready for distribution across your entire procurement team.
+            All four components in one structured bundle — ready for
+            distribution across your entire procurement team.
           </p>
 
           <Link
@@ -216,7 +220,6 @@ export default function EvaluationPack() {
           >
             Download Enterprise Evaluation Pack
           </Link>
-
         </div>
 
       </div>

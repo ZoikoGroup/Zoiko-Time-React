@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function SensitiveInfo() {
   return (
@@ -21,7 +22,6 @@ export default function SensitiveInfo() {
       >
         {/* Header */}
         <div className="text-center">
-
           <p
             className="
               text-xs
@@ -68,9 +68,7 @@ export default function SensitiveInfo() {
             they should be configured transparently, governed by policy, and
             limited to authorized review.
           </p>
-
         </div>
-
 
         {/* Content */}
         <div
@@ -80,7 +78,6 @@ export default function SensitiveInfo() {
             mx-auto
           "
         >
-
           <h3
             className="
               text-sm
@@ -109,9 +106,7 @@ export default function SensitiveInfo() {
             available; how long screenshots may be retained; and where to ask
             questions.
           </p>
-
         </div>
-
 
         {/* Related Resource */}
         <div
@@ -132,17 +127,21 @@ export default function SensitiveInfo() {
             Related resource:{" "}
           </span>
 
-          <span
+          <Link
+            href="/screenshots-and-redaction-controls"
             className="
-              text-teal-700
               font-semibold
+              text-teal-700
+              transition
+              hover:text-teal-800
+              hover:underline
               dark:text-teal-400
+              dark:hover:text-teal-300
             "
           >
             Screenshots &amp; Redaction Controls
-          </span>
+          </Link>
         </div>
-
       </div>
     </section>
   );

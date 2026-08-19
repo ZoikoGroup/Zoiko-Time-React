@@ -243,8 +243,10 @@ export default function Header() {
             {/* Invisible hover bridge */}
             <div className="absolute left-0 right-0 top-full h-5" />
 
-            <ProductMegaMenu isOpen={isProductMenuOpen} 
-            onLinkClick={closeAllMegaMenus}/>
+            <ProductMegaMenu
+              isOpen={isProductMenuOpen}
+              onLinkClick={closeAllMegaMenus}
+            />
           </div>
 
           {/* SOLUTIONS */}
@@ -322,8 +324,10 @@ export default function Header() {
             {/* Invisible hover bridge */}
             <div className="absolute left-0 right-0 top-full h-5" />
 
-            <SolutionsMegaMenu isOpen={isSolutionsMenuOpen}
-            onLinkClick={closeAllMegaMenus} />
+            <SolutionsMegaMenu
+              isOpen={isSolutionsMenuOpen}
+              onLinkClick={closeAllMegaMenus}
+            />
           </div>
 
           {/* TRUST & GOVERNANCE */}
@@ -404,7 +408,7 @@ export default function Header() {
 
             <TrustGovernanceMegaMenu
               isOpen={isTrustGovernanceMenuOpen}
-               onLinkClick={closeAllMegaMenus}
+              onLinkClick={closeAllMegaMenus}
             />
           </div>
 
@@ -484,51 +488,50 @@ export default function Header() {
             {/* Invisible hover bridge */}
             <div className="absolute left-0 right-0 top-full h-5" />
 
-            <EnterpriseMegaMenu isOpen={isEnterpriseMenuOpen}
-            onLinkClick={closeAllMegaMenus}
-              />
+            <EnterpriseMegaMenu
+              isOpen={isEnterpriseMenuOpen}
+              onLinkClick={closeAllMegaMenus}
+            />
           </div>
 
           {/* PRICING */}
 
-          {/* PRICING */}
+          <Link
+            href="/pricing"
+            className="
+              relative
+              whitespace-nowrap
+              text-base
+              font-medium
+              leading-6
+              tracking-tight
+              text-neutral-800
+              transition-colors
+              hover:text-sky-900
+              dark:text-slate-100
+              dark:hover:text-sky-400
+              group
+            "
+            onClick={closeAllMegaMenus}
+          >
+            Pricing
 
-<Link
-  href="/pricing"
-  className="
-    relative
-    whitespace-nowrap
-    text-base
-    font-medium
-    leading-6
-    tracking-tight
-    text-neutral-800
-    transition-colors
-    hover:text-sky-900
-    dark:text-slate-100
-    dark:hover:text-sky-400
-    group
-  "
-  onClick={closeAllMegaMenus}
->
-  Pricing
-
-  <span
-    className="
-      absolute
-      -bottom-[7px]
-      left-0
-      h-[2px]
-      w-0
-      rounded-full
-      bg-sky-900
-      transition-all
-      duration-200
-      group-hover:w-full
-      dark:bg-sky-400
-    "
-  />
-</Link>
+            <span
+              className="
+                absolute
+                -bottom-[7px]
+                left-0
+                h-[2px]
+                w-0
+                rounded-full
+                bg-sky-900
+                transition-all
+                duration-200
+                group-hover:w-full
+                dark:bg-sky-400
+              "
+            />
+          </Link>
 
           {/* RESOURCES */}
 
@@ -606,16 +609,18 @@ export default function Header() {
             {/* Invisible hover bridge */}
             <div className="absolute left-0 right-0 top-full h-5" />
 
-            <ResourcesMegaMenu isOpen={isResourcesMenuOpen}
-            onLinkClick={closeAllMegaMenus} />
+            <ResourcesMegaMenu
+              isOpen={isResourcesMenuOpen}
+              onLinkClick={closeAllMegaMenus}
+            />
           </div>
         </nav>
 
         {/* DESKTOP ACTION BUTTONS */}
 
         <div className="hidden items-center gap-4 md:flex">
-          <Link
-            href="/login"
+          <a
+            href="https://getzoikotime.com/start"
             className="
               flex
               h-11
@@ -639,10 +644,9 @@ export default function Header() {
               dark:text-slate-100
               dark:hover:bg-slate-800
             "
-            onClick={closeAllMegaMenus}
           >
             Log In
-          </Link>
+          </a>
 
           <Link
             href="/request-a-demo"
@@ -673,9 +677,7 @@ export default function Header() {
 
         <button
           type="button"
-          onClick={() =>
-            setIsMobileMenuOpen((previous) => !previous)
-          }
+          onClick={() => setIsMobileMenuOpen((previous) => !previous)}
           className="
             p-2
             text-neutral-800
@@ -834,8 +836,8 @@ export default function Header() {
               dark:border-slate-800
             "
           >
-            <Link
-              href="/login"
+            <a
+              href="https://getzoikotime.com/start"
               onClick={() => setIsMobileMenuOpen(false)}
               className="
                 flex
@@ -859,7 +861,7 @@ export default function Header() {
               "
             >
               Log In
-            </Link>
+            </a>
 
             <Link
               href="/request-a-demo"

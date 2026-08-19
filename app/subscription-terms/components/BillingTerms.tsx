@@ -29,60 +29,50 @@ export default function BillingTerms() {
   return (
     <section className="bg-gray-50 py-16 dark:bg-gray-900">
       <div className="mx-auto max-w-6xl px-6 lg:px-10">
-
         {/* Heading */}
-        <p className="text-center text-xs font-semibold uppercase tracking-widest text-teal-600 font-['Poppins']">
+        <p className="text-center text-xs font-semibold uppercase tracking-widest text-teal-600">
           Billing
         </p>
 
-        <h2 className="mt-4 text-center text-3xl font-bold text-slate-800 dark:text-white sm:text-4xl font-['Poppins']">
+        <h2 className="mt-4 text-center text-3xl font-bold text-slate-800 dark:text-white sm:text-4xl">
           Plans, billing, and user counts
         </h2>
 
-        <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-7 text-gray-500 dark:text-gray-300 font-['Poppins']">
+        <p className="mx-auto mt-4 max-w-2xl text-center text-base leading-7 text-gray-500 dark:text-gray-300">
           Subscriptions are generally billed based on plan, billing cycle,
           number of active paid users, add-ons, taxes, and any customer-specific
           order terms.
         </p>
 
-
         {/* Cards */}
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-
           {cards.map((card) => (
             <div
               key={card.title}
               className="
-                rounded-xl 
-                border border-slate-200 
-                bg-white 
-                p-6 
+                rounded-xl
+                border border-slate-200
+                bg-white
+                p-6
                 shadow-[0px_6px_18px_rgba(14,31,61,0.05)]
                 dark:border-gray-700
                 dark:bg-gray-800
               "
             >
-
               <div className="flex items-center gap-3">
-
                 <span className="h-1.5 w-1.5 rounded-sm bg-teal-600" />
 
-                <h3 className="text-base font-semibold text-slate-800 dark:text-white font-['Poppins']">
+                <h3 className="text-base font-semibold text-slate-800 dark:text-white">
                   {card.title}
                 </h3>
-
               </div>
 
-
-              <p className="mt-5 text-sm leading-6 text-gray-500 dark:text-gray-300 font-['Poppins']">
+              <p className="mt-5 text-sm leading-6 text-gray-500 dark:text-gray-300">
                 {card.text}
               </p>
-
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

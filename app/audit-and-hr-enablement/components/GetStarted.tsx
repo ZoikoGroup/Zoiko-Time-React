@@ -33,31 +33,29 @@ export default function GetStarted() {
         {/* Buttons */}
 <div className="mt-8 flex w-full flex-col items-center justify-center gap-4 sm:flex-row">
 
-  {/* Request Demo */}
-  <Link
-    href="/request-a-demo"
-    className="
-      flex
-      h-12
-      w-full
-      items-center
-      justify-center
-      gap-3
-      rounded-lg
-      bg-teal-600
-      px-7
-      text-base
-      font-semibold
-      text-white
-      shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)]
-      transition
-      hover:bg-teal-700
-      sm:w-52
-    "
-  >
-    <ArrowUpRight className="h-4 w-4" />
-    <span>Request Demo</span>
-  </Link>
+{/* Request Demo */}
+<Link
+  href="/request-a-demo"
+  className="
+    flex
+    h-12
+    w-full
+    items-center
+    justify-center
+    rounded-lg
+    bg-teal-600
+    px-7
+    text-base
+    font-semibold
+    text-white
+    shadow-[0px_4px_14px_0px_rgba(0,157,140,0.28)]
+    transition
+    hover:bg-teal-700
+    sm:w-52
+  "
+>
+  <span>Request Demo</span>
+</Link>
 
 
   {/* Run Case Scenario */}

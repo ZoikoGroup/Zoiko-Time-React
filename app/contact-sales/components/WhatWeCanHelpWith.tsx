@@ -41,31 +41,93 @@ const helpCards = [
 
 export default function WhatWeCanHelpWith() {
   return (
-    <section className="w-full bg-slate-100 dark:bg-slate-950 py-20 px-5 transition-colors duration-300">
-      <div className="max-w-[1440px] mx-auto">
+    <section
+      className="
+        w-full
+        bg-slate-100
+        px-5
+        py-20
+        transition-colors
+        duration-300
+        dark:bg-slate-950
+      "
+    >
+      <div className="mx-auto max-w-[1440px]">
+
         {/* Heading */}
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white font-['Plus_Jakarta_Sans']">
+          <h2
+            className="
+              text-3xl
+              font-semibold
+              text-slate-900
+              md:text-4xl
+              dark:text-white
+            "
+          >
             What We Can Help With
           </h2>
 
-          <p className="mt-5 max-w-4xl mx-auto text-base text-slate-500 dark:text-slate-400 font-['Plus_Jakarta_Sans']">
+          <p
+            className="
+              mx-auto
+              mt-5
+              max-w-4xl
+              text-base
+              text-slate-500
+              dark:text-slate-400
+            "
+          >
             ZoikoTime Sales can guide your organization toward the right
             product path, deployment model, and governance approach.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          className="
+            mt-14
+            grid
+            grid-cols-1
+            gap-8
+            sm:grid-cols-2
+            lg:grid-cols-3
+          "
+        >
           {helpCards.map((card, index) => (
             <div
               key={index}
-              className="relative h-[225px] overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-300 hover:shadow-xl dark:border-slate-700 dark:bg-slate-900"
+              className="
+                relative
+                h-[225px]
+                overflow-hidden
+                rounded-2xl
+                border
+                border-slate-200
+                bg-white
+                transition-all
+                duration-300
+                hover:shadow-xl
+                dark:border-slate-700
+                dark:bg-slate-900
+              "
             >
               {/* Top Gradient */}
-              <div className="absolute top-0 left-0 h-[3px] w-full bg-gradient-to-r from-teal-600 to-teal-500" />
+              <div
+                className="
+                  absolute
+                  left-0
+                  top-0
+                  h-[3px]
+                  w-full
+                  bg-gradient-to-r
+                  from-teal-600
+                  to-teal-500
+                "
+              />
 
               <div className="flex h-full flex-col p-6">
+
                 {/* Icon */}
                 <Image
                   src={card.icon}
@@ -76,18 +138,37 @@ export default function WhatWeCanHelpWith() {
                 />
 
                 {/* Title */}
-                <h3 className="mt-8 text-base font-semibold leading-6 text-slate-900 dark:text-white font-['Plus_Jakarta_Sans']">
+                <h3
+                  className="
+                    mt-8
+                    text-base
+                    font-semibold
+                    leading-6
+                    text-slate-900
+                    dark:text-white
+                  "
+                >
                   {card.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-4 text-xs leading-5 text-slate-500 dark:text-slate-400 font-['Plus_Jakarta_Sans']">
+                <p
+                  className="
+                    mt-4
+                    text-xs
+                    leading-5
+                    text-slate-500
+                    dark:text-slate-400
+                  "
+                >
                   {card.description}
                 </p>
+
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

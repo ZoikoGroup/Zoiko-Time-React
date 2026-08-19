@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import {
   Eye,
   EyeOff,
@@ -10,11 +11,212 @@ import {
   ChevronDown,
   ArrowLeft,
   Mail,
+  Search,
 } from "lucide-react";
 
 type Tab = "login" | "register" | "reset";
 
+const COUNTRIES = [
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Antigua and Barbuda",
+  "Argentina",
+  "Armenia",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahamas",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bhutan",
+  "Bolivia",
+  "Bosnia and Herzegovina",
+  "Botswana",
+  "Brazil",
+  "Brunei",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cabo Verde",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Central African Republic",
+  "Chad",
+  "Chile",
+  "China",
+  "Colombia",
+  "Comoros",
+  "Congo",
+  "Costa Rica",
+  "Croatia",
+  "Cuba",
+  "Cyprus",
+  "Czech Republic",
+  "Democratic Republic of the Congo",
+  "Denmark",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Eswatini",
+  "Ethiopia",
+  "Fiji",
+  "Finland",
+  "France",
+  "Gabon",
+  "Gambia",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Greece",
+  "Grenada",
+  "Guatemala",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Honduras",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran",
+  "Iraq",
+  "Ireland",
+  "Israel",
+  "Italy",
+  "Ivory Coast",
+  "Jamaica",
+  "Japan",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kiribati",
+  "Kuwait",
+  "Laos",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Marshall Islands",
+  "Mauritania",
+  "Mauritius",
+  "Mexico",
+  "Micronesia",
+  "Moldova",
+  "Monaco",
+  "Mongolia",
+  "Montenegro",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nauru",
+  "Nepal",
+  "Netherlands",
+  "New Zealand",
+  "Nicaragua",
+  "Niger",
+  "Nigeria",
+  "North Korea",
+  "North Macedonia",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Palestine",
+  "Panama",
+  "Papua New Guinea",
+  "Paraguay",
+  "Peru",
+  "Philippines",
+  "Poland",
+  "Portugal",
+  "Qatar",
+  "Romania",
+  "Russia",
+  "Rwanda",
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Vincent and the Grenadines",
+  "Samoa",
+  "San Marino",
+  "Sao Tome and Principe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "South Korea",
+  "South Sudan",
+  "Spain",
+  "Sri Lanka",
+  "Sudan",
+  "Suriname",
+  "Sweden",
+  "Switzerland",
+  "Syria",
+  "Taiwan",
+  "Tajikistan",
+  "Tanzania",
+  "Thailand",
+  "Timor-Leste",
+  "Togo",
+  "Tonga",
+  "Trinidad and Tobago",
+  "Tunisia",
+  "Turkey",
+  "Turkmenistan",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Vatican City",
+  "Venezuela",
+  "Vietnam",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe",
+];
+
 export default function LoginCard() {
+  const router = useRouter();
+
   const [activeTab, setActiveTab] = useState<Tab>("login");
 
   const [showPassword, setShowPassword] = useState(false);
@@ -30,11 +232,18 @@ export default function LoginCard() {
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const [country, setCountry] = useState("");
+  const [countrySearch, setCountrySearch] = useState("");
+  const [countryDropdownOpen, setCountryDropdownOpen] =
+    useState(false);
+
   const [registerPassword, setRegisterPassword] =
     useState("");
   const [resetPassword, setResetPassword] = useState("");
   const [confirmPassword, setConfirmPassword] =
     useState("");
+
+  const countryDropdownRef =
+    useRef<HTMLDivElement>(null);
 
   const passwordChecks = {
     length: resetPassword.length >= 12,
@@ -64,6 +273,38 @@ export default function LoginCard() {
   const strongPassword =
     Object.values(passwordChecks).every(Boolean);
 
+  const filteredCountries = COUNTRIES.filter(
+    (countryName) =>
+      countryName
+        .toLowerCase()
+        .includes(countrySearch.toLowerCase())
+  );
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        countryDropdownRef.current &&
+        !countryDropdownRef.current.contains(
+          event.target as Node
+        )
+      ) {
+        setCountryDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener(
+      "mousedown",
+      handleClickOutside
+    );
+
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
+    };
+  }, []);
+
   const changeTab = (tab: Tab) => {
     setActiveTab(tab);
 
@@ -71,6 +312,8 @@ export default function LoginCard() {
     setShowRegisterPassword(false);
     setShowResetPassword(false);
     setShowConfirmPassword(false);
+
+    setCountryDropdownOpen(false);
   };
 
   /* =========================================================
@@ -801,77 +1044,181 @@ export default function LoginCard() {
             </p>
           </div>
 
-          {/* Registered Country */}
+          {/* Searchable Registered Country */}
           <div className="mt-[25.84px]">
             <label className="block text-sm font-bold leading-5 text-slate-900">
               Company registered country{" "}
               <span className="text-teal-500">*</span>
             </label>
 
-            <div className="relative mt-[8.99px]">
-              <select
-                value={country}
-                onChange={(e) =>
-                  setCountry(e.target.value)
+            <div
+              ref={countryDropdownRef}
+              className="relative mt-[8.99px]"
+            >
+              {/* Selected Country Button */}
+              <button
+                type="button"
+                onClick={() =>
+                  setCountryDropdownOpen(
+                    !countryDropdownOpen
+                  )
                 }
-                className="
+                className={`
+                  flex
                   h-12
                   w-full
-                  appearance-none
+                  items-center
+                  justify-between
                   rounded-2xl
                   border
                   border-slate-200
                   bg-white
                   px-[17.19px]
-                  pr-12
+                  text-left
                   text-base
-                  text-slate-400
                   outline-none
+                  transition
                   focus:border-teal-500
-                "
+                  ${
+                    country
+                      ? "text-slate-900"
+                      : "text-slate-400"
+                  }
+                `}
               >
-                <option value="">
-                  Select registered country…
-                </option>
+                <span className="truncate">
+                  {country ||
+                    "Select registered country…"}
+                </span>
 
-                <option value="india">India</option>
+                <ChevronDown
+                  size={16}
+                  className={`
+                    shrink-0
+                    text-slate-500
+                    transition-transform
+                    ${
+                      countryDropdownOpen
+                        ? "rotate-180"
+                        : ""
+                    }
+                  `}
+                />
+              </button>
 
-                <option value="usa">
-                  United States
-                </option>
+              {/* Country Dropdown */}
+              {countryDropdownOpen && (
+                <div
+                  className="
+                    absolute
+                    left-0
+                    right-0
+                    top-[56px]
+                    z-50
+                    overflow-hidden
+                    rounded-2xl
+                    border
+                    border-slate-200
+                    bg-white
+                    shadow-[0_12px_35px_rgba(15,23,42,0.12)]
+                  "
+                >
+                  {/* Search */}
+                  <div className="border-b border-slate-100 p-3">
+                    <div className="relative">
+                      <Search
+                        size={16}
+                        className="
+                          pointer-events-none
+                          absolute
+                          left-3
+                          top-1/2
+                          -translate-y-1/2
+                          text-slate-400
+                        "
+                      />
 
-                <option value="uk">
-                  United Kingdom
-                </option>
+                      <input
+                        type="text"
+                        value={countrySearch}
+                        onChange={(e) =>
+                          setCountrySearch(
+                            e.target.value
+                          )
+                        }
+                        onClick={(e) =>
+                          e.stopPropagation()
+                        }
+                        placeholder="Search country..."
+                        autoFocus
+                        className="
+                          h-10
+                          w-full
+                          rounded-xl
+                          border
+                          border-slate-200
+                          bg-slate-50
+                          pl-9
+                          pr-3
+                          text-sm
+                          text-slate-900
+                          outline-none
+                          placeholder:text-slate-400
+                          focus:border-teal-500
+                          focus:bg-white
+                        "
+                      />
+                    </div>
+                  </div>
 
-                <option value="germany">
-                  Germany
-                </option>
-
-                <option value="france">
-                  France
-                </option>
-
-                <option value="canada">
-                  Canada
-                </option>
-
-                <option value="australia">
-                  Australia
-                </option>
-              </select>
-
-              <ChevronDown
-                size={16}
-                className="
-                  pointer-events-none
-                  absolute
-                  right-[14px]
-                  top-1/2
-                  -translate-y-1/2
-                  text-slate-500
-                "
-              />
+                  {/* Country List */}
+                  <div className="max-h-[240px] overflow-y-auto py-1">
+                    {filteredCountries.length > 0 ? (
+                      filteredCountries.map(
+                        (countryName) => (
+                          <button
+                            key={countryName}
+                            type="button"
+                            onClick={() => {
+                              setCountry(
+                                countryName
+                              );
+                              setCountrySearch("");
+                              setCountryDropdownOpen(
+                                false
+                              );
+                            }}
+                            className={`
+                              flex
+                              min-h-[42px]
+                              w-full
+                              items-center
+                              px-4
+                              text-left
+                              text-sm
+                              transition
+                              hover:bg-teal-50
+                              hover:text-teal-700
+                              ${
+                                country ===
+                                countryName
+                                  ? "bg-teal-50 font-semibold text-teal-700"
+                                  : "text-slate-700"
+                              }
+                            `}
+                          >
+                            {countryName}
+                          </button>
+                        )
+                      )
+                    ) : (
+                      <div className="px-4 py-8 text-center text-sm text-slate-500">
+                        No countries found
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
 
             <p className="mt-[8.81px] text-xs leading-5 text-slate-500">
@@ -997,7 +1344,6 @@ export default function LoginCard() {
 
           {/* Terms */}
           <div className="mt-[13.37px] flex w-full items-start gap-[20.99px] text-left">
-            {/* Checkbox */}
             <button
               type="button"
               onClick={() =>
@@ -1029,7 +1375,6 @@ export default function LoginCard() {
               )}
             </button>
 
-            {/* Legal Text */}
             <span className="text-sm leading-5 text-slate-700">
               By creating a workspace, I agree to ZoikoTime&apos;s{" "}
 
@@ -1079,7 +1424,10 @@ export default function LoginCard() {
 
           {/* Create Workspace */}
           <button
-            type="submit"
+            type="button"
+            onClick={() =>
+              router.push("/create-account")
+            }
             className="
               mt-[21.38px]
               flex
@@ -1120,9 +1468,18 @@ export default function LoginCard() {
                 ·
               </span>
 
-              <span className="font-semibold text-teal-600">
+              {/* Data Residency Link */}
+              <Link
+                href="/data-location-residency"
+                className="
+                  font-semibold
+                  text-teal-600
+                  hover:text-teal-700
+                  hover:underline
+                "
+              >
                 Data residency info
-              </span>
+              </Link>
             </p>
           </div>
         </form>
