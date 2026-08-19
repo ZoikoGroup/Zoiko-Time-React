@@ -407,7 +407,7 @@ export default function Pricing() {
                 </Link>
               ) : (
                 <Link
-                  href="/start-free"
+                  href=" https://getzoikotime.com/"
                   className={`
                     mt-8
                     flex
