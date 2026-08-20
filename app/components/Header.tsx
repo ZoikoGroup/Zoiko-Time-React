@@ -1274,15 +1274,9 @@ export default function Header() {
               dark:border-slate-800
             "
           >
-<<<<<<< Updated upstream
             <a
               href="https://getzoikotime.com/start"
               onClick={() => setIsMobileMenuOpen(false)}
-=======
-            <Link
-              href="/login"
-              onClick={closeMobileMenu}
->>>>>>> Stashed changes
               className="
                 flex
                 h-11
