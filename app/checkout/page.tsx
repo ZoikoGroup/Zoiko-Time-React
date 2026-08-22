@@ -9,6 +9,7 @@ import SeatsStep from "./components/SeatsStep";
 import BillingStep from "./components/BillingStep";
 import PaymentStep from "./components/PaymentStep";
 import SuccessStep from "./components/SuccessStep";
+import PlanLimitModal from "./components/PlanLimitModal";
 
 export default function CheckoutPage() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -23,9 +24,11 @@ export default function CheckoutPage() {
   const [teamSize, setTeamSize] = useState("1–10");
   const [phone, setPhone] = useState("");
 
-  // --- Step 2: Seats State ---
+  // --- Step 2: Seats & Plan State ---
   const [seats, setSeats] = useState(5);
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly");
+  const [selectedPlan, setSelectedPlan] = useState<"Governed" | "Sovereign">("Governed");
+  const [isPlanLimitModalOpen, setIsPlanLimitModalOpen] = useState(false);
 
   // --- Step 3: Billing State ---
   const [billingName, setBillingName] = useState("Acme Inc.");
@@ -61,6 +64,7 @@ export default function CheckoutPage() {
 
   const handleReset = () => {
     setCurrentStep(1);
+    setSelectedPlan("Governed");
     setPassword("");
     setConfirmPassword("");
     setAgreeTerms(false);
@@ -71,6 +75,22 @@ export default function CheckoutPage() {
     setBillingCycle((prev) => (prev === "monthly" ? "annual" : "monthly"));
   };
 
+  // Modal Handlers
+  const handleReduceSeats = () => {
+    setSeats(250);
+    setIsPlanLimitModalOpen(false);
+  };
+
+  const handleSwitchToSovereign = () => {
+    setSelectedPlan("Sovereign");
+    setIsPlanLimitModalOpen(false);
+    handleNext();
+  };
+
+  const handleRequestEnterprise = () => {
+    // Enterprise request handler
+  };
+
   // Determine page title
   const pageTitle = currentStep === 1 ? "Start your free trial" : "Complete your subscription";
 
@@ -78,7 +98,7 @@ export default function CheckoutPage() {
     <div className="w-full min-h-screen bg-white py-12 md:py-16">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-16 xl:px-24">
         {/* Breadcrumb Navigation */}
-        <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium   leading-5 mb-5">
+        <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium leading-5 mb-5">
           <Link href="/" className="text-teal-600 hover:text-teal-700 transition-colors">
             Home
           </Link>
@@ -92,7 +112,7 @@ export default function CheckoutPage() {
 
         {/* Header Section */}
         <div className="mb-6">
-          <h1 className="text-slate-800 text-3xl md:text-4xl font-extrabold   tracking-tight leading-tight">
+          <h1 className="text-slate-800 text-3xl md:text-4xl font-extrabold tracking-tight leading-tight">
             {pageTitle}
           </h1>
           <div className="flex items-center gap-2 mt-3 select-none">
@@ -100,7 +120,7 @@ export default function CheckoutPage() {
             <svg className="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
-            <span className="text-emerald-400 text-xs font-semibold   leading-5">
+            <span className="text-emerald-400 text-xs font-semibold leading-5">
               Secure checkout
             </span>
           </div>
@@ -141,6 +161,8 @@ export default function CheckoutPage() {
                 setSeats={setSeats}
                 onNext={handleNext}
                 onBack={handleBack}
+                selectedPlan={selectedPlan}
+                onOpenPlanLimitModal={() => setIsPlanLimitModalOpen(true)}
               />
             )}
 
@@ -211,11 +233,22 @@ export default function CheckoutPage() {
               seats={seats}
               billingCycle={billingCycle}
               accountType={accountType}
+              selectedPlan={selectedPlan}
               onToggleBillingCycle={handleToggleBillingCycle}
             />
           </div>
         </div>
       </div>
+
+      {/* Plan Limit Exceeded Modal */}
+      <PlanLimitModal
+        isOpen={isPlanLimitModalOpen}
+        onClose={() => setIsPlanLimitModalOpen(false)}
+        seats={seats}
+        onReduceSeats={handleReduceSeats}
+        onSwitchToSovereign={handleSwitchToSovereign}
+        onRequestEnterprise={handleRequestEnterprise}
+      />
     </div>
   );
 }
