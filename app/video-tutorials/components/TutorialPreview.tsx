@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { FiCheckCircle } from "react-icons/fi";
 
 export default function TutorialPreview() {
@@ -86,12 +86,13 @@ export default function TutorialPreview() {
               </div>
 
               {/* Button */}
+              <Link href="https://www.youtube.com/watch?v=Itd865gRjLY ">
               <button
                 type="button"
                 className="mt-6 w-full rounded-[10px] bg-teal-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_6px_16px_rgba(16,162,141,0.28)] transition hover:bg-teal-700 sm:w-fit"
               >
                 Open this tutorial →
-              </button>
+              </button></Link>
 
             </div>
           </div>

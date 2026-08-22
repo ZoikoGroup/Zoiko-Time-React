@@ -6,6 +6,7 @@ interface OrderSummaryProps {
   seats: number;
   billingCycle: "monthly" | "annual";
   accountType: "new" | "existing";
+  selectedPlan?: "Governed" | "Sovereign";
   onToggleBillingCycle: () => void;
 }
 
@@ -13,10 +14,13 @@ export default function OrderSummary({
   seats,
   billingCycle,
   accountType,
+  selectedPlan = "Governed",
   onToggleBillingCycle,
 }: OrderSummaryProps) {
   const isMonthly = billingCycle === "monthly";
-  const ratePerUser = isMonthly ? 17.0 : 13.6; // 20% off for annual
+  const ratePerUser = selectedPlan === "Sovereign"
+    ? (isMonthly ? 25.0 : 20.0)
+    : (isMonthly ? 15.0 : 12.42);
   const monthlyTotal = seats * ratePerUser;
   
   const trialEndDate = "August 27, 2026";
@@ -25,11 +29,18 @@ export default function OrderSummary({
   return (
     <div className="w-full lg:w-96 bg-white rounded-2xl shadow-[0px_6px_18px_0px_rgba(14,31,61,0.05)] shadow-[0px_1px_3px_0px_rgba(14,31,61,0.06)] border border-slate-200 overflow-hidden shrink-0 self-start">
       {/* Header banner */}
-      <div className="bg-slate-800 p-5 text-white">
-        <h3 className="text-base font-extrabold   leading-6">Governed</h3>
-        <p className="text-white/80 text-xs font-normal   leading-5 capitalize">
-          {billingCycle} billing
-        </p>
+      <div className="bg-slate-800 p-5 text-white flex justify-between items-center">
+        <div>
+          <h3 className="text-base font-extrabold leading-6">{selectedPlan}</h3>
+          <p className="text-white/80 text-xs font-normal leading-5 capitalize">
+            {billingCycle} billing
+          </p>
+        </div>
+        {selectedPlan === "Sovereign" && (
+          <span className="bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
+            Upgraded
+          </span>
+        )}
       </div>
 
       {/* Pricing list */}
