@@ -21,7 +21,7 @@ export default function Hero() {
 
           <p className="max-w-xl text-lg leading-7 text-zinc-700 dark:text-gray-300">
             ZoikoTime creates deterministic, evidence-backed time records for
-            payroll, billing, compliance, and audit, without screenshots,
+            payroll, billing, compliance, and audit, with screenshots,
             keystroke capture, or workforce surveillance.
           </p>
 
