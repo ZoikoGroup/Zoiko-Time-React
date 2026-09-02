@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AcceptanceAndHandover from "./components/AcceptanceAndHandover";
 import DataMigrationBoundary from "./components/DataMigrationBoundary";
 import DeliveryCenter from "./components/DeliveryCenter";
@@ -13,6 +14,11 @@ import StageGateAuthorities from "./components/StageGateAuthorities";
 import StructuredImplementation from "./components/StructuredImplementation";
 import ValidationTestingEvidence from "./components/ValidationTestingEvidence";
 import WorkstreamRegistry from "./components/WorkstreamRegistry";
+
+export const metadata: Metadata = {
+  title: "Enterprise Implementation Services | ZoikoTime",
+  description: "ZoikoTime enterprise implementation services coordinate policy, identity, integrations, validation, workforce communication, launch readiness, and handover.",
+};
 
 export default function main(){
     return(

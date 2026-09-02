@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AttendanceCoverage from "./components/AttendanceCoverage";
 import ControlledRecordLifecycle from "./components/ControlledRecordLifecycle";
 import CoreOperationalWorkflows from "./components/CoreOperationalWorkflows";
@@ -15,6 +16,11 @@ import PilotScorecard from "./components/PilotScorecard";
 import ProjectTimeCostControl from "./components/ProjectTimeCostControl";
 import RemoteDistributedOperations from "./components/RemoteDistributedOperations";
 import ValueStrip from "./components/ValueStrip";
+
+export const metadata: Metadata = {
+  title: "Workforce Management for Operational Leaders | ZoikoTime",
+  description: "ZoikoTime workforce management system helps operational leaders manage time, attendance, scheduling, productivity, and workforce costs with greater control.",
+};
 
 export default function Page() {
   return (

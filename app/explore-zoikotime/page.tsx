@@ -22,9 +22,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Explore ZoikoTime | ZoikoTime",
-  description:
-    "Choose a goal, role, or work environment and see an explainable path to approved ZoikoTime capabilities — deterministic routing rules, no worker scoring, no confidence scores, and the full directory always reachable.",
+  title: "Explore Workforce Records & Trust Evidence | ZoikoTime",
+  description: "Explore ZoikoTime to find the right workforce-record path by goal, role, or environment, with explainable recommendations and no invasive worker monitoring.",
 };
 
 export default function Page() {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import Hero from './components/Hero'
 import PolicyNotice from './components/PolicyNotice'
@@ -10,6 +11,11 @@ import ArtificialIntelligenceDecisionSupport from './components/ArtificialIntell
 import Investigation from './components/Investigation'
 import PolicyChanges from './components/PolicyChanges'
 import ContactZoikoTime from './components/ContactZoikoTime'
+
+export const metadata: Metadata = {
+  title: "Acceptable Use Policy for Platform Users | ZoikoTime",
+  description: "Learn about ZoikoTime acceptable use policy, including user obligations, restricted activities, security measures, and compliance requirements.",
+};
 
 export default function page() {
   return (

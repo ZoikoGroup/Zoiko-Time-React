@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import EvidenceCapture from './components/EvidenceCapture'
 import ProblemCards from './components/ProblemCards'
@@ -13,6 +14,11 @@ import DisputeResolution from './components/DisputeResolution'
 import EnterpriseImpact from './components/EnterpriseImpact'
 import WhyLogsNotEvidence from './components/WhyLogsNotEvidence'
 import GetStartedEvidence from './components/GetStartedEvidence'
+
+export const metadata: Metadata = {
+  title: "Evidence Capture for Audit & Compliance | ZoikoTime",
+  description: "Evidence Capture for Audit & Compliance made simple with ZoikoTime. Capture secure evidence, ensure compliance, and streamline audit workflows easily.",
+};
 
 export default function page() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AttendanceCoverageSection from "./components/AttendanceCoverageSection";
 import ControlledRecordLifecycle from "./components/ControlledRecordLifecycle";
 import CoreManagerWorkflows from "./components/CoreManagerWorkflows";
@@ -14,6 +15,11 @@ import ProjectLaborCostControl from "./components/ProjectLaborCostControl";
 import TeamLeadsHero from "./components/TeamLeadsHero";
 import TeamManagementWorkspace from "./components/TeamManagementWorkspace";
 import ValuePropsBanner from "./components/ValuePropsBanner";
+
+export const metadata: Metadata = {
+  title: "Team Time Tracking & Approvals | ZoikoTime",
+  description: "ZoikoTime team time tracking software helps managers track attendance, project time, exceptions, and approvals while keeping teams and payroll on track.",
+};
 
 export default function page(){
     return(

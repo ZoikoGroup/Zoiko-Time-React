@@ -22,9 +22,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "API Reference | ZoikoTime",
-  description:
-    "The ZoikoTime REST API — predictable resource-oriented URLs, JSON responses, date-based versioning, deterministic classification, and consequential decisions that are always made by a human.",
+  title: "API Reference and Docs for Developers | ZoikoTime",
+  description: "Find ZoikoTime API reference documentation for records, corrections, policies, evidence, webhooks, authentication, pagination, errors, and rate limits.",
 };
 
 export default function Page() {

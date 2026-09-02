@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import WorkerNoticeHero from './components/WorkerNoticeHero'
 import TransparencyBanner from './components/TransparencyBanner'
@@ -13,6 +14,11 @@ import DisputesReview from './components/DisputesReview'
 import WorkerRepresentatives from './components/WorkerRepresentatives'
 import ContactZoikoTime from './components/ContactZoikoTime'
 
+
+export const metadata: Metadata = {
+  title: "Worker Transparency Notice & Data Use | ZoikoTime",
+  description: "ZoikoTime worker transparency notice explains how worker data is collected, used, and protected with clear governance, privacy, and compliance standards.",
+};
 
 export default function page() {
   return (

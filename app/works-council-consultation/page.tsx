@@ -28,9 +28,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Works-Council & Consultation Resources | ZoikoTime",
-  description:
-    "Versioned product and governance materials for employers, representative bodies, advisors, and workers — each with its scope, owner, review date, and stated limitations.",
+  title: "Works Council Consultation Resources | ZoikoTime",
+  description: "Works council consultation resources from ZoikoTime with product evidence, worker rights, data controls, governance, rollout guidance, and clear limits.",
 };
 
 export default function Page() {

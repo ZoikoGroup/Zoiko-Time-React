@@ -36,9 +36,8 @@ import EvidenceRecords from "./components/EvidenceRecords";
 import DeploymentFAQ from "./components/DeploymentFAQ";
 
 export const metadata: Metadata = {
-  title: "Global Deployment | ZoikoTime",
-  description:
-    "Define scope, verify current operability, and configure jurisdiction, data, time, locale, identity, policy, integrations, support, and rollout evidence before activation.",
+  title: "Global Workforce Deployment Platform | ZoikoTime",
+  description: "Manage global workforce deployment with ZoikoTime. Verify regional readiness, local policies, time zones, identity, integrations, support & rollout evidence.",
 };
 
 export default function Page() {

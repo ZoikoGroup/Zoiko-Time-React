@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import DataProcessing from './components/DataProcessing'
 import DataProcessingFlow from './components/DataProcessingFlow'
@@ -11,6 +12,11 @@ import CompliancePackDownload from './components/CompliancePackDownload'
 import DPAVersionControl from './components/DPAVersionControl'
 import PrivacyTeamAccess from './components/PrivacyTeamAccess'
 import DataProcessingConfidence from './components/DataProcessingConfidence'
+
+export const metadata: Metadata = {
+  title: "Data Processing Addendum | ZoikoTime",
+  description: "Review ZoikoTime data processing addendum (DPA) covering GDPR compliance, security controls, sub-processors, and enterprise data protection practices.",
+};
 
 export default function page() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AdministratorGovernance from "./components/AdministratorGovernance";
 import AnswerContract from "./components/AnswerContract";
 import BindingProductInvariant from "./components/BindingProductInvariant";
@@ -14,6 +15,11 @@ import PromptWordingGrantsNothing from "./components/PromptWordingGrantsNothing"
 import QuestionComposer from "./components/QuestionComposer";
 import QuestionDomains from "./components/QuestionDomains";
 import TaskFirstRoutes from "./components/TaskFirstRoutes";
+
+export const metadata: Metadata = {
+  title: "Kairos Assistant - AI Workforce Assistant | ZoikoTime",
+  description: "Kairos Assistant helps authorized users ask governed questions and understand ZoikoTime workforce data with evidence, scope, timing, limits & human control.",
+};
 
 export default function page(){
     return(

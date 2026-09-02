@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import EnterpriseReadiness from "../deterministic-time-classification/components/EnterpriseReadiness";
 import DataGovernanceAndQualitySection from "./components/DataGovernanceAndQualitySection";
 import EnterpriseReadinessSection from "./components/EnterpriseReadinessSection";
@@ -11,6 +12,11 @@ import ProductInvariantsSection from "./components/ProductInvariantsSection";
 import ReviewableInsightSection from "./components/ReviewableInsightSection";
 import WorkerAndReviewerSection from "./components/WorkerAndReviewerSection";
 import WorkforceRecordInsights from "./components/WorkforceRecordInsights";
+
+export const metadata: Metadata = {
+  title: "Workforce Record Insights Software | ZoikoTime",
+  description: "ZoikoTime delivers workforce record insights with traceable data, clear context, and human review to help teams understand records & make informed decisions.",
+};
 
 export default function page(){
     return(

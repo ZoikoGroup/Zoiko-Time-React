@@ -21,9 +21,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Integration Directory | ZoikoTime",
-  description:
-    "Connect ZoikoTime to payroll, HR, identity, finance, scheduling, and analytics systems through open standards — SAML, OIDC, SCIM, webhooks, REST, and SFTP.",
+  title: "Integration Directory and App Connections | ZoikoTime",
+  description: "Explore the ZoikoTime integration directory for payroll, HRIS, SSO, ERP, scheduling, data, and API connections with governed testing and reconciliation.",
 };
 
 export default function Page() {

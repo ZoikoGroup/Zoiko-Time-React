@@ -23,9 +23,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Enterprise Integrations | ZoikoTime",
-  description:
-    "Bring approved enterprise inputs into ZoikoTime and deliver governed record versions to authorized destinations — through explicit access, deterministic mapping, controlled testing, human approval, reconciliation, and traceable change.",
+  title: "Enterprise Integrations & Data Governance | ZoikoTime",
+  description: "Manage enterprise integrations & data governance with ZoikoTime. Govern authorization, mappings, testing, activation, reconciliation, and traceable changes.",
 };
 
 export default function Page() {

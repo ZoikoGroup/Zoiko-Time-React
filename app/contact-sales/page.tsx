@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import ContactHero from './components/ContactHero'
 import WhatWeCanHelpWith from './components/WhatWeCanHelpWith'
@@ -6,6 +7,11 @@ import AfterSubmit from './components/AfterSubmit'
 import SeriousWorkforce from './components/SeriousWorkforce'
 import NotLookingForSales from './components/NotLookingForSales'
 import SalesCTA from './components/SalesCTA'
+
+export const metadata: Metadata = {
+  title: "Contact Sales & Request a Demo | ZoikoTime",
+  description: "Contact ZoikoTime sales for product demos, pricing details, implementation planning, security reviews, procurement support & enterprise workforce solutions.",
+};
 
 export default function page() {
   return (

@@ -28,9 +28,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Trust Center | ZoikoTime",
-  description:
-    "How ZoikoTime protects organization data, keeps time classification deterministic and reviewable, and keeps human authority over consequential decisions — with the scope, status, owner, limitations, and correction history behind every claim recoverable.",
+  title: "ZoikoTime Trust Center | Security & Privacy Controls",
+  description: "Learn how ZoikoTime protects organizational data with verified security controls, deterministic time classification, privacy measures, and human oversight.",
 };
 
 export default function Page() {

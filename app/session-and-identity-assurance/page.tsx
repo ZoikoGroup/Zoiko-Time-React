@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import IdentityAssuranceHero from './components/IdentityAssuranceHero'
 import HiddenFailure from './components/HiddenFailure'
@@ -11,6 +12,11 @@ import WhyTraditionalSystemsFail from './components/WhyTraditionalSystemsFail'
 import PrivacyCards from './components/PrivacyCards'
 import ImpactCards from './components/ImpactCards'
 import GetStarted from './components/GetStarted'
+
+export const metadata: Metadata = {
+  title: "Session Identity Assurance Platform | ZoikoTime",
+  description: "ZoikoTime session identity assurance platform secures user authentication, prevents fraud, and ensures trusted session monitoring for enterprise systems.",
+};
 
 export default function page() {
   return (

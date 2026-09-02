@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import EnterpriseHero from './components/EnterpriseHero'
 import AntiSurveillanceBanner from './components/AntiSurveillanceBanner'
@@ -12,6 +13,11 @@ import EnterpriseTrustBar from './components/EnterpriseTrustBar'
 import EnterpriseResources from './components/EnterpriseResources'
 import EnterpriseFAQ from './components/EnterpriseFAQ'
 import EnterpriseCTA from './components/EnterpriseCTA'
+
+export const metadata: Metadata = {
+  title: "Enterprise Workforce Management Platform | ZoikoTime",
+  description: "Enterprise workforce management platform by ZoikoTime for AI time tracking, workforce analytics, and productivity optimization for modern enterprises.",
+};
 
 export default function page() {
   return (

@@ -25,8 +25,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Deterministic Time Classification | ZoikoTime",
-  description:
-    "ZoikoTime classifies workforce records using policy-bound rules — not AI. Approved facts, context, and rule precedence produce a result you can explain, trace, and review, every time.",
+  description: "Improve time record accuracy with ZoikoTime deterministic time classification. Apply policy-based rules for explainable, traceable, audit-ready results.",
 };
 
 export default function Page() {

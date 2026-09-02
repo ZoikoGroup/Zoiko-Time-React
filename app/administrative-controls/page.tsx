@@ -26,9 +26,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Administrative Controls | ZoikoTime",
-  description:
-    "Scope, permissions, versions, approvals, effective dates, worker visibility, integrations, emergency access, audit, and rollback. Administration is deny-by-default and attributable — and every material change is reversible without erasing what came before.",
+  title: "Administrative Controls & Access Governance | ZoikoTime",
+  description: "ZoikoTime administrative controls provide deny-by-default access, accountable configuration, visible changes, approval workflows, audit evidence & rollback.",
 };
 
 export default function Page() {

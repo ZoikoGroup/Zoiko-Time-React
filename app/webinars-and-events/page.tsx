@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import WebinarsEventsHero from './components/WebinarsEventsHero'
 import FeaturedEvent from './components/FeaturedEvent'
@@ -12,6 +13,11 @@ import MethodologyStandards from './components/MethodologyStandards'
 import EventUpdatesCTA from './components/EventUpdatesCTA'
 import WebinarsEventsFAQ from './components/WebinarsEventsFAQ'
 import GetStartedCTA from './components/GetStartedCTA'
+
+export const metadata: Metadata = {
+  title: "ZoikoTime Webinars & Events | Live & On-Demand Sessions",
+  description: "Learn how governed time works with ZoikoTime webinars and events. Join live sessions, explore workshops, or watch on-demand recordings anytime.",
+};
 
 export default function page() {
   return (

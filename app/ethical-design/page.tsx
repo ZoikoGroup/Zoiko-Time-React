@@ -25,9 +25,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ethical Design Principles | ZoikoTime",
-  description:
-    "Twelve governed principles covering legitimate need, affected people, data, authority, safeguards, tests, limitations, owners, review dates, and correction history — each carrying an honest implementation state.",
+  title: "Ethical Design Principles & Human Dignity | ZoikoTime",
+  description: "Discover ZoikoTime ethical design principles, built around human dignity, evidence, legitimate need, safeguards, accountability, review, and corrections.",
 };
 
 export default function Page() {

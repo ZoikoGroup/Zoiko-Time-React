@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import DataMigrationAfterHeroSection from './components/DataMigrationAfterHeroSection';
 import CutoverContinuitySection from './components/CutoverContinuitySection';
 import EvidenceContinuitySection from './components/EvidenceContinuitySection';
@@ -13,6 +14,11 @@ import SourceScopeRegistrySection from './components/SourceScopeRegistrySection'
 import WhyGovernedMigrationMatters from './components/WhyGovernedMigrationMatters';
 import DeterministicMappingSection from './components/DeterministicMappingSection';
 import GovernedMigrationHero from './components/GovernedMigrationHero';
+
+export const metadata: Metadata = {
+  title: "ZoikoTime Data Migration | Governed Workforce Records",
+  description: "ZoikoTime data migration moves approved workforce records through source discovery, deterministic mapping, rehearsal, validation, and evidence handover.",
+};
 
 export default function Page() {
   return (

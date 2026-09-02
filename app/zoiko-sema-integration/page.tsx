@@ -32,6 +32,11 @@ const poppins = Poppins({
 
 
 
+export const metadata: Metadata = {
+  title: "Zoiko Sema Integration with ZoikoTime",
+  description: "Zoiko Sema Integration connects approved communication context to ZoikoTime through workspace mapping, governance controls, human review, and audit history.",
+};
+
 export default function Page() {
   return (
     <div className={`${figtree.variable} ${poppins.variable} zsi-type`}>

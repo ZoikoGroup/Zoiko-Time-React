@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import GovernanceHero from './components/GovernanceHero'
 import WorkforceDecisionProblem from './components/WorkforceDecisionProblem'
@@ -13,6 +14,11 @@ import Impact from './components/Impact'
 import WhyZ from './components/WhyZ'
 import GetStarted from './components/GetStarted'
 
+
+export const metadata: Metadata = {
+  title: "Audit & HR Compliance Services | ZoikoTime",
+  description: "Strengthen your business with Zoiko Time audit & HR compliance services designed for better HR control, compliance, and operational efficiency.",
+};
 
 export default function page() {
   return (
