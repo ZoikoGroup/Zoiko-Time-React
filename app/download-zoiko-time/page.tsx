@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import DownloadZoikoTime from './components/DownloadZoikoTime'
 import SecureInstallationJourney from './components/SecureInstallationJourney'
@@ -10,6 +11,11 @@ import UpdatesReleaseNotes from './components/UpdatesReleaseNotes'
 import Troubleshooting from './components/Troubleshooting'
 import DownloadZoikoTimeFAQ from './components/DownloadZoikoTimeFAQ'
 import DownloadZoikoTimeCTA from './components/DownloadZoikoTimeCTA'
+
+export const metadata: Metadata = {
+  title: "Download ZoikoTime | Workforce Time Tracking Platform",
+  description: "Download ZoikoTime to simplify workforce time tracking, attendance, approvals, and reporting. Get accurate workforce data and better control today.",
+};
 
 export default function page() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import TimeActivityVerification from './components/TimeActivityVerification'
 import WhyItMatters from './components/WhyItMatters'
@@ -9,6 +10,11 @@ import EvidenceSupport from './components/EvidenceSupport'
 import BuiltForTeams from './components/BuiltForTeams'
 import ResponsibleUse from './components/ResponsibleUse'
 import WorkforceTruthCTA from './components/WorkforceTruthCTA'
+
+export const metadata: Metadata = {
+  title: "Time and Activity Verification Software | ZoikoTime",
+  description: "Time and activity verification with ZoikoTime connects time records, activity context, approvals, exceptions, policies, and audit trails for clear evidence.",
+};
 
 export default function page() {
   return (

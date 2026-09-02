@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import AnalyticsHero from './components/AnalyticsHero'
 import Problem from './components/Problem'
@@ -9,6 +10,11 @@ import Evidence from './components/Evidence'
 import Teams from './components/Teams'
 import Responsible from './components/Responsible'
 import Decision from './components/Decision'
+
+export const metadata: Metadata = {
+  title: "Workforce Analytics & Reporting | ZoikoTime",
+  description: "Turn workforce records into governed metrics, dashboards, and reports with ZoikoTime. Analyze time, attendance, approvals, corrections & evidence securely.",
+};
 
 export default function page() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import SupportHero from './components/SupportHero'
 import SupportCapabilities from './components/SupportCapabilities'
@@ -12,6 +13,11 @@ import ProcurementEvaluation from './components/ProcurementEvaluation'
 import GetStarted from './components/GetStarted'
 import SupportFAQ from './components/SupportFAQ'
 
+
+export const metadata: Metadata = {
+  title: "ZoikoTime Enterprise Support | Accountable Help & Service",
+  description: "ZoikoTime enterprise support provides accountable help for workforce operations with visible case ownership, protected evidence, and human escalation.",
+};
 
 export default function page() {
   return (

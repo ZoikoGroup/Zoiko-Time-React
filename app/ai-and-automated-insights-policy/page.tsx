@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import AIInsightsHero from './components/AIInsightsHero'
 import AIInsightNotice from './components/AIInsightNotice'
@@ -11,6 +12,11 @@ import AccuracyLimitations from './components/AccuracyLimitations'
 import DataUseProtection from './components/DataUseProtection'
 import HighRiskDeployment from './components/HighRiskDeployment'
 import ContactZoikoTime from './components/ContactZoikoTime'
+
+export const metadata: Metadata = {
+  title: "AI and Automated Insights Policy | ZoikoTime",
+  description: "Learn about ZoikoTime AI & Automated Insights policy, including AI usage, data practices, transparency, and responsible handling of automated insights.",
+};
 
 export default function page() {
   return (

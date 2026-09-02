@@ -28,9 +28,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Compliance and Assurance | ZoikoTime",
-  description:
-    "Applicability context, control mappings, assessments, artifacts, findings, remediation, access levels, limitations, and correction history — each as a distinct record, with what it does not cover stated alongside what it does.",
+  title: "Compliance Assurance & Control Evidence | ZoikoTime",
+  description: "Discover ZoikoTime compliance assurance with control mappings, assessment artifacts, findings, remediation records, scope, dates, and stated limitations.",
 };
 
 export default function Page() {

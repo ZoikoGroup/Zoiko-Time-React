@@ -25,9 +25,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Product Updates | ZoikoTime",
-  description:
-    "Explore verified ZoikoTime product changes by role, outcome, and product area, with clear availability, current guidance, and next steps — no roadmap promises and no unsupported benefit claims.",
+  title: "Latest Product Updates and Features | ZoikoTime",
+  description: "Stay up to date with ZoikoTime product updates covering new features, improvements, security enhancements, integrations, workflows, and platform changes.",
 };
 
 export default function Page() {

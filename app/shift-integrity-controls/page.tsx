@@ -25,9 +25,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Shift Integrity Controls | ZoikoTime",
-  description:
-    "ZoikoTime keeps shift records policy-bound and reviewable — with worker transparency, neutral exception states, and traceable evidence at every step.",
+  title: "Employee Shift Tracking Software | ZoikoTime",
+  description: "Improve shift accuracy with ZoikoTime employee shift tracking software. Track shifts, manage exceptions, and maintain reliable workforce records with ease.",
 };
 
 export default function Page() {

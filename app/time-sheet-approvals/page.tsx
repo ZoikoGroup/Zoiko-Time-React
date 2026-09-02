@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AnatomyOfReviewablePeriod from "./components/AnatomyOfReviewablePeriod";
 import ApprovalQueueSection from "./components/ApprovalQueueSection";
 import ApprovalReviewDetail from "./components/ApprovalReviewDetail";
@@ -14,6 +15,11 @@ import TraceableWorkflowSection from "./components/TraceableWorkflowSection";
 import WhatTimesheetsIs from "./components/WhatTimesheetsIs";
 import WorkerPeriodReview from "./components/WorkerPeriodReview";
 import WorkflowModelSection from "./components/WorkflowModelSection";
+
+export const metadata: Metadata = {
+  title: "Employee Timesheet Approval Software | ZoikoTime",
+  description: "Manage timesheet approvals with ZoikoTime. Review, correct, submit, approve, resolve, and release time records with clear history and human oversight.",
+};
 
 export default function page(){
     return(

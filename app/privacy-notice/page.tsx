@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import PrivacyNoticeHeader from './components/PrivacyNoticeHeader'
 import PrivacyNoticeIntro from './components/PrivacyNoticeIntro'
@@ -15,6 +16,11 @@ import USStatePrivacyNotice from './components/USStatePrivacyNotice'
 import UKEEASwissPrivacyRights from './components/UKEEASwissPrivacyRights'
 import ChangesToPrivacyNotice from './components/ChangesToPrivacyNotice'
 import ContactZoikoTime from './components/ContactZoikoTime'
+
+export const metadata: Metadata = {
+  title: "ZoikoTime Privacy Notice | Data Protection & Policy",
+  description: "ZoikoTime privacy notice explains how we collect, use, and protect your personal data, cookies, and information when using our platform services.",
+};
 
 export default function page() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import TruthHero from './components/TruthHero'
 import TrustCenterBanner from './components/TrustCenterBanner'
@@ -16,6 +17,11 @@ import ConnectedWorkSection from './components/ConnectedWorkSection'
 import ImplementationAdoption from './components/ImplementationAdoption'
 import ZoikoTimeFAQ from './components/ZoikoTimeFAQ'
 import ChooseYourPath from './components/ChooseYourPath'
+
+export const metadata: Metadata = {
+  title: "How Time Tracking Works for Teams | ZoikoTime",
+  description: "See how ZoikoTime captures workforce signals, applies deterministic rules, enables human review, records approvals, and delivers trusted workforce records.",
+};
 
 export default function page() {
   return (

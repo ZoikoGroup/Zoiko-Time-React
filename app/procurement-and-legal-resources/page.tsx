@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import EvidenceHero from './components/EvidenceHero'
 import EvidenceOverview from './components/EvidenceOverview'
@@ -15,6 +16,11 @@ import TrustResources from './components/TrustResources'
 import EvidenceVersionTimeline from './components/EvidenceVersionTimeline'
 import EnterpriseTrustPanel from './components/EnterpriseTrustPanel'
 import ProcurementLegalResourcesFAQ from './components/ProcurementLegalResourcesFAQ'
+
+export const metadata: Metadata = {
+  title: "Procurement, Legal & Due Diligence Resources | ZoikoTime",
+  description: "Access ZoikoTime procurement and legal resources to support due diligence, security reviews, privacy assessments, contracts, and informed buying decisions.",
+};
 
 export default function page() {
   return (

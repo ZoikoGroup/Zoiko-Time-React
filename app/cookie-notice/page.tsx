@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import Hero from './components/Hero'
 import PrivacyNoticeCard from './components/PrivacyNoticeCard'
@@ -11,6 +12,11 @@ import LegalBasesConsent from './components/LegalBasesConsent'
 import ManageCookies from './components/ManageCookies'
 import ChangesNotice from './components/ChangesNotice'
 import ContactZoikoTime from './components/ContactZoikoTime'
+
+export const metadata: Metadata = {
+  title: "ZoikoTime Cookie Notice | Cookies & Tracking Policy",
+  description: "ZoikoTime Cookie Notice explains how we use cookies, pixels, SDKs, and tracking technologies to improve performance across websites, apps, and services.",
+};
 
 export default function page() {
   return (

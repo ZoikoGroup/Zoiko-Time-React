@@ -24,9 +24,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Training & Adoption | ZoikoTime",
-  description:
-    "Help administrators, managers, and workers succeed with ZoikoTime through structured learning programs, guided practice, certification, and continuous adoption support — measurable, accessible, and governed.",
+  title: "ZoikoTime Training & Adoption | Drive Lasting Adoption",
+  description: "ZoikoTime training & adoption helps teams onboard faster with structured learning, guided practice, certification, accessibility, and continuous support.",
 };
 
 export default function Page() {

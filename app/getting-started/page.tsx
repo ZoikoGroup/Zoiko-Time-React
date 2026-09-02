@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import Start from './components/Start'
 import PathFinder from './components/PathFinder'
@@ -11,6 +12,11 @@ import Govern from './components/Govern'
 import Support from './components/Support'
 import FAQ from './components/FAQ'
 import ReadyCTA from './components/ReadyCTA'
+
+export const metadata: Metadata = {
+  title: "Workforce Onboarding Guide for Every Role | ZoikoTime",
+  description: "Get started with ZoikoTime through guided, role-based onboarding. Configure your workforce, test safely in the sandbox, verify readiness, and launch.",
+};
 
 export default function page() {
   return (

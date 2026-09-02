@@ -17,9 +17,8 @@ import BuiltForEveryAudience from "./components/BuiltForEveryAudience";
 import ReportsFaq from "./components/ReportsFaq";
 
 export const metadata: Metadata = {
-  title: "Reports & Dashboards | ZoikoTime",
-  description:
-    "Organization-level views of record health, workflow status, source quality, and release readiness — every number carries its definition, version, and limitations. Governed outputs, not a leaderboard, and no worker scoring.",
+  title: "Workforce Reporting Dashboards | ZoikoTime",
+  description: "ZoikoTime workforce reporting dashboards provide clear, traceable workforce data to help teams monitor records, workflows, exceptions, and data quality.",
 };
 
 export default function Page() {
