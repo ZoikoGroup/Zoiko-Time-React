@@ -21,9 +21,8 @@ import ImplementationPath from "./components/ImplementationPath";
 import VerifyFaq from "./components/VerifyFaq";
 
 export const metadata: Metadata = {
-  title: "Verified Time & Attendance | ZoikoTime",
-  description:
-    "Know which records are complete, what needs context, who owns the next action, and when approved time is ready for payroll, billing, compliance, or audit.",
+  title: "Time & Attendance Verification Software | ZoikoTime",
+  description: "Verify employee time and attendance with ZoikoTime. Get accurate, payroll-ready records without invasive surveillance or complicated tracking systems.",
 };
 
 export default function Page() {

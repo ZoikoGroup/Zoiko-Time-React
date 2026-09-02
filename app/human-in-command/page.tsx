@@ -27,9 +27,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Human-in-Command Controls | ZoikoTime",
-  description:
-    "Automation assists — it calculates, classifies, routes, summarizes, and flags. An authorized person reviews the evidence, can disagree with it, and owns the outcome. The affected worker can understand it, correct it, challenge it, escalate it, and see its history.",
+  title: "Human-in-Command Controls & Accountability | ZoikoTime",
+  description: "Learn how human-in-command controls at ZoikoTime ensure automation assists rather than decides, with human review, evidence, accountability & decision rights.",
 };
 
 export default function Page() {

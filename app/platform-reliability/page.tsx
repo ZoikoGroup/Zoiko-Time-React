@@ -28,9 +28,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Platform Reliability | ZoikoTime",
-  description:
-    "How ZoikoTime defines, measures, operates, recovers, reviews, and evidences reliability — service definitions, measurement methods, change safety, dependencies, incident practice, and recovery evidence, each with its scope, limitations, owner, and review date.",
+  title: "Platform Reliability & Recovery Evidence | ZoikoTime",
+  description: "Learn how ZoikoTime measures and governs platform reliability with defined services, change safety, dependencies, incident practices, and recovery evidence.",
 };
 
 export default function Page() {

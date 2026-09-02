@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import IntegrityControl from './components/IntegrityControl'
 import RiskSection from './components/RiskSection'
@@ -10,6 +11,11 @@ import HumanCommand from './components/HumanCommand'
 import EnterpriseImpact from './components/EnterpriseImpact'
 import WhyZoiko from './components/WhyZoiko'
 import GetStarted from './components/GetStarted'
+
+export const metadata: Metadata = {
+  title: "Integrity & Anomaly Detection System | ZoikoTime",
+  description: "Protect workforce data with ZoikoTime integrity & anomaly detection system, delivering real-time fraud detection, risk scoring, and audit evidence.",
+};
 
 export default function page() {
   return (

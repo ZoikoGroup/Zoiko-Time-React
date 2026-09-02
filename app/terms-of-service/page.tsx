@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AccountAdministration from "./components/AccountAdministration";
 import AgreementSection from "./components/AgreementSection";
 import AISection from "./components/AISection";
@@ -16,6 +17,11 @@ import ResolutionSection from "./components/ResolutionSection";
 import RestrictionSection from "./components/RestrictionSection";
 import SecuritySection from "./components/SecuritySection";
 import WorkerTransparencySection from "./components/WorkerTransparencySection";
+
+export const metadata: Metadata = {
+  title: "Terms of Service & Conditions | Zoiko Time",
+  description: "Read ZoikoTime Terms of Service covering user rights, responsibilities, acceptable use, and legal conditions for accessing and using the platform.",
+};
 
 export default function Page() {
   return (

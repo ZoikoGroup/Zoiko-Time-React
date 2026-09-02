@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AdministrationSection from "./components/AdministrationSection";
 import BreakRestHeroSection from "./components/BreakRestHeroSection";
 import CtaSection from "./components/CtaSection";
@@ -12,6 +13,11 @@ import ReviewerExperienceSection from "./components/ReviewerExperienceSection";
 import SourcePolicyContextSection from "./components/SourcePolicyContextSection";
 import StateModelSection from "./components/StateModelSection";
 import WorkerExperienceSection from "./components/WorkerExperienceSection";
+
+export const metadata: Metadata = {
+  title: "Employee Break Tracking Software | ZoikoTime",
+  description: "Improve workplace compliance with employee break tracking software from ZoikoTime. Track employee breaks, manage rest periods & maintain accurate records.",
+};
 
 export default function(){
     return (

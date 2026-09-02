@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "./components/Hero";
 import PartnershipSection from "./components/PartnershipSection";
 import ValueSection from "./components/ValueSection";
@@ -9,6 +10,11 @@ import ActionSection from "./components/ActionSection";
 import RenewalSection from "./components/RenewalSection";
 import ProofSection from "./components/ProofSection";
 import FAQSection from "./components/FAQSection";
+
+export const metadata: Metadata = {
+  title: "ZoikoTime Customer Success | Outcomes, Adoption & Value",
+  description: "Turn your ZoikoTime deployment into sustained value with customer success focused on outcomes, adoption, explainable signals, and renewal readiness.",
+};
 
 export default function CustomerSuccessPage() {
   return (

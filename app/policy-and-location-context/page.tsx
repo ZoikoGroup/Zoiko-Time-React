@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import PolicyLocationHero from './components/PolicyLocationHero'
 import PolicyStats from './components/PolicyStats'
@@ -13,6 +14,11 @@ import EnterpriseImpact from './components/EnterpriseImpact'
 import CompetitiveDisplacement from './components/CompetitiveDisplacement'
 import PrivacyEthics from './components/PrivacyEthics'
 import GetStarted from './components/GetStarted'
+
+export const metadata: Metadata = {
+  title: "Real-Time Policy Control System | ZoikoTime",
+  description: "Real-Time Policy Control System by ZoikoTime dynamically interprets laws and policies to ensure global workforce compliance, accuracy, and defensibility.",
+};
 
 export default function page() {
   return (

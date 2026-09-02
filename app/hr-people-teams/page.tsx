@@ -21,9 +21,8 @@ import HrFaq from "./components/HrFaq";
 import HrCta from "./components/HrCta";
 
 export const metadata: Metadata = {
-  title: "For HR & People Teams | ZoikoTime",
-  description:
-    "Manage attendance, breaks, approvals, payroll inputs, and disputes across office, remote, hybrid, and contractor work — without screenshots, keystroke capture, or invasive monitoring.",
+  title: "HR Time & Attendance Software | ZoikoTime",
+  description: "ZoikoTime HR time & attendance software helps HR manage attendance, breaks, approvals, payroll inputs, and disputes across modern workforces with ease.",
 };
 
 export default function Page() {

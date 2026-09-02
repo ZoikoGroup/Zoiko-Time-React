@@ -20,9 +20,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Identity & Access Management | ZoikoTime",
-  description:
-    "Govern who can see and do what across ZoikoTime with single sign-on, strong authentication, automated lifecycle provisioning, least-privilege roles, time-bound access, and a complete, reviewable audit trail.",
+  title: "Workforce Identity & Access Management | ZoikoTime",
+  description: "Manage workforce identity and access with ZoikoTime. Control SSO, MFA, roles, provisioning, time-bound access, reviews, sessions, and audit trails securely.",
 };
 
 export default function Page() {

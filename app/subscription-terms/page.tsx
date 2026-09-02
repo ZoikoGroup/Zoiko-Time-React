@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import Subscriptionsection from './components/Subscriptionsection'
 import SubscriptionSnapshot from './components/SubscriptionSnapshot'
@@ -11,6 +12,11 @@ import LegalNote from './components/LegalNote'
 import SubscriptionFAQ from './components/SubscriptionFAQ'
 import SubscriptionHelp from './components/SubscriptionHelp'
 
+
+export const metadata: Metadata = {
+  title: "Subscription Terms & Conditions | ZoikoTime",
+  description: "Review ZoikoTime subscription terms covering plans, billing, renewals, account responsibilities, service usage, and conditions for accessing the platform.",
+};
 
 export default function page() {
   return (

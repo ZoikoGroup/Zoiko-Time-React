@@ -27,9 +27,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Privacy | ZoikoTime",
-  description:
-    "What categories of workforce data are collected and from which sources, for what purpose, who can access or receive them, how long they are kept, where they are processed — and how the person a record describes can see it, understand it, and ask for it to be corrected.",
+  title: "Workforce Data Privacy & Controls | ZoikoTime",
+  description: "Learn how ZoikoTime handles workforce data with transparency, privacy controls, data rights, retention practices, and safeguards designed to protect users.",
 };
 
 export default function Page() {

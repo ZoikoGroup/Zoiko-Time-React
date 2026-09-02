@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import PayrollHero from './components/PayrollHero'
 import PayrollFeatures from './components/PayrollFeatures'
@@ -14,6 +15,11 @@ import MeasurableOutcomes from './components/MeasurableOutcomes'
 import ProofValidation from './components/ProofValidation'
 import Implementation from './components/Implementation'
 import QuestionsAnswered from './components/QuestionsAnswered'
+
+export const metadata: Metadata = {
+  title: "Finance & Payroll Time Tracking Software | ZoikoTime",
+  description: "ZoikoTime payroll time tracking software helps finance teams manage accurate time records, approvals, attendance data, and payroll-ready workflows with ease.",
+};
 
 export default function page() {
   return (

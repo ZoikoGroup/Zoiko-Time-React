@@ -17,9 +17,8 @@ import EnterpriseReadiness from "./components/EnterpriseReadiness";
 import EvidenceCta from "./components/EvidenceCta";
 
 export const metadata: Metadata = {
-  title: "Evidence Ledger | ZoikoTime",
-  description:
-    "Every material workforce-record change — source event, classification, correction, review, approval, release, and reconciliation — connected and attributable, with explicit evidence availability, worker correction rights, and governed export.",
+  title: "Evidence Ledger for Workforce Records | ZoikoTime",
+  description: "Build traceable workforce records with ZoikoTime Evidence Ledger. Connect every material change to its evidence, review, approval, release & reconciliation.",
 };
 
 export default function Page() {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import FaqHero from './components/FaqHero'
 import FaqTabs from './components/FaqTabs'
@@ -9,6 +10,11 @@ import SecurityFaq from './components/SecurityFaq'
 import SupportFaq from './components/SupportFaq'
 import FaqNotice from './components/FaqNotice'
 import FaqCta from './components/FaqCta'
+
+export const metadata: Metadata = {
+  title: "Frequently Asked Questions & Answers | ZoikoTime",
+  description: "Find answers to ZoikoTime FAQs about workforce assurance, time tracking, platform features, security, privacy, billing, and common customer questions.",
+};
 
 export default function page() {
   return (

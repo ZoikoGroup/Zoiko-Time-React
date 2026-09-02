@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import SecurityHero from './components/SecurityHero'
 import SecurityOverview from './components/SecurityOverview'
@@ -12,6 +13,11 @@ import ResponsibleDisclosure from './components/ResponsibleDisclosure'
 import SecurityAddendumFAQs from './components/SecurityAddendumFAQs'
 import EnterpriseReviewCTA from './components/EnterpriseReviewCTA'
 
+
+export const metadata: Metadata = {
+  title: "Security Addendum Policy for Data Security | ZoikoTime",
+  description: "Learn how ZoikoTime protects workforce data with its security addendum, covering access controls, encryption, audit logs & enterprise security practices.",
+};
 
 export default function page() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import DocsHero from './components/DocsHero'
 import Quickstart from './components/Quickstart'
@@ -10,6 +11,11 @@ import ApiConcepts from './components/ApiConcepts'
 import SDKs from './components/SDKs'
 import Guides from './components/Guides'
 import ApiPrinciples from './components/ApiPrinciples'
+
+export const metadata: Metadata = {
+  title: "Development Documentation and API Guides | ZoikoTime",
+  description: "Access ZoikoTime development documentation and API guides covering authentication, records, policies, evidence, events, webhooks, SDKs, and integrations.",
+};
 
 export default function page() {
   return (

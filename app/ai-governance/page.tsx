@@ -25,9 +25,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "AI Governance | ZoikoTime",
-  description:
-    "Deterministic rules, approved machine-learning flags, governed assistance, and human-only decisions are four different things with four different authority levels. Each governed use states its purpose, sources, allowed output, human control, limitations, owner, status, and correction path.",
+  title: "AI Governance & Human Oversight Controls | ZoikoTime",
+  description: "Learn how AI governance at ZoikoTime separates rules, ML flags, assistance, and human decisions by authority, evidence, review, limits, and accountability.",
 };
 
 export default function Page() {

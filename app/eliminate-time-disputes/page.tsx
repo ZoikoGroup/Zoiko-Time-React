@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import DisputeReview from './components/DisputeReview'
 import TrustPills from './components/TrustPills'
@@ -14,6 +15,11 @@ import IntegrationsAnalytics from './components/IntegrationsAnalytics'
 import Implementation from './components/Implementation'
 import TrustPrivacyGovernance from './components/TrustPrivacyGovernance'
 import WhoItsFor from './components/WhoItsFor'
+
+export const metadata: Metadata = {
+  title: "Employee Time Dispute Resolution | ZoikoTime",
+  description: "ZoikoTime simplifies time dispute resolution with accurate records, clear evidence, correction requests & transparent approvals to resolve issues faster.",
+};
 
 export default function page() {
   return (

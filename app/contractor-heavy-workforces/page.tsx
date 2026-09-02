@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react'
 import ContractorHeavyWorkforces from './components/ContractorHeavyWorkforces'
 import OpsChallenges from './components/OpsChallenges'
@@ -16,6 +17,11 @@ import ImplJourney from './components/ImplJourney'
 import CustomerProof from './components/CustomerProof'
 import OpsFaq from './components/OpsFaq'
 import GetStarted from './components/GetStarted'
+
+export const metadata: Metadata = {
+  title: "Contractor Workforce Management Software | ZoikoTime",
+  description: "Manage contractor-heavy workforces with accurate time tracking, project allocation, approvals, and audit-ready records using ZoikoTime for better control.",
+};
 
 export default function page() {
   return (

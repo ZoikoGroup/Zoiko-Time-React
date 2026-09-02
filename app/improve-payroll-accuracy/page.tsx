@@ -19,9 +19,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Improve Payroll Accuracy | ZoikoTime",
-  description:
-    "ZoikoTime helps organizations improve the accuracy of the time, attendance, break, and approval records that reach payroll — with deterministic rules, human review, complete change history, and clean, validated exports.",
+  title: "Payroll Accuracy & Time Tracking | ZoikoTime",
+  description: "Improve payroll accuracy with ZoikoTime. Get accurate time records, automated approvals, and payroll-ready data to reduce errors and simplify processing.",
 };
 
 export default function Page() {

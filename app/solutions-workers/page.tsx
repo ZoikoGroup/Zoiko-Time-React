@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AdoptionAndProofSection from "./components/AdoptionAndProofSection";
 import AfterApprovalSection from "./components/AfterApprovalSection";
 import AvailabilityRegistrySection from "./components/AvailabilityRegistrySection";
@@ -13,6 +14,11 @@ import WhyItMattersSection from "./components/WhyItMattersSection";
 import WorkerHeroSection from "./components/WorkerHeroSection";
 import WorkerWorkspaceSection from "./components/WorkerWorkspaceSection";
 import WorkPatternsSection from "./components/WorkPatternsSection";
+
+export const metadata: Metadata = {
+  title: "Employee Time Tracking Software | ZoikoTime",
+  description: "Track your work hours with ZoikoTime employee time tracking software. Review records, flag errors, request corrections, and stay informed at every step.",
+};
 
 export default function Page() {
   return (
