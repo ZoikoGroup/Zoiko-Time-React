@@ -199,7 +199,7 @@ export default function Footer() {
       >
         <Image
           src="/images/Frame 16.png"
-          alt="ZoikoDigital"
+          alt="ZoikoTime"
           width={180}
           height={40}
           className="h-auto w-[180px]"
