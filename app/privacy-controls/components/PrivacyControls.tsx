@@ -111,9 +111,11 @@ export default function PrivacyControls() {
               leading-5
             "
           >
-            ZoikoTime is not a surveillance system. It operates within
-            employer-defined policies and is designed to support lawful,
-            transparent, and accountable workforce management.
+            Transparent Workforce Verification. ZoikoTime records time and
+            work activity through clear, policy-driven signals. When visual
+            screenshot capture is enabled by your employer, automated privacy
+            rules blur sensitive data to balance account integrity with worker
+            privacy.
           </p>
         </div>
 

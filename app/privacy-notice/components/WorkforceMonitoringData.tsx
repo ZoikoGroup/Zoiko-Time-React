@@ -63,12 +63,49 @@ export default function WorkforceMonitoringData() {
             mb-6
           "
         >
+          Depending on customer organization settings, ZoikoTime collects time
+          logs, active window titles, keyboard/mouse activity metrics, and
+          periodic visual screen capture (screenshots). Visual screen captures
+          are processed with automated masking and redaction controls to
+          minimize the exposure of personal or sensitive information.
+        </p>
+
+
+        {/* Paragraph 3 */}
+        <p
+          className="
+            text-base
+            font-normal
+            leading-7
+            text-slate-700
+            dark:text-slate-300
+            mb-6
+          "
+        >
           Depending on customer configuration, workforce and monitoring-related
-          data may include: time activity records, idle time events, application
-          and website context, screenshots (where enabled with appropriate
-          notices), task and project metadata, work-state classifications,
+          data may also include: idle time events, application and website
+          context, task and project metadata, work-state classifications,
           AI-assisted insights, anomaly flags, confidence scores, policy
           events, payroll support data, and audit records.
+        </p>
+
+
+        {/* Worker Notice Obligations */}
+        <p
+          className="
+            text-base
+            font-normal
+            leading-7
+            text-slate-700
+            dark:text-slate-300
+            mb-6
+          "
+        >
+          Employers utilizing ZoikoTime are required to notify workers prior to
+          enabling visual screen capture or activity tracking in accordance
+          with applicable local, national, and international privacy laws
+          (including GDPR, CCPA/CPRA, and state-specific electronic monitoring
+          statutes).
         </p>
 
 

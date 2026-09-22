@@ -7,6 +7,11 @@ const retentionSchedule = [
       "Retained for the duration of the subscription plus a configurable post-termination period (default 30 days).",
   },
   {
+    title: "Visual proof-of-work (screenshots):",
+    description:
+      "All captured visual proof-of-work (screenshots) are encrypted at rest (AES-256) and in transit (TLS 1.3), stored in designated customer data residency regions, and automatically purged according to Customer-configured retention schedules (default 90 days).",
+  },
+  {
     title: "Audit logs and access-to-view logs:",
     description:
       "Retained for a minimum of 12 months; enterprise configurations may extend this period.",

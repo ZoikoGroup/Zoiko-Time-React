@@ -8,6 +8,7 @@ import LifecycleTerms from './components/LifecycleTerms'
 import PaymentTerms from './components/PaymentTerms'
 import DataAccessCancellation from './components/DataAccessCancellation'
 import EnterpriseTerms from './components/EnterpriseTerms'
+import MonitoringComplianceTerms from './components/MonitoringComplianceTerms'
 import LegalNote from './components/LegalNote'
 import SubscriptionFAQ from './components/SubscriptionFAQ'
 import SubscriptionHelp from './components/SubscriptionHelp'
@@ -29,6 +30,7 @@ export default function page() {
         <PaymentTerms />
         <DataAccessCancellation />
         <EnterpriseTerms />
+        <MonitoringComplianceTerms />
         <LegalNote />
         <SubscriptionFAQ />
         <SubscriptionHelp />

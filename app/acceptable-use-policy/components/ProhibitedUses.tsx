@@ -43,6 +43,13 @@ export default function ProhibitedUses() {
         "Exporting, sharing, selling, or transferring Customer Data except as permitted by law and contract.",
       ],
     },
+    {
+      title: "7.6 Data Capture Rules",
+      items: [
+        "Customers and administrators must not configure ZoikoTime screen capture parameters with the intention to harvest passwords, financial account details, personal health records, or sensitive personal data.",
+        "Customers must enable automated blurring/redaction rules where workers handle personal or sensitive third-party information.",
+      ],
+    },
   ];
 
   return (

@@ -22,7 +22,7 @@ export default function DataProtection() {
     },
     {
       title: "Screenshot protection",
-      text: "Where enabled, ZoikoTime supports redaction, access controls, transparency, retention settings, and policy-based governance.",
+      text: "All captured visual proof-of-work (screenshots) are encrypted at rest (AES-256) and in transit (TLS 1.3), stored in designated customer data residency regions, and automatically purged according to Customer-configured retention schedules (default 90 days).",
     },
   ];
 

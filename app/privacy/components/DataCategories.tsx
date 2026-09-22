@@ -20,7 +20,7 @@ const categories = [
       "Time entries, attendance and presence context, timesheets, breaks, approvals, exceptions, corrections where enabled.",
     purposes: "Create, review, approve, preserve and report governed records.",
     neverImplies:
-      "Screenshots, keystroke content, URL history, application names, or clipboard content — none of which is ever collected.",
+      "That screenshots or application activity are captured without customer policy enablement and advance worker notice. Keystroke content and clipboard contents are never collected.",
   },
   {
     category: "Device & service metadata",
