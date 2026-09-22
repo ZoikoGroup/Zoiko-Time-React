@@ -37,7 +37,7 @@ const entries: Entry[] = [
   {
     title: "Collection limits statement",
     access: "Public",
-    summary: "What is never collected, in every tier and configuration.",
+    summary: "What is collected by default, what requires customer policy enablement, and what is never collected.",
     owner: "Trust & Governance",
     reviewed: "12 Jul 2026",
     status: "Current",

@@ -8,20 +8,19 @@ export default function SurveillanceBoundary() {
         <div className="flex flex-col items-center text-center">
 
           <p className="text-xs font-bold uppercase leading-5 tracking-wider text-emerald-400">
-            Time evidence without hidden surveillance
+            Transparent, policy-governed capture
           </p>
 
           <p className="mt-4 max-w-[860px] text-base font-bold leading-7 text-white sm:text-lg">
-            No screenshots, keystroke content, URL history, application-name
-            monitoring, or clipboard collection under any tier or configuration.
+            Screenshots and application/website activity are captured only where enabled by customer policy, subject to automated redaction and required advance worker notice. Keystroke content and clipboard contents are never collected.
           </p>
 
           <p className="mt-4 max-w-[645px] text-base font-normal leading-7 text-slate-300">
             Time entries, schedules, approvals, presence context, and evidence
-            records describe <em>work</em> against configured policy. Invasive
-            productivity monitoring describes a <em>person</em> using a device.
-            These are different categories of data, and ZoikoTime collects only
-            the first.
+            records describe <em>work</em> against configured policy. Where a
+            customer enables desktop activity capture or screenshots, that data
+            is disclosed to workers in advance, masked by automated redaction
+            rules, and governed by customer-defined retention settings.
           </p>
 
           <p className="mt-4 text-xs font-normal leading-5 text-slate-400">

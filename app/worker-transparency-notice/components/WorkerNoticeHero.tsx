@@ -31,6 +31,18 @@ export default function WorkerNoticeHero() {
         </h1>
 
 
+        {/* Hero Statement */}
+        <p className="mt-6 text-lg font-bold leading-7 text-teal-700 dark:text-teal-400">
+          Transparent Workforce Verification.
+        </p>
+        <p className="mt-2 text-base font-medium leading-7 text-slate-700 dark:text-slate-300">
+          ZoikoTime records time and work activity through clear, policy-driven
+          signals. When visual screenshot capture is enabled by your employer,
+          automated privacy rules blur sensitive data to balance account
+          integrity with worker privacy.
+        </p>
+
+
         {/* Description */}
         <p
           className="

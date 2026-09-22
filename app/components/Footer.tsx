@@ -383,13 +383,17 @@ export default function Footer() {
               Zoiko Group Inc.
             </span>{" "}
             © 2026 Zoiko Group Inc. All rights reserved. ZoikoTime
-            provides workforce intelligence, verification,
-            governance, reporting, and performance-insight tools.
-            Customers are responsible for configuring and using
-            ZoikoTime in accordance with applicable employment,
-            privacy, workplace monitoring, data protection,
-            consultation, and worker-notification laws. ZoikoTime
-            is not a substitute for legal, HR, or compliance advice.
+            provides configurable workforce verification, desktop
+            activity capture, shift integrity, and reporting tools.
+            Activity monitoring, visual proof-of-work (including
+            screenshots), and data masking features are governed by
+            customer-defined policy settings. Customers are solely
+            responsible for ensuring their use and configuration of
+            ZoikoTime comply with applicable employment, data
+            protection, workplace monitoring, advance employee
+            notification, and labor laws in their jurisdiction.
+            ZoikoTime is not a substitute for legal, HR, or
+            compliance counsel.
 
           </p>
 

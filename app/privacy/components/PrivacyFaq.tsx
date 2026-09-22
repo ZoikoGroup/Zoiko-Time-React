@@ -8,7 +8,7 @@ const faqs = [
   {
     question: "What does ZoikoTime collect, and what does it never collect?",
     answer:
-      "It collects account and identity data, organization configuration, time and workforce records, device and service metadata, integration records, and support, audit and incident records — each for stated purposes. It never collects screenshots, keystroke content, URL history, application-name monitoring, or clipboard content, under any tier or configuration.",
+      "It collects account and identity data, organization configuration, time and workforce records, device and service metadata, integration records, and support, audit and incident records — each for stated purposes. Depending on customer organization settings, it may also collect active window titles, application and website activity, keyboard/mouse activity metrics, and periodic screenshots, which are processed with automated masking and redaction controls. Keystroke content and clipboard contents are never collected.",
   },
   {
     question: "Can workers see and correct their records?",
