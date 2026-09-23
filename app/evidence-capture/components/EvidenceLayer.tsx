@@ -84,6 +84,17 @@ const layers = [
     ],
     featured: false,
   },
+  {
+    id: "7",
+    tag: "Visual Evidence Layer",
+    title: "Screenshots & Redaction Controls",
+    note:
+      "Automatic client-side blurring and mask controls protect passwords, personal messages, and sensitive employee data.",
+    items: [
+      "Administrators can configure scheduled or event-driven screen capture.",
+    ],
+    featured: false,
+  },
 ];
 
 export default function EvidenceLayer() {

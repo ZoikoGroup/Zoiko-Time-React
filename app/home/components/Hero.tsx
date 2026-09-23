@@ -21,8 +21,8 @@ export default function Hero() {
 
           <p className="max-w-xl text-lg leading-7 text-zinc-700 dark:text-gray-300">
             ZoikoTime creates deterministic, evidence-backed time records for
-            payroll, billing, compliance, and audit, with screenshots,
-            keystroke capture, or workforce surveillance.
+            payroll, billing, compliance, and audit through governed activity
+            capture, automated redaction, and human-in-command oversight.
           </p>
 
          <div className="flex w-full flex-col gap-4 pt-2 sm:w-auto sm:flex-row">
@@ -42,7 +42,7 @@ export default function Hero() {
 </div>
 
           <div className="flex flex-wrap gap-x-6 gap-y-2 pt-4">
-            {["No screenshots", "No keystroke capture", "No URL monitoring"].map(
+            {["Governed visual capture", "Privacy-first activity signals", "Automated data redaction"].map(
               (item) => (
                 <div key={item} className="flex items-center gap-2">
                                   <CheckCircle2 className="mt-1 size-5 shrink-0 text-emerald-400" />

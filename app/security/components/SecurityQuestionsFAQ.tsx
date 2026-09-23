@@ -12,7 +12,7 @@ const faqData: FAQItem[] = [
     id: 'screenshots',
     question: 'Does ZoikoTime take screenshots or monitor applications?',
     answer:
-      'No screenshots, keystroke content, URL history, application-name monitoring, or clipboard collection under any tier or configuration. Security telemetry covers identity, access, change, source-health, service, and incident events — not what a person types, reads, or visits.',
+      'ZoikoTime provides privacy-conscious workforce intelligence. Visual evidence capture (screenshots) is governed strictly by employer configuration, subject to local labor laws, advance notification requirements, and automated blurring of sensitive personal data.',
   },
   {
     id: 'auth',

@@ -110,8 +110,8 @@ export default function ModulesSection() {
           </span>
         </div>
         {[
-          "No screenshots",
-          "No keystroke capture",
+          "Configurable visual evidence",
+          "Role-based capture permissions",
           "Human review remains in control",
         ].map((item) => (
           <div key={item} className="flex items-center gap-1">
