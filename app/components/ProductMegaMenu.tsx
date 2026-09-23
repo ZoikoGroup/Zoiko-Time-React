@@ -423,9 +423,9 @@ export default function ProductMegaMenu({
                 See how Workforce Truth Infrastructure
                 produces deterministic, evidence-backed
                 time records your payroll, billing, and
-                audit systems can rely on—with no
-                screenshots, no keystroke capture, and
-                no surveillance of any kind.
+                audit systems can rely on—utilizing
+                policy-controlled screenshot verification
+                and automated privacy masking.
               </p>
             </div>
 

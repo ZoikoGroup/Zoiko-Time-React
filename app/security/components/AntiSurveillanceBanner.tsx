@@ -27,7 +27,7 @@ export default function AntiSurveillanceBanner() {
 
         {/* Highlighted Banner Statement */}
         <h2 className="text-lg sm:text-xl lg:text-2xl font-bold leading-relaxed max-w-3xl text-slate-100">
-          No screenshots, keystroke content, URL history, application-name monitoring, or clipboard collection under any tier or configuration.
+          ZoikoTime provides privacy-conscious workforce intelligence. Visual evidence capture (screenshots) is governed strictly by employer configuration, subject to local labor laws, advance notification requirements, and automated blurring of sensitive personal data.
         </h2>
 
         {/* Detailed Explanation */}

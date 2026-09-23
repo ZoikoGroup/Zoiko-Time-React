@@ -18,7 +18,8 @@ const benefits = [
   {
     icon: '/home/Icon (3).png',
     title: "Privacy by design",
-    description: "No screenshots. No keystrokes. No surveillance.",
+    description:
+      "Governed screenshot capture with automated blurring and privacy redaction.",
   },
 ];
 
