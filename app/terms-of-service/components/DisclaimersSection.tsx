@@ -19,6 +19,12 @@ export default function DisclaimersSection() {
             WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
             NON-INFRINGEMENT, TITLE, QUIET ENJOYMENT, OR ACCURACY.
           </p>
+          <p className="mt-4 text-xs sm:text-sm text-slate-500 dark:text-gray-300 leading-6">
+            ZoikoTime makes no representation or warranty that Customer&apos;s
+            use of screen capture, activity tracking, or time verification
+            features complies with labor, employment, or privacy laws in
+            Customer&apos;s operating jurisdiction.
+          </p>
         </div>
       </section>
     </div>

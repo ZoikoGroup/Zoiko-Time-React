@@ -32,7 +32,7 @@ const securityRows = [
     examples:
       "Screenshots where enabled by customer policy",
     security:
-      "Redaction, access control, storage, retention",
+      "Automated redaction, access control, AES-256 at rest, TLS 1.3 in transit, customer data residency, retention (default 90 days)",
   },
   {
     category: "Reports",

@@ -20,6 +20,16 @@ export default function CustomerResponsibilitiesSection() {
           applicable employment, labor, privacy, and data protection laws.
         </p>
 
+        <p className="text-sm sm:text-base text-slate-700 dark:text-gray-300 leading-7 mb-4">
+          Customer acknowledges and agrees that ZoikoTime provides technical
+          capabilities for workforce tracking, activity monitoring, and visual
+          screen capture. Customer is solely responsible for determining the
+          lawfulness of deploying such capabilities within its organization,
+          obtaining all necessary employee/contractor consents, providing
+          required statutory notices, and maintaining lawful policies
+          regarding employee monitoring.
+        </p>
+
         <p className="text-sm sm:text-base text-slate-700 dark:text-gray-300 leading-7">
           ZoikoTime provides decision-support outputs and operational insights.
           Customers must not use ZoikoTime as the sole basis for employment,
