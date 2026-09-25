@@ -24,10 +24,19 @@ import ImplementationLifecycle from './components/ImplementationLifecycle'
 import CommercialEvaluation from './components/CommercialEvaluation'
 import GovernedConnectionCTA from './components/GovernedConnectionCTA'
 import IntegrationFAQ from './components/IntegrationFAQ'
+import JsonLd from "@/app/components/JsonLd";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://zoikotime.com/integration/",
+  "name": "ZoikoTime Integrations"
+};
 
 export default function page() {
   return (
     <main>
+      <JsonLd data={jsonLd} />
         <SemaTimeHero />
         <SemaZoikoFlow />
         <ConnectionModel />
