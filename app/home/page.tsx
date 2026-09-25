@@ -7,6 +7,7 @@ import WorkflowSection from "./components/WorkflowSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import CTASection from "./components/CTASection";
 import PricingPage from "./components/pricing";
+import HomeFAQ from "./components/HomeFAQ";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <WorkflowSection />
       <TestimonialsSection />
       <CTASection />
+      <HomeFAQ />
     </main>
   );
 }
