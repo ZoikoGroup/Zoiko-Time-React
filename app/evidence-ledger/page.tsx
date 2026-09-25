@@ -15,15 +15,25 @@ import ProductUi from "./components/ProductUi";
 import SystemBoundaries from "./components/SystemBoundaries";
 import EnterpriseReadiness from "./components/EnterpriseReadiness";
 import EvidenceCta from "./components/EvidenceCta";
+import EvidenceLedgerFAQ from "./components/EvidenceLedgerFAQ";
+import JsonLd from "@/app/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Evidence Ledger for Workforce Records | ZoikoTime",
   description: "Build traceable workforce records with ZoikoTime Evidence Ledger. Connect every material change to its evidence, review, approval, release & reconciliation.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://zoikotime.com/evidence-ledger/",
+  "name": "ZoikoTime Evidence Ledger"
+};
+
 export default function Page() {
   return (
     <div className={inter.className}>
+      <JsonLd data={jsonLd} />
       <EvidenceHero />
       <LedgerVsActivityLog />
       <ContinuityLifecycle />
@@ -38,6 +48,7 @@ export default function Page() {
       <SystemBoundaries />
       <EnterpriseReadiness />
       <EvidenceCta />
+      <EvidenceLedgerFAQ />
     </div>
   );
 }

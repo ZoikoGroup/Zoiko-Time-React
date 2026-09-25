@@ -5,6 +5,11 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
+    question: "What is deterministic time classification?",
+    answer:
+      "Deterministic time classification is ZoikoTime's policy-based approach to interpreting time records consistently. It categorizes billable and non-billable hours using defined operational rules and transparent classifications rather than arbitrary productivity scores.",
+  },
+  {
     question: "Is this AI making decisions about my time record?",
     answer:
       "No. Classification runs on versioned, policy-bound rules — not a machine-learning model. Where AI appears in ZoikoTime it is confined to verified anomaly flagging and signal quality, and it never performs classification itself.",

@@ -4,6 +4,26 @@ import React, { useState } from "react";
 
 const faqs = [
   {
+    question: "What does ZoikoTime do?",
+    answer: "ZoikoTime captures, verifies, classifies, reviews, and reports workforce time and attendance data. Platform features include verified time tracking, digital timesheets, manager approval workflows, shift integrity monitoring, break compliance, workforce analytics, evidence logging, anomaly detection, and payroll-ready data exports."
+  },
+  {
+    question: "Is ZoikoTime time-tracking software?",
+    answer: "ZoikoTime provides comprehensive time and attendance tracking while extending beyond basic timekeeping. It pairs verified time records with deterministic classification, policy rules, evidence history, workforce analytics, and human review pathways for payroll, billing, and operational compliance."
+  },
+  {
+    question: "What is Workforce Truth Infrastructure?",
+    answer: "Workforce Truth Infrastructure is ZoikoTime's system architecture for generating trusted, evidence-backed workforce records. It combines verified time capture, deterministic policy classification, governance rules, evidence logging, human review, and operational reporting so organizations maintain clear audit trails for payroll, billing, and compliance."
+  },
+  {
+    question: "Can workers correct their time records?",
+    answer: "ZoikoTime provides worker-facing time correction workflows to update incomplete or inaccurate records. Submitted corrections enter structured manager review pipelines to ensure accurate record adjustments while preserving original data logs and evidence history."
+  },
+  {
+    question: "ZoikoTime vs. Traditional Employee Monitoring Software",
+    answer: "ZoikoTime differs from traditional monitoring software by focusing on workforce assurance and evidence-backed records rather than invasive activity surveillance. Its model emphasizes verified time capture, deterministic policy classification, transparent approvals, worker data visibility, and human review at www.zoikotime.com."
+  },
+  {
     question: "How does ZoikoTime work?",
     answer: "ZoikoTime captures work-session time and metadata locally or on mobile devices. It applies versioned, human-defined policy rules to classify activity, flags anomalies based on condition rules, and registers the verified version chronology in a secure Evidence Ledger."
   },

@@ -4,24 +4,13 @@ import React, { useState } from "react";
 
 const faqs = [
   {
-    question: "What is ZoikoTime?",
-    answer: "ZoikoTime is an enterprise workforce assurance and performance intelligence platform that creates deterministic, evidence-backed records of workforce time, attendance, and operational activity. It enables organizations to generate verified workforce records for payroll, client billing, regulatory compliance, operational reporting, and audit defense at www.zoikotime.com."
+    question: "Does ZoikoTime support remote and hybrid teams?",
+    answer:
+      "ZoikoTime supports remote and hybrid workforce models with location-aware time capture, attendance verification, remote approval workflows, and centralized workforce records configured across teams, schedules, and project assignments.",
   },
-  {
-    question: "Who is ZoikoTime for?",
-    answer: "ZoikoTime is engineered for Human Resources, Finance, Payroll, Operations, line managers, and enterprise leadership overseeing distributed, remote, hybrid, contractor-heavy, project-based, and global workforces. Enterprise organizations utilize its governance frameworks and multi-entity deployment controls across international jurisdictions."
-  },
-  {
-    question: "What types of organizations use ZoikoTime?",
-    answer: "ZoikoTime serves commercial businesses, regulated enterprises, global agencies, and multi-location companies operating distributed, remote, hybrid, or contractor-intensive workforce structures. Its primary users include HR, Finance, Payroll, Operations, and Management teams seeking verified workforce records and automated downstream workflows."
-  },
-  {
-    question: "Why Organizations Use ZoikoTime",
-    answer: "Organizations choose ZoikoTime to replace basic time tracking with verifiable workforce assurance. The platform combines time and attendance tracking, workforce intelligence, evidence-backed activity logs, automated policy controls, payroll readiness audits, and enterprise governance to produce defensible workforce records for payroll, billing, compliance, and legal review at www.zoikotime.com."
-  }
 ];
 
-export default function HomeFAQ() {
+export default function HybridFAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
@@ -46,7 +35,7 @@ export default function HomeFAQ() {
             lg:text-4xl
           "
         >
-          About ZoikoTime — answered
+          Hybrid workforces — answered
         </h2>
 
         {/* FAQ */}

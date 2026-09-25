@@ -10,6 +10,7 @@ import ControlMetrics from "./components/ControlMetrics";
 import AccurateNotInvasive from "./components/AccurateNotInvasive";
 import PilotScorecard from "./components/PilotScorecard";
 import PayrollFaq from "./components/PayrollFaq";
+import JsonLd from "@/app/components/JsonLd";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -23,9 +24,17 @@ export const metadata: Metadata = {
   description: "Improve payroll accuracy with ZoikoTime. Get accurate time records, automated approvals, and payroll-ready data to reduce errors and simplify processing.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://zoikotime.com/improve-payroll-accuracy/",
+  "name": "Improve Payroll Accuracy"
+};
+
 export default function Page() {
   return (
     <div className={`${poppins.variable} ipa-type`}>
+      <JsonLd data={jsonLd} />
       <PayrollHero />
       <PayrollImpact />
       <WhyAccuracySlips />
