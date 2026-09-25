@@ -4,6 +4,11 @@ import { useState } from "react";
 
 const faqs = [
   {
+    question: "Does ZoikoTime support time and attendance compliance?",
+    answer:
+      "ZoikoTime helps enforce configured time tracking, attendance policies, break rules, rest periods, and approval workflows according to specific jurisdiction and location settings.",
+  },
+  {
     question: "How does ZoikoTime verify time and attendance?",
     answer:
       "ZoikoTime combines captured time events with approved schedule, break, project, and policy context. Deterministic rules create a reviewable status. Missing or conflicting details are flagged neutrally, workers or authorized users can add context, and an authorized person approves the record before permitted downstream use.",

@@ -15,6 +15,7 @@ import EvidenceHistory from "./components/EvidenceHistory";
 import SystemBoundaries from "./components/SystemBoundaries";
 import EnterpriseReadiness from "./components/EnterpriseReadiness";
 import ClassificationFaq from "./components/ClassificationFaq";
+import JsonLd from "@/app/components/JsonLd";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -28,9 +29,17 @@ export const metadata: Metadata = {
   description: "Improve time record accuracy with ZoikoTime deterministic time classification. Apply policy-based rules for explainable, traceable, audit-ready results.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://zoikotime.com/deterministic-time-classification/",
+  "name": "Deterministic Time Classification"
+};
+
 export default function Page() {
   return (
     <div className={`${poppins.variable} dtc-type`}>
+      <JsonLd data={jsonLd} />
       <ClassificationHero />
       <DeterministicMeans />
       <ClassificationAnatomy />

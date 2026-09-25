@@ -8,6 +8,11 @@ interface FaqItem {
 
 const faqData: FaqItem[] = [
   {
+    question: 'Does ZoikoTime use AI?',
+    answer:
+      'ZoikoTime incorporates governed artificial intelligence through its Kairos Assistant framework. The system retrieves, summarizes, and analyzes approved workforce information while keeping operational and personnel decisions subject to authorized human oversight.',
+  },
+  {
     question: 'What is Kairos Assistant?',
     answer:
       'A permission-bound surface that retrieves, summarizes, and explains governed ZoikoTime organization data — showing the scope, source, timing, completeness, and limitations behind every answer. It decides nothing.',
@@ -87,7 +92,7 @@ export default function FaqSection() {
             Kairos Questions Answered
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-            Twelve Answers, No Invented Capability
+            Kairos Assistant — answered
           </h2>
         </header>
 

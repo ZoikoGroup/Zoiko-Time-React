@@ -4,6 +4,11 @@ import { useState } from "react";
 
 const faqs = [
   {
+    question: "Can ZoikoTime integrate with HR and payroll systems?",
+    answer:
+      "ZoikoTime connects with leading HR, payroll, financial management, identity provider, and calendar applications through native integrations, APIs, webhooks, and automated export workflows.",
+  },
+  {
     question: "How do Zoiko Sema and ZoikoTime work together?",
     answer: "",
   },
@@ -76,9 +81,7 @@ export default function IntegrationFAQ() {
           </p>
 
           <h2 className="mt-4 text-4xl font-bold leading-tight text-slate-900 dark:text-white md:text-5xl">
-            Fourteen Answers,
-            <br />
-            No Inclusion Assumptions
+            Integrations — answered
           </h2>
 
         </div>

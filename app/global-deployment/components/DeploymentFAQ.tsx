@@ -5,6 +5,11 @@ import { Plus, X } from "lucide-react";
 
 const faqs = [
   {
+    question: "Can ZoikoTime support global workforces?",
+    answer:
+      "ZoikoTime supports global workforce operations by providing configurable organizational structures, regional policy rules, multi-time-zone handling, and localized compliance controls adapted to international business entities.",
+  },
+  {
     question: "What is Global Deployment?",
     answer:
       "A governed process for scope, operability, local configuration, tests, approval, activation, and evidence. It is how a deployment becomes defensible before it becomes live.",
@@ -52,7 +57,7 @@ export default function DeploymentFAQ() {
           </p>
 
           <h2 className="mt-4 text-3xl font-bold leading-tight text-sky-950 dark:text-white sm:text-4xl">
-            Six Answers, No Overclaim
+            Global deployment — answered
           </h2>
 
         </div>

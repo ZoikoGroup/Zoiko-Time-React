@@ -4,6 +4,16 @@ import { useState } from "react";
 
 const faqs = [
   {
+    question: "Can ZoikoTime help with payroll?",
+    answer:
+      "ZoikoTime generates verified and approved time records to streamline payroll preparation, input validation, reconciliation, and automated export workflows into third-party payroll and financial management systems.",
+  },
+  {
+    question: "Can ZoikoTime help reduce payroll errors?",
+    answer:
+      "ZoikoTime reduces payroll errors by establishing verified, evidence-backed time records before data enters payroll processing. The system automatically surfaces missing entries, policy exceptions, approval delays, and reconciliation mismatches prior to payroll execution.",
+  },
+  {
     question: "Does ZoikoTime guarantee accurate payroll?",
     answer:
       "No, and we don't claim it. ZoikoTime helps improve the completeness, consistency, and traceability of the records that reach payroll. It does not calculate wages, file taxes, or guarantee payroll accuracy or legal compliance. The outcomes are directional — measure them in your own pilot.",

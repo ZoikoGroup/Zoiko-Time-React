@@ -34,15 +34,24 @@ import WorkerVisibility from "./components/WorkerVisibility";
 import TrustRouting from "./components/TrustRouting";
 import EvidenceRecords from "./components/EvidenceRecords";
 import DeploymentFAQ from "./components/DeploymentFAQ";
+import JsonLd from "@/app/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Global Workforce Deployment Platform | ZoikoTime",
   description: "Manage global workforce deployment with ZoikoTime. Verify regional readiness, local policies, time zones, identity, integrations, support & rollout evidence.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://zoikotime.com/global-deployment/",
+  "name": "Global Deployment"
+};
+
 export default function Page() {
   return (
     <div className={`${figtree.variable} ${inter.variable} gd-type`}>
+      <JsonLd data={jsonLd} />
       <GlobalDeploymentHero />
       <SixDimensions />
       <UncontrolledRollout />

@@ -17,15 +17,47 @@ import ConnectedWorkSection from './components/ConnectedWorkSection'
 import ImplementationAdoption from './components/ImplementationAdoption'
 import ZoikoTimeFAQ from './components/ZoikoTimeFAQ'
 import ChooseYourPath from './components/ChooseYourPath'
+import JsonLd from "@/app/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "How Time Tracking Works for Teams | ZoikoTime",
   description: "See how ZoikoTime captures workforce signals, applies deterministic rules, enables human review, records approvals, and delivers trusted workforce records.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zoikotime.com/how-zoikotime-works/#webpage",
+      "url": "https://zoikotime.com/how-zoikotime-works/",
+      "name": "How ZoikoTime Works"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://zoikotime.com/how-zoikotime-works/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://zoikotime.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How ZoikoTime Works",
+          "item": "https://zoikotime.com/how-zoikotime-works/"
+        }
+      ]
+    }
+  ]
+};
+
 export default function page() {
   return (
    <main>
+     <JsonLd data={jsonLd} />
     <TruthHero />
     <TrustCenterBanner />
     <HowItWorks />

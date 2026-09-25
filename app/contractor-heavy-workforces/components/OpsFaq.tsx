@@ -4,6 +4,11 @@ import { useState } from "react";
 
 const faqs = [
   {
+    question: "Does ZoikoTime support contractors?",
+    answer:
+      "ZoikoTime manages contractor-heavy workforces by applying worker-specific policy rules, project allocation tracking, contractor time verification, digital approval flows, and payment-review workflows.",
+  },
+  {
     question: "Does ZoikoTime determine worker classification?",
     answer:
       "No. ZoikoTime governs contractor time and project records — classification decisions remain with your legal and HR teams.",

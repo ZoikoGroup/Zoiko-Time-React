@@ -15,15 +15,24 @@ import PromptWordingGrantsNothing from "./components/PromptWordingGrantsNothing"
 import QuestionComposer from "./components/QuestionComposer";
 import QuestionDomains from "./components/QuestionDomains";
 import TaskFirstRoutes from "./components/TaskFirstRoutes";
+import JsonLd from "@/app/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Kairos Assistant - AI Workforce Assistant | ZoikoTime",
   description: "Kairos Assistant helps authorized users ask governed questions and understand ZoikoTime workforce data with evidence, scope, timing, limits & human control.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://zoikotime.com/kairos-assistant/",
+  "name": "Kairos Assistant"
+};
+
 export default function page(){
     return(
         <main>
+          <JsonLd data={jsonLd} />
             <KairosHeroSection/>
             <KairosGovernanceOverview/>
             <BindingProductInvariant/>

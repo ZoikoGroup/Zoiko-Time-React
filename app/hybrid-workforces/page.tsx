@@ -10,14 +10,24 @@ import Integrations from './components/Integrations'
 import Adoption from './components/Adoption'
 import Proof from './components/Proof'
 import TruthCta from './components/TruthCta'
+import HybridFAQ from './components/HybridFAQ'
+import JsonLd from "@/app/components/JsonLd";
  export const metadata: Metadata = {
   title: "Hybrid Workforce Management | ZoikoTime",
   description: "ZoikoTime delivers hybrid workforce management for schedules, time, attendance, breaks, projects, and approvals—all without employee surveillance.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://zoikotime.com/hybrid-workforces/",
+  "name": "Hybrid Workforces"
+};
+
 export default function page() {
   return (
     <main>
+      <JsonLd data={jsonLd} />
         <HybridWorkforceHero />
         <WhyZoikoTimeHybrid />
         <HybridCommand />
@@ -28,6 +38,7 @@ export default function page() {
         <Adoption />
         <Proof />
         <TruthCta />
+        <HybridFAQ />
     </main>
   )
 }
