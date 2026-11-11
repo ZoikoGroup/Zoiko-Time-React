@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import HomePage from "./home/page";
 import JsonLd from "@/app/components/JsonLd";
+import { Inter, Manrope } from "next/font/google";
+import BlackFridayPopup from "./home/components/BlackFridayPopup";
+
+const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], display: "swap" });
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "ZoikoTime | AI Time Intelligence Platform",
@@ -48,6 +53,10 @@ export default function Page() {
     <>
       <JsonLd data={jsonLd} />
       <HomePage />
+      {/* Black Friday popup — home page only, opens on every load/refresh */}
+      <div className={`${manrope.variable} ${inter.variable} bf-type`}>
+        <BlackFridayPopup />
+      </div>
     </>
   );
 }
