@@ -17,7 +17,7 @@ export default function PromoBar() {
       <span className="text-emerald-400">30% off</span>{" "}
       <span className="text-white">Annual plans</span>
       <span aria-hidden="true" className="mx-2 text-slate-600 sm:mx-3">•</span>
-      <span className="text-slate-400">27 Nov – 30 Nov 2026</span>
+      <span className="text-slate-400">20 Nov – 30 Nov 2026</span>
       {timeLeft && (
         <>
           <span aria-hidden="true" className="mx-2 text-slate-600 sm:mx-3">•</span>
